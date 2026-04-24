@@ -78,39 +78,67 @@ Tests qualité/contextuels.
 
 ## Workflow recommandé
 
-### 1. Générer une configuration
+NB : A lancer depuis REPO_ROOT
+
+### 1. Générer les configurations
+
+bash scripts/profiling/run_profile_generation.sh   ./src/loterre_cli.py   P66_en   ../examples/texts/P66_en.jsonl   ./profile_outputs  
+
+
+Toutes les configs :
+```bash
+   ./scripts/profiling/run_profile_generation.sh
+```
+   Resultats : generation des fichiers profile *_auto_profile.json dans config
+
+### 2. Générer les prédictions/golds
+
+ avec manifest : 
+ ```bash
+ python scripts/prediction/generate_gold_from_predictions_v0.py   --engine ./src/loterre
+```
+avec registry.yaml : 
 
 ```bash
-bash scripts/profiling/run_profile_generation.sh   ./src/loterre_cli.py   P66_en   ../examples/texts/P66_en.jsonl   ./profile_outputs
+ python scripts/prediction/generate_gold_from_predictions.py   --engine ./src/loterre_cli.py --text-root ../examples/texts
 ```
 
-### 2. Générer les prédictions/golds avec un manifest
+   Resultats : generation des fichiers prediction ex: predictions/*_pred.json 
 
-```bash
-python scripts/prediction/generate_gold_from_predictions.py   --engine ./src/loterre_cli.py   --manifest manifest.json   --outdir .
-```
 
 ### 3. Évaluer en batch
 
 ```bash
-bash scripts/evaluation/run_generated_eval.sh   ./scripts/evaluation/evaluate_json.py   ./eval_outputs
+./scripts/evaluation/run_generated_eval.sh   ./scripts/evaluation/evaluate_json.py   ./eval_outputs
 ```
 
-### 4. Benchmarker deux versions
+### 4. Benchmarker deux versions [NON TESTE]
 
 ```bash
-bash scripts/benchmark/run_benchmark.sh   /path/to/old/src/loterre_cli.py   ./src/loterre_cli.py   .
+./scripts/benchmark/run_benchmark.sh   /path/to/old/src/loterre_cli.py   ./src/loterre_cli.py   .
 ```
 
 ### 5. Lancer les tests
 
 ```bash
-bash tests/smoke/test_v9_cli.sh
-bash tests/profiling/test_auto_profile_quality.sh
-bash tests/quality/test_v9_contextual.sh
+./tests/smoke/test_v9_cli.sh
+./tests/smoke/test_annotate_cli.sh
+./tests/profiling/test_auto_profile_quality.sh
+./tests/quality/test_v9_contextual.sh
 ```
 
 ## Différence scripts / tests
 
 - `scripts/` : outils de travail pour produire, évaluer, benchmarker.
 - `tests/` : vérifications automatiques de non-régression.
+
+
+
+# TODO
+
+## BUG
+
+
+## EVOL/MODIF
+
+Pb de tepps sur gros dico : : ex :JVR

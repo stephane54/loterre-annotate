@@ -1,0 +1,158 @@
+[
+  {
+    "pair": {
+      "code": "27X",
+      "dict_id": "27X_en",
+      "lang": "en",
+      "profile": "term_recall",
+      "text_file": "texts/27X_en.jsonl",
+      "dict_file": "dicts/en_annot_27X.jsonl"
+    },
+    "status": "error",
+    "stderr": "2026-04-24 12:54:39,966 INFO Loading dictionary\nTraceback (most recent call last):\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 1013, in <module>\n    main()\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 910, in main\n    entries = load_entries(dict_path)\n              ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 202, in load_entries\n    with open(path, encoding=\"utf-8\") as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'gold/dicts/en_annot_27X.jsonl'\n"
+  },
+  {
+    "pair": {
+      "code": "27X",
+      "dict_id": "27X_fr",
+      "lang": "fr",
+      "profile": "term_recall",
+      "text_file": "texts/27X_fr.jsonl",
+      "dict_file": "dicts/fr_annot_27X.jsonl"
+    },
+    "status": "error",
+    "stderr": "2026-04-24 12:54:43,099 INFO Loading dictionary\nTraceback (most recent call last):\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 1013, in <module>\n    main()\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 910, in main\n    entries = load_entries(dict_path)\n              ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 202, in load_entries\n    with open(path, encoding=\"utf-8\") as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'gold/dicts/fr_annot_27X.jsonl'\n"
+  },
+  {
+    "pair": {
+      "code": "3JP",
+      "dict_id": "3JP_en",
+      "lang": "en",
+      "profile": "term_recall",
+      "text_file": "texts/3JP_en.jsonl",
+      "dict_file": "dicts/en_annot_3JP.jsonl"
+    },
+    "status": "error",
+    "stderr": "2026-04-24 12:54:45,290 INFO Loading dictionary\nTraceback (most recent call last):\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 1013, in <module>\n    main()\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 910, in main\n    entries = load_entries(dict_path)\n              ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 202, in load_entries\n    with open(path, encoding=\"utf-8\") as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'gold/dicts/en_annot_3JP.jsonl'\n"
+  },
+  {
+    "pair": {
+      "code": "8HQ",
+      "dict_id": "8HQ_en",
+      "lang": "en",
+      "profile": "term_recall",
+      "text_file": "texts/8HQ_en.jsonl",
+      "dict_file": "dicts/en_annot_8HQ.jsonl"
+    },
+    "status": "error",
+    "stderr": "2026-04-24 12:54:47,255 INFO Loading dictionary\nTraceback (most recent call last):\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 1013, in <module>\n    main()\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 910, in main\n    entries = load_entries(dict_path)\n              ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 202, in load_entries\n    with open(path, encoding=\"utf-8\") as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'gold/dicts/en_annot_8HQ.jsonl'\n"
+  },
+  {
+    "pair": {
+      "code": "8HQ",
+      "dict_id": "8HQ_fr",
+      "lang": "fr",
+      "profile": "term_recall",
+      "text_file": "texts/8HQ_fr.jsonl",
+      "dict_file": "dicts/fr_annot_8HQ.jsonl"
+    },
+    "status": "error",
+    "stderr": "2026-04-24 12:54:49,237 INFO Loading dictionary\nTraceback (most recent call last):\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 1013, in <module>\n    main()\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 910, in main\n    entries = load_entries(dict_path)\n              ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 202, in load_entries\n    with open(path, encoding=\"utf-8\") as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'gold/dicts/fr_annot_8HQ.jsonl'\n"
+  },
+  {
+    "pair": {
+      "code": "9SD",
+      "dict_id": "9SD_en",
+      "lang": "en",
+      "profile": "entity_strict",
+      "text_file": "texts/9SD_en.jsonl",
+      "dict_file": "dicts/en_annot_9SD.jsonl"
+    },
+    "status": "error",
+    "stderr": "2026-04-24 12:54:51,252 INFO Loading dictionary\nTraceback (most recent call last):\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 1013, in <module>\n    main()\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 910, in main\n    entries = load_entries(dict_path)\n              ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 202, in load_entries\n    with open(path, encoding=\"utf-8\") as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'gold/dicts/en_annot_9SD.jsonl'\n"
+  },
+  {
+    "pair": {
+      "code": "9SD",
+      "dict_id": "9SD_fr",
+      "lang": "fr",
+      "profile": "entity_strict",
+      "text_file": "texts/9SD_fr.jsonl",
+      "dict_file": "dicts/fr_annot_9SD.jsonl"
+    },
+    "status": "error",
+    "stderr": "2026-04-24 12:54:53,259 INFO Loading dictionary\nTraceback (most recent call last):\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 1013, in <module>\n    main()\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 910, in main\n    entries = load_entries(dict_path)\n              ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 202, in load_entries\n    with open(path, encoding=\"utf-8\") as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'gold/dicts/fr_annot_9SD.jsonl'\n"
+  },
+  {
+    "pair": {
+      "code": "B9M",
+      "dict_id": "B9M_en",
+      "lang": "en",
+      "profile": "term_recall",
+      "text_file": "texts/B9M_en.jsonl",
+      "dict_file": "dicts/en_annot_B9M.jsonl"
+    },
+    "status": "error",
+    "stderr": "2026-04-24 12:54:55,249 INFO Loading dictionary\nTraceback (most recent call last):\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 1013, in <module>\n    main()\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 910, in main\n    entries = load_entries(dict_path)\n              ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 202, in load_entries\n    with open(path, encoding=\"utf-8\") as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'gold/dicts/en_annot_B9M.jsonl'\n"
+  },
+  {
+    "pair": {
+      "code": "B9M",
+      "dict_id": "B9M_fr",
+      "lang": "fr",
+      "profile": "term_recall",
+      "text_file": "texts/B9M_fr.jsonl",
+      "dict_file": "dicts/fr_annot_B9M.jsonl"
+    },
+    "status": "error",
+    "stderr": "2026-04-24 12:54:57,225 INFO Loading dictionary\nTraceback (most recent call last):\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 1013, in <module>\n    main()\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 910, in main\n    entries = load_entries(dict_path)\n              ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 202, in load_entries\n    with open(path, encoding=\"utf-8\") as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'gold/dicts/fr_annot_B9M.jsonl'\n"
+  },
+  {
+    "pair": {
+      "code": "P66",
+      "dict_id": "P66_en",
+      "lang": "en",
+      "profile": "term_recall",
+      "text_file": "texts/P66_en.jsonl",
+      "dict_file": "dicts/en_annot_P66.jsonl"
+    },
+    "status": "error",
+    "stderr": "2026-04-24 12:54:59,151 INFO Loading dictionary\nTraceback (most recent call last):\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 1013, in <module>\n    main()\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 910, in main\n    entries = load_entries(dict_path)\n              ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 202, in load_entries\n    with open(path, encoding=\"utf-8\") as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'gold/dicts/en_annot_P66.jsonl'\n"
+  },
+  {
+    "pair": {
+      "code": "P66",
+      "dict_id": "P66_fr",
+      "lang": "fr",
+      "profile": "term_recall",
+      "text_file": "texts/P66_fr.jsonl",
+      "dict_file": "dicts/fr_annot_P66.jsonl"
+    },
+    "status": "error",
+    "stderr": "2026-04-24 12:55:01,093 INFO Loading dictionary\nTraceback (most recent call last):\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 1013, in <module>\n    main()\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 910, in main\n    entries = load_entries(dict_path)\n              ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 202, in load_entries\n    with open(path, encoding=\"utf-8\") as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'gold/dicts/fr_annot_P66.jsonl'\n"
+  },
+  {
+    "pair": {
+      "code": "QX8",
+      "dict_id": "QX8_en",
+      "lang": "en",
+      "profile": "entity_strict",
+      "text_file": "texts/QX8_en.jsonl",
+      "dict_file": "dicts/en_annot_QX8.jsonl"
+    },
+    "status": "error",
+    "stderr": "2026-04-24 12:55:03,086 INFO Loading dictionary\nTraceback (most recent call last):\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 1013, in <module>\n    main()\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 910, in main\n    entries = load_entries(dict_path)\n              ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 202, in load_entries\n    with open(path, encoding=\"utf-8\") as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'gold/dicts/en_annot_QX8.jsonl'\n"
+  },
+  {
+    "pair": {
+      "code": "QX8",
+      "dict_id": "QX8_fr",
+      "lang": "fr",
+      "profile": "entity_strict",
+      "text_file": "texts/QX8_fr.jsonl",
+      "dict_file": "dicts/fr_annot_QX8.jsonl"
+    },
+    "status": "error",
+    "stderr": "2026-04-24 12:55:05,103 INFO Loading dictionary\nTraceback (most recent call last):\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 1013, in <module>\n    main()\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 910, in main\n    entries = load_entries(dict_path)\n              ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/schneist/app/loterre_annotate/loterre-v9/src/loterre_engine_v9_cli.py\", line 202, in load_entries\n    with open(path, encoding=\"utf-8\") as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'gold/dicts/fr_annot_QX8.jsonl'\n"
+  }
+]

@@ -61,7 +61,7 @@ cat ../examples/texts/9SD_en.jsonl | python "$CLI" \
 echo
 echo "== Test 7: annotation P66 avec config YAML rapide (1 seul document) =="
 python "$CLI" \
-  --config .././configs/example_p66_en_quick.yaml \
+  --config configs/example_p66_en_quick.yaml \
   --out "$OUTDIR/annotation_P66_en_quick.md" \
   --report "$OUTDIR/report_P66_en_quick.md"
 

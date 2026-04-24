@@ -1,0 +1,17 @@
+{
+  "profile": "entity_strict",
+  "docs": 1,
+  "timings": {
+    "load_and_profile_s": 0.13209259500581538,
+    "process_s": 1.0631924789995537,
+    "total_s": 1.195285074005369
+  },
+  "results": [
+    {
+      "id": "ctx1",
+      "text": "The word Parthenon comes from the Greek parthénos as well as other forms.",
+      "annotated_text": "The word Parthenon comes from the Greek parthénos as well as other forms.",
+      "matches": []
+    }
+  ]
+}

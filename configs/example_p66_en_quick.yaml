@@ -1,0 +1,21 @@
+text: ./configs/quick_p66_en.jsonl
+dictionary: ../examples/dicts/en_annot_P66.jsonl
+lang: en
+profile: term_recall
+out: outputs/annotation_P66_en_quick.md
+report: outputs/report_P66_en_quick.md
+
+profile_overrides:
+  use_lemma: true
+  allow_single_token_fallback: true
+  batch_size: 32
+
+quality:
+  enabled: true
+  strict_stopwords: true
+  require_pos_match: true
+  penalize_single_token: true
+  single_token_penalty: 0.15
+  multi_token_bonus: 0.03
+  case_sensitive_entities: true
+  context_guard: true

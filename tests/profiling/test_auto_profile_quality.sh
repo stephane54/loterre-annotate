@@ -10,22 +10,23 @@ OUTDIR="${2:-./outputs_autoprofile_quality}"
 
 mkdir -p "$OUTDIR"
 
-echo "== Auto-profile P66 =="
-python "$CLI" \
-  --text ../examples/texts/P66_en.jsonl \
-  --dict-id P66_en \
-  --auto-profile \
-  --yaml-out "$OUTDIR/p66.yaml" \
-  > "$OUTDIR/p66.json"
-
+for code in P66 9SD 8HQ B9M 27X BVM QX8 3JP JVR; do
+echo "== Auto-profile en ${code} =="
+  python "$CLI" \
+    --text ../examples/texts/${code}_en.jsonl \
+    --dict-id  ${code}_en \
+    --auto-profile \
+    --yaml-out "$OUTDIR/p66_en.yaml" \
+    > "$OUTDIR/${code}_en.json"
+done
 echo
-echo "== Auto-profile 9SD =="
-python "$CLI" \
-  --text ../examples/texts/9SD_en.jsonl \
-  --dict-id 9SD_en \
-  --auto-profile \
-  --yaml-out "$OUTDIR/9sd.yaml" \
-  > "$OUTDIR/9sd.json"
 
-echo
-echo "Generated proposals in $OUTDIR"
+for code in P66 9SD 8HQ B9M 27X BVM QX8; do
+echo "== Auto-profile fr ${code} =="
+  python "$CLI" \
+    --text ../examples/texts/${code}_fr.jsonl \
+    --dict-id  ${code}_en \
+    --auto-profile \
+    --yaml-out "$OUTDIR/p66_fr.yaml" \
+    > "$OUTDIR/${code}_fr.json"
+done

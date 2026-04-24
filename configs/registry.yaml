@@ -8,3 +8,73 @@ dictionaries:
     path: ../examples/dicts/en_annot_9SD.jsonl
     lang: en
     profile: entity_strict
+
+  P66_fr:
+    path: ../examples/dicts/fr_annot_P66.jsonl
+    lang: fr
+    profile: term_recall
+
+  9SD_fr:
+    path: ../examples/dicts/fr_annot_9SD.jsonl
+    lang: fr
+    profile: entity_strict
+
+  8HQ_fr:
+    path: ../examples/dicts/fr_annot_8HQ.jsonl
+    lang: fr
+    profile: term_recall
+
+  8HQ_en:
+    path: ../examples/dicts/en_annot_8HQ.jsonl
+    lang: en
+    profile: term_recall
+
+  B9M_fr:
+    path: ../examples/dicts/fr_annot_B9M.jsonl
+    lang: fr
+    profile: term_recall
+
+  B9M_en:
+    path: ../examples/dicts/en_annot_B9M.jsonl
+    lang: en
+    profile: term_recall
+
+  27X_fr:
+    path: ../examples/dicts/fr_annot_27X.jsonl
+    lang: fr
+    profile: term_recall
+
+  27X_en:
+    path: ../examples/dicts/en_annot_27X.jsonl
+    lang: en
+    profile: entity_strict
+
+  BVM_fr:
+    path: ../examples/dicts/fr_annot_BVM.jsonl
+    lang: fr
+    profile: term_recall
+
+  BVM_en:
+    path: ../examples/dicts/en_annot_BVM.jsonl
+    lang: en
+    profile: term_recall
+
+  QX8_fr:
+    path: ../examples/dicts/fr_annot_QX8.jsonl
+    lang: fr
+    profile: term_recall
+
+  QX8_en:
+    path: ../examples/dicts/en_annot_QX8.jsonl
+    lang: en
+    profile: term_recall
+
+  3JP_en:
+    path: ../examples/dicts/en_annot_3JP.jsonl
+    lang: en
+    profile: term_recall
+
+  JVR_en:
+    path: ../examples/dicts/en_annot_JVR.jsonl
+    lang: en
+    profile: term_recall

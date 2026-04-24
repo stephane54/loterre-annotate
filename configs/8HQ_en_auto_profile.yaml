@@ -1,0 +1,34 @@
+text: ../examples/texts/8HQ_en.jsonl
+dictionary: ../examples/dicts/en_annot_8HQ.jsonl
+lang: en
+profile: term_recall
+out: annotation.md
+report: report.md
+profile_overrides:
+  use_pattern: true
+  use_surface: true
+  use_lemma: true
+  pattern_priority: false
+  allow_surface_fallback: true
+  allow_single_token_fallback: true
+  single_token_uppercase_exact: false
+  propn_can_match_noun: true
+  normalize_separators: true
+  normalize_apostrophes: true
+  normalize_parentheses: true
+  batch_size: 64
+quality:
+  enabled: true
+  strict_stopwords: true
+  require_pos_match: true
+  penalize_single_token: true
+  single_token_penalty: 0.2
+  multi_token_bonus: 0.03
+  case_sensitive_entities: true
+  context_guard: true
+  contextual_scoring: true
+  context_window: 2
+  discourse_pattern_guard: true
+  function_context_penalty: 0.2
+  lexical_context_bonus: 0.05
+  exact_pos_bonus: 0.05

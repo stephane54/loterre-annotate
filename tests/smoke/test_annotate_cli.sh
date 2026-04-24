@@ -17,7 +17,7 @@ for code in P66 9SD 8HQ B9M 27X BVM QX8 ; do
   echo "== Annotation FR basée sur ${code} =="
 
   cat ../examples/texts/${code}_fr.jsonl | python "$CLI" \
-    --config ".././configs/${code}_fr_auto_profile.yaml" \
+    --config "configs/${code}_fr_auto_profile.yaml" \
     --out "$O/${code}_fr_annotation.md"
 done
 
@@ -26,6 +26,6 @@ for code in P66 9SD 8HQ B9M 27X BVM QX8 3JP JVR ; do
   echo "== Annotation EN basée sur ${code} =="
 
   cat ../examples/texts/${code}_en.jsonl | python "$CLI" \
-    --config ".././configs/${code}_en_auto_profile.yaml" \
+    --config "configs/${code}_en_auto_profile.yaml" \
     --out "$O/${code}_en_annotation.md"
 done

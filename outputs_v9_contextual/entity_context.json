@@ -1,0 +1,38 @@
+{
+  "profile": "entity_strict",
+  "docs": 1,
+  "timings": {
+    "load_and_profile_s": 0.12580004100163933,
+    "process_s": 0.8337599119986407,
+    "total_s": 0.9595599530002801
+  },
+  "results": [
+    {
+      "id": "ctx3",
+      "text": "Italy and Rome are mentioned here.",
+      "annotated_text": "**Italy**〔[Italy](http://data.loterre.fr/ark:/67375/9SD-D7887R60-W)〕 and **Rome**〔[Rome](http://data.loterre.fr/ark:/67375/9SD-P229DHZH-0)〕 are mentioned here.",
+      "matches": [
+        {
+          "start": 0,
+          "end": 5,
+          "found": "Italy",
+          "pref": "Italy",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-D7887R60-W",
+          "label": "Italy",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 10,
+          "end": 14,
+          "found": "Rome",
+          "pref": "Rome",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-P229DHZH-0",
+          "label": "Rome",
+          "rule": "pattern",
+          "score": 0.9
+        }
+      ]
+    }
+  ]
+}

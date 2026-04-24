@@ -1,0 +1,130 @@
+[
+  {
+    "dict_id": "P66_en",
+    "status": "ready",
+    "text": "/home/schneist/app/loterre_annotate/examples/texts/P66_en.jsonl",
+    "dict": "/home/schneist/app/loterre_annotate/examples/dicts/en_annot_P66.jsonl",
+    "lang": "en",
+    "profile": "term_recall"
+  },
+  {
+    "dict_id": "9SD_en",
+    "status": "ready",
+    "text": "/home/schneist/app/loterre_annotate/examples/texts/9SD_en.jsonl",
+    "dict": "/home/schneist/app/loterre_annotate/examples/dicts/en_annot_9SD.jsonl",
+    "lang": "en",
+    "profile": "entity_strict"
+  },
+  {
+    "dict_id": "P66_fr",
+    "status": "ready",
+    "text": "/home/schneist/app/loterre_annotate/examples/texts/P66_fr.jsonl",
+    "dict": "/home/schneist/app/loterre_annotate/examples/dicts/fr_annot_P66.jsonl",
+    "lang": "fr",
+    "profile": "term_recall"
+  },
+  {
+    "dict_id": "9SD_fr",
+    "status": "ready",
+    "text": "/home/schneist/app/loterre_annotate/examples/texts/9SD_fr.jsonl",
+    "dict": "/home/schneist/app/loterre_annotate/examples/dicts/fr_annot_9SD.jsonl",
+    "lang": "fr",
+    "profile": "entity_strict"
+  },
+  {
+    "dict_id": "8HQ_fr",
+    "status": "ready",
+    "text": "/home/schneist/app/loterre_annotate/examples/texts/8HQ_fr.jsonl",
+    "dict": "/home/schneist/app/loterre_annotate/examples/dicts/fr_annot_8HQ.jsonl",
+    "lang": "fr",
+    "profile": "term_recall"
+  },
+  {
+    "dict_id": "8HQ_en",
+    "status": "ready",
+    "text": "/home/schneist/app/loterre_annotate/examples/texts/8HQ_en.jsonl",
+    "dict": "/home/schneist/app/loterre_annotate/examples/dicts/en_annot_8HQ.jsonl",
+    "lang": "en",
+    "profile": "term_recall"
+  },
+  {
+    "dict_id": "B9M_fr",
+    "status": "ready",
+    "text": "/home/schneist/app/loterre_annotate/examples/texts/B9M_fr.jsonl",
+    "dict": "/home/schneist/app/loterre_annotate/examples/dicts/fr_annot_B9M.jsonl",
+    "lang": "fr",
+    "profile": "term_recall"
+  },
+  {
+    "dict_id": "B9M_en",
+    "status": "ready",
+    "text": "/home/schneist/app/loterre_annotate/examples/texts/B9M_en.jsonl",
+    "dict": "/home/schneist/app/loterre_annotate/examples/dicts/en_annot_B9M.jsonl",
+    "lang": "en",
+    "profile": "term_recall"
+  },
+  {
+    "dict_id": "27X_fr",
+    "status": "ready",
+    "text": "/home/schneist/app/loterre_annotate/examples/texts/27X_fr.jsonl",
+    "dict": "/home/schneist/app/loterre_annotate/examples/dicts/fr_annot_27X.jsonl",
+    "lang": "fr",
+    "profile": "term_recall"
+  },
+  {
+    "dict_id": "27X_en",
+    "status": "ready",
+    "text": "/home/schneist/app/loterre_annotate/examples/texts/27X_en.jsonl",
+    "dict": "/home/schneist/app/loterre_annotate/examples/dicts/en_annot_27X.jsonl",
+    "lang": "en",
+    "profile": "entity_strict"
+  },
+  {
+    "dict_id": "BVM_fr",
+    "status": "ready",
+    "text": "/home/schneist/app/loterre_annotate/examples/texts/BVM_fr.jsonl",
+    "dict": "/home/schneist/app/loterre_annotate/examples/dicts/fr_annot_BVM.jsonl",
+    "lang": "fr",
+    "profile": "term_recall"
+  },
+  {
+    "dict_id": "BVM_en",
+    "status": "ready",
+    "text": "/home/schneist/app/loterre_annotate/examples/texts/BVM_en.jsonl",
+    "dict": "/home/schneist/app/loterre_annotate/examples/dicts/en_annot_BVM.jsonl",
+    "lang": "en",
+    "profile": "term_recall"
+  },
+  {
+    "dict_id": "QX8_fr",
+    "status": "ready",
+    "text": "/home/schneist/app/loterre_annotate/examples/texts/QX8_fr.jsonl",
+    "dict": "/home/schneist/app/loterre_annotate/examples/dicts/fr_annot_QX8.jsonl",
+    "lang": "fr",
+    "profile": "term_recall"
+  },
+  {
+    "dict_id": "QX8_en",
+    "status": "ready",
+    "text": "/home/schneist/app/loterre_annotate/examples/texts/QX8_en.jsonl",
+    "dict": "/home/schneist/app/loterre_annotate/examples/dicts/en_annot_QX8.jsonl",
+    "lang": "en",
+    "profile": "term_recall"
+  },
+  {
+    "dict_id": "3JP_en",
+    "status": "ready",
+    "text": "/home/schneist/app/loterre_annotate/examples/texts/3JP_en.jsonl",
+    "dict": "/home/schneist/app/loterre_annotate/examples/dicts/en_annot_3JP.jsonl",
+    "lang": "en",
+    "profile": "term_recall"
+  },
+  {
+    "dict_id": "JVR_en",
+    "status": "ready",
+    "text": "/home/schneist/app/loterre_annotate/examples/texts/JVR_en.jsonl",
+    "dict": "/home/schneist/app/loterre_annotate/examples/dicts/en_annot_JVR.jsonl",
+    "lang": "en",
+    "profile": "term_recall"
+  }
+]
