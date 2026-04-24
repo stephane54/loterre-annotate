@@ -1,0 +1,10 @@
+dictionaries:
+  P66_en:
+    path: ../examples/dicts/en_annot_P66.jsonl
+    lang: en
+    profile: term_recall
+
+  9SD_en:
+    path: ../examples/dicts/en_annot_9SD.jsonl
+    lang: en
+    profile: entity_strict

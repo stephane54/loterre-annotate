@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+outputs/
+eval_outputs/
+profile_outputs/
+predictions/*.json
+*.log
+dicts/
+texts/
+examples/
+*.zip
+.DS_Store
+.idea/
+.vscode/
