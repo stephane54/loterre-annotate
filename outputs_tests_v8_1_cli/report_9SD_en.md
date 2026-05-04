@@ -2,9 +2,9 @@
 
 ## Temps
 
-- load_and_profile_s: 0.114
-- process_s: 24.298
-- total_s: 24.412
+- load_and_profile_s: 0.122
+- process_s: 27.237
+- total_s: 27.359
 
 ## Profil de dictionnaire
 

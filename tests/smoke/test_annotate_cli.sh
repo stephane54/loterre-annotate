@@ -19,6 +19,8 @@ for code in P66 9SD 8HQ B9M 27X BVM QX8 ; do
   cat ../examples/texts/${code}_fr.jsonl | python "$CLI" \
     --config "configs/${code}_fr_auto_profile.yaml" \
     --out "$O/${code}_fr_annotation.md"
+  python ./src/loterre_html_renderer.py --input "$JSON_OUT" --out "$HTML_OUT" --title "Annotation Loterre — ${DICT_ID}"
+
 done
 
 for code in P66 9SD 8HQ B9M 27X BVM QX8 3JP JVR ; do

@@ -70,7 +70,7 @@
     "ratio_risky_single": 0.0
   },
   "timings": {
-    "load_and_profile_s": 0.017112386994995177,
-    "total_s": 0.017112386994995177
+    "load_and_profile_s": 0.016568356004427187,
+    "total_s": 0.016568356004427187
   }
 }

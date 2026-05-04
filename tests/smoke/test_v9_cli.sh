@@ -6,7 +6,7 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 cd "$REPO_ROOT"
 
 CLI="${1:-./src/loterre_cli.py}"
-OUTDIR="${2:-./outputs_tests_v8_1_cli}"
+OUTDIR="${2:-./outputs_tests_v9_cli}"
 
 mkdir -p "$OUTDIR"
 

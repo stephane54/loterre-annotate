@@ -2,9 +2,9 @@
   "profile": "entity_strict",
   "docs": 1,
   "timings": {
-    "load_and_profile_s": 0.11749677199986763,
-    "process_s": 24.072907843001303,
-    "total_s": 24.19040461500117
+    "load_and_profile_s": 0.1273005480034044,
+    "process_s": 27.557424877988524,
+    "total_s": 27.684725425991928
   },
   "results": [
     {

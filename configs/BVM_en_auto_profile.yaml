@@ -1,7 +1,7 @@
 text: ../examples/texts/BVM_en.jsonl
 dictionary: ../examples/dicts/en_annot_BVM.jsonl
 lang: en
-profile: term_recall
+profile: entity_strict
 out: annotation.md
 report: report.md
 profile_overrides:

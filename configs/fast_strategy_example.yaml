@@ -1,0 +1,22 @@
+execution:
+  strategy: hybrid
+
+fast_path:
+  enabled: true
+  cache_dir: .loterre_cache
+  case_sensitive: false
+  pass_ambiguous_to_spacy: true
+
+linguistic_path:
+  enabled: true
+  only_if_ambiguous: true
+
+semantic_path:
+  enabled: false
+  only_if_still_ambiguous: true
+  top_k: 5
+
+outputs:
+  json: true
+  markdown: false
+  html: false
