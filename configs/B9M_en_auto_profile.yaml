@@ -1,5 +1,5 @@
-text: ../examples/texts/B9M_en.jsonl
-dictionary: ../examples/dicts/en_annot_B9M.jsonl
+text: examples/texts/B9M_en.jsonl
+dictionary: examples/dicts/en_annot_B9M.jsonl
 lang: en
 profile: term_recall
 out: annotation.md

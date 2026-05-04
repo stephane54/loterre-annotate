@@ -8,7 +8,7 @@ OUTDIR="${2:-./configs}"
 for code in P66 9SD 8HQ B9M 27X BVM QX8 3JP JVR; do
   echo "== Génération auto-profile pour $code (en) =="
   python "$CLI" \
-    --text ../examples/texts/${code}_en.jsonl \
+    --text examples/texts/${code}_en.jsonl \
     --dict-id ${code}_en \
     --auto-profile \
     --lang en \
@@ -19,7 +19,7 @@ done
 for code in P66 9SD 8HQ B9M 27X BVM QX8; do
   echo "== Génération auto-profile pour $code (fr) =="
   python "$CLI" \
-    --text ../examples/texts/${code}_fr.jsonl \
+    --text examples/texts/${code}_fr.jsonl \
     --dict-id ${code}_fr \
     --auto-profile \
     --lang fr \

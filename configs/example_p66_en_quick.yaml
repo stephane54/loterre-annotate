@@ -1,5 +1,5 @@
 text: ./configs/quick_p66_en.jsonl
-dictionary: ../examples/dicts/en_annot_P66.jsonl
+dictionary: examples/dicts/en_annot_P66.jsonl
 lang: en
 profile: term_recall
 out: outputs/annotation_P66_en_quick.md

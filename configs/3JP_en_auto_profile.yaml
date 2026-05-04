@@ -1,5 +1,5 @@
-text: ../examples/texts/3JP_en.jsonl
-dictionary: ../examples/dicts/en_annot_3JP.jsonl
+text: examples/texts/3JP_en.jsonl
+dictionary: examples/dicts/en_annot_3JP.jsonl
 lang: en
 profile: term_recall
 out: annotation.md

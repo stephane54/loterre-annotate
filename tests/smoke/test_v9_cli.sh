@@ -12,7 +12,7 @@ mkdir -p "$OUTDIR"
 
 echo "== Test 1: génération YAML auto-profile P66 =="
 python "$CLI" \
-  --text ../examples/texts/P66_en.jsonl \
+  --text examples/texts/P66_en.jsonl \
   --dict-id P66_en \
   --auto-profile \
   --yaml-out "$OUTDIR/p66_auto_profile.yaml" \
@@ -21,7 +21,7 @@ python "$CLI" \
 echo
 echo "== Test 2: génération YAML auto-profile 9SD avec profil imposé =="
 python "$CLI" \
-  --text ../examples/texts/9SD_en.jsonl \
+  --text examples/texts/9SD_en.jsonl \
   --dict-id 9SD_en \
   --profile entity_strict \
   --auto-profile \
@@ -30,7 +30,7 @@ python "$CLI" \
 
 echo
 echo "== Test 3: annotation P66 via stdin + --silent =="
-cat ../examples/texts/P66_en.jsonl | python "$CLI" \
+cat examples/texts/P66_en.jsonl | python "$CLI" \
   --dict-id P66_en \
   --silent \
   > "$OUTDIR/p66_stdin_silent.json"
@@ -38,7 +38,7 @@ cat ../examples/texts/P66_en.jsonl | python "$CLI" \
 echo
 echo "== Test 4: annotation P66 via fichier + --api =="
 python "$CLI" \
-  --text ../examples/texts/P66_en.jsonl \
+  --text examples/texts/P66_en.jsonl \
   --dict-id P66_en \
   --api \
   > "$OUTDIR/p66_api.json"
@@ -46,14 +46,14 @@ python "$CLI" \
 echo
 echo "== Test 5: annotation 9SD via fichier =="
 python "$CLI" \
-  --text ../examples/texts/9SD_en.jsonl \
+  --text examples/texts/9SD_en.jsonl \
   --dict-id 9SD_en \
   --out "$OUTDIR/annotation_9SD_en.md" \
   --report "$OUTDIR/report_9SD_en.md"
 
 echo
 echo "== Test 6: annotation 9SD via stdin + --silent =="
-cat ../examples/texts/9SD_en.jsonl | python "$CLI" \
+cat examples/texts/9SD_en.jsonl | python "$CLI" \
   --dict-id 9SD_en \
   --silent \
   > "$OUTDIR/9sd_stdin_silent.json"

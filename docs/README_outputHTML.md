@@ -30,13 +30,13 @@ python src/loterre_html_renderer.py render   --input predictions/P66_en.json   -
 ## Usage 2 — batch complet
 
 ```bash
-python src/loterre_html_renderer.py batch   --cli ./src/loterre_cli.py   --text-root ../examples/texts   --outdir ./html_outputs
+python src/loterre_html_renderer.py batch   --cli ./src/loterre_cli.py   --text-root examples/texts   --outdir ./html_outputs
 ```
 
 Ou :
 
 ```bash
-./tests/smoke/render_html_annotation.sh   ./src/loterre_cli.py   ../examples/texts   ./html_outputs
+./tests/smoke/render_html_annotation.sh   ./src/loterre_cli.py   examples/texts   ./html_outputs
 ```
 
 ## Sorties
@@ -64,7 +64,7 @@ CODE.jsonl
 ## Personnaliser les listes
 
 ```bash
-python src/loterre_html_renderer.py batch   --cli ./src/loterre_cli.py   --text-root ../examples/texts   --outdir ./html_outputs   --en-codes P66,9SD,QX8   --fr-codes P66,QX8
+python src/loterre_html_renderer.py batch   --cli ./src/loterre_cli.py   --text-root examples/texts   --outdir ./html_outputs   --en-codes P66,9SD,QX8   --fr-codes P66,QX8
 ```
 
 
@@ -101,7 +101,7 @@ P66_fr 9SD_fr 8HQ_fr B9M_fr 27X_fr BVM_fr QX8_fr
 ## Usage
 
 ```bash
-./tests/smoke/render_html_annotation.sh   ./src/loterre_cli.py   ../examples/texts   ./html_outputs   ./src/loterre_html_renderer.py
+./tests/smoke/render_html_annotation.sh   ./src/loterre_cli.py   examples/texts   ./html_outputs   ./src/loterre_html_renderer.py
 ```
 
 ## Sorties
@@ -133,5 +133,5 @@ CODE.json
 ## Modifier la base des liens Loterre
 
 ```bash
-BASE_URL="https://www.loterre.fr/ark:/" bash scripts/render_html_annotation.sh ./src/loterre_cli.py ../examples/texts ./html_outputs ./src/loterre_html_renderer.py
+BASE_URL="https://www.loterre.fr/ark:/" bash scripts/render_html_annotation.sh ./src/loterre_cli.py examples/texts ./html_outputs ./src/loterre_html_renderer.py
 ```

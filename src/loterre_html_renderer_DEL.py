@@ -141,7 +141,7 @@ def main():
     r = sub.add_parser("render")
     r.add_argument("--input", required=True); r.add_argument("--out", required=True); r.add_argument("--title", default="Annotation Loterre"); r.add_argument("--base-url", default="https://www.loterre.fr/ark:/")
     b = sub.add_parser("batch")
-    b.add_argument("--cli", default="./src/loterre_cli.py"); b.add_argument("--text-root", default="../examples/texts"); b.add_argument("--outdir", default="./html_outputs")
+    b.add_argument("--cli", default="./src/loterre_cli.py"); b.add_argument("--text-root", default="examples/texts"); b.add_argument("--outdir", default="./html_outputs")
     b.add_argument("--base-url", default="https://www.loterre.fr/ark:/"); b.add_argument("--en-codes", default=",".join(DEFAULT_EN_CODES)); b.add_argument("--fr-codes", default=",".join(DEFAULT_FR_CODES))
     b.add_argument("--engine-arg", action="append", default=[])
     p.add_argument("--input"); p.add_argument("--out"); p.add_argument("--title", default="Annotation Loterre"); p.add_argument("--base-url", default="https://www.loterre.fr/ark:/")
