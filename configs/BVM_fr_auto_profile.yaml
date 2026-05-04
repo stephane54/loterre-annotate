@@ -1,5 +1,5 @@
-text: ../examples/texts/BVM_fr.jsonl
-dictionary: ../examples/dicts/fr_annot_BVM.jsonl
+text: examples/texts/BVM_fr.jsonl
+dictionary: examples/dicts/fr_annot_BVM.jsonl
 lang: fr
 profile: term_recall
 out: annotation.md

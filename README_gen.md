@@ -82,7 +82,7 @@ NB : A lancer depuis REPO_ROOT
 
 ### 1. Générer les configurations
 
-bash scripts/profiling/run_profile_generation.sh   ./src/loterre_cli.py   P66_en   ../examples/texts/P66_en.jsonl   ./profile_outputs  
+bash scripts/profiling/run_profile_generation.sh   ./src/loterre_cli.py   P66_en   examples/texts/P66_en.jsonl   ./profile_outputs  
 
 
 Toutes les configs :
@@ -100,7 +100,7 @@ Toutes les configs :
 avec registry.yaml : 
 
 ```bash
- python scripts/prediction/generate_gold_from_predictions.py   --engine ./src/loterre_cli.py --text-root ../examples/texts
+ python scripts/prediction/generate_gold_from_predictions.py   --engine ./src/loterre_cli.py --text-root examples/texts
 ```
 
    Resultats : generation des fichiers prediction ex: predictions/*_pred.json 

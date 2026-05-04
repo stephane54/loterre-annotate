@@ -13,7 +13,7 @@ mkdir -p "$OUTDIR"
 for code in P66 9SD 8HQ B9M 27X BVM QX8 3JP JVR; do
 echo "== Auto-profile en ${code} =="
   python "$CLI" \
-    --text ../examples/texts/${code}_en.jsonl \
+    --text examples/texts/${code}_en.jsonl \
     --dict-id  ${code}_en \
     --auto-profile \
     --yaml-out "$OUTDIR/p66_en.yaml" \
@@ -24,7 +24,7 @@ echo
 for code in P66 9SD 8HQ B9M 27X BVM QX8; do
 echo "== Auto-profile fr ${code} =="
   python "$CLI" \
-    --text ../examples/texts/${code}_fr.jsonl \
+    --text examples/texts/${code}_fr.jsonl \
     --dict-id  ${code}_en \
     --auto-profile \
     --yaml-out "$OUTDIR/p66_fr.yaml" \

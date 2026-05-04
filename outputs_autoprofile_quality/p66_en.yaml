@@ -1,5 +1,5 @@
-text: ../examples/texts/JVR_en.jsonl
-dictionary: ../examples/dicts/en_annot_JVR.jsonl
+text: examples/texts/JVR_en.jsonl
+dictionary: examples/dicts/en_annot_JVR.jsonl
 lang: en
 profile: term_recall
 out: annotation.md

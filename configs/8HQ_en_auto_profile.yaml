@@ -1,5 +1,5 @@
-text: ../examples/texts/8HQ_en.jsonl
-dictionary: ../examples/dicts/en_annot_8HQ.jsonl
+text: examples/texts/8HQ_en.jsonl
+dictionary: examples/dicts/en_annot_8HQ.jsonl
 lang: en
 profile: term_recall
 out: annotation.md

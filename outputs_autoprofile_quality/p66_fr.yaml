@@ -1,5 +1,5 @@
-text: ../examples/texts/QX8_fr.jsonl
-dictionary: ../examples/dicts/en_annot_QX8.jsonl
+text: examples/texts/QX8_fr.jsonl
+dictionary: examples/dicts/en_annot_QX8.jsonl
 lang: en
 profile: term_recall
 out: annotation.md
