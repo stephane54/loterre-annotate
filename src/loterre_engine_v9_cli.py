@@ -86,6 +86,7 @@ QUALITY_DEFAULTS: Dict[str, Any] = {
     "function_context_penalty": 0.20,
     "lexical_context_bonus": 0.05,
     "exact_pos_bonus": 0.05,
+    "single_token_min_score": 0.75,
 }
 
 @dataclass
@@ -307,6 +308,7 @@ def suggest_quality(stats: Dict[str, Any], profile_name: str) -> Dict[str, Any]:
         quality["single_token_penalty"] = 0.20
         quality["case_sensitive_entities"] = True
         quality["context_guard"] = True
+        quality["single_token_min_score"] = 0.80
     elif profile_name == "term_balanced":
         quality["strict_stopwords"] = True
         quality["require_pos_match"] = True
@@ -314,6 +316,7 @@ def suggest_quality(stats: Dict[str, Any], profile_name: str) -> Dict[str, Any]:
         quality["single_token_penalty"] = 0.15
         quality["case_sensitive_entities"] = True
         quality["context_guard"] = True
+        quality["single_token_min_score"] = 0.75
     elif profile_name == "term_recall":
         quality["strict_stopwords"] = True
         quality["require_pos_match"] = False
@@ -321,6 +324,7 @@ def suggest_quality(stats: Dict[str, Any], profile_name: str) -> Dict[str, Any]:
         quality["single_token_penalty"] = 0.12
         quality["case_sensitive_entities"] = True
         quality["context_guard"] = True
+        quality["single_token_min_score"] = 0.70
 
     if stats["ratio_mono"] >= 0.45:
         quality["penalize_single_token"] = True
@@ -572,7 +576,47 @@ def match_document(doc, profile: ResourceProfile, indexes):
         if profile.params["pattern_priority"]:
             patt = [m for m in matches if m["rule"] == "pattern"]
             if patt:
-                return patt + match_surface_upper(doc, upper_single_entries)
+                prioritized = list(patt)
+                prioritized.extend(match_surface_upper(doc, upper_single_entries))
+                pattern_spans = [(m["start"], m["end"]) for m in patt]
+
+                def non_overlapping_with_pattern(candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+                    out = []
+                    for cand in candidates:
+                        overlaps_pattern = any(
+                            not (cand["end"] <= ps or cand["start"] >= pe)
+                            for ps, pe in pattern_spans
+                        )
+                        if not overlaps_pattern:
+                            out.append(cand)
+                    return out
+
+                if profile.params["use_surface"] and profile.params["allow_surface_fallback"]:
+                    surface_view = build_flat_view(doc, "text", profile)
+                    surface_matches = match_trie(
+                        surface_view,
+                        surface_trie,
+                        doc,
+                        "surface_structural",
+                        0.85,
+                        0.75,
+                        profile.params["allow_single_token_fallback"],
+                    )
+                    prioritized.extend(non_overlapping_with_pattern(surface_matches))
+
+                if profile.params["use_lemma"]:
+                    lemma_view = build_flat_view(doc, "lemma", profile)
+                    lemma_matches = match_trie(
+                        lemma_view,
+                        lemma_trie,
+                        doc,
+                        "lemma_structural",
+                        0.82,
+                        0.72,
+                        profile.params["allow_single_token_fallback"],
+                    )
+                    prioritized.extend(non_overlapping_with_pattern(lemma_matches))
+                return prioritized
 
     if profile.params["single_token_uppercase_exact"]:
         matches.extend(match_surface_upper(doc, upper_single_entries))
@@ -679,7 +723,19 @@ def apply_quality_filters(doc, matches: List[Dict[str, Any]], quality: Dict[str,
         if span is None:
             continue
 
-        if len(span) == 1 and scored.get("rule") != "pattern" and scored["score"] < 0.75:
+        profile_name = quality.get("profile_name")
+        profile_single_thresholds = {
+            "entity_strict": 0.80,
+            "term_balanced": 0.75,
+            "term_recall": 0.70,
+        }
+        min_single = float(
+            quality.get(
+                "single_token_min_score",
+                profile_single_thresholds.get(profile_name, 0.75),
+            )
+        )
+        if len(span) == 1 and scored.get("rule") != "pattern" and scored["score"] < min_single:
             continue
 
         out.append(scored)
@@ -688,7 +744,22 @@ def apply_quality_filters(doc, matches: List[Dict[str, Any]], quality: Dict[str,
 
 def dedupe(matches: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """Keep the best-scoring non-overlapping matches."""
-    ordered = sorted(matches, key=lambda m: (-m["score"], -(m["end"] - m["start"]), m["start"]))
+    rule_rank = {
+        "pattern": 3,
+        "surface_upper_exact": 2,
+        "surface_structural": 1,
+        "lemma_pattern_seq": 1,
+        "lemma_structural": 0,
+    }
+    ordered = sorted(
+        matches,
+        key=lambda m: (
+            -m["score"],
+            -rule_rank.get(m.get("rule", ""), -1),
+            -(m["end"] - m["start"]),
+            m["start"],
+        ),
+    )
     final = []
     for m in ordered:
         overlaps = any(not (m["end"] <= f["start"] or m["start"] >= f["end"]) for f in final)
@@ -933,6 +1004,7 @@ def main():
         raise ValueError("Missing profile for annotation run. Provide --profile or 'profile' in config. Use --auto-profile only to generate a YAML proposal.")
 
     profile = merge_profile(effective["profile"], profile_overrides)
+    quality["profile_name"] = profile.name
     logging.info("Using profile %s", profile.name)
     stats = None
 
