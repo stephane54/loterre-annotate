@@ -6,11 +6,9 @@ env/
 outputs/
 eval_outputs/
 profile_outputs/
+html_*
 predictions/*.json
 *.log
-dicts/
-texts/
-examples/
 *.zip
 .DS_Store
 .idea/
