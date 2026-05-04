@@ -13,7 +13,6 @@ from typing import Optional
 
 
 def load_jsonl(path: str | Path):
-    """Read JSONL objects from a file."""
     with Path(path).open(encoding="utf-8") as f:
         for line in f:
             if line.strip():
@@ -21,13 +20,11 @@ def load_jsonl(path: str | Path):
 
 
 def normalize(s: str, case_sensitive: bool = False) -> str:
-    """Normalize a surface form for fast matching."""
     s = " ".join(str(s or "").split())
     return s if case_sensitive else s.lower()
 
 
 def fingerprint(path: str | Path) -> str:
-    """Compute a cache key from dictionary path, size and mtime."""
     p = Path(path)
     st = p.stat()
     raw = f"{p.resolve()}::{st.st_mtime_ns}::{st.st_size}"
@@ -35,7 +32,6 @@ def fingerprint(path: str | Path) -> str:
 
 
 def load_dictionary_entries(dict_path: str | Path):
-    """Load Loterre-style dictionary JSONL entries."""
     entries = []
     for obj in load_jsonl(dict_path):
         label = obj.get("label") or obj.get("pref") or obj.get("prefLabel") or ""
@@ -50,17 +46,18 @@ def load_dictionary_entries(dict_path: str | Path):
             elif isinstance(value, str):
                 variants.append(value)
 
-        entries.append({
-            "label": label,
-            "pref": pref,
-            "id": concept_id,
-            "variants": [x for x in variants if x],
-        })
+        variants = [x for x in variants if x]
+        if variants:
+            entries.append({
+                "label": label,
+                "pref": pref,
+                "id": concept_id,
+                "variants": variants,
+            })
     return entries
 
 
 def build_index(entries, case_sensitive: bool = False):
-    """Build a fast surface-form index."""
     index = {}
     for entry in entries:
         for form in entry["variants"]:
@@ -81,7 +78,6 @@ def load_or_build_index(
     cache_dir: str | Path = ".loterre_cache",
     case_sensitive: bool = False,
 ):
-    """Load a cached fast index or build it."""
     dict_path = Path(dict_path)
     cache_dir = Path(cache_dir)
     cache_dir.mkdir(parents=True, exist_ok=True)
@@ -103,7 +99,6 @@ def load_or_build_index(
 
 
 def compile_regex(index, max_terms: Optional[int] = None):
-    """Compile one regex for all indexed terms."""
     terms = sorted(index.keys(), key=len, reverse=True)
     if max_terms:
         terms = terms[:max_terms]
@@ -116,7 +111,6 @@ def compile_regex(index, max_terms: Optional[int] = None):
 
 
 def read_docs(text_path: str | Path | None):
-    """Read input documents from JSONL file or stdin."""
     rows = []
     if text_path:
         iterator = load_jsonl(text_path)
@@ -132,7 +126,6 @@ def read_docs(text_path: str | Path | None):
 
 
 def fast_match(text: str, index, regex, case_sensitive: bool = False):
-    """Run fast exact matching on one text."""
     search = text if case_sensitive else text.lower()
     matches = []
 
@@ -157,27 +150,21 @@ def fast_match(text: str, index, regex, case_sensitive: bool = False):
 
 
 def dedupe(matches):
-    """Keep longest/highest-score non-overlapping matches."""
     matches = sorted(
         matches,
         key=lambda m: (m["start"], -(m["end"] - m["start"]), -float(m.get("score", 0))),
     )
-
     out = []
     last_end = -1
-
     for match in matches:
         if match["start"] >= last_end:
             out.append(match)
             last_end = match["end"]
-
     return out
 
 
 def annotate_docs_fast(docs, index, regex, case_sensitive: bool = False):
-    """Annotate documents with the fast exact path."""
     results = []
-
     for doc in docs:
         text = doc.get("value", "")
         matches = dedupe(fast_match(text, index, regex, case_sensitive=case_sensitive))
@@ -186,7 +173,6 @@ def annotate_docs_fast(docs, index, regex, case_sensitive: bool = False):
             "text": text,
             "matches": matches,
         })
-
     return results
 
 
@@ -197,34 +183,22 @@ def run_fast_path(
     case_sensitive: bool = False,
     max_regex_terms: Optional[int] = None,
 ):
-    """Run the fast path without reparsing CLI arguments.
-
-    This is the function that `loterre_cli.py` should call.
-    """
     t0 = time.perf_counter()
-
-    index = load_or_build_index(
-        dict_path=dict_path,
-        cache_dir=cache_dir,
-        case_sensitive=case_sensitive,
-    )
+    index = load_or_build_index(dict_path, cache_dir, case_sensitive)
     regex = compile_regex(index, max_terms=max_regex_terms)
     docs = read_docs(text_path)
-    results = annotate_docs_fast(docs, index, regex, case_sensitive=case_sensitive)
+    results = annotate_docs_fast(docs, index, regex, case_sensitive)
 
     return {
         "mode": "fast_exact",
         "docs": len(results),
-        "matches": sum(len(row["matches"]) for row in results),
-        "timings": {
-            "total_s": round(time.perf_counter() - t0, 4),
-        },
+        "matches": sum(len(row.get("matches", [])) for row in results),
+        "timings": {"fast_total_s": round(time.perf_counter() - t0, 4)},
         "results": results,
     }
 
 
 def main():
-    """Standalone CLI for the fast path."""
     parser = argparse.ArgumentParser(description="Loterre fast exact path")
     parser.add_argument("--text")
     parser.add_argument("--dict", required=True)
@@ -232,7 +206,6 @@ def main():
     parser.add_argument("--cache-dir", default=".loterre_cache")
     parser.add_argument("--case-sensitive", action="store_true")
     parser.add_argument("--max-regex-terms", type=int)
-
     args = parser.parse_args()
 
     payload = run_fast_path(
@@ -242,10 +215,9 @@ def main():
         case_sensitive=args.case_sensitive,
         max_regex_terms=args.max_regex_terms,
     )
-
     output = json.dumps(payload, ensure_ascii=False, indent=2)
-
     if args.out:
+        Path(args.out).parent.mkdir(parents=True, exist_ok=True)
         Path(args.out).write_text(output, encoding="utf-8")
     else:
         print(output)
