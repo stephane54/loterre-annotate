@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import subprocess
 import sys
@@ -64,7 +65,7 @@ def make_jobs_from_registry(registry: Dict[str, dict], registry_path: Path, text
 
         dict_path = Path(dict_path_raw)
         if not dict_path.is_absolute():
-            dict_path = (registry_dir / "../" / dict_path).resolve()
+            dict_path = Path(os.path.normpath(str(registry_dir / ".." / dict_path)))
 
         lang = spec.get("lang", "en")
         profile = spec.get("profile", "term_recall")
@@ -84,8 +85,8 @@ def make_jobs_from_registry(registry: Dict[str, dict], registry_path: Path, text
         jobs.append({
             "dict_id": dict_id,
             "status": "ready",
-            "text": str(text_path.resolve()),
-            "dict": str(dict_path.resolve()),
+            "text": str(text_path),
+            "dict": str(dict_path),
             "lang": lang,
             "profile": profile,
         })
@@ -170,10 +171,10 @@ def main() -> None:
     parser.add_argument("--dry-run", action="store_true", help="Only generate the job list, do not run the engine")
     args = parser.parse_args()
 
-    registry_path = Path(args.registry).resolve()
-    text_root = Path(args.text_root).resolve()
-    outdir = Path(args.outdir).resolve()
-    engine = Path(args.engine).resolve()
+    registry_path = Path(args.registry)
+    text_root = Path(args.text_root)
+    outdir = Path(args.outdir)
+    engine = Path(args.engine)
     outdir.mkdir(parents=True, exist_ok=True)
 
     jobs = make_jobs_from_registry(
