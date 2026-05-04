@@ -7,6 +7,8 @@ outputs/
 eval_outputs/
 profile_outputs/
 html_*
+.loterre_cache/
+report.md
 predictions/*.json
 *.log
 *.zip
