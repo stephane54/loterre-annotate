@@ -4,6 +4,8 @@ set -euo pipefail
 CLI="${1:-./src/loterre_cli.py}"
 OUTDIR="${2:-./configs}"
 
+mkdir -p "$OUTDIR"
+
 
 for code in P66 9SD 8HQ B9M 27X BVM QX8 3JP JVR; do
   echo "== Génération auto-profile pour $code (en) =="
