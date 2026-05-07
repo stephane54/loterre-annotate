@@ -33,7 +33,7 @@ RENDERER="${4:-./src/loterre_html_renderer.py}"
 BASE_URL="${BASE_URL:-https://www.loterre.fr/ark:/}"
 
 #EN_CODES=(P66 9SD 8HQ B9M 27X BVM QX8 3JP JVR)
-EN_CODES=(JVR)
+EN_CODES=(27X P66 9SD)
 #FR_CODES=(P66 9SD 8HQ B9M 27X BVM QX8)
 
 mkdir -p "$OUTDIR/json" "$OUTDIR/html"
