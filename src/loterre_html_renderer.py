@@ -3,11 +3,17 @@ import argparse, html, json, subprocess, sys
 from pathlib import Path
 
 def concept_url(m, base_url):
-    uri = str(m.get("uri") or "")
-    if uri.startswith(("http://", "https://")):
-        return uri
+    for key in ("uri", "id", "ark"):
+        value = str(m.get(key) or "").strip()
+        if value.startswith(("http://", "https://")):
+            return value
+
     cid = str(m.get("id") or m.get("ark") or m.get("uri") or "").strip()
-    return "#" if not cid else base_url.rstrip("/") + "/" + cid
+    if not cid:
+        return "#"
+    if cid.startswith("ark:/"):
+        return "https://www.loterre.fr/" + cid
+    return base_url.rstrip("/") + "/" + cid.lstrip("/")
 
 def ann_key(m):
     start = "" if m.get("start") is None else str(m.get("start"))
