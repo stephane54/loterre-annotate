@@ -57,6 +57,7 @@ run_one() {
 
     python "$RENDERER" render \
       --input "$json_file" \
+      --gold "$text_file" \
       --out "$html_file" \
       --title "Annotation Loterre — ${dict_id}" \
       --base-url "$BASE_URL"
