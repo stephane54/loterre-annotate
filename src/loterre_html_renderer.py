@@ -3,11 +3,17 @@ import argparse, html, json, subprocess, sys
 from pathlib import Path
 
 def concept_url(m, base_url):
-    uri = str(m.get("uri") or "")
-    if uri.startswith(("http://", "https://")):
-        return uri
+    for key in ("uri", "id", "ark"):
+        value = str(m.get(key) or "").strip()
+        if value.startswith(("http://", "https://")):
+            return value
+
     cid = str(m.get("id") or m.get("ark") or m.get("uri") or "").strip()
-    return "#" if not cid else base_url.rstrip("/") + "/" + cid
+    if not cid:
+        return "#"
+    if cid.startswith("ark:/"):
+        return "https://www.loterre.fr/" + cid
+    return base_url.rstrip("/") + "/" + cid.lstrip("/")
 
 def ann_key(m):
     start = "" if m.get("start") is None else str(m.get("start"))
@@ -23,8 +29,23 @@ def ann_span(m, text):
     try:
         s, e = int(m["start"]), int(m["end"])
     except Exception:
+        s, e = None, None
+    if s is not None and e is not None and 0 <= s < e <= len(text):
+        return (s, e)
+
+    # Fallback when gold/predicted rows do not carry character offsets:
+    # try to locate surface form in source text.
+    needle = str(m.get("found") or m.get("label") or m.get("pref") or "").strip()
+    if not needle:
         return None
-    return (s, e) if 0 <= s < e <= len(text) else None
+    # Known limitation: when the same surface appears multiple times without offsets,
+    # we keep the first occurrence found in the source text.
+    lo_text = text.lower()
+    lo_needle = needle.lower()
+    idx = lo_text.find(lo_needle)
+    if idx < 0:
+        return None
+    return (idx, idx + len(needle))
 
 def read_json_or_jsonl(path):
     p = Path(path)
