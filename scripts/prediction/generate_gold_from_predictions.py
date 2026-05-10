@@ -160,6 +160,9 @@ def run_job(engine: Path, job: dict, outdir: Path, timeout: int) -> dict:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate predictions and bootstrap gold files from configs/registry.yaml")
+    # This script runs the engine and then generates gold JSONL.
+    # If you already have prediction files and only need conversion,
+    # use scripts/prediction/results_to_expected_jsonl.py.
     parser.add_argument("--engine", required=True, help="Path to loterre_cli.py or loterre_engine_v9_cli.py")
     parser.add_argument("--registry", default="configs/registry.yaml", help="Path to registry.yaml")
     parser.add_argument("--text-root", default="texts", help="Directory containing text JSONL files")
