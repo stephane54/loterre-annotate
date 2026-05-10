@@ -40,7 +40,6 @@ def ann_span(m, text):
         return None
     # Known limitation: when the same surface appears multiple times without offsets,
     # we keep the first occurrence found in the source text.
-
     lo_text = text.lower()
     lo_needle = needle.lower()
     idx = lo_text.find(lo_needle)

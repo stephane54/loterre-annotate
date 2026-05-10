@@ -80,36 +80,54 @@ Tests qualité/contextuels.
 
 NB : A lancer depuis REPO_ROOT
 
-### 1. Générer les configurations
+Prérequis runtime :
+- Python 3 (`python3`)
+- Dépendances installées (`pip install -r requirements.txt`)
+- Modèles spaCy pour EN/FR si vous lancez le moteur complet
+  - ex: `python3 -m spacy download en_core_web_sm`
+  - ex: `python3 -m spacy download fr_core_news_sm`
 
-bash scripts/profiling/run_profile_generation.sh   ./src/loterre_cli.py   P66_en   examples/texts/P66_en.jsonl   ./profile_outputs  
+### 1. Générer les configurations (auto-profile)
+
+```bash
+bash scripts/profiling/run_profile_generation.sh ./src/loterre_cli.py P66_en examples/gold_1/P66_en.jsonl ./profile_outputs
+```
 
 
 Toutes les configs :
 ```bash
-   ./scripts/profiling/run_profile_generation.sh
+./scripts/profiling/run_profile_generation.sh
 ```
-   Resultats : generation des fichiers profile *_auto_profile.json dans config
+Résultat : génération des fichiers `*_auto_profile.json` dans `configs/`.
 
 ### 2. Générer les prédictions/golds
 
- avec manifest : 
+Avec manifest :
  ```bash
- python scripts/prediction/generate_gold_from_predictions_v0.py   --engine ./src/loterre
+python3 scripts/prediction/generate_gold_from_predictions_v0.py --engine ./src/loterre_cli.py
 ```
 avec registry.yaml : 
 
 ```bash
- python scripts/prediction/generate_gold_from_predictions.py   --engine ./src/loterre_cli.py --text-root examples/texts
+python3 scripts/prediction/generate_gold_from_predictions.py --engine ./src/loterre_cli.py --text-root examples/gold_1
 ```
 
-   Resultats : generation des fichiers prediction ex: predictions/*_pred.json 
+Résultat : génération de fichiers de prédiction et de gold bootstrap.
+
+Conversion simple de résultats déjà produits vers `expected_matches` :
+```bash
+python3 scripts/prediction/results_to_expected_jsonl.py --input outputs_tests_v8_1_cli/p66_api.json --out /tmp/p66_expected.jsonl
+```
+Batch sur un dossier :
+```bash
+bash scripts/prediction/bulk_results_to_expected.sh outputs_tests_v8_1_cli /tmp/expected_bulk
+```
 
 
 ### 3. Évaluer en batch
 
 ```bash
-./scripts/evaluation/run_generated_eval.sh   ./scripts/evaluation/evaluate_json.py   ./eval_outputs
+./scripts/evaluation/run_generated_eval.sh ./scripts/evaluation/evaluate_json.py ./eval_outputs
 ```
 
 ### 4. Benchmarker deux versions [NON TESTE]
@@ -125,6 +143,7 @@ avec registry.yaml :
 ./tests/smoke/test_annotate_cli.sh
 ./tests/profiling/test_auto_profile_quality.sh
 ./tests/quality/test_v9_contextual.sh
+./tests/smoke/test_p66_non_regression.sh
 ```
 
 ## Différence scripts / tests
