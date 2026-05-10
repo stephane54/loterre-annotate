@@ -23,8 +23,21 @@ def ann_span(m, text):
     try:
         s, e = int(m["start"]), int(m["end"])
     except Exception:
+        s, e = None, None
+    if s is not None and e is not None and 0 <= s < e <= len(text):
+        return (s, e)
+
+    # Fallback when gold/predicted rows do not carry character offsets:
+    # try to locate surface form in source text.
+    needle = str(m.get("found") or m.get("label") or m.get("pref") or "").strip()
+    if not needle:
         return None
-    return (s, e) if 0 <= s < e <= len(text) else None
+    lo_text = text.lower()
+    lo_needle = needle.lower()
+    idx = lo_text.find(lo_needle)
+    if idx < 0:
+        return None
+    return (idx, idx + len(needle))
 
 def read_json_or_jsonl(path):
     p = Path(path)
