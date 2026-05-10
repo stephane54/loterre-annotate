@@ -50,13 +50,14 @@ run_one() {
   local json_file="$OUTDIR/json/${dict_id}.json"
   local html_file="$OUTDIR/html/${dict_id}.html"
 
-  if python "$CLI" \
+  if python3 "$CLI" \
       --dict-id "$dict_id" \
       --text "$text_file" \
       --silent > "$json_file"; then
 
-    python "$RENDERER" render \
+    python3 "$RENDERER" render \
       --input "$json_file" \
+      --gold "$text_file" \
       --out "$html_file" \
       --title "Annotation Loterre — ${dict_id}" \
       --base-url "$BASE_URL"
