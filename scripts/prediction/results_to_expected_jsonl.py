@@ -79,6 +79,7 @@ def main() -> None:
     # Use this script when predictions already exist and you only need conversion.
     # If you need to execute the engine and generate predictions + gold in one step,
     # use scripts/prediction/generate_gold_from_predictions.py instead.
+
     p.add_argument("--input", required=True, help="Prediction JSON or JSONL path (with results[].matches).")
     p.add_argument("--out", required=True, help="Output JSONL path containing expected_matches.")
     args = p.parse_args()
