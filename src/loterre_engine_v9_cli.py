@@ -151,7 +151,7 @@ def load_model(lang: str):
     }[lang]
     for name in candidates:
         try:
-            return spacy.load(name)
+            return spacy.load(name, disable=['parser', 'ner'])
         except Exception:
             pass
     raise RuntimeError(f"No spaCy model installed for {lang}: {candidates}")
