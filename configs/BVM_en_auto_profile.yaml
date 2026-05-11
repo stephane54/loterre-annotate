@@ -1,7 +1,7 @@
-text: examples/texts/BVM_en.jsonl
-dictionary: examples/dicts/en_annot_BVM.jsonl
+text: /home/schneist/app/loterre_annotate/loterre-v9/examples/texts/BVM_en.jsonl
+dictionary: /home/schneist/app/loterre_annotate/loterre-v9/examples/dicts/en_annot_BVM.jsonl
 lang: en
-profile: entity_strict
+profile: term_recall
 out: annotation.md
 report: report.md
 profile_overrides:
@@ -32,3 +32,4 @@ quality:
   function_context_penalty: 0.2
   lexical_context_bonus: 0.05
   exact_pos_bonus: 0.05
+  single_token_min_score: 0.7

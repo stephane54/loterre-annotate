@@ -129,8 +129,8 @@ def run_job(engine: Path, job: dict, outdir: Path, timeout: int) -> dict:
     gold_dir.mkdir(parents=True, exist_ok=True)
 
     dict_id = job["dict_id"]
-    pred_path = pred_dir / f"{dict_id}__{safe_name(job['text'])}__{safe_name(job['dict'])}.pred.json"
-    gold_path = gold_dir / f"gold_{dict_id}__{safe_name(job['text'])}__{safe_name(job['dict'])}.jsonl"
+    pred_path = pred_dir / f"{dict_id}.pred.json"
+    gold_path = gold_dir / f"gold_{dict_id}.jsonl"
 
     cmd = [
         sys.executable, str(engine),

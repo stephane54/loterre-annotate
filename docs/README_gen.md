@@ -90,7 +90,7 @@ Prérequis runtime :
 ### 1. Générer les configurations (auto-profile)
 
 ```bash
-bash scripts/profiling/run_profile_generation.sh ./src/loterre_cli.py P66_en examples/gold_1/P66_en.jsonl ./profile_outputs
+bash scripts/profiling/run_profile_generation.sh ./src/loterre_cli.py P66_en examples/texts/P66_en.jsonl ./profile_outputs
 ```
 
 
@@ -109,7 +109,7 @@ python3 scripts/prediction/generate_gold_from_predictions_v0.py --engine ./src/l
 avec registry.yaml : 
 
 ```bash
-python3 scripts/prediction/generate_gold_from_predictions.py --engine ./src/loterre_cli.py --text-root examples/gold_1
+python3 scripts/prediction/generate_gold_from_predictions.py --engine ./src/loterre_cli.py --text-root examples/texts
 ```
 
 Résultat : génération de fichiers de prédiction et de gold bootstrap.
@@ -127,7 +127,7 @@ bash scripts/prediction/bulk_results_to_expected.sh outputs_tests_v8_1_cli /tmp/
 ### 3. Évaluer en batch
 
 ```bash
-./scripts/evaluation/run_generated_eval.sh ./scripts/evaluation/evaluate_json.py ./eval_outputs
+./scripts/evaluation/run_generated_eval.sh ./scripts/evaluation/evaluate_json.py ./outputs_eval
 ```
 
 ### 4. Benchmarker deux versions [NON TESTE]

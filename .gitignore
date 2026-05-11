@@ -4,6 +4,7 @@ __pycache__/
 venv/
 env/
 tmp/
+report*
 outputs/
 eval_outputs/
 profile_outputs/

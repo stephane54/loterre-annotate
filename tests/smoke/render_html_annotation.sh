@@ -26,7 +26,7 @@ set -euo pipefail
 #     ./src/loterre_html_renderer.py
 
 CLI="${1:-./src/loterre_cli.py}"
-TEXT_ROOT="${2:-examples/gold_1}"
+TEXT_ROOT="${2:-examples/texts}"
 OUTDIR="${3:-./html_outputs}"
 RENDERER="${4:-./src/loterre_html_renderer.py}"
 
