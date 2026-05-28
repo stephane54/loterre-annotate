@@ -488,7 +488,9 @@ def build_indexes(entries: List[Dict[str, Any]], nlp, profile: ResourceProfile):
     pattern_entries = []
     surface_trie = SeqTrie()
     lemma_trie = SeqTrie()
+    pattern_lemma_trie = SeqTrie()
     upper_single_entries = []
+    seen_pattern_lemma = set()
 
     for idx, entry in enumerate(entries):
         label = entry.get("label", "")
@@ -497,6 +499,16 @@ def build_indexes(entries: List[Dict[str, Any]], nlp, profile: ResourceProfile):
 
         if entry.get("pattern") and profile.params["use_pattern"]:
             pattern_entries.append(entry)
+            if profile.params["use_lemma"]:
+                lemma_seq = pattern_to_lemma_seq(entry["pattern"], profile)
+                if lemma_seq and lemma_seq not in seen_pattern_lemma:
+                    seen_pattern_lemma.add(lemma_seq)
+                    pattern_lemma_trie.add(lemma_seq, {
+                        "seq": lemma_seq,
+                        "label": label,
+                        "pref": pref,
+                        "uri": uri,
+                    })
 
         seen_surface, seen_lemma = set(), set()
         for form in build_surface_forms(entry, profile):
@@ -513,7 +525,7 @@ def build_indexes(entries: List[Dict[str, Any]], nlp, profile: ResourceProfile):
                         seen_lemma.add(seq)
                         lemma_trie.add(seq, {"seq": seq, "entry_idx": idx, "label": label, "pref": pref, "uri": uri})
 
-    return pattern_entries, surface_trie, lemma_trie, upper_single_entries
+    return pattern_entries, surface_trie, lemma_trie, upper_single_entries, pattern_lemma_trie
 
 def match_trie(flat_view: FlatView, trie: SeqTrie, doc, rule_name: str, score_multi: float, score_single: float, allow_single: bool):
     """Match longest indexed sequences against a flattened document view."""
@@ -554,24 +566,19 @@ def match_surface_upper(doc, upper_single_entries):
 
 def match_document(doc, profile: ResourceProfile, indexes):
     """Run the complete matching strategy on one document."""
-    pattern_entries, surface_trie, lemma_trie, upper_single_entries = indexes
+    pattern_entries, surface_trie, lemma_trie, upper_single_entries, pattern_lemma_trie = indexes
     matches = []
+    surface_view = None
+    lemma_view = None
 
     if profile.params["use_pattern"]:
         for entry in pattern_entries:
             matches.extend(match_pattern_entry(doc, entry, profile))
-            if profile.params["use_lemma"]:
-                lemma_seq = pattern_to_lemma_seq(entry["pattern"], profile)
-                if lemma_seq:
-                    trie = SeqTrie()
-                    trie.add(lemma_seq, {
-                        "seq": lemma_seq,
-                        "label": entry.get("label", ""),
-                        "pref": entry.get("pref", entry.get("label", "")),
-                        "uri": entry.get("id", ""),
-                    })
-                    lemma_view = build_flat_view(doc, "lemma", profile)
-                    matches.extend(match_trie(lemma_view, trie, doc, "lemma_pattern_seq", 0.9, 0.9, True))
+
+        if profile.params["use_lemma"] and pattern_lemma_trie is not None:
+            if lemma_view is None:
+                lemma_view = build_flat_view(doc, "lemma", profile)
+            matches.extend(match_trie(lemma_view, pattern_lemma_trie, doc, "lemma_pattern_seq", 0.9, 0.9, True))
 
         if profile.params["pattern_priority"]:
             patt = [m for m in matches if m["rule"] == "pattern"]
@@ -592,7 +599,8 @@ def match_document(doc, profile: ResourceProfile, indexes):
                     return out
 
                 if profile.params["use_surface"] and profile.params["allow_surface_fallback"]:
-                    surface_view = build_flat_view(doc, "text", profile)
+                    if surface_view is None:
+                        surface_view = build_flat_view(doc, "text", profile)
                     surface_matches = match_trie(
                         surface_view,
                         surface_trie,
@@ -605,7 +613,8 @@ def match_document(doc, profile: ResourceProfile, indexes):
                     prioritized.extend(non_overlapping_with_pattern(surface_matches))
 
                 if profile.params["use_lemma"]:
-                    lemma_view = build_flat_view(doc, "lemma", profile)
+                    if lemma_view is None:
+                        lemma_view = build_flat_view(doc, "lemma", profile)
                     lemma_matches = match_trie(
                         lemma_view,
                         lemma_trie,

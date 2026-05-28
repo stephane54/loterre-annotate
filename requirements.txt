@@ -1,2 +1,5 @@
 spacy>=3.7
 pyyaml>=6.0
+click>=8.4.2
+#python -m spacy download en_core_web_sm
+#python -m spacy download fr_core_news_sm
