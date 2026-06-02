@@ -20,19 +20,19 @@ SD9_GOLD="$REPO_ROOT/gold/gold_9SD_en__en_annot_9SD.jsonl"
 EVAL_PY="$REPO_ROOT/scripts/evaluation/evaluate_json.py"
 
 echo "== P66 v8 =="
-python "$CLI_V8" --text "$P66_TEXT" --dict-id P66_en --silent > "$OUTDIR/p66_v8.json"
-python "$EVAL_PY" --gold "$P66_GOLD" --pred "$OUTDIR/p66_v8.json" --out-json "$OUTDIR/p66_v8_eval.json"
+python3 "$CLI_V8" --text "$P66_TEXT" --dict-id P66_en --silent > "$OUTDIR/p66_v8.json"
+python3 "$EVAL_PY" --gold "$P66_GOLD" --pred "$OUTDIR/p66_v8.json" --out-json "$OUTDIR/p66_v8_eval.json"
 
 echo "== P66 v8.1 =="
-python "$CLI_V81" --text "$P66_TEXT" --dict-id P66_en --silent > "$OUTDIR/p66_v81.json"
-python "$EVAL_PY" --gold "$P66_GOLD" --pred "$OUTDIR/p66_v81.json" --out-json "$OUTDIR/p66_v81_eval.json"
+python3 "$CLI_V81" --text "$P66_TEXT" --dict-id P66_en --silent > "$OUTDIR/p66_v81.json"
+python3 "$EVAL_PY" --gold "$P66_GOLD" --pred "$OUTDIR/p66_v81.json" --out-json "$OUTDIR/p66_v81_eval.json"
 
 echo "== 9SD v8 =="
-python "$CLI_V8" --text "$SD9_TEXT" --dict-id 9SD_en --silent > "$OUTDIR/9sd_v8.json"
-python "$EVAL_PY" --gold "$SD9_GOLD" --pred "$OUTDIR/9sd_v8.json" --out-json "$OUTDIR/9sd_v8_eval.json"
+python3 "$CLI_V8" --text "$SD9_TEXT" --dict-id 9SD_en --silent > "$OUTDIR/9sd_v8.json"
+python3 "$EVAL_PY" --gold "$SD9_GOLD" --pred "$OUTDIR/9sd_v8.json" --out-json "$OUTDIR/9sd_v8_eval.json"
 
 echo "== 9SD v8.1 =="
-python "$CLI_V81" --text "$SD9_TEXT" --dict-id 9SD_en --silent > "$OUTDIR/9sd_v81.json"
-python "$EVAL_PY" --gold "$SD9_GOLD" --pred "$OUTDIR/9sd_v81.json" --out-json "$OUTDIR/9sd_v81_eval.json"
+python3 "$CLI_V81" --text "$SD9_TEXT" --dict-id 9SD_en --silent > "$OUTDIR/9sd_v81.json"
+python3 "$EVAL_PY" --gold "$SD9_GOLD" --pred "$OUTDIR/9sd_v81.json" --out-json "$OUTDIR/9sd_v81_eval.json"
 
 echo "== Done =="

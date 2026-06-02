@@ -13,13 +13,13 @@ mkdir -p "$OUTDIR"
 cd "$REPO_ROOT"
 
 echo "== P66 evaluation =="
-python "$CLI" --text ./examples/texts/P66_en.jsonl --dict-id P66_en --silent > "$OUTDIR/p66_pred.json"
-python "$EVAL_PY" --gold ./gold/gold_P66_en__en_annot_P66.jsonl --pred "$OUTDIR/p66_pred.json" --out-json "$OUTDIR/p66_eval.json"
+python3 "$CLI" --text ./examples/texts/P66_en.jsonl --dict-id P66_en --silent > "$OUTDIR/p66_pred.json"
+python3 "$EVAL_PY" --gold ./gold_cleaned/gold_P66_en.jsonl --pred "$OUTDIR/p66_pred.json" --out-json "$OUTDIR/p66_eval.json"
 
 echo
 echo "== 9SD evaluation =="
-python "$CLI" --text ./examples/texts/9SD_en.jsonl --dict-id 9SD_en --silent > "$OUTDIR/9sd_pred.json"
-python "$EVAL_PY" --gold ./gold/gold_9SD_en__en_annot_9SD.jsonl --pred "$OUTDIR/9sd_pred.json" --out-json "$OUTDIR/9sd_eval.json"
+python3 "$CLI" --text ./examples/texts/9SD_en.jsonl --dict-id 9SD_en --silent > "$OUTDIR/9sd_pred.json"
+python3 "$EVAL_PY" --gold ./gold_cleaned/gold_9SD_en.jsonl --pred "$OUTDIR/9sd_pred.json" --out-json "$OUTDIR/9sd_eval.json"
 
 echo
 echo "Evaluation outputs written to $OUTDIR"

@@ -3,43 +3,62 @@ import argparse, html, json, subprocess, sys
 from pathlib import Path
 
 def concept_url(m, base_url):
-    for key in ("uri", "id", "ark"):
-        value = str(m.get(key) or "").strip()
-        if value.startswith(("http://", "https://")):
-            return value
+    """Return a human-browsable URL for the concept.
 
-    cid = str(m.get("id") or m.get("ark") or m.get("uri") or "").strip()
-    if not cid:
+    The match may carry the identifier as "uri", "id" or "ark".
+    When the stored value is a data-namespace URI (e.g. http://data.loterre.fr/)
+    we extract the ark:/ fragment and reconstruct the URL from base_url so the
+    link lands on the human-readable page, not the RDF endpoint.
+    """
+    raw = ""
+    for key in ("uri", "id", "ark"):
+        v = str(m.get(key) or "").strip()
+        if v:
+            raw = v
+            break
+    if not raw:
         return "#"
-    if cid.startswith("ark:/"):
-        return "https://www.loterre.fr/" + cid
-    return base_url.rstrip("/") + "/" + cid.lstrip("/")
+    # Extract the ark:/ tail and rebuild from base_url.
+    # This normalises any domain (data.loterre.fr, www.loterre.fr, …) to base_url.
+    if "ark:/" in raw:
+        ark_tail = raw.split("ark:/", 1)[1]          # "67375/P66-…"
+        return base_url.rstrip("/") + "/" + ark_tail
+    if raw.startswith(("http://", "https://")):
+        return raw                                    # non-ARK full URI: keep as-is
+    if raw.startswith("ark:/"):
+        return base_url.rstrip("/") + "/" + raw[len("ark:/"):]
+    return base_url.rstrip("/") + "/" + raw.lstrip("/")
 
 def ann_key(m):
-    start = "" if m.get("start") is None else str(m.get("start"))
-    end = "" if m.get("end") is None else str(m.get("end"))
-    concept = str(m.get("id") or m.get("ark") or m.get("uri") or m.get("pref") or "").strip().lower()
-    found = str(m.get("found") or m.get("label") or "").strip().lower()
-    pref = str(m.get("pref") or m.get("label") or "").strip().lower()
-    if start and end:
-        return ("span", start, end, concept or pref or found)
-    return ("surface", found, pref, concept)
+    """Comparison key based on surface form (preferred label) only.
+
+    Position-independent so that gold annotations with stale character offsets
+    (e.g. generated from a slightly different version of the text) still match
+    the engine predictions for the same concept.
+    """
+    pref = str(m.get("pref") or m.get("label") or m.get("found") or "").strip().lower()
+    return pref
 
 def ann_span(m, text):
+    """Return the character span (start, end) for a match in *text*.
+
+    1. Tries the explicit start/end from the match dict and validates that the
+       slice actually contains the expected surface form.
+    2. Falls back to a case-insensitive substring search when the stored
+       offsets are absent or stale (off-by-N due to gold generated on a
+       different version of the text).
+    """
+    needle = str(m.get("found") or m.get("label") or m.get("pref") or "").strip()
     try:
         s, e = int(m["start"]), int(m["end"])
     except Exception:
         s, e = None, None
     if s is not None and e is not None and 0 <= s < e <= len(text):
-        return (s, e)
-
-    # Fallback when gold/predicted rows do not carry character offsets:
-    # try to locate surface form in source text.
-    needle = str(m.get("found") or m.get("label") or m.get("pref") or "").strip()
+        if not needle or text[s:e].lower() == needle.lower():
+            return (s, e)
+    # Fallback: locate surface form in source text.
     if not needle:
         return None
-    # Known limitation: when the same surface appears multiple times without offsets,
-    # we keep the first occurrence found in the source text.
     lo_text = text.lower()
     lo_needle = needle.lower()
     idx = lo_text.find(lo_needle)
@@ -67,18 +86,48 @@ def read_json_or_jsonl(path):
                 rows.append(json.loads(line))
     return {"results": rows}
 
-def classify(text, predicted, expected):
-    pkeys = {ann_key(m) for m in predicted}
-    ekeys = {ann_key(m) for m in expected}
-    anns = []
-    for m in expected:
+def _group_by_pref(matches, text):
+    """Group matches by ann_key, each entry is a list of (span, match) sorted by start."""
+    from collections import defaultdict
+    groups = defaultdict(list)
+    for m in matches:
         sp = ann_span(m, text)
         if sp:
-            anns.append({"start": sp[0], "end": sp[1], "status": "both" if ann_key(m) in pkeys else "expected_only", "source": "expected", "match": m})
-    for m in predicted:
-        sp = ann_span(m, text)
-        if sp and ann_key(m) not in ekeys:
+            groups[ann_key(m)].append((sp, m))
+    for key in groups:
+        groups[key].sort(key=lambda x: x[0][0])
+    return groups
+
+def classify(text, predicted, expected):
+    """Compare expected vs predicted annotations using count-based pref matching.
+
+    Matches the i-th expected occurrence of a concept with the i-th predicted
+    occurrence (sorted by position).  Extra predicted occurrences beyond the
+    expected count are marked predicted_only; missing ones are expected_only.
+    This handles both wrong gold offsets (via ann_span fallback) and multiple
+    occurrences of the same concept (e.g. 'quality' appearing twice in a doc).
+    """
+    from collections import defaultdict
+    exp_groups = _group_by_pref(expected, text)
+    pred_groups = _group_by_pref(predicted, text)
+
+    anns = []
+    used_pred = defaultdict(int)
+
+    for pref, exp_list in exp_groups.items():
+        pred_list = pred_groups.get(pref, [])
+        for i, (sp, m) in enumerate(exp_list):
+            if i < len(pred_list):
+                _, pred_m = pred_list[i]
+                used_pred[pref] = i + 1
+                anns.append({"start": sp[0], "end": sp[1], "status": "both", "source": "expected", "match": pred_m})
+            else:
+                anns.append({"start": sp[0], "end": sp[1], "status": "expected_only", "source": "expected", "match": m})
+
+    for pref, pred_list in pred_groups.items():
+        for sp, m in pred_list[used_pred.get(pref, 0):]:
             anns.append({"start": sp[0], "end": sp[1], "status": "predicted_only", "source": "predicted", "match": m})
+
     pr = {"both": 0, "expected_only": 1, "predicted_only": 2}
     anns.sort(key=lambda a: (a["start"], pr[a["status"]], -(a["end"] - a["start"])))
     kept, occupied = [], []
@@ -121,8 +170,27 @@ def table_row(m, base_url, kind):
     return '<tr><td>{}</td><td>{}</td><td>{}</td><td><a href="{}" target="_blank">{}</a></td><td>{}</td><td>{}</td><td>{}</td><td>{}</td></tr>'.format(kind, found, pref, url, cid, start, end, rule, score)
 
 def counts(predicted, expected):
-    p, e = {ann_key(m) for m in predicted}, {ann_key(m) for m in expected}
-    return {"both": len(p & e), "expected_only": len(e - p), "predicted_only": len(p - e)}
+    from collections import Counter
+    pc = Counter(ann_key(m) for m in predicted)
+    ec = Counter(ann_key(m) for m in expected)
+    both = sum(min(pc[k], ec[k]) for k in ec)
+    expected_only = sum(max(0, ec[k] - pc[k]) for k in ec)
+    predicted_only = sum(max(0, pc[k] - ec[k]) for k in pc)
+    return {"both": both, "expected_only": expected_only, "predicted_only": predicted_only}
+
+def _with_current_ark(m, pmap):
+    """Return expected match with URI from the matching predicted match (fixes outdated numeric IDs)."""
+    pm = pmap.get(ann_key(m))
+    if pm is None:
+        return m
+    current_uri = pm.get("uri") or pm.get("id") or pm.get("ark")
+    if not current_uri:
+        return m
+    merged = dict(m)
+    for key in ("uri", "id", "ark"):
+        merged.pop(key, None)
+    merged["uri"] = current_uri
+    return merged
 
 def render_doc(d, base_url):
     doc_id = html.escape(str(d.get("id", "")))
@@ -130,8 +198,9 @@ def render_doc(d, base_url):
     predicted = d.get("matches", []) or []
     expected = d.get("expected_matches", []) or []
     c = counts(predicted, expected)
+    pmap = {ann_key(m): m for m in predicted}
     annotated = render_text(text, predicted, expected, base_url)
-    rows = "\n".join([table_row(m, base_url, "expected") for m in expected] + [table_row(m, base_url, "predicted") for m in predicted])
+    rows = "\n".join([table_row(_with_current_ark(m, pmap), base_url, "expected") for m in expected] + [table_row(m, base_url, "predicted") for m in predicted])
     if not rows:
         rows = '<tr><td colspan="8">Aucun terme attendu ou prédit</td></tr>'
     stats = "prédits: {} - attendus: {} - attendus+prédits: {} - attendus non prédits: {} - prédits non attendus: {}".format(len(predicted), len(expected), c["both"], c["expected_only"], c["predicted_only"])
@@ -232,7 +301,7 @@ def main():
     r.add_argument("--input", required=True); r.add_argument("--out", required=True); r.add_argument("--gold")
     r.add_argument("--title", default="Annotation Loterre"); r.add_argument("--base-url", default="https://www.loterre.fr/ark:/")
     b = sub.add_parser("batch")
-    b.add_argument("--cli", default="./src/loterre_cli.py"); b.add_argument("--text-root", default="../examples/texts"); b.add_argument("--gold-root", default="./gold"); b.add_argument("--outdir", default="./html_outputs")
+    b.add_argument("--cli", default="./src/loterre_cli.py"); b.add_argument("--text-root", default="../examples/texts"); b.add_argument("--gold-root", default="./gold_cleaned"); b.add_argument("--outdir", default="./html_outputs")
     b.add_argument("--base-url", default="https://www.loterre.fr/ark:/"); b.add_argument("--en-codes", default="P66,9SD,8HQ,B9M,27X,BVM,QX8,3JP,JVR"); b.add_argument("--fr-codes", default="P66,9SD,8HQ,B9M,27X,BVM,QX8"); b.add_argument("--engine-arg", action="append", default=[])
     p.add_argument("--input"); p.add_argument("--out"); p.add_argument("--gold"); p.add_argument("--title", default="Annotation Loterre"); p.add_argument("--base-url", default="https://www.loterre.fr/ark:/")
     args = p.parse_args()

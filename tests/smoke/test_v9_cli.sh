@@ -11,7 +11,7 @@ OUTDIR="${2:-./outputs_tests_v9_cli}"
 mkdir -p "$OUTDIR"
 
 echo "== Test 1: génération YAML auto-profile P66 =="
-python "$CLI" \
+python3 "$CLI" \
   --text examples/texts/P66_en.jsonl \
   --dict-id P66_en \
   --auto-profile \
@@ -20,7 +20,7 @@ python "$CLI" \
 
 echo
 echo "== Test 2: génération YAML auto-profile 9SD avec profil imposé =="
-python "$CLI" \
+python3 "$CLI" \
   --text examples/texts/9SD_en.jsonl \
   --dict-id 9SD_en \
   --profile entity_strict \
@@ -30,14 +30,14 @@ python "$CLI" \
 
 echo
 echo "== Test 3: annotation P66 via stdin + --silent =="
-cat examples/texts/P66_en.jsonl | python "$CLI" \
+cat examples/texts/P66_en.jsonl | python3 "$CLI" \
   --dict-id P66_en \
   --silent \
   > "$OUTDIR/p66_stdin_silent.json"
 
 echo
 echo "== Test 4: annotation P66 via fichier + --api =="
-python "$CLI" \
+python3 "$CLI" \
   --text examples/texts/P66_en.jsonl \
   --dict-id P66_en \
   --api \
@@ -45,7 +45,7 @@ python "$CLI" \
 
 echo
 echo "== Test 5: annotation 9SD via fichier =="
-python "$CLI" \
+python3 "$CLI" \
   --text examples/texts/9SD_en.jsonl \
   --dict-id 9SD_en \
   --out "$OUTDIR/annotation_9SD_en.md" \
@@ -53,21 +53,21 @@ python "$CLI" \
 
 echo
 echo "== Test 6: annotation 9SD via stdin + --silent =="
-cat examples/texts/9SD_en.jsonl | python "$CLI" \
+cat examples/texts/9SD_en.jsonl | python3 "$CLI" \
   --dict-id 9SD_en \
   --silent \
   > "$OUTDIR/9sd_stdin_silent.json"
 
 echo
 echo "== Test 7: annotation P66 avec config YAML rapide (1 seul document) =="
-python "$CLI" \
+python3 "$CLI" \
   --config configs/example_p66_en_quick.yaml \
   --out "$OUTDIR/annotation_P66_en_quick.md" \
   --report "$OUTDIR/report_P66_en_quick.md"
 
 echo
 echo "== Test 8: test qualité anti-bruit (and/it) sur 9SD =="
-printf '%s\n' '{"id":"bad1","value":"and is here"}' '{"id":"bad2","value":"it is here"}' | python "$CLI" \
+printf '%s\n' '{"id":"bad1","value":"and is here"}' '{"id":"bad2","value":"it is here"}' | python3 "$CLI" \
   --dict-id 9SD_en \
   --silent \
   > "$OUTDIR/quality_false_positive_guard.json"

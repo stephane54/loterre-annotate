@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Loterre Engine v7.4
+Loterre Engine v9
 
 Features
 --------
@@ -29,10 +29,12 @@ import multiprocessing as mp
 import re
 import sys
 import time
+import unicodedata
 from collections import Counter, defaultdict
 from dataclasses import dataclass
+from functools import lru_cache
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 import spacy
 
@@ -43,6 +45,28 @@ except Exception:
 
 SEP_RE = re.compile(r"[-‐‑‒–—−/⁄_]+")
 MULTISPACE_RE = re.compile(r"\s+")
+_PUNCT_KEEP_APOS_RE = re.compile(r"[^\w\s'()]")
+_PUNCT_RE = re.compile(r"[^\w\s()]")
+
+# ── Constantes POS/lexicales — définies ici pour éviter leur reconstruction
+# à chaque appel de score_match_quality (fonction dans le hot path). ─────────
+_STOP_POS = frozenset({"CCONJ", "SCONJ", "DET", "PRON", "AUX", "PART", "ADP", "INTJ"})
+_CONTENT_POS = frozenset({"NOUN", "PROPN", "ADJ"})
+_WEAK_WORDS = frozenset({"and", "or", "it", "well", "can", "may", "like"})
+_SYNTACTIC_GENERIC_DEFAULT = frozenset({
+    "process", "quality", "thing", "matter", "way",         # EN
+    "processus", "qualite", "chose", "fait", "maniere",     # FR (sans accent)
+})
+_RELATIVE_PRONOUNS_DEFAULT = frozenset({
+    "that", "which", "who", "whom", "whose",                # EN
+    "que", "qui", "dont", "lequel", "laquelle",             # FR
+    "lesquels", "lesquelles", "duquel", "auquel",
+})
+_PROFILE_MIN_SCORES: Dict[str, float] = {
+    "entity_strict": 0.80,
+    "term_balanced": 0.75,
+    "term_recall": 0.70,
+}
 
 DEFAULT_PROFILES: Dict[str, Dict[str, Any]] = {
     "entity_strict": {
@@ -85,7 +109,6 @@ QUALITY_DEFAULTS: Dict[str, Any] = {
     "context_window": 2,
     "discourse_pattern_guard": True,
     "syntactic_context_guard": False,
-    "syntactic_aux_head_penalty": 0.40,
     "syntactic_adp_head_penalty": 0.15,
     "function_context_penalty": 0.20,
     "lexical_context_bonus": 0.05,
@@ -174,6 +197,7 @@ def merge_quality(overrides: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         params.update(overrides)
     return params
 
+@lru_cache(maxsize=16384)
 def normalize_text(
     s: str,
     normalize_separators: bool = True,
@@ -187,9 +211,9 @@ def normalize_text(
     if normalize_separators:
         s = SEP_RE.sub(" ", s)
     if keep_apostrophe:
-        s = re.sub(r"[^\w\s'()]", " ", s)
+        s = _PUNCT_KEEP_APOS_RE.sub(" ", s)
     else:
-        s = re.sub(r"[^\w\s()]", " ", s)
+        s = _PUNCT_RE.sub(" ", s)
         s = s.replace("'", "")
     return MULTISPACE_RE.sub(" ", s).strip()
 
@@ -306,38 +330,19 @@ def suggest_quality(stats: Dict[str, Any], profile_name: str) -> Dict[str, Any]:
     quality = dict(QUALITY_DEFAULTS)
 
     if profile_name == "entity_strict":
-        quality["strict_stopwords"] = True
-        quality["require_pos_match"] = True
-        quality["penalize_single_token"] = True
         quality["single_token_penalty"] = 0.20
-        quality["case_sensitive_entities"] = True
-        quality["context_guard"] = True
         quality["single_token_min_score"] = 0.80
-    elif profile_name == "term_balanced":
-        quality["strict_stopwords"] = True
-        quality["require_pos_match"] = True
-        quality["penalize_single_token"] = True
-        quality["single_token_penalty"] = 0.15
-        quality["case_sensitive_entities"] = True
-        quality["context_guard"] = True
-        quality["single_token_min_score"] = 0.75
     elif profile_name == "term_recall":
-        quality["strict_stopwords"] = True
         quality["require_pos_match"] = False
-        quality["penalize_single_token"] = True
         quality["single_token_penalty"] = 0.12
-        quality["case_sensitive_entities"] = True
-        quality["context_guard"] = True
         quality["single_token_min_score"] = 0.70
+    # term_balanced: QUALITY_DEFAULTS values already match this profile
 
     if stats["ratio_mono"] >= 0.45:
-        quality["penalize_single_token"] = True
         quality["single_token_penalty"] = max(float(quality["single_token_penalty"]), 0.18)
 
     if stats["ratio_short_single"] >= 0.35 or stats["ratio_risky_single"] >= 0.05:
-        quality["strict_stopwords"] = True
         quality["require_pos_match"] = True
-        quality["context_guard"] = True
         quality["single_token_penalty"] = max(float(quality["single_token_penalty"]), 0.20)
 
     if stats["ratio_pattern"] >= 0.35:
@@ -345,9 +350,6 @@ def suggest_quality(stats: Dict[str, Any], profile_name: str) -> Dict[str, Any]:
 
     if stats["avg_label_len"] >= 2.2 and stats["ratio_mono"] <= 0.25:
         quality["single_token_penalty"] = min(float(quality["single_token_penalty"]), 0.14)
-
-    if stats["ratio_upper_single"] >= 0.10:
-        quality["case_sensitive_entities"] = True
 
     return quality
 
@@ -444,7 +446,9 @@ def token_matches_spec(tok, spec: Dict[str, Any], profile: ResourceProfile) -> b
     wanted_pos = spec.get("pos")
     if wanted_lemma:
         tok_lemma = normalize_text(tok.lemma_, profile.params["normalize_separators"], profile.params["normalize_apostrophes"], False)
-        spec_lemma = normalize_text(wanted_lemma, profile.params["normalize_separators"], profile.params["normalize_apostrophes"], False)
+        spec_lemma = spec.get("_norm_lemma") or normalize_text(
+            wanted_lemma, profile.params["normalize_separators"], profile.params["normalize_apostrophes"], False,
+        )
         if tok_lemma != spec_lemma:
             return False
     if wanted_pos:
@@ -477,6 +481,51 @@ def match_pattern_entry(doc, entry: Dict[str, Any], profile: ResourceProfile) ->
             })
     return out
 
+def match_patterns_indexed(
+    doc,
+    pattern_first_idx: Dict[str, List[Dict[str, Any]]],
+    pattern_wildcards: List[Dict[str, Any]],
+    profile: ResourceProfile,
+) -> List[Dict[str, Any]]:
+    """Pattern matching using a first-token index.
+
+    Complexity: O(T × avg_candidates) instead of O(T × E).
+    For each token position, only entries whose first-spec normalized lemma
+    matches are checked, plus the small wildcard bucket (no-lemma first specs).
+    """
+    matches = []
+    norm_sep = profile.params["normalize_separators"]
+    norm_apo = profile.params["normalize_apostrophes"]
+    doc_len = len(doc)
+
+    for i in range(doc_len):
+        tok_lemma_norm = normalize_text(doc[i].lemma_, norm_sep, norm_apo, False)
+        candidates = pattern_first_idx.get(tok_lemma_norm, [])
+        if pattern_wildcards:
+            candidates = candidates + pattern_wildcards
+
+        for entry in candidates:
+            pattern = entry["pattern"]
+            plen = len(pattern)
+            if i + plen > doc_len:
+                continue
+            ok = True
+            for j, spec in enumerate(pattern):
+                if not token_matches_spec(doc[i + j], spec, profile):
+                    ok = False
+                    break
+            if ok:
+                span = doc[i:i + plen]
+                matches.append({
+                    "start": span.start_char, "end": span.end_char, "found": span.text,
+                    "pref": entry.get("pref", entry.get("label", "")),
+                    "uri": entry.get("id", ""),
+                    "label": entry.get("label", ""),
+                    "rule": "pattern", "score": 1.0,
+                })
+    return matches
+
+
 def pattern_to_lemma_seq(pattern: List[Dict[str, str]], profile: ResourceProfile) -> Tuple[str, ...]:
     """Project a dictionary pattern to one lemma sequence."""
     out = []
@@ -502,6 +551,16 @@ def build_indexes(entries: List[Dict[str, Any]], nlp, profile: ResourceProfile):
         uri = entry.get("id", "")
 
         if entry.get("pattern") and profile.params["use_pattern"]:
+            # Pre-normalize spec lemmas once here to avoid redundant normalize_text
+            # calls inside token_matches_spec (called millions of times per run).
+            for spec in entry["pattern"]:
+                if "lemma" in spec and "_norm_lemma" not in spec:
+                    spec["_norm_lemma"] = normalize_text(
+                        spec["lemma"],
+                        profile.params["normalize_separators"],
+                        profile.params["normalize_apostrophes"],
+                        False,
+                    )
             pattern_entries.append(entry)
             if profile.params["use_lemma"]:
                 lemma_seq = pattern_to_lemma_seq(entry["pattern"], profile)
@@ -529,7 +588,19 @@ def build_indexes(entries: List[Dict[str, Any]], nlp, profile: ResourceProfile):
                         seen_lemma.add(seq)
                         lemma_trie.add(seq, {"seq": seq, "entry_idx": idx, "label": label, "pref": pref, "uri": uri})
 
-    return pattern_entries, surface_trie, lemma_trie, upper_single_entries, pattern_lemma_trie
+    # Build first-token index for O(T × avg_candidates) pattern matching
+    # instead of O(T × E).  Entries without a lemma on their first token go into
+    # pattern_wildcards and are still checked at every position.
+    pattern_first_idx: Dict[str, List[Dict[str, Any]]] = {}
+    pattern_wildcards: List[Dict[str, Any]] = []
+    for entry in pattern_entries:
+        key = entry["pattern"][0].get("_norm_lemma")
+        if key:
+            pattern_first_idx.setdefault(key, []).append(entry)
+        else:
+            pattern_wildcards.append(entry)
+
+    return pattern_entries, surface_trie, lemma_trie, upper_single_entries, pattern_lemma_trie, pattern_first_idx, pattern_wildcards
 
 def match_trie(flat_view: FlatView, trie: SeqTrie, doc, rule_name: str, score_multi: float, score_single: float, allow_single: bool):
     """Match longest indexed sequences against a flattened document view."""
@@ -570,14 +641,13 @@ def match_surface_upper(doc, upper_single_entries):
 
 def match_document(doc, profile: ResourceProfile, indexes):
     """Run the complete matching strategy on one document."""
-    pattern_entries, surface_trie, lemma_trie, upper_single_entries, pattern_lemma_trie = indexes
+    pattern_entries, surface_trie, lemma_trie, upper_single_entries, pattern_lemma_trie, pattern_first_idx, pattern_wildcards = indexes
     matches = []
     surface_view = None
     lemma_view = None
 
     if profile.params["use_pattern"]:
-        for entry in pattern_entries:
-            matches.extend(match_pattern_entry(doc, entry, profile))
+        matches.extend(match_patterns_indexed(doc, pattern_first_idx, pattern_wildcards, profile))
 
         if profile.params["use_lemma"] and pattern_lemma_trie is not None:
             if lemma_view is None:
@@ -642,10 +712,8 @@ def match_document(doc, profile: ResourceProfile, indexes):
     return matches
 
 
-
 def _strip_accents(s: str) -> str:
     """Return a lowercase, accent-stripped form for language-neutral comparison."""
-    import unicodedata
     return "".join(
         c for c in unicodedata.normalize("NFD", s)
         if unicodedata.category(c) != "Mn"
@@ -692,9 +760,9 @@ def score_match_quality(match: Dict[str, Any], doc, quality: Dict[str, Any]) -> 
     lowered = found.lower()
     rule = match.get("rule", "")
 
-    stop_pos = {"CCONJ", "SCONJ", "DET", "PRON", "AUX", "PART", "ADP", "INTJ"}
-    content_pos = {"NOUN", "PROPN", "ADJ"}
-    weak_words = {"and", "or", "it", "well", "can", "may", "like"}
+    stop_pos = _STOP_POS
+    content_pos = _CONTENT_POS
+    weak_words = _WEAK_WORDS
 
     if token_count == 1 and rule != "pattern":
         if quality.get("strict_stopwords", True):
@@ -746,24 +814,11 @@ def score_match_quality(match: Dict[str, Any], doc, quality: Dict[str, Any]) -> 
     #    e.g. "Quality For him, a gallery is never…" → kills "Quality"
     #
     # Both word lists are configurable via quality keys and default to EN+FR combined.
-    _default_generic = [
-        # EN
-        "process", "quality", "thing", "matter", "way",
-        # FR (accent-free forms used after .lower())
-        "processus", "qualite", "chose", "fait", "maniere",
-    ]
-    _default_rel_pronouns = [
-        # EN
-        "that", "which", "who", "whom", "whose",
-        # FR
-        "que", "qui", "dont", "lequel", "laquelle",
-        "lesquels", "lesquelles", "duquel", "auquel",
-    ]
     _SYNTACTIC_GENERIC = frozenset(
-        quality.get("syntactic_generic_words", _default_generic)
+        quality.get("syntactic_generic_words", _SYNTACTIC_GENERIC_DEFAULT)
     )
-    _relative_pronouns = set(
-        quality.get("syntactic_relative_pronouns", _default_rel_pronouns)
+    _relative_pronouns = frozenset(
+        quality.get("syntactic_relative_pronouns", _RELATIVE_PRONOUNS_DEFAULT)
     )
 
     if token_count == 1 and quality.get("syntactic_context_guard", False):
@@ -820,31 +875,20 @@ def score_match_quality(match: Dict[str, Any], doc, quality: Dict[str, Any]) -> 
 
 def apply_quality_filters(doc, matches: List[Dict[str, Any]], quality: Dict[str, Any]) -> List[Dict[str, Any]]:
     """Apply quality-oriented filtering and rescoring to matches."""
+    min_single = float(quality.get(
+        "single_token_min_score",
+        _PROFILE_MIN_SCORES.get(quality.get("profile_name"), 0.75),
+    ))
     out = []
     for match in matches:
         scored = score_match_quality(match, doc, quality)
         if scored is None:
             continue
-
         span = doc.char_span(scored["start"], scored["end"], alignment_mode="expand")
         if span is None:
             continue
-
-        profile_name = quality.get("profile_name")
-        profile_single_thresholds = {
-            "entity_strict": 0.80,
-            "term_balanced": 0.75,
-            "term_recall": 0.70,
-        }
-        min_single = float(
-            quality.get(
-                "single_token_min_score",
-                profile_single_thresholds.get(profile_name, 0.75),
-            )
-        )
         if len(span) == 1 and scored.get("rule") != "pattern" and scored["score"] < min_single:
             continue
-
         out.append(scored)
     return out
 
@@ -1004,8 +1048,8 @@ def generate_yaml_proposal(text_path: str, dict_path: str, lang: str, stats: Dic
         Path(out_path).write_text(yaml_text, encoding="utf-8")
     return {
         "proposal": proposal,
-        "suggested_profile": suggest_profile(stats),
-        "suggested_quality": suggest_quality(stats, chosen_profile),
+        "suggested_profile": chosen_profile,
+        "suggested_quality": quality,
         "used_profile": chosen_profile,
         "yaml": yaml_text,
         "written_to": out_path,
@@ -1013,7 +1057,7 @@ def generate_yaml_proposal(text_path: str, dict_path: str, lang: str, stats: Dic
 
 _WORKER_STATE = {}
 
-def _worker_init(lang: str, profile_name: str, profile_overrides: Dict[str, Any], entries: List[Dict[str, Any]]) -> None:
+def _worker_init(lang: str, profile_name: str, profile_overrides: Dict[str, Any], entries: List[Dict[str, Any]], quality: Dict[str, Any]) -> None:
     """Initialize one worker process with its own spaCy model and indexes."""
     profile = merge_profile(profile_name, profile_overrides)
     nlp = load_model(lang)
@@ -1021,18 +1065,20 @@ def _worker_init(lang: str, profile_name: str, profile_overrides: Dict[str, Any]
     _WORKER_STATE["profile"] = profile
     _WORKER_STATE["nlp"] = nlp
     _WORKER_STATE["indexes"] = indexes
+    _WORKER_STATE["quality"] = quality
 
 def _worker_process(rows: List[Dict[str, Any]]):
     """Process one chunk of rows in a worker process."""
     profile = _WORKER_STATE["profile"]
     nlp = _WORKER_STATE["nlp"]
     indexes = _WORKER_STATE["indexes"]
+    quality = _WORKER_STATE["quality"]
     docs = []
     batch_size = int(profile.params.get("batch_size", 64))
     for row, doc in zip(rows, nlp.pipe((r["value"] for r in rows), batch_size=batch_size)):
         doc_id = row.get("id", "doc")
         raw_text = row["value"]
-        matches = dedupe(match_document(doc, profile, indexes))
+        matches = dedupe(apply_quality_filters(doc, match_document(doc, profile, indexes), quality))
         docs.append((doc_id, raw_text, matches))
     return docs
 
@@ -1113,33 +1159,22 @@ def main():
     profile = merge_profile(effective["profile"], profile_overrides)
     quality["profile_name"] = profile.name
     logging.info("Using profile %s", profile.name)
-    stats = None
 
     rows = read_text_rows(text_path, validate=args.validate_input)
     logging.info("Loaded %s documents", len(rows))
 
     docs = []
-    if args.stream:
-        logging.info("Streaming mode")
-        nlp = load_model(lang)
-        indexes = build_indexes(entries, nlp, profile)
-        batch_size = int(profile.params.get("batch_size", 64))
-        for row, doc in zip(rows, nlp.pipe((r["value"] for r in rows), batch_size=batch_size)):
-            doc_id = row.get("id", "doc")
-            raw_text = row["value"]
-            matches = dedupe(apply_quality_filters(doc, match_document(doc, profile, indexes), quality))
-            docs.append((doc_id, raw_text, matches))
-    elif args.workers and args.workers > 1 and len(rows) > args.chunk_size:
+    if args.workers and args.workers > 1 and len(rows) > args.chunk_size:
         logging.info("Multiprocessing with %s workers", args.workers)
         with mp.Pool(
             processes=args.workers,
             initializer=_worker_init,
-            initargs=(lang, profile.name, profile_overrides, entries),
+            initargs=(lang, profile.name, profile_overrides, entries, quality),
         ) as pool:
             for chunk_docs in pool.imap(_worker_process, chunked(rows, args.chunk_size)):
                 docs.extend(chunk_docs)
     else:
-        logging.info("Single-process batch mode")
+        logging.info("Single-process mode")
         nlp = load_model(lang)
         indexes = build_indexes(entries, nlp, profile)
         batch_size = int(profile.params.get("batch_size", 64))
