@@ -1,0 +1,277 @@
+{
+  "total_kept": 3834,
+  "total_removed": 5,
+  "removal_rate_pct": 0.13,
+  "files": [
+    {
+      "file": "gold/gold_27X_en.jsonl",
+      "out": "gold_cleaned/gold_27X_en.jsonl",
+      "docs": 11,
+      "kept": 525,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_27X_fr.jsonl",
+      "out": "gold_cleaned/gold_27X_fr.jsonl",
+      "docs": 11,
+      "kept": 41,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_27X_fr__27X_fr__fr_annot_27X.jsonl",
+      "out": "gold_cleaned/gold_27X_fr__27X_fr__fr_annot_27X.jsonl",
+      "docs": 1,
+      "kept": 64,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_27X_fr__fr_annot_27X.jsonl",
+      "out": "gold_cleaned/gold_27X_fr__fr_annot_27X.jsonl",
+      "docs": 1,
+      "kept": 64,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_3JP_en.jsonl",
+      "out": "gold_cleaned/gold_3JP_en.jsonl",
+      "docs": 10,
+      "kept": 502,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_8HQ_en.jsonl",
+      "out": "gold_cleaned/gold_8HQ_en.jsonl",
+      "docs": 10,
+      "kept": 242,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_8HQ_fr.jsonl",
+      "out": "gold_cleaned/gold_8HQ_fr.jsonl",
+      "docs": 10,
+      "kept": 100,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_8HQ_fr__8HQ_fr__fr_annot_8HQ.jsonl",
+      "out": "gold_cleaned/gold_8HQ_fr__8HQ_fr__fr_annot_8HQ.jsonl",
+      "docs": 1,
+      "kept": 16,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_8HQ_fr__fr_annot_8HQ.jsonl",
+      "out": "gold_cleaned/gold_8HQ_fr__fr_annot_8HQ.jsonl",
+      "docs": 1,
+      "kept": 16,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_9SD_en.jsonl",
+      "out": "gold_cleaned/gold_9SD_en.jsonl",
+      "docs": 10,
+      "kept": 291,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_9SD_fr.jsonl",
+      "out": "gold_cleaned/gold_9SD_fr.jsonl",
+      "docs": 10,
+      "kept": 50,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_9SD_fr__9SD_fr__fr_annot_9SD.jsonl",
+      "out": "gold_cleaned/gold_9SD_fr__9SD_fr__fr_annot_9SD.jsonl",
+      "docs": 1,
+      "kept": 16,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_9SD_fr__fr_annot_9SD.jsonl",
+      "out": "gold_cleaned/gold_9SD_fr__fr_annot_9SD.jsonl",
+      "docs": 1,
+      "kept": 16,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_B9M_en.jsonl",
+      "out": "gold_cleaned/gold_B9M_en.jsonl",
+      "docs": 10,
+      "kept": 283,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_B9M_fr.jsonl",
+      "out": "gold_cleaned/gold_B9M_fr.jsonl",
+      "docs": 10,
+      "kept": 43,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_B9M_fr__B9M_fr__fr_annot_B9M.jsonl",
+      "out": "gold_cleaned/gold_B9M_fr__B9M_fr__fr_annot_B9M.jsonl",
+      "docs": 1,
+      "kept": 29,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_B9M_fr__fr_annot_B9M.jsonl",
+      "out": "gold_cleaned/gold_B9M_fr__fr_annot_B9M.jsonl",
+      "docs": 1,
+      "kept": 29,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_BVM_en.jsonl",
+      "out": "gold_cleaned/gold_BVM_en.jsonl",
+      "docs": 10,
+      "kept": 325,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_BVM_fr.jsonl",
+      "out": "gold_cleaned/gold_BVM_fr.jsonl",
+      "docs": 10,
+      "kept": 303,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_BVM_fr__BVM_fr__fr_annot_BVM.jsonl",
+      "out": "gold_cleaned/gold_BVM_fr__BVM_fr__fr_annot_BVM.jsonl",
+      "docs": 1,
+      "kept": 13,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_P66_en.jsonl",
+      "out": "gold_cleaned/gold_P66_en.jsonl",
+      "docs": 11,
+      "kept": 448,
+      "removed": 5,
+      "removals": [
+        {
+          "doc_id": "0",
+          "found": "Quality",
+          "pref": "quality",
+          "score": 0.7,
+          "rule": "pattern",
+          "start": 0,
+          "reason": "low_score_generic (score=0.7, found=Quality)"
+        },
+        {
+          "doc_id": "0",
+          "found": "event-",
+          "pref": "event",
+          "score": 0.8,
+          "rule": "lemma_pattern_seq",
+          "start": 391,
+          "reason": "fragment"
+        },
+        {
+          "doc_id": "0",
+          "found": "confidence",
+          "pref": "confidence judgment",
+          "score": 0.9500000000000001,
+          "rule": "pattern",
+          "start": 1201,
+          "reason": "manual_override"
+        },
+        {
+          "doc_id": "0",
+          "found": "developments",
+          "pref": "developmental process",
+          "score": 0.9,
+          "rule": "pattern",
+          "start": 1256,
+          "reason": "manual_override"
+        },
+        {
+          "doc_id": "0",
+          "found": "process",
+          "pref": "process",
+          "score": 0.7,
+          "rule": "pattern",
+          "start": 1858,
+          "reason": "manual_override"
+        }
+      ]
+    },
+    {
+      "file": "gold/gold_P66_fr.jsonl",
+      "out": "gold_cleaned/gold_P66_fr.jsonl",
+      "docs": 11,
+      "kept": 28,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_P66_fr__P66_fr__fr_annot_P66.jsonl",
+      "out": "gold_cleaned/gold_P66_fr__P66_fr__fr_annot_P66.jsonl",
+      "docs": 1,
+      "kept": 26,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_P66_fr__fr_annot_P66.jsonl",
+      "out": "gold_cleaned/gold_P66_fr__fr_annot_P66.jsonl",
+      "docs": 1,
+      "kept": 26,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_QX8_en.jsonl",
+      "out": "gold_cleaned/gold_QX8_en.jsonl",
+      "docs": 10,
+      "kept": 295,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_QX8_fr.jsonl",
+      "out": "gold_cleaned/gold_QX8_fr.jsonl",
+      "docs": 10,
+      "kept": 9,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_QX8_fr__QX8_fr__fr_annot_QX8.jsonl",
+      "out": "gold_cleaned/gold_QX8_fr__QX8_fr__fr_annot_QX8.jsonl",
+      "docs": 1,
+      "kept": 19,
+      "removed": 0,
+      "removals": []
+    },
+    {
+      "file": "gold/gold_QX8_fr__fr_annot_QX8.jsonl",
+      "out": "gold_cleaned/gold_QX8_fr__fr_annot_QX8.jsonl",
+      "docs": 1,
+      "kept": 15,
+      "removed": 0,
+      "removals": []
+    }
+  ]
+}

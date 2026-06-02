@@ -205,7 +205,7 @@ def run_engine(cli, dict_id, text_file, json_out, extra):
     Path(json_out).write_text(proc.stdout, encoding="utf-8")
 
 def batch(args):
-    en = args.en_codes.split(",") if args.en_codes else ["P66","9SD","8HQ","B9M","27X","BVM","QX8","3JP","JVR"]
+    en = args.en_codes.split(",") if args.en_codes else ["P66","9SD","8HQ","B9M","27X","BVM","QX8","3JP"]
     fr = args.fr_codes.split(",") if args.fr_codes else ["P66","9SD","8HQ","B9M","27X","BVM","QX8"]
     jobs = [(c,"en",f"{c}_en") for c in en] + [(c,"fr",f"{c}_fr") for c in fr]
     outdir = Path(args.outdir); summary = []

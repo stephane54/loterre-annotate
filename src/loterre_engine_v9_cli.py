@@ -77,12 +77,16 @@ QUALITY_DEFAULTS: Dict[str, Any] = {
     "require_pos_match": True,
     "penalize_single_token": True,
     "single_token_penalty": 0.15,
+    "adaptive_single_token_penalty": True,
     "multi_token_bonus": 0.03,
     "case_sensitive_entities": True,
     "context_guard": True,
     "contextual_scoring": True,
     "context_window": 2,
     "discourse_pattern_guard": True,
+    "syntactic_context_guard": False,
+    "syntactic_aux_head_penalty": 0.40,
+    "syntactic_adp_head_penalty": 0.15,
     "function_context_penalty": 0.20,
     "lexical_context_bonus": 0.05,
     "exact_pos_bonus": 0.05,
@@ -151,7 +155,7 @@ def load_model(lang: str):
     }[lang]
     for name in candidates:
         try:
-            return spacy.load(name, disable=['parser', 'ner'])
+            return spacy.load(name, disable=["parser", "ner"])
         except Exception:
             pass
     raise RuntimeError(f"No spaCy model installed for {lang}: {candidates}")
@@ -639,6 +643,39 @@ def match_document(doc, profile: ResourceProfile, indexes):
 
 
 
+def _strip_accents(s: str) -> str:
+    """Return a lowercase, accent-stripped form for language-neutral comparison."""
+    import unicodedata
+    return "".join(
+        c for c in unicodedata.normalize("NFD", s)
+        if unicodedata.category(c) != "Mn"
+    )
+
+
+def _adaptive_single_token_penalty(found: str, base: float) -> float:
+    """Return a morphology-aware penalty instead of the flat base value.
+
+    Applied in priority order:
+    1. All-uppercase ≥ 2 cased chars  → acronym/symbol (ERP, SAM, mRNA) → min(base, 0.05)
+    2. CamelCase with internal upper   → specific entity (SenseCam)       → min(base, 0.05)
+    3. All-lowercase ≤ 3 chars         → short ambiguous word              → max(base, 0.20)
+    4. Default                         → base (unchanged behaviour)
+    """
+    s = found.strip()
+    if not s:
+        return base
+    # Acronyms / symbols: all cased chars are uppercase, at least 2 chars total
+    if s.isupper() and len(s) >= 2:
+        return min(base, 0.05)
+    # CamelCase proper names: uppercase after position 0
+    if s[0].isupper() and any(c.islower() for c in s) and any(c.isupper() for c in s[1:]):
+        return min(base, 0.05)
+    # Very short all-lowercase: higher ambiguity risk
+    if s.islower() and len(s) <= 3:
+        return max(base, 0.20)
+    return base
+
+
 def score_match_quality(match: Dict[str, Any], doc, quality: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     """Apply score adjustments and hard filters to one match."""
     if not quality.get("enabled", True):
@@ -693,10 +730,71 @@ def score_match_quality(match: Dict[str, Any], doc, quality: Dict[str, Any]) -> 
             if lowered in {"and", "or", "it"} and first.pos_ in (stop_pos | {"ADV"}):
                 return None
 
+    # Syntactic context guard — approximates dependency-based filtering using a
+    # linear window (no parser required, no POS side-effects from parser enabling).
+    # Applies to ALL rules (including "pattern") for non-PROPN, non-uppercase tokens.
+    #
+    # Two hard-kill patterns detected from the linear window:
+    #
+    # 1. Copula-attribute pattern: "is/was/are the <generic_word> that/which/who…"
+    #    Signature: AUX in the 2-token left window + relative pronoun on the right.
+    #    e.g. "Working memory updating IS THE PROCESS THAT replaces…" → kills "process"
+    #    NOT triggered for domain-specific words (only for _SYNTACTIC_GENERIC).
+    #
+    # 2. Document-initial title/label word: token at position 0, starts with uppercase,
+    #    is a generic word (unlikely to be a genuine in-text term occurrence).
+    #    e.g. "Quality For him, a gallery is never…" → kills "Quality"
+    #
+    # Both word lists are configurable via quality keys and default to EN+FR combined.
+    _default_generic = [
+        # EN
+        "process", "quality", "thing", "matter", "way",
+        # FR (accent-free forms used after .lower())
+        "processus", "qualite", "chose", "fait", "maniere",
+    ]
+    _default_rel_pronouns = [
+        # EN
+        "that", "which", "who", "whom", "whose",
+        # FR
+        "que", "qui", "dont", "lequel", "laquelle",
+        "lesquels", "lesquelles", "duquel", "auquel",
+    ]
+    _SYNTACTIC_GENERIC = frozenset(
+        quality.get("syntactic_generic_words", _default_generic)
+    )
+    _relative_pronouns = set(
+        quality.get("syntactic_relative_pronouns", _default_rel_pronouns)
+    )
+
+    if token_count == 1 and quality.get("syntactic_context_guard", False):
+        if not found.isupper() and first.pos_ not in {"PROPN"}:
+            left_window = [doc[i] for i in range(max(0, first.i - 2), first.i)]
+            right1 = doc[first.i + 1] if first.i + 1 < len(doc) else None
+            # Normalise found for accent-insensitive comparison (qualité → qualite)
+            found_norm = _strip_accents(found.lower())
+
+            # Pattern 1: copula predicate + relative clause
+            # EN: "is the process that…"  / FR: "est le processus qui…"
+            has_aux_left = any(t.pos_ == "AUX" for t in left_window)
+            has_rel_right = (right1 is not None
+                             and right1.pos_ in {"SCONJ", "PRON"}
+                             and right1.text.lower() in _relative_pronouns)
+            if has_aux_left and has_rel_right and found_norm in _SYNTACTIC_GENERIC:
+                return None
+
+            # Pattern 2: document-initial uppercase generic word (title/label)
+            if first.i == 0 and found[0].isupper() and found_norm in _SYNTACTIC_GENERIC:
+                return None
+
     scored = dict(match)
 
     if token_count == 1 and quality.get("penalize_single_token", True):
-        scored["score"] = max(0.0, scored["score"] - float(quality.get("single_token_penalty", 0.15)))
+        base_penalty = float(quality.get("single_token_penalty", 0.15))
+        if quality.get("adaptive_single_token_penalty", True):
+            penalty = _adaptive_single_token_penalty(found, base_penalty)
+        else:
+            penalty = base_penalty
+        scored["score"] = max(0.0, scored["score"] - penalty)
     elif token_count > 1:
         scored["score"] = min(1.0, scored["score"] + float(quality.get("multi_token_bonus", 0.03)))
 

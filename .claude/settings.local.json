@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "additionalDirectories": [
+      "\\\\wsl.localhost\\Ubuntu\\home\\schneist\\app\\stats-mc-bd"
+    ]
+  }
+}
