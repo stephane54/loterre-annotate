@@ -1,5 +1,5 @@
-text: /home/schneist/app/loterre_annotate/loterre-v9/examples/texts/P66_en.jsonl
-dictionary: /home/schneist/app/loterre_annotate/loterre-v9/examples/dicts/en_annot_P66.jsonl
+text: /home/schneist/app/loterre_annotate/loterre-v9/data/texts/P66_en.jsonl
+dictionary: /home/schneist/app/loterre_annotate/loterre-v9/data/dicts/en_annot_P66.jsonl
 lang: en
 profile: term_recall
 profile_overrides:

@@ -1,5 +1,5 @@
-text: /home/schneist/app/loterre_annotate/loterre-v9/examples/texts/BVM_en.jsonl
-dictionary: /home/schneist/app/loterre_annotate/loterre-v9/examples/dicts/en_annot_BVM.jsonl
+text: /home/schneist/app/loterre_annotate/loterre-v9/data/texts/BVM_en.jsonl
+dictionary: /home/schneist/app/loterre_annotate/loterre-v9/data/dicts/en_annot_BVM.jsonl
 lang: en
 profile: term_recall
 out: annotation.md

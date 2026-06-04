@@ -13,9 +13,9 @@ OUTDIR="${4:-benchmark_outputs}"
 
 mkdir -p "$OUTDIR"
 
-P66_TEXT="$REPO_ROOT/examples/texts/P66_en.jsonl"
+P66_TEXT="$REPO_ROOT/data/texts/P66_en.jsonl"
 P66_GOLD="$REPO_ROOT/gold/gold_P66_en__en_annot_P66.jsonl"
-SD9_TEXT="$REPO_ROOT/examples/texts/9SD_en.jsonl"
+SD9_TEXT="$REPO_ROOT/data/texts/9SD_en.jsonl"
 SD9_GOLD="$REPO_ROOT/gold/gold_9SD_en__en_annot_9SD.jsonl"
 EVAL_PY="$REPO_ROOT/scripts/evaluation/evaluate_json.py"
 

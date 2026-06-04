@@ -12,7 +12,7 @@ mkdir -p "$OUTDIR"
 
 echo "== Test 1: génération YAML auto-profile P66 =="
 python3 "$CLI" \
-  --text examples/texts/P66_en.jsonl \
+  --text data/texts/P66_en.jsonl \
   --dict-id P66_en \
   --auto-profile \
   --yaml-out "$OUTDIR/p66_auto_profile.yaml" \
@@ -21,7 +21,7 @@ python3 "$CLI" \
 echo
 echo "== Test 2: génération YAML auto-profile 9SD avec profil imposé =="
 python3 "$CLI" \
-  --text examples/texts/9SD_en.jsonl \
+  --text data/texts/9SD_en.jsonl \
   --dict-id 9SD_en \
   --profile entity_strict \
   --auto-profile \
@@ -30,7 +30,7 @@ python3 "$CLI" \
 
 echo
 echo "== Test 3: annotation P66 via stdin + --silent =="
-cat examples/texts/P66_en.jsonl | python3 "$CLI" \
+cat data/texts/P66_en.jsonl | python3 "$CLI" \
   --dict-id P66_en \
   --silent \
   > "$OUTDIR/p66_stdin_silent.json"
@@ -38,7 +38,7 @@ cat examples/texts/P66_en.jsonl | python3 "$CLI" \
 echo
 echo "== Test 4: annotation P66 via fichier + --api =="
 python3 "$CLI" \
-  --text examples/texts/P66_en.jsonl \
+  --text data/texts/P66_en.jsonl \
   --dict-id P66_en \
   --api \
   > "$OUTDIR/p66_api.json"
@@ -46,14 +46,14 @@ python3 "$CLI" \
 echo
 echo "== Test 5: annotation 9SD via fichier =="
 python3 "$CLI" \
-  --text examples/texts/9SD_en.jsonl \
+  --text data/texts/9SD_en.jsonl \
   --dict-id 9SD_en \
   --out "$OUTDIR/annotation_9SD_en.md" \
   --report "$OUTDIR/report_9SD_en.md"
 
 echo
 echo "== Test 6: annotation 9SD via stdin + --silent =="
-cat examples/texts/9SD_en.jsonl | python3 "$CLI" \
+cat data/texts/9SD_en.jsonl | python3 "$CLI" \
   --dict-id 9SD_en \
   --silent \
   > "$OUTDIR/9sd_stdin_silent.json"
@@ -77,7 +77,7 @@ printf '%s\n' '{"id":"bad1","value":"and is here"}' '{"id":"bad2","value":"it is
 echo
 echo "== Test 9: auto-profile P66_fr (français) =="
 python3 "$CLI" \
-  --text examples/texts/P66_fr.jsonl \
+  --text data/texts/P66_fr.jsonl \
   --dict-id P66_fr \
   --auto-profile \
   --yaml-out "$OUTDIR/P66_fr_auto_profile.yaml" \
@@ -86,7 +86,7 @@ python3 "$CLI" \
 echo
 echo "== Test 10: annotation P66_fr --silent (variants flexionnels) =="
 python3 "$CLI" \
-  --text examples/texts/P66_fr.jsonl \
+  --text data/texts/P66_fr.jsonl \
   --dict-id P66_fr \
   --silent \
   > "$OUTDIR/P66_fr_silent.json"
@@ -106,7 +106,7 @@ PY
 echo
 echo "== Test 11: annotation B9M_fr --silent (biologie FR) =="
 python3 "$CLI" \
-  --text examples/texts/B9M_fr.jsonl \
+  --text data/texts/B9M_fr.jsonl \
   --dict-id B9M_fr \
   --silent \
   > "$OUTDIR/B9M_fr_silent.json"
@@ -129,7 +129,7 @@ PY
 echo
 echo "== Test 13: annotation QX8_fr --silent (géosciences FR) =="
 python3 "$CLI" \
-  --text examples/texts/QX8_fr.jsonl \
+  --text data/texts/QX8_fr.jsonl \
   --dict-id QX8_fr \
   --silent \
   > "$OUTDIR/QX8_fr_silent.json"

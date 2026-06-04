@@ -7,7 +7,7 @@ per-vocabulary HTML annotations, and writes a side-by-side summary.
 Usage
 -----
     python3 src/loterre_benchmark.py \\
-        --text-root examples/texts \\
+        --text-root data/texts \\
         --out-dir   benchmark_results \\
         [--cli      src/loterre_cli.py] \\
         [--renderer src/loterre_html_renderer.py] \\
@@ -395,8 +395,8 @@ def main() -> None:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=__doc__,
     )
-    pa.add_argument("--text-root",  default="examples/texts",
-                    help="Directory containing gold JSONL files (default: examples/texts)")
+    pa.add_argument("--text-root",  default="data/texts",
+                    help="Directory containing gold JSONL files (default: data/texts)")
     pa.add_argument("--out-dir",    default="benchmark_results",
                     help="Output directory (default: benchmark_results)")
     pa.add_argument("--cli",        default="src/loterre_cli.py",

@@ -63,7 +63,7 @@ loterre-v9/
 │   ├── registry.yaml              # index des dictionnaires disponibles
 │   └── *_auto_profile.yaml        # profils générés automatiquement
 │
-├── examples/
+├── data/
 │   ├── dicts/                     # dictionnaires JSONL (ARKs courants)
 │   └── texts/                     # gold JSONL — textes + expected_matches
 │
@@ -115,14 +115,14 @@ benchmark_results/   # résultats complets du benchmark (compare_engines.sh)
 ```bash
 # Via dict-id (résolu depuis registry.yaml)
 python3 src/loterre_cli.py \
-  --text examples/texts/P66_en.jsonl \
+  --text data/texts/P66_en.jsonl \
   --dict-id P66_en \
   --silent
 
 # Via chemin explicite
 python3 src/loterre_cli.py \
-  --text examples/texts/P66_en.jsonl \
-  --dict examples/dicts/en_annot_P66.jsonl \
+  --text data/texts/P66_en.jsonl \
+  --dict data/dicts/en_annot_P66.jsonl \
   --lang en \
   --profile term_recall \
   --silent
@@ -137,8 +137,8 @@ python3 src/loterre_cli.py \
 
 ```bash
 python3 src/loterre_engine_v9_cli.py \
-  --text examples/texts/P66_en.jsonl \
-  --dict examples/dicts/en_annot_P66.jsonl \
+  --text data/texts/P66_en.jsonl \
+  --dict data/dicts/en_annot_P66.jsonl \
   --lang en \
   --profile term_recall \
   --silent
@@ -167,7 +167,7 @@ Chaque ligne du fichier texte est un objet JSON :
 {"id": "doc_001", "value": "Texte à annoter..."}
 ```
 
-Les fichiers gold (`examples/texts/`) incluent en plus un champ `expected_matches` utilisé par le renderer et le benchmark pour la comparaison.
+Les fichiers gold (`data/texts/`) incluent en plus un champ `expected_matches` utilisé par le renderer et le benchmark pour la comparaison.
 
 ### Format de sortie (`--silent`)
 
@@ -243,8 +243,8 @@ Trois profils prédéfinis couvrent le spectre précision/rappel :
 ### Personnalisation via YAML
 
 ```yaml
-text: examples/texts/P66_en.jsonl
-dictionary: examples/dicts/en_annot_P66.jsonl
+text: data/texts/P66_en.jsonl
+dictionary: data/dicts/en_annot_P66.jsonl
 lang: en
 profile: term_recall
 
@@ -374,7 +374,7 @@ Fast path sur tous les documents, puis moteur complet uniquement sur les documen
 python3 src/loterre_cli.py \
   --execution-strategy hybrid \
   --dict-id P66_en \
-  --text examples/texts/P66_en.jsonl \
+  --text data/texts/P66_en.jsonl \
   --hybrid-refine-low-score 0.90 \
   --hybrid-max-fast-matches 50
 ```
@@ -393,7 +393,7 @@ python3 src/loterre_cli.py --dict-id P66_en --text ... --workers 4
 
 ```bash
 python3 src/loterre_cli.py \
-  --text examples/texts/P66_en.jsonl \
+  --text data/texts/P66_en.jsonl \
   --dict-id P66_en \
   --auto-profile \
   --yaml-out configs/P66_en_auto_profile.yaml
@@ -411,7 +411,7 @@ python3 src/loterre_cli.py \
 
 ### 11.1 Structure des fichiers gold
 
-Les fichiers gold se trouvent dans `examples/texts/`. Chaque ligne JSONL contient :
+Les fichiers gold se trouvent dans `data/texts/`. Chaque ligne JSONL contient :
 
 ```json
 {
@@ -461,10 +461,10 @@ Les fichiers gold se trouvent dans `examples/texts/`. Chaque ligne JSONL contien
 
 ```bash
 python3 scripts/generate_fr_corpus.py
-# Produit examples/texts/{P66,27X,9SD,8HQ,B9M,BVM,QX8}_fr.jsonl
+# Produit data/texts/{P66,27X,9SD,8HQ,B9M,BVM,QX8}_fr.jsonl
 ```
 
-Le script `scripts/generate_fr_corpus.py` lit les dictionnaires FR dans `examples/dicts/`, sélectionne des termes avec variation flexionnelle, calcule les offsets caractère exacts et écrit les fichiers JSONL prêts à l'emploi.
+Le script `scripts/generate_fr_corpus.py` lit les dictionnaires FR dans `data/dicts/`, sélectionne des termes avec variation flexionnelle, calcule les offsets caractère exacts et écrit les fichiers JSONL prêts à l'emploi.
 
 ### 11.4 Qualité des ARKs — corrections appliquées (corpus anglais)
 
@@ -520,12 +520,12 @@ Le renderer et le benchmark utilisent une comparaison **par libellé préféré*
 ```bash
 # Via le script smoke
 bash tests/smoke/render_html_annotation.sh \
-  ./src/loterre_cli.py examples/texts ./html_outputs ./src/loterre_html_renderer.py
+  ./src/loterre_cli.py data/texts ./html_outputs ./src/loterre_html_renderer.py
 
 # Ou via la sous-commande batch du renderer
 python3 src/loterre_html_renderer.py batch \
   --cli ./src/loterre_cli.py \
-  --text-root examples/texts \
+  --text-root data/texts \
   --outdir ./html_outputs
 ```
 
@@ -542,7 +542,7 @@ html_outputs/
 ```bash
 python3 src/loterre_html_renderer.py render \
   --input predictions/P66_en.json \
-  --gold examples/texts/P66_en.jsonl \
+  --gold data/texts/P66_en.jsonl \
   --out html_outputs/P66_en.html \
   --title "Annotation P66_en" \
   --base-url "https://www.loterre.fr/ark:/"
@@ -594,14 +594,14 @@ La langue est inférée automatiquement depuis le nom du fichier gold. Elle peut
 # Évaluation EN (langue inférée depuis P66_en.jsonl)
 python3 src/loterre_api_eval.py \
   --vocab P66 \
-  --gold examples/texts/P66_en.jsonl \
+  --gold data/texts/P66_en.jsonl \
   --out html_api/html/P66_en.html \
   --json-out html_api/json/P66_en.json
 
 # Évaluation FR (langue inférée depuis P66_fr.jsonl → /v1/fr/...)
 python3 src/loterre_api_eval.py \
   --vocab P66 \
-  --gold examples/texts/P66_fr.jsonl \
+  --gold data/texts/P66_fr.jsonl \
   --out html_api/html/P66_fr.html \
   --json-out html_api/json/P66_fr.json
 ```
@@ -718,7 +718,7 @@ bash tests/smoke/test_p66_non_regression.sh
 
 # HTML local v9 vs gold (tous vocabulaires EN + FR auto-découverts)
 bash tests/smoke/render_html_annotation.sh \
-  ./src/loterre_cli.py examples/texts ./html_outputs ./src/loterre_html_renderer.py
+  ./src/loterre_cli.py data/texts ./html_outputs ./src/loterre_html_renderer.py
 
 # Benchmark local v9 vs API production (EN + FR)
 bash tests/smoke/compare_engines.sh
@@ -748,7 +748,7 @@ bash tests/profiling/test_auto_profile_quality.sh
 ```bash
 # Toutes options disponibles
 bash tests/smoke/compare_engines.sh \
-  --text-root  examples/texts \        # répertoire des gold (EN + FR auto-découverts)
+  --text-root  data/texts \        # répertoire des gold (EN + FR auto-découverts)
   --out-dir    benchmark_results \     # répertoire de sortie
   --cli        src/loterre_cli.py \    # chemin vers le CLI local
   --renderer   src/loterre_html_renderer.py \
@@ -797,11 +797,11 @@ bash tests/smoke/compare_engines.sh \
 ```yaml
 dictionaries:
   P66_en:
-    path: examples/dicts/en_annot_P66.jsonl
+    path: data/dicts/en_annot_P66.jsonl
     lang: en
     profile: term_recall
   9SD_en:
-    path: examples/dicts/en_annot_9SD.jsonl
+    path: data/dicts/en_annot_9SD.jsonl
     lang: en
     profile: entity_strict
 ```

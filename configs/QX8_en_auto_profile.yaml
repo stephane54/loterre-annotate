@@ -1,5 +1,5 @@
-text: /home/schneist/app/loterre_annotate/loterre-v9/examples/texts/QX8_en.jsonl
-dictionary: /home/schneist/app/loterre_annotate/loterre-v9/examples/dicts/en_annot_QX8.jsonl
+text: /home/schneist/app/loterre_annotate/loterre-v9/data/texts/QX8_en.jsonl
+dictionary: /home/schneist/app/loterre_annotate/loterre-v9/data/dicts/en_annot_QX8.jsonl
 lang: en
 profile: term_recall
 out: annotation.md

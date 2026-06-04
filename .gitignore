@@ -8,7 +8,7 @@ report*
 outputs/
 eval_outputs/
 profile_outputs/
-examples/
+data/
 html_*
 output*
 .loterre_cache/

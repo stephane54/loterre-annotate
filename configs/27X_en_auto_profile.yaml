@@ -1,5 +1,5 @@
-text: /home/schneist/app/loterre_annotate/loterre-v9/examples/texts/27X_en.jsonl
-dictionary: /home/schneist/app/loterre_annotate/loterre-v9/examples/dicts/en_annot_27X.jsonl
+text: /home/schneist/app/loterre_annotate/loterre-v9/data/texts/27X_en.jsonl
+dictionary: /home/schneist/app/loterre_annotate/loterre-v9/data/dicts/en_annot_27X.jsonl
 lang: en
 profile: entity_strict
 out: annotation.md

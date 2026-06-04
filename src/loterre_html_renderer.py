@@ -301,7 +301,7 @@ def main():
     r.add_argument("--input", required=True); r.add_argument("--out", required=True); r.add_argument("--gold")
     r.add_argument("--title", default="Annotation Loterre"); r.add_argument("--base-url", default="https://www.loterre.fr/ark:/")
     b = sub.add_parser("batch")
-    b.add_argument("--cli", default="./src/loterre_cli.py"); b.add_argument("--text-root", default="../examples/texts"); b.add_argument("--gold-root", default="./gold_cleaned"); b.add_argument("--outdir", default="./html_outputs")
+    b.add_argument("--cli", default="./src/loterre_cli.py"); b.add_argument("--text-root", default="../data/texts"); b.add_argument("--gold-root", default="./gold_cleaned"); b.add_argument("--outdir", default="./html_outputs")
     b.add_argument("--base-url", default="https://www.loterre.fr/ark:/"); b.add_argument("--en-codes", default="P66,9SD,8HQ,B9M,27X,BVM,QX8,3JP,JVR"); b.add_argument("--fr-codes", default="P66,9SD,8HQ,B9M,27X,BVM,QX8"); b.add_argument("--engine-arg", action="append", default=[])
     p.add_argument("--input"); p.add_argument("--out"); p.add_argument("--gold"); p.add_argument("--title", default="Annotation Loterre"); p.add_argument("--base-url", default="https://www.loterre.fr/ark:/")
     args = p.parse_args()

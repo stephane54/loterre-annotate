@@ -38,7 +38,7 @@ test-api:
 benchmark:
 	bash tests/smoke/compare_engines.sh $(BENCHMARK_ARGS)
 
-# Génère les fichiers HTML annotés pour tous les corpus dans examples/texts/.
+# Génère les fichiers HTML annotés pour tous les corpus dans data/texts/.
 html:
 	bash tests/smoke/render_html_annotation.sh
 

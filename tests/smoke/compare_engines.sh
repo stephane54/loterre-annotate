@@ -8,7 +8,7 @@
 #   bash tests/smoke/compare_engines.sh [OPTIONS]
 #
 # Options (all optional, defaults shown):
-#   --text-root  DIR    Gold JSONL directory     (default: examples/texts)
+#   --text-root  DIR    Gold JSONL directory     (default: data/texts)
 #   --out-dir    DIR    Output directory          (default: benchmark_results)
 #   --cli        FILE   loterre_cli.py path       (default: src/loterre_cli.py)
 #   --renderer   FILE   loterre_html_renderer.py  (default: src/loterre_html_renderer.py)
@@ -48,7 +48,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
 python3 "$PROJECT_DIR/src/loterre_benchmark.py" \
-    --text-root  "${TEXT_ROOT:-$PROJECT_DIR/examples/texts}" \
+    --text-root  "${TEXT_ROOT:-$PROJECT_DIR/data/texts}" \
     --out-dir    "${OUT_DIR:-$PROJECT_DIR/benchmark_results}" \
     --cli        "${CLI:-$PROJECT_DIR/src/loterre_cli.py}" \
     --renderer   "${RENDERER:-$PROJECT_DIR/src/loterre_html_renderer.py}" \

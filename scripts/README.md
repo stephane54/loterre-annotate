@@ -71,7 +71,7 @@ avec `expected_matches` prêts à la révision manuelle.
 ```bash
 python3 scripts/prediction/generate_gold_from_predictions.py \
   --engine src/loterre_cli.py \
-  --text-root examples/texts \
+  --text-root data/texts \
   --out-dir predictions
 ```
 
@@ -125,10 +125,10 @@ compare les résultats avec le moteur complet.
 
 ## `generate_fr_corpus.py`
 
-Génère les corpus de test français `examples/texts/*_fr.jsonl` avec des variants flexionnels
+Génère les corpus de test français `data/texts/*_fr.jsonl` avec des variants flexionnels
 (pluriels, féminins, formes en -aux) calculés depuis les dictionnaires FR.
 
 ```bash
 python3 scripts/generate_fr_corpus.py
-# Produit : examples/texts/{P66,27X,9SD,8HQ,B9M,BVM,QX8}_fr.jsonl
+# Produit : data/texts/{P66,27X,9SD,8HQ,B9M,BVM,QX8}_fr.jsonl
 ```
