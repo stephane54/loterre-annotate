@@ -52,7 +52,13 @@ _PUNCT_RE = re.compile(r"[^\w\s()]")
 # à chaque appel de score_match_quality (fonction dans le hot path). ─────────
 _STOP_POS = frozenset({"CCONJ", "SCONJ", "DET", "PRON", "AUX", "PART", "ADP", "INTJ"})
 _CONTENT_POS = frozenset({"NOUN", "PROPN", "ADJ"})
-_WEAK_WORDS = frozenset({"and", "or", "it", "well", "can", "may", "like"})
+_WEAK_WORDS_EN = frozenset({"and", "or", "it", "well", "can", "may", "like"})
+_WEAK_WORDS_FR = frozenset({
+    "et", "ou", "ni", "mais",        # conjonctions de coordination
+    "il", "elle", "on",              # pronoms sujets clitiques
+    "bien", "ainsi", "comme",        # adverbes / conjonctions discursifs
+})
+_WEAK_WORDS = _WEAK_WORDS_EN  # alias rétrocompatible
 _SYNTACTIC_GENERIC_DEFAULT = frozenset({
     "process", "quality", "thing", "matter", "way",         # EN
     "processus", "qualite", "chose", "fait", "maniere",     # FR (sans accent)
@@ -762,7 +768,7 @@ def score_match_quality(match: Dict[str, Any], doc, quality: Dict[str, Any]) -> 
 
     stop_pos = _STOP_POS
     content_pos = _CONTENT_POS
-    weak_words = _WEAK_WORDS
+    weak_words = quality.get("_weak_words_set", _WEAK_WORDS)
 
     if token_count == 1 and rule != "pattern":
         if quality.get("strict_stopwords", True):
@@ -795,7 +801,7 @@ def score_match_quality(match: Dict[str, Any], doc, quality: Dict[str, Any]) -> 
             if lowered == "well":
                 if (left_low == "as" and right_low == "as") or right_pos == "PUNCT":
                     return None
-            if lowered in {"and", "or", "it"} and first.pos_ in (stop_pos | {"ADV"}):
+            if lowered in weak_words and first.pos_ in (stop_pos | {"ADV"}):
                 return None
 
     # Syntactic context guard — approximates dependency-based filtering using a
@@ -1129,6 +1135,8 @@ def main():
     report_md = effective.get("report") or "report.md"
     profile_overrides = effective.get("profile_overrides", {})
     quality = merge_quality(effective.get("quality", {}))
+    if "_weak_words_set" not in quality:
+        quality["_weak_words_set"] = _WEAK_WORDS_FR if lang == "fr" else _WEAK_WORDS_EN
 
     logging.info("Loading dictionary")
     entries = load_entries(dict_path)
@@ -1201,7 +1209,6 @@ def main():
         payload["results"] = [
             {
                 "id": doc_id,
-                "text": raw_text,
                 "annotated_text": annotate(raw_text, matches),
                 "matches": matches,
             }

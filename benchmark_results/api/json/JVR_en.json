@@ -1,0 +1,950 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "matches": [
+        {
+          "start": 43,
+          "end": 95,
+          "found": "1H-Benz(e)indolium, 2-(7-(1,3-dihydro-1,1-dimethyl-3-(4-sulfobutyl)-2H-benz(e)indol-2-ylidene)-1,3,5-heptatrienyl)-1,1-dimethyl-3-(4-sulfobutyl)-, inner salt, sodium salt",
+          "pref": "1H-Benz(e)indolium, 2-(7-(1,3-dihydro-1,1-dimethyl-3-(4-sulfobutyl)-2H-benz(e)indol-2-ylidene)-1,3,5-heptatrienyl)-1,1-dimethyl-3-(4-sulfobutyl)-, inner salt, sodium salt",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-GP2VZXFF-G"
+        },
+        {
+          "start": 396,
+          "end": 457,
+          "found": "Thiazolium, 3-((4-amino-2-methyl-5-pyrimidinyl)methyl)-4-methyl-5-(4,6,6-trihydroxy-3,5-dioxa-4,6-diphosphahex-1-yl)-, chloride, P,P'-dioxide",
+          "pref": "Thiazolium, 3-((4-amino-2-methyl-5-pyrimidinyl)methyl)-4-methyl-5-(4,6,6-trihydroxy-3,5-dioxa-4,6-diphosphahex-1-yl)-, chloride, P,P'-dioxide",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-J0JXH7LD-5"
+        },
+        {
+          "start": 460,
+          "end": 482,
+          "found": "Isoquinolinium, 2,2'-(1,5-pentanediylbis(oxy(3-oxo-3,1-propanediyl)))bis(1-((3,4-dimethoxyphenyl)methyl))-1,2,3,4-tetrahydro-6,7-dimethoxy-2-methyl-",
+          "pref": "Isoquinolinium, 2,2'-(1,5-pentanediylbis(oxy(3-oxo-3,1-propanediyl)))bis(1-((3,4-dimethoxyphenyl)methyl))-1,2,3,4-tetrahydro-6,7-dimethoxy-2-methyl-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-JRQ7MFQH-3"
+        },
+        {
+          "start": 484,
+          "end": 485,
+          "found": "Immunoglobulin",
+          "pref": "Immunoglobulin",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-XNZ0F4HK-5"
+        },
+        {
+          "start": 495,
+          "end": 498,
+          "found": "epidermal growth factor",
+          "pref": "Epidermal growth factor",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-LJBBT1XG-M"
+        },
+        {
+          "start": 527,
+          "end": 528,
+          "found": "EGF",
+          "pref": "EGF",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-LJBBT1XG-M"
+        },
+        {
+          "start": 544,
+          "end": 545,
+          "found": "EGF",
+          "pref": "EGF",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-LJBBT1XG-M"
+        },
+        {
+          "start": 638,
+          "end": 681,
+          "found": "Magnesate(1-), (3,4-didehydro-9-ethenyl-14-ethyl-21-(methoxycarbonyl)-4,8,13,18-tetramethyl-20-oxo-3-phorbinepropanoato(3-)-N23,N24,N25,N26)-, hydrogen, (SP-4-2)-",
+          "pref": "Magnesate(1-), (3,4-didehydro-9-ethenyl-14-ethyl-21-(methoxycarbonyl)-4,8,13,18-tetramethyl-20-oxo-3-phorbinepropanoato(3-)-N23,N24,N25,N26)-, hydrogen, (SP-4-2)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-N02BZ5NB-C"
+        },
+        {
+          "start": 687,
+          "end": 733,
+          "found": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 6-((1,3-dioxo-3-phenoxy-2-phenylpropyl)amino)-3,3-dimethyl-7-oxo-, (2S-(2alpha,5alpha,6beta))-",
+          "pref": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 6-((1,3-dioxo-3-phenoxy-2-phenylpropyl)amino)-3,3-dimethyl-7-oxo-, (2S-(2alpha,5alpha,6beta))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-MQ11B8L5-4"
+        },
+        {
+          "start": 777,
+          "end": 790,
+          "found": "3-Pyridinecarboxylic acid",
+          "pref": "3-Pyridinecarboxylic acid",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-BL7LSKVG-T"
+        },
+        {
+          "start": 908,
+          "end": 1084,
+          "found": "1-Naphthacenecarboxylic acid,(2-ethyl-1,2,3,4,6,11-hexahydro-2,5,7-trihydroxy-6,11-dioxo-4-((2,3,6-trideoxy-4-O-(2,6-dideoxy-4-O-((2R-trans)-tetrahydro-6-methyl-5-oxo-2H-pyran-2-yl)-alpha-L-lyxo-hexopyranosyl)-3-(dimethylamino)-alpha-L-lyxo-hexopyranosyl)-3-(dimethylamino)-alpha-L-lyxo-hexopyranosyl)oxy)-, methyl ester, (1R-(1alpha,2beta,4beta))-",
+          "pref": "1-Naphthacenecarboxylic acid,(2-ethyl-1,2,3,4,6,11-hexahydro-2,5,7-trihydroxy-6,11-dioxo-4-((2,3,6-trideoxy-4-O-(2,6-dideoxy-4-O-((2R-trans)-tetrahydro-6-methyl-5-oxo-2H-pyran-2-yl)-alpha-L-lyxo-hexopyranosyl)-3-(dimethylamino)-alpha-L-lyxo-hexopyranosyl)-3-(dimethylamino)-alpha-L-lyxo-hexopyranosyl)oxy)-, methyl ester, (1R-(1alpha,2beta,4beta))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-WFN9ZZ1D-1"
+        },
+        {
+          "start": 1322,
+          "end": 1366,
+          "found": "Aconitane-3,8,13,14,15-pentol, 20-ethyl-1,6,16-trimethoxy-4-(methoxymethyl)-, 8-acetate 14-benzoate, (1alpha,3alpha,6alpha,14alpha,15alpha,16beta)-",
+          "pref": "Aconitane-3,8,13,14,15-pentol, 20-ethyl-1,6,16-trimethoxy-4-(methoxymethyl)-, 8-acetate 14-benzoate, (1alpha,3alpha,6alpha,14alpha,15alpha,16beta)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-JT6PPW7B-S"
+        },
+        {
+          "start": 1692,
+          "end": 1711,
+          "found": "Benzoic acid, 3-((((3-(acetylmethylamino)-2,4,6-triiodo-5-((methylamino)carbonyl)benzoyl)amino)acetyl)amino)-5-(((2-hydroxyethyl)amino)carbonyl)-2,4,6-triiodo-",
+          "pref": "Benzoic acid, 3-((((3-(acetylmethylamino)-2,4,6-triiodo-5-((methylamino)carbonyl)benzoyl)amino)acetyl)amino)-5-(((2-hydroxyethyl)amino)carbonyl)-2,4,6-triiodo-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-WVC5QRH9-K"
+        },
+        {
+          "start": 2074,
+          "end": 2183,
+          "found": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 6-(((hexahydro-1H-azepin-1-yl)methylene)amino)-3,3-dimethyl-7-oxo-, (2,2-dimethyl-1-oxopropoxy)methyl ester, (2S-(2alpha,5alpha,6beta))-",
+          "pref": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 6-(((hexahydro-1H-azepin-1-yl)methylene)amino)-3,3-dimethyl-7-oxo-, (2,2-dimethyl-1-oxopropoxy)methyl ester, (2S-(2alpha,5alpha,6beta))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-SS8WNNL1-L"
+        },
+        {
+          "start": 2203,
+          "end": 2204,
+          "found": "Aluminum",
+          "pref": "Aluminum",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-CLS5JZSZ-F"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "matches": [
+        {
+          "start": 127,
+          "end": 174,
+          "found": "Butanoic acid, 1,1a,1b,4,4a,5,7a,7b,8,9-decahydro-4a,7b-dihydroxy-3-(hydroxymethyl)-1,1,6,8-tetramethyl-5-oxo-9aH-cyclopropa(3,4)benz(1,2-e)azulene-9,9a-diyl ester, (1aR-(1aalpha,1bbeta,4abeta,7aalpha,7balpha,8alpha,9beta,9aalpha))-",
+          "pref": "Butanoic acid, 1,1a,1b,4,4a,5,7a,7b,8,9-decahydro-4a,7b-dihydroxy-3-(hydroxymethyl)-1,1,6,8-tetramethyl-5-oxo-9aH-cyclopropa(3,4)benz(1,2-e)azulene-9,9a-diyl ester, (1aR-(1aalpha,1bbeta,4abeta,7aalpha,7balpha,8alpha,9beta,9aalpha))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-W447XL7N-Q"
+        },
+        {
+          "start": 364,
+          "end": 419,
+          "found": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 3,3-dimethyl-7-oxo-6-((phenylacetyl)amino)- (2S-(2alpha,5alpha,6beta))-",
+          "pref": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 3,3-dimethyl-7-oxo-6-((phenylacetyl)amino)- (2S-(2alpha,5alpha,6beta))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-W6S5744B-X"
+        },
+        {
+          "start": 491,
+          "end": 546,
+          "found": "14,39-Dioxabicyclo(33.3.1)nonatriaconta-19,21,23,25,27,29,31-heptaene-36-carboxylic acid, 33-((3-amino-3,6-dideoxy-beta-D-mannopyranosyl)oxy)-1,3,5,6,9,11,17,37-octahydroxy-15,16,18-trimethyl-13-oxo-, (1R,3S,5R,6R,9R,11R,15S,16R,17R,18S,19E,21E,23E,25E,27E,29E,31E,33R,35S,36R,37S)-",
+          "pref": "14,39-Dioxabicyclo(33.3.1)nonatriaconta-19,21,23,25,27,29,31-heptaene-36-carboxylic acid, 33-((3-amino-3,6-dideoxy-beta-D-mannopyranosyl)oxy)-1,3,5,6,9,11,17,37-octahydroxy-15,16,18-trimethyl-13-oxo-, (1R,3S,5R,6R,9R,11R,15S,16R,17R,18S,19E,21E,23E,25E,27E,29E,31E,33R,35S,36R,37S)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-F2G7TJ4L-0"
+        },
+        {
+          "start": 643,
+          "end": 645,
+          "found": "salt",
+          "pref": "Salt",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-Z96SK23X-R"
+        },
+        {
+          "start": 1022,
+          "end": 1056,
+          "found": "2-Naphthacenecarboxamide, 4-(dimethylamino)-1,4,4a,5,5a,6,11,12a-octahydro-3,5,10,12,12a-pentahydroxy-6-methylene-1,11-dioxo-, (4S-(4alpha,4aalpha,5alpha,5aalpha,12aalpha))-",
+          "pref": "2-Naphthacenecarboxamide, 4-(dimethylamino)-1,4,4a,5,5a,6,11,12a-octahydro-3,5,10,12,12a-pentahydroxy-6-methylene-1,11-dioxo-, (4S-(4alpha,4aalpha,5alpha,5aalpha,12aalpha))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-DNS18XCL-K"
+        },
+        {
+          "start": 1420,
+          "end": 1473,
+          "found": "Magnesate(1-), (3,4-didehydro-9-ethenyl-14-ethyl-21-(methoxycarbonyl)-4,8,13,18-tetramethyl-20-oxo-3-phorbinepropanoato(3-)-N23,N24,N25,N26)-, hydrogen, (SP-4-2)-",
+          "pref": "Magnesate(1-), (3,4-didehydro-9-ethenyl-14-ethyl-21-(methoxycarbonyl)-4,8,13,18-tetramethyl-20-oxo-3-phorbinepropanoato(3-)-N23,N24,N25,N26)-, hydrogen, (SP-4-2)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-N02BZ5NB-C"
+        },
+        {
+          "start": 1550,
+          "end": 1583,
+          "found": "4H-Pyrano(2,3-b)(1,4)benzodioxin-4-one, decahydro-4a,7,9-trihydroxy-2-methyl-6,8-bis(methylamino)-, (2R-(2alpha,4abeta,5abeta,6beta,7beta,8beta,9alpha,9aalpha,10abeta))-",
+          "pref": "4H-Pyrano(2,3-b)(1,4)benzodioxin-4-one, decahydro-4a,7,9-trihydroxy-2-methyl-6,8-bis(methylamino)-, (2R-(2alpha,4abeta,5abeta,6beta,7beta,8beta,9alpha,9aalpha,10abeta))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-NZ9H4D37-4"
+        },
+        {
+          "start": 1868,
+          "end": 1907,
+          "found": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 3,3-dimethyl-7-oxo-6-((phenylacetyl)amino)- (2S-(2alpha,5alpha,6beta))-",
+          "pref": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 3,3-dimethyl-7-oxo-6-((phenylacetyl)amino)- (2S-(2alpha,5alpha,6beta))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-W6S5744B-X"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "matches": [
+        {
+          "start": 43,
+          "end": 190,
+          "found": "L-Tyrosine, L-tryptophyl-L-histidyl-L-tryptophyl-L-leucyl-L-glutaminyl-L-leucyl-L-lysyl-L-prolylglycyl-L-glutaminyl-L-prolyl-gamma-(methylsulfinyl)-L-alpha-aminobutyryl-",
+          "pref": "L-Tyrosine, L-tryptophyl-L-histidyl-L-tryptophyl-L-leucyl-L-glutaminyl-L-leucyl-L-lysyl-L-prolylglycyl-L-glutaminyl-L-prolyl-gamma-(methylsulfinyl)-L-alpha-aminobutyryl-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-V9KZ2QPD-V"
+        },
+        {
+          "start": 191,
+          "end": 235,
+          "found": "8,12-Epoxy-1H,8H-2,7b,12a-triazadibenzo(a,g)cyclonona(cde)trinden-1-one, 2,3,9,10,11,12-hexahydro-9-methoxy-8-methyl-10-(methylamino)-, (8alpha,9beta,10beta,12alpha)-(+)-",
+          "pref": "8,12-Epoxy-1H,8H-2,7b,12a-triazadibenzo(a,g)cyclonona(cde)trinden-1-one, 2,3,9,10,11,12-hexahydro-9-methoxy-8-methyl-10-(methylamino)-, (8alpha,9beta,10beta,12alpha)-(+)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-HG3FSP8M-L"
+        },
+        {
+          "start": 239,
+          "end": 240,
+          "found": "Aluminum",
+          "pref": "Aluminum",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-CLS5JZSZ-F"
+        },
+        {
+          "start": 729,
+          "end": 799,
+          "found": "5-Thia-1-azabicyclo(4.2.0)oct-2-ene-2-carboxylic acid, 3-((acetyloxy)methyl)-7-(((2-amino-4-thiazolyl)(methoxyimino)acetyl)amino)-8-oxo-, monosodium salt, (6R-(6alpha,7beta(Z)))-",
+          "pref": "5-Thia-1-azabicyclo(4.2.0)oct-2-ene-2-carboxylic acid, 3-((acetyloxy)methyl)-7-(((2-amino-4-thiazolyl)(methoxyimino)acetyl)amino)-8-oxo-, monosodium salt, (6R-(6alpha,7beta(Z)))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-H2J61JZG-W"
+        },
+        {
+          "start": 1119,
+          "end": 1197,
+          "found": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 6-((1,3-dioxo-3-phenoxy-2-phenylpropyl)amino)-3,3-dimethyl-7-oxo-, (2S-(2alpha,5alpha,6beta))-",
+          "pref": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 6-((1,3-dioxo-3-phenoxy-2-phenylpropyl)amino)-3,3-dimethyl-7-oxo-, (2S-(2alpha,5alpha,6beta))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-MQ11B8L5-4"
+        },
+        {
+          "start": 1709,
+          "end": 1710,
+          "found": "methanol",
+          "pref": "Methanol",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-X4QQVDK6-M"
+        },
+        {
+          "start": 2135,
+          "end": 2186,
+          "found": "5-Thia-1-azabicyclo(4.2.0)oct-2-ene-2-carboxylic acid, 7-(((2Z)-2-(2-amino-4-thiazolyl)-2-(hydroxyimino)-1-oxoethyl)amino)-3-ethenyl-8-oxo-, (6R,7R)-",
+          "pref": "5-Thia-1-azabicyclo(4.2.0)oct-2-ene-2-carboxylic acid, 7-(((2Z)-2-(2-amino-4-thiazolyl)-2-(hydroxyimino)-1-oxoethyl)amino)-3-ethenyl-8-oxo-, (6R,7R)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-C9SRRB56-1"
+        },
+        {
+          "start": 2365,
+          "end": 2433,
+          "found": "Azirino(2',3':3,4)pyrrolo(1,2-a)indole-4,7-dione, 6-amino-8-(((aminocarbonyl)oxy)methyl)-1,1a,2,8,8a,8b-hexahydro-8a-methoxy-1,5-dimethyl-, (1aS-(1aalpha,8beta,8aalpha,8balpha))-",
+          "pref": "Azirino(2',3':3,4)pyrrolo(1,2-a)indole-4,7-dione, 6-amino-8-(((aminocarbonyl)oxy)methyl)-1,1a,2,8,8a,8b-hexahydro-8a-methoxy-1,5-dimethyl-, (1aS-(1aalpha,8beta,8aalpha,8balpha))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-FMXKDTW8-6"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "matches": [
+        {
+          "start": 316,
+          "end": 361,
+          "found": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 6-(((1-aminocyclohexyl)carbonyl)amino)-3,3-dimethyl-7-oxo-, (2S-(2alpha,5alpha,6beta))-",
+          "pref": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 6-(((1-aminocyclohexyl)carbonyl)amino)-3,3-dimethyl-7-oxo-, (2S-(2alpha,5alpha,6beta))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-DZN2Q6ZB-W"
+        },
+        {
+          "start": 448,
+          "end": 468,
+          "found": "Benzoic acid, 3-((((3-(acetylmethylamino)-2,4,6-triiodo-5-((methylamino)carbonyl)benzoyl)amino)acetyl)amino)-5-(((2-hydroxyethyl)amino)carbonyl)-2,4,6-triiodo-",
+          "pref": "Benzoic acid, 3-((((3-(acetylmethylamino)-2,4,6-triiodo-5-((methylamino)carbonyl)benzoyl)amino)acetyl)amino)-5-(((2-hydroxyethyl)amino)carbonyl)-2,4,6-triiodo-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-WVC5QRH9-K"
+        },
+        {
+          "start": 610,
+          "end": 617,
+          "found": "salt",
+          "pref": "Salt",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-Z96SK23X-R"
+        },
+        {
+          "start": 840,
+          "end": 919,
+          "found": "5,12-Naphthacenedione, 10-((3-amino-2,3,6-trideoxy-alpha-L-lyxo-hexopyranosyl)oxy)-7,8,9,10-tetrahydro-6,8,11-trihydroxy-8-(hydroxyacetyl)-1-methoxy-, (8S-cis)-",
+          "pref": "5,12-Naphthacenedione, 10-((3-amino-2,3,6-trideoxy-alpha-L-lyxo-hexopyranosyl)oxy)-7,8,9,10-tetrahydro-6,8,11-trihydroxy-8-(hydroxyacetyl)-1-methoxy-, (8S-cis)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-ZNMFTDMP-J"
+        },
+        {
+          "start": 967,
+          "end": 968,
+          "found": "methanol",
+          "pref": "Methanol",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-X4QQVDK6-M"
+        },
+        {
+          "start": 1144,
+          "end": 1152,
+          "found": "Adenosine",
+          "pref": "Adenosine",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-Z6XH0M72-4"
+        },
+        {
+          "start": 1153,
+          "end": 1154,
+          "found": "diphosphate",
+          "pref": "Diphosphate",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-L0GPZG2S-9"
+        },
+        {
+          "start": 1229,
+          "end": 1239,
+          "found": "salt",
+          "pref": "Salt",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-Z96SK23X-R"
+        },
+        {
+          "start": 1241,
+          "end": 1306,
+          "found": "Aconitane-3,8,13,14,15-pentol, 20-ethyl-1,6,16-trimethoxy-4-(methoxymethyl)-, 8-acetate 14-benzoate, (1alpha,3alpha,6alpha,14alpha,15alpha,16beta)-",
+          "pref": "Aconitane-3,8,13,14,15-pentol, 20-ethyl-1,6,16-trimethoxy-4-(methoxymethyl)-, 8-acetate 14-benzoate, (1alpha,3alpha,6alpha,14alpha,15alpha,16beta)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-JT6PPW7B-S"
+        },
+        {
+          "start": 1442,
+          "end": 1443,
+          "found": "Immunoglobulin",
+          "pref": "Immunoglobulin",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-XNZ0F4HK-5"
+        },
+        {
+          "start": 1447,
+          "end": 1450,
+          "found": "epidermal growth factor",
+          "pref": "Epidermal growth factor",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-LJBBT1XG-M"
+        },
+        {
+          "start": 1469,
+          "end": 1470,
+          "found": "EGF",
+          "pref": "EGF",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-LJBBT1XG-M"
+        },
+        {
+          "start": 1484,
+          "end": 1485,
+          "found": "EGF",
+          "pref": "EGF",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-LJBBT1XG-M"
+        },
+        {
+          "start": 1623,
+          "end": 1668,
+          "found": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 3,3-dimethyl-7-oxo-6-((phenylacetyl)amino)- (2S-(2alpha,5alpha,6beta))-",
+          "pref": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 3,3-dimethyl-7-oxo-6-((phenylacetyl)amino)- (2S-(2alpha,5alpha,6beta))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-W6S5744B-X"
+        },
+        {
+          "start": 1964,
+          "end": 1974,
+          "found": "3-Pyridinecarboxylic acid",
+          "pref": "3-Pyridinecarboxylic acid",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-BL7LSKVG-T"
+        },
+        {
+          "start": 2057,
+          "end": 2092,
+          "found": "2-Naphthacenecarboxamide, 4-(dimethylamino)-1,4,4a,5,5a,6,11,12a-octahydro-3,6,10,12,12a-pentahydroxy-6-methyl-1,11-dioxo-, (4S-(4alpha,4aalpha,5aalpha,6beta,12aalpha))-",
+          "pref": "2-Naphthacenecarboxamide, 4-(dimethylamino)-1,4,4a,5,5a,6,11,12a-octahydro-3,6,10,12,12a-pentahydroxy-6-methyl-1,11-dioxo-, (4S-(4alpha,4aalpha,5aalpha,6beta,12aalpha))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-DD2487BR-4"
+        },
+        {
+          "start": 2093,
+          "end": 2191,
+          "found": "D-Streptamine, O-2,6-diamino-2,6-dideoxy-alpha-D-glucopyranosyl-(1-4)-O-(O-2,6-diamino-2,6-dideoxy-beta-L-idopyranosyl-(1-3)-beta-D-ribofuranosyl-(1-5))-2-deoxy-",
+          "pref": "D-Streptamine, O-2,6-diamino-2,6-dideoxy-alpha-D-glucopyranosyl-(1-4)-O-(O-2,6-diamino-2,6-dideoxy-beta-L-idopyranosyl-(1-3)-beta-D-ribofuranosyl-(1-5))-2-deoxy-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-FPP48158-9"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "matches": [
+        {
+          "start": 131,
+          "end": 183,
+          "found": "Tetradecanoic acid, 9a-(acetyloxy)-1a,1b,4,4a,5,7a,7b,8,9,9a-decahydro-4a,7b-dihydroxy-3-(hydroxymethyl)-1,1,6,8-tetramethyl-5-oxo-1H-cyclopropa(3,4)benz(1,2-e)azulen-9-yl ester, (1aR-(1aalpha,1bbeta,4abeta,7aalpha,7balpha,8alpha,9beta,9aalpha))-",
+          "pref": "Tetradecanoic acid, 9a-(acetyloxy)-1a,1b,4,4a,5,7a,7b,8,9,9a-decahydro-4a,7b-dihydroxy-3-(hydroxymethyl)-1,1,6,8-tetramethyl-5-oxo-1H-cyclopropa(3,4)benz(1,2-e)azulen-9-yl ester, (1aR-(1aalpha,1bbeta,4abeta,7aalpha,7balpha,8alpha,9beta,9aalpha))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-KCNBVFTW-L"
+        },
+        {
+          "start": 605,
+          "end": 646,
+          "found": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 6-(((3-(2-chlorophenyl)-5-methyl-4-isoxazolyl)carbonyl)amino)-3,3-dimethyl-7-oxo-, (2S-(2alpha,5alpha,6beta))-",
+          "pref": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 6-(((3-(2-chlorophenyl)-5-methyl-4-isoxazolyl)carbonyl)amino)-3,3-dimethyl-7-oxo-, (2S-(2alpha,5alpha,6beta))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-P0LSLTBT-P"
+        },
+        {
+          "start": 1094,
+          "end": 1095,
+          "found": "salt",
+          "pref": "Salt",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-Z96SK23X-R"
+        },
+        {
+          "start": 1138,
+          "end": 1143,
+          "found": "Adenosine",
+          "pref": "Adenosine",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-Z6XH0M72-4"
+        },
+        {
+          "start": 1144,
+          "end": 1145,
+          "found": "diphosphate",
+          "pref": "Diphosphate",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-L0GPZG2S-9"
+        },
+        {
+          "start": 1200,
+          "end": 1201,
+          "found": "salt",
+          "pref": "Salt",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-Z96SK23X-R"
+        },
+        {
+          "start": 1628,
+          "end": 1634,
+          "found": "salt",
+          "pref": "Salt",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-Z96SK23X-R"
+        },
+        {
+          "start": 2031,
+          "end": 2038,
+          "found": "salt",
+          "pref": "Salt",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-Z96SK23X-R"
+        },
+        {
+          "start": 2147,
+          "end": 2212,
+          "found": "5-Thia-1-azabicyclo(4.2.0)oct-2-ene-2-carboxylic acid, 7-(((2-amino-4-thiazolyl)(methoxyimino)acetyl)amino)-8-oxo-, (6R-(6alpha,7beta(Z)))-",
+          "pref": "5-Thia-1-azabicyclo(4.2.0)oct-2-ene-2-carboxylic acid, 7-(((2-amino-4-thiazolyl)(methoxyimino)acetyl)amino)-8-oxo-, (6R-(6alpha,7beta(Z)))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-D7NKF2CS-N"
+        },
+        {
+          "start": 2328,
+          "end": 2369,
+          "found": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 6-(((1-aminocyclohexyl)carbonyl)amino)-3,3-dimethyl-7-oxo-, (2S-(2alpha,5alpha,6beta))-",
+          "pref": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 6-(((1-aminocyclohexyl)carbonyl)amino)-3,3-dimethyl-7-oxo-, (2S-(2alpha,5alpha,6beta))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-DZN2Q6ZB-W"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "matches": [
+        {
+          "start": 43,
+          "end": 117,
+          "found": "Pyridinium, 1-((7-(((2-amino-4-thiazolyl)((1-carboxy-1-methylethoxy)imino)acetyl)amino)-2-carboxy-8-oxo-5-thia-1-azabicyclo(4.2.0)oct-2-en-3-yl)methyl)-, inner salt, pentahydrate, (6R-(6alpha,7beta(Z)))-",
+          "pref": "Pyridinium, 1-((7-(((2-amino-4-thiazolyl)((1-carboxy-1-methylethoxy)imino)acetyl)amino)-2-carboxy-8-oxo-5-thia-1-azabicyclo(4.2.0)oct-2-en-3-yl)methyl)-, inner salt, pentahydrate, (6R-(6alpha,7beta(Z)))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-S1432DLS-0"
+        },
+        {
+          "start": 123,
+          "end": 173,
+          "found": "6,14-Ethenomorphinan-7-methanol, 17-(cyclopropylmethyl)-alpha-(1,1-dimethylethyl)-4,5-epoxy-18,19-dihydro-3-hydroxy-6-methoxy-alpha-methyl-, (5alpha,7alpha(S))-",
+          "pref": "6,14-Ethenomorphinan-7-methanol, 17-(cyclopropylmethyl)-alpha-(1,1-dimethylethyl)-4,5-epoxy-18,19-dihydro-3-hydroxy-6-methoxy-alpha-methyl-, (5alpha,7alpha(S))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-SWFQ97R8-7"
+        },
+        {
+          "start": 268,
+          "end": 269,
+          "found": "Osteocalcin",
+          "pref": "Osteocalcin",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-LMPWVQ6M-R"
+        },
+        {
+          "start": 270,
+          "end": 271,
+          "found": "human",
+          "pref": "Human",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-GMMPKSRD-M"
+        },
+        {
+          "start": 510,
+          "end": 587,
+          "found": "4H-Pyrrolo(2,3-d)pyrimidin-4-one, 2-amino-5-(((4,5-dihydroxy-2-cyclopenten-1-yl)amino)methyl)-1,7-dihydro-7-beta-D-ribofuranosyl-, (1S-(1alpha,4beta,5beta))-",
+          "pref": "4H-Pyrrolo(2,3-d)pyrimidin-4-one, 2-amino-5-(((4,5-dihydroxy-2-cyclopenten-1-yl)amino)methyl)-1,7-dihydro-7-beta-D-ribofuranosyl-, (1S-(1alpha,4beta,5beta))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-BZ3F9NRQ-1"
+        },
+        {
+          "start": 598,
+          "end": 695,
+          "found": "L-threo-alpha-D-galacto-Octopyranoside, methyl 7-chloro-6,7,8-trideoxy-6-(((1-methyl-4-propyl-2-pyrrolidinyl)carbonyl)amino)-1-thio-, (2S-trans)-",
+          "pref": "L-threo-alpha-D-galacto-Octopyranoside, methyl 7-chloro-6,7,8-trideoxy-6-(((1-methyl-4-propyl-2-pyrrolidinyl)carbonyl)amino)-1-thio-, (2S-trans)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-VP8S9P70-L"
+        },
+        {
+          "start": 766,
+          "end": 805,
+          "found": "Isoquinolinium, 2,2'-(1,5-pentanediylbis(oxy(3-oxo-3,1-propanediyl)))bis(1-((3,4-dimethoxyphenyl)methyl))-1,2,3,4-tetrahydro-6,7-dimethoxy-2-methyl-",
+          "pref": "Isoquinolinium, 2,2'-(1,5-pentanediylbis(oxy(3-oxo-3,1-propanediyl)))bis(1-((3,4-dimethoxyphenyl)methyl))-1,2,3,4-tetrahydro-6,7-dimethoxy-2-methyl-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-JRQ7MFQH-3"
+        },
+        {
+          "start": 815,
+          "end": 854,
+          "found": "Azirino(2',3':3,4)pyrrolo(1,2-a)indole-4,7-dione, 6-amino-8-(((aminocarbonyl)oxy)methyl)-1,1a,2,8,8a,8b-hexahydro-8a-methoxy-1,5-dimethyl-, (1aS-(1aalpha,8beta,8aalpha,8balpha))-",
+          "pref": "Azirino(2',3':3,4)pyrrolo(1,2-a)indole-4,7-dione, 6-amino-8-(((aminocarbonyl)oxy)methyl)-1,1a,2,8,8a,8b-hexahydro-8a-methoxy-1,5-dimethyl-, (1aS-(1aalpha,8beta,8aalpha,8balpha))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-FMXKDTW8-6"
+        },
+        {
+          "start": 882,
+          "end": 884,
+          "found": "Aluminum",
+          "pref": "Aluminum",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-CLS5JZSZ-F"
+        },
+        {
+          "start": 990,
+          "end": 991,
+          "found": "salt",
+          "pref": "Salt",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-Z96SK23X-R"
+        },
+        {
+          "start": 995,
+          "end": 996,
+          "found": "potassium",
+          "pref": "Potassium",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-P3VVFPSW-4"
+        },
+        {
+          "start": 1237,
+          "end": 1347,
+          "found": "beta-D-Galactopyranoside, (3beta,5alpha,22beta,25S)-spirosolan-3-yl O-beta-D-glucopyranosyl-(1-2)-O-(beta-D-xylopyranosyl-(1-3))-O-beta-D-glucopyranosyl-(1-4)-",
+          "pref": "beta-D-Galactopyranoside, (3beta,5alpha,22beta,25S)-spirosolan-3-yl O-beta-D-glucopyranosyl-(1-2)-O-(beta-D-xylopyranosyl-(1-3))-O-beta-D-glucopyranosyl-(1-4)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-WX1V79QX-W"
+        },
+        {
+          "start": 1412,
+          "end": 1415,
+          "found": "Immunoglobulin G",
+          "pref": "Immunoglobulin G",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-BFK247RT-8"
+        },
+        {
+          "start": 1418,
+          "end": 1428,
+          "found": "immunoglobulin E",
+          "pref": "Immunoglobulins, E",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-L15BBWZ2-V"
+        },
+        {
+          "start": 1500,
+          "end": 1546,
+          "found": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 3,3-dimethyl-7-oxo-6-((phenylacetyl)amino)- (2S-(2alpha,5alpha,6beta))-",
+          "pref": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 3,3-dimethyl-7-oxo-6-((phenylacetyl)amino)- (2S-(2alpha,5alpha,6beta))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-W6S5744B-X"
+        },
+        {
+          "start": 2120,
+          "end": 2215,
+          "found": "5-Thia-1-azabicyclo(4.2.0)oct-2-ene-2-carboxylic acid, 7-(((4-(2-amino-1-carboxy-2-oxoethylidene)-1,3-dithietan-2-yl)carbonyl)amino)-7-methoxy-3-(((1-methyl-1H-tetrazol-5-yl)thio)methyl)-8-oxo-, (6R-(6alpha,7alpha))-",
+          "pref": "5-Thia-1-azabicyclo(4.2.0)oct-2-ene-2-carboxylic acid, 7-(((4-(2-amino-1-carboxy-2-oxoethylidene)-1,3-dithietan-2-yl)carbonyl)amino)-7-methoxy-3-(((1-methyl-1H-tetrazol-5-yl)thio)methyl)-8-oxo-, (6R-(6alpha,7alpha))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-J2MD9H91-1"
+        },
+        {
+          "start": 2280,
+          "end": 2281,
+          "found": "Immunoglobulin",
+          "pref": "Immunoglobulin",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-XNZ0F4HK-5"
+        },
+        {
+          "start": 2287,
+          "end": 2298,
+          "found": "epidermal growth factor",
+          "pref": "Epidermal growth factor",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-LJBBT1XG-M"
+        },
+        {
+          "start": 2322,
+          "end": 2328,
+          "found": "EGF",
+          "pref": "EGF",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-LJBBT1XG-M"
+        },
+        {
+          "start": 2350,
+          "end": 2351,
+          "found": "EGF",
+          "pref": "EGF",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-LJBBT1XG-M"
+        },
+        {
+          "start": 2501,
+          "end": 2554,
+          "found": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 3,3-dimethyl-6-(((5-methyl-3-phenyl-4-isoxazolyl)carbonyl)amino)-7-oxo-, (2S-(2alpha,5alpha,6beta))-",
+          "pref": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 3,3-dimethyl-6-(((5-methyl-3-phenyl-4-isoxazolyl)carbonyl)amino)-7-oxo-, (2S-(2alpha,5alpha,6beta))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-Q77X1GM1-9"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "matches": [
+        {
+          "start": 116,
+          "end": 184,
+          "found": "5-Thia-1-azabicyclo(4.2.0)oct-2-ene-2-carboxylic acid, 7-(((2Z)-2-(2-amino-4-thiazolyl)-2-(hydroxyimino)-1-oxoethyl)amino)-3-ethenyl-8-oxo-, (6R,7R)-",
+          "pref": "5-Thia-1-azabicyclo(4.2.0)oct-2-ene-2-carboxylic acid, 7-(((2Z)-2-(2-amino-4-thiazolyl)-2-(hydroxyimino)-1-oxoethyl)amino)-3-ethenyl-8-oxo-, (6R,7R)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-C9SRRB56-1"
+        },
+        {
+          "start": 362,
+          "end": 395,
+          "found": "Azirino(2',3':3,4)pyrrolo(1,2-a)indole-4,7-dione, 6-amino-8-(((aminocarbonyl)oxy)methyl)-1,1a,2,8,8a,8b-hexahydro-8a-methoxy-5-methyl-, (1aS-(1aalpha,8beta,8aalpha,8balpha))-",
+          "pref": "Azirino(2',3':3,4)pyrrolo(1,2-a)indole-4,7-dione, 6-amino-8-(((aminocarbonyl)oxy)methyl)-1,1a,2,8,8a,8b-hexahydro-8a-methoxy-5-methyl-, (1aS-(1aalpha,8beta,8aalpha,8balpha))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-M7M2L15Z-C"
+        },
+        {
+          "start": 763,
+          "end": 764,
+          "found": "salt",
+          "pref": "Salt",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-Z96SK23X-R"
+        },
+        {
+          "start": 781,
+          "end": 822,
+          "found": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 3,3-dimethyl-7-oxo-6-((phenylacetyl)amino)- (2S-(2alpha,5alpha,6beta))-",
+          "pref": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 3,3-dimethyl-7-oxo-6-((phenylacetyl)amino)- (2S-(2alpha,5alpha,6beta))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-W6S5744B-X"
+        },
+        {
+          "start": 852,
+          "end": 858,
+          "found": "Immunoglobulin",
+          "pref": "Immunoglobulin",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-XNZ0F4HK-5"
+        },
+        {
+          "start": 864,
+          "end": 867,
+          "found": "epidermal growth factor",
+          "pref": "Epidermal growth factor",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-LJBBT1XG-M"
+        },
+        {
+          "start": 883,
+          "end": 884,
+          "found": "EGF",
+          "pref": "EGF",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-LJBBT1XG-M"
+        },
+        {
+          "start": 925,
+          "end": 926,
+          "found": "EGF",
+          "pref": "EGF",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-LJBBT1XG-M"
+        },
+        {
+          "start": 1170,
+          "end": 1175,
+          "found": "salt",
+          "pref": "Salt",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-Z96SK23X-R"
+        },
+        {
+          "start": 1176,
+          "end": 1183,
+          "found": "sodium",
+          "pref": "Sodium",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-G237J2SC-F"
+        },
+        {
+          "start": 1183,
+          "end": 1184,
+          "found": "salt",
+          "pref": "Salt",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-Z96SK23X-R"
+        },
+        {
+          "start": 1337,
+          "end": 1416,
+          "found": "Benzenepropanoic acid, beta-(((1,1-dimethylethoxy)carbonyl)amino)-alpha-hydroxy-, (2aR,4S,4aR,6R,9S,11S,12S,12aS,12bS)-12b-(acetyloxy)-12-(benzoyloxy)-2a,3,4,4a,5,6,9,10,11,12,12a,12b-dodecahydro-4,4a ,6,11-tetrahydroxy-8,12a,13,13-tetramethyl-5-oxo-7,11-methano-1H-cyclodeca(3,4)benz(1,2-b)oxet-9-yl ester, (alphaR)-, hydrate (1:3)",
+          "pref": "Benzenepropanoic acid, beta-(((1,1-dimethylethoxy)carbonyl)amino)-alpha-hydroxy-, (2aR,4S,4aR,6R,9S,11S,12S,12aS,12bS)-12b-(acetyloxy)-12-(benzoyloxy)-2a,3,4,4a,5,6,9,10,11,12,12a,12b-dodecahydro-4,4a ,6,11-tetrahydroxy-8,12a,13,13-tetramethyl-5-oxo-7,11-methano-1H-cyclodeca(3,4)benz(1,2-b)oxet-9-yl ester, (alphaR)-, hydrate (1:3)",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-RNZX868Z-V"
+        },
+        {
+          "start": 1584,
+          "end": 1609,
+          "found": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 3,3-dimethyl-7-oxo-6-((phenylacetyl)amino)- (2S-(2alpha,5alpha,6beta))-",
+          "pref": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 3,3-dimethyl-7-oxo-6-((phenylacetyl)amino)- (2S-(2alpha,5alpha,6beta))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-W6S5744B-X"
+        },
+        {
+          "start": 1633,
+          "end": 1662,
+          "found": "2-Naphthacenecarboxamide, 4-(dimethylamino)-1,4,4a,5,5a,6,11,12a-octahydro-3,6,10,12,12a-pentahydroxy-6-methyl-1,11-dioxo-, (4S-(4alpha,4aalpha,5aalpha,6beta,12aalpha))-",
+          "pref": "2-Naphthacenecarboxamide, 4-(dimethylamino)-1,4,4a,5,5a,6,11,12a-octahydro-3,6,10,12,12a-pentahydroxy-6-methyl-1,11-dioxo-, (4S-(4alpha,4aalpha,5aalpha,6beta,12aalpha))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-DD2487BR-4"
+        },
+        {
+          "start": 1887,
+          "end": 1937,
+          "found": "2-Naphthacenecarboxamide, 4-(dimethylamino)-1,4,4a,5,5a,6,11,12a-octahydro-3,5,10,12,12a-pentahydroxy-6-methylene-1,11-dioxo-, (4S-(4alpha,4aalpha,5alpha,5aalpha,12aalpha))-",
+          "pref": "2-Naphthacenecarboxamide, 4-(dimethylamino)-1,4,4a,5,5a,6,11,12a-octahydro-3,5,10,12,12a-pentahydroxy-6-methylene-1,11-dioxo-, (4S-(4alpha,4aalpha,5alpha,5aalpha,12aalpha))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-DNS18XCL-K"
+        },
+        {
+          "start": 2119,
+          "end": 2146,
+          "found": "Benzoic acid, 3-((((3-(acetylmethylamino)-2,4,6-triiodo-5-((methylamino)carbonyl)benzoyl)amino)acetyl)amino)-5-(((2-hydroxyethyl)amino)carbonyl)-2,4,6-triiodo-",
+          "pref": "Benzoic acid, 3-((((3-(acetylmethylamino)-2,4,6-triiodo-5-((methylamino)carbonyl)benzoyl)amino)acetyl)amino)-5-(((2-hydroxyethyl)amino)carbonyl)-2,4,6-triiodo-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-WVC5QRH9-K"
+        },
+        {
+          "start": 2194,
+          "end": 2278,
+          "found": "6,14-Ethenomorphinan-7-methanol, 17-(cyclopropylmethyl)-4,5-epoxy-18,19-dihydro-3-hydroxy-6-methoxy-alpha,alpha-dimethyl-, (5alpha,7alpha)-",
+          "pref": "6,14-Ethenomorphinan-7-methanol, 17-(cyclopropylmethyl)-4,5-epoxy-18,19-dihydro-3-hydroxy-6-methoxy-alpha,alpha-dimethyl-, (5alpha,7alpha)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-ZF0T9P0V-S"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "matches": [
+        {
+          "start": 144,
+          "end": 191,
+          "found": "1,2-cyclopentanediol, 3-(7-(((1R,2S)-2-(3,4-difluorophenyl)cyclopropyl)amino)-5-(propylthio)-3H-1,2,3-triazolo(4,5-d)pyrimidin-3-yl)-5-(2-hydroxyethoxy)-, (1S,2S,3R,5S)-",
+          "pref": "1,2-cyclopentanediol, 3-(7-(((1R,2S)-2-(3,4-difluorophenyl)cyclopropyl)amino)-5-(propylthio)-3H-1,2,3-triazolo(4,5-d)pyrimidin-3-yl)-5-(2-hydroxyethoxy)-, (1S,2S,3R,5S)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-H23P8MGV-2"
+        },
+        {
+          "start": 217,
+          "end": 259,
+          "found": "14,39-Dioxabicyclo(33.3.1)nonatriaconta-19,21,23,25,27,29,31-heptaene-36-carboxylic acid, 33-((3-amino-3,6-dideoxy-beta-D-mannopyranosyl)oxy)-1,3,5,6,9,11,17,37-octahydroxy-15,16,18-trimethyl-13-oxo-, (1R,3S,5R,6R,9R,11R,15S,16R,17R,18S,19E,21E,23E,25E,27E,29E,31E,33R,35S,36R,37S)-",
+          "pref": "14,39-Dioxabicyclo(33.3.1)nonatriaconta-19,21,23,25,27,29,31-heptaene-36-carboxylic acid, 33-((3-amino-3,6-dideoxy-beta-D-mannopyranosyl)oxy)-1,3,5,6,9,11,17,37-octahydroxy-15,16,18-trimethyl-13-oxo-, (1R,3S,5R,6R,9R,11R,15S,16R,17R,18S,19E,21E,23E,25E,27E,29E,31E,33R,35S,36R,37S)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-F2G7TJ4L-0"
+        },
+        {
+          "start": 260,
+          "end": 322,
+          "found": "5,12-Naphthacenedione, 10-((3-amino-2,3,6-trideoxy-alpha-L-arabino-hexopyranosyl)oxy)-7,8,9,10-tetrahydro-6,8,11-trihydroxy-8-(hydroxyacetyl)-1-methoxy-, (8S-cis)-",
+          "pref": "5,12-Naphthacenedione, 10-((3-amino-2,3,6-trideoxy-alpha-L-arabino-hexopyranosyl)oxy)-7,8,9,10-tetrahydro-6,8,11-trihydroxy-8-(hydroxyacetyl)-1-methoxy-, (8S-cis)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-M2WMR90H-M"
+        },
+        {
+          "start": 497,
+          "end": 498,
+          "found": "salt",
+          "pref": "Salt",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-Z96SK23X-R"
+        },
+        {
+          "start": 713,
+          "end": 758,
+          "found": "5-Thia-1-azabicyclo(4.2.0)oct-2-ene-2-carboxylic acid, 7-(((2-amino-4-thiazolyl)(methoxyimino)acetyl)amino)-8-oxo-, (6R-(6alpha,7beta(Z)))-",
+          "pref": "5-Thia-1-azabicyclo(4.2.0)oct-2-ene-2-carboxylic acid, 7-(((2-amino-4-thiazolyl)(methoxyimino)acetyl)amino)-8-oxo-, (6R-(6alpha,7beta(Z)))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-D7NKF2CS-N"
+        },
+        {
+          "start": 1048,
+          "end": 1092,
+          "found": "Thiazolium, 3-((4-amino-2-methyl-5-pyrimidinyl)methyl)-4-methyl-5-(4,6,6-trihydroxy-3,5-dioxa-4,6-diphosphahex-1-yl)-, chloride, P,P'-dioxide",
+          "pref": "Thiazolium, 3-((4-amino-2-methyl-5-pyrimidinyl)methyl)-4-methyl-5-(4,6,6-trihydroxy-3,5-dioxa-4,6-diphosphahex-1-yl)-, chloride, P,P'-dioxide",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-J0JXH7LD-5"
+        },
+        {
+          "start": 1156,
+          "end": 1199,
+          "found": "Spiro(cyclopenta(7,8)phenanthro(4b,5-b)oxirene-7(3H),2'(3'H)-furan)-10-carboxylic acid, 2,4,4',4a,5',5a,6,6a,8,9,9a,9b,10,11-tetradecahydro-4a,6a-dimethyl-2,5'-dioxo-, methyl ester, (4aS,4bR,5aR,6aS,7 R,9aS,9bR,10R)-",
+          "pref": "Spiro(cyclopenta(7,8)phenanthro(4b,5-b)oxirene-7(3H),2'(3'H)-furan)-10-carboxylic acid, 2,4,4',4a,5',5a,6,6a,8,9,9a,9b,10,11-tetradecahydro-4a,6a-dimethyl-2,5'-dioxo-, methyl ester, (4aS,4bR,5aR,6aS,7 R,9aS,9bR,10R)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-BK4QNNJV-S"
+        },
+        {
+          "start": 1269,
+          "end": 1270,
+          "found": "hydrogen",
+          "pref": "Hydrogen",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-BN2DQCRC-M"
+        },
+        {
+          "start": 1330,
+          "end": 1363,
+          "found": "2,5-Cyclohexadiene-1,4-dione, 2,3-dimethyl-5-(3,7,11,15,19,23,27,31,35-nonamethyl-2,6,10,14,18,22,26,30,34-hexatriacontanonaenyl)-, (all-E)-",
+          "pref": "2,5-Cyclohexadiene-1,4-dione, 2,3-dimethyl-5-(3,7,11,15,19,23,27,31,35-nonamethyl-2,6,10,14,18,22,26,30,34-hexatriacontanonaenyl)-, (all-E)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-FMQ742BN-K"
+        },
+        {
+          "start": 1515,
+          "end": 1572,
+          "found": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 6-(((1-aminocyclohexyl)carbonyl)amino)-3,3-dimethyl-7-oxo-, (2S-(2alpha,5alpha,6beta))-",
+          "pref": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 6-(((1-aminocyclohexyl)carbonyl)amino)-3,3-dimethyl-7-oxo-, (2S-(2alpha,5alpha,6beta))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-DZN2Q6ZB-W"
+        },
+        {
+          "start": 1680,
+          "end": 1712,
+          "found": "Isoquinolinium, 2,2'-(1,5-pentanediylbis(oxy(3-oxo-3,1-propanediyl)))bis(1-((3,4-dimethoxyphenyl)methyl))-1,2,3,4-tetrahydro-6,7-dimethoxy-2-methyl-",
+          "pref": "Isoquinolinium, 2,2'-(1,5-pentanediylbis(oxy(3-oxo-3,1-propanediyl)))bis(1-((3,4-dimethoxyphenyl)methyl))-1,2,3,4-tetrahydro-6,7-dimethoxy-2-methyl-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-JRQ7MFQH-3"
+        },
+        {
+          "start": 1747,
+          "end": 1797,
+          "found": "2,7-(Epoxy(1,11,13)pentadecatrienoimino)furo(2'',3'':7',8')naphth(1',2':4,5)imidazo(1,2-a)pyridine-1,15(2H)-dione, 25-(acetyloxy)-5,6,21,23-tetrahydroxy-27-methoxy-2,4,11,16,20,22,24,26-octamethyl-, ( 2S,16Z,18E,20S,21S,22R,23R,24R,25S,26R,27S,28E)-",
+          "pref": "2,7-(Epoxy(1,11,13)pentadecatrienoimino)furo(2'',3'':7',8')naphth(1',2':4,5)imidazo(1,2-a)pyridine-1,15(2H)-dione, 25-(acetyloxy)-5,6,21,23-tetrahydroxy-27-methoxy-2,4,11,16,20,22,24,26-octamethyl-, ( 2S,16Z,18E,20S,21S,22R,23R,24R,25S,26R,27S,28E)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-K5WB56BR-F"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "matches": [
+        {
+          "start": 43,
+          "end": 71,
+          "found": "2,5-Methano-2H-indeno(1,2-b)oxirene, 2,3,4,5,6,7,7-heptachloro-1a,1b,5,5a,6,6a-hexahydro-, (1aalpha,1bbeta,2alpha,5alpha,5abeta,6beta,6aalpha)-",
+          "pref": "2,5-Methano-2H-indeno(1,2-b)oxirene, 2,3,4,5,6,7,7-heptachloro-1a,1b,5,5a,6,6a-hexahydro-, (1aalpha,1bbeta,2alpha,5alpha,5abeta,6beta,6aalpha)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-ZLBV1WV7-4"
+        },
+        {
+          "start": 248,
+          "end": 302,
+          "found": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 3,3-dimethyl-7-oxo-6-((phenylacetyl)amino)- (2S-(2alpha,5alpha,6beta))-",
+          "pref": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 3,3-dimethyl-7-oxo-6-((phenylacetyl)amino)- (2S-(2alpha,5alpha,6beta))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-W6S5744B-X"
+        },
+        {
+          "start": 491,
+          "end": 552,
+          "found": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 3,3-dimethyl-7-oxo-6-((phenylacetyl)amino)- (2S-(2alpha,5alpha,6beta))-",
+          "pref": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 3,3-dimethyl-7-oxo-6-((phenylacetyl)amino)- (2S-(2alpha,5alpha,6beta))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-W6S5744B-X"
+        },
+        {
+          "start": 871,
+          "end": 872,
+          "found": "hydrogen",
+          "pref": "Hydrogen",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-BN2DQCRC-M"
+        },
+        {
+          "start": 929,
+          "end": 996,
+          "found": "Thiazolium, 3-((4-amino-2-methyl-5-pyrimidinyl)methyl)-4-methyl-5-(4,6,6-trihydroxy-3,5-dioxa-4,6-diphosphahex-1-yl)-, chloride, P,P'-dioxide",
+          "pref": "Thiazolium, 3-((4-amino-2-methyl-5-pyrimidinyl)methyl)-4-methyl-5-(4,6,6-trihydroxy-3,5-dioxa-4,6-diphosphahex-1-yl)-, chloride, P,P'-dioxide",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-J0JXH7LD-5"
+        },
+        {
+          "start": 1220,
+          "end": 1267,
+          "found": "6,14-Ethenomorphinan-7-methanol, 17-(cyclopropylmethyl)-alpha-(1,1-dimethylethyl)-4,5-epoxy-18,19-dihydro-3-hydroxy-6-methoxy-alpha-methyl-, (5alpha,7alpha(S))-",
+          "pref": "6,14-Ethenomorphinan-7-methanol, 17-(cyclopropylmethyl)-alpha-(1,1-dimethylethyl)-4,5-epoxy-18,19-dihydro-3-hydroxy-6-methoxy-alpha-methyl-, (5alpha,7alpha(S))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-SWFQ97R8-7"
+        },
+        {
+          "start": 1309,
+          "end": 1358,
+          "found": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 6-((1,3-dioxo-3-phenoxy-2-phenylpropyl)amino)-3,3-dimethyl-7-oxo-, (2S-(2alpha,5alpha,6beta))-",
+          "pref": "4-Thia-1-azabicyclo(3.2.0)heptane-2-carboxylic acid, 6-((1,3-dioxo-3-phenoxy-2-phenylpropyl)amino)-3,3-dimethyl-7-oxo-, (2S-(2alpha,5alpha,6beta))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-MQ11B8L5-4"
+        },
+        {
+          "start": 1391,
+          "end": 1407,
+          "found": "L-Tyrosine",
+          "pref": "L-Tyrosine",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-NQM7DBMQ-8"
+        },
+        {
+          "start": 2168,
+          "end": 2174,
+          "found": "3-Pyridinecarboxylic acid",
+          "pref": "3-Pyridinecarboxylic acid",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-BL7LSKVG-T"
+        },
+        {
+          "start": 2259,
+          "end": 2317,
+          "found": "Propanoic acid, 2-(((1-(2-amino-4-thiazolyl)-2-((2-methyl-4-oxo-1-sulfo-3-azetidinyl)amino)-2-oxoethylidene)amino)oxy)-2-methyl-, (2S-(2alpha,3beta(Z)))-",
+          "pref": "Propanoic acid, 2-(((1-(2-amino-4-thiazolyl)-2-((2-methyl-4-oxo-1-sulfo-3-azetidinyl)amino)-2-oxoethylidene)amino)oxy)-2-methyl-, (2S-(2alpha,3beta(Z)))-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-X0C8CPPC-Z"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "matches": [
+        {
+          "start": 146,
+          "end": 214,
+          "found": "14,39-Dioxabicyclo(33.3.1)nonatriaconta-19,21,23,25,27,29,31-heptaene-36-carboxylic acid, 33-((3-amino-3,6-dideoxy-beta-D-mannopyranosyl)oxy)-1,3,5,6,9,11,17,37-octahydroxy-15,16,18-trimethyl-13-oxo-, (1R,3S,5R,6R,9R,11R,15S,16R,17R,18S,19E,21E,23E,25E,27E,29E,31E,33R,35S,36R,37S)-",
+          "pref": "14,39-Dioxabicyclo(33.3.1)nonatriaconta-19,21,23,25,27,29,31-heptaene-36-carboxylic acid, 33-((3-amino-3,6-dideoxy-beta-D-mannopyranosyl)oxy)-1,3,5,6,9,11,17,37-octahydroxy-15,16,18-trimethyl-13-oxo-, (1R,3S,5R,6R,9R,11R,15S,16R,17R,18S,19E,21E,23E,25E,27E,29E,31E,33R,35S,36R,37S)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-F2G7TJ4L-0"
+        },
+        {
+          "start": 624,
+          "end": 632,
+          "found": "L-Tyrosine",
+          "pref": "L-Tyrosine",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-NQM7DBMQ-8"
+        },
+        {
+          "start": 738,
+          "end": 739,
+          "found": "methanol",
+          "pref": "Methanol",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-X4QQVDK6-M"
+        },
+        {
+          "start": 1221,
+          "end": 1260,
+          "found": "2,7:3,6-Dimethanonaphth(2,3-b)oxirene, 3,4,5,6,9,9-hexachloro-1a,2,2a,3,6,6a,7,7a-octahydro-, (1aalpha,2beta,2aalpha,3beta,6beta,6aalpha,7beta,7aalpha)-",
+          "pref": "2,7:3,6-Dimethanonaphth(2,3-b)oxirene, 3,4,5,6,9,9-hexachloro-1a,2,2a,3,6,6a,7,7a-octahydro-, (1aalpha,2beta,2aalpha,3beta,6beta,6aalpha,7beta,7aalpha)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-GFCSB97N-2"
+        },
+        {
+          "start": 1402,
+          "end": 1463,
+          "found": "Magnesate(1-), (3,4-didehydro-9-ethenyl-14-ethyl-21-(methoxycarbonyl)-4,8,13,18-tetramethyl-20-oxo-3-phorbinepropanoato(3-)-N23,N24,N25,N26)-, hydrogen, (SP-4-2)-",
+          "pref": "Magnesate(1-), (3,4-didehydro-9-ethenyl-14-ethyl-21-(methoxycarbonyl)-4,8,13,18-tetramethyl-20-oxo-3-phorbinepropanoato(3-)-N23,N24,N25,N26)-, hydrogen, (SP-4-2)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-N02BZ5NB-C"
+        },
+        {
+          "start": 1521,
+          "end": 1560,
+          "found": "2,5-Cyclohexadiene-1,4-dione, 2,3-dimethyl-5-(3,7,11,15,19,23,27,31,35-nonamethyl-2,6,10,14,18,22,26,30,34-hexatriacontanonaenyl)-, (all-E)-",
+          "pref": "2,5-Cyclohexadiene-1,4-dione, 2,3-dimethyl-5-(3,7,11,15,19,23,27,31,35-nonamethyl-2,6,10,14,18,22,26,30,34-hexatriacontanonaenyl)-, (all-E)-",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-FMQ742BN-K"
+        },
+        {
+          "start": 1655,
+          "end": 1658,
+          "found": "Immunoglobulin G",
+          "pref": "Immunoglobulin G",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-BFK247RT-8"
+        },
+        {
+          "start": 1662,
+          "end": 1673,
+          "found": "immunoglobulin E",
+          "pref": "Immunoglobulins, E",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-L15BBWZ2-V"
+        },
+        {
+          "start": 1725,
+          "end": 1726,
+          "found": "Osteocalcin",
+          "pref": "Osteocalcin",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-LMPWVQ6M-R"
+        },
+        {
+          "start": 2267,
+          "end": 2268,
+          "found": "Aluminum",
+          "pref": "Aluminum",
+          "uri": "http://data.loterre.fr/ark:/67375/JVR-CLS5JZSZ-F"
+        }
+      ]
+    }
+  ]
+}

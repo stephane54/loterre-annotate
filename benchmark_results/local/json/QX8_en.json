@@ -1,0 +1,3021 @@
+{
+  "profile": "term_recall",
+  "docs": 10,
+  "timings": {
+    "load_and_profile_s": 0.01686693000374362,
+    "process_s": 5.022868086998642,
+    "total_s": 5.039735017002386
+  },
+  "results": [
+    {
+      "id": 1,
+      "annotated_text": "In record 1.1, the entry compares azimuth, **chemical property**〔[chemical property](http://data.loterre.fr/ark:/67375/QX8-R5SBGSDS-F)〕, and **axial tilt**〔[obliquity](http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2)〕 under the same review setting. In record 1.2, the entry compares **climate**〔[climate](http://data.loterre.fr/ark:/67375/QX8-CP0QNVH1-X)〕, **observation data**〔[observation data](http://data.loterre.fr/ark:/67375/QX8-QBG7GRWD-K)〕, and **ellipse**〔[ellipse](http://data.loterre.fr/ark:/67375/QX8-0DV73KMC-X)〕 under the same review setting. In record 1.3, the entry compares **solstice**〔[solstice](http://data.loterre.fr/ark:/67375/QX8-8GZT7RS0-G)〕, **structural parameter**〔[structural parameter](http://data.loterre.fr/ark:/67375/QX8-JF8X82NB-0)〕, and **controlling factor**〔[controlling factor](http://data.loterre.fr/ark:/67375/QX8-3GQFXH94-L)〕 under the same review setting. In record 1.4, the entry compares **hydrographic parameter**〔[hydrographic parameter](http://data.loterre.fr/ark:/67375/QX8-W0PGVP72-1)〕, **obliquity**〔[obliquity](http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2)〕, and **natural environment**〔[natural environment](http://data.loterre.fr/ark:/67375/QX8-FZC5N7HX-Z)〕 under the same review setting. In record 1.5, the entry compares **study method**〔[study method](http://data.loterre.fr/ark:/67375/QX8-1XC0Z5R7-S)〕, **climatic parameter**〔[climatic parameter](http://data.loterre.fr/ark:/67375/QX8-3CN7KBPQ-Z)〕, and **astronomical parameter**〔[astronomical parameter](http://data.loterre.fr/ark:/67375/QX8-BD50GN75-D)〕 under the same review setting. In record 1.6, the entry compares **equipment**〔[equipment](http://data.loterre.fr/ark:/67375/QX8-V41L3XQX-0)〕, **geomorphological structure**〔[geomorphological structure](http://data.loterre.fr/ark:/67375/QX8-M9NZ5KPV-3)〕, and **tectonic structure**〔[tectonic structure](http://data.loterre.fr/ark:/67375/QX8-8567VJBG-8)〕 under the same review setting. In record 1.7, the entry compares **geological parameter**〔[geological parameter](http://data.loterre.fr/ark:/67375/QX8-TRXRV65D-L)〕, **orbital configuration**〔[orbital configuration](http://data.loterre.fr/ark:/67375/QX8-WQ2BW1VP-J)〕, and **constituent of the planet Earth**〔[constituent of the planet Earth](http://data.loterre.fr/ark:/67375/QX8-P0T20QC3-M)〕 under the same review setting. In record 1.8, the entry compares **geographical area**〔[geographical area](http://data.loterre.fr/ark:/67375/QX8-R4CP8V83-V)〕, **geologic time scale**〔[geologic time scale](http://data.loterre.fr/ark:/67375/QX8-ZG31HD1L-2)〕, and **aphelion**〔[aphelion](http://data.loterre.fr/ark:/67375/QX8-MKGMJ8RC-4)〕 under the same review setting. In record 1.9, the entry compares **time parameter**〔[time parameter](http://data.loterre.fr/ark:/67375/QX8-T2JSR8M5-H)〕, **chemical process**〔[chemical process](http://data.loterre.fr/ark:/67375/QX8-MDKH0Q63-S)〕, and **glaciary formation**〔[glaciary formation](http://data.loterre.fr/ark:/67375/QX8-MPM8RVKS-8)〕 under the same review setting. In record 1.10, the entry compares **oceanic parameter**〔[oceanic parameter](http://data.loterre.fr/ark:/67375/QX8-3JR3PDTM-6)〕, **study material**〔[study material](http://data.loterre.fr/ark:/67375/QX8-HG875W53-R)〕, and **declination**〔[declination](http://data.loterre.fr/ark:/67375/QX8-VB2HVS3F-R)〕 under the same review setting.",
+      "matches": [
+        {
+          "start": 43,
+          "end": 60,
+          "found": "chemical property",
+          "pref": "chemical property",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-R5SBGSDS-F",
+          "label": "chemical property",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 66,
+          "end": 76,
+          "found": "axial tilt",
+          "pref": "obliquity",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2",
+          "label": "axial tilt",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 142,
+          "end": 149,
+          "found": "climate",
+          "pref": "climate",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-CP0QNVH1-X",
+          "label": "climate",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 151,
+          "end": 167,
+          "found": "observation data",
+          "pref": "observation data",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-QBG7GRWD-K",
+          "label": "observation data",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 173,
+          "end": 180,
+          "found": "ellipse",
+          "pref": "ellipse",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-0DV73KMC-X",
+          "label": "ellipse",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 246,
+          "end": 254,
+          "found": "solstice",
+          "pref": "solstice",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-8GZT7RS0-G",
+          "label": "solstice",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 256,
+          "end": 276,
+          "found": "structural parameter",
+          "pref": "structural parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-JF8X82NB-0",
+          "label": "structural parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 282,
+          "end": 300,
+          "found": "controlling factor",
+          "pref": "controlling factor",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-3GQFXH94-L",
+          "label": "controlling factor",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 366,
+          "end": 388,
+          "found": "hydrographic parameter",
+          "pref": "hydrographic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-W0PGVP72-1",
+          "label": "hydrographic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 390,
+          "end": 399,
+          "found": "obliquity",
+          "pref": "obliquity",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2",
+          "label": "obliquity",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 405,
+          "end": 424,
+          "found": "natural environment",
+          "pref": "natural environment",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-FZC5N7HX-Z",
+          "label": "natural environment",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 490,
+          "end": 502,
+          "found": "study method",
+          "pref": "study method",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-1XC0Z5R7-S",
+          "label": "study method",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 504,
+          "end": 522,
+          "found": "climatic parameter",
+          "pref": "climatic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-3CN7KBPQ-Z",
+          "label": "climatic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 528,
+          "end": 550,
+          "found": "astronomical parameter",
+          "pref": "astronomical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-BD50GN75-D",
+          "label": "astronomical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 616,
+          "end": 625,
+          "found": "equipment",
+          "pref": "equipment",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-V41L3XQX-0",
+          "label": "equipment",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 627,
+          "end": 653,
+          "found": "geomorphological structure",
+          "pref": "geomorphological structure",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-M9NZ5KPV-3",
+          "label": "geomorphological structure",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 659,
+          "end": 677,
+          "found": "tectonic structure",
+          "pref": "tectonic structure",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-8567VJBG-8",
+          "label": "tectonic structure",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 743,
+          "end": 763,
+          "found": "geological parameter",
+          "pref": "geological parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-TRXRV65D-L",
+          "label": "geological parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 765,
+          "end": 786,
+          "found": "orbital configuration",
+          "pref": "orbital configuration",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-WQ2BW1VP-J",
+          "label": "orbital configuration",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 792,
+          "end": 823,
+          "found": "constituent of the planet Earth",
+          "pref": "constituent of the planet Earth",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-P0T20QC3-M",
+          "label": "constituent of the planet Earth",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 889,
+          "end": 906,
+          "found": "geographical area",
+          "pref": "geographical area",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-R4CP8V83-V",
+          "label": "geographical area",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 908,
+          "end": 927,
+          "found": "geologic time scale",
+          "pref": "geologic time scale",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-ZG31HD1L-2",
+          "label": "geologic time scale",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 933,
+          "end": 941,
+          "found": "aphelion",
+          "pref": "aphelion",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MKGMJ8RC-4",
+          "label": "aphelion",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 1007,
+          "end": 1021,
+          "found": "time parameter",
+          "pref": "time parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-T2JSR8M5-H",
+          "label": "time parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1023,
+          "end": 1039,
+          "found": "chemical process",
+          "pref": "chemical process",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MDKH0Q63-S",
+          "label": "chemical process",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1045,
+          "end": 1063,
+          "found": "glaciary formation",
+          "pref": "glaciary formation",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MPM8RVKS-8",
+          "label": "glaciary formation",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1130,
+          "end": 1147,
+          "found": "oceanic parameter",
+          "pref": "oceanic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-3JR3PDTM-6",
+          "label": "oceanic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1149,
+          "end": 1163,
+          "found": "study material",
+          "pref": "study material",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-HG875W53-R",
+          "label": "study material",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1169,
+          "end": 1180,
+          "found": "declination",
+          "pref": "declination",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-VB2HVS3F-R",
+          "label": "declination",
+          "rule": "pattern",
+          "score": 0.7
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "annotated_text": "In record 2.1, the entry compares **constituent of the planet Earth**〔[constituent of the planet Earth](http://data.loterre.fr/ark:/67375/QX8-P0T20QC3-M)〕, **chemical property**〔[chemical property](http://data.loterre.fr/ark:/67375/QX8-R5SBGSDS-F)〕, and **orbital configuration**〔[orbital configuration](http://data.loterre.fr/ark:/67375/QX8-WQ2BW1VP-J)〕 under the same review setting. In record 2.2, the entry compares **structural parameter**〔[structural parameter](http://data.loterre.fr/ark:/67375/QX8-JF8X82NB-0)〕, **unit of measurement**〔[unit of measurement](http://data.loterre.fr/ark:/67375/QX8-WTKBTZRS-B)〕, and **natural phenomenon**〔[natural phenomenon](http://data.loterre.fr/ark:/67375/QX8-D3V8SP48-S)〕 under the same review setting. In record 2.3, the entry compares **axial tilt**〔[obliquity](http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2)〕, **solstice**〔[solstice](http://data.loterre.fr/ark:/67375/QX8-8GZT7RS0-G)〕, and **geological parameter**〔[geological parameter](http://data.loterre.fr/ark:/67375/QX8-TRXRV65D-L)〕 under the same review setting. In record 2.4, the entry compares **atmospherical parameter**〔[atmospherical parameter](http://data.loterre.fr/ark:/67375/QX8-9HDFMQGP-0)〕, **study material**〔[study material](http://data.loterre.fr/ark:/67375/QX8-HG875W53-R)〕, and **government agency**〔[government agency](http://data.loterre.fr/ark:/67375/QX8-MXDGK2JS-4)〕 under the same review setting. In record 2.5, the entry compares **astronomical parameter**〔[astronomical parameter](http://data.loterre.fr/ark:/67375/QX8-BD50GN75-D)〕, **precession**〔[precession](http://data.loterre.fr/ark:/67375/QX8-2NF6C5GB-V)〕, and **geographical parameter**〔[geographical parameter](http://data.loterre.fr/ark:/67375/QX8-06JXR7F1-B)〕 under the same review setting. In record 2.6, the entry compares **living organism**〔[living organism](http://data.loterre.fr/ark:/67375/QX8-W2CLR74L-T)〕, **controlling factor**〔[controlling factor](http://data.loterre.fr/ark:/67375/QX8-3GQFXH94-L)〕, and **biological parameter**〔[biological parameter](http://data.loterre.fr/ark:/67375/QX8-JCM94HQS-K)〕 under the same review setting. In record 2.7, the entry compares **geomorphological structure**〔[geomorphological structure](http://data.loterre.fr/ark:/67375/QX8-M9NZ5KPV-3)〕, **declination**〔[declination](http://data.loterre.fr/ark:/67375/QX8-VB2HVS3F-R)〕, and **orbital frequency**〔[orbital frequency](http://data.loterre.fr/ark:/67375/QX8-4DFL54BT-J)〕 under the same review setting. In record 2.8, the entry compares **aphelion**〔[aphelion](http://data.loterre.fr/ark:/67375/QX8-MKGMJ8RC-4)〕, **hydrographic parameter**〔[hydrographic parameter](http://data.loterre.fr/ark:/67375/QX8-W0PGVP72-1)〕, and **climatic parameter**〔[climatic parameter](http://data.loterre.fr/ark:/67375/QX8-3CN7KBPQ-Z)〕 under the same review setting. In record 2.9, the entry compares **observation data**〔[observation data](http://data.loterre.fr/ark:/67375/QX8-QBG7GRWD-K)〕, **scientific discipline**〔[scientific discipline](http://data.loterre.fr/ark:/67375/QX8-FQHB46KW-5)〕, and **perihelion**〔[perihelion](http://data.loterre.fr/ark:/67375/QX8-RWP1QD9Z-3)〕 under the same review setting. In record 2.10, the entry compares **geographical area**〔[geographical area](http://data.loterre.fr/ark:/67375/QX8-R4CP8V83-V)〕, **chemical process**〔[chemical process](http://data.loterre.fr/ark:/67375/QX8-MDKH0Q63-S)〕, and **time phenomenon**〔[time phenomenon](http://data.loterre.fr/ark:/67375/QX8-5CBS08CQ-D)〕 under the same review setting.",
+      "matches": [
+        {
+          "start": 34,
+          "end": 65,
+          "found": "constituent of the planet Earth",
+          "pref": "constituent of the planet Earth",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-P0T20QC3-M",
+          "label": "constituent of the planet Earth",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 67,
+          "end": 84,
+          "found": "chemical property",
+          "pref": "chemical property",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-R5SBGSDS-F",
+          "label": "chemical property",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 90,
+          "end": 111,
+          "found": "orbital configuration",
+          "pref": "orbital configuration",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-WQ2BW1VP-J",
+          "label": "orbital configuration",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 177,
+          "end": 197,
+          "found": "structural parameter",
+          "pref": "structural parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-JF8X82NB-0",
+          "label": "structural parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 199,
+          "end": 218,
+          "found": "unit of measurement",
+          "pref": "unit of measurement",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-WTKBTZRS-B",
+          "label": "unit of measurement",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 224,
+          "end": 242,
+          "found": "natural phenomenon",
+          "pref": "natural phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-D3V8SP48-S",
+          "label": "natural phenomenon",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 308,
+          "end": 318,
+          "found": "axial tilt",
+          "pref": "obliquity",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2",
+          "label": "axial tilt",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 320,
+          "end": 328,
+          "found": "solstice",
+          "pref": "solstice",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-8GZT7RS0-G",
+          "label": "solstice",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 334,
+          "end": 354,
+          "found": "geological parameter",
+          "pref": "geological parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-TRXRV65D-L",
+          "label": "geological parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 420,
+          "end": 443,
+          "found": "atmospherical parameter",
+          "pref": "atmospherical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-9HDFMQGP-0",
+          "label": "atmospherical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 445,
+          "end": 459,
+          "found": "study material",
+          "pref": "study material",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-HG875W53-R",
+          "label": "study material",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 465,
+          "end": 482,
+          "found": "government agency",
+          "pref": "government agency",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MXDGK2JS-4",
+          "label": "government agency",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 548,
+          "end": 570,
+          "found": "astronomical parameter",
+          "pref": "astronomical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-BD50GN75-D",
+          "label": "astronomical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 572,
+          "end": 582,
+          "found": "precession",
+          "pref": "precession",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-2NF6C5GB-V",
+          "label": "precession",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 588,
+          "end": 610,
+          "found": "geographical parameter",
+          "pref": "geographical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-06JXR7F1-B",
+          "label": "geographical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 676,
+          "end": 691,
+          "found": "living organism",
+          "pref": "living organism",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-W2CLR74L-T",
+          "label": "living organism",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 693,
+          "end": 711,
+          "found": "controlling factor",
+          "pref": "controlling factor",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-3GQFXH94-L",
+          "label": "controlling factor",
+          "rule": "surface_structural",
+          "score": 0.88
+        },
+        {
+          "start": 717,
+          "end": 737,
+          "found": "biological parameter",
+          "pref": "biological parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-JCM94HQS-K",
+          "label": "biological parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 803,
+          "end": 829,
+          "found": "geomorphological structure",
+          "pref": "geomorphological structure",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-M9NZ5KPV-3",
+          "label": "geomorphological structure",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 831,
+          "end": 842,
+          "found": "declination",
+          "pref": "declination",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-VB2HVS3F-R",
+          "label": "declination",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 848,
+          "end": 865,
+          "found": "orbital frequency",
+          "pref": "orbital frequency",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-4DFL54BT-J",
+          "label": "orbital frequency",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 931,
+          "end": 939,
+          "found": "aphelion",
+          "pref": "aphelion",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MKGMJ8RC-4",
+          "label": "aphelion",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 941,
+          "end": 963,
+          "found": "hydrographic parameter",
+          "pref": "hydrographic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-W0PGVP72-1",
+          "label": "hydrographic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 969,
+          "end": 987,
+          "found": "climatic parameter",
+          "pref": "climatic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-3CN7KBPQ-Z",
+          "label": "climatic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1053,
+          "end": 1069,
+          "found": "observation data",
+          "pref": "observation data",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-QBG7GRWD-K",
+          "label": "observation data",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1071,
+          "end": 1092,
+          "found": "scientific discipline",
+          "pref": "scientific discipline",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-FQHB46KW-5",
+          "label": "scientific discipline",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1098,
+          "end": 1108,
+          "found": "perihelion",
+          "pref": "perihelion",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-RWP1QD9Z-3",
+          "label": "perihelion",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 1175,
+          "end": 1192,
+          "found": "geographical area",
+          "pref": "geographical area",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-R4CP8V83-V",
+          "label": "geographical area",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1194,
+          "end": 1210,
+          "found": "chemical process",
+          "pref": "chemical process",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MDKH0Q63-S",
+          "label": "chemical process",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1216,
+          "end": 1231,
+          "found": "time phenomenon",
+          "pref": "time phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-5CBS08CQ-D",
+          "label": "time phenomenon",
+          "rule": "pattern",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "annotated_text": "In record 3.1, the entry compares **unit of measurement**〔[unit of measurement](http://data.loterre.fr/ark:/67375/QX8-WTKBTZRS-B)〕, **study material**〔[study material](http://data.loterre.fr/ark:/67375/QX8-HG875W53-R)〕, and **biological object**〔[biological object](http://data.loterre.fr/ark:/67375/QX8-GM4FXS76-7)〕 under the same review setting. In record 3.2, the entry compares **precession**〔[precession](http://data.loterre.fr/ark:/67375/QX8-2NF6C5GB-V)〕, **perihelion**〔[perihelion](http://data.loterre.fr/ark:/67375/QX8-RWP1QD9Z-3)〕, and azimuth under the same review setting. In record 3.3, the entry compares **geological parameter**〔[geological parameter](http://data.loterre.fr/ark:/67375/QX8-TRXRV65D-L)〕, **geographical area**〔[geographical area](http://data.loterre.fr/ark:/67375/QX8-R4CP8V83-V)〕, and **controlling factor**〔[controlling factor](http://data.loterre.fr/ark:/67375/QX8-3GQFXH94-L)〕 under the same review setting. In record 3.4, the entry compares **climate**〔[climate](http://data.loterre.fr/ark:/67375/QX8-CP0QNVH1-X)〕, **physical property**〔[physical property](http://data.loterre.fr/ark:/67375/QX8-F098G6RG-7)〕, and **physical phenomenon**〔[physical phenomenon](http://data.loterre.fr/ark:/67375/QX8-RNL0WXJ4-2)〕 under the same review setting. In record 3.5, the entry compares **solstice**〔[solstice](http://data.loterre.fr/ark:/67375/QX8-8GZT7RS0-G)〕, **geographical parameter**〔[geographical parameter](http://data.loterre.fr/ark:/67375/QX8-06JXR7F1-B)〕, and **time phenomenon**〔[time phenomenon](http://data.loterre.fr/ark:/67375/QX8-5CBS08CQ-D)〕 under the same review setting. In record 3.6, the entry compares **obliquity**〔[obliquity](http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2)〕, **chemical process**〔[chemical process](http://data.loterre.fr/ark:/67375/QX8-MDKH0Q63-S)〕, and **living organism**〔[living organism](http://data.loterre.fr/ark:/67375/QX8-W2CLR74L-T)〕 under the same review setting. In record 3.7, the entry compares **axial tilt**〔[obliquity](http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2)〕, **geologic time scale**〔[geologic time scale](http://data.loterre.fr/ark:/67375/QX8-ZG31HD1L-2)〕, and **declination**〔[declination](http://data.loterre.fr/ark:/67375/QX8-VB2HVS3F-R)〕 under the same review setting. In record 3.8, the entry compares **natural environment**〔[natural environment](http://data.loterre.fr/ark:/67375/QX8-FZC5N7HX-Z)〕, **climatic parameter**〔[climatic parameter](http://data.loterre.fr/ark:/67375/QX8-3CN7KBPQ-Z)〕, and **orbital configuration**〔[orbital configuration](http://data.loterre.fr/ark:/67375/QX8-WQ2BW1VP-J)〕 under the same review setting. In record 3.9, the entry compares **equipment**〔[equipment](http://data.loterre.fr/ark:/67375/QX8-V41L3XQX-0)〕, **astronomical parameter**〔[astronomical parameter](http://data.loterre.fr/ark:/67375/QX8-BD50GN75-D)〕, and **chemical property**〔[chemical property](http://data.loterre.fr/ark:/67375/QX8-R5SBGSDS-F)〕 under the same review setting. In record 3.10, the entry compares **atmospherical parameter**〔[atmospherical parameter](http://data.loterre.fr/ark:/67375/QX8-9HDFMQGP-0)〕, **biological parameter**〔[biological parameter](http://data.loterre.fr/ark:/67375/QX8-JCM94HQS-K)〕, and **hydrographic parameter**〔[hydrographic parameter](http://data.loterre.fr/ark:/67375/QX8-W0PGVP72-1)〕 under the same review setting.",
+      "matches": [
+        {
+          "start": 34,
+          "end": 53,
+          "found": "unit of measurement",
+          "pref": "unit of measurement",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-WTKBTZRS-B",
+          "label": "unit of measurement",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 55,
+          "end": 69,
+          "found": "study material",
+          "pref": "study material",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-HG875W53-R",
+          "label": "study material",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 75,
+          "end": 92,
+          "found": "biological object",
+          "pref": "biological object",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-GM4FXS76-7",
+          "label": "biological object",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 158,
+          "end": 168,
+          "found": "precession",
+          "pref": "precession",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-2NF6C5GB-V",
+          "label": "precession",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 170,
+          "end": 180,
+          "found": "perihelion",
+          "pref": "perihelion",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-RWP1QD9Z-3",
+          "label": "perihelion",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 259,
+          "end": 279,
+          "found": "geological parameter",
+          "pref": "geological parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-TRXRV65D-L",
+          "label": "geological parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 281,
+          "end": 298,
+          "found": "geographical area",
+          "pref": "geographical area",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-R4CP8V83-V",
+          "label": "geographical area",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 304,
+          "end": 322,
+          "found": "controlling factor",
+          "pref": "controlling factor",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-3GQFXH94-L",
+          "label": "controlling factor",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 388,
+          "end": 395,
+          "found": "climate",
+          "pref": "climate",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-CP0QNVH1-X",
+          "label": "climate",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 397,
+          "end": 414,
+          "found": "physical property",
+          "pref": "physical property",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-F098G6RG-7",
+          "label": "physical property",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 420,
+          "end": 439,
+          "found": "physical phenomenon",
+          "pref": "physical phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-RNL0WXJ4-2",
+          "label": "physical phenomenon",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 505,
+          "end": 513,
+          "found": "solstice",
+          "pref": "solstice",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-8GZT7RS0-G",
+          "label": "solstice",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 515,
+          "end": 537,
+          "found": "geographical parameter",
+          "pref": "geographical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-06JXR7F1-B",
+          "label": "geographical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 543,
+          "end": 558,
+          "found": "time phenomenon",
+          "pref": "time phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-5CBS08CQ-D",
+          "label": "time phenomenon",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 624,
+          "end": 633,
+          "found": "obliquity",
+          "pref": "obliquity",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2",
+          "label": "obliquity",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 635,
+          "end": 651,
+          "found": "chemical process",
+          "pref": "chemical process",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MDKH0Q63-S",
+          "label": "chemical process",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 657,
+          "end": 672,
+          "found": "living organism",
+          "pref": "living organism",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-W2CLR74L-T",
+          "label": "living organism",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 738,
+          "end": 748,
+          "found": "axial tilt",
+          "pref": "obliquity",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2",
+          "label": "axial tilt",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 750,
+          "end": 769,
+          "found": "geologic time scale",
+          "pref": "geologic time scale",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-ZG31HD1L-2",
+          "label": "geologic time scale",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 775,
+          "end": 786,
+          "found": "declination",
+          "pref": "declination",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-VB2HVS3F-R",
+          "label": "declination",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 852,
+          "end": 871,
+          "found": "natural environment",
+          "pref": "natural environment",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-FZC5N7HX-Z",
+          "label": "natural environment",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 873,
+          "end": 891,
+          "found": "climatic parameter",
+          "pref": "climatic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-3CN7KBPQ-Z",
+          "label": "climatic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 897,
+          "end": 918,
+          "found": "orbital configuration",
+          "pref": "orbital configuration",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-WQ2BW1VP-J",
+          "label": "orbital configuration",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 984,
+          "end": 993,
+          "found": "equipment",
+          "pref": "equipment",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-V41L3XQX-0",
+          "label": "equipment",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 995,
+          "end": 1017,
+          "found": "astronomical parameter",
+          "pref": "astronomical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-BD50GN75-D",
+          "label": "astronomical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1023,
+          "end": 1040,
+          "found": "chemical property",
+          "pref": "chemical property",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-R5SBGSDS-F",
+          "label": "chemical property",
+          "rule": "lemma_pattern_seq",
+          "score": 0.93
+        },
+        {
+          "start": 1107,
+          "end": 1130,
+          "found": "atmospherical parameter",
+          "pref": "atmospherical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-9HDFMQGP-0",
+          "label": "atmospherical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1132,
+          "end": 1152,
+          "found": "biological parameter",
+          "pref": "biological parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-JCM94HQS-K",
+          "label": "biological parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1158,
+          "end": 1180,
+          "found": "hydrographic parameter",
+          "pref": "hydrographic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-W0PGVP72-1",
+          "label": "hydrographic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "annotated_text": "In record 4.1, the entry compares **time parameter**〔[time parameter](http://data.loterre.fr/ark:/67375/QX8-T2JSR8M5-H)〕, **structural parameter**〔[structural parameter](http://data.loterre.fr/ark:/67375/QX8-JF8X82NB-0)〕, and **climatic parameter**〔[climatic parameter](http://data.loterre.fr/ark:/67375/QX8-3CN7KBPQ-Z)〕 under the same review setting. In record 4.2, the entry compares **oceanic parameter**〔[oceanic parameter](http://data.loterre.fr/ark:/67375/QX8-3JR3PDTM-6)〕, **perihelion**〔[perihelion](http://data.loterre.fr/ark:/67375/QX8-RWP1QD9Z-3)〕, and **solstice**〔[solstice](http://data.loterre.fr/ark:/67375/QX8-8GZT7RS0-G)〕 under the same review setting. In record 4.3, the entry compares **tectonic structure**〔[tectonic structure](http://data.loterre.fr/ark:/67375/QX8-8567VJBG-8)〕, **physical property**〔[physical property](http://data.loterre.fr/ark:/67375/QX8-F098G6RG-7)〕, and **equipment**〔[equipment](http://data.loterre.fr/ark:/67375/QX8-V41L3XQX-0)〕 under the same review setting. In record 4.4, the entry compares **axial tilt**〔[obliquity](http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2)〕, **glaciary formation**〔[glaciary formation](http://data.loterre.fr/ark:/67375/QX8-MPM8RVKS-8)〕, and **hydrographic parameter**〔[hydrographic parameter](http://data.loterre.fr/ark:/67375/QX8-W0PGVP72-1)〕 under the same review setting. In record 4.5, the entry compares **observation data**〔[observation data](http://data.loterre.fr/ark:/67375/QX8-QBG7GRWD-K)〕, **obliquity**〔[obliquity](http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2)〕, and **orbital frequency**〔[orbital frequency](http://data.loterre.fr/ark:/67375/QX8-4DFL54BT-J)〕 under the same review setting. In record 4.6, the entry compares **unit of measurement**〔[unit of measurement](http://data.loterre.fr/ark:/67375/QX8-WTKBTZRS-B)〕, **living organism**〔[living organism](http://data.loterre.fr/ark:/67375/QX8-W2CLR74L-T)〕, and **biological parameter**〔[biological parameter](http://data.loterre.fr/ark:/67375/QX8-JCM94HQS-K)〕 under the same review setting. In record 4.7, the entry compares **geological parameter**〔[geological parameter](http://data.loterre.fr/ark:/67375/QX8-TRXRV65D-L)〕, **orbital configuration**〔[orbital configuration](http://data.loterre.fr/ark:/67375/QX8-WQ2BW1VP-J)〕, and **time phenomenon**〔[time phenomenon](http://data.loterre.fr/ark:/67375/QX8-5CBS08CQ-D)〕 under the same review setting. In record 4.8, the entry compares **aphelion**〔[aphelion](http://data.loterre.fr/ark:/67375/QX8-MKGMJ8RC-4)〕, **natural environment**〔[natural environment](http://data.loterre.fr/ark:/67375/QX8-FZC5N7HX-Z)〕, and **scientific discipline**〔[scientific discipline](http://data.loterre.fr/ark:/67375/QX8-FQHB46KW-5)〕 under the same review setting. In record 4.9, the entry compares **atmospherical parameter**〔[atmospherical parameter](http://data.loterre.fr/ark:/67375/QX8-9HDFMQGP-0)〕, **study method**〔[study method](http://data.loterre.fr/ark:/67375/QX8-1XC0Z5R7-S)〕, and azimuth under the same review setting. In record 4.10, the entry compares **geomorphological structure**〔[geomorphological structure](http://data.loterre.fr/ark:/67375/QX8-M9NZ5KPV-3)〕, **physical phenomenon**〔[physical phenomenon](http://data.loterre.fr/ark:/67375/QX8-RNL0WXJ4-2)〕, and **government agency**〔[government agency](http://data.loterre.fr/ark:/67375/QX8-MXDGK2JS-4)〕 under the same review setting.",
+      "matches": [
+        {
+          "start": 34,
+          "end": 48,
+          "found": "time parameter",
+          "pref": "time parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-T2JSR8M5-H",
+          "label": "time parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 50,
+          "end": 70,
+          "found": "structural parameter",
+          "pref": "structural parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-JF8X82NB-0",
+          "label": "structural parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 76,
+          "end": 94,
+          "found": "climatic parameter",
+          "pref": "climatic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-3CN7KBPQ-Z",
+          "label": "climatic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 160,
+          "end": 177,
+          "found": "oceanic parameter",
+          "pref": "oceanic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-3JR3PDTM-6",
+          "label": "oceanic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 179,
+          "end": 189,
+          "found": "perihelion",
+          "pref": "perihelion",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-RWP1QD9Z-3",
+          "label": "perihelion",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 195,
+          "end": 203,
+          "found": "solstice",
+          "pref": "solstice",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-8GZT7RS0-G",
+          "label": "solstice",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 269,
+          "end": 287,
+          "found": "tectonic structure",
+          "pref": "tectonic structure",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-8567VJBG-8",
+          "label": "tectonic structure",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 289,
+          "end": 306,
+          "found": "physical property",
+          "pref": "physical property",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-F098G6RG-7",
+          "label": "physical property",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 312,
+          "end": 321,
+          "found": "equipment",
+          "pref": "equipment",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-V41L3XQX-0",
+          "label": "equipment",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 387,
+          "end": 397,
+          "found": "axial tilt",
+          "pref": "obliquity",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2",
+          "label": "axial tilt",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 399,
+          "end": 417,
+          "found": "glaciary formation",
+          "pref": "glaciary formation",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MPM8RVKS-8",
+          "label": "glaciary formation",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 423,
+          "end": 445,
+          "found": "hydrographic parameter",
+          "pref": "hydrographic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-W0PGVP72-1",
+          "label": "hydrographic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 511,
+          "end": 527,
+          "found": "observation data",
+          "pref": "observation data",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-QBG7GRWD-K",
+          "label": "observation data",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 529,
+          "end": 538,
+          "found": "obliquity",
+          "pref": "obliquity",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2",
+          "label": "obliquity",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 544,
+          "end": 561,
+          "found": "orbital frequency",
+          "pref": "orbital frequency",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-4DFL54BT-J",
+          "label": "orbital frequency",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 627,
+          "end": 646,
+          "found": "unit of measurement",
+          "pref": "unit of measurement",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-WTKBTZRS-B",
+          "label": "unit of measurement",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 648,
+          "end": 663,
+          "found": "living organism",
+          "pref": "living organism",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-W2CLR74L-T",
+          "label": "living organism",
+          "rule": "surface_structural",
+          "score": 0.88
+        },
+        {
+          "start": 669,
+          "end": 689,
+          "found": "biological parameter",
+          "pref": "biological parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-JCM94HQS-K",
+          "label": "biological parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 755,
+          "end": 775,
+          "found": "geological parameter",
+          "pref": "geological parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-TRXRV65D-L",
+          "label": "geological parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 777,
+          "end": 798,
+          "found": "orbital configuration",
+          "pref": "orbital configuration",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-WQ2BW1VP-J",
+          "label": "orbital configuration",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 804,
+          "end": 819,
+          "found": "time phenomenon",
+          "pref": "time phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-5CBS08CQ-D",
+          "label": "time phenomenon",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 885,
+          "end": 893,
+          "found": "aphelion",
+          "pref": "aphelion",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MKGMJ8RC-4",
+          "label": "aphelion",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 895,
+          "end": 914,
+          "found": "natural environment",
+          "pref": "natural environment",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-FZC5N7HX-Z",
+          "label": "natural environment",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 920,
+          "end": 941,
+          "found": "scientific discipline",
+          "pref": "scientific discipline",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-FQHB46KW-5",
+          "label": "scientific discipline",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1007,
+          "end": 1030,
+          "found": "atmospherical parameter",
+          "pref": "atmospherical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-9HDFMQGP-0",
+          "label": "atmospherical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1032,
+          "end": 1044,
+          "found": "study method",
+          "pref": "study method",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-1XC0Z5R7-S",
+          "label": "study method",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1124,
+          "end": 1150,
+          "found": "geomorphological structure",
+          "pref": "geomorphological structure",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-M9NZ5KPV-3",
+          "label": "geomorphological structure",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1152,
+          "end": 1171,
+          "found": "physical phenomenon",
+          "pref": "physical phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-RNL0WXJ4-2",
+          "label": "physical phenomenon",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1177,
+          "end": 1194,
+          "found": "government agency",
+          "pref": "government agency",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MXDGK2JS-4",
+          "label": "government agency",
+          "rule": "pattern",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "annotated_text": "In record 5.1, the entry compares **orbital frequency**〔[orbital frequency](http://data.loterre.fr/ark:/67375/QX8-4DFL54BT-J)〕, **observation data**〔[observation data](http://data.loterre.fr/ark:/67375/QX8-QBG7GRWD-K)〕, and **geographical parameter**〔[geographical parameter](http://data.loterre.fr/ark:/67375/QX8-06JXR7F1-B)〕 under the same review setting. In record 5.2, the entry compares **natural environment**〔[natural environment](http://data.loterre.fr/ark:/67375/QX8-FZC5N7HX-Z)〕, **government agency**〔[government agency](http://data.loterre.fr/ark:/67375/QX8-MXDGK2JS-4)〕, and **natural phenomenon**〔[natural phenomenon](http://data.loterre.fr/ark:/67375/QX8-D3V8SP48-S)〕 under the same review setting. In record 5.3, the entry compares **climatic parameter**〔[climatic parameter](http://data.loterre.fr/ark:/67375/QX8-3CN7KBPQ-Z)〕, **time parameter**〔[time parameter](http://data.loterre.fr/ark:/67375/QX8-T2JSR8M5-H)〕, and **structural parameter**〔[structural parameter](http://data.loterre.fr/ark:/67375/QX8-JF8X82NB-0)〕 under the same review setting. In record 5.4, the entry compares **chemical process**〔[chemical process](http://data.loterre.fr/ark:/67375/QX8-MDKH0Q63-S)〕, **study material**〔[study material](http://data.loterre.fr/ark:/67375/QX8-HG875W53-R)〕, and **geological parameter**〔[geological parameter](http://data.loterre.fr/ark:/67375/QX8-TRXRV65D-L)〕 under the same review setting. In record 5.5, the entry compares **aphelion**〔[aphelion](http://data.loterre.fr/ark:/67375/QX8-MKGMJ8RC-4)〕, **ellipse**〔[ellipse](http://data.loterre.fr/ark:/67375/QX8-0DV73KMC-X)〕, and **oceanic parameter**〔[oceanic parameter](http://data.loterre.fr/ark:/67375/QX8-3JR3PDTM-6)〕 under the same review setting. In record 5.6, the entry compares **astronomical parameter**〔[astronomical parameter](http://data.loterre.fr/ark:/67375/QX8-BD50GN75-D)〕, **biological parameter**〔[biological parameter](http://data.loterre.fr/ark:/67375/QX8-JCM94HQS-K)〕, and **hydrographic parameter**〔[hydrographic parameter](http://data.loterre.fr/ark:/67375/QX8-W0PGVP72-1)〕 under the same review setting. In record 5.7, the entry compares **physical property**〔[physical property](http://data.loterre.fr/ark:/67375/QX8-F098G6RG-7)〕, **perihelion**〔[perihelion](http://data.loterre.fr/ark:/67375/QX8-RWP1QD9Z-3)〕, and **chemical property**〔[chemical property](http://data.loterre.fr/ark:/67375/QX8-R5SBGSDS-F)〕 under the same review setting. In record 5.8, the entry compares **equipment**〔[equipment](http://data.loterre.fr/ark:/67375/QX8-V41L3XQX-0)〕, **axial tilt**〔[obliquity](http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2)〕, and **time phenomenon**〔[time phenomenon](http://data.loterre.fr/ark:/67375/QX8-5CBS08CQ-D)〕 under the same review setting. In record 5.9, the entry compares **geologic time scale**〔[geologic time scale](http://data.loterre.fr/ark:/67375/QX8-ZG31HD1L-2)〕, **unit of measurement**〔[unit of measurement](http://data.loterre.fr/ark:/67375/QX8-WTKBTZRS-B)〕, and **precession**〔[precession](http://data.loterre.fr/ark:/67375/QX8-2NF6C5GB-V)〕 under the same review setting. In record 5.10, the entry compares **geographical area**〔[geographical area](http://data.loterre.fr/ark:/67375/QX8-R4CP8V83-V)〕, **declination**〔[declination](http://data.loterre.fr/ark:/67375/QX8-VB2HVS3F-R)〕, and azimuth under the same review setting.",
+      "matches": [
+        {
+          "start": 34,
+          "end": 51,
+          "found": "orbital frequency",
+          "pref": "orbital frequency",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-4DFL54BT-J",
+          "label": "orbital frequency",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 53,
+          "end": 69,
+          "found": "observation data",
+          "pref": "observation data",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-QBG7GRWD-K",
+          "label": "observation data",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 75,
+          "end": 97,
+          "found": "geographical parameter",
+          "pref": "geographical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-06JXR7F1-B",
+          "label": "geographical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 163,
+          "end": 182,
+          "found": "natural environment",
+          "pref": "natural environment",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-FZC5N7HX-Z",
+          "label": "natural environment",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 184,
+          "end": 201,
+          "found": "government agency",
+          "pref": "government agency",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MXDGK2JS-4",
+          "label": "government agency",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 207,
+          "end": 225,
+          "found": "natural phenomenon",
+          "pref": "natural phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-D3V8SP48-S",
+          "label": "natural phenomenon",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 291,
+          "end": 309,
+          "found": "climatic parameter",
+          "pref": "climatic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-3CN7KBPQ-Z",
+          "label": "climatic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 311,
+          "end": 325,
+          "found": "time parameter",
+          "pref": "time parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-T2JSR8M5-H",
+          "label": "time parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 331,
+          "end": 351,
+          "found": "structural parameter",
+          "pref": "structural parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-JF8X82NB-0",
+          "label": "structural parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 417,
+          "end": 433,
+          "found": "chemical process",
+          "pref": "chemical process",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MDKH0Q63-S",
+          "label": "chemical process",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 435,
+          "end": 449,
+          "found": "study material",
+          "pref": "study material",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-HG875W53-R",
+          "label": "study material",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 455,
+          "end": 475,
+          "found": "geological parameter",
+          "pref": "geological parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-TRXRV65D-L",
+          "label": "geological parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 541,
+          "end": 549,
+          "found": "aphelion",
+          "pref": "aphelion",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MKGMJ8RC-4",
+          "label": "aphelion",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 551,
+          "end": 558,
+          "found": "ellipse",
+          "pref": "ellipse",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-0DV73KMC-X",
+          "label": "ellipse",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 564,
+          "end": 581,
+          "found": "oceanic parameter",
+          "pref": "oceanic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-3JR3PDTM-6",
+          "label": "oceanic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 647,
+          "end": 669,
+          "found": "astronomical parameter",
+          "pref": "astronomical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-BD50GN75-D",
+          "label": "astronomical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 671,
+          "end": 691,
+          "found": "biological parameter",
+          "pref": "biological parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-JCM94HQS-K",
+          "label": "biological parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 697,
+          "end": 719,
+          "found": "hydrographic parameter",
+          "pref": "hydrographic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-W0PGVP72-1",
+          "label": "hydrographic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 785,
+          "end": 802,
+          "found": "physical property",
+          "pref": "physical property",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-F098G6RG-7",
+          "label": "physical property",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 804,
+          "end": 814,
+          "found": "perihelion",
+          "pref": "perihelion",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-RWP1QD9Z-3",
+          "label": "perihelion",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 820,
+          "end": 837,
+          "found": "chemical property",
+          "pref": "chemical property",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-R5SBGSDS-F",
+          "label": "chemical property",
+          "rule": "lemma_pattern_seq",
+          "score": 0.93
+        },
+        {
+          "start": 903,
+          "end": 912,
+          "found": "equipment",
+          "pref": "equipment",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-V41L3XQX-0",
+          "label": "equipment",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 914,
+          "end": 924,
+          "found": "axial tilt",
+          "pref": "obliquity",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2",
+          "label": "axial tilt",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 930,
+          "end": 945,
+          "found": "time phenomenon",
+          "pref": "time phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-5CBS08CQ-D",
+          "label": "time phenomenon",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1011,
+          "end": 1030,
+          "found": "geologic time scale",
+          "pref": "geologic time scale",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-ZG31HD1L-2",
+          "label": "geologic time scale",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1032,
+          "end": 1051,
+          "found": "unit of measurement",
+          "pref": "unit of measurement",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-WTKBTZRS-B",
+          "label": "unit of measurement",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1057,
+          "end": 1067,
+          "found": "precession",
+          "pref": "precession",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-2NF6C5GB-V",
+          "label": "precession",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 1134,
+          "end": 1151,
+          "found": "geographical area",
+          "pref": "geographical area",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-R4CP8V83-V",
+          "label": "geographical area",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1153,
+          "end": 1164,
+          "found": "declination",
+          "pref": "declination",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-VB2HVS3F-R",
+          "label": "declination",
+          "rule": "pattern",
+          "score": 0.7
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "annotated_text": "In record 6.1, the entry compares **glaciary formation**〔[glaciary formation](http://data.loterre.fr/ark:/67375/QX8-MPM8RVKS-8)〕, **obliquity**〔[obliquity](http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2)〕, and **aphelion**〔[aphelion](http://data.loterre.fr/ark:/67375/QX8-MKGMJ8RC-4)〕 under the same review setting. In record 6.2, the entry compares **unit of measurement**〔[unit of measurement](http://data.loterre.fr/ark:/67375/QX8-WTKBTZRS-B)〕, **atmospherical parameter**〔[atmospherical parameter](http://data.loterre.fr/ark:/67375/QX8-9HDFMQGP-0)〕, and **study material**〔[study material](http://data.loterre.fr/ark:/67375/QX8-HG875W53-R)〕 under the same review setting. In record 6.3, the entry compares **declination**〔[declination](http://data.loterre.fr/ark:/67375/QX8-VB2HVS3F-R)〕, **scientific discipline**〔[scientific discipline](http://data.loterre.fr/ark:/67375/QX8-FQHB46KW-5)〕, and **living organism**〔[living organism](http://data.loterre.fr/ark:/67375/QX8-W2CLR74L-T)〕 under the same review setting. In record 6.4, the entry compares **biological object**〔[biological object](http://data.loterre.fr/ark:/67375/QX8-GM4FXS76-7)〕, **astronomical parameter**〔[astronomical parameter](http://data.loterre.fr/ark:/67375/QX8-BD50GN75-D)〕, and **geological parameter**〔[geological parameter](http://data.loterre.fr/ark:/67375/QX8-TRXRV65D-L)〕 under the same review setting. In record 6.5, the entry compares **oceanic parameter**〔[oceanic parameter](http://data.loterre.fr/ark:/67375/QX8-3JR3PDTM-6)〕, **ellipse**〔[ellipse](http://data.loterre.fr/ark:/67375/QX8-0DV73KMC-X)〕, and **geographical area**〔[geographical area](http://data.loterre.fr/ark:/67375/QX8-R4CP8V83-V)〕 under the same review setting. In record 6.6, the entry compares **structural parameter**〔[structural parameter](http://data.loterre.fr/ark:/67375/QX8-JF8X82NB-0)〕, **time phenomenon**〔[time phenomenon](http://data.loterre.fr/ark:/67375/QX8-5CBS08CQ-D)〕, and **study method**〔[study method](http://data.loterre.fr/ark:/67375/QX8-1XC0Z5R7-S)〕 under the same review setting. In record 6.7, the entry compares **climate**〔[climate](http://data.loterre.fr/ark:/67375/QX8-CP0QNVH1-X)〕, **geomorphological structure**〔[geomorphological structure](http://data.loterre.fr/ark:/67375/QX8-M9NZ5KPV-3)〕, and **chemical process**〔[chemical process](http://data.loterre.fr/ark:/67375/QX8-MDKH0Q63-S)〕 under the same review setting. In record 6.8, the entry compares **equipment**〔[equipment](http://data.loterre.fr/ark:/67375/QX8-V41L3XQX-0)〕, **perihelion**〔[perihelion](http://data.loterre.fr/ark:/67375/QX8-RWP1QD9Z-3)〕, and **natural phenomenon**〔[natural phenomenon](http://data.loterre.fr/ark:/67375/QX8-D3V8SP48-S)〕 under the same review setting. In record 6.9, the entry compares **government agency**〔[government agency](http://data.loterre.fr/ark:/67375/QX8-MXDGK2JS-4)〕, **precession**〔[precession](http://data.loterre.fr/ark:/67375/QX8-2NF6C5GB-V)〕, and **geologic time scale**〔[geologic time scale](http://data.loterre.fr/ark:/67375/QX8-ZG31HD1L-2)〕 under the same review setting. In record 6.10, the entry compares **orbital frequency**〔[orbital frequency](http://data.loterre.fr/ark:/67375/QX8-4DFL54BT-J)〕, **observation data**〔[observation data](http://data.loterre.fr/ark:/67375/QX8-QBG7GRWD-K)〕, and **orbital configuration**〔[orbital configuration](http://data.loterre.fr/ark:/67375/QX8-WQ2BW1VP-J)〕 under the same review setting.",
+      "matches": [
+        {
+          "start": 34,
+          "end": 52,
+          "found": "glaciary formation",
+          "pref": "glaciary formation",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MPM8RVKS-8",
+          "label": "glaciary formation",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 54,
+          "end": 63,
+          "found": "obliquity",
+          "pref": "obliquity",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2",
+          "label": "obliquity",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 69,
+          "end": 77,
+          "found": "aphelion",
+          "pref": "aphelion",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MKGMJ8RC-4",
+          "label": "aphelion",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 143,
+          "end": 162,
+          "found": "unit of measurement",
+          "pref": "unit of measurement",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-WTKBTZRS-B",
+          "label": "unit of measurement",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 164,
+          "end": 187,
+          "found": "atmospherical parameter",
+          "pref": "atmospherical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-9HDFMQGP-0",
+          "label": "atmospherical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 193,
+          "end": 207,
+          "found": "study material",
+          "pref": "study material",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-HG875W53-R",
+          "label": "study material",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 273,
+          "end": 284,
+          "found": "declination",
+          "pref": "declination",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-VB2HVS3F-R",
+          "label": "declination",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 286,
+          "end": 307,
+          "found": "scientific discipline",
+          "pref": "scientific discipline",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-FQHB46KW-5",
+          "label": "scientific discipline",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 313,
+          "end": 328,
+          "found": "living organism",
+          "pref": "living organism",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-W2CLR74L-T",
+          "label": "living organism",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 394,
+          "end": 411,
+          "found": "biological object",
+          "pref": "biological object",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-GM4FXS76-7",
+          "label": "biological object",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 413,
+          "end": 435,
+          "found": "astronomical parameter",
+          "pref": "astronomical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-BD50GN75-D",
+          "label": "astronomical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 441,
+          "end": 461,
+          "found": "geological parameter",
+          "pref": "geological parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-TRXRV65D-L",
+          "label": "geological parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 527,
+          "end": 544,
+          "found": "oceanic parameter",
+          "pref": "oceanic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-3JR3PDTM-6",
+          "label": "oceanic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 546,
+          "end": 553,
+          "found": "ellipse",
+          "pref": "ellipse",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-0DV73KMC-X",
+          "label": "ellipse",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 559,
+          "end": 576,
+          "found": "geographical area",
+          "pref": "geographical area",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-R4CP8V83-V",
+          "label": "geographical area",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 642,
+          "end": 662,
+          "found": "structural parameter",
+          "pref": "structural parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-JF8X82NB-0",
+          "label": "structural parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 664,
+          "end": 679,
+          "found": "time phenomenon",
+          "pref": "time phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-5CBS08CQ-D",
+          "label": "time phenomenon",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 685,
+          "end": 697,
+          "found": "study method",
+          "pref": "study method",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-1XC0Z5R7-S",
+          "label": "study method",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 763,
+          "end": 770,
+          "found": "climate",
+          "pref": "climate",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-CP0QNVH1-X",
+          "label": "climate",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 772,
+          "end": 798,
+          "found": "geomorphological structure",
+          "pref": "geomorphological structure",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-M9NZ5KPV-3",
+          "label": "geomorphological structure",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 804,
+          "end": 820,
+          "found": "chemical process",
+          "pref": "chemical process",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MDKH0Q63-S",
+          "label": "chemical process",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 886,
+          "end": 895,
+          "found": "equipment",
+          "pref": "equipment",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-V41L3XQX-0",
+          "label": "equipment",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 897,
+          "end": 907,
+          "found": "perihelion",
+          "pref": "perihelion",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-RWP1QD9Z-3",
+          "label": "perihelion",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 913,
+          "end": 931,
+          "found": "natural phenomenon",
+          "pref": "natural phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-D3V8SP48-S",
+          "label": "natural phenomenon",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 997,
+          "end": 1014,
+          "found": "government agency",
+          "pref": "government agency",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MXDGK2JS-4",
+          "label": "government agency",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1016,
+          "end": 1026,
+          "found": "precession",
+          "pref": "precession",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-2NF6C5GB-V",
+          "label": "precession",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 1032,
+          "end": 1051,
+          "found": "geologic time scale",
+          "pref": "geologic time scale",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-ZG31HD1L-2",
+          "label": "geologic time scale",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1118,
+          "end": 1135,
+          "found": "orbital frequency",
+          "pref": "orbital frequency",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-4DFL54BT-J",
+          "label": "orbital frequency",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1137,
+          "end": 1153,
+          "found": "observation data",
+          "pref": "observation data",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-QBG7GRWD-K",
+          "label": "observation data",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1159,
+          "end": 1180,
+          "found": "orbital configuration",
+          "pref": "orbital configuration",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-WQ2BW1VP-J",
+          "label": "orbital configuration",
+          "rule": "pattern",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "annotated_text": "In record 7.1, the entry compares **orbital frequency**〔[orbital frequency](http://data.loterre.fr/ark:/67375/QX8-4DFL54BT-J)〕, **time phenomenon**〔[time phenomenon](http://data.loterre.fr/ark:/67375/QX8-5CBS08CQ-D)〕, and **biological parameter**〔[biological parameter](http://data.loterre.fr/ark:/67375/QX8-JCM94HQS-K)〕 under the same review setting. In record 7.2, the entry compares **biological object**〔[biological object](http://data.loterre.fr/ark:/67375/QX8-GM4FXS76-7)〕, **geographical area**〔[geographical area](http://data.loterre.fr/ark:/67375/QX8-R4CP8V83-V)〕, and **climatic parameter**〔[climatic parameter](http://data.loterre.fr/ark:/67375/QX8-3CN7KBPQ-Z)〕 under the same review setting. In record 7.3, the entry compares **precession**〔[precession](http://data.loterre.fr/ark:/67375/QX8-2NF6C5GB-V)〕, **glaciary formation**〔[glaciary formation](http://data.loterre.fr/ark:/67375/QX8-MPM8RVKS-8)〕, and **natural phenomenon**〔[natural phenomenon](http://data.loterre.fr/ark:/67375/QX8-D3V8SP48-S)〕 under the same review setting. In record 7.4, the entry compares **observation data**〔[observation data](http://data.loterre.fr/ark:/67375/QX8-QBG7GRWD-K)〕, **azimuth**〔[azimuth](http://data.loterre.fr/ark:/67375/QX8-J8BWXC38-Z)〕, and **living organism**〔[living organism](http://data.loterre.fr/ark:/67375/QX8-W2CLR74L-T)〕 under the same review setting. In record 7.5, the entry compares **ellipse**〔[ellipse](http://data.loterre.fr/ark:/67375/QX8-0DV73KMC-X)〕, **aphelion**〔[aphelion](http://data.loterre.fr/ark:/67375/QX8-MKGMJ8RC-4)〕, and **axial tilt**〔[obliquity](http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2)〕 under the same review setting. In record 7.6, the entry compares **oceanic parameter**〔[oceanic parameter](http://data.loterre.fr/ark:/67375/QX8-3JR3PDTM-6)〕, **astronomical parameter**〔[astronomical parameter](http://data.loterre.fr/ark:/67375/QX8-BD50GN75-D)〕, and **geological parameter**〔[geological parameter](http://data.loterre.fr/ark:/67375/QX8-TRXRV65D-L)〕 under the same review setting. In record 7.7, the entry compares **equipment**〔[equipment](http://data.loterre.fr/ark:/67375/QX8-V41L3XQX-0)〕, **natural environment**〔[natural environment](http://data.loterre.fr/ark:/67375/QX8-FZC5N7HX-Z)〕, and **government agency**〔[government agency](http://data.loterre.fr/ark:/67375/QX8-MXDGK2JS-4)〕 under the same review setting. In record 7.8, the entry compares **controlling factor**〔[controlling factor](http://data.loterre.fr/ark:/67375/QX8-3GQFXH94-L)〕, **geomorphological structure**〔[geomorphological structure](http://data.loterre.fr/ark:/67375/QX8-M9NZ5KPV-3)〕, and **solstice**〔[solstice](http://data.loterre.fr/ark:/67375/QX8-8GZT7RS0-G)〕 under the same review setting. In record 7.9, the entry compares **tectonic structure**〔[tectonic structure](http://data.loterre.fr/ark:/67375/QX8-8567VJBG-8)〕, **time parameter**〔[time parameter](http://data.loterre.fr/ark:/67375/QX8-T2JSR8M5-H)〕, and **geologic time scale**〔[geologic time scale](http://data.loterre.fr/ark:/67375/QX8-ZG31HD1L-2)〕 under the same review setting. In record 7.10, the entry compares **obliquity**〔[obliquity](http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2)〕, **perihelion**〔[perihelion](http://data.loterre.fr/ark:/67375/QX8-RWP1QD9Z-3)〕, and **hydrographic parameter**〔[hydrographic parameter](http://data.loterre.fr/ark:/67375/QX8-W0PGVP72-1)〕 under the same review setting.",
+      "matches": [
+        {
+          "start": 34,
+          "end": 51,
+          "found": "orbital frequency",
+          "pref": "orbital frequency",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-4DFL54BT-J",
+          "label": "orbital frequency",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 53,
+          "end": 68,
+          "found": "time phenomenon",
+          "pref": "time phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-5CBS08CQ-D",
+          "label": "time phenomenon",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 74,
+          "end": 94,
+          "found": "biological parameter",
+          "pref": "biological parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-JCM94HQS-K",
+          "label": "biological parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 160,
+          "end": 177,
+          "found": "biological object",
+          "pref": "biological object",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-GM4FXS76-7",
+          "label": "biological object",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 179,
+          "end": 196,
+          "found": "geographical area",
+          "pref": "geographical area",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-R4CP8V83-V",
+          "label": "geographical area",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 202,
+          "end": 220,
+          "found": "climatic parameter",
+          "pref": "climatic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-3CN7KBPQ-Z",
+          "label": "climatic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 286,
+          "end": 296,
+          "found": "precession",
+          "pref": "precession",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-2NF6C5GB-V",
+          "label": "precession",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 298,
+          "end": 316,
+          "found": "glaciary formation",
+          "pref": "glaciary formation",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MPM8RVKS-8",
+          "label": "glaciary formation",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 322,
+          "end": 340,
+          "found": "natural phenomenon",
+          "pref": "natural phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-D3V8SP48-S",
+          "label": "natural phenomenon",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 406,
+          "end": 422,
+          "found": "observation data",
+          "pref": "observation data",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-QBG7GRWD-K",
+          "label": "observation data",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 424,
+          "end": 431,
+          "found": "azimuth",
+          "pref": "azimuth",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-J8BWXC38-Z",
+          "label": "azimuth",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 437,
+          "end": 452,
+          "found": "living organism",
+          "pref": "living organism",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-W2CLR74L-T",
+          "label": "living organism",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 518,
+          "end": 525,
+          "found": "ellipse",
+          "pref": "ellipse",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-0DV73KMC-X",
+          "label": "ellipse",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 527,
+          "end": 535,
+          "found": "aphelion",
+          "pref": "aphelion",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MKGMJ8RC-4",
+          "label": "aphelion",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 541,
+          "end": 551,
+          "found": "axial tilt",
+          "pref": "obliquity",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2",
+          "label": "axial tilt",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 617,
+          "end": 634,
+          "found": "oceanic parameter",
+          "pref": "oceanic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-3JR3PDTM-6",
+          "label": "oceanic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 636,
+          "end": 658,
+          "found": "astronomical parameter",
+          "pref": "astronomical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-BD50GN75-D",
+          "label": "astronomical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 664,
+          "end": 684,
+          "found": "geological parameter",
+          "pref": "geological parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-TRXRV65D-L",
+          "label": "geological parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 750,
+          "end": 759,
+          "found": "equipment",
+          "pref": "equipment",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-V41L3XQX-0",
+          "label": "equipment",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 761,
+          "end": 780,
+          "found": "natural environment",
+          "pref": "natural environment",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-FZC5N7HX-Z",
+          "label": "natural environment",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 786,
+          "end": 803,
+          "found": "government agency",
+          "pref": "government agency",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MXDGK2JS-4",
+          "label": "government agency",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 869,
+          "end": 887,
+          "found": "controlling factor",
+          "pref": "controlling factor",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-3GQFXH94-L",
+          "label": "controlling factor",
+          "rule": "surface_structural",
+          "score": 0.88
+        },
+        {
+          "start": 889,
+          "end": 915,
+          "found": "geomorphological structure",
+          "pref": "geomorphological structure",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-M9NZ5KPV-3",
+          "label": "geomorphological structure",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 921,
+          "end": 929,
+          "found": "solstice",
+          "pref": "solstice",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-8GZT7RS0-G",
+          "label": "solstice",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 995,
+          "end": 1013,
+          "found": "tectonic structure",
+          "pref": "tectonic structure",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-8567VJBG-8",
+          "label": "tectonic structure",
+          "rule": "lemma_pattern_seq",
+          "score": 0.93
+        },
+        {
+          "start": 1015,
+          "end": 1029,
+          "found": "time parameter",
+          "pref": "time parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-T2JSR8M5-H",
+          "label": "time parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1035,
+          "end": 1054,
+          "found": "geologic time scale",
+          "pref": "geologic time scale",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-ZG31HD1L-2",
+          "label": "geologic time scale",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1121,
+          "end": 1130,
+          "found": "obliquity",
+          "pref": "obliquity",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2",
+          "label": "obliquity",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 1132,
+          "end": 1142,
+          "found": "perihelion",
+          "pref": "perihelion",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-RWP1QD9Z-3",
+          "label": "perihelion",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 1148,
+          "end": 1170,
+          "found": "hydrographic parameter",
+          "pref": "hydrographic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-W0PGVP72-1",
+          "label": "hydrographic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "annotated_text": "In record 8.1, the entry compares **orbital frequency**〔[orbital frequency](http://data.loterre.fr/ark:/67375/QX8-4DFL54BT-J)〕, **solstice**〔[solstice](http://data.loterre.fr/ark:/67375/QX8-8GZT7RS0-G)〕, and **glaciary formation**〔[glaciary formation](http://data.loterre.fr/ark:/67375/QX8-MPM8RVKS-8)〕 under the same review setting. In record 8.2, the entry compares **constituent of the planet Earth**〔[constituent of the planet Earth](http://data.loterre.fr/ark:/67375/QX8-P0T20QC3-M)〕, **chemical process**〔[chemical process](http://data.loterre.fr/ark:/67375/QX8-MDKH0Q63-S)〕, and **biological parameter**〔[biological parameter](http://data.loterre.fr/ark:/67375/QX8-JCM94HQS-K)〕 under the same review setting. In record 8.3, the entry compares **geomorphological structure**〔[geomorphological structure](http://data.loterre.fr/ark:/67375/QX8-M9NZ5KPV-3)〕, **orbital configuration**〔[orbital configuration](http://data.loterre.fr/ark:/67375/QX8-WQ2BW1VP-J)〕, and **biological object**〔[biological object](http://data.loterre.fr/ark:/67375/QX8-GM4FXS76-7)〕 under the same review setting. In record 8.4, the entry compares **oceanic parameter**〔[oceanic parameter](http://data.loterre.fr/ark:/67375/QX8-3JR3PDTM-6)〕, **physical property**〔[physical property](http://data.loterre.fr/ark:/67375/QX8-F098G6RG-7)〕, and **climate**〔[climate](http://data.loterre.fr/ark:/67375/QX8-CP0QNVH1-X)〕 under the same review setting. In record 8.5, the entry compares **declination**〔[declination](http://data.loterre.fr/ark:/67375/QX8-VB2HVS3F-R)〕, **azimuth**〔[azimuth](http://data.loterre.fr/ark:/67375/QX8-J8BWXC38-Z)〕, and **hydrographic parameter**〔[hydrographic parameter](http://data.loterre.fr/ark:/67375/QX8-W0PGVP72-1)〕 under the same review setting. In record 8.6, the entry compares **astronomical parameter**〔[astronomical parameter](http://data.loterre.fr/ark:/67375/QX8-BD50GN75-D)〕, **chemical property**〔[chemical property](http://data.loterre.fr/ark:/67375/QX8-R5SBGSDS-F)〕, and **geographical area**〔[geographical area](http://data.loterre.fr/ark:/67375/QX8-R4CP8V83-V)〕 under the same review setting. In record 8.7, the entry compares **observation data**〔[observation data](http://data.loterre.fr/ark:/67375/QX8-QBG7GRWD-K)〕, **geologic time scale**〔[geologic time scale](http://data.loterre.fr/ark:/67375/QX8-ZG31HD1L-2)〕, and **precession**〔[precession](http://data.loterre.fr/ark:/67375/QX8-2NF6C5GB-V)〕 under the same review setting. In record 8.8, the entry compares **equipment**〔[equipment](http://data.loterre.fr/ark:/67375/QX8-V41L3XQX-0)〕, **aphelion**〔[aphelion](http://data.loterre.fr/ark:/67375/QX8-MKGMJ8RC-4)〕, and **atmospherical parameter**〔[atmospherical parameter](http://data.loterre.fr/ark:/67375/QX8-9HDFMQGP-0)〕 under the same review setting. In record 8.9, the entry compares **perihelion**〔[perihelion](http://data.loterre.fr/ark:/67375/QX8-RWP1QD9Z-3)〕, **ellipse**〔[ellipse](http://data.loterre.fr/ark:/67375/QX8-0DV73KMC-X)〕, and **structural parameter**〔[structural parameter](http://data.loterre.fr/ark:/67375/QX8-JF8X82NB-0)〕 under the same review setting. In record 8.10, the entry compares **natural environment**〔[natural environment](http://data.loterre.fr/ark:/67375/QX8-FZC5N7HX-Z)〕, **study material**〔[study material](http://data.loterre.fr/ark:/67375/QX8-HG875W53-R)〕, and **axial tilt**〔[obliquity](http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2)〕 under the same review setting.",
+      "matches": [
+        {
+          "start": 34,
+          "end": 51,
+          "found": "orbital frequency",
+          "pref": "orbital frequency",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-4DFL54BT-J",
+          "label": "orbital frequency",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 53,
+          "end": 61,
+          "found": "solstice",
+          "pref": "solstice",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-8GZT7RS0-G",
+          "label": "solstice",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 67,
+          "end": 85,
+          "found": "glaciary formation",
+          "pref": "glaciary formation",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MPM8RVKS-8",
+          "label": "glaciary formation",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 151,
+          "end": 182,
+          "found": "constituent of the planet Earth",
+          "pref": "constituent of the planet Earth",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-P0T20QC3-M",
+          "label": "constituent of the planet Earth",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 184,
+          "end": 200,
+          "found": "chemical process",
+          "pref": "chemical process",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MDKH0Q63-S",
+          "label": "chemical process",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 206,
+          "end": 226,
+          "found": "biological parameter",
+          "pref": "biological parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-JCM94HQS-K",
+          "label": "biological parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 292,
+          "end": 318,
+          "found": "geomorphological structure",
+          "pref": "geomorphological structure",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-M9NZ5KPV-3",
+          "label": "geomorphological structure",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 320,
+          "end": 341,
+          "found": "orbital configuration",
+          "pref": "orbital configuration",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-WQ2BW1VP-J",
+          "label": "orbital configuration",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 347,
+          "end": 364,
+          "found": "biological object",
+          "pref": "biological object",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-GM4FXS76-7",
+          "label": "biological object",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 430,
+          "end": 447,
+          "found": "oceanic parameter",
+          "pref": "oceanic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-3JR3PDTM-6",
+          "label": "oceanic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 449,
+          "end": 466,
+          "found": "physical property",
+          "pref": "physical property",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-F098G6RG-7",
+          "label": "physical property",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 472,
+          "end": 479,
+          "found": "climate",
+          "pref": "climate",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-CP0QNVH1-X",
+          "label": "climate",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 545,
+          "end": 556,
+          "found": "declination",
+          "pref": "declination",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-VB2HVS3F-R",
+          "label": "declination",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 558,
+          "end": 565,
+          "found": "azimuth",
+          "pref": "azimuth",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-J8BWXC38-Z",
+          "label": "azimuth",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 571,
+          "end": 593,
+          "found": "hydrographic parameter",
+          "pref": "hydrographic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-W0PGVP72-1",
+          "label": "hydrographic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 659,
+          "end": 681,
+          "found": "astronomical parameter",
+          "pref": "astronomical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-BD50GN75-D",
+          "label": "astronomical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 683,
+          "end": 700,
+          "found": "chemical property",
+          "pref": "chemical property",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-R5SBGSDS-F",
+          "label": "chemical property",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 706,
+          "end": 723,
+          "found": "geographical area",
+          "pref": "geographical area",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-R4CP8V83-V",
+          "label": "geographical area",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 789,
+          "end": 805,
+          "found": "observation data",
+          "pref": "observation data",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-QBG7GRWD-K",
+          "label": "observation data",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 807,
+          "end": 826,
+          "found": "geologic time scale",
+          "pref": "geologic time scale",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-ZG31HD1L-2",
+          "label": "geologic time scale",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 832,
+          "end": 842,
+          "found": "precession",
+          "pref": "precession",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-2NF6C5GB-V",
+          "label": "precession",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 908,
+          "end": 917,
+          "found": "equipment",
+          "pref": "equipment",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-V41L3XQX-0",
+          "label": "equipment",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 919,
+          "end": 927,
+          "found": "aphelion",
+          "pref": "aphelion",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MKGMJ8RC-4",
+          "label": "aphelion",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 933,
+          "end": 956,
+          "found": "atmospherical parameter",
+          "pref": "atmospherical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-9HDFMQGP-0",
+          "label": "atmospherical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1022,
+          "end": 1032,
+          "found": "perihelion",
+          "pref": "perihelion",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-RWP1QD9Z-3",
+          "label": "perihelion",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 1034,
+          "end": 1041,
+          "found": "ellipse",
+          "pref": "ellipse",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-0DV73KMC-X",
+          "label": "ellipse",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 1047,
+          "end": 1067,
+          "found": "structural parameter",
+          "pref": "structural parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-JF8X82NB-0",
+          "label": "structural parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1134,
+          "end": 1153,
+          "found": "natural environment",
+          "pref": "natural environment",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-FZC5N7HX-Z",
+          "label": "natural environment",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1155,
+          "end": 1169,
+          "found": "study material",
+          "pref": "study material",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-HG875W53-R",
+          "label": "study material",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1175,
+          "end": 1185,
+          "found": "axial tilt",
+          "pref": "obliquity",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2",
+          "label": "axial tilt",
+          "rule": "pattern",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "annotated_text": "In record 9.1, the entry compares **astronomical parameter**〔[astronomical parameter](http://data.loterre.fr/ark:/67375/QX8-BD50GN75-D)〕, **oceanic parameter**〔[oceanic parameter](http://data.loterre.fr/ark:/67375/QX8-3JR3PDTM-6)〕, and **geographical parameter**〔[geographical parameter](http://data.loterre.fr/ark:/67375/QX8-06JXR7F1-B)〕 under the same review setting. In record 9.2, the entry compares **climate**〔[climate](http://data.loterre.fr/ark:/67375/QX8-CP0QNVH1-X)〕, **physical property**〔[physical property](http://data.loterre.fr/ark:/67375/QX8-F098G6RG-7)〕, and **equipment**〔[equipment](http://data.loterre.fr/ark:/67375/QX8-V41L3XQX-0)〕 under the same review setting. In record 9.3, the entry compares **biological object**〔[biological object](http://data.loterre.fr/ark:/67375/QX8-GM4FXS76-7)〕, **glaciary formation**〔[glaciary formation](http://data.loterre.fr/ark:/67375/QX8-MPM8RVKS-8)〕, and **study material**〔[study material](http://data.loterre.fr/ark:/67375/QX8-HG875W53-R)〕 under the same review setting. In record 9.4, the entry compares **obliquity**〔[obliquity](http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2)〕, **time phenomenon**〔[time phenomenon](http://data.loterre.fr/ark:/67375/QX8-5CBS08CQ-D)〕, and **biological parameter**〔[biological parameter](http://data.loterre.fr/ark:/67375/QX8-JCM94HQS-K)〕 under the same review setting. In record 9.5, the entry compares **orbital configuration**〔[orbital configuration](http://data.loterre.fr/ark:/67375/QX8-WQ2BW1VP-J)〕, **axial tilt**〔[obliquity](http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2)〕, and **physical phenomenon**〔[physical phenomenon](http://data.loterre.fr/ark:/67375/QX8-RNL0WXJ4-2)〕 under the same review setting. In record 9.6, the entry compares **constituent of the planet Earth**〔[constituent of the planet Earth](http://data.loterre.fr/ark:/67375/QX8-P0T20QC3-M)〕, **perihelion**〔[perihelion](http://data.loterre.fr/ark:/67375/QX8-RWP1QD9Z-3)〕, and **tectonic structure**〔[tectonic structure](http://data.loterre.fr/ark:/67375/QX8-8567VJBG-8)〕 under the same review setting. In record 9.7, the entry compares **chemical property**〔[chemical property](http://data.loterre.fr/ark:/67375/QX8-R5SBGSDS-F)〕, **geologic time scale**〔[geologic time scale](http://data.loterre.fr/ark:/67375/QX8-ZG31HD1L-2)〕, and **geographical area**〔[geographical area](http://data.loterre.fr/ark:/67375/QX8-R4CP8V83-V)〕 under the same review setting. In record 9.8, the entry compares **atmospherical parameter**〔[atmospherical parameter](http://data.loterre.fr/ark:/67375/QX8-9HDFMQGP-0)〕, **solstice**〔[solstice](http://data.loterre.fr/ark:/67375/QX8-8GZT7RS0-G)〕, and **precession**〔[precession](http://data.loterre.fr/ark:/67375/QX8-2NF6C5GB-V)〕 under the same review setting. In record 9.9, the entry compares **living organism**〔[living organism](http://data.loterre.fr/ark:/67375/QX8-W2CLR74L-T)〕, **government agency**〔[government agency](http://data.loterre.fr/ark:/67375/QX8-MXDGK2JS-4)〕, and **aphelion**〔[aphelion](http://data.loterre.fr/ark:/67375/QX8-MKGMJ8RC-4)〕 under the same review setting. In record 9.10, the entry compares **geological parameter**〔[geological parameter](http://data.loterre.fr/ark:/67375/QX8-TRXRV65D-L)〕, **chemical process**〔[chemical process](http://data.loterre.fr/ark:/67375/QX8-MDKH0Q63-S)〕, and **study method**〔[study method](http://data.loterre.fr/ark:/67375/QX8-1XC0Z5R7-S)〕 under the same review setting.",
+      "matches": [
+        {
+          "start": 34,
+          "end": 56,
+          "found": "astronomical parameter",
+          "pref": "astronomical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-BD50GN75-D",
+          "label": "astronomical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 58,
+          "end": 75,
+          "found": "oceanic parameter",
+          "pref": "oceanic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-3JR3PDTM-6",
+          "label": "oceanic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 81,
+          "end": 103,
+          "found": "geographical parameter",
+          "pref": "geographical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-06JXR7F1-B",
+          "label": "geographical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 169,
+          "end": 176,
+          "found": "climate",
+          "pref": "climate",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-CP0QNVH1-X",
+          "label": "climate",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 178,
+          "end": 195,
+          "found": "physical property",
+          "pref": "physical property",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-F098G6RG-7",
+          "label": "physical property",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 201,
+          "end": 210,
+          "found": "equipment",
+          "pref": "equipment",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-V41L3XQX-0",
+          "label": "equipment",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 276,
+          "end": 293,
+          "found": "biological object",
+          "pref": "biological object",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-GM4FXS76-7",
+          "label": "biological object",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 295,
+          "end": 313,
+          "found": "glaciary formation",
+          "pref": "glaciary formation",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MPM8RVKS-8",
+          "label": "glaciary formation",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 319,
+          "end": 333,
+          "found": "study material",
+          "pref": "study material",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-HG875W53-R",
+          "label": "study material",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 399,
+          "end": 408,
+          "found": "obliquity",
+          "pref": "obliquity",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2",
+          "label": "obliquity",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 410,
+          "end": 425,
+          "found": "time phenomenon",
+          "pref": "time phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-5CBS08CQ-D",
+          "label": "time phenomenon",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 431,
+          "end": 451,
+          "found": "biological parameter",
+          "pref": "biological parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-JCM94HQS-K",
+          "label": "biological parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 517,
+          "end": 538,
+          "found": "orbital configuration",
+          "pref": "orbital configuration",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-WQ2BW1VP-J",
+          "label": "orbital configuration",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 540,
+          "end": 550,
+          "found": "axial tilt",
+          "pref": "obliquity",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2",
+          "label": "axial tilt",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 556,
+          "end": 575,
+          "found": "physical phenomenon",
+          "pref": "physical phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-RNL0WXJ4-2",
+          "label": "physical phenomenon",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 641,
+          "end": 672,
+          "found": "constituent of the planet Earth",
+          "pref": "constituent of the planet Earth",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-P0T20QC3-M",
+          "label": "constituent of the planet Earth",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 674,
+          "end": 684,
+          "found": "perihelion",
+          "pref": "perihelion",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-RWP1QD9Z-3",
+          "label": "perihelion",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 690,
+          "end": 708,
+          "found": "tectonic structure",
+          "pref": "tectonic structure",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-8567VJBG-8",
+          "label": "tectonic structure",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 774,
+          "end": 791,
+          "found": "chemical property",
+          "pref": "chemical property",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-R5SBGSDS-F",
+          "label": "chemical property",
+          "rule": "lemma_pattern_seq",
+          "score": 0.93
+        },
+        {
+          "start": 793,
+          "end": 812,
+          "found": "geologic time scale",
+          "pref": "geologic time scale",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-ZG31HD1L-2",
+          "label": "geologic time scale",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 818,
+          "end": 835,
+          "found": "geographical area",
+          "pref": "geographical area",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-R4CP8V83-V",
+          "label": "geographical area",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 901,
+          "end": 924,
+          "found": "atmospherical parameter",
+          "pref": "atmospherical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-9HDFMQGP-0",
+          "label": "atmospherical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 926,
+          "end": 934,
+          "found": "solstice",
+          "pref": "solstice",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-8GZT7RS0-G",
+          "label": "solstice",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 940,
+          "end": 950,
+          "found": "precession",
+          "pref": "precession",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-2NF6C5GB-V",
+          "label": "precession",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 1016,
+          "end": 1031,
+          "found": "living organism",
+          "pref": "living organism",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-W2CLR74L-T",
+          "label": "living organism",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1033,
+          "end": 1050,
+          "found": "government agency",
+          "pref": "government agency",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MXDGK2JS-4",
+          "label": "government agency",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1056,
+          "end": 1064,
+          "found": "aphelion",
+          "pref": "aphelion",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MKGMJ8RC-4",
+          "label": "aphelion",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 1131,
+          "end": 1151,
+          "found": "geological parameter",
+          "pref": "geological parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-TRXRV65D-L",
+          "label": "geological parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1153,
+          "end": 1169,
+          "found": "chemical process",
+          "pref": "chemical process",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MDKH0Q63-S",
+          "label": "chemical process",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1175,
+          "end": 1187,
+          "found": "study method",
+          "pref": "study method",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-1XC0Z5R7-S",
+          "label": "study method",
+          "rule": "pattern",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "annotated_text": "In record 10.1, the entry compares **declination**〔[declination](http://data.loterre.fr/ark:/67375/QX8-VB2HVS3F-R)〕, **observation data**〔[observation data](http://data.loterre.fr/ark:/67375/QX8-QBG7GRWD-K)〕, and **geomorphological structure**〔[geomorphological structure](http://data.loterre.fr/ark:/67375/QX8-M9NZ5KPV-3)〕 under the same review setting. In record 10.2, the entry compares **living organism**〔[living organism](http://data.loterre.fr/ark:/67375/QX8-W2CLR74L-T)〕, **geological parameter**〔[geological parameter](http://data.loterre.fr/ark:/67375/QX8-TRXRV65D-L)〕, and **oceanic parameter**〔[oceanic parameter](http://data.loterre.fr/ark:/67375/QX8-3JR3PDTM-6)〕 under the same review setting. In record 10.3, the entry compares **perihelion**〔[perihelion](http://data.loterre.fr/ark:/67375/QX8-RWP1QD9Z-3)〕, **aphelion**〔[aphelion](http://data.loterre.fr/ark:/67375/QX8-MKGMJ8RC-4)〕, and **chemical process**〔[chemical process](http://data.loterre.fr/ark:/67375/QX8-MDKH0Q63-S)〕 under the same review setting. In record 10.4, the entry compares **natural environment**〔[natural environment](http://data.loterre.fr/ark:/67375/QX8-FZC5N7HX-Z)〕, **biological object**〔[biological object](http://data.loterre.fr/ark:/67375/QX8-GM4FXS76-7)〕, and **government agency**〔[government agency](http://data.loterre.fr/ark:/67375/QX8-MXDGK2JS-4)〕 under the same review setting. In record 10.5, the entry compares **geographical parameter**〔[geographical parameter](http://data.loterre.fr/ark:/67375/QX8-06JXR7F1-B)〕, **obliquity**〔[obliquity](http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2)〕, and **controlling factor**〔[controlling factor](http://data.loterre.fr/ark:/67375/QX8-3GQFXH94-L)〕 under the same review setting. In record 10.6, the entry compares **climatic parameter**〔[climatic parameter](http://data.loterre.fr/ark:/67375/QX8-3CN7KBPQ-Z)〕, **biological parameter**〔[biological parameter](http://data.loterre.fr/ark:/67375/QX8-JCM94HQS-K)〕, and **tectonic structure**〔[tectonic structure](http://data.loterre.fr/ark:/67375/QX8-8567VJBG-8)〕 under the same review setting. In record 10.7, the entry compares **geologic time scale**〔[geologic time scale](http://data.loterre.fr/ark:/67375/QX8-ZG31HD1L-2)〕, **atmospherical parameter**〔[atmospherical parameter](http://data.loterre.fr/ark:/67375/QX8-9HDFMQGP-0)〕, and **time phenomenon**〔[time phenomenon](http://data.loterre.fr/ark:/67375/QX8-5CBS08CQ-D)〕 under the same review setting. In record 10.8, the entry compares **study method**〔[study method](http://data.loterre.fr/ark:/67375/QX8-1XC0Z5R7-S)〕, **constituent of the planet Earth**〔[constituent of the planet Earth](http://data.loterre.fr/ark:/67375/QX8-P0T20QC3-M)〕, and azimuth under the same review setting. In record 10.9, the entry compares **natural phenomenon**〔[natural phenomenon](http://data.loterre.fr/ark:/67375/QX8-D3V8SP48-S)〕, **study material**〔[study material](http://data.loterre.fr/ark:/67375/QX8-HG875W53-R)〕, and **solstice**〔[solstice](http://data.loterre.fr/ark:/67375/QX8-8GZT7RS0-G)〕 under the same review setting. In record 10.10, the entry compares **astronomical parameter**〔[astronomical parameter](http://data.loterre.fr/ark:/67375/QX8-BD50GN75-D)〕, **geographical area**〔[geographical area](http://data.loterre.fr/ark:/67375/QX8-R4CP8V83-V)〕, and **chemical property**〔[chemical property](http://data.loterre.fr/ark:/67375/QX8-R5SBGSDS-F)〕 under the same review setting.",
+      "matches": [
+        {
+          "start": 35,
+          "end": 46,
+          "found": "declination",
+          "pref": "declination",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-VB2HVS3F-R",
+          "label": "declination",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 48,
+          "end": 64,
+          "found": "observation data",
+          "pref": "observation data",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-QBG7GRWD-K",
+          "label": "observation data",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 70,
+          "end": 96,
+          "found": "geomorphological structure",
+          "pref": "geomorphological structure",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-M9NZ5KPV-3",
+          "label": "geomorphological structure",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 163,
+          "end": 178,
+          "found": "living organism",
+          "pref": "living organism",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-W2CLR74L-T",
+          "label": "living organism",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 180,
+          "end": 200,
+          "found": "geological parameter",
+          "pref": "geological parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-TRXRV65D-L",
+          "label": "geological parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 206,
+          "end": 223,
+          "found": "oceanic parameter",
+          "pref": "oceanic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-3JR3PDTM-6",
+          "label": "oceanic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 290,
+          "end": 300,
+          "found": "perihelion",
+          "pref": "perihelion",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-RWP1QD9Z-3",
+          "label": "perihelion",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 302,
+          "end": 310,
+          "found": "aphelion",
+          "pref": "aphelion",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MKGMJ8RC-4",
+          "label": "aphelion",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 316,
+          "end": 332,
+          "found": "chemical process",
+          "pref": "chemical process",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MDKH0Q63-S",
+          "label": "chemical process",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 399,
+          "end": 418,
+          "found": "natural environment",
+          "pref": "natural environment",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-FZC5N7HX-Z",
+          "label": "natural environment",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 420,
+          "end": 437,
+          "found": "biological object",
+          "pref": "biological object",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-GM4FXS76-7",
+          "label": "biological object",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 443,
+          "end": 460,
+          "found": "government agency",
+          "pref": "government agency",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-MXDGK2JS-4",
+          "label": "government agency",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 527,
+          "end": 549,
+          "found": "geographical parameter",
+          "pref": "geographical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-06JXR7F1-B",
+          "label": "geographical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 551,
+          "end": 560,
+          "found": "obliquity",
+          "pref": "obliquity",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-D2W76P9P-2",
+          "label": "obliquity",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 566,
+          "end": 584,
+          "found": "controlling factor",
+          "pref": "controlling factor",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-3GQFXH94-L",
+          "label": "controlling factor",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 651,
+          "end": 669,
+          "found": "climatic parameter",
+          "pref": "climatic parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-3CN7KBPQ-Z",
+          "label": "climatic parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 671,
+          "end": 691,
+          "found": "biological parameter",
+          "pref": "biological parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-JCM94HQS-K",
+          "label": "biological parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 697,
+          "end": 715,
+          "found": "tectonic structure",
+          "pref": "tectonic structure",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-8567VJBG-8",
+          "label": "tectonic structure",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 782,
+          "end": 801,
+          "found": "geologic time scale",
+          "pref": "geologic time scale",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-ZG31HD1L-2",
+          "label": "geologic time scale",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 803,
+          "end": 826,
+          "found": "atmospherical parameter",
+          "pref": "atmospherical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-9HDFMQGP-0",
+          "label": "atmospherical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 832,
+          "end": 847,
+          "found": "time phenomenon",
+          "pref": "time phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-5CBS08CQ-D",
+          "label": "time phenomenon",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 914,
+          "end": 926,
+          "found": "study method",
+          "pref": "study method",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-1XC0Z5R7-S",
+          "label": "study method",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 928,
+          "end": 959,
+          "found": "constituent of the planet Earth",
+          "pref": "constituent of the planet Earth",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-P0T20QC3-M",
+          "label": "constituent of the planet Earth",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1039,
+          "end": 1057,
+          "found": "natural phenomenon",
+          "pref": "natural phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-D3V8SP48-S",
+          "label": "natural phenomenon",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1059,
+          "end": 1073,
+          "found": "study material",
+          "pref": "study material",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-HG875W53-R",
+          "label": "study material",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1079,
+          "end": 1087,
+          "found": "solstice",
+          "pref": "solstice",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-8GZT7RS0-G",
+          "label": "solstice",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 1155,
+          "end": 1177,
+          "found": "astronomical parameter",
+          "pref": "astronomical parameter",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-BD50GN75-D",
+          "label": "astronomical parameter",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1179,
+          "end": 1196,
+          "found": "geographical area",
+          "pref": "geographical area",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-R4CP8V83-V",
+          "label": "geographical area",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1202,
+          "end": 1219,
+          "found": "chemical property",
+          "pref": "chemical property",
+          "uri": "http://data.loterre.fr/ark:/67375/QX8-R5SBGSDS-F",
+          "label": "chemical property",
+          "rule": "lemma_pattern_seq",
+          "score": 0.93
+        }
+      ]
+    }
+  ]
+}

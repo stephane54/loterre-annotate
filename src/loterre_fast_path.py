@@ -170,7 +170,6 @@ def annotate_docs_fast(docs, index, regex, case_sensitive: bool = False):
         matches = dedupe(fast_match(text, index, regex, case_sensitive=case_sensitive))
         results.append({
             "id": doc.get("id"),
-            "text": text,
             "matches": matches,
         })
     return results

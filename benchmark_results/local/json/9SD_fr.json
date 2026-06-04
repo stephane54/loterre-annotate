@@ -1,0 +1,457 @@
+{
+  "profile": "entity_strict",
+  "docs": 11,
+  "timings": {
+    "load_and_profile_s": 0.10219169099582359,
+    "process_s": 3.073181157000363,
+    "total_s": 3.1753728479961865
+  },
+  "results": [
+    {
+      "id": "0",
+      "annotated_text": "La géographie mondiale couvre une grande diversité de territoires. L'**Afrique australe**〔[Afrique australe](http://data.loterre.fr/ark:/67375/9SD-VT12V2TP-2)〕 regroupe plusieurs États aux économies en développement. L'**Amérique du Sud**〔[Amérique du Sud](http://data.loterre.fr/ark:/67375/9SD-KJ4B0K7X-V)〕 est traversée par la cordillère des Andes. L'**Asie du Sud-Est**〔[Asie du Sud-Est](http://data.loterre.fr/ark:/67375/9SD-QZT78KM7-4)〕 constitue une région d'une biodiversité exceptionnelle. L'**Europe**〔[Europe](http://data.loterre.fr/ark:/67375/9SD-G3RL9QZF-H)〕 centrale a connu de profondes transformations politiques depuis 1989. L'**Océanie**〔[Océanie](http://data.loterre.fr/ark:/67375/9SD-S5XDPL3K-V)〕 rassemble des archipels dispersés sur l'ensemble du Pacifique. L'**Asie centrale**〔[Asie centrale](http://data.loterre.fr/ark:/67375/9SD-XJ6JN90Z-L)〕 relie traditionnellement l'**Europe**〔[Europe](http://data.loterre.fr/ark:/67375/9SD-G3RL9QZF-H)〕 à l'Extrême-Orient. L'**Amérique centrale**〔[Amérique centrale](http://data.loterre.fr/ark:/67375/9SD-W12HDGKH-X)〕 subit régulièrement des phénomènes naturels extrêmes. Le Moyen-Orient demeure une zone géopolitique particulièrement stratégique. L'**Afrique subsaharienne**〔[Afrique subsaharienne](http://data.loterre.fr/ark:/67375/9SD-CHCPNDXH-J)〕 concentre les plus fortes croissances démographiques mondiales.",
+      "matches": [
+        {
+          "start": 69,
+          "end": 85,
+          "found": "Afrique australe",
+          "pref": "Afrique australe",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-VT12V2TP-2",
+          "label": "Afrique australe",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 145,
+          "end": 160,
+          "found": "Amérique du Sud",
+          "pref": "Amérique du Sud",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-KJ4B0K7X-V",
+          "label": "Amérique du Sud",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 206,
+          "end": 221,
+          "found": "Asie du Sud-Est",
+          "pref": "Asie du Sud-Est",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-QZT78KM7-4",
+          "label": "Asie du Sud-Est",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 280,
+          "end": 286,
+          "found": "Europe",
+          "pref": "Europe",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-G3RL9QZF-H",
+          "label": "Europe",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 359,
+          "end": 366,
+          "found": "Océanie",
+          "pref": "Océanie",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-S5XDPL3K-V",
+          "label": "Océanie",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 432,
+          "end": 445,
+          "found": "Asie centrale",
+          "pref": "Asie centrale",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-XJ6JN90Z-L",
+          "label": "Asie centrale",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 473,
+          "end": 479,
+          "found": "Europe",
+          "pref": "Europe",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-G3RL9QZF-H",
+          "label": "Europe",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 502,
+          "end": 519,
+          "found": "Amérique centrale",
+          "pref": "Amérique centrale",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-W12HDGKH-X",
+          "label": "Amérique centrale",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 652,
+          "end": 673,
+          "found": "Afrique subsaharienne",
+          "pref": "Afrique subsaharienne",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-CHCPNDXH-J",
+          "label": "Afrique subsaharienne",
+          "rule": "pattern",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "annotated_text": "Dans l'atlas 1.1, la description géographique comprend **Abou Dabi**〔[Abou Dabi](http://data.loterre.fr/ark:/67375/9SD-MXSWLGFP-X)〕 dans le même ensemble territorial. Dans l'atlas 1.2, la description géographique comprend **Afrique australe**〔[Afrique australe](http://data.loterre.fr/ark:/67375/9SD-VT12V2TP-2)〕 dans le même ensemble territorial. Dans l'atlas 1.3, la description géographique comprend **Afrique centrale**〔[Afrique centrale](http://data.loterre.fr/ark:/67375/9SD-XC7FWP4L-J)〕 dans le même ensemble territorial.",
+      "matches": [
+        {
+          "start": 55,
+          "end": 64,
+          "found": "Abou Dabi",
+          "pref": "Abou Dabi",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-MXSWLGFP-X",
+          "label": "Abou Dabi",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 155,
+          "end": 171,
+          "found": "Afrique australe",
+          "pref": "Afrique australe",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-VT12V2TP-2",
+          "label": "Afrique australe",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 262,
+          "end": 278,
+          "found": "Afrique centrale",
+          "pref": "Afrique centrale",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-XC7FWP4L-J",
+          "label": "Afrique centrale",
+          "rule": "pattern",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "annotated_text": "Dans l'atlas 2.1, la description géographique comprend **Afrique du Sud**〔[Afrique du Sud](http://data.loterre.fr/ark:/67375/9SD-W45W8BVX-4)〕 dans le même ensemble territorial. Dans l'atlas 2.2, la description géographique comprend **Afrique occidentale**〔[Afrique occidentale](http://data.loterre.fr/ark:/67375/9SD-LG6P74GR-9)〕 dans le même ensemble territorial. Dans l'atlas 2.3, la description géographique comprend **Afrique orientale**〔[Afrique orientale](http://data.loterre.fr/ark:/67375/9SD-DCXM5GKL-V)〕 dans le même ensemble territorial.",
+      "matches": [
+        {
+          "start": 55,
+          "end": 69,
+          "found": "Afrique du Sud",
+          "pref": "Afrique du Sud",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-W45W8BVX-4",
+          "label": "Afrique du Sud",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 160,
+          "end": 179,
+          "found": "Afrique occidentale",
+          "pref": "Afrique occidentale",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-LG6P74GR-9",
+          "label": "Afrique occidentale",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 270,
+          "end": 287,
+          "found": "Afrique orientale",
+          "pref": "Afrique orientale",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-DCXM5GKL-V",
+          "label": "Afrique orientale",
+          "rule": "pattern",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "annotated_text": "Dans l'atlas 3.1, la description géographique comprend **Afrique septentrionale**〔[Afrique septentrionale](http://data.loterre.fr/ark:/67375/9SD-M7DDV66X-9)〕 dans le même ensemble territorial. Dans l'atlas 3.2, la description géographique comprend **Afrique**〔[Afrique](http://data.loterre.fr/ark:/67375/9SD-G7K5BF80-F)〕 subsaharienne dans le même ensemble territorial. Dans l'atlas 3.3, la description géographique comprend **Amérique centrale**〔[Amérique centrale](http://data.loterre.fr/ark:/67375/9SD-W12HDGKH-X)〕 dans le même ensemble territorial.",
+      "matches": [
+        {
+          "start": 55,
+          "end": 77,
+          "found": "Afrique septentrionale",
+          "pref": "Afrique septentrionale",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-M7DDV66X-9",
+          "label": "Afrique septentrionale",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 168,
+          "end": 175,
+          "found": "Afrique",
+          "pref": "Afrique",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-G7K5BF80-F",
+          "label": "Afrique",
+          "rule": "pattern",
+          "score": 0.9500000000000001
+        },
+        {
+          "start": 280,
+          "end": 297,
+          "found": "Amérique centrale",
+          "pref": "Amérique centrale",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-W12HDGKH-X",
+          "label": "Amérique centrale",
+          "rule": "pattern",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "annotated_text": "Dans l'atlas 4.1, la description géographique comprend **Amérique du Nord**〔[Amérique du Nord](http://data.loterre.fr/ark:/67375/9SD-VV1MBK24-T)〕 dans le même ensemble territorial. Dans l'atlas 4.2, la description géographique comprend **Amérique du Sud**〔[Amérique du Sud](http://data.loterre.fr/ark:/67375/9SD-KJ4B0K7X-V)〕 dans le même ensemble territorial. Dans l'atlas 4.3, la description géographique comprend **Amérique septentrionale**〔[Amérique septentrionale](http://data.loterre.fr/ark:/67375/9SD-WFRKZV0L-5)〕 dans le même ensemble territorial.",
+      "matches": [
+        {
+          "start": 55,
+          "end": 71,
+          "found": "Amérique du Nord",
+          "pref": "Amérique du Nord",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-VV1MBK24-T",
+          "label": "Amérique du Nord",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 162,
+          "end": 177,
+          "found": "Amérique du Sud",
+          "pref": "Amérique du Sud",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-KJ4B0K7X-V",
+          "label": "Amérique du Sud",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 268,
+          "end": 291,
+          "found": "Amérique septentrionale",
+          "pref": "Amérique septentrionale",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-WFRKZV0L-5",
+          "label": "Amérique septentrionale",
+          "rule": "pattern",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "annotated_text": "Dans l'atlas 5.1, la description géographique comprend **Arabie saoudite**〔[Arabie saoudite](http://data.loterre.fr/ark:/67375/9SD-KDJNHLLM-0)〕 dans le même ensemble territorial. Dans l'atlas 5.2, la description géographique comprend **Asie centrale**〔[Asie centrale](http://data.loterre.fr/ark:/67375/9SD-XJ6JN90Z-L)〕 dans le même ensemble territorial. Dans l'atlas 5.3, la description géographique comprend **Asie du Sud-Est**〔[Asie du Sud-Est](http://data.loterre.fr/ark:/67375/9SD-QZT78KM7-4)〕 dans le même ensemble territorial.",
+      "matches": [
+        {
+          "start": 55,
+          "end": 70,
+          "found": "Arabie saoudite",
+          "pref": "Arabie saoudite",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-KDJNHLLM-0",
+          "label": "Arabie saoudite",
+          "rule": "surface_structural",
+          "score": 0.88
+        },
+        {
+          "start": 161,
+          "end": 174,
+          "found": "Asie centrale",
+          "pref": "Asie centrale",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-XJ6JN90Z-L",
+          "label": "Asie centrale",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 265,
+          "end": 280,
+          "found": "Asie du Sud-Est",
+          "pref": "Asie du Sud-Est",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-QZT78KM7-4",
+          "label": "Asie du Sud-Est",
+          "rule": "pattern",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "annotated_text": "Dans l'atlas 6.1, la description géographique comprend **Asie méridionale**〔[Asie méridionale](http://data.loterre.fr/ark:/67375/9SD-QS3MR5VG-S)〕 dans le même ensemble territorial. Dans l'atlas 6.2, la description géographique comprend **Asie occidentale**〔[Asie occidentale](http://data.loterre.fr/ark:/67375/9SD-KX4ZRVG6-L)〕 dans le même ensemble territorial. Dans l'atlas 6.3, la description géographique comprend **Asie orientale**〔[Asie orientale](http://data.loterre.fr/ark:/67375/9SD-FJX9PDBN-2)〕 dans le même ensemble territorial.",
+      "matches": [
+        {
+          "start": 55,
+          "end": 71,
+          "found": "Asie méridionale",
+          "pref": "Asie méridionale",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-QS3MR5VG-S",
+          "label": "Asie méridionale",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 162,
+          "end": 178,
+          "found": "Asie occidentale",
+          "pref": "Asie occidentale",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-KX4ZRVG6-L",
+          "label": "Asie occidentale",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 269,
+          "end": 283,
+          "found": "Asie orientale",
+          "pref": "Asie orientale",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-FJX9PDBN-2",
+          "label": "Asie orientale",
+          "rule": "pattern",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "annotated_text": "Dans l'atlas 7.1, la description géographique comprend **Bandar Seri Begawan**〔[Bandar Seri Begawan](http://data.loterre.fr/ark:/67375/9SD-QNP8N0ML-S)〕 dans le même ensemble territorial. Dans l'atlas 7.2, la description géographique comprend district de **Stuttgart**〔[Stuttgart (ville-arrondissement)](http://data.loterre.fr/ark:/67375/9SD-D5G80G6N-Q)〕 dans le même ensemble territorial. Dans l'atlas 7.3, la description géographique comprend **Stuttgart**〔[Stuttgart (ville-arrondissement)](http://data.loterre.fr/ark:/67375/9SD-D5G80G6N-Q)〕 (ville-arrondissement) dans le même ensemble territorial.",
+      "matches": [
+        {
+          "start": 55,
+          "end": 74,
+          "found": "Bandar Seri Begawan",
+          "pref": "Bandar Seri Begawan",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-QNP8N0ML-S",
+          "label": "Bandar Seri Begawan",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 177,
+          "end": 186,
+          "found": "Stuttgart",
+          "pref": "Stuttgart (ville-arrondissement)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-D5G80G6N-Q",
+          "label": "Stuttgart",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 277,
+          "end": 286,
+          "found": "Stuttgart",
+          "pref": "Stuttgart (ville-arrondissement)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-D5G80G6N-Q",
+          "label": "Stuttgart",
+          "rule": "pattern",
+          "score": 0.9
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "annotated_text": "Dans l'atlas 8.1, la description géographique comprend **arrondissement de Böblingen**〔[arrondissement de Böblingen](http://data.loterre.fr/ark:/67375/9SD-BMKQS32H-9)〕 dans le même ensemble territorial. Dans l'atlas 8.2, la description géographique comprend **arrondissements d'Esslingens**〔[arrondissement d'Esslingen](http://data.loterre.fr/ark:/67375/9SD-JQGLWS9Z-X)〕 dans le même ensemble territorial. Dans l'atlas 8.3, la description géographique comprend **arrondissement de Göppingen**〔[arrondissement de Göppingen](http://data.loterre.fr/ark:/67375/9SD-M090637Z-H)〕 dans le même ensemble territorial.",
+      "matches": [
+        {
+          "start": 55,
+          "end": 82,
+          "found": "arrondissement de Böblingen",
+          "pref": "arrondissement de Böblingen",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-BMKQS32H-9",
+          "label": "arrondissement de Böblingen",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 173,
+          "end": 201,
+          "found": "arrondissements d'Esslingens",
+          "pref": "arrondissement d'Esslingen",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-JQGLWS9Z-X",
+          "label": "arrondissement d'Esslingen",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 292,
+          "end": 319,
+          "found": "arrondissement de Göppingen",
+          "pref": "arrondissement de Göppingen",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-M090637Z-H",
+          "label": "arrondissement de Göppingen",
+          "rule": "pattern",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "annotated_text": "Dans l'atlas 9.1, la description géographique comprend **arrondissements de Louisbourg**〔[arrondissement de Louisbourg](http://data.loterre.fr/ark:/67375/9SD-XSRV5DD2-V)〕 dans le même ensemble territorial. Dans l'atlas 9.2, la description géographique comprend **arrondissement de Rems-Murr**〔[arrondissement de Rems-Murr](http://data.loterre.fr/ark:/67375/9SD-M0B5S7HC-4)〕 dans le même ensemble territorial. Dans l'atlas 9.3, la description géographique comprend Heilbronn (ville-arrondissement) dans le même ensemble territorial.",
+      "matches": [
+        {
+          "start": 55,
+          "end": 84,
+          "found": "arrondissements de Louisbourg",
+          "pref": "arrondissement de Louisbourg",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-XSRV5DD2-V",
+          "label": "arrondissement de Louisbourg",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 175,
+          "end": 202,
+          "found": "arrondissement de Rems-Murr",
+          "pref": "arrondissement de Rems-Murr",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-M0B5S7HC-4",
+          "label": "arrondissement de Rems-Murr",
+          "rule": "pattern",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "annotated_text": "Dans l'atlas 10.1, la description géographique comprend **arrondissement de Heilbronn**〔[arrondissement de Heilbronn](http://data.loterre.fr/ark:/67375/9SD-L9SRPJ91-Q)〕 dans le même ensemble territorial. Dans l'atlas 10.2, la description géographique comprend **arrondissement de Hohenlohe**〔[arrondissement de Hohenlohe](http://data.loterre.fr/ark:/67375/9SD-S6SX75T7-6)〕 dans le même ensemble territorial. Dans l'atlas 10.3, la description géographique comprend **arrondissements de Main-Tauber**〔[arrondissement de Main-Tauber](http://data.loterre.fr/ark:/67375/9SD-KJZBVFR1-F)〕 dans le même ensemble territorial.",
+      "matches": [
+        {
+          "start": 56,
+          "end": 83,
+          "found": "arrondissement de Heilbronn",
+          "pref": "arrondissement de Heilbronn",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-L9SRPJ91-Q",
+          "label": "arrondissement de Heilbronn",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 175,
+          "end": 202,
+          "found": "arrondissement de Hohenlohe",
+          "pref": "arrondissement de Hohenlohe",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-S6SX75T7-6",
+          "label": "arrondissement de Hohenlohe",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 294,
+          "end": 324,
+          "found": "arrondissements de Main-Tauber",
+          "pref": "arrondissement de Main-Tauber",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-KJZBVFR1-F",
+          "label": "arrondissement de Main-Tauber",
+          "rule": "pattern",
+          "score": 1.0
+        }
+      ]
+    }
+  ]
+}

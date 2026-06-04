@@ -19,11 +19,9 @@ function annotate_fr () {
     echo
     echo "== Annotation FR basée sur ${code} =="
 
-    cat ${TEXT}/${code}_fr.jsonl | python "$CLI" \
+    cat ${TEXT}/${code}_fr.jsonl | python3 "$CLI" \
       --config "configs/${code}_fr_auto_profile.yaml" \
       --out "$O/${code}_fr_annotation.md"
-    python ./src/loterre_html_renderer.py --input "$JSON_OUT" --out "$HTML_OUT" --title "Annotation Loterre — ${DICT_ID}"
-
   done
 }
 
@@ -33,11 +31,11 @@ function annotate_en () {
     echo
     echo "== Annotation EN basée sur ${code} =="
 
-    cat  ${TEXT}/${code}_en.jsonl | python "$CLI" \
+    cat ${TEXT}/${code}_en.jsonl | python3 "$CLI" \
       --config "configs/${code}_en_auto_profile.yaml" \
       --out "$O/${code}_en_annotation.md"
   done
 }
 
 annotate_en
-#annotate_fr()
+annotate_fr

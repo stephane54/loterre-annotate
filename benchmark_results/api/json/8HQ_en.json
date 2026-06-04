@@ -1,0 +1,1839 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "matches": [
+        {
+          "start": 34,
+          "end": 42,
+          "found": "antimony",
+          "pref": "antimony",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-LGWKM8TW-9"
+        },
+        {
+          "start": 44,
+          "end": 52,
+          "found": "actinide",
+          "pref": "actinide",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JRBJDF37-C"
+        },
+        {
+          "start": 58,
+          "end": 59,
+          "found": "B",
+          "pref": "B",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-BJJWZT6G-K"
+        },
+        {
+          "start": 125,
+          "end": 130,
+          "found": "block",
+          "pref": "block",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-KS2SCGGS-V"
+        },
+        {
+          "start": 143,
+          "end": 150,
+          "found": "bromine",
+          "pref": "bromine",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JKQD0SHX-7"
+        },
+        {
+          "start": 216,
+          "end": 218,
+          "found": "Ca",
+          "pref": "Ca",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SX8VX34H-4"
+        },
+        {
+          "start": 220,
+          "end": 227,
+          "found": "bismuth",
+          "pref": "bismuth",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SLTRM919-5"
+        },
+        {
+          "start": 308,
+          "end": 316,
+          "found": "actinium",
+          "pref": "actinium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MQ7K65FT-R"
+        },
+        {
+          "start": 318,
+          "end": 328,
+          "found": "element 95",
+          "pref": "element 95",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5MG15L7-3"
+        },
+        {
+          "start": 409,
+          "end": 416,
+          "found": "cadmium",
+          "pref": "cadmium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5TL4FBV-J"
+        },
+        {
+          "start": 418,
+          "end": 420,
+          "found": "Sb",
+          "pref": "Sb",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-LGWKM8TW-9"
+        },
+        {
+          "start": 426,
+          "end": 428,
+          "found": "Ac",
+          "pref": "Ac",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MQ7K65FT-R"
+        },
+        {
+          "start": 497,
+          "end": 505,
+          "found": "aluminum",
+          "pref": "aluminum",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N"
+        },
+        {
+          "start": 511,
+          "end": 517,
+          "found": "barium",
+          "pref": "barium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-P1S60994-X"
+        },
+        {
+          "start": 583,
+          "end": 585,
+          "found": "At",
+          "pref": "At",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-VDGS91T8-X"
+        },
+        {
+          "start": 587,
+          "end": 589,
+          "found": "As",
+          "pref": "As",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-B31MNC3P-0"
+        },
+        {
+          "start": 595,
+          "end": 600,
+          "found": "boron",
+          "pref": "boron",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-BJJWZT6G-K"
+        },
+        {
+          "start": 666,
+          "end": 675,
+          "found": "aluminium",
+          "pref": "aluminium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N"
+        },
+        {
+          "start": 690,
+          "end": 700,
+          "found": "element 98",
+          "pref": "element 98",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0"
+        },
+        {
+          "start": 766,
+          "end": 774,
+          "found": "nitrogen",
+          "pref": "nitrogen",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-FMW7R7GT-H"
+        },
+        {
+          "start": 776,
+          "end": 778,
+          "found": "Am",
+          "pref": "Am",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5MG15L7-3"
+        },
+        {
+          "start": 784,
+          "end": 795,
+          "found": "californium",
+          "pref": "californium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0"
+        },
+        {
+          "start": 862,
+          "end": 864,
+          "found": "Ba",
+          "pref": "Ba",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-P1S60994-X"
+        },
+        {
+          "start": 866,
+          "end": 868,
+          "found": "Be",
+          "pref": "Be",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J7L957H4-S"
+        },
+        {
+          "start": 874,
+          "end": 876,
+          "found": "Bi",
+          "pref": "Bi",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SLTRM919-5"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "matches": [
+        {
+          "start": 34,
+          "end": 36,
+          "found": "Bi",
+          "pref": "Bi",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SLTRM919-5"
+        },
+        {
+          "start": 51,
+          "end": 53,
+          "found": "Ac",
+          "pref": "Ac",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MQ7K65FT-R"
+        },
+        {
+          "start": 119,
+          "end": 130,
+          "found": "element 107",
+          "pref": "element 107",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 132,
+          "end": 135,
+          "found": "Uns",
+          "pref": "Uns",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 141,
+          "end": 143,
+          "found": "Ba",
+          "pref": "Ba",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-P1S60994-X"
+        },
+        {
+          "start": 209,
+          "end": 211,
+          "found": "Br",
+          "pref": "Br",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JKQD0SHX-7"
+        },
+        {
+          "start": 213,
+          "end": 215,
+          "found": "Cf",
+          "pref": "Cf",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0"
+        },
+        {
+          "start": 221,
+          "end": 223,
+          "found": "As",
+          "pref": "As",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-B31MNC3P-0"
+        },
+        {
+          "start": 289,
+          "end": 296,
+          "found": "bromine",
+          "pref": "bromine",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JKQD0SHX-7"
+        },
+        {
+          "start": 313,
+          "end": 315,
+          "found": "Ag",
+          "pref": "Ag",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MBPSKJ5K-B"
+        },
+        {
+          "start": 381,
+          "end": 383,
+          "found": "At",
+          "pref": "At",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-VDGS91T8-X"
+        },
+        {
+          "start": 385,
+          "end": 393,
+          "found": "aluminum",
+          "pref": "aluminum",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N"
+        },
+        {
+          "start": 399,
+          "end": 404,
+          "found": "block",
+          "pref": "block",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-KS2SCGGS-V"
+        },
+        {
+          "start": 473,
+          "end": 483,
+          "found": "element 98",
+          "pref": "element 98",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0"
+        },
+        {
+          "start": 489,
+          "end": 491,
+          "found": "Ar",
+          "pref": "Ar",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-XZG1JMS2-0"
+        },
+        {
+          "start": 568,
+          "end": 573,
+          "found": "boron",
+          "pref": "boron",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-BJJWZT6G-K"
+        },
+        {
+          "start": 579,
+          "end": 586,
+          "found": "bismuth",
+          "pref": "bismuth",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SLTRM919-5"
+        },
+        {
+          "start": 652,
+          "end": 660,
+          "found": "actinide",
+          "pref": "actinide",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JRBJDF37-C"
+        },
+        {
+          "start": 662,
+          "end": 671,
+          "found": "aluminium",
+          "pref": "aluminium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N"
+        },
+        {
+          "start": 677,
+          "end": 685,
+          "found": "antimony",
+          "pref": "antimony",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-LGWKM8TW-9"
+        },
+        {
+          "start": 751,
+          "end": 758,
+          "found": "arsenic",
+          "pref": "arsenic",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-B31MNC3P-0"
+        },
+        {
+          "start": 768,
+          "end": 774,
+          "found": "barium",
+          "pref": "barium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-P1S60994-X"
+        },
+        {
+          "start": 841,
+          "end": 850,
+          "found": "beryllium",
+          "pref": "beryllium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J7L957H4-S"
+        },
+        {
+          "start": 852,
+          "end": 859,
+          "found": "cadmium",
+          "pref": "cadmium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5TL4FBV-J"
+        },
+        {
+          "start": 865,
+          "end": 867,
+          "found": "Am",
+          "pref": "Am",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5MG15L7-3"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "matches": [
+        {
+          "start": 34,
+          "end": 46,
+          "found": "unnilseptium",
+          "pref": "unnilseptium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 62,
+          "end": 64,
+          "found": "Ac",
+          "pref": "Ac",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MQ7K65FT-R"
+        },
+        {
+          "start": 130,
+          "end": 138,
+          "found": "actinoid",
+          "pref": "actinoid",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JRBJDF37-C"
+        },
+        {
+          "start": 140,
+          "end": 142,
+          "found": "Bi",
+          "pref": "Bi",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SLTRM919-5"
+        },
+        {
+          "start": 223,
+          "end": 225,
+          "found": "Bk",
+          "pref": "Bk",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J1C32XNL-H"
+        },
+        {
+          "start": 227,
+          "end": 234,
+          "found": "bismuth",
+          "pref": "bismuth",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SLTRM919-5"
+        },
+        {
+          "start": 240,
+          "end": 246,
+          "found": "barium",
+          "pref": "barium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-P1S60994-X"
+        },
+        {
+          "start": 312,
+          "end": 314,
+          "found": "Cd",
+          "pref": "Cd",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5TL4FBV-J"
+        },
+        {
+          "start": 316,
+          "end": 326,
+          "found": "element 97",
+          "pref": "element 97",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J1C32XNL-H"
+        },
+        {
+          "start": 332,
+          "end": 334,
+          "found": "Bh",
+          "pref": "Bh",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 400,
+          "end": 403,
+          "found": "Uns",
+          "pref": "Uns",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 405,
+          "end": 414,
+          "found": "beryllium",
+          "pref": "beryllium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J7L957H4-S"
+        },
+        {
+          "start": 420,
+          "end": 422,
+          "found": "Be",
+          "pref": "Be",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J7L957H4-S"
+        },
+        {
+          "start": 488,
+          "end": 495,
+          "found": "cadmium",
+          "pref": "cadmium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5TL4FBV-J"
+        },
+        {
+          "start": 497,
+          "end": 505,
+          "found": "actinide",
+          "pref": "actinide",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JRBJDF37-C"
+        },
+        {
+          "start": 511,
+          "end": 513,
+          "found": "Ar",
+          "pref": "Ar",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-XZG1JMS2-0"
+        },
+        {
+          "start": 593,
+          "end": 602,
+          "found": "aluminium",
+          "pref": "aluminium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N"
+        },
+        {
+          "start": 668,
+          "end": 676,
+          "found": "aluminum",
+          "pref": "aluminum",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N"
+        },
+        {
+          "start": 691,
+          "end": 702,
+          "found": "element 107",
+          "pref": "element 107",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 768,
+          "end": 776,
+          "found": "actinium",
+          "pref": "actinium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MQ7K65FT-R"
+        },
+        {
+          "start": 778,
+          "end": 780,
+          "found": "Br",
+          "pref": "Br",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JKQD0SHX-7"
+        },
+        {
+          "start": 786,
+          "end": 791,
+          "found": "boron",
+          "pref": "boron",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-BJJWZT6G-K"
+        },
+        {
+          "start": 858,
+          "end": 865,
+          "found": "bromine",
+          "pref": "bromine",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JKQD0SHX-7"
+        },
+        {
+          "start": 867,
+          "end": 872,
+          "found": "block",
+          "pref": "block",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-KS2SCGGS-V"
+        },
+        {
+          "start": 878,
+          "end": 885,
+          "found": "calcium",
+          "pref": "calcium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SX8VX34H-4"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "matches": [
+        {
+          "start": 34,
+          "end": 36,
+          "found": "Sb",
+          "pref": "Sb",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-LGWKM8TW-9"
+        },
+        {
+          "start": 45,
+          "end": 47,
+          "found": "Ba",
+          "pref": "Ba",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-P1S60994-X"
+        },
+        {
+          "start": 113,
+          "end": 115,
+          "found": "Am",
+          "pref": "Am",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5MG15L7-3"
+        },
+        {
+          "start": 117,
+          "end": 128,
+          "found": "californium",
+          "pref": "californium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0"
+        },
+        {
+          "start": 134,
+          "end": 136,
+          "found": "Be",
+          "pref": "Be",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J7L957H4-S"
+        },
+        {
+          "start": 202,
+          "end": 210,
+          "found": "actinium",
+          "pref": "actinium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MQ7K65FT-R"
+        },
+        {
+          "start": 212,
+          "end": 214,
+          "found": "Ar",
+          "pref": "Ar",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-XZG1JMS2-0"
+        },
+        {
+          "start": 220,
+          "end": 228,
+          "found": "nitrogen",
+          "pref": "nitrogen",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-FMW7R7GT-H"
+        },
+        {
+          "start": 294,
+          "end": 303,
+          "found": "aluminium",
+          "pref": "aluminium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N"
+        },
+        {
+          "start": 319,
+          "end": 326,
+          "found": "cadmium",
+          "pref": "cadmium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5TL4FBV-J"
+        },
+        {
+          "start": 392,
+          "end": 402,
+          "found": "element 98",
+          "pref": "element 98",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0"
+        },
+        {
+          "start": 404,
+          "end": 411,
+          "found": "bromine",
+          "pref": "bromine",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JKQD0SHX-7"
+        },
+        {
+          "start": 492,
+          "end": 494,
+          "found": "Bk",
+          "pref": "Bk",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J1C32XNL-H"
+        },
+        {
+          "start": 496,
+          "end": 498,
+          "found": "As",
+          "pref": "As",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-B31MNC3P-0"
+        },
+        {
+          "start": 504,
+          "end": 506,
+          "found": "Bh",
+          "pref": "Bh",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 572,
+          "end": 579,
+          "found": "arsenic",
+          "pref": "arsenic",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-B31MNC3P-0"
+        },
+        {
+          "start": 581,
+          "end": 583,
+          "found": "Bi",
+          "pref": "Bi",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SLTRM919-5"
+        },
+        {
+          "start": 589,
+          "end": 594,
+          "found": "block",
+          "pref": "block",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-KS2SCGGS-V"
+        },
+        {
+          "start": 671,
+          "end": 682,
+          "found": "element 107",
+          "pref": "element 107",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 688,
+          "end": 690,
+          "found": "Cf",
+          "pref": "Cf",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0"
+        },
+        {
+          "start": 756,
+          "end": 763,
+          "found": "bismuth",
+          "pref": "bismuth",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SLTRM919-5"
+        },
+        {
+          "start": 765,
+          "end": 771,
+          "found": "silver",
+          "pref": "Silver",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MBPSKJ5K-B"
+        },
+        {
+          "start": 777,
+          "end": 789,
+          "found": "unnilseptium",
+          "pref": "unnilseptium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 856,
+          "end": 864,
+          "found": "actinoid",
+          "pref": "actinoid",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JRBJDF37-C"
+        },
+        {
+          "start": 866,
+          "end": 868,
+          "found": "Ac",
+          "pref": "Ac",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MQ7K65FT-R"
+        },
+        {
+          "start": 874,
+          "end": 877,
+          "found": "Uns",
+          "pref": "Uns",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "matches": [
+        {
+          "start": 44,
+          "end": 52,
+          "found": "aluminum",
+          "pref": "aluminum",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N"
+        },
+        {
+          "start": 58,
+          "end": 66,
+          "found": "actinide",
+          "pref": "actinide",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JRBJDF37-C"
+        },
+        {
+          "start": 132,
+          "end": 134,
+          "found": "Cf",
+          "pref": "Cf",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0"
+        },
+        {
+          "start": 143,
+          "end": 148,
+          "found": "block",
+          "pref": "block",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-KS2SCGGS-V"
+        },
+        {
+          "start": 214,
+          "end": 216,
+          "found": "Be",
+          "pref": "Be",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J7L957H4-S"
+        },
+        {
+          "start": 218,
+          "end": 220,
+          "found": "Ca",
+          "pref": "Ca",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SX8VX34H-4"
+        },
+        {
+          "start": 226,
+          "end": 232,
+          "found": "barium",
+          "pref": "barium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-P1S60994-X"
+        },
+        {
+          "start": 313,
+          "end": 320,
+          "found": "cadmium",
+          "pref": "cadmium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5TL4FBV-J"
+        },
+        {
+          "start": 386,
+          "end": 393,
+          "found": "bismuth",
+          "pref": "bismuth",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SLTRM919-5"
+        },
+        {
+          "start": 395,
+          "end": 407,
+          "found": "unnilseptium",
+          "pref": "unnilseptium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 413,
+          "end": 424,
+          "found": "californium",
+          "pref": "californium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0"
+        },
+        {
+          "start": 490,
+          "end": 492,
+          "found": "Ac",
+          "pref": "Ac",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MQ7K65FT-R"
+        },
+        {
+          "start": 494,
+          "end": 502,
+          "found": "actinoid",
+          "pref": "actinoid",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JRBJDF37-C"
+        },
+        {
+          "start": 508,
+          "end": 517,
+          "found": "aluminium",
+          "pref": "aluminium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N"
+        },
+        {
+          "start": 592,
+          "end": 594,
+          "found": "Am",
+          "pref": "Am",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5MG15L7-3"
+        },
+        {
+          "start": 600,
+          "end": 606,
+          "found": "silver",
+          "pref": "Silver",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MBPSKJ5K-B"
+        },
+        {
+          "start": 672,
+          "end": 674,
+          "found": "At",
+          "pref": "At",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-VDGS91T8-X"
+        },
+        {
+          "start": 676,
+          "end": 686,
+          "found": "element 97",
+          "pref": "element 97",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J1C32XNL-H"
+        },
+        {
+          "start": 692,
+          "end": 694,
+          "found": "Ar",
+          "pref": "Ar",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-XZG1JMS2-0"
+        },
+        {
+          "start": 760,
+          "end": 762,
+          "found": "Al",
+          "pref": "Al",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N"
+        },
+        {
+          "start": 764,
+          "end": 771,
+          "found": "calcium",
+          "pref": "Calcium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SX8VX34H-4"
+        },
+        {
+          "start": 845,
+          "end": 853,
+          "found": "antimony",
+          "pref": "antimony",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-LGWKM8TW-9"
+        },
+        {
+          "start": 855,
+          "end": 866,
+          "found": "element 107",
+          "pref": "element 107",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 872,
+          "end": 882,
+          "found": "element 98",
+          "pref": "element 98",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "matches": [
+        {
+          "start": 34,
+          "end": 36,
+          "found": "Ag",
+          "pref": "Ag",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MBPSKJ5K-B"
+        },
+        {
+          "start": 45,
+          "end": 50,
+          "found": "block",
+          "pref": "block",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-KS2SCGGS-V"
+        },
+        {
+          "start": 116,
+          "end": 121,
+          "found": "boron",
+          "pref": "boron",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-BJJWZT6G-K"
+        },
+        {
+          "start": 123,
+          "end": 125,
+          "found": "At",
+          "pref": "At",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-VDGS91T8-X"
+        },
+        {
+          "start": 131,
+          "end": 133,
+          "found": "Ar",
+          "pref": "Ar",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-XZG1JMS2-0"
+        },
+        {
+          "start": 199,
+          "end": 206,
+          "found": "arsenic",
+          "pref": "arsenic",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-B31MNC3P-0"
+        },
+        {
+          "start": 208,
+          "end": 210,
+          "found": "Bk",
+          "pref": "Bk",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J1C32XNL-H"
+        },
+        {
+          "start": 289,
+          "end": 291,
+          "found": "Br",
+          "pref": "Br",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JKQD0SHX-7"
+        },
+        {
+          "start": 293,
+          "end": 301,
+          "found": "antimony",
+          "pref": "antimony",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-LGWKM8TW-9"
+        },
+        {
+          "start": 307,
+          "end": 309,
+          "found": "Cd",
+          "pref": "Cd",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5TL4FBV-J"
+        },
+        {
+          "start": 375,
+          "end": 386,
+          "found": "californium",
+          "pref": "californium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0"
+        },
+        {
+          "start": 388,
+          "end": 396,
+          "found": "actinium",
+          "pref": "actinium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MQ7K65FT-R"
+        },
+        {
+          "start": 402,
+          "end": 409,
+          "found": "calcium",
+          "pref": "Calcium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SX8VX34H-4"
+        },
+        {
+          "start": 475,
+          "end": 477,
+          "found": "Bi",
+          "pref": "Bi",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SLTRM919-5"
+        },
+        {
+          "start": 479,
+          "end": 489,
+          "found": "element 97",
+          "pref": "element 97",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J1C32XNL-H"
+        },
+        {
+          "start": 495,
+          "end": 503,
+          "found": "nitrogen",
+          "pref": "nitrogen",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-FMW7R7GT-H"
+        },
+        {
+          "start": 569,
+          "end": 575,
+          "found": "barium",
+          "pref": "barium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-P1S60994-X"
+        },
+        {
+          "start": 592,
+          "end": 601,
+          "found": "aluminium",
+          "pref": "aluminium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N"
+        },
+        {
+          "start": 667,
+          "end": 679,
+          "found": "unnilseptium",
+          "pref": "unnilseptium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 681,
+          "end": 689,
+          "found": "actinoid",
+          "pref": "actinoid",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JRBJDF37-C"
+        },
+        {
+          "start": 695,
+          "end": 697,
+          "found": "Ca",
+          "pref": "Ca",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SX8VX34H-4"
+        },
+        {
+          "start": 773,
+          "end": 775,
+          "found": "Al",
+          "pref": "Al",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N"
+        },
+        {
+          "start": 781,
+          "end": 784,
+          "found": "Uns",
+          "pref": "Uns",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 851,
+          "end": 853,
+          "found": "As",
+          "pref": "As",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-B31MNC3P-0"
+        },
+        {
+          "start": 855,
+          "end": 863,
+          "found": "actinide",
+          "pref": "actinide",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JRBJDF37-C"
+        },
+        {
+          "start": 869,
+          "end": 879,
+          "found": "element 98",
+          "pref": "element 98",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "matches": [
+        {
+          "start": 34,
+          "end": 40,
+          "found": "silver",
+          "pref": "Silver",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MBPSKJ5K-B"
+        },
+        {
+          "start": 42,
+          "end": 52,
+          "found": "element 95",
+          "pref": "element 95",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5MG15L7-3"
+        },
+        {
+          "start": 58,
+          "end": 66,
+          "found": "actinium",
+          "pref": "actinium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MQ7K65FT-R"
+        },
+        {
+          "start": 132,
+          "end": 140,
+          "found": "aluminum",
+          "pref": "aluminum",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N"
+        },
+        {
+          "start": 142,
+          "end": 152,
+          "found": "element 98",
+          "pref": "element 98",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0"
+        },
+        {
+          "start": 158,
+          "end": 166,
+          "found": "actinoid",
+          "pref": "actinoid",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JRBJDF37-C"
+        },
+        {
+          "start": 232,
+          "end": 234,
+          "found": "Cf",
+          "pref": "Cf",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0"
+        },
+        {
+          "start": 236,
+          "end": 245,
+          "found": "beryllium",
+          "pref": "beryllium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J7L957H4-S"
+        },
+        {
+          "start": 318,
+          "end": 320,
+          "found": "Ar",
+          "pref": "Ar",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-XZG1JMS2-0"
+        },
+        {
+          "start": 322,
+          "end": 332,
+          "found": "element 97",
+          "pref": "element 97",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J1C32XNL-H"
+        },
+        {
+          "start": 338,
+          "end": 340,
+          "found": "Cd",
+          "pref": "Cd",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5TL4FBV-J"
+        },
+        {
+          "start": 406,
+          "end": 408,
+          "found": "As",
+          "pref": "As",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-B31MNC3P-0"
+        },
+        {
+          "start": 410,
+          "end": 417,
+          "found": "cadmium",
+          "pref": "cadmium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5TL4FBV-J"
+        },
+        {
+          "start": 423,
+          "end": 425,
+          "found": "At",
+          "pref": "At",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-VDGS91T8-X"
+        },
+        {
+          "start": 491,
+          "end": 493,
+          "found": "Be",
+          "pref": "Be",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J7L957H4-S"
+        },
+        {
+          "start": 495,
+          "end": 497,
+          "found": "Ag",
+          "pref": "Ag",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MBPSKJ5K-B"
+        },
+        {
+          "start": 503,
+          "end": 506,
+          "found": "Uns",
+          "pref": "Uns",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 572,
+          "end": 574,
+          "found": "Ac",
+          "pref": "Ac",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MQ7K65FT-R"
+        },
+        {
+          "start": 591,
+          "end": 600,
+          "found": "aluminium",
+          "pref": "aluminium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N"
+        },
+        {
+          "start": 690,
+          "end": 692,
+          "found": "Bh",
+          "pref": "Bh",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 758,
+          "end": 769,
+          "found": "californium",
+          "pref": "californium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0"
+        },
+        {
+          "start": 771,
+          "end": 776,
+          "found": "block",
+          "pref": "block",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-KS2SCGGS-V"
+        },
+        {
+          "start": 782,
+          "end": 783,
+          "found": "N",
+          "pref": "N",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-FMW7R7GT-H"
+        },
+        {
+          "start": 850,
+          "end": 858,
+          "found": "antimony",
+          "pref": "antimony",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-LGWKM8TW-9"
+        },
+        {
+          "start": 860,
+          "end": 862,
+          "found": "Sb",
+          "pref": "Sb",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-LGWKM8TW-9"
+        },
+        {
+          "start": 868,
+          "end": 870,
+          "found": "Ca",
+          "pref": "Ca",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SX8VX34H-4"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "matches": [
+        {
+          "start": 34,
+          "end": 46,
+          "found": "unnilseptium",
+          "pref": "unnilseptium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 48,
+          "end": 50,
+          "found": "Cf",
+          "pref": "Cf",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0"
+        },
+        {
+          "start": 56,
+          "end": 58,
+          "found": "Br",
+          "pref": "Br",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JKQD0SHX-7"
+        },
+        {
+          "start": 134,
+          "end": 142,
+          "found": "actinium",
+          "pref": "actinium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MQ7K65FT-R"
+        },
+        {
+          "start": 148,
+          "end": 156,
+          "found": "nitrogen",
+          "pref": "nitrogen",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-FMW7R7GT-H"
+        },
+        {
+          "start": 222,
+          "end": 230,
+          "found": "antimony",
+          "pref": "antimony",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-LGWKM8TW-9"
+        },
+        {
+          "start": 232,
+          "end": 234,
+          "found": "Ag",
+          "pref": "Ag",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MBPSKJ5K-B"
+        },
+        {
+          "start": 240,
+          "end": 242,
+          "found": "Bk",
+          "pref": "Bk",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J1C32XNL-H"
+        },
+        {
+          "start": 308,
+          "end": 315,
+          "found": "calcium",
+          "pref": "calcium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SX8VX34H-4"
+        },
+        {
+          "start": 317,
+          "end": 324,
+          "found": "bromine",
+          "pref": "bromine",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JKQD0SHX-7"
+        },
+        {
+          "start": 405,
+          "end": 407,
+          "found": "Al",
+          "pref": "Al",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N"
+        },
+        {
+          "start": 409,
+          "end": 417,
+          "found": "actinide",
+          "pref": "actinide",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JRBJDF37-C"
+        },
+        {
+          "start": 423,
+          "end": 432,
+          "found": "beryllium",
+          "pref": "beryllium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J7L957H4-S"
+        },
+        {
+          "start": 498,
+          "end": 500,
+          "found": "Ba",
+          "pref": "Ba",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-P1S60994-X"
+        },
+        {
+          "start": 502,
+          "end": 510,
+          "found": "actinoid",
+          "pref": "actinoid",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JRBJDF37-C"
+        },
+        {
+          "start": 516,
+          "end": 518,
+          "found": "Ar",
+          "pref": "Ar",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-XZG1JMS2-0"
+        },
+        {
+          "start": 584,
+          "end": 586,
+          "found": "Ac",
+          "pref": "Ac",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MQ7K65FT-R"
+        },
+        {
+          "start": 599,
+          "end": 604,
+          "found": "boron",
+          "pref": "boron",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-BJJWZT6G-K"
+        },
+        {
+          "start": 686,
+          "end": 693,
+          "found": "arsenic",
+          "pref": "arsenic",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-B31MNC3P-0"
+        },
+        {
+          "start": 759,
+          "end": 769,
+          "found": "element 95",
+          "pref": "element 95",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5MG15L7-3"
+        },
+        {
+          "start": 771,
+          "end": 773,
+          "found": "Ca",
+          "pref": "Ca",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SX8VX34H-4"
+        },
+        {
+          "start": 779,
+          "end": 786,
+          "found": "bismuth",
+          "pref": "bismuth",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SLTRM919-5"
+        },
+        {
+          "start": 853,
+          "end": 856,
+          "found": "Uns",
+          "pref": "Uns",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 858,
+          "end": 863,
+          "found": "block",
+          "pref": "block",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-KS2SCGGS-V"
+        },
+        {
+          "start": 869,
+          "end": 871,
+          "found": "As",
+          "pref": "As",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-B31MNC3P-0"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "matches": [
+        {
+          "start": 34,
+          "end": 41,
+          "found": "arsenic",
+          "pref": "arsenic",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-B31MNC3P-0"
+        },
+        {
+          "start": 43,
+          "end": 45,
+          "found": "Ag",
+          "pref": "Ag",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MBPSKJ5K-B"
+        },
+        {
+          "start": 51,
+          "end": 61,
+          "found": "element 97",
+          "pref": "element 97",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J1C32XNL-H"
+        },
+        {
+          "start": 127,
+          "end": 134,
+          "found": "bromine",
+          "pref": "bromine",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JKQD0SHX-7"
+        },
+        {
+          "start": 136,
+          "end": 146,
+          "found": "element 98",
+          "pref": "element 98",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0"
+        },
+        {
+          "start": 152,
+          "end": 154,
+          "found": "Be",
+          "pref": "Be",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J7L957H4-S"
+        },
+        {
+          "start": 220,
+          "end": 229,
+          "found": "beryllium",
+          "pref": "beryllium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J7L957H4-S"
+        },
+        {
+          "start": 231,
+          "end": 233,
+          "found": "As",
+          "pref": "As",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-B31MNC3P-0"
+        },
+        {
+          "start": 239,
+          "end": 250,
+          "found": "californium",
+          "pref": "californium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0"
+        },
+        {
+          "start": 316,
+          "end": 318,
+          "found": "Am",
+          "pref": "Am",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5MG15L7-3"
+        },
+        {
+          "start": 320,
+          "end": 322,
+          "found": "Ar",
+          "pref": "Ar",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-XZG1JMS2-0"
+        },
+        {
+          "start": 328,
+          "end": 336,
+          "found": "actinide",
+          "pref": "actinide",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JRBJDF37-C"
+        },
+        {
+          "start": 402,
+          "end": 404,
+          "found": "Ba",
+          "pref": "Ba",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-P1S60994-X"
+        },
+        {
+          "start": 406,
+          "end": 417,
+          "found": "element 107",
+          "pref": "element 107",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 423,
+          "end": 425,
+          "found": "At",
+          "pref": "At",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-VDGS91T8-X"
+        },
+        {
+          "start": 491,
+          "end": 493,
+          "found": "Al",
+          "pref": "Al",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N"
+        },
+        {
+          "start": 495,
+          "end": 497,
+          "found": "Bk",
+          "pref": "Bk",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J1C32XNL-H"
+        },
+        {
+          "start": 503,
+          "end": 509,
+          "found": "silver",
+          "pref": "silver",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MBPSKJ5K-B"
+        },
+        {
+          "start": 575,
+          "end": 583,
+          "found": "aluminum",
+          "pref": "aluminum",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N"
+        },
+        {
+          "start": 585,
+          "end": 592,
+          "found": "bismuth",
+          "pref": "bismuth",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SLTRM919-5"
+        },
+        {
+          "start": 665,
+          "end": 667,
+          "found": "Bi",
+          "pref": "Bi",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SLTRM919-5"
+        },
+        {
+          "start": 669,
+          "end": 671,
+          "found": "Bh",
+          "pref": "Bh",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 677,
+          "end": 684,
+          "found": "cadmium",
+          "pref": "cadmium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5TL4FBV-J"
+        },
+        {
+          "start": 750,
+          "end": 752,
+          "found": "Sb",
+          "pref": "Sb",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-LGWKM8TW-9"
+        },
+        {
+          "start": 754,
+          "end": 764,
+          "found": "element 95",
+          "pref": "element 95",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5MG15L7-3"
+        },
+        {
+          "start": 770,
+          "end": 772,
+          "found": "Ca",
+          "pref": "Ca",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SX8VX34H-4"
+        },
+        {
+          "start": 839,
+          "end": 847,
+          "found": "nitrogen",
+          "pref": "nitrogen",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-FMW7R7GT-H"
+        },
+        {
+          "start": 849,
+          "end": 856,
+          "found": "calcium",
+          "pref": "Calcium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SX8VX34H-4"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "matches": [
+        {
+          "start": 35,
+          "end": 37,
+          "found": "Ca",
+          "pref": "Ca",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SX8VX34H-4"
+        },
+        {
+          "start": 50,
+          "end": 52,
+          "found": "Sb",
+          "pref": "Sb",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-LGWKM8TW-9"
+        },
+        {
+          "start": 119,
+          "end": 121,
+          "found": "Br",
+          "pref": "Br",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JKQD0SHX-7"
+        },
+        {
+          "start": 123,
+          "end": 131,
+          "found": "antimony",
+          "pref": "antimony",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-LGWKM8TW-9"
+        },
+        {
+          "start": 137,
+          "end": 142,
+          "found": "block",
+          "pref": "block",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-KS2SCGGS-V"
+        },
+        {
+          "start": 209,
+          "end": 211,
+          "found": "Cf",
+          "pref": "Cf",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0"
+        },
+        {
+          "start": 213,
+          "end": 221,
+          "found": "aluminum",
+          "pref": "aluminum",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N"
+        },
+        {
+          "start": 227,
+          "end": 234,
+          "found": "cadmium",
+          "pref": "cadmium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5TL4FBV-J"
+        },
+        {
+          "start": 312,
+          "end": 320,
+          "found": "nitrogen",
+          "pref": "nitrogen",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-FMW7R7GT-H"
+        },
+        {
+          "start": 326,
+          "end": 332,
+          "found": "silver",
+          "pref": "Silver",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MBPSKJ5K-B"
+        },
+        {
+          "start": 402,
+          "end": 412,
+          "found": "element 98",
+          "pref": "element 98",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0"
+        },
+        {
+          "start": 418,
+          "end": 420,
+          "found": "Cd",
+          "pref": "Cd",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-R5TL4FBV-J"
+        },
+        {
+          "start": 487,
+          "end": 490,
+          "found": "Uns",
+          "pref": "Uns",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 492,
+          "end": 494,
+          "found": "As",
+          "pref": "As",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-B31MNC3P-0"
+        },
+        {
+          "start": 500,
+          "end": 507,
+          "found": "calcium",
+          "pref": "Calcium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-SX8VX34H-4"
+        },
+        {
+          "start": 574,
+          "end": 582,
+          "found": "actinoid",
+          "pref": "actinoid",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JRBJDF37-C"
+        },
+        {
+          "start": 584,
+          "end": 586,
+          "found": "Ba",
+          "pref": "Ba",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-P1S60994-X"
+        },
+        {
+          "start": 592,
+          "end": 598,
+          "found": "barium",
+          "pref": "barium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-P1S60994-X"
+        },
+        {
+          "start": 675,
+          "end": 680,
+          "found": "boron",
+          "pref": "boron",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-BJJWZT6G-K"
+        },
+        {
+          "start": 686,
+          "end": 688,
+          "found": "Ag",
+          "pref": "Ag",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MBPSKJ5K-B"
+        },
+        {
+          "start": 755,
+          "end": 764,
+          "found": "beryllium",
+          "pref": "beryllium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J7L957H4-S"
+        },
+        {
+          "start": 766,
+          "end": 778,
+          "found": "unnilseptium",
+          "pref": "unnilseptium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C"
+        },
+        {
+          "start": 853,
+          "end": 861,
+          "found": "actinide",
+          "pref": "actinide",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-JRBJDF37-C"
+        },
+        {
+          "start": 863,
+          "end": 865,
+          "found": "Bk",
+          "pref": "Bk",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-J1C32XNL-H"
+        },
+        {
+          "start": 871,
+          "end": 879,
+          "found": "actinium",
+          "pref": "actinium",
+          "uri": "http://data.loterre.fr/ark:/67375/8HQ-MQ7K65FT-R"
+        }
+      ]
+    }
+  ]
+}
