@@ -18,7 +18,7 @@ Requires-Python: >=3.9
 Description-Content-Type: text/markdown
 Requires-Dist: spacy>=3.7
 Requires-Dist: pyyaml>=6.0
-Requires-Dist: click>=8.4.2
+Requires-Dist: click>=8.4.1
 Dynamic: author
 Dynamic: author-email
 Dynamic: classifier
