@@ -1,0 +1,14 @@
+# Modèles spaCy candidats par langue.
+# Le premier modèle installé de la liste est chargé.
+# Pour ajouter une langue : ajouter une clé avec la liste des modèles candidats.
+# Pour utiliser un modèle plus grand : ajouter en_core_web_lg avant en_core_web_sm.
+
+en:
+  - en_core_web_sm
+  - en_core_web_md
+  - en_core_web_lg
+
+fr:
+  - fr_core_news_sm
+  - fr_core_news_md
+  - fr_core_news_lg

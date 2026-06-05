@@ -2,79 +2,79 @@ dictionaries:
   P66_en:
     path: ../data/dicts/en_annot_P66.jsonl
     lang: en
-    profile: term_recall
+    profile: term_recall       # avg_len=2.36, mono=16% — termes composés, psychologie
 
   9SD_en:
     path: ../data/dicts/en_annot_9SD.jsonl
     lang: en
-    profile: entity_strict
+    profile: entity_strict     # avg_len=2.54 mais 100% patterns POS+lemme — précision élevée mesurée
 
   P66_fr:
     path: ../data/dicts/fr_annot_P66.jsonl
     lang: fr
-    profile: term_recall
+    profile: term_recall       # avg_len=2.98 — termes longs, variants flexionnels FR requis
 
   9SD_fr:
     path: ../data/dicts/fr_annot_9SD.jsonl
     lang: fr
-    profile: entity_strict
-
-  8HQ_fr:
-    path: ../data/dicts/fr_annot_8HQ.jsonl
-    lang: fr
-    profile: term_recall
+    profile: entity_strict     # 100% patterns, avg_len=3.19 — patterns couvrent la morphologie FR
 
   8HQ_en:
     path: ../data/dicts/en_annot_8HQ.jsonl
     lang: en
-    profile: term_recall
+    profile: entity_strict     # mono=83%, symboles chimiques (Am, Ca…) — entity_strict évite les faux positifs lemme
 
-  B9M_fr:
-    path: ../data/dicts/fr_annot_B9M.jsonl
+  8HQ_fr:
+    path: ../data/dicts/fr_annot_8HQ.jsonl
     lang: fr
-    profile: term_recall
+    profile: entity_strict     # mono=83%, même raisonnement que 8HQ_en
 
   B9M_en:
     path: ../data/dicts/en_annot_B9M.jsonl
     lang: en
-    profile: term_recall
+    profile: term_recall       # avg_len=1.87, peu de mono courts — biologie marine
 
-  27X_fr:
-    path: ../data/dicts/fr_annot_27X.jsonl
+  B9M_fr:
+    path: ../data/dicts/fr_annot_B9M.jsonl
     lang: fr
-    profile: term_recall
+    profile: term_recall       # avg_len=2.19, variants flexionnels FR requis
 
   27X_en:
     path: ../data/dicts/en_annot_27X.jsonl
     lang: en
-    profile: entity_strict
+    profile: entity_strict     # mono=66%, entités archéologiques, noms propres
 
-  BVM_fr:
-    path: ../data/dicts/fr_annot_BVM.jsonl
+  27X_fr:
+    path: ../data/dicts/fr_annot_27X.jsonl
     lang: fr
-    profile: term_recall
+    profile: term_recall       # variants flexionnels FR, avg_len=1.53
 
   BVM_en:
     path: ../data/dicts/en_annot_BVM.jsonl
     lang: en
-    profile: term_recall
+    profile: entity_strict     # mono=92% — quasi tous les termes sont mono-token
 
-  QX8_fr:
-    path: ../data/dicts/fr_annot_QX8.jsonl
+  BVM_fr:
+    path: ../data/dicts/fr_annot_BVM.jsonl
     lang: fr
-    profile: term_recall
+    profile: entity_strict     # mono=92% — même raisonnement, patterns couvrent la morphologie
 
   QX8_en:
     path: ../data/dicts/en_annot_QX8.jsonl
     lang: en
-    profile: term_recall
+    profile: entity_strict     # mono=44%, title%=32% — entités environnementales, noms propres
+
+  QX8_fr:
+    path: ../data/dicts/fr_annot_QX8.jsonl
+    lang: fr
+    profile: entity_strict     # mono=41%, title%=35% — même raisonnement
 
   3JP_en:
     path: ../data/dicts/en_annot_3JP.jsonl
     lang: en
-    profile: term_recall
+    profile: entity_strict     # mono=47%, précision mesurée ~55% avec term_recall → trop de faux positifs
 
   JVR_en:
     path: ../data/dicts/en_annot_JVR.jsonl
     lang: en
-    profile: term_recall
+    profile: term_recall       # avg_len=2.20, termes musicologiques composés

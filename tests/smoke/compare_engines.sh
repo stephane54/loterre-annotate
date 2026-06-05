@@ -1,34 +1,40 @@
 #!/usr/bin/env bash
-# compare_engines.sh — benchmark local Dev v9 vs API production on gold corpus
+# compare_engines.sh — benchmark local Dev v9 vs deux APIs de production
 #
-# Découvre automatiquement tous les fichiers JSONL dans TEXT_ROOT,
-# y compris les corpus français (*_fr.jsonl).
+# Trois moteurs comparés :
+#   - local      : moteur v9 local
+#   - api        : Loterre Terms-Matcher (terms-tools.services.istex.fr)
+#   - resolvers  : Loterre Resolvers    (loterre-resolvers.services.istex.fr)
 #
 # Usage:
 #   bash tests/smoke/compare_engines.sh [OPTIONS]
 #
 # Options (all optional, defaults shown):
-#   --text-root  DIR    Gold JSONL directory     (default: data/texts)
-#   --out-dir    DIR    Output directory          (default: benchmark_results)
-#   --cli        FILE   loterre_cli.py path       (default: src/loterre_cli.py)
-#   --renderer   FILE   loterre_html_renderer.py  (default: src/loterre_html_renderer.py)
-#   --vocabs     LIST   Comma-separated codes     (default: all)
-#   --skip-local        Skip local v9 engine
-#   --skip-api          Skip API calls
-#   --batch-size N      Docs per API call         (default: 4)
-#   --api-url    URL    API endpoint URL
+#   --text-root      DIR    Gold JSONL directory      (default: data/texts)
+#   --out-dir        DIR    Output directory           (default: benchmark_results)
+#   --cli            FILE   loterre_cli.py path        (default: src/loterre_cli.py)
+#   --renderer       FILE   loterre_html_renderer.py   (default: src/loterre_html_renderer.py)
+#   --vocabs         LIST   Comma-separated codes      (default: all)
+#   --skip-local            Skip local v9 engine
+#   --skip-api              Skip Terms-Matcher API
+#   --skip-resolvers        Skip Loterre Resolvers API
+#   --batch-size N          Docs per API call          (default: 4)
+#   --api-url        URL    Terms-Matcher endpoint URL
+#   --resolvers-url  URL    Resolvers endpoint URL
 #
 # Examples:
-#   # Benchmark complet (EN + FR)
+#   # Benchmark complet (EN + FR), 3 moteurs
 #   bash tests/smoke/compare_engines.sh
 #
-#   # Uniquement les corpus français, sans API
-#   bash tests/smoke/compare_engines.sh --vocabs P66_fr,27X_fr,B9M_fr,QX8_fr --skip-api
+#   # Local uniquement (pas d'appels réseau)
+#   bash tests/smoke/compare_engines.sh --skip-api --skip-resolvers
 #
-#   # Benchmark EN seulement
-#   bash tests/smoke/compare_engines.sh --vocabs P66_en,9SD_en,27X_en,8HQ_en,B9M_en,BVM_en,QX8_en,3JP_en,JVR_en
+#   # Benchmark EN seulement, sans resolvers
+#   bash tests/smoke/compare_engines.sh \
+#     --vocabs P66_en,9SD_en,27X_en,8HQ_en,B9M_en,BVM_en,QX8_en,3JP_en,JVR_en \
+#     --skip-resolvers
 #
-#   # Benchmark FR seulement, moteur local uniquement
+#   # Corpus français, moteur local + resolvers uniquement
 #   bash tests/smoke/compare_engines.sh \
 #     --vocabs P66_fr,27X_fr,9SD_fr,8HQ_fr,B9M_fr,BVM_fr,QX8_fr \
 #     --skip-api \
@@ -36,11 +42,6 @@
 #
 #   # Custom output dir daté
 #   bash tests/smoke/compare_engines.sh --out-dir results/$(date +%Y%m%d)
-#
-# Note API FR :
-#   L'API production ISTEX (endpoint /v1/en/...) peut ne pas supporter les
-#   vocabulaires FR. Utilisez --skip-api pour les runs FR locaux uniquement.
-#   Pour un endpoint FR hypothétique, surcharger --api-url si nécessaire.
 
 set -euo pipefail
 

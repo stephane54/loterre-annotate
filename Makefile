@@ -33,8 +33,11 @@ test-api:
 
 # ── Benchmark & rendu HTML ────────────────────────────────────────────────────
 
-# Lance le benchmark complet v9 vs API (EN + FR).
+# Lance le benchmark complet v9 vs API Terms-Matcher vs Resolvers (EN + FR).
 # Options transmissibles : make benchmark BENCHMARK_ARGS="--vocabs P66_en --skip-api"
+# Exemples :
+#   make benchmark BENCHMARK_ARGS="--skip-api --skip-resolvers"  # local only
+#   make benchmark BENCHMARK_ARGS="--skip-resolvers"             # v9 vs API only
 benchmark:
 	bash tests/smoke/compare_engines.sh $(BENCHMARK_ARGS)
 

@@ -1,0 +1,10 @@
+# Mots fonctionnels EN filtrés comme faux-positifs (un mot par ligne)
+# Modifiable sans toucher au code.
+# Commentaires : lignes commençant par #
+and
+or
+it
+well
+can
+may
+like

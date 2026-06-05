@@ -48,17 +48,54 @@ MULTISPACE_RE = re.compile(r"\s+")
 _PUNCT_KEEP_APOS_RE = re.compile(r"[^\w\s'()]")
 _PUNCT_RE = re.compile(r"[^\w\s()]")
 
+_RESOURCES_DIR = Path(__file__).parent.parent / "resources"
+
+
+def _load_word_set(path: Path, fallback: frozenset) -> frozenset:
+    """Load a frozenset of words from a text file (one word per line, # comments).
+    Returns fallback if the file is missing or unreadable."""
+    try:
+        words = {
+            w for line in path.read_text(encoding="utf-8").splitlines()
+            for w in [line.strip()]
+            if w and not w.startswith("#")
+        }
+        return frozenset(words) if words else fallback
+    except Exception:
+        return fallback
+
+
+def _load_spacy_models(path: Path, fallback: dict) -> dict:
+    """Load spaCy model candidates from a YAML file. Returns fallback on error."""
+    try:
+        if yaml and path.exists():
+            data = yaml.safe_load(path.read_text(encoding="utf-8"))
+            if isinstance(data, dict):
+                return {lang: list(models) for lang, models in data.items() if isinstance(models, list)}
+    except Exception:
+        pass
+    return fallback
+
+
 # ── Constantes POS/lexicales — définies ici pour éviter leur reconstruction
 # à chaque appel de score_match_quality (fonction dans le hot path). ─────────
 _STOP_POS = frozenset({"CCONJ", "SCONJ", "DET", "PRON", "AUX", "PART", "ADP", "INTJ"})
 _CONTENT_POS = frozenset({"NOUN", "PROPN", "ADJ"})
-_WEAK_WORDS_EN = frozenset({"and", "or", "it", "well", "can", "may", "like"})
-_WEAK_WORDS_FR = frozenset({
-    "et", "ou", "ni", "mais",        # conjonctions de coordination
-    "il", "elle", "on",              # pronoms sujets clitiques
-    "bien", "ainsi", "comme",        # adverbes / conjonctions discursifs
-})
+
+_WEAK_WORDS_EN = _load_word_set(
+    _RESOURCES_DIR / "en" / "weak_words.txt",
+    frozenset({"and", "or", "it", "well", "can", "may", "like"}),
+)
+_WEAK_WORDS_FR = _load_word_set(
+    _RESOURCES_DIR / "fr" / "weak_words.txt",
+    frozenset({"et", "ou", "ni", "mais", "il", "elle", "on", "bien", "ainsi", "comme"}),
+)
 _WEAK_WORDS = _WEAK_WORDS_EN  # alias rétrocompatible
+
+_SPACY_MODELS = _load_spacy_models(
+    _RESOURCES_DIR / "spacy_models.yaml",
+    {"en": ["en_core_web_sm", "en_core_web_md"], "fr": ["fr_core_news_sm", "fr_core_news_md"]},
+)
 _SYNTACTIC_GENERIC_DEFAULT = frozenset({
     "process", "quality", "thing", "matter", "way",         # EN
     "processus", "qualite", "chose", "fait", "maniere",     # FR (sans accent)
@@ -178,16 +215,15 @@ def setup_logging(level: str) -> None:
 
 def load_model(lang: str):
     """Load a spaCy model for the requested language."""
-    candidates = {
-        "en": ["en_core_web_sm", "en_core_web_md"],
-        "fr": ["fr_core_news_sm", "fr_core_news_md"],
-    }[lang]
+    candidates = _SPACY_MODELS.get(lang)
+    if not candidates:
+        raise RuntimeError(f"No spaCy model configured for language '{lang}'. Add it to resources/spacy_models.yaml")
     for name in candidates:
         try:
             return spacy.load(name, disable=["parser", "ner"])
         except Exception:
             pass
-    raise RuntimeError(f"No spaCy model installed for {lang}: {candidates}")
+    raise RuntimeError(f"No spaCy model installed for {lang}. Install one of: {candidates}")
 
 def merge_profile(profile_name: str, overrides: Optional[Dict[str, Any]] = None) -> ResourceProfile:
     """Merge a default profile with optional overrides."""
@@ -1037,8 +1073,32 @@ def validate_effective_config(effective: Dict[str, Any], used_config: bool, requ
 
 def generate_yaml_proposal(text_path: str, dict_path: str, lang: str, stats: Dict[str, Any], requested_profile: Optional[str], out_path: Optional[str] = None) -> Dict[str, Any]:
     """Generate a valid YAML proposal instead of running annotation."""
-    chosen_profile = requested_profile or suggest_profile(stats)
+    auto_suggested = suggest_profile(stats)
+    chosen_profile = requested_profile or auto_suggested
     quality = suggest_quality(stats, chosen_profile)
+
+    # All quality parameters explicitly listed so the YAML is self-contained.
+    full_quality = {
+        "enabled":                     quality.get("enabled", True),
+        "strict_stopwords":            quality.get("strict_stopwords", True),
+        "require_pos_match":           quality.get("require_pos_match", True),
+        "penalize_single_token":       quality.get("penalize_single_token", True),
+        "single_token_penalty":        quality.get("single_token_penalty", 0.15),
+        "adaptive_single_token_penalty": quality.get("adaptive_single_token_penalty", True),
+        "multi_token_bonus":           quality.get("multi_token_bonus", 0.03),
+        "case_sensitive_entities":     quality.get("case_sensitive_entities", True),
+        "context_guard":               quality.get("context_guard", True),
+        "contextual_scoring":          quality.get("contextual_scoring", True),
+        "context_window":              quality.get("context_window", 2),
+        "discourse_pattern_guard":     quality.get("discourse_pattern_guard", True),
+        "syntactic_context_guard":     quality.get("syntactic_context_guard", False),
+        "syntactic_adp_head_penalty":  quality.get("syntactic_adp_head_penalty", 0.15),
+        "function_context_penalty":    quality.get("function_context_penalty", 0.20),
+        "lexical_context_bonus":       quality.get("lexical_context_bonus", 0.05),
+        "exact_pos_bonus":             quality.get("exact_pos_bonus", 0.05),
+        "single_token_min_score":      quality.get("single_token_min_score", 0.75),
+    }
+
     proposal = {
         "text": text_path,
         "dictionary": dict_path,
@@ -1047,15 +1107,15 @@ def generate_yaml_proposal(text_path: str, dict_path: str, lang: str, stats: Dic
         "out": "annotation.md",
         "report": "report.md",
         "profile_overrides": dict(DEFAULT_PROFILES[chosen_profile]),
-        "quality": quality,
+        "quality": full_quality,
     }
     yaml_text = yaml.safe_dump(proposal, allow_unicode=True, sort_keys=False) if yaml else json.dumps(proposal, ensure_ascii=False, indent=2)
     if out_path:
         Path(out_path).write_text(yaml_text, encoding="utf-8")
     return {
         "proposal": proposal,
-        "suggested_profile": chosen_profile,
-        "suggested_quality": quality,
+        "suggested_profile": auto_suggested,
+        "suggested_quality": full_quality,
         "used_profile": chosen_profile,
         "yaml": yaml_text,
         "written_to": out_path,
@@ -1123,7 +1183,7 @@ def main():
     cfg = load_config(args.config)
 
     effective = resolve_effective_config(args, cfg)
-    validate_effective_config(effective, used_config=bool(args.config), require_text=args.auto_profile)
+    validate_effective_config(effective, used_config=bool(args.config), require_text=False)
 
     if args.dump_effective_config:
         logging.info("Effective config: %s", json.dumps(effective, ensure_ascii=False))

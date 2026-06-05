@@ -1,0 +1,13 @@
+# Mots fonctionnels FR filtrés comme faux-positifs (un mot par ligne)
+# Modifiable sans toucher au code.
+# Commentaires : lignes commençant par #
+et
+ou
+ni
+mais
+il
+elle
+on
+bien
+ainsi
+comme

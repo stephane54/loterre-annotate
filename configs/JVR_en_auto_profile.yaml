@@ -1,5 +1,5 @@
-text: /home/schneist/app/loterre_annotate/loterre-v9/data/texts/JVR_en.jsonl
-dictionary: /home/schneist/app/loterre_annotate/loterre-v9/data/dicts/en_annot_JVR.jsonl
+text: ./data/texts/JVR_en.jsonl
+dictionary: ./data/dicts/en_annot_JVR.jsonl
 lang: en
 profile: term_recall
 out: annotation.md
@@ -23,12 +23,15 @@ quality:
   require_pos_match: true
   penalize_single_token: true
   single_token_penalty: 0.12
+  adaptive_single_token_penalty: true
   multi_token_bonus: 0.03
   case_sensitive_entities: true
   context_guard: true
   contextual_scoring: true
   context_window: 2
   discourse_pattern_guard: true
+  syntactic_context_guard: false
+  syntactic_adp_head_penalty: 0.15
   function_context_penalty: 0.2
   lexical_context_bonus: 0.05
   exact_pos_bonus: 0.05
