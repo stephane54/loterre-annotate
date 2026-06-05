@@ -1,5 +1,5 @@
 text: null
-dictionary: ./data/dicts/fr_annot_4V5.jsonl
+dictionary: ./dictionary/fr_annot_4V5.jsonl
 lang: fr
 profile: term_balanced
 out: annotation.md

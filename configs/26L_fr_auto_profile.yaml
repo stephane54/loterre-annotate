@@ -1,5 +1,5 @@
 text: null
-dictionary: ./data/dicts/fr_annot_26L.jsonl
+dictionary: ./dictionary/fr_annot_26L.jsonl
 lang: fr
 profile: entity_strict
 out: annotation.md

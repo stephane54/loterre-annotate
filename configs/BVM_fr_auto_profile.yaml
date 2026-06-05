@@ -1,5 +1,5 @@
 text: ./data/texts/BVM_fr.jsonl
-dictionary: ./data/dicts/fr_annot_BVM.jsonl
+dictionary: ./dictionary/fr_annot_BVM.jsonl
 lang: fr
 profile: entity_strict
 out: annotation.md

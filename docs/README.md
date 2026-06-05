@@ -17,6 +17,7 @@
 13. [Benchmark : moteur local vs API production](#13-benchmark--moteur-local-vs-api-production)
 14. [Performance](#14-performance)
 15. [Tests et workflow de développement](#15-tests-et-workflow-de-développement)
+16. [Build et déploiement du package](#16-build-et-déploiement-du-package)
 
 ---
 
@@ -106,6 +107,19 @@ html_api/            # HTML de l'API production vs gold (loterre_api_eval.py)
 benchmark_results/   # résultats complets du benchmark (compare_engines.sh)
 ```
 
+**Répertoire de production** (non versionné — gitignore) :
+```text
+production/
+  version.txt                 # numéro de version à incrémenter avant chaque release
+  setup.py                    # configuration du package Python
+  build_push_package.sh       # script de build, DVC push et publication Git
+```
+
+**Données DVC** (non versionnées dans Git) :
+```text
+dictionary/          # dictionnaires JSONL — géré par DVC (dictionary.dvc versionné)
+```
+
 ---
 
 ## 4. Usage CLI
@@ -122,7 +136,7 @@ python3 src/loterre_cli.py \
 # Via chemin explicite
 python3 src/loterre_cli.py \
   --text data/texts/P66_en.jsonl \
-  --dict data/dicts/en_annot_P66.jsonl \
+  --dict dictionary/en_annot_P66.jsonl \
   --lang en \
   --profile term_recall \
   --silent
@@ -138,7 +152,7 @@ python3 src/loterre_cli.py \
 ```bash
 python3 src/loterre_engine_v9_cli.py \
   --text data/texts/P66_en.jsonl \
-  --dict data/dicts/en_annot_P66.jsonl \
+  --dict dictionary/en_annot_P66.jsonl \
   --lang en \
   --profile term_recall \
   --silent
@@ -244,7 +258,7 @@ Trois profils prédéfinis couvrent le spectre précision/rappel :
 
 ```yaml
 text: data/texts/P66_en.jsonl
-dictionary: data/dicts/en_annot_P66.jsonl
+dictionary: dictionary/en_annot_P66.jsonl
 lang: en
 profile: term_recall
 
@@ -464,7 +478,7 @@ python3 scripts/generate_fr_corpus.py
 # Produit data/texts/{P66,27X,9SD,8HQ,B9M,BVM,QX8}_fr.jsonl
 ```
 
-Le script `scripts/generate_fr_corpus.py` lit les dictionnaires FR dans `data/dicts/`, sélectionne des termes avec variation flexionnelle, calcule les offsets caractère exacts et écrit les fichiers JSONL prêts à l'emploi.
+Le script `scripts/generate_fr_corpus.py` lit les dictionnaires FR dans `dictionary/`, sélectionne des termes avec variation flexionnelle, calcule les offsets caractère exacts et écrit les fichiers JSONL prêts à l'emploi.
 
 ### 11.4 Qualité des ARKs — corrections appliquées (corpus anglais)
 
@@ -797,11 +811,11 @@ bash tests/smoke/compare_engines.sh \
 ```yaml
 dictionaries:
   P66_en:
-    path: data/dicts/en_annot_P66.jsonl
+    path: dictionary/en_annot_P66.jsonl
     lang: en
     profile: term_recall
   9SD_en:
-    path: data/dicts/en_annot_9SD.jsonl
+    path: dictionary/en_annot_9SD.jsonl
     lang: en
     profile: entity_strict
 ```
@@ -810,3 +824,126 @@ dictionaries:
 
 - `scripts/` : outils de production pour annoter, évaluer, benchmarker
 - `tests/` : vérifications automatiques de non-régression et de qualité
+
+---
+
+## 16. Build et déploiement du package
+
+Le répertoire `production/` (gitignored, non versionné) contient les outils de packaging et de release. Il n'est **jamais poussé** dans le dépôt Git du projet.
+
+### 16.1 Contenu de `production/`
+
+| Fichier | Rôle |
+|---|---|
+| `version.txt` | Numéro de version sémantique (`MAJOR.MINOR.PATCH`) — à incrémenter avant chaque release |
+| `setup.py` | Configuration du package Python (`loterre-annotate`) |
+| `build_push_package.sh` | Script de build, publication Git, DVC optionnel |
+
+### 16.2 Prérequis
+
+**Toujours requis :**
+```bash
+# Clé SSH pour GitHub
+ssh-add ~/.ssh/id_rsa
+ssh -T git@github.com   # doit afficher "Hi stephane54!"
+```
+
+**Requis uniquement avec `--dvc` :**
+```bash
+pip install dvc
+
+# Configurer un remote DVC (S3, SSH, Google Drive, NFS…)
+dvc remote add -d myremote s3://mon-bucket/loterre-dvc
+# ou via SSH :
+dvc remote add -d myremote ssh://serveur/chemin/dvc-store
+```
+
+### 16.3 Workflow de release
+
+```
+1. Mettre à jour production/version.txt  (ex: 0.9.1)
+2. Valider le code (tests + benchmark)
+3. Lancer le script :
+
+   bash production/build_push_package.sh                    # build + push Git
+   bash production/build_push_package.sh --dvc              # + push dictionnaires DVC
+   bash production/build_push_package.sh --deploy           # + install local
+   bash production/build_push_package.sh --dvc --deploy     # tout
+```
+
+### 16.4 Ce que fait le script
+
+**Étape 0 — Tests smoke pré-build** *(toujours)*
+
+```bash
+make test-smoke
+```
+Le build est interrompu si un test échoue.
+
+**Étape 1 — DVC : push des dictionnaires** *(avec `--dvc` seulement)*
+
+```bash
+# Initialise DVC si c'est la première fois
+dvc init && git commit -m "chore: init DVC"
+
+# Ajoute dictionary/ sous contrôle DVC (crée dictionary.dvc)
+dvc add dictionary/
+git add dictionary.dvc .gitignore
+git commit -m "chore: add dictionary/ to DVC"
+
+# Pousse les données vers le remote DVC configuré
+dvc commit -f && dvc push
+```
+
+Le répertoire `dictionary/` est ainsi stocké séparément du code (stockage DVC) mais la référence `dictionary.dvc` est versionnée dans Git. Sans `--dvc`, cette étape est ignorée — utile pour un release purement code sans modifier les dictionnaires.
+
+**Étape 2 — Build wheel + push Git** *(toujours)*
+
+```bash
+# Construit la distribution binaire
+python3 production/setup.py bdist_wheel
+# → dist/loterre_annotate-{version}-py3-none-any.whl
+
+# Commit, tag et push
+git commit -m "release: loterre-annotate v{version}"
+git tag v{version}
+git push origin HEAD
+git push origin v{version} --force
+```
+
+**Étape 3 — Installation locale** *(avec `--deploy` seulement)*
+
+```bash
+pip install --force-reinstall dist/loterre_annotate-{version}-*.whl
+```
+
+Commandes installées après `--deploy` :
+
+| Commande | Module | Description |
+|---|---|---|
+| `loterre-annotate` | `loterre_cli` | Lanceur principal (avec registry) |
+| `loterre-engine` | `loterre_engine_v9_cli` | Moteur v9 direct |
+| `loterre-benchmark` | `loterre_benchmark` | Benchmark 3 moteurs |
+| `loterre-render` | `loterre_html_renderer` | Rendu HTML |
+
+### 16.5 Package `loterre-annotate` — structure
+
+Le `setup.py` installe les modules depuis `src/` via `package_dir={"": "src"}`.
+
+**Inclus dans la distribution :**
+- Modules Python : `loterre_cli`, `loterre_engine_v9_cli`, `loterre_fast_path`, `loterre_html_renderer`, `loterre_api_eval`, `loterre_benchmark`
+- Données : `resources/en/weak_words.txt`, `resources/fr/weak_words.txt`, `resources/spacy_models.yaml`, `configs/registry.yaml`
+
+**Exclus de la distribution :**
+- `dictionary/` — trop volumineux, géré par DVC ; à récupérer séparément via `dvc pull`
+- `data/texts/` — corpus de test, non requis à l'exécution
+
+### 16.6 Récupérer les dictionnaires (après clone ou install)
+
+```bash
+# Après git clone du projet :
+dvc pull          # télécharge dictionary/ depuis le remote DVC
+
+# Ou pour un vocabulaire précis :
+dvc pull dictionary/en_annot_P66.jsonl
+```

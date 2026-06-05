@@ -1,5 +1,5 @@
 text: null
-dictionary: ./data/dicts/en_annot_X64.jsonl
+dictionary: ./dictionary/en_annot_X64.jsonl
 lang: en
 profile: entity_strict
 out: annotation.md

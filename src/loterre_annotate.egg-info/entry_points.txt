@@ -1,0 +1,5 @@
+[console_scripts]
+loterre-annotate = loterre_cli:main
+loterre-benchmark = loterre_benchmark:main
+loterre-engine = loterre_engine_v9_cli:main
+loterre-render = loterre_html_renderer:main

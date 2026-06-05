@@ -1,5 +1,5 @@
 text: null
-dictionary: ./data/dicts/fr_annot_BRMH.jsonl
+dictionary: ./dictionary/fr_annot_BRMH.jsonl
 lang: fr
 profile: term_recall
 out: annotation.md

@@ -1,5 +1,5 @@
 text: ./data/texts/JVR_en.jsonl
-dictionary: ./data/dicts/en_annot_JVR.jsonl
+dictionary: ./dictionary/en_annot_JVR.jsonl
 lang: en
 profile: term_recall
 out: annotation.md

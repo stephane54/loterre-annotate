@@ -1,5 +1,5 @@
 text: null
-dictionary: ./data/dicts/en_annot_Q1W.jsonl
+dictionary: ./dictionary/en_annot_Q1W.jsonl
 lang: en
 profile: term_balanced
 out: annotation.md

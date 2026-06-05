@@ -1,5 +1,5 @@
 text: null
-dictionary: ./data/dicts/fr_annot_GGMGG.jsonl
+dictionary: ./dictionary/fr_annot_GGMGG.jsonl
 lang: fr
 profile: term_balanced
 out: annotation.md

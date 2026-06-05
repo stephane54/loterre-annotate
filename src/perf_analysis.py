@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 from src.loterre_engine_v9_cli import build_surface_forms, form_to_lemma_seqs, merge_profile, load_model
 
-path = Path("data/dicts/en_annot_P66.jsonl")
+path = Path("dictionary/en_annot_P66.jsonl")
 lines = [line for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 entries = [json.loads(line) for line in lines]
 print("entries", len(entries))

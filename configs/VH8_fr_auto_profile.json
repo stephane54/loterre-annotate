@@ -1,7 +1,7 @@
 {
   "proposal": {
     "text": null,
-    "dictionary": "./data/dicts/fr_annot_VH8.jsonl",
+    "dictionary": "./dictionary/fr_annot_VH8.jsonl",
     "lang": "fr",
     "profile": "term_recall",
     "out": "annotation.md",
@@ -63,7 +63,7 @@
     "single_token_min_score": 0.7
   },
   "used_profile": "term_recall",
-  "yaml": "text: null\ndictionary: ./data/dicts/fr_annot_VH8.jsonl\nlang: fr\nprofile: term_recall\nout: annotation.md\nreport: report.md\nprofile_overrides:\n  use_pattern: true\n  use_surface: true\n  use_lemma: true\n  pattern_priority: false\n  allow_surface_fallback: true\n  allow_single_token_fallback: true\n  single_token_uppercase_exact: false\n  propn_can_match_noun: true\n  normalize_separators: true\n  normalize_apostrophes: true\n  normalize_parentheses: true\n  batch_size: 64\nquality:\n  enabled: true\n  strict_stopwords: true\n  require_pos_match: true\n  penalize_single_token: true\n  single_token_penalty: 0.12\n  adaptive_single_token_penalty: true\n  multi_token_bonus: 0.03\n  case_sensitive_entities: true\n  context_guard: true\n  contextual_scoring: true\n  context_window: 2\n  discourse_pattern_guard: true\n  syntactic_context_guard: false\n  syntactic_adp_head_penalty: 0.15\n  function_context_penalty: 0.2\n  lexical_context_bonus: 0.05\n  exact_pos_bonus: 0.05\n  single_token_min_score: 0.7\n",
+  "yaml": "text: null\ndictionary: ./dictionary/fr_annot_VH8.jsonl\nlang: fr\nprofile: term_recall\nout: annotation.md\nreport: report.md\nprofile_overrides:\n  use_pattern: true\n  use_surface: true\n  use_lemma: true\n  pattern_priority: false\n  allow_surface_fallback: true\n  allow_single_token_fallback: true\n  single_token_uppercase_exact: false\n  propn_can_match_noun: true\n  normalize_separators: true\n  normalize_apostrophes: true\n  normalize_parentheses: true\n  batch_size: 64\nquality:\n  enabled: true\n  strict_stopwords: true\n  require_pos_match: true\n  penalize_single_token: true\n  single_token_penalty: 0.12\n  adaptive_single_token_penalty: true\n  multi_token_bonus: 0.03\n  case_sensitive_entities: true\n  context_guard: true\n  contextual_scoring: true\n  context_window: 2\n  discourse_pattern_guard: true\n  syntactic_context_guard: false\n  syntactic_adp_head_penalty: 0.15\n  function_context_penalty: 0.2\n  lexical_context_bonus: 0.05\n  exact_pos_bonus: 0.05\n  single_token_min_score: 0.7\n",
   "written_to": "./configs/VH8_fr_auto_profile.yaml",
   "stats": {
     "entries": 7605,

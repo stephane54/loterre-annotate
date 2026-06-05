@@ -1,5 +1,5 @@
 text: null
-dictionary: ./data/dicts/en_annot_TECSEM.jsonl
+dictionary: ./dictionary/en_annot_TECSEM.jsonl
 lang: en
 profile: term_recall
 out: annotation.md

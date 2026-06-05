@@ -12,7 +12,7 @@
 #   bash scripts/profiling/run_profile_generation.sh [DICTS_DIR] [OUTDIR] [ENGINE]
 #
 # Defaults:
-#   DICTS_DIR = ./data/dicts
+#   DICTS_DIR = ./dictionary
 #   OUTDIR    = ./configs
 #   ENGINE    = ./src/loterre_engine_v9_cli.py
 #   TEXTS_DIR = ./data/texts
@@ -23,7 +23,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 cd "$REPO_ROOT"
 
-DICTS_DIR="${1:-./data/dicts}"
+DICTS_DIR="${1:-./dictionary}"
 OUTDIR="${2:-./configs}"
 ENGINE="${3:-./src/loterre_engine_v9_cli.py}"
 TEXTS_DIR="${TEXTS_DIR:-./data/texts}"

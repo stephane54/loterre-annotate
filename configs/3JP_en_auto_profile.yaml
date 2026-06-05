@@ -1,5 +1,5 @@
 text: ./data/texts/3JP_en.jsonl
-dictionary: ./data/dicts/en_annot_3JP.jsonl
+dictionary: ./dictionary/en_annot_3JP.jsonl
 lang: en
 profile: entity_strict
 out: annotation.md

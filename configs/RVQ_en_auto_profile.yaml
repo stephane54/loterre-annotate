@@ -1,5 +1,5 @@
 text: null
-dictionary: ./data/dicts/en_annot_RVQ.jsonl
+dictionary: ./dictionary/en_annot_RVQ.jsonl
 lang: en
 profile: term_recall
 out: annotation.md

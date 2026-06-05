@@ -1,5 +1,5 @@
 text: null
-dictionary: ./data/dicts/fr_annot_BLH.jsonl
+dictionary: ./dictionary/fr_annot_BLH.jsonl
 lang: fr
 profile: term_balanced
 out: annotation.md

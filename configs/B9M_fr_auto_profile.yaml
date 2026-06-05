@@ -1,5 +1,5 @@
 text: ./data/texts/B9M_fr.jsonl
-dictionary: ./data/dicts/fr_annot_B9M.jsonl
+dictionary: ./dictionary/fr_annot_B9M.jsonl
 lang: fr
 profile: term_balanced
 out: annotation.md

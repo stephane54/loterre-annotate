@@ -1,5 +1,5 @@
 text: ./data/texts/8HQ_fr.jsonl
-dictionary: ./data/dicts/fr_annot_8HQ.jsonl
+dictionary: ./dictionary/fr_annot_8HQ.jsonl
 lang: fr
 profile: entity_strict
 out: annotation.md

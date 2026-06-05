@@ -9,10 +9,12 @@ outputs/
 eval_outputs/
 profile_outputs/
 data/*
+production/
 .claude/
 html_*
 output*
 .loterre_cache/
+dictionary/
 report.md
 predictions/*.json
 *.log

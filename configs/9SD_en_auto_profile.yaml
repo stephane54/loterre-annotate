@@ -1,5 +1,5 @@
 text: ./data/texts/9SD_en.jsonl
-dictionary: ./data/dicts/en_annot_9SD.jsonl
+dictionary: ./dictionary/en_annot_9SD.jsonl
 lang: en
 profile: term_recall
 out: annotation.md

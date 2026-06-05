@@ -1,5 +1,5 @@
 text: null
-dictionary: ./data/dicts/en_annot_Theremy.jsonl
+dictionary: ./dictionary/en_annot_Theremy.jsonl
 lang: en
 profile: term_recall
 out: annotation.md

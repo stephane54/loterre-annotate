@@ -1,5 +1,5 @@
 text: null
-dictionary: ./data/dicts/fr_annot_W7B.jsonl
+dictionary: ./dictionary/fr_annot_W7B.jsonl
 lang: fr
 profile: term_recall
 out: annotation.md
