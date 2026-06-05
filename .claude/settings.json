@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "PowerShell(wsl -e bash -c \"python3 /home/schneist/app/stats-mc-bd/extract_topic_class3.py --corpus /home/schneist/data/data_pascal/corpus/corpus_opf_2020_12_18_500M --order 3 --output /tmp/o3.tsv 2>&1 | tail -10\")"
-    ]
-  }
-}
