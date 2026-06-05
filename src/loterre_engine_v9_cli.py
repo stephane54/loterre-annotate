@@ -1179,6 +1179,10 @@ def main():
     """Main entry point."""
     t0 = time.perf_counter()
     args = parse_args()
+    # En mode JSON pur (--silent / --api), on supprime les traces INFO pour ne
+    # pas polluer stderr quand la sortie est redirigée ou consommée par un autre programme.
+    if args.silent or args.api:
+        args.log_level = "WARNING"
     setup_logging(args.log_level)
     cfg = load_config(args.config)
 
