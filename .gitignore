@@ -8,8 +8,10 @@ report*
 outputs/
 eval_outputs/
 profile_outputs/
+benchmark_results/
 data/*
 production/
+~/app/github-web-services/services/terms-tool
 .claude/
 html_*
 output*
