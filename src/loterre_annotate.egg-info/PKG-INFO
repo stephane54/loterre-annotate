@@ -16,7 +16,7 @@ Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
 Requires-Python: >=3.9
 Description-Content-Type: text/markdown
-Requires-Dist: spacy>=3.7
+Requires-Dist: spacy>=3.8.14
 Requires-Dist: pyyaml>=6.0
 Requires-Dist: click>=8.4.1
 Dynamic: author
