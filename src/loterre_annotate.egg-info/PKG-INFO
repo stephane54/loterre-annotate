@@ -1,4 +1,4 @@
-Metadata-Version: 2.4
+Metadata-Version: 2.1
 Name: loterre-annotate
 Version: 0.9.0
 Summary: Moteur d'annotation terminologique sur les vocabulaires Loterre (v9)
@@ -16,23 +16,6 @@ Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
 Requires-Python: >=3.9
 Description-Content-Type: text/markdown
-Requires-Dist: spacy>=3.7
-Requires-Dist: pyyaml>=6.0
-Requires-Dist: click>=8.4.1
-Dynamic: author
-Dynamic: author-email
-Dynamic: classifier
-Dynamic: description
-Dynamic: description-content-type
-Dynamic: home-page
-Dynamic: keywords
-Dynamic: license
-Dynamic: maintainer
-Dynamic: maintainer-email
-Dynamic: platform
-Dynamic: requires-dist
-Dynamic: requires-python
-Dynamic: summary
 
 # Loterre v9 — Documentation
 

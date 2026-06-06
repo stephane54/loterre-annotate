@@ -2,7 +2,7 @@ PYTHON ?= python3
 
 .PHONY: install models \
         test test-smoke test-non-regression test-profiling test-quality test-api \
-        benchmark html \
+        benchmark benchmark-local benchmark-api benchmark-resolvers html \
         clean tree
 
 install:
@@ -33,13 +33,24 @@ test-api:
 
 # ── Benchmark & rendu HTML ────────────────────────────────────────────────────
 
-# Lance le benchmark complet v9 vs API Terms-Matcher vs Resolvers (EN + FR).
-# Options transmissibles : make benchmark BENCHMARK_ARGS="--vocabs P66_en --skip-api"
-# Exemples :
-#   make benchmark BENCHMARK_ARGS="--skip-api --skip-resolvers"  # local only
-#   make benchmark BENCHMARK_ARGS="--skip-resolvers"             # v9 vs API only
+# Benchmark complet : v9 local + API Terms-Matcher + Resolvers (EN + FR).
+# BENCHMARK_ARGS permet de passer des options supplémentaires :
+#   make benchmark BENCHMARK_ARGS="--vocabs P66_en,9SD_en"
+#   make benchmark BENCHMARK_ARGS="--out-dir results/$(shell date +%Y%m%d)"
 benchmark:
 	bash tests/smoke/compare_engines.sh $(BENCHMARK_ARGS)
+
+# Moteur local uniquement (pas d'appels réseau)
+benchmark-local:
+	bash tests/smoke/compare_engines.sh --skip-api --skip-resolvers $(BENCHMARK_ARGS)
+
+# v9 local vs API Terms-Matcher uniquement
+benchmark-api:
+	bash tests/smoke/compare_engines.sh --skip-resolvers $(BENCHMARK_ARGS)
+
+# v9 local vs Loterre Resolvers uniquement
+benchmark-resolvers:
+	bash tests/smoke/compare_engines.sh --skip-api $(BENCHMARK_ARGS)
 
 # Génère les fichiers HTML annotés pour tous les corpus dans data/texts/.
 html:

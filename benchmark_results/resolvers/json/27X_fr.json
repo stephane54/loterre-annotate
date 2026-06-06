@@ -1,0 +1,829 @@
+{
+  "results": [
+    {
+      "id": "0",
+      "matches": [
+        {
+          "start": 247,
+          "end": 256,
+          "found": "céramique",
+          "pref": "céramique",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q133ZC9F-3"
+        },
+        {
+          "start": 729,
+          "end": 738,
+          "found": "céramique",
+          "pref": "céramique",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q133ZC9F-3"
+        },
+        {
+          "start": 722,
+          "end": 728,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 279,
+          "end": 287,
+          "found": "datation",
+          "pref": "datation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-S5TS92B9-G"
+        },
+        {
+          "start": 331,
+          "end": 339,
+          "found": "datation",
+          "pref": "datation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-S5TS92B9-G"
+        },
+        {
+          "start": 436,
+          "end": 449,
+          "found": "documentation",
+          "pref": "documentation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-BL2D3RN9-H"
+        },
+        {
+          "start": 653,
+          "end": 664,
+          "found": "géophysique",
+          "pref": "géophysique",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PSZ41GXP-T"
+        },
+        {
+          "start": 270,
+          "end": 275,
+          "found": "outil",
+          "pref": "outil",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CH7H63NR-G"
+        },
+        {
+          "start": 641,
+          "end": 652,
+          "found": "prospection",
+          "pref": "prospection",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-NZ6NF8NJ-K"
+        },
+        {
+          "start": 65,
+          "end": 78,
+          "found": "stratigraphie",
+          "pref": "stratigraphie",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-P06WKRHH-T"
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "matches": [
+        {
+          "start": 198,
+          "end": 213,
+          "found": "abandon de site",
+          "pref": "abandon de site",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-J4TQJ8MM-0"
+        },
+        {
+          "start": 97,
+          "end": 103,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 230,
+          "end": 236,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 372,
+          "end": 378,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 8,
+          "end": 27,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 139,
+          "end": 158,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 272,
+          "end": 291,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 67,
+          "end": 80,
+          "found": "'Abd al-Samad",
+          "pref": "'Abd al-Samad",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-T2JWS0BK-1"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "matches": [
+        {
+          "start": 67,
+          "end": 88,
+          "found": "activation protonique",
+          "pref": "activation protonique",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-N41KHMS4-8"
+        },
+        {
+          "start": 345,
+          "end": 362,
+          "found": "ampoule à eulogie",
+          "pref": "ampoule à eulogie",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FXMWLKKP-R"
+        },
+        {
+          "start": 105,
+          "end": 111,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 244,
+          "end": 250,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 379,
+          "end": 385,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 8,
+          "end": 27,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 147,
+          "end": 166,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 286,
+          "end": 305,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "matches": [
+        {
+          "start": 35,
+          "end": 42,
+          "found": "analyse",
+          "pref": "analyse",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 67,
+          "end": 74,
+          "found": "analyse",
+          "pref": "analyse",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 171,
+          "end": 178,
+          "found": "analyse",
+          "pref": "analyse",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 203,
+          "end": 210,
+          "found": "analyse",
+          "pref": "analyse",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 203,
+          "end": 226,
+          "found": "analyse physicochimique",
+          "pref": "analyse physicochimique",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-GW255GQV-T"
+        },
+        {
+          "start": 344,
+          "end": 360,
+          "found": "analyse physique",
+          "pref": "analyse physique",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-J2T6HH9Q-F"
+        },
+        {
+          "start": 102,
+          "end": 108,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 243,
+          "end": 249,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 377,
+          "end": 383,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 8,
+          "end": 27,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 144,
+          "end": 163,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 285,
+          "end": 304,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "matches": [
+        {
+          "start": 67,
+          "end": 73,
+          "found": "animal",
+          "pref": "animal",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-QV9XLT58-D"
+        },
+        {
+          "start": 197,
+          "end": 210,
+          "found": "anthropologie",
+          "pref": "anthropologie",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-N5C4Q12N-9"
+        },
+        {
+          "start": 197,
+          "end": 219,
+          "found": "anthropologie physique",
+          "pref": "anthropologie physique",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RJQWZ1MP-P"
+        },
+        {
+          "start": 96,
+          "end": 102,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 236,
+          "end": 242,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 367,
+          "end": 373,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 8,
+          "end": 27,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 138,
+          "end": 157,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 278,
+          "end": 297,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 67,
+          "end": 79,
+          "found": "animal sacré",
+          "pref": "animal sacré",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TFWHTWST-7"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "matches": [
+        {
+          "start": 67,
+          "end": 70,
+          "found": "arc",
+          "pref": "arc",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F610SVXS-2"
+        },
+        {
+          "start": 117,
+          "end": 120,
+          "found": "arc",
+          "pref": "arc",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F610SVXS-2"
+        },
+        {
+          "start": 200,
+          "end": 211,
+          "found": "archéologie",
+          "pref": "archéologie",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FP5M59T8-G"
+        },
+        {
+          "start": 340,
+          "end": 351,
+          "found": "archéologie",
+          "pref": "archéologie",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FP5M59T8-G"
+        },
+        {
+          "start": 340,
+          "end": 360,
+          "found": "archéologie biblique",
+          "pref": "archéologie biblique",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-MNMKH7S1-W"
+        },
+        {
+          "start": 99,
+          "end": 105,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 239,
+          "end": 245,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 377,
+          "end": 383,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 8,
+          "end": 27,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 141,
+          "end": 160,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 281,
+          "end": 300,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 67,
+          "end": 82,
+          "found": "arc de triomphe",
+          "pref": "arc de triomphe",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q5W6GWGC-H"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "matches": [
+        {
+          "start": 67,
+          "end": 78,
+          "found": "archéologie",
+          "pref": "archéologie",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FP5M59T8-G"
+        },
+        {
+          "start": 212,
+          "end": 223,
+          "found": "archéologie",
+          "pref": "archéologie",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FP5M59T8-G"
+        },
+        {
+          "start": 212,
+          "end": 231,
+          "found": "archéologie urbaine",
+          "pref": "archéologie urbaine",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RG4SNXW0-J"
+        },
+        {
+          "start": 349,
+          "end": 361,
+          "found": "architecture",
+          "pref": "architecture",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q6T324P5-D"
+        },
+        {
+          "start": 349,
+          "end": 370,
+          "found": "architecture rupestre",
+          "pref": "architecture rupestre",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Z11P6963-X"
+        },
+        {
+          "start": 111,
+          "end": 117,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 248,
+          "end": 254,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 387,
+          "end": 393,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 8,
+          "end": 27,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 153,
+          "end": 172,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 290,
+          "end": 309,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "matches": [
+        {
+          "start": 67,
+          "end": 70,
+          "found": "art",
+          "pref": "art",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WBR9F2SX-P"
+        },
+        {
+          "start": 201,
+          "end": 204,
+          "found": "art",
+          "pref": "art",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WBR9F2SX-P"
+        },
+        {
+          "start": 330,
+          "end": 333,
+          "found": "art",
+          "pref": "art",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WBR9F2SX-P"
+        },
+        {
+          "start": 100,
+          "end": 106,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 229,
+          "end": 235,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 362,
+          "end": 368,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 8,
+          "end": 27,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 142,
+          "end": 161,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 271,
+          "end": 290,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 201,
+          "end": 212,
+          "found": "art de cour",
+          "pref": "art de cour",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KDD40HZ0-V"
+        },
+        {
+          "start": 67,
+          "end": 83,
+          "found": "art contemporain",
+          "pref": "art contemporain",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TXVG3Q5R-C"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "matches": [
+        {
+          "start": 67,
+          "end": 70,
+          "found": "art",
+          "pref": "art",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WBR9F2SX-P"
+        },
+        {
+          "start": 197,
+          "end": 200,
+          "found": "art",
+          "pref": "art",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WBR9F2SX-P"
+        },
+        {
+          "start": 329,
+          "end": 336,
+          "found": "atelier",
+          "pref": "atelier",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-QN79TLRF-K"
+        },
+        {
+          "start": 329,
+          "end": 346,
+          "found": "atelier de potier",
+          "pref": "atelier de potier",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-N6RVN5F9-L"
+        },
+        {
+          "start": 96,
+          "end": 102,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 228,
+          "end": 234,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 363,
+          "end": 369,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 340,
+          "end": 346,
+          "found": "potier",
+          "pref": "potier",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CBLQT2MQ-M"
+        },
+        {
+          "start": 8,
+          "end": 27,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 138,
+          "end": 157,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 270,
+          "end": 289,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 67,
+          "end": 79,
+          "found": "art levantin",
+          "pref": "art levantin",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WL357MVC-1"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "matches": [
+        {
+          "start": 336,
+          "end": 342,
+          "found": "bambou",
+          "pref": "bambou",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-J8JHWHZD-4"
+        },
+        {
+          "start": 336,
+          "end": 350,
+          "found": "bambou inscrit",
+          "pref": "bambou inscrit",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FZFDG2CS-Z"
+        },
+        {
+          "start": 102,
+          "end": 108,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 235,
+          "end": 241,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 367,
+          "end": 373,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 8,
+          "end": 27,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 144,
+          "end": 163,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 277,
+          "end": 296,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "matches": [
+        {
+          "start": 68,
+          "end": 85,
+          "found": "banque de données",
+          "pref": "banque de données",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RDPWKK9B-8"
+        },
+        {
+          "start": 204,
+          "end": 219,
+          "found": "base de données",
+          "pref": "base de données",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-C1C2RCM7-4"
+        },
+        {
+          "start": 102,
+          "end": 108,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 236,
+          "end": 242,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 377,
+          "end": 383,
+          "found": "corpus",
+          "pref": "corpus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LMC0J1WH-4"
+        },
+        {
+          "start": 8,
+          "end": 27,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 144,
+          "end": 163,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 278,
+          "end": 297,
+          "found": "rapport de fouilles",
+          "pref": "rapport de fouilles",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5981 @@
+{
+  "results": [
+    {
+      "id": "0",
+      "matches": [
+        {
+          "start": 1739,
+          "end": 1751,
+          "found": "architecture",
+          "pref": "architecture",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q6T324P5-D"
+        },
+        {
+          "start": 1200,
+          "end": 1208,
+          "found": "building",
+          "pref": "building",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KFCR868K-J"
+        },
+        {
+          "start": 1643,
+          "end": 1651,
+          "found": "building",
+          "pref": "building",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KFCR868K-J"
+        },
+        {
+          "start": 1980,
+          "end": 1988,
+          "found": "building",
+          "pref": "building",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KFCR868K-J"
+        },
+        {
+          "start": 2083,
+          "end": 2091,
+          "found": "building",
+          "pref": "building",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KFCR868K-J"
+        },
+        {
+          "start": 2199,
+          "end": 2207,
+          "found": "building",
+          "pref": "building",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KFCR868K-J"
+        },
+        {
+          "start": 2332,
+          "end": 2340,
+          "found": "building",
+          "pref": "building",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KFCR868K-J"
+        },
+        {
+          "start": 2549,
+          "end": 2557,
+          "found": "building",
+          "pref": "building",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KFCR868K-J"
+        },
+        {
+          "start": 1184,
+          "end": 1192,
+          "found": "accounts",
+          "pref": "accounts",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F5CC0WWZ-R"
+        },
+        {
+          "start": 820,
+          "end": 824,
+          "found": "cult",
+          "pref": "cult",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TC5WRVFF-6"
+        },
+        {
+          "start": 1544,
+          "end": 1548,
+          "found": "cult",
+          "pref": "cult",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TC5WRVFF-6"
+        },
+        {
+          "start": 794,
+          "end": 801,
+          "found": "goddess",
+          "pref": "goddess",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-T2CGDKX6-G"
+        },
+        {
+          "start": 2651,
+          "end": 2658,
+          "found": "goddess",
+          "pref": "goddess",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-T2CGDKX6-G"
+        },
+        {
+          "start": 2891,
+          "end": 2897,
+          "found": "church",
+          "pref": "church",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q4FH9ZN2-S"
+        },
+        {
+          "start": 106,
+          "end": 111,
+          "found": "woman",
+          "pref": "woman",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TVVBD8BG-5"
+        },
+        {
+          "start": 234,
+          "end": 239,
+          "found": "house",
+          "pref": "house",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-GV4CX8CG-M"
+        },
+        {
+          "start": 1252,
+          "end": 1256,
+          "found": "naos",
+          "pref": "naos",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CKM6FZT2-J"
+        },
+        {
+          "start": 748,
+          "end": 752,
+          "found": "name",
+          "pref": "name",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CKZMHMGN-T"
+        },
+        {
+          "start": 922,
+          "end": 926,
+          "found": "name",
+          "pref": "name",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CKZMHMGN-T"
+        },
+        {
+          "start": 1306,
+          "end": 1310,
+          "found": "name",
+          "pref": "name",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CKZMHMGN-T"
+        },
+        {
+          "start": 1331,
+          "end": 1335,
+          "found": "name",
+          "pref": "name",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CKZMHMGN-T"
+        },
+        {
+          "start": 2724,
+          "end": 2728,
+          "found": "name",
+          "pref": "name",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CKZMHMGN-T"
+        },
+        {
+          "start": 79,
+          "end": 83,
+          "found": "well",
+          "pref": "well",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-H3705GR4-G"
+        },
+        {
+          "start": 2151,
+          "end": 2155,
+          "found": "well",
+          "pref": "well",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-H3705GR4-G"
+        },
+        {
+          "start": 991,
+          "end": 1000,
+          "found": "sacrifice",
+          "pref": "sacrifice",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-N9NGSTZL-P"
+        },
+        {
+          "start": 2053,
+          "end": 2067,
+          "found": "4th century BC",
+          "pref": "4th century BC",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-DJKPXL7G-L"
+        },
+        {
+          "start": 1351,
+          "end": 1357,
+          "found": "statue",
+          "pref": "statue",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-ZJH0JC27-Q"
+        },
+        {
+          "start": 323,
+          "end": 329,
+          "found": "temple",
+          "pref": "temple",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RQSRPJCL-R"
+        },
+        {
+          "start": 773,
+          "end": 779,
+          "found": "temple",
+          "pref": "temple",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RQSRPJCL-R"
+        },
+        {
+          "start": 874,
+          "end": 880,
+          "found": "temple",
+          "pref": "temple",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RQSRPJCL-R"
+        },
+        {
+          "start": 934,
+          "end": 940,
+          "found": "temple",
+          "pref": "temple",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RQSRPJCL-R"
+        },
+        {
+          "start": 1127,
+          "end": 1133,
+          "found": "temple",
+          "pref": "temple",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RQSRPJCL-R"
+        },
+        {
+          "start": 1267,
+          "end": 1273,
+          "found": "temple",
+          "pref": "temple",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RQSRPJCL-R"
+        },
+        {
+          "start": 1453,
+          "end": 1459,
+          "found": "temple",
+          "pref": "temple",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RQSRPJCL-R"
+        },
+        {
+          "start": 2695,
+          "end": 2701,
+          "found": "Temple",
+          "pref": "temple",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RQSRPJCL-R"
+        },
+        {
+          "start": 508,
+          "end": 514,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-D8QQW1F8-X"
+        },
+        {
+          "start": 1718,
+          "end": 1726,
+          "found": "treatise",
+          "pref": "treatise",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-R34595CH-3"
+        },
+        {
+          "start": 1030,
+          "end": 1034,
+          "found": "city",
+          "pref": "town",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FKMD3W2D-M"
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "matches": [
+        {
+          "start": 1539,
+          "end": 1548,
+          "found": "alabaster",
+          "pref": "alabaster",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-BR053K5V-J"
+        },
+        {
+          "start": 1539,
+          "end": 1557,
+          "found": "alabaster artefact",
+          "pref": "alabaster artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LTX1T9DX-F"
+        },
+        {
+          "start": 1038,
+          "end": 1057,
+          "found": "Alexander the Great",
+          "pref": "Alexander the Great",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TPP8LGR9-Z"
+        },
+        {
+          "start": 1038,
+          "end": 1047,
+          "found": "Alexander",
+          "pref": "Alexander the Great",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TPP8LGR9-Z"
+        },
+        {
+          "start": 601,
+          "end": 613,
+          "found": "Amenemhet IV",
+          "pref": "Amenemhet IV",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F9V2DPXN-Z"
+        },
+        {
+          "start": 62,
+          "end": 70,
+          "found": "amethyst",
+          "pref": "amethyst",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-D29TGRXP-T"
+        },
+        {
+          "start": 62,
+          "end": 79,
+          "found": "amethyst artefact",
+          "pref": "amethyst artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F0WQNGKG-W"
+        },
+        {
+          "start": 42,
+          "end": 50,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 220,
+          "end": 228,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 384,
+          "end": 392,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 540,
+          "end": 548,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 696,
+          "end": 704,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 859,
+          "end": 867,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1018,
+          "end": 1026,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1184,
+          "end": 1192,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1327,
+          "end": 1335,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1483,
+          "end": 1491,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 765,
+          "end": 776,
+          "found": "anastylosis",
+          "pref": "anastylosis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-G8LWHM2Q-1"
+        },
+        {
+          "start": 727,
+          "end": 738,
+          "found": "archaeology",
+          "pref": "archaeology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FP5M59T8-G"
+        },
+        {
+          "start": 906,
+          "end": 917,
+          "found": "archaeology",
+          "pref": "archaeology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FP5M59T8-G"
+        },
+        {
+          "start": 897,
+          "end": 917,
+          "found": "Biblical archaeology",
+          "pref": "Biblical archaeology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-MNMKH7S1-W"
+        },
+        {
+          "start": 716,
+          "end": 738,
+          "found": "underwater archaeology",
+          "pref": "underwater archaeology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KLGRWM2M-2"
+        },
+        {
+          "start": 285,
+          "end": 301,
+          "found": "archaeomagnetism",
+          "pref": "archaeomagnetism",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-C5W9H2RK-D"
+        },
+        {
+          "start": 1347,
+          "end": 1353,
+          "found": "silver",
+          "pref": "silver",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGVVDLP4-F"
+        },
+        {
+          "start": 1347,
+          "end": 1362,
+          "found": "silver artefact",
+          "pref": "silver artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TXKJD1F7-M"
+        },
+        {
+          "start": 1219,
+          "end": 1223,
+          "found": "Asia",
+          "pref": "Asia",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-H92CPTP0-5"
+        },
+        {
+          "start": 1219,
+          "end": 1229,
+          "found": "Asia Minor",
+          "pref": "Asia Minor",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CL2G61J4-M"
+        },
+        {
+          "start": 930,
+          "end": 935,
+          "found": "block",
+          "pref": "block",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PR089CB4-D"
+        },
+        {
+          "start": 923,
+          "end": 935,
+          "found": "reused block",
+          "pref": "reused block",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-W6CZDCX2-J"
+        },
+        {
+          "start": 1089,
+          "end": 1101,
+          "found": "conservation",
+          "pref": "conservation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PQ5061W2-P"
+        },
+        {
+          "start": 1519,
+          "end": 1524,
+          "found": "shell",
+          "pref": "shell",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LBDHNPZN-3"
+        },
+        {
+          "start": 1519,
+          "end": 1533,
+          "found": "shell artefact",
+          "pref": "shell artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F4PHSBPL-H"
+        },
+        {
+          "start": 269,
+          "end": 279,
+          "found": "decoration",
+          "pref": "decoration",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LJJM3H1P-4"
+        },
+        {
+          "start": 560,
+          "end": 577,
+          "found": "Almoravid dynasty",
+          "pref": "Almoravid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-C5D2MMLT-0"
+        },
+        {
+          "start": 240,
+          "end": 253,
+          "found": "Chola dynasty",
+          "pref": "Chola dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-L934C0WL-Z"
+        },
+        {
+          "start": 3,
+          "end": 13,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 181,
+          "end": 191,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 345,
+          "end": 355,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 501,
+          "end": 511,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 657,
+          "end": 667,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 820,
+          "end": 830,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 979,
+          "end": 989,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1145,
+          "end": 1155,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1288,
+          "end": 1298,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1443,
+          "end": 1453,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1503,
+          "end": 1517,
+          "found": "artistic taste",
+          "pref": "artistic taste",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PJD46CK1-X"
+        },
+        {
+          "start": 71,
+          "end": 79,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1354,
+          "end": 1362,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1525,
+          "end": 1533,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1549,
+          "end": 1557,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1059,
+          "end": 1072,
+          "found": "wooden object",
+          "pref": "wooden object",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TKBLP2DW-8"
+        },
+        {
+          "start": 1241,
+          "end": 1244,
+          "found": "Eye",
+          "pref": "eye",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-T8FR77CZ-L"
+        },
+        {
+          "start": 1235,
+          "end": 1244,
+          "found": "Udjat Eye",
+          "pref": "Udjat Eye",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-GQT4H4NX-D"
+        },
+        {
+          "start": 747,
+          "end": 759,
+          "found": "organization",
+          "pref": "organization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-T6VBWQL4-B"
+        },
+        {
+          "start": 740,
+          "end": 759,
+          "found": "social organization",
+          "pref": "social organization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PGTBQ5R0-H"
+        },
+        {
+          "start": 413,
+          "end": 431,
+          "found": "palaeoanthropology",
+          "pref": "palaeoanthropology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-N5VPBQVV-G"
+        },
+        {
+          "start": 88,
+          "end": 99,
+          "found": "photography",
+          "pref": "photography",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-P7C936WC-D"
+        },
+        {
+          "start": 81,
+          "end": 99,
+          "found": "aerial photography",
+          "pref": "aerial photography",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-P2MK1KCP-Q"
+        },
+        {
+          "start": 1364,
+          "end": 1369,
+          "found": "stone",
+          "pref": "stone",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F475K736-L"
+        },
+        {
+          "start": 1364,
+          "end": 1376,
+          "found": "stone object",
+          "pref": "stone object",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-DSCK9PQS-L"
+        },
+        {
+          "start": 3,
+          "end": 20,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 181,
+          "end": 198,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 345,
+          "end": 362,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 501,
+          "end": 518,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 657,
+          "end": 674,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 820,
+          "end": 837,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 979,
+          "end": 996,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1145,
+          "end": 1162,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1288,
+          "end": 1305,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1443,
+          "end": 1460,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 879,
+          "end": 895,
+          "found": "Aghlabid dynasty",
+          "pref": "Aghlabid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-V9H6MM4Z-D"
+        },
+        {
+          "start": 579,
+          "end": 595,
+          "found": "Afsharid dynasty",
+          "pref": "Afsharid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KNXKZ2SW-0"
+        },
+        {
+          "start": 255,
+          "end": 279,
+          "found": "architectural decoration",
+          "pref": "architectural decoration",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-GR7XZ6J6-S"
+        },
+        {
+          "start": 1078,
+          "end": 1101,
+          "found": "preventive conservation",
+          "pref": "preventive conservation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KXLG9ZBF-6"
+        },
+        {
+          "start": 440,
+          "end": 457,
+          "found": "-Angkorian Period",
+          "pref": "Angkorian Period",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-G3H3M3XS-8"
+        },
+        {
+          "start": 404,
+          "end": 411,
+          "found": "Ghurids",
+          "pref": "Ghurids",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FW9W23QS-6"
+        },
+        {
+          "start": 1204,
+          "end": 1217,
+          "found": "Thutmosis III",
+          "pref": "Thutmosis III",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-H983KN5P-W"
+        },
+        {
+          "start": 1382,
+          "end": 1399,
+          "found": "archaeometallurgy",
+          "pref": "archaeometallurgy",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PMZ3P8QG-7"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "matches": [
+        {
+          "start": 573,
+          "end": 582,
+          "found": "Ahmosis I",
+          "pref": "Ahmosis I",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VH2WTHFH-V"
+        },
+        {
+          "start": 1193,
+          "end": 1212,
+          "found": "Alexander the Great",
+          "pref": "Alexander the Great",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TPP8LGR9-Z"
+        },
+        {
+          "start": 1193,
+          "end": 1202,
+          "found": "Alexander",
+          "pref": "Alexander the Great",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TPP8LGR9-Z"
+        },
+        {
+          "start": 42,
+          "end": 50,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 194,
+          "end": 202,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 356,
+          "end": 364,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 521,
+          "end": 529,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 665,
+          "end": 673,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 827,
+          "end": 835,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 981,
+          "end": 989,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1145,
+          "end": 1153,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1295,
+          "end": 1303,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1446,
+          "end": 1454,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 735,
+          "end": 744,
+          "found": "antiquity",
+          "pref": "Antiquity",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FR7R65XS-N"
+        },
+        {
+          "start": 729,
+          "end": 744,
+          "found": "Greek antiquity",
+          "pref": "Greek antiquity",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-JCSHPV8H-7"
+        },
+        {
+          "start": 1048,
+          "end": 1062,
+          "found": "Aramaic people",
+          "pref": "Aramaic people",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TW69WFB3-N"
+        },
+        {
+          "start": 1026,
+          "end": 1042,
+          "found": "urban archeology",
+          "pref": "urban archeology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RG4SNXW0-J"
+        },
+        {
+          "start": 1481,
+          "end": 1502,
+          "found": "architectural element",
+          "pref": "architectural element",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-C3PHFJJ7-M"
+        },
+        {
+          "start": 82,
+          "end": 85,
+          "found": "art",
+          "pref": "art",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WBR9F2SX-P"
+        },
+        {
+          "start": 103,
+          "end": 106,
+          "found": "art",
+          "pref": "art",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WBR9F2SX-P"
+        },
+        {
+          "start": 401,
+          "end": 416,
+          "found": "Ashurnasirpal I",
+          "pref": "Ashurnasirpal I",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-M89KJMCV-9"
+        },
+        {
+          "start": 401,
+          "end": 417,
+          "found": "Ashurnasirpal II",
+          "pref": "Ashurnasirpal II",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-SLXPPJDM-5"
+        },
+        {
+          "start": 719,
+          "end": 723,
+          "found": "bowl",
+          "pref": "bowl",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-NH44H16T-C"
+        },
+        {
+          "start": 867,
+          "end": 877,
+          "found": "Choresmian",
+          "pref": "Choresmian",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-D1WNDVZL-L"
+        },
+        {
+          "start": 1012,
+          "end": 1024,
+          "found": "conservation",
+          "pref": "conservation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PQ5061W2-P"
+        },
+        {
+          "start": 240,
+          "end": 247,
+          "found": "leather",
+          "pref": "leather",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-HH7R45Q5-D"
+        },
+        {
+          "start": 240,
+          "end": 256,
+          "found": "leather artefact",
+          "pref": "leather artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-HBN0SW38-D"
+        },
+        {
+          "start": 423,
+          "end": 429,
+          "found": "copper",
+          "pref": "copper",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PDVQ1S62-X"
+        },
+        {
+          "start": 423,
+          "end": 438,
+          "found": "copper artefact",
+          "pref": "copper artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-QL859GSL-3"
+        },
+        {
+          "start": 1522,
+          "end": 1532,
+          "found": "decoration",
+          "pref": "decoration",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LJJM3H1P-4"
+        },
+        {
+          "start": 1466,
+          "end": 1479,
+          "found": "Chola dynasty",
+          "pref": "Chola dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-L934C0WL-Z"
+        },
+        {
+          "start": 96,
+          "end": 102,
+          "found": "enamel",
+          "pref": "enamel",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RJPCFJD7-F"
+        },
+        {
+          "start": 96,
+          "end": 111,
+          "found": "enamel artefact",
+          "pref": "enamel artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WS5RMSP6-J"
+        },
+        {
+          "start": 3,
+          "end": 13,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 155,
+          "end": 165,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 317,
+          "end": 327,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 482,
+          "end": 492,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 626,
+          "end": 636,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 788,
+          "end": 798,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 942,
+          "end": 952,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1106,
+          "end": 1116,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1256,
+          "end": 1266,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1406,
+          "end": 1416,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 75,
+          "end": 81,
+          "found": "marble",
+          "pref": "marble",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-ST1FLH4M-9"
+        },
+        {
+          "start": 75,
+          "end": 90,
+          "found": "marble artefact",
+          "pref": "marble artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-ZGRSC60D-M"
+        },
+        {
+          "start": 82,
+          "end": 90,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 103,
+          "end": 111,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 248,
+          "end": 256,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 430,
+          "end": 438,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1333,
+          "end": 1341,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1324,
+          "end": 1332,
+          "found": "obsidian",
+          "pref": "obsidian",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-J07PKPM2-1"
+        },
+        {
+          "start": 1324,
+          "end": 1341,
+          "found": "obsidian artefact",
+          "pref": "obsidian artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-T6RTG4D3-L"
+        },
+        {
+          "start": 1347,
+          "end": 1362,
+          "found": "goldsmith's art",
+          "pref": "goldsmith's art",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TT0GTZLR-N"
+        },
+        {
+          "start": 214,
+          "end": 226,
+          "found": "organization",
+          "pref": "organization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-T6VBWQL4-B"
+        },
+        {
+          "start": 692,
+          "end": 704,
+          "found": "organization",
+          "pref": "organization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-T6VBWQL4-B"
+        },
+        {
+          "start": 214,
+          "end": 238,
+          "found": "organization of research",
+          "pref": "organization of research",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-JX50HN6N-4"
+        },
+        {
+          "start": 685,
+          "end": 704,
+          "found": "social organization",
+          "pref": "social organization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PGTBQ5R0-H"
+        },
+        {
+          "start": 262,
+          "end": 266,
+          "found": "bone",
+          "pref": "bone",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F46ZVTJS-M"
+        },
+        {
+          "start": 262,
+          "end": 273,
+          "found": "bone object",
+          "pref": "bone object",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-BWPX61GL-7"
+        },
+        {
+          "start": 541,
+          "end": 557,
+          "found": "Palaeobabylonian",
+          "pref": "Palaeobabylonian",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-D5QL40CS-Z"
+        },
+        {
+          "start": 62,
+          "end": 73,
+          "found": "petrography",
+          "pref": "petrography",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q3WK0ZB6-M"
+        },
+        {
+          "start": 3,
+          "end": 20,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 155,
+          "end": 172,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 317,
+          "end": 334,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 482,
+          "end": 499,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 626,
+          "end": 643,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 788,
+          "end": 805,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 942,
+          "end": 959,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1106,
+          "end": 1123,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1256,
+          "end": 1273,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1406,
+          "end": 1423,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1508,
+          "end": 1532,
+          "found": "architectural decoration",
+          "pref": "architectural decoration",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-GR7XZ6J6-S"
+        },
+        {
+          "start": 1001,
+          "end": 1024,
+          "found": "preventive conservation",
+          "pref": "preventive conservation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KXLG9ZBF-6"
+        },
+        {
+          "start": 1315,
+          "end": 1322,
+          "found": "Ghurids",
+          "pref": "Ghurids",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FW9W23QS-6"
+        },
+        {
+          "start": 376,
+          "end": 399,
+          "found": "Ptolemy II Philadelphus",
+          "pref": "Ptolemy II Philadelphus",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-R2H5SRFV-M"
+        },
+        {
+          "start": 1165,
+          "end": 1179,
+          "found": "Avalokiteśvara",
+          "pref": "Avalokiteśvara",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PL56T6PL-8"
+        },
+        {
+          "start": 559,
+          "end": 567,
+          "found": "Nabatene",
+          "pref": "Nabatene",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-JMKNJL8M-C"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "matches": [
+        {
+          "start": 1325,
+          "end": 1335,
+          "found": "Bronze Age",
+          "pref": "Bronze Age",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KPRRLFDK-8"
+        },
+        {
+          "start": 993,
+          "end": 1002,
+          "found": "Ahmosis I",
+          "pref": "Ahmosis I",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VH2WTHFH-V"
+        },
+        {
+          "start": 514,
+          "end": 519,
+          "found": "amber",
+          "pref": "amber",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-S7ZDXGL3-7"
+        },
+        {
+          "start": 514,
+          "end": 528,
+          "found": "amber artefact",
+          "pref": "amber artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-V68P3NZ6-Q"
+        },
+        {
+          "start": 80,
+          "end": 93,
+          "found": "Amenemhet III",
+          "pref": "Amenemhet III",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LJ2VCRG4-3"
+        },
+        {
+          "start": 399,
+          "end": 411,
+          "found": "Amenemhet IV",
+          "pref": "Amenemhet IV",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F9V2DPXN-Z"
+        },
+        {
+          "start": 42,
+          "end": 50,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 199,
+          "end": 207,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 344,
+          "end": 352,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 494,
+          "end": 502,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 658,
+          "end": 666,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 820,
+          "end": 828,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 973,
+          "end": 981,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1124,
+          "end": 1132,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1283,
+          "end": 1291,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1447,
+          "end": 1455,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1352,
+          "end": 1363,
+          "found": "archaeology",
+          "pref": "archaeology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FP5M59T8-G"
+        },
+        {
+          "start": 1341,
+          "end": 1363,
+          "found": "underwater archaeology",
+          "pref": "underwater archaeology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KLGRWM2M-2"
+        },
+        {
+          "start": 1144,
+          "end": 1160,
+          "found": "urban archeology",
+          "pref": "urban archeology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RG4SNXW0-J"
+        },
+        {
+          "start": 840,
+          "end": 855,
+          "found": "Ashurnasirpal I",
+          "pref": "Ashurnasirpal I",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-M89KJMCV-9"
+        },
+        {
+          "start": 875,
+          "end": 883,
+          "found": "Assyrian",
+          "pref": "Assyrian",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LNBXN6QT-0"
+        },
+        {
+          "start": 864,
+          "end": 869,
+          "found": "block",
+          "pref": "block",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PR089CB4-D"
+        },
+        {
+          "start": 857,
+          "end": 869,
+          "found": "reused block",
+          "pref": "reused block",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-W6CZDCX2-J"
+        },
+        {
+          "start": 1513,
+          "end": 1517,
+          "found": "bowl",
+          "pref": "bowl",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-NH44H16T-C"
+        },
+        {
+          "start": 1162,
+          "end": 1167,
+          "found": "canon",
+          "pref": "canon",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-SWQ32CQW-2"
+        },
+        {
+          "start": 1162,
+          "end": 1181,
+          "found": "canon of proportion",
+          "pref": "canon of proportion",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-HVTV6G9S-H"
+        },
+        {
+          "start": 251,
+          "end": 261,
+          "found": "Choresmian",
+          "pref": "Choresmian",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-D1WNDVZL-L"
+        },
+        {
+          "start": 678,
+          "end": 685,
+          "found": "crystal",
+          "pref": "crystal",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-X0B79GWQ-B"
+        },
+        {
+          "start": 565,
+          "end": 575,
+          "found": "decoration",
+          "pref": "decoration",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LJJM3H1P-4"
+        },
+        {
+          "start": 1004,
+          "end": 1022,
+          "found": "Achaemenid dynasty",
+          "pref": "Achaemenid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RRFD1XCS-X"
+        },
+        {
+          "start": 219,
+          "end": 234,
+          "found": "Axumite dynasty",
+          "pref": "Axumite dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VP0WMJPT-S"
+        },
+        {
+          "start": 530,
+          "end": 536,
+          "found": "enamel",
+          "pref": "enamel",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RJPCFJD7-F"
+        },
+        {
+          "start": 530,
+          "end": 545,
+          "found": "enamel artefact",
+          "pref": "enamel artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WS5RMSP6-J"
+        },
+        {
+          "start": 875,
+          "end": 890,
+          "found": "Assyrian Empire",
+          "pref": "Assyrian Empire",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LT038K38-7"
+        },
+        {
+          "start": 3,
+          "end": 13,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 160,
+          "end": 170,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 305,
+          "end": 315,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 455,
+          "end": 465,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 619,
+          "end": 629,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 781,
+          "end": 791,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 934,
+          "end": 944,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1085,
+          "end": 1095,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1244,
+          "end": 1254,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1407,
+          "end": 1417,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1473,
+          "end": 1484,
+          "found": "inscription",
+          "pref": "inscription",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-C5FNDJD2-6"
+        },
+        {
+          "start": 1467,
+          "end": 1484,
+          "found": "Greek inscription",
+          "pref": "Greek inscription",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-NLHSJTWS-X"
+        },
+        {
+          "start": 379,
+          "end": 384,
+          "found": "ivory",
+          "pref": "ivory",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CB3BDN4L-D"
+        },
+        {
+          "start": 379,
+          "end": 393,
+          "found": "ivory artefact",
+          "pref": "ivory artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-M973KBQM-C"
+        },
+        {
+          "start": 1028,
+          "end": 1041,
+          "found": "Neobabylonian",
+          "pref": "Neobabylonian",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FN0S48PB-S"
+        },
+        {
+          "start": 236,
+          "end": 245,
+          "found": "nilometer",
+          "pref": "nilometer",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-DJCL2WZ2-0"
+        },
+        {
+          "start": 108,
+          "end": 116,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 369,
+          "end": 377,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 385,
+          "end": 393,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 520,
+          "end": 528,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 537,
+          "end": 545,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 704,
+          "end": 712,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1187,
+          "end": 1200,
+          "found": "wooden object",
+          "pref": "wooden object",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TKBLP2DW-8"
+        },
+        {
+          "start": 99,
+          "end": 107,
+          "found": "obsidian",
+          "pref": "obsidian",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-J07PKPM2-1"
+        },
+        {
+          "start": 99,
+          "end": 116,
+          "found": "obsidian artefact",
+          "pref": "obsidian artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-T6RTG4D3-L"
+        },
+        {
+          "start": 364,
+          "end": 368,
+          "found": "lead",
+          "pref": "lead",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VLX3N05B-F"
+        },
+        {
+          "start": 364,
+          "end": 377,
+          "found": "lead artefact",
+          "pref": "lead artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-SZ9XZB2W-V"
+        },
+        {
+          "start": 1171,
+          "end": 1181,
+          "found": "proportion",
+          "pref": "proportion",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-GRZS35CL-Z"
+        },
+        {
+          "start": 3,
+          "end": 20,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 160,
+          "end": 177,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 305,
+          "end": 322,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 455,
+          "end": 472,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 619,
+          "end": 636,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 781,
+          "end": 798,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 934,
+          "end": 951,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1085,
+          "end": 1102,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1244,
+          "end": 1261,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1407,
+          "end": 1424,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1486,
+          "end": 1494,
+          "found": "Sargon I",
+          "pref": "Sargon I",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KF2T4MJZ-W"
+        },
+        {
+          "start": 694,
+          "end": 703,
+          "found": "turquoise",
+          "pref": "turquoise",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WG8WL9HM-L"
+        },
+        {
+          "start": 694,
+          "end": 712,
+          "found": "turquoise artefact",
+          "pref": "turquoise artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RNGS31QX-0"
+        },
+        {
+          "start": 62,
+          "end": 78,
+          "found": "Afsharid dynasty",
+          "pref": "Afsharid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KNXKZ2SW-0"
+        },
+        {
+          "start": 678,
+          "end": 692,
+          "found": "crystal object",
+          "pref": "crystal object",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RRNZ6VS7-T"
+        },
+        {
+          "start": 551,
+          "end": 575,
+          "found": "architectural decoration",
+          "pref": "architectural decoration",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-GR7XZ6J6-S"
+        },
+        {
+          "start": 1306,
+          "end": 1323,
+          "found": "-Angkorian Period",
+          "pref": "Angkorian Period",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-G3H3M3XS-8"
+        },
+        {
+          "start": 718,
+          "end": 737,
+          "found": "Ptolemy V Epiphanes",
+          "pref": "Ptolemy V Epiphanes",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CKTWV8JX-Q"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "matches": [
+        {
+          "start": 1037,
+          "end": 1042,
+          "found": "agate",
+          "pref": "agate",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CDSLDXB4-Z"
+        },
+        {
+          "start": 853,
+          "end": 862,
+          "found": "Akhenaton",
+          "pref": "Akhenaton",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Z6T690R4-L"
+        },
+        {
+          "start": 864,
+          "end": 869,
+          "found": "amber",
+          "pref": "amber",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-S7ZDXGL3-7"
+        },
+        {
+          "start": 864,
+          "end": 878,
+          "found": "amber artefact",
+          "pref": "amber artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-V68P3NZ6-Q"
+        },
+        {
+          "start": 738,
+          "end": 750,
+          "found": "Amenemhet IV",
+          "pref": "Amenemhet IV",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F9V2DPXN-Z"
+        },
+        {
+          "start": 587,
+          "end": 599,
+          "found": "Amenhotep II",
+          "pref": "Amenhotep II",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-N847DN3F-P"
+        },
+        {
+          "start": 42,
+          "end": 50,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 203,
+          "end": 211,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 363,
+          "end": 371,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 524,
+          "end": 532,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 682,
+          "end": 690,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 833,
+          "end": 841,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 983,
+          "end": 991,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1134,
+          "end": 1142,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1298,
+          "end": 1306,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1453,
+          "end": 1461,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1180,
+          "end": 1191,
+          "found": "anastylosis",
+          "pref": "anastylosis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-G8LWHM2Q-1"
+        },
+        {
+          "start": 1342,
+          "end": 1351,
+          "found": "antiquity",
+          "pref": "Antiquity",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FR7R65XS-N"
+        },
+        {
+          "start": 1495,
+          "end": 1504,
+          "found": "antiquity",
+          "pref": "Antiquity",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FR7R65XS-N"
+        },
+        {
+          "start": 1489,
+          "end": 1504,
+          "found": "Greek antiquity",
+          "pref": "Greek antiquity",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-JCSHPV8H-7"
+        },
+        {
+          "start": 1336,
+          "end": 1351,
+          "found": "Roman antiquity",
+          "pref": "Roman antiquity",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-T7S1LZF0-N"
+        },
+        {
+          "start": 702,
+          "end": 716,
+          "found": "Aramaic people",
+          "pref": "Aramaic people",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TW69WFB3-N"
+        },
+        {
+          "start": 411,
+          "end": 422,
+          "found": "archaeology",
+          "pref": "archaeology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FP5M59T8-G"
+        },
+        {
+          "start": 404,
+          "end": 422,
+          "found": "aerial archaeology",
+          "pref": "aerial archaeology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RXL5W089-V"
+        },
+        {
+          "start": 1197,
+          "end": 1215,
+          "found": "Aztec Civilization",
+          "pref": "Aztec Civilization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-NDH71JSN-6"
+        },
+        {
+          "start": 1197,
+          "end": 1202,
+          "found": "Aztec",
+          "pref": "Aztec Civilization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-NDH71JSN-6"
+        },
+        {
+          "start": 276,
+          "end": 280,
+          "found": "bowl",
+          "pref": "bowl",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-NH44H16T-C"
+        },
+        {
+          "start": 383,
+          "end": 388,
+          "found": "canon",
+          "pref": "canon",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-SWQ32CQW-2"
+        },
+        {
+          "start": 383,
+          "end": 402,
+          "found": "canon of proportion",
+          "pref": "canon of proportion",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-HVTV6G9S-H"
+        },
+        {
+          "start": 88,
+          "end": 100,
+          "found": "Civilization",
+          "pref": "civilization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Z67SF07Q-X"
+        },
+        {
+          "start": 1203,
+          "end": 1215,
+          "found": "Civilization",
+          "pref": "civilization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Z67SF07Q-X"
+        },
+        {
+          "start": 1473,
+          "end": 1478,
+          "found": "shell",
+          "pref": "shell",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LBDHNPZN-3"
+        },
+        {
+          "start": 1473,
+          "end": 1487,
+          "found": "shell artefact",
+          "pref": "shell artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F4PHSBPL-H"
+        },
+        {
+          "start": 1318,
+          "end": 1325,
+          "found": "leather",
+          "pref": "leather",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-HH7R45Q5-D"
+        },
+        {
+          "start": 1318,
+          "end": 1334,
+          "found": "leather artefact",
+          "pref": "leather artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-HBN0SW38-D"
+        },
+        {
+          "start": 544,
+          "end": 550,
+          "found": "copper",
+          "pref": "copper",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PDVQ1S62-X"
+        },
+        {
+          "start": 544,
+          "end": 559,
+          "found": "copper artefact",
+          "pref": "copper artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-QL859GSL-3"
+        },
+        {
+          "start": 428,
+          "end": 441,
+          "found": "Chola dynasty",
+          "pref": "Chola dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-L934C0WL-Z"
+        },
+        {
+          "start": 1014,
+          "end": 1022,
+          "found": "electrum",
+          "pref": "electrum",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-N2XD18WM-B"
+        },
+        {
+          "start": 1014,
+          "end": 1031,
+          "found": "electrum artefact",
+          "pref": "electrum artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q2RDG9TH-Q"
+        },
+        {
+          "start": 3,
+          "end": 13,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 164,
+          "end": 174,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 324,
+          "end": 334,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 485,
+          "end": 495,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 643,
+          "end": 653,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 794,
+          "end": 804,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 944,
+          "end": 954,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1095,
+          "end": 1105,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1259,
+          "end": 1269,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1413,
+          "end": 1423,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 82,
+          "end": 100,
+          "found": "Indus Civilization",
+          "pref": "Indus Civilization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-S31QWLCR-T"
+        },
+        {
+          "start": 718,
+          "end": 723,
+          "found": "ivory",
+          "pref": "ivory",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CB3BDN4L-D"
+        },
+        {
+          "start": 718,
+          "end": 732,
+          "found": "ivory artefact",
+          "pref": "ivory artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-M973KBQM-C"
+        },
+        {
+          "start": 62,
+          "end": 80,
+          "found": "laqueware artefact",
+          "pref": "laqueware artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WWW2FPBS-R"
+        },
+        {
+          "start": 1510,
+          "end": 1519,
+          "found": "nilometer",
+          "pref": "nilometer",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-DJCL2WZ2-0"
+        },
+        {
+          "start": 72,
+          "end": 80,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 249,
+          "end": 257,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 551,
+          "end": 559,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 724,
+          "end": 732,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 870,
+          "end": 878,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1023,
+          "end": 1031,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1043,
+          "end": 1051,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1326,
+          "end": 1334,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1479,
+          "end": 1487,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1037,
+          "end": 1051,
+          "found": "agate artefact",
+          "pref": "agate artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-GF0SBN8V-0"
+        },
+        {
+          "start": 1009,
+          "end": 1012,
+          "found": "Eye",
+          "pref": "eye",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-T8FR77CZ-L"
+        },
+        {
+          "start": 1003,
+          "end": 1012,
+          "found": "Udjat Eye",
+          "pref": "Udjat Eye",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-GQT4H4NX-D"
+        },
+        {
+          "start": 1154,
+          "end": 1166,
+          "found": "organization",
+          "pref": "organization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-T6VBWQL4-B"
+        },
+        {
+          "start": 1154,
+          "end": 1178,
+          "found": "organization of research",
+          "pref": "organization of research",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-JX50HN6N-4"
+        },
+        {
+          "start": 223,
+          "end": 241,
+          "found": "palaeoanthropology",
+          "pref": "palaeoanthropology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-N5VPBQVV-G"
+        },
+        {
+          "start": 1357,
+          "end": 1362,
+          "found": "stone",
+          "pref": "stone",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F475K736-L"
+        },
+        {
+          "start": 1357,
+          "end": 1369,
+          "found": "stone object",
+          "pref": "stone object",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-DSCK9PQS-L"
+        },
+        {
+          "start": 392,
+          "end": 402,
+          "found": "proportion",
+          "pref": "proportion",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-GRZS35CL-Z"
+        },
+        {
+          "start": 3,
+          "end": 20,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 164,
+          "end": 181,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 324,
+          "end": 341,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 485,
+          "end": 502,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 643,
+          "end": 660,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 794,
+          "end": 811,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 944,
+          "end": 961,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1095,
+          "end": 1112,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1259,
+          "end": 1276,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1413,
+          "end": 1430,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 243,
+          "end": 248,
+          "found": "glass",
+          "pref": "glass",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-J0RZFDJW-6"
+        },
+        {
+          "start": 243,
+          "end": 257,
+          "found": "glass artefact",
+          "pref": "glass artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-X30J7Q65-K"
+        },
+        {
+          "start": 564,
+          "end": 581,
+          "found": "-Angkorian Period",
+          "pref": "Angkorian Period",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-G3H3M3XS-8"
+        },
+        {
+          "start": 565,
+          "end": 581,
+          "found": "Angkorian Period",
+          "pref": "Angkorian Period",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-G3H3M3XS-8"
+        },
+        {
+          "start": 106,
+          "end": 120,
+          "found": "Mathura School",
+          "pref": "Mathura School",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KN01PXC9-3"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "matches": [
+        {
+          "start": 369,
+          "end": 374,
+          "found": "agate",
+          "pref": "agate",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CDSLDXB4-Z"
+        },
+        {
+          "start": 1291,
+          "end": 1299,
+          "found": "Iron Age",
+          "pref": "Iron Age",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FLC8PTX5-5"
+        },
+        {
+          "start": 225,
+          "end": 235,
+          "found": "Ahmosis II",
+          "pref": "Ahmosis II",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-S3BPCSSF-H"
+        },
+        {
+          "start": 1132,
+          "end": 1140,
+          "found": "Akkadian",
+          "pref": "Akkadian",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KPP14PSQ-J"
+        },
+        {
+          "start": 1322,
+          "end": 1341,
+          "found": "Alexander the Great",
+          "pref": "Alexander the Great",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TPP8LGR9-Z"
+        },
+        {
+          "start": 1322,
+          "end": 1331,
+          "found": "Alexander",
+          "pref": "Alexander the Great",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TPP8LGR9-Z"
+        },
+        {
+          "start": 42,
+          "end": 50,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 205,
+          "end": 213,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 349,
+          "end": 357,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 497,
+          "end": 505,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 660,
+          "end": 668,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 803,
+          "end": 811,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 965,
+          "end": 973,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1112,
+          "end": 1120,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1271,
+          "end": 1279,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1425,
+          "end": 1433,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1156,
+          "end": 1167,
+          "found": "archaeology",
+          "pref": "archaeology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FP5M59T8-G"
+        },
+        {
+          "start": 1149,
+          "end": 1167,
+          "found": "aerial archaeology",
+          "pref": "aerial archaeology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RXL5W089-V"
+        },
+        {
+          "start": 80,
+          "end": 101,
+          "found": "architectural element",
+          "pref": "architectural element",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-C3PHFJJ7-M"
+        },
+        {
+          "start": 985,
+          "end": 991,
+          "found": "silver",
+          "pref": "silver",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGVVDLP4-F"
+        },
+        {
+          "start": 985,
+          "end": 1000,
+          "found": "silver artefact",
+          "pref": "silver artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TXKJD1F7-M"
+        },
+        {
+          "start": 237,
+          "end": 241,
+          "found": "Asia",
+          "pref": "Asia",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-H92CPTP0-5"
+        },
+        {
+          "start": 237,
+          "end": 247,
+          "found": "Asia Minor",
+          "pref": "Asia Minor",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CL2G61J4-M"
+        },
+        {
+          "start": 561,
+          "end": 577,
+          "found": "Ashurnasirpal II",
+          "pref": "Ashurnasirpal II",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-SLXPPJDM-5"
+        },
+        {
+          "start": 1301,
+          "end": 1309,
+          "found": "Assyrian",
+          "pref": "Assyrian",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LNBXN6QT-0"
+        },
+        {
+          "start": 385,
+          "end": 399,
+          "found": "ancient author",
+          "pref": "ancient author",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-XJX72QHD-5"
+        },
+        {
+          "start": 536,
+          "end": 541,
+          "found": "canon",
+          "pref": "canon",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-SWQ32CQW-2"
+        },
+        {
+          "start": 536,
+          "end": 555,
+          "found": "canon of proportion",
+          "pref": "canon of proportion",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-HVTV6G9S-H"
+        },
+        {
+          "start": 1002,
+          "end": 1012,
+          "found": "Choresmian",
+          "pref": "Choresmian",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-D1WNDVZL-L"
+        },
+        {
+          "start": 844,
+          "end": 850,
+          "found": "copper",
+          "pref": "copper",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PDVQ1S62-X"
+        },
+        {
+          "start": 844,
+          "end": 859,
+          "found": "copper artefact",
+          "pref": "copper artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-QL859GSL-3"
+        },
+        {
+          "start": 1484,
+          "end": 1501,
+          "found": "X ray diffraction",
+          "pref": "X ray diffraction",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-QMH93NGX-X"
+        },
+        {
+          "start": 1173,
+          "end": 1188,
+          "found": "Almohad dynasty",
+          "pref": "Almohad dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CVCX215M-P"
+        },
+        {
+          "start": 517,
+          "end": 534,
+          "found": "Almoravid dynasty",
+          "pref": "Almoravid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-C5D2MMLT-0"
+        },
+        {
+          "start": 107,
+          "end": 122,
+          "found": "Axumite dynasty",
+          "pref": "Axumite dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VP0WMJPT-S"
+        },
+        {
+          "start": 1301,
+          "end": 1316,
+          "found": "Assyrian Empire",
+          "pref": "Assyrian Empire",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LT038K38-7"
+        },
+        {
+          "start": 253,
+          "end": 257,
+          "found": "iron",
+          "pref": "iron",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q610598W-X"
+        },
+        {
+          "start": 1291,
+          "end": 1295,
+          "found": "Iron",
+          "pref": "iron",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q610598W-X"
+        },
+        {
+          "start": 253,
+          "end": 266,
+          "found": "iron artefact",
+          "pref": "iron artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Z9RBW5ZC-D"
+        },
+        {
+          "start": 3,
+          "end": 13,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 166,
+          "end": 176,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 310,
+          "end": 320,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 458,
+          "end": 468,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 621,
+          "end": 631,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 764,
+          "end": 774,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 926,
+          "end": 936,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1073,
+          "end": 1083,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1232,
+          "end": 1242,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1385,
+          "end": 1395,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1465,
+          "end": 1469,
+          "found": "jade",
+          "pref": "jade",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-H6CDKBM7-Q"
+        },
+        {
+          "start": 1465,
+          "end": 1478,
+          "found": "jade artefact",
+          "pref": "jade artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-ZF9F82PW-9"
+        },
+        {
+          "start": 405,
+          "end": 414,
+          "found": "nilometer",
+          "pref": "nilometer",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-DJCL2WZ2-0"
+        },
+        {
+          "start": 258,
+          "end": 266,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 375,
+          "end": 383,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 851,
+          "end": 859,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 992,
+          "end": 1000,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1470,
+          "end": 1478,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 369,
+          "end": 383,
+          "found": "agate artefact",
+          "pref": "agate artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-GF0SBN8V-0"
+        },
+        {
+          "start": 1018,
+          "end": 1024,
+          "found": "oracle",
+          "pref": "oracle",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-GRV2215C-H"
+        },
+        {
+          "start": 1025,
+          "end": 1029,
+          "found": "bone",
+          "pref": "bone",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F46ZVTJS-M"
+        },
+        {
+          "start": 1452,
+          "end": 1463,
+          "found": "photography",
+          "pref": "photography",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-P7C936WC-D"
+        },
+        {
+          "start": 1445,
+          "end": 1463,
+          "found": "aerial photography",
+          "pref": "aerial photography",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-P2MK1KCP-Q"
+        },
+        {
+          "start": 545,
+          "end": 555,
+          "found": "proportion",
+          "pref": "proportion",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-GRZS35CL-Z"
+        },
+        {
+          "start": 710,
+          "end": 720,
+          "found": "pyramidion",
+          "pref": "pyramidion",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-V7MSHKGN-X"
+        },
+        {
+          "start": 3,
+          "end": 20,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 166,
+          "end": 183,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 310,
+          "end": 327,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 458,
+          "end": 475,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 621,
+          "end": 638,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 764,
+          "end": 781,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 926,
+          "end": 943,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1073,
+          "end": 1090,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1232,
+          "end": 1249,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1385,
+          "end": 1402,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 696,
+          "end": 704,
+          "found": "Sargon I",
+          "pref": "Sargon I",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KF2T4MJZ-W"
+        },
+        {
+          "start": 62,
+          "end": 78,
+          "found": "Afsharid dynasty",
+          "pref": "Afsharid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KNXKZ2SW-0"
+        },
+        {
+          "start": 680,
+          "end": 694,
+          "found": "Archaic Period",
+          "pref": "Archaic Period",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LQS0XLRS-H"
+        },
+        {
+          "start": 823,
+          "end": 842,
+          "found": "Ptolemy V Epiphanes",
+          "pref": "Ptolemy V Epiphanes",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CKTWV8JX-Q"
+        },
+        {
+          "start": 1018,
+          "end": 1029,
+          "found": "oracle bone",
+          "pref": "oracle bone",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Z7910BDD-G"
+        },
+        {
+          "start": 1132,
+          "end": 1147,
+          "found": "Akkadian Period",
+          "pref": "Akkadian Period",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-XJ2L4J5T-9"
+        },
+        {
+          "start": 865,
+          "end": 882,
+          "found": "archaeometallurgy",
+          "pref": "archaeometallurgy",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PMZ3P8QG-7"
+        },
+        {
+          "start": 1484,
+          "end": 1489,
+          "found": "X ray",
+          "pref": "X-ray photoelectron spectroscopy",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q17FH70L-X"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "matches": [
+        {
+          "start": 227,
+          "end": 235,
+          "found": "Iron Age",
+          "pref": "Iron Age",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FLC8PTX5-5"
+        },
+        {
+          "start": 710,
+          "end": 719,
+          "found": "Ahmosis I",
+          "pref": "Ahmosis I",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VH2WTHFH-V"
+        },
+        {
+          "start": 206,
+          "end": 225,
+          "found": "Alexander the Great",
+          "pref": "Alexander the Great",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TPP8LGR9-Z"
+        },
+        {
+          "start": 206,
+          "end": 215,
+          "found": "Alexander",
+          "pref": "Alexander the Great",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TPP8LGR9-Z"
+        },
+        {
+          "start": 842,
+          "end": 854,
+          "found": "Amenemhet IV",
+          "pref": "Amenemhet IV",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F9V2DPXN-Z"
+        },
+        {
+          "start": 42,
+          "end": 50,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 186,
+          "end": 194,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 342,
+          "end": 350,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 502,
+          "end": 510,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 649,
+          "end": 657,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 802,
+          "end": 810,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 958,
+          "end": 966,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1125,
+          "end": 1133,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1279,
+          "end": 1287,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1435,
+          "end": 1443,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1185,
+          "end": 1196,
+          "found": "anastylosis",
+          "pref": "anastylosis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-G8LWHM2Q-1"
+        },
+        {
+          "start": 407,
+          "end": 419,
+          "found": "anthropology",
+          "pref": "anthropology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-N5C4Q12N-9"
+        },
+        {
+          "start": 398,
+          "end": 419,
+          "found": "physical anthropology",
+          "pref": "physical anthropology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RJQWZ1MP-P"
+        },
+        {
+          "start": 693,
+          "end": 704,
+          "found": "archaeology",
+          "pref": "archaeology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FP5M59T8-G"
+        },
+        {
+          "start": 686,
+          "end": 704,
+          "found": "aerial archaeology",
+          "pref": "aerial archaeology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RXL5W089-V"
+        },
+        {
+          "start": 1145,
+          "end": 1161,
+          "found": "archaeomagnetism",
+          "pref": "archaeomagnetism",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-C5W9H2RK-D"
+        },
+        {
+          "start": 1455,
+          "end": 1459,
+          "found": "clay",
+          "pref": "clay",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-J2F523VX-3"
+        },
+        {
+          "start": 1455,
+          "end": 1468,
+          "found": "clay artefact",
+          "pref": "clay artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-DB29N9F1-W"
+        },
+        {
+          "start": 384,
+          "end": 387,
+          "found": "art",
+          "pref": "art",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WBR9F2SX-P"
+        },
+        {
+          "start": 1311,
+          "end": 1314,
+          "found": "art",
+          "pref": "art",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WBR9F2SX-P"
+        },
+        {
+          "start": 978,
+          "end": 993,
+          "found": "Ashurnasirpal I",
+          "pref": "Ashurnasirpal I",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-M89KJMCV-9"
+        },
+        {
+          "start": 1335,
+          "end": 1342,
+          "found": "leather",
+          "pref": "leather",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-HH7R45Q5-D"
+        },
+        {
+          "start": 1335,
+          "end": 1351,
+          "found": "leather artefact",
+          "pref": "leather artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-HBN0SW38-D"
+        },
+        {
+          "start": 1025,
+          "end": 1042,
+          "found": "X ray diffraction",
+          "pref": "X ray diffraction",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-QMH93NGX-X"
+        },
+        {
+          "start": 822,
+          "end": 840,
+          "found": "Achaemenid dynasty",
+          "pref": "Achaemenid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RRFD1XCS-X"
+        },
+        {
+          "start": 860,
+          "end": 875,
+          "found": "Almohad dynasty",
+          "pref": "Almohad dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CVCX215M-P"
+        },
+        {
+          "start": 1470,
+          "end": 1485,
+          "found": "Ayyubid dynasty",
+          "pref": "Ayyubid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-R06GDV1X-4"
+        },
+        {
+          "start": 669,
+          "end": 684,
+          "found": "Kamakura Period",
+          "pref": "Kamakura Period",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-R8KM1CML-4"
+        },
+        {
+          "start": 227,
+          "end": 231,
+          "found": "Iron",
+          "pref": "iron",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q610598W-X"
+        },
+        {
+          "start": 534,
+          "end": 549,
+          "found": "Early Formative",
+          "pref": "Early Formative",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-C001WNQK-N"
+        },
+        {
+          "start": 3,
+          "end": 13,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 147,
+          "end": 157,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 303,
+          "end": 313,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 463,
+          "end": 473,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 610,
+          "end": 620,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 763,
+          "end": 773,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 919,
+          "end": 929,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1086,
+          "end": 1096,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1240,
+          "end": 1250,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1395,
+          "end": 1405,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 669,
+          "end": 677,
+          "found": "Kamakura",
+          "pref": "Kamakura",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LH95KMV3-N"
+        },
+        {
+          "start": 378,
+          "end": 383,
+          "found": "brass",
+          "pref": "brass",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PQFNQVCW-R"
+        },
+        {
+          "start": 378,
+          "end": 392,
+          "found": "brass artefact",
+          "pref": "brass artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B0V3RDWN-6"
+        },
+        {
+          "start": 384,
+          "end": 392,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1321,
+          "end": 1329,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1343,
+          "end": 1351,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1460,
+          "end": 1468,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1500,
+          "end": 1508,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1491,
+          "end": 1499,
+          "found": "obsidian",
+          "pref": "obsidian",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-J07PKPM2-1"
+        },
+        {
+          "start": 1491,
+          "end": 1508,
+          "found": "obsidian artefact",
+          "pref": "obsidian artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-T6RTG4D3-L"
+        },
+        {
+          "start": 1299,
+          "end": 1303,
+          "found": "gold",
+          "pref": "gold",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LQDM9VPW-L"
+        },
+        {
+          "start": 1316,
+          "end": 1320,
+          "found": "gold",
+          "pref": "gold",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LQDM9VPW-L"
+        },
+        {
+          "start": 1316,
+          "end": 1329,
+          "found": "gold artefact",
+          "pref": "gold artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-R4XHPJFM-M"
+        },
+        {
+          "start": 1299,
+          "end": 1314,
+          "found": "goldsmith's art",
+          "pref": "goldsmith's art",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TT0GTZLR-N"
+        },
+        {
+          "start": 995,
+          "end": 1007,
+          "found": "organization",
+          "pref": "organization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-T6VBWQL4-B"
+        },
+        {
+          "start": 995,
+          "end": 1019,
+          "found": "organization of research",
+          "pref": "organization of research",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-JX50HN6N-4"
+        },
+        {
+          "start": 555,
+          "end": 559,
+          "found": "bone",
+          "pref": "bone",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F46ZVTJS-M"
+        },
+        {
+          "start": 555,
+          "end": 566,
+          "found": "bone object",
+          "pref": "bone object",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-BWPX61GL-7"
+        },
+        {
+          "start": 1163,
+          "end": 1179,
+          "found": "Palaeobabylonian",
+          "pref": "Palaeobabylonian",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-D5QL40CS-Z"
+        },
+        {
+          "start": 91,
+          "end": 96,
+          "found": "stone",
+          "pref": "stone",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F475K736-L"
+        },
+        {
+          "start": 91,
+          "end": 103,
+          "found": "stone object",
+          "pref": "stone object",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-DSCK9PQS-L"
+        },
+        {
+          "start": 522,
+          "end": 532,
+          "found": "pyramidion",
+          "pref": "pyramidion",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-V7MSHKGN-X"
+        },
+        {
+          "start": 3,
+          "end": 20,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 147,
+          "end": 164,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 303,
+          "end": 320,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 463,
+          "end": 480,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 610,
+          "end": 627,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 763,
+          "end": 780,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 919,
+          "end": 936,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1086,
+          "end": 1103,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1240,
+          "end": 1257,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1395,
+          "end": 1412,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 62,
+          "end": 69,
+          "found": "Ghurids",
+          "pref": "Ghurids",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FW9W23QS-6"
+        },
+        {
+          "start": 362,
+          "end": 376,
+          "found": "Archaic Period",
+          "pref": "Archaic Period",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LQS0XLRS-H"
+        },
+        {
+          "start": 71,
+          "end": 85,
+          "found": "Mathura School",
+          "pref": "Mathura School",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KN01PXC9-3"
+        },
+        {
+          "start": 1025,
+          "end": 1030,
+          "found": "X ray",
+          "pref": "X-ray photoelectron spectroscopy",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q17FH70L-X"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "matches": [
+        {
+          "start": 860,
+          "end": 865,
+          "found": "agate",
+          "pref": "agate",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CDSLDXB4-Z"
+        },
+        {
+          "start": 1197,
+          "end": 1202,
+          "found": "amber",
+          "pref": "amber",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-S7ZDXGL3-7"
+        },
+        {
+          "start": 1197,
+          "end": 1211,
+          "found": "amber artefact",
+          "pref": "amber artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-V68P3NZ6-Q"
+        },
+        {
+          "start": 698,
+          "end": 706,
+          "found": "amethyst",
+          "pref": "amethyst",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-D29TGRXP-T"
+        },
+        {
+          "start": 698,
+          "end": 715,
+          "found": "amethyst artefact",
+          "pref": "amethyst artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F0WQNGKG-W"
+        },
+        {
+          "start": 42,
+          "end": 50,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 201,
+          "end": 209,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 348,
+          "end": 356,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 504,
+          "end": 512,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 657,
+          "end": 665,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 825,
+          "end": 833,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 982,
+          "end": 990,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1137,
+          "end": 1145,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1294,
+          "end": 1302,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1452,
+          "end": 1460,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 546,
+          "end": 558,
+          "found": "anthropology",
+          "pref": "anthropology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-N5C4Q12N-9"
+        },
+        {
+          "start": 537,
+          "end": 558,
+          "found": "physical anthropology",
+          "pref": "physical anthropology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RJQWZ1MP-P"
+        },
+        {
+          "start": 78,
+          "end": 92,
+          "found": "Antoninus Pius",
+          "pref": "Antoninus Pius",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WGPXBWC5-M"
+        },
+        {
+          "start": 107,
+          "end": 118,
+          "found": "archaeology",
+          "pref": "archaeology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FP5M59T8-G"
+        },
+        {
+          "start": 98,
+          "end": 118,
+          "found": "Biblical archaeology",
+          "pref": "Biblical archaeology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-MNMKH7S1-W"
+        },
+        {
+          "start": 721,
+          "end": 742,
+          "found": "architectural element",
+          "pref": "architectural element",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-C3PHFJJ7-M"
+        },
+        {
+          "start": 524,
+          "end": 527,
+          "found": "art",
+          "pref": "art",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WBR9F2SX-P"
+        },
+        {
+          "start": 707,
+          "end": 710,
+          "found": "art",
+          "pref": "art",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WBR9F2SX-P"
+        },
+        {
+          "start": 1157,
+          "end": 1163,
+          "found": "bamboo",
+          "pref": "bamboo",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-J8JHWHZD-4"
+        },
+        {
+          "start": 1157,
+          "end": 1172,
+          "found": "bamboo artefact",
+          "pref": "bamboo artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CB2MZ930-3"
+        },
+        {
+          "start": 230,
+          "end": 235,
+          "found": "betyl",
+          "pref": "betyl",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-J0LP8LH3-C"
+        },
+        {
+          "start": 677,
+          "end": 682,
+          "found": "canon",
+          "pref": "canon",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-SWQ32CQW-2"
+        },
+        {
+          "start": 677,
+          "end": 696,
+          "found": "canon of proportion",
+          "pref": "canon of proportion",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-HVTV6G9S-H"
+        },
+        {
+          "start": 564,
+          "end": 574,
+          "found": "Choresmian",
+          "pref": "Choresmian",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-D1WNDVZL-L"
+        },
+        {
+          "start": 1329,
+          "end": 1347,
+          "found": "Achaemenid dynasty",
+          "pref": "Achaemenid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RRFD1XCS-X"
+        },
+        {
+          "start": 385,
+          "end": 400,
+          "found": "Arsacid dynasty",
+          "pref": "Arsacid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FBV4VQGD-F"
+        },
+        {
+          "start": 368,
+          "end": 383,
+          "found": "Attalid dynasty",
+          "pref": "Attalid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TM1D3917-6"
+        },
+        {
+          "start": 1353,
+          "end": 1368,
+          "found": "Ayyubid dynasty",
+          "pref": "Ayyubid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-R06GDV1X-4"
+        },
+        {
+          "start": 845,
+          "end": 858,
+          "found": "Chola dynasty",
+          "pref": "Chola dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-L934C0WL-Z"
+        },
+        {
+          "start": 1489,
+          "end": 1494,
+          "found": "stamp",
+          "pref": "stamp",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-M9DCBB3W-G"
+        },
+        {
+          "start": 3,
+          "end": 13,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 162,
+          "end": 172,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 309,
+          "end": 319,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 465,
+          "end": 475,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 618,
+          "end": 628,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 786,
+          "end": 796,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 943,
+          "end": 953,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1098,
+          "end": 1108,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1255,
+          "end": 1265,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1412,
+          "end": 1422,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 528,
+          "end": 535,
+          "found": "history",
+          "pref": "history",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FVQTBZCZ-G"
+        },
+        {
+          "start": 524,
+          "end": 535,
+          "found": "art history",
+          "pref": "art history",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-M9CH9S8K-1"
+        },
+        {
+          "start": 1026,
+          "end": 1037,
+          "found": "inscription",
+          "pref": "inscription",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-C5FNDJD2-6"
+        },
+        {
+          "start": 1020,
+          "end": 1037,
+          "found": "Greek inscription",
+          "pref": "Greek inscription",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-NLHSJTWS-X"
+        },
+        {
+          "start": 707,
+          "end": 715,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 866,
+          "end": 874,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1164,
+          "end": 1172,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1183,
+          "end": 1191,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1203,
+          "end": 1211,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1319,
+          "end": 1327,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1507,
+          "end": 1515,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 860,
+          "end": 874,
+          "found": "agate artefact",
+          "pref": "agate artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-GF0SBN8V-0"
+        },
+        {
+          "start": 1500,
+          "end": 1515,
+          "found": "bronze artefact",
+          "pref": "bronze artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-HJHQBDQC-4"
+        },
+        {
+          "start": 241,
+          "end": 253,
+          "found": "organization",
+          "pref": "organization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-T6VBWQL4-B"
+        },
+        {
+          "start": 887,
+          "end": 899,
+          "found": "organization",
+          "pref": "organization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-T6VBWQL4-B"
+        },
+        {
+          "start": 241,
+          "end": 265,
+          "found": "organization of research",
+          "pref": "organization of research",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-JX50HN6N-4"
+        },
+        {
+          "start": 880,
+          "end": 899,
+          "found": "social organization",
+          "pref": "social organization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PGTBQ5R0-H"
+        },
+        {
+          "start": 1002,
+          "end": 1018,
+          "found": "Palaeobabylonian",
+          "pref": "Palaeobabylonian",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-D5QL40CS-Z"
+        },
+        {
+          "start": 1043,
+          "end": 1054,
+          "found": "petrography",
+          "pref": "petrography",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q3WK0ZB6-M"
+        },
+        {
+          "start": 1314,
+          "end": 1318,
+          "found": "lead",
+          "pref": "lead",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VLX3N05B-F"
+        },
+        {
+          "start": 1314,
+          "end": 1327,
+          "found": "lead artefact",
+          "pref": "lead artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-SZ9XZB2W-V"
+        },
+        {
+          "start": 686,
+          "end": 696,
+          "found": "proportion",
+          "pref": "proportion",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-GRZS35CL-Z"
+        },
+        {
+          "start": 3,
+          "end": 20,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 162,
+          "end": 179,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 309,
+          "end": 326,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 465,
+          "end": 482,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 618,
+          "end": 635,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 786,
+          "end": 803,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 943,
+          "end": 960,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1098,
+          "end": 1115,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1255,
+          "end": 1272,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1412,
+          "end": 1429,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1174,
+          "end": 1182,
+          "found": "steatite",
+          "pref": "steatite",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WCMS2NBD-L"
+        },
+        {
+          "start": 1174,
+          "end": 1191,
+          "found": "steatite artefact",
+          "pref": "steatite artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-ZTGSHM8L-6"
+        },
+        {
+          "start": 1480,
+          "end": 1494,
+          "found": "amphoric stamp",
+          "pref": "amphoric stamp",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PLGLBJRG-N"
+        },
+        {
+          "start": 406,
+          "end": 421,
+          "found": "crystallography",
+          "pref": "crystallography",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-BL0Q6547-8"
+        },
+        {
+          "start": 221,
+          "end": 228,
+          "found": "Ghurids",
+          "pref": "Ghurids",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FW9W23QS-6"
+        },
+        {
+          "start": 62,
+          "end": 76,
+          "found": "triumphal arch",
+          "pref": "triumphal arch",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q5W6GWGC-H"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "matches": [
+        {
+          "start": 1007,
+          "end": 1017,
+          "found": "Aegyptiaca",
+          "pref": "Aegyptiaca",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-HGMJJ71S-5"
+        },
+        {
+          "start": 381,
+          "end": 386,
+          "found": "agate",
+          "pref": "agate",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CDSLDXB4-Z"
+        },
+        {
+          "start": 96,
+          "end": 103,
+          "found": "bradawl",
+          "pref": "bradawl",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CH97C0CX-2"
+        },
+        {
+          "start": 1345,
+          "end": 1364,
+          "found": "Alexander the Great",
+          "pref": "Alexander the Great",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TPP8LGR9-Z"
+        },
+        {
+          "start": 1345,
+          "end": 1354,
+          "found": "Alexander",
+          "pref": "Alexander the Great",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TPP8LGR9-Z"
+        },
+        {
+          "start": 367,
+          "end": 379,
+          "found": "Amenemhet IV",
+          "pref": "Amenemhet IV",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F9V2DPXN-Z"
+        },
+        {
+          "start": 1153,
+          "end": 1165,
+          "found": "Amenhotep II",
+          "pref": "Amenhotep II",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-N847DN3F-P"
+        },
+        {
+          "start": 42,
+          "end": 50,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 186,
+          "end": 194,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 347,
+          "end": 355,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 495,
+          "end": 503,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 658,
+          "end": 666,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 812,
+          "end": 820,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 987,
+          "end": 995,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1133,
+          "end": 1141,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1286,
+          "end": 1294,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1448,
+          "end": 1456,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1040,
+          "end": 1050,
+          "found": "beekeeping",
+          "pref": "beekeeping",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VT9QT3KF-K"
+        },
+        {
+          "start": 1306,
+          "end": 1320,
+          "found": "Aramaic people",
+          "pref": "Aramaic people",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TW69WFB3-N"
+        },
+        {
+          "start": 1019,
+          "end": 1034,
+          "found": "Ashurnasirpal I",
+          "pref": "Ashurnasirpal I",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-M89KJMCV-9"
+        },
+        {
+          "start": 1335,
+          "end": 1339,
+          "found": "bowl",
+          "pref": "bowl",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-NH44H16T-C"
+        },
+        {
+          "start": 563,
+          "end": 575,
+          "found": "conservation",
+          "pref": "conservation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PQ5061W2-P"
+        },
+        {
+          "start": 1482,
+          "end": 1492,
+          "found": "decoration",
+          "pref": "decoration",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LJJM3H1P-4"
+        },
+        {
+          "start": 678,
+          "end": 696,
+          "found": "Achaemenid dynasty",
+          "pref": "Achaemenid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RRFD1XCS-X"
+        },
+        {
+          "start": 515,
+          "end": 530,
+          "found": "Almohad dynasty",
+          "pref": "Almohad dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CVCX215M-P"
+        },
+        {
+          "start": 866,
+          "end": 881,
+          "found": "Arsacid dynasty",
+          "pref": "Arsacid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FBV4VQGD-F"
+        },
+        {
+          "start": 1167,
+          "end": 1182,
+          "found": "Attalid dynasty",
+          "pref": "Attalid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TM1D3917-6"
+        },
+        {
+          "start": 1188,
+          "end": 1203,
+          "found": "Kamakura Period",
+          "pref": "Kamakura Period",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-R8KM1CML-4"
+        },
+        {
+          "start": 3,
+          "end": 13,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 147,
+          "end": 157,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 308,
+          "end": 318,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 456,
+          "end": 466,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 619,
+          "end": 629,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 773,
+          "end": 783,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 948,
+          "end": 958,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1094,
+          "end": 1104,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1247,
+          "end": 1257,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1408,
+          "end": 1418,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 893,
+          "end": 904,
+          "found": "inscription",
+          "pref": "inscription",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-C5FNDJD2-6"
+        },
+        {
+          "start": 887,
+          "end": 904,
+          "found": "Greek inscription",
+          "pref": "Greek inscription",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-NLHSJTWS-X"
+        },
+        {
+          "start": 1188,
+          "end": 1196,
+          "found": "Kamakura",
+          "pref": "Kamakura",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LH95KMV3-N"
+        },
+        {
+          "start": 387,
+          "end": 395,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 538,
+          "end": 546,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1504,
+          "end": 1512,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 381,
+          "end": 395,
+          "found": "agate artefact",
+          "pref": "agate artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-GF0SBN8V-0"
+        },
+        {
+          "start": 705,
+          "end": 717,
+          "found": "organization",
+          "pref": "organization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-T6VBWQL4-B"
+        },
+        {
+          "start": 698,
+          "end": 717,
+          "found": "social organization",
+          "pref": "social organization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PGTBQ5R0-H"
+        },
+        {
+          "start": 401,
+          "end": 405,
+          "found": "bone",
+          "pref": "bone",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F46ZVTJS-M"
+        },
+        {
+          "start": 401,
+          "end": 412,
+          "found": "bone object",
+          "pref": "bone object",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-BWPX61GL-7"
+        },
+        {
+          "start": 3,
+          "end": 20,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 147,
+          "end": 164,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 308,
+          "end": 325,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 456,
+          "end": 473,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 619,
+          "end": 636,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 773,
+          "end": 790,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 948,
+          "end": 965,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1094,
+          "end": 1111,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1247,
+          "end": 1264,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1408,
+          "end": 1425,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1494,
+          "end": 1503,
+          "found": "turquoise",
+          "pref": "turquoise",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WG8WL9HM-L"
+        },
+        {
+          "start": 1494,
+          "end": 1512,
+          "found": "turquoise artefact",
+          "pref": "turquoise artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RNGS31QX-0"
+        },
+        {
+          "start": 532,
+          "end": 537,
+          "found": "glass",
+          "pref": "glass",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-J0RZFDJW-6"
+        },
+        {
+          "start": 532,
+          "end": 546,
+          "found": "glass artefact",
+          "pref": "glass artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-X30J7Q65-K"
+        },
+        {
+          "start": 206,
+          "end": 222,
+          "found": "Aghlabid dynasty",
+          "pref": "Aghlabid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-V9H6MM4Z-D"
+        },
+        {
+          "start": 1468,
+          "end": 1492,
+          "found": "architectural decoration",
+          "pref": "architectural decoration",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-GR7XZ6J6-S"
+        },
+        {
+          "start": 552,
+          "end": 575,
+          "found": "preventive conservation",
+          "pref": "preventive conservation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KXLG9ZBF-6"
+        },
+        {
+          "start": 248,
+          "end": 264,
+          "found": "Angkorian Period",
+          "pref": "Angkorian Period",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-G3H3M3XS-8"
+        },
+        {
+          "start": 62,
+          "end": 69,
+          "found": "Ghurids",
+          "pref": "Ghurids",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FW9W23QS-6"
+        },
+        {
+          "start": 224,
+          "end": 242,
+          "found": "Hellenistic Period",
+          "pref": "Hellenistic Period",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-X0ZD0TTR-D"
+        },
+        {
+          "start": 1518,
+          "end": 1532,
+          "found": "Archaic Period",
+          "pref": "Archaic Period",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LQS0XLRS-H"
+        },
+        {
+          "start": 71,
+          "end": 90,
+          "found": "Ptolemy V Epiphanes",
+          "pref": "Ptolemy V Epiphanes",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CKTWV8JX-Q"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "matches": [
+        {
+          "start": 258,
+          "end": 268,
+          "found": "Bronze Age",
+          "pref": "Bronze Age",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KPRRLFDK-8"
+        },
+        {
+          "start": 81,
+          "end": 91,
+          "found": "Ahmosis II",
+          "pref": "Ahmosis II",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-S3BPCSSF-H"
+        },
+        {
+          "start": 1317,
+          "end": 1325,
+          "found": "Akkadian",
+          "pref": "Akkadian",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KPP14PSQ-J"
+        },
+        {
+          "start": 879,
+          "end": 887,
+          "found": "amethyst",
+          "pref": "amethyst",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-D29TGRXP-T"
+        },
+        {
+          "start": 879,
+          "end": 896,
+          "found": "amethyst artefact",
+          "pref": "amethyst artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F0WQNGKG-W"
+        },
+        {
+          "start": 42,
+          "end": 50,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 197,
+          "end": 205,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 351,
+          "end": 359,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 511,
+          "end": 519,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 669,
+          "end": 677,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 819,
+          "end": 827,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 979,
+          "end": 987,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1142,
+          "end": 1150,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1297,
+          "end": 1305,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1458,
+          "end": 1466,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1024,
+          "end": 1036,
+          "found": "anthropology",
+          "pref": "anthropology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-N5C4Q12N-9"
+        },
+        {
+          "start": 1015,
+          "end": 1036,
+          "found": "physical anthropology",
+          "pref": "physical anthropology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RJQWZ1MP-P"
+        },
+        {
+          "start": 1527,
+          "end": 1536,
+          "found": "antiquity",
+          "pref": "Antiquity",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FR7R65XS-N"
+        },
+        {
+          "start": 1521,
+          "end": 1536,
+          "found": "Greek antiquity",
+          "pref": "Greek antiquity",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-JCSHPV8H-7"
+        },
+        {
+          "start": 999,
+          "end": 1013,
+          "found": "Aramaic people",
+          "pref": "Aramaic people",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TW69WFB3-N"
+        },
+        {
+          "start": 241,
+          "end": 252,
+          "found": "archaeology",
+          "pref": "archaeology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FP5M59T8-G"
+        },
+        {
+          "start": 232,
+          "end": 252,
+          "found": "Biblical archaeology",
+          "pref": "Biblical archaeology",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-MNMKH7S1-W"
+        },
+        {
+          "start": 689,
+          "end": 693,
+          "found": "Asia",
+          "pref": "Asia",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-H92CPTP0-5"
+        },
+        {
+          "start": 689,
+          "end": 699,
+          "found": "Asia Minor",
+          "pref": "Asia Minor",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CL2G61J4-M"
+        },
+        {
+          "start": 422,
+          "end": 428,
+          "found": "banner",
+          "pref": "banner",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-N4VR003N-M"
+        },
+        {
+          "start": 1484,
+          "end": 1496,
+          "found": "Civilization",
+          "pref": "civilization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Z67SF07Q-X"
+        },
+        {
+          "start": 548,
+          "end": 552,
+          "found": "horn",
+          "pref": "horn",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-DSSSX7NS-Q"
+        },
+        {
+          "start": 548,
+          "end": 561,
+          "found": "horn artefact",
+          "pref": "horn artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-C9RHZWRH-V"
+        },
+        {
+          "start": 1334,
+          "end": 1341,
+          "found": "leather",
+          "pref": "leather",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-HH7R45Q5-D"
+        },
+        {
+          "start": 1334,
+          "end": 1350,
+          "found": "leather artefact",
+          "pref": "leather artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-HBN0SW38-D"
+        },
+        {
+          "start": 62,
+          "end": 79,
+          "found": "X ray diffraction",
+          "pref": "X ray diffraction",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-QMH93NGX-X"
+        },
+        {
+          "start": 1197,
+          "end": 1214,
+          "found": "Almoravid dynasty",
+          "pref": "Almoravid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-C5D2MMLT-0"
+        },
+        {
+          "start": 839,
+          "end": 854,
+          "found": "Ayyubid dynasty",
+          "pref": "Ayyubid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-R06GDV1X-4"
+        },
+        {
+          "start": 856,
+          "end": 864,
+          "found": "electrum",
+          "pref": "electrum",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-N2XD18WM-B"
+        },
+        {
+          "start": 856,
+          "end": 873,
+          "found": "electrum artefact",
+          "pref": "electrum artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q2RDG9TH-Q"
+        },
+        {
+          "start": 531,
+          "end": 537,
+          "found": "enamel",
+          "pref": "enamel",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RJPCFJD7-F"
+        },
+        {
+          "start": 531,
+          "end": 546,
+          "found": "enamel artefact",
+          "pref": "enamel artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WS5RMSP6-J"
+        },
+        {
+          "start": 413,
+          "end": 428,
+          "found": "standard banner",
+          "pref": "standard banner",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-L5TPPB7S-R"
+        },
+        {
+          "start": 3,
+          "end": 13,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 158,
+          "end": 168,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 312,
+          "end": 322,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 472,
+          "end": 482,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 630,
+          "end": 640,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 780,
+          "end": 790,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 940,
+          "end": 950,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1103,
+          "end": 1113,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1258,
+          "end": 1268,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1418,
+          "end": 1428,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1478,
+          "end": 1496,
+          "found": "Indus Civilization",
+          "pref": "Indus Civilization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-S31QWLCR-T"
+        },
+        {
+          "start": 103,
+          "end": 114,
+          "found": "inscription",
+          "pref": "inscription",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-C5FNDJD2-6"
+        },
+        {
+          "start": 97,
+          "end": 114,
+          "found": "Greek inscription",
+          "pref": "Greek inscription",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-NLHSJTWS-X"
+        },
+        {
+          "start": 701,
+          "end": 705,
+          "found": "jade",
+          "pref": "jade",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-H6CDKBM7-Q"
+        },
+        {
+          "start": 701,
+          "end": 714,
+          "found": "jade artefact",
+          "pref": "jade artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-ZF9F82PW-9"
+        },
+        {
+          "start": 1179,
+          "end": 1184,
+          "found": "metal",
+          "pref": "metal",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-ZPXFBKMB-2"
+        },
+        {
+          "start": 1505,
+          "end": 1510,
+          "found": "metal",
+          "pref": "metal",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-ZPXFBKMB-2"
+        },
+        {
+          "start": 1179,
+          "end": 1191,
+          "found": "metal object",
+          "pref": "metal object",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-NSKFTSWF-F"
+        },
+        {
+          "start": 222,
+          "end": 230,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 538,
+          "end": 546,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 553,
+          "end": 561,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 706,
+          "end": 714,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 865,
+          "end": 873,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 888,
+          "end": 896,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1051,
+          "end": 1059,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1342,
+          "end": 1350,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 217,
+          "end": 221,
+          "found": "gold",
+          "pref": "gold",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LQDM9VPW-L"
+        },
+        {
+          "start": 217,
+          "end": 230,
+          "found": "gold artefact",
+          "pref": "gold artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-R4XHPJFM-M"
+        },
+        {
+          "start": 574,
+          "end": 586,
+          "found": "organization",
+          "pref": "organization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-T6VBWQL4-B"
+        },
+        {
+          "start": 567,
+          "end": 586,
+          "found": "social organization",
+          "pref": "social organization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PGTBQ5R0-H"
+        },
+        {
+          "start": 1363,
+          "end": 1374,
+          "found": "photography",
+          "pref": "photography",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-P7C936WC-D"
+        },
+        {
+          "start": 1356,
+          "end": 1374,
+          "found": "aerial photography",
+          "pref": "aerial photography",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-P2MK1KCP-Q"
+        },
+        {
+          "start": 3,
+          "end": 20,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 158,
+          "end": 175,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 312,
+          "end": 329,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 472,
+          "end": 489,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 630,
+          "end": 647,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 780,
+          "end": 797,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 940,
+          "end": 957,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1103,
+          "end": 1120,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1258,
+          "end": 1275,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1418,
+          "end": 1435,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1042,
+          "end": 1050,
+          "found": "steatite",
+          "pref": "steatite",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WCMS2NBD-L"
+        },
+        {
+          "start": 1042,
+          "end": 1059,
+          "found": "steatite artefact",
+          "pref": "steatite artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-ZTGSHM8L-6"
+        },
+        {
+          "start": 720,
+          "end": 736,
+          "found": "Afsharid dynasty",
+          "pref": "Afsharid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KNXKZ2SW-0"
+        },
+        {
+          "start": 1162,
+          "end": 1177,
+          "found": "crystallography",
+          "pref": "crystallography",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-BL0Q6547-8"
+        },
+        {
+          "start": 391,
+          "end": 407,
+          "found": "Angkorian Period",
+          "pref": "Angkorian Period",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-G3H3M3XS-8"
+        },
+        {
+          "start": 1317,
+          "end": 1332,
+          "found": "Akkadian Period",
+          "pref": "Akkadian Period",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-XJ2L4J5T-9"
+        },
+        {
+          "start": 1498,
+          "end": 1515,
+          "found": "archaeometallurgy",
+          "pref": "archaeometallurgy",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PMZ3P8QG-7"
+        },
+        {
+          "start": 62,
+          "end": 67,
+          "found": "X ray",
+          "pref": "X-ray photoelectron spectroscopy",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q17FH70L-X"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "matches": [
+        {
+          "start": 63,
+          "end": 73,
+          "found": "Aegyptiaca",
+          "pref": "Aegyptiaca",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-HGMJJ71S-5"
+        },
+        {
+          "start": 367,
+          "end": 376,
+          "found": "Akhenaton",
+          "pref": "Akhenaton",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Z6T690R4-L"
+        },
+        {
+          "start": 1154,
+          "end": 1161,
+          "found": "bradawl",
+          "pref": "bradawl",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CH97C0CX-2"
+        },
+        {
+          "start": 1463,
+          "end": 1476,
+          "found": "Amenemhet III",
+          "pref": "Amenemhet III",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LJ2VCRG4-3"
+        },
+        {
+          "start": 703,
+          "end": 711,
+          "found": "amethyst",
+          "pref": "amethyst",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-D29TGRXP-T"
+        },
+        {
+          "start": 703,
+          "end": 720,
+          "found": "amethyst artefact",
+          "pref": "amethyst artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F0WQNGKG-W"
+        },
+        {
+          "start": 43,
+          "end": 51,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 193,
+          "end": 201,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 347,
+          "end": 355,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 494,
+          "end": 502,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 651,
+          "end": 659,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 804,
+          "end": 812,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 967,
+          "end": 975,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1121,
+          "end": 1129,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1269,
+          "end": 1277,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 1424,
+          "end": 1432,
+          "found": "analysis",
+          "pref": "analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VGPTW8Z9-H"
+        },
+        {
+          "start": 987,
+          "end": 1001,
+          "found": "Antoninus Pius",
+          "pref": "Antoninus Pius",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WGPXBWC5-M"
+        },
+        {
+          "start": 1021,
+          "end": 1037,
+          "found": "archaeoastronomy",
+          "pref": "archaeoastronomy",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-JNB45S15-L"
+        },
+        {
+          "start": 1289,
+          "end": 1304,
+          "found": "Ashurnasirpal I",
+          "pref": "Ashurnasirpal I",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-M89KJMCV-9"
+        },
+        {
+          "start": 395,
+          "end": 403,
+          "found": "Assyrian",
+          "pref": "Assyrian",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LNBXN6QT-0"
+        },
+        {
+          "start": 523,
+          "end": 529,
+          "found": "banner",
+          "pref": "banner",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-N4VR003N-M"
+        },
+        {
+          "start": 1173,
+          "end": 1185,
+          "found": "Civilization",
+          "pref": "civilization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Z67SF07Q-X"
+        },
+        {
+          "start": 249,
+          "end": 254,
+          "found": "shell",
+          "pref": "shell",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LBDHNPZN-3"
+        },
+        {
+          "start": 249,
+          "end": 263,
+          "found": "shell artefact",
+          "pref": "shell artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F4PHSBPL-H"
+        },
+        {
+          "start": 1306,
+          "end": 1313,
+          "found": "crystal",
+          "pref": "crystal",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-X0B79GWQ-B"
+        },
+        {
+          "start": 824,
+          "end": 842,
+          "found": "Achaemenid dynasty",
+          "pref": "Achaemenid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RRFD1XCS-X"
+        },
+        {
+          "start": 94,
+          "end": 109,
+          "found": "Almohad dynasty",
+          "pref": "Almohad dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CVCX215M-P"
+        },
+        {
+          "start": 1482,
+          "end": 1497,
+          "found": "Arsacid dynasty",
+          "pref": "Arsacid dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-FBV4VQGD-F"
+        },
+        {
+          "start": 75,
+          "end": 88,
+          "found": "Chola dynasty",
+          "pref": "Chola dynasty",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-L934C0WL-Z"
+        },
+        {
+          "start": 531,
+          "end": 537,
+          "found": "enamel",
+          "pref": "enamel",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RJPCFJD7-F"
+        },
+        {
+          "start": 531,
+          "end": 546,
+          "found": "enamel artefact",
+          "pref": "enamel artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-WS5RMSP6-J"
+        },
+        {
+          "start": 395,
+          "end": 410,
+          "found": "Assyrian Empire",
+          "pref": "Assyrian Empire",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-LT038K38-7"
+        },
+        {
+          "start": 514,
+          "end": 529,
+          "found": "standard banner",
+          "pref": "standard banner",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-L5TPPB7S-R"
+        },
+        {
+          "start": 3,
+          "end": 13,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 153,
+          "end": 163,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 307,
+          "end": 317,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 454,
+          "end": 464,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 611,
+          "end": 621,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 764,
+          "end": 774,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 927,
+          "end": 937,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1081,
+          "end": 1091,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1229,
+          "end": 1239,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 1383,
+          "end": 1393,
+          "found": "excavation",
+          "pref": "excavation",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B3LZPBWB-N"
+        },
+        {
+          "start": 869,
+          "end": 883,
+          "found": "artistic taste",
+          "pref": "artistic taste",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PJD46CK1-X"
+        },
+        {
+          "start": 1167,
+          "end": 1185,
+          "found": "Indus Civilization",
+          "pref": "Indus Civilization",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-S31QWLCR-T"
+        },
+        {
+          "start": 1450,
+          "end": 1461,
+          "found": "inscription",
+          "pref": "inscription",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-C5FNDJD2-6"
+        },
+        {
+          "start": 1444,
+          "end": 1461,
+          "found": "Greek inscription",
+          "pref": "Greek inscription",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-NLHSJTWS-X"
+        },
+        {
+          "start": 229,
+          "end": 234,
+          "found": "brass",
+          "pref": "brass",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-PQFNQVCW-R"
+        },
+        {
+          "start": 229,
+          "end": 243,
+          "found": "brass artefact",
+          "pref": "brass artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-B0V3RDWN-6"
+        },
+        {
+          "start": 235,
+          "end": 243,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 255,
+          "end": 263,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 538,
+          "end": 546,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 676,
+          "end": 684,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 712,
+          "end": 720,
+          "found": "artefact",
+          "pref": "artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Q216BRR1-N"
+        },
+        {
+          "start": 1326,
+          "end": 1339,
+          "found": "wooden object",
+          "pref": "wooden object",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TKBLP2DW-8"
+        },
+        {
+          "start": 686,
+          "end": 692,
+          "found": "oracle",
+          "pref": "oracle",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-GRV2215C-H"
+        },
+        {
+          "start": 693,
+          "end": 697,
+          "found": "bone",
+          "pref": "bone",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F46ZVTJS-M"
+        },
+        {
+          "start": 1141,
+          "end": 1145,
+          "found": "bone",
+          "pref": "bone",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-F46ZVTJS-M"
+        },
+        {
+          "start": 1141,
+          "end": 1152,
+          "found": "bone object",
+          "pref": "bone object",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-BWPX61GL-7"
+        },
+        {
+          "start": 671,
+          "end": 675,
+          "found": "lead",
+          "pref": "lead",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VLX3N05B-F"
+        },
+        {
+          "start": 671,
+          "end": 684,
+          "found": "lead artefact",
+          "pref": "lead artefact",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-SZ9XZB2W-V"
+        },
+        {
+          "start": 3,
+          "end": 20,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 153,
+          "end": 170,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 307,
+          "end": 324,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 454,
+          "end": 471,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 611,
+          "end": 628,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 764,
+          "end": 781,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 927,
+          "end": 944,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1081,
+          "end": 1098,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1229,
+          "end": 1246,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1383,
+          "end": 1400,
+          "found": "excavation report",
+          "pref": "excavation report",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-TS5LMM7Z-N"
+        },
+        {
+          "start": 1012,
+          "end": 1015,
+          "found": "urn",
+          "pref": "urn",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-DC0ZC1NZ-F"
+        },
+        {
+          "start": 1292,
+          "end": 1295,
+          "found": "urn",
+          "pref": "urn",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-DC0ZC1NZ-F"
+        },
+        {
+          "start": 1003,
+          "end": 1015,
+          "found": "cinerary urn",
+          "pref": "cinerary urn",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-NNBHG8SW-Q"
+        },
+        {
+          "start": 1306,
+          "end": 1320,
+          "found": "crystal object",
+          "pref": "crystal object",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-RRNZ6VS7-T"
+        },
+        {
+          "start": 552,
+          "end": 567,
+          "found": "Amarnian Period",
+          "pref": "Amarnian Period",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-VKLK591Z-N"
+        },
+        {
+          "start": 213,
+          "end": 227,
+          "found": "Mathura School",
+          "pref": "Mathura School",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KN01PXC9-3"
+        },
+        {
+          "start": 378,
+          "end": 389,
+          "found": "Cleopatra I",
+          "pref": "Cleopatra I",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-KBXFPQPP-5"
+        },
+        {
+          "start": 844,
+          "end": 863,
+          "found": "Ptolemy V Epiphanes",
+          "pref": "Ptolemy V Epiphanes",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-CKTWV8JX-Q"
+        },
+        {
+          "start": 686,
+          "end": 697,
+          "found": "oracle bone",
+          "pref": "oracle bone",
+          "uri": "http://data.loterre.fr/ark:/67375/27X-Z7910BDD-G"
+        }
+      ]
+    }
+  ]
+}

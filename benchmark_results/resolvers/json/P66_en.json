@@ -1,0 +1,4504 @@
+{
+  "results": [
+    {
+      "id": "0",
+      "matches": [
+        {
+          "start": 1858,
+          "end": 1865,
+          "found": "process",
+          "pref": "process",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RV949J4G-9"
+        },
+        {
+          "start": 391,
+          "end": 397,
+          "found": "event-",
+          "pref": "event",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZVGCX1H2-G"
+        },
+        {
+          "start": 3085,
+          "end": 3091,
+          "found": "event-",
+          "pref": "event",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZVGCX1H2-G"
+        },
+        {
+          "start": 391,
+          "end": 396,
+          "found": "event",
+          "pref": "event",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZVGCX1H2-G"
+        },
+        {
+          "start": 446,
+          "end": 453,
+          "found": "measure",
+          "pref": "measure",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XM9K9XL8-S"
+        },
+        {
+          "start": 1599,
+          "end": 1606,
+          "found": "measure",
+          "pref": "measure",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XM9K9XL8-S"
+        },
+        {
+          "start": 2205,
+          "end": 2209,
+          "found": "cue-",
+          "pref": "cue",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZDXXPPFZ-R"
+        },
+        {
+          "start": 2305,
+          "end": 2317,
+          "found": "study method",
+          "pref": "study method",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-B5NB9G8J-F"
+        },
+        {
+          "start": 596,
+          "end": 602,
+          "found": "stress",
+          "pref": "stress",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JJV6GSWP-1"
+        },
+        {
+          "start": 685,
+          "end": 691,
+          "found": "stress",
+          "pref": "stress",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JJV6GSWP-1"
+        },
+        {
+          "start": 2156,
+          "end": 2166,
+          "found": "forgetting",
+          "pref": "forgetting",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JRBPV6BN-2"
+        },
+        {
+          "start": 2378,
+          "end": 2389,
+          "found": "hypermnesia",
+          "pref": "hypermnesia",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JX046THS-T"
+        },
+        {
+          "start": 2496,
+          "end": 2502,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JT2DDSSZ-4"
+        },
+        {
+          "start": 2510,
+          "end": 2516,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JT2DDSSZ-4"
+        },
+        {
+          "start": 2921,
+          "end": 2929,
+          "found": "d' index",
+          "pref": "d' index",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-C6KFW6JL-F"
+        },
+        {
+          "start": 1596,
+          "end": 1606,
+          "found": "A' measure",
+          "pref": "A' measure",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-N6TQTNVL-J"
+        },
+        {
+          "start": 1692,
+          "end": 1708,
+          "found": "cued recall task",
+          "pref": "cued recall task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-C61GF8R6-G"
+        },
+        {
+          "start": 1692,
+          "end": 1703,
+          "found": "cued recall",
+          "pref": "cued recall task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-C61GF8R6-G"
+        },
+        {
+          "start": 1320,
+          "end": 1329,
+          "found": "attention",
+          "pref": "attention",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-N6QV4DTJ-W"
+        },
+        {
+          "start": 154,
+          "end": 160,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 283,
+          "end": 289,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 305,
+          "end": 311,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1835,
+          "end": 1841,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1908,
+          "end": 1914,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 2321,
+          "end": 2327,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 3109,
+          "end": 3115,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 425,
+          "end": 433,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1646,
+          "end": 1654,
+          "found": "learning",
+          "pref": "learning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R9DC7TZN-9"
+        },
+        {
+          "start": 2305,
+          "end": 2327,
+          "found": "study method of memory",
+          "pref": "study method of memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-BZBRK6X8-1"
+        },
+        {
+          "start": 1940,
+          "end": 1951,
+          "found": "Jost's laws",
+          "pref": "Jost's laws",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-M1QJM17D-7"
+        },
+        {
+          "start": 2079,
+          "end": 2090,
+          "found": "Ribot's law",
+          "pref": "Ribot's law",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R6T91FCL-0"
+        },
+        {
+          "start": 2295,
+          "end": 2327,
+          "found": "objective study method of memory",
+          "pref": "objective study method of memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-BM4VZW20-5"
+        },
+        {
+          "start": 586,
+          "end": 595,
+          "found": "-encoding",
+          "pref": "encoding",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-FR1VGSJN-Q"
+        },
+        {
+          "start": 675,
+          "end": 684,
+          "found": "-encoding",
+          "pref": "encoding",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-FR1VGSJN-Q"
+        },
+        {
+          "start": 1827,
+          "end": 1841,
+          "found": "Working memory",
+          "pref": "working memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KK6LXTL8-P"
+        },
+        {
+          "start": 1900,
+          "end": 1914,
+          "found": "working memory",
+          "pref": "working memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KK6LXTL8-P"
+        },
+        {
+          "start": 2139,
+          "end": 2151,
+          "found": "interference",
+          "pref": "interference",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-SD7JDTZ4-8"
+        },
+        {
+          "start": 1827,
+          "end": 1850,
+          "found": "Working memory updating",
+          "pref": "working memory updating",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XJSCVLBW-B"
+        },
+        {
+          "start": 1900,
+          "end": 1923,
+          "found": "working memory updating",
+          "pref": "working memory updating",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XJSCVLBW-B"
+        },
+        {
+          "start": 1842,
+          "end": 1850,
+          "found": "updating",
+          "pref": "working memory updating",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XJSCVLBW-B"
+        },
+        {
+          "start": 1915,
+          "end": 1923,
+          "found": "updating",
+          "pref": "working memory updating",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XJSCVLBW-B"
+        },
+        {
+          "start": 1312,
+          "end": 1329,
+          "found": "divided attention",
+          "pref": "divided attention",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-X93ZHFV9-8"
+        },
+        {
+          "start": 1697,
+          "end": 1708,
+          "found": "recall task",
+          "pref": "recall task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XFK08D50-D"
+        },
+        {
+          "start": 1697,
+          "end": 1703,
+          "found": "recall",
+          "pref": "recall task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XFK08D50-D"
+        },
+        {
+          "start": 2578,
+          "end": 2590,
+          "found": "DRM paradigm",
+          "pref": "DRM paradigm",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-TKSCSMHR-8"
+        },
+        {
+          "start": 2682,
+          "end": 2694,
+          "found": "DRM paradigm",
+          "pref": "DRM paradigm",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-TKSCSMHR-8"
+        },
+        {
+          "start": 3097,
+          "end": 3115,
+          "found": "prospective memory",
+          "pref": "prospective memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-Z6SQPXCN-P"
+        },
+        {
+          "start": 937,
+          "end": 956,
+          "found": "Alzheimer's disease",
+          "pref": "Alzheimer's disease",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-T0KQ9RM8-4"
+        },
+        {
+          "start": 2378,
+          "end": 2400,
+          "found": "hypermnesia (Pathology",
+          "pref": "hypermnesia (pathology)",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-FQXK8KBN-C"
+        },
+        {
+          "start": 77,
+          "end": 86,
+          "found": "qualities",
+          "pref": "quality",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-B1TWZGXG-D"
+        },
+        {
+          "start": 823,
+          "end": 827,
+          "found": "(ERP",
+          "pref": "event-related potentials",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-CLCLWD1Z-X"
+        },
+        {
+          "start": 1095,
+          "end": 1111,
+          "found": "Baddeley's model",
+          "pref": "multicomponent model of working memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-BWQVN9PH-T"
+        },
+        {
+          "start": 2904,
+          "end": 2915,
+          "found": "recognition",
+          "pref": "recognition task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KCJ85PL3-0"
+        },
+        {
+          "start": 294,
+          "end": 311,
+          "found": "short term memory",
+          "pref": "short-term memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-QZRTL2B1-9"
+        },
+        {
+          "start": 1551,
+          "end": 1562,
+          "found": "Suppression",
+          "pref": "inhibition",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KP127V63-W"
+        },
+        {
+          "start": 1166,
+          "end": 1176,
+          "found": "confidence",
+          "pref": "confidence judgment",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-PNMP129V-B"
+        },
+        {
+          "start": 1201,
+          "end": 1211,
+          "found": "confidence",
+          "pref": "confidence judgment",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-PNMP129V-B"
+        },
+        {
+          "start": 2338,
+          "end": 2347,
+          "found": "P.V. case",
+          "pref": "patient P.V.",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-PB0PJVKN-B"
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "matches": [
+        {
+          "start": 648,
+          "end": 655,
+          "found": "process",
+          "pref": "process",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RV949J4G-9"
+        },
+        {
+          "start": 660,
+          "end": 683,
+          "found": "semantic feature effect",
+          "pref": "semantic feature effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-J0407BVT-T"
+        },
+        {
+          "start": 790,
+          "end": 800,
+          "found": "forgetting",
+          "pref": "forgetting",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JRBPV6BN-2"
+        },
+        {
+          "start": 1427,
+          "end": 1444,
+          "found": "simulated amnesia",
+          "pref": "simulated amnesia",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-N3B4XNCR-R"
+        },
+        {
+          "start": 482,
+          "end": 496,
+          "found": "priming effect",
+          "pref": "priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W6B74BSG-7"
+        },
+        {
+          "start": 482,
+          "end": 489,
+          "found": "priming",
+          "pref": "priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W6B74BSG-7"
+        },
+        {
+          "start": 168,
+          "end": 181,
+          "found": "sensitization",
+          "pref": "sensitization",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-NDS4MGVJ-P"
+        },
+        {
+          "start": 828,
+          "end": 834,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JT2DDSSZ-4"
+        },
+        {
+          "start": 1274,
+          "end": 1280,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JT2DDSSZ-4"
+        },
+        {
+          "start": 498,
+          "end": 514,
+          "found": "scientific model",
+          "pref": "scientific model",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XJKPHB5X-M"
+        },
+        {
+          "start": 58,
+          "end": 71,
+          "found": "saving method",
+          "pref": "saving method",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-LC14VV20-Z"
+        },
+        {
+          "start": 47,
+          "end": 56,
+          "found": "attention",
+          "pref": "attention",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-N6QV4DTJ-W"
+        },
+        {
+          "start": 197,
+          "end": 203,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 237,
+          "end": 243,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 326,
+          "end": 332,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 374,
+          "end": 380,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 475,
+          "end": 481,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 536,
+          "end": 542,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 568,
+          "end": 574,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 876,
+          "end": 882,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1028,
+          "end": 1034,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1249,
+          "end": 1255,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1301,
+          "end": 1307,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1463,
+          "end": 1469,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 121,
+          "end": 129,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 399,
+          "end": 407,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 724,
+          "end": 732,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1195,
+          "end": 1203,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1326,
+          "end": 1334,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 300,
+          "end": 316,
+          "found": "recognition task",
+          "pref": "recognition task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KCJ85PL3-0"
+        },
+        {
+          "start": 300,
+          "end": 311,
+          "found": "recognition",
+          "pref": "recognition task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KCJ85PL3-0"
+        },
+        {
+          "start": 1257,
+          "end": 1280,
+          "found": "signal detection theory",
+          "pref": "signal detection theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-VDVMXXP9-C"
+        },
+        {
+          "start": 1293,
+          "end": 1307,
+          "found": "working memory",
+          "pref": "working memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KK6LXTL8-P"
+        },
+        {
+          "start": 696,
+          "end": 705,
+          "found": "retrieval",
+          "pref": "retrieval",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-LWGNZJQ8-R"
+        },
+        {
+          "start": 37,
+          "end": 56,
+          "found": "selective attention",
+          "pref": "selective attention",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-V1086TZP-C"
+        },
+        {
+          "start": 943,
+          "end": 956,
+          "found": "police lineup",
+          "pref": "police lineup",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-QZMCKTT5-1"
+        },
+        {
+          "start": 950,
+          "end": 956,
+          "found": "lineup",
+          "pref": "police lineup",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-QZMCKTT5-1"
+        },
+        {
+          "start": 357,
+          "end": 380,
+          "found": "autobiographical memory",
+          "pref": "autobiographical memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-D720VZZ8-3"
+        },
+        {
+          "start": 458,
+          "end": 481,
+          "found": "autobiographical memory",
+          "pref": "autobiographical memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-D720VZZ8-3"
+        },
+        {
+          "start": 781,
+          "end": 800,
+          "found": "directed forgetting",
+          "pref": "directed forgetting",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-NM6FCV93-6"
+        },
+        {
+          "start": 338,
+          "end": 380,
+          "found": "severely deficient autobiographical memory",
+          "pref": "severely deficient autobiographical memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-MCG7SZN3-Z"
+        },
+        {
+          "start": 1437,
+          "end": 1444,
+          "found": "amnesia",
+          "pref": "amnesia",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZC448SL7-T"
+        },
+        {
+          "start": 1242,
+          "end": 1255,
+          "found": "source memory",
+          "pref": "source memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-CVFJZQV0-T"
+        },
+        {
+          "start": 1084,
+          "end": 1098,
+          "found": "spacing effect",
+          "pref": "spacing effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RB2NMVR4-3"
+        },
+        {
+          "start": 293,
+          "end": 316,
+          "found": "serial recognition task",
+          "pref": "serial recognition task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XNLQCLLB-9"
+        },
+        {
+          "start": 293,
+          "end": 311,
+          "found": "serial recognition",
+          "pref": "serial recognition task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XNLQCLLB-9"
+        },
+        {
+          "start": 84,
+          "end": 97,
+          "found": "reaction time",
+          "pref": "reaction time",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-B1XQ3JL0-1"
+        },
+        {
+          "start": 991,
+          "end": 1004,
+          "found": "reaction time",
+          "pref": "reaction time",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-B1XQ3JL0-1"
+        },
+        {
+          "start": 209,
+          "end": 218,
+          "found": "span task",
+          "pref": "span task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W95Z5S37-2"
+        },
+        {
+          "start": 318,
+          "end": 332,
+          "found": "sensory memory",
+          "pref": "sensory memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-GLK4Q9X5-7"
+        },
+        {
+          "start": 840,
+          "end": 857,
+          "found": "semantic dementia",
+          "pref": "semantic dementia",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ND7CQTXD-1"
+        },
+        {
+          "start": 77,
+          "end": 102,
+          "found": "serial reaction time task",
+          "pref": "serial reaction time task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-NT3HSP6R-C"
+        },
+        {
+          "start": 77,
+          "end": 97,
+          "found": "serial reaction time",
+          "pref": "serial reaction time task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-NT3HSP6R-C"
+        },
+        {
+          "start": 1100,
+          "end": 1149,
+          "found": "Sentence Completion for Events from the Past Test",
+          "pref": "Sentence Completion for Events from the Past Test",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-HWQ92S0R-Z"
+        },
+        {
+          "start": 984,
+          "end": 1009,
+          "found": "simple reaction time task",
+          "pref": "simple reaction time task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W14C8G63-5"
+        },
+        {
+          "start": 984,
+          "end": 1004,
+          "found": "simple reaction time",
+          "pref": "simple reaction time task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W14C8G63-5"
+        },
+        {
+          "start": 660,
+          "end": 676,
+          "found": "semantic feature",
+          "pref": "semantic feature",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZGVGSV5H-Q"
+        },
+        {
+          "start": 1374,
+          "end": 1398,
+          "found": "serial reproduction task",
+          "pref": "serial reproduction task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-C37Z6T0W-B"
+        },
+        {
+          "start": 637,
+          "end": 658,
+          "found": "relational processing",
+          "pref": "relational processing",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-M06MX9HP-B"
+        },
+        {
+          "start": 932,
+          "end": 956,
+          "found": "sequential police lineup",
+          "pref": "sequential police lineup",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-SP8F3GPR-2"
+        },
+        {
+          "start": 771,
+          "end": 807,
+          "found": "selective directed forgetting effect",
+          "pref": "selective directed forgetting effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-H857VQMN-Z"
+        },
+        {
+          "start": 1286,
+          "end": 1307,
+          "found": "social working memory",
+          "pref": "social working memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P4P8T47T-D"
+        },
+        {
+          "start": 689,
+          "end": 705,
+          "found": "spaced retrieval",
+          "pref": "spaced retrieval",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-SGBP127S-4"
+        },
+        {
+          "start": 1124,
+          "end": 1130,
+          "found": "Events",
+          "pref": "event",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZVGCX1H2-G"
+        },
+        {
+          "start": 536,
+          "end": 549,
+          "found": "memory effect",
+          "pref": "memory phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RQWF016Q-4"
+        },
+        {
+          "start": 209,
+          "end": 213,
+          "found": "span",
+          "pref": "memory span",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-WPDN8P51-4"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "matches": [
+        {
+          "start": 100,
+          "end": 105,
+          "found": "sleep",
+          "pref": "sleep",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R1X014PQ-C"
+        },
+        {
+          "start": 67,
+          "end": 84,
+          "found": "sharp wave ripple",
+          "pref": "sharp wave ripple",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-S1WG2Q31-4"
+        },
+        {
+          "start": 237,
+          "end": 265,
+          "found": "simultaneous learning effect",
+          "pref": "simultaneous learning effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-GGX8LN2N-2"
+        },
+        {
+          "start": 171,
+          "end": 193,
+          "found": "size congruency effect",
+          "pref": "size congruency effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KLV0GZDD-H"
+        },
+        {
+          "start": 542,
+          "end": 565,
+          "found": "sensory preconditioning",
+          "pref": "sensory preconditioning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-N0900M0V-9"
+        },
+        {
+          "start": 1309,
+          "end": 1322,
+          "found": "sensitization",
+          "pref": "sensitization",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-NDS4MGVJ-P"
+        },
+        {
+          "start": 810,
+          "end": 816,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JT2DDSSZ-4"
+        },
+        {
+          "start": 772,
+          "end": 789,
+          "found": "semantic distance",
+          "pref": "semantic distance",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-TFS69V6F-G"
+        },
+        {
+          "start": 872,
+          "end": 878,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 933,
+          "end": 939,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 977,
+          "end": 983,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1189,
+          "end": 1195,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 932,
+          "end": 939,
+          "found": "-memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 932,
+          "end": 946,
+          "found": "-memory system",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 124,
+          "end": 132,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 284,
+          "end": 292,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 448,
+          "end": 456,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 584,
+          "end": 592,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 725,
+          "end": 733,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1002,
+          "end": 1010,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1112,
+          "end": 1120,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1232,
+          "end": 1240,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 250,
+          "end": 258,
+          "found": "learning",
+          "pref": "learning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R9DC7TZN-9"
+        },
+        {
+          "start": 338,
+          "end": 346,
+          "found": "learning",
+          "pref": "learning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R9DC7TZN-9"
+        },
+        {
+          "start": 1342,
+          "end": 1350,
+          "found": "learning",
+          "pref": "learning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R9DC7TZN-9"
+        },
+        {
+          "start": 1280,
+          "end": 1307,
+          "found": "source monitoring framework",
+          "pref": "source monitoring framework",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KKKB7LLJ-Z"
+        },
+        {
+          "start": 796,
+          "end": 816,
+          "found": "serial search theory",
+          "pref": "serial search theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RZQ6FW2V-N"
+        },
+        {
+          "start": 796,
+          "end": 809,
+          "found": "serial search",
+          "pref": "serial search theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RZQ6FW2V-N"
+        },
+        {
+          "start": 968,
+          "end": 983,
+          "found": "semantic memory",
+          "pref": "semantic memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-L02857LC-7"
+        },
+        {
+          "start": 90,
+          "end": 105,
+          "found": "slow wave sleep",
+          "pref": "slow wave sleep",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZVCQF82G-P"
+        },
+        {
+          "start": 523,
+          "end": 536,
+          "found": "semantization",
+          "pref": "semantization",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-DVHMMSP5-C"
+        },
+        {
+          "start": 665,
+          "end": 674,
+          "found": "retrieval",
+          "pref": "retrieval",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-LWGNZJQ8-R"
+        },
+        {
+          "start": 1280,
+          "end": 1297,
+          "found": "source monitoring",
+          "pref": "source monitoring",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RZ9DQJMH-H"
+        },
+        {
+          "start": 643,
+          "end": 656,
+          "found": "reinforcement",
+          "pref": "reinforcement",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-L63H1FX6-6"
+        },
+        {
+          "start": 331,
+          "end": 346,
+          "found": "social learning",
+          "pref": "social learning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R5W2D7JC-4"
+        },
+        {
+          "start": 508,
+          "end": 521,
+          "found": "police lineup",
+          "pref": "police lineup",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-QZMCKTT5-1"
+        },
+        {
+          "start": 515,
+          "end": 521,
+          "found": "lineup",
+          "pref": "police lineup",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-QZMCKTT5-1"
+        },
+        {
+          "start": 680,
+          "end": 706,
+          "found": "sentence verification task",
+          "pref": "sentence verification task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-L868RB6Z-R"
+        },
+        {
+          "start": 948,
+          "end": 962,
+          "found": "spacing effect",
+          "pref": "spacing effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RB2NMVR4-3"
+        },
+        {
+          "start": 195,
+          "end": 231,
+          "found": "Source of Activation Confusion model",
+          "pref": "Source of Activation Confusion model",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-B2CCMJSS-D"
+        },
+        {
+          "start": 822,
+          "end": 853,
+          "found": "sensory reactivation hypothesis",
+          "pref": "sensory reactivation hypothesis",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-F621JLHV-V"
+        },
+        {
+          "start": 1069,
+          "end": 1078,
+          "found": "SEM model",
+          "pref": "SEM model",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JGD6169K-G"
+        },
+        {
+          "start": 1084,
+          "end": 1093,
+          "found": "span task",
+          "pref": "span task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W95Z5S37-2"
+        },
+        {
+          "start": 1181,
+          "end": 1195,
+          "found": "sensory memory",
+          "pref": "sensory memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-GLK4Q9X5-7"
+        },
+        {
+          "start": 772,
+          "end": 794,
+          "found": "semantic distance task",
+          "pref": "semantic distance task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-HL3WZMJG-P"
+        },
+        {
+          "start": 205,
+          "end": 215,
+          "found": "Activation",
+          "pref": "activation",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-BWPK8GHJ-D"
+        },
+        {
+          "start": 348,
+          "end": 397,
+          "found": "Sentence Completion for Events in the Future Test",
+          "pref": "Sentence Completion for Events in the Future Test",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-HKZMD8Q2-B"
+        },
+        {
+          "start": 631,
+          "end": 656,
+          "found": "schedule of reinforcement",
+          "pref": "schedule of reinforcement",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JQ26JGB6-D"
+        },
+        {
+          "start": 37,
+          "end": 65,
+          "found": "schematic narrative template",
+          "pref": "schematic narrative template",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-T4H4NVVK-8"
+        },
+        {
+          "start": 495,
+          "end": 521,
+          "found": "simultaneous police lineup",
+          "pref": "simultaneous police lineup",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-SPM91ZX4-V"
+        },
+        {
+          "start": 658,
+          "end": 674,
+          "found": "spaced retrieval",
+          "pref": "spaced retrieval",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-SGBP127S-4"
+        },
+        {
+          "start": 372,
+          "end": 378,
+          "found": "Events",
+          "pref": "event",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZVGCX1H2-G"
+        },
+        {
+          "start": 843,
+          "end": 853,
+          "found": "hypothesis",
+          "pref": "testable hypothesis",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZFR36KVN-B"
+        },
+        {
+          "start": 1084,
+          "end": 1088,
+          "found": "span",
+          "pref": "memory span",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-WPDN8P51-4"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "matches": [
+        {
+          "start": 43,
+          "end": 51,
+          "found": "-process",
+          "pref": "process",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RV949J4G-9"
+        },
+        {
+          "start": 1384,
+          "end": 1407,
+          "found": "semantic feature effect",
+          "pref": "semantic feature effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-J0407BVT-T"
+        },
+        {
+          "start": 443,
+          "end": 453,
+          "found": "forgetting",
+          "pref": "forgetting",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JRBPV6BN-2"
+        },
+        {
+          "start": 790,
+          "end": 817,
+          "found": "sentence superiority effect",
+          "pref": "sentence superiority effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JSLM8LFP-1"
+        },
+        {
+          "start": 650,
+          "end": 672,
+          "found": "size congruency effect",
+          "pref": "size congruency effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KLV0GZDD-H"
+        },
+        {
+          "start": 1409,
+          "end": 1434,
+          "found": "semantic proximity effect",
+          "pref": "semantic proximity effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-Q7457568-Z"
+        },
+        {
+          "start": 1124,
+          "end": 1138,
+          "found": "priming effect",
+          "pref": "priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W6B74BSG-7"
+        },
+        {
+          "start": 1267,
+          "end": 1281,
+          "found": "priming effect",
+          "pref": "priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W6B74BSG-7"
+        },
+        {
+          "start": 1124,
+          "end": 1131,
+          "found": "priming",
+          "pref": "priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W6B74BSG-7"
+        },
+        {
+          "start": 1267,
+          "end": 1274,
+          "found": "priming",
+          "pref": "priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W6B74BSG-7"
+        },
+        {
+          "start": 74,
+          "end": 80,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 96,
+          "end": 102,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 124,
+          "end": 130,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 156,
+          "end": 162,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 279,
+          "end": 285,
+          "found": "Memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 364,
+          "end": 370,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 734,
+          "end": 740,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 824,
+          "end": 830,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1028,
+          "end": 1034,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1103,
+          "end": 1109,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1260,
+          "end": 1266,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1327,
+          "end": 1333,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1478,
+          "end": 1484,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 823,
+          "end": 830,
+          "found": "-memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 823,
+          "end": 837,
+          "found": "-memory system",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 309,
+          "end": 317,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 472,
+          "end": 480,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 603,
+          "end": 611,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 886,
+          "end": 894,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 257,
+          "end": 290,
+          "found": "Semantic and Episodic Memory Test",
+          "pref": "Semantic and Episodic Memory Test",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-PRPFZL66-H"
+        },
+        {
+          "start": 1440,
+          "end": 1459,
+          "found": "sensory recruitment",
+          "pref": "sensory recruitment",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-TGCRZ1ND-T"
+        },
+        {
+          "start": 62,
+          "end": 80,
+          "found": "recognition memory",
+          "pref": "recognition memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-VC9TWVJ8-D"
+        },
+        {
+          "start": 948,
+          "end": 960,
+          "found": "recollection",
+          "pref": "recollection",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XBK7Q5XL-7"
+        },
+        {
+          "start": 1094,
+          "end": 1109,
+          "found": "semantic memory",
+          "pref": "semantic memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-L02857LC-7"
+        },
+        {
+          "start": 270,
+          "end": 285,
+          "found": "Episodic Memory",
+          "pref": "episodic memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-DP4NMT2L-9"
+        },
+        {
+          "start": 680,
+          "end": 684,
+          "found": "cell",
+          "pref": "cell",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-QP09HT4X-7"
+        },
+        {
+          "start": 356,
+          "end": 370,
+          "found": "spatial memory",
+          "pref": "spatial memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RG2FNC5H-B"
+        },
+        {
+          "start": 425,
+          "end": 435,
+          "found": "retrieval-",
+          "pref": "retrieval",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-LWGNZJQ8-R"
+        },
+        {
+          "start": 981,
+          "end": 994,
+          "found": "reinforcement",
+          "pref": "reinforcement",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-L63H1FX6-6"
+        },
+        {
+          "start": 519,
+          "end": 536,
+          "found": "skill acquisition",
+          "pref": "skill acquisition",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-PWG42CLB-T"
+        },
+        {
+          "start": 854,
+          "end": 867,
+          "found": "police lineup",
+          "pref": "police lineup",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-QZMCKTT5-1"
+        },
+        {
+          "start": 861,
+          "end": 867,
+          "found": "lineup",
+          "pref": "police lineup",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-QZMCKTT5-1"
+        },
+        {
+          "start": 1242,
+          "end": 1266,
+          "found": "-autobiographical memory",
+          "pref": "autobiographical memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-D720VZZ8-3"
+        },
+        {
+          "start": 1115,
+          "end": 1138,
+          "found": "semantic priming effect",
+          "pref": "semantic priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-S38MFW7P-4"
+        },
+        {
+          "start": 1115,
+          "end": 1131,
+          "found": "semantic priming",
+          "pref": "semantic priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-S38MFW7P-4"
+        },
+        {
+          "start": 372,
+          "end": 403,
+          "found": "sensory reactivation hypothesis",
+          "pref": "sensory reactivation hypothesis",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-F621JLHV-V"
+        },
+        {
+          "start": 1211,
+          "end": 1224,
+          "found": "reaction time",
+          "pref": "reaction time",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-B1XQ3JL0-1"
+        },
+        {
+          "start": 969,
+          "end": 994,
+          "found": "schedule of reinforcement",
+          "pref": "schedule of reinforcement",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JQ26JGB6-D"
+        },
+        {
+          "start": 690,
+          "end": 715,
+          "found": "simultaneous conditioning",
+          "pref": "simultaneous conditioning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-PQ15XNDV-B"
+        },
+        {
+          "start": 1287,
+          "end": 1308,
+          "found": "semantic differential",
+          "pref": "semantic differential",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-T5JD2XJT-P"
+        },
+        {
+          "start": 1204,
+          "end": 1229,
+          "found": "simple reaction time task",
+          "pref": "simple reaction time task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W14C8G63-5"
+        },
+        {
+          "start": 1204,
+          "end": 1224,
+          "found": "simple reaction time",
+          "pref": "simple reaction time task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W14C8G63-5"
+        },
+        {
+          "start": 1000,
+          "end": 1009,
+          "found": "SAM model",
+          "pref": "SAM model",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-M2THQ0F7-T"
+        },
+        {
+          "start": 1384,
+          "end": 1400,
+          "found": "semantic feature",
+          "pref": "semantic feature",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZGVGSV5H-Q"
+        },
+        {
+          "start": 551,
+          "end": 572,
+          "found": "relational processing",
+          "pref": "relational processing",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-M06MX9HP-B"
+        },
+        {
+          "start": 578,
+          "end": 584,
+          "found": "script",
+          "pref": "script",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-CZSZD29Q-X"
+        },
+        {
+          "start": 1084,
+          "end": 1092,
+          "found": "SenseCam",
+          "pref": "SenseCam",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-LP1NPQ14-Z"
+        },
+        {
+          "start": 843,
+          "end": 867,
+          "found": "sequential police lineup",
+          "pref": "sequential police lineup",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-SP8F3GPR-2"
+        },
+        {
+          "start": 124,
+          "end": 137,
+          "found": "memory effect",
+          "pref": "memory phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RQWF016Q-4"
+        },
+        {
+          "start": 393,
+          "end": 403,
+          "found": "hypothesis",
+          "pref": "testable hypothesis",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZFR36KVN-B"
+        },
+        {
+          "start": 62,
+          "end": 73,
+          "found": "recognition",
+          "pref": "recognition task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KCJ85PL3-0"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "matches": [
+        {
+          "start": 988,
+          "end": 996,
+          "found": "-process",
+          "pref": "process",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RV949J4G-9"
+        },
+        {
+          "start": 1009,
+          "end": 1018,
+          "found": "cognition",
+          "pref": "cognition",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-GKHVF60L-Q"
+        },
+        {
+          "start": 1136,
+          "end": 1141,
+          "found": "aging",
+          "pref": "aging",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-C5T6XKTC-T"
+        },
+        {
+          "start": 65,
+          "end": 79,
+          "found": "sleeper effect",
+          "pref": "sleeper effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-FKDSR7KN-H"
+        },
+        {
+          "start": 1326,
+          "end": 1354,
+          "found": "simultaneous learning effect",
+          "pref": "simultaneous learning effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-GGX8LN2N-2"
+        },
+        {
+          "start": 1204,
+          "end": 1214,
+          "found": "forgetting",
+          "pref": "forgetting",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JRBPV6BN-2"
+        },
+        {
+          "start": 264,
+          "end": 288,
+          "found": "source attribution error",
+          "pref": "source attribution error",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-L2KVVW09-1"
+        },
+        {
+          "start": 1475,
+          "end": 1492,
+          "found": "simulated amnesia",
+          "pref": "simulated amnesia",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-N3B4XNCR-R"
+        },
+        {
+          "start": 654,
+          "end": 676,
+          "found": "distinctiveness effect",
+          "pref": "distinctiveness effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-QNHV3ZSX-D"
+        },
+        {
+          "start": 374,
+          "end": 388,
+          "found": "priming effect",
+          "pref": "priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W6B74BSG-7"
+        },
+        {
+          "start": 564,
+          "end": 578,
+          "found": "priming effect",
+          "pref": "priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W6B74BSG-7"
+        },
+        {
+          "start": 374,
+          "end": 381,
+          "found": "priming",
+          "pref": "priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W6B74BSG-7"
+        },
+        {
+          "start": 564,
+          "end": 571,
+          "found": "priming",
+          "pref": "priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W6B74BSG-7"
+        },
+        {
+          "start": 481,
+          "end": 494,
+          "found": "sensitization",
+          "pref": "sensitization",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-NDS4MGVJ-P"
+        },
+        {
+          "start": 1112,
+          "end": 1118,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JT2DDSSZ-4"
+        },
+        {
+          "start": 394,
+          "end": 406,
+          "found": "SAT function",
+          "pref": "SAT function",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-L4CZRTG5-8"
+        },
+        {
+          "start": 1498,
+          "end": 1515,
+          "found": "semantic distance",
+          "pref": "semantic distance",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-TFS69V6F-G"
+        },
+        {
+          "start": 942,
+          "end": 961,
+          "found": "selective retrieval",
+          "pref": "selective retrieval",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RDMQHJMB-6"
+        },
+        {
+          "start": 105,
+          "end": 111,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 130,
+          "end": 136,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 252,
+          "end": 258,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 425,
+          "end": 431,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 557,
+          "end": 563,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 738,
+          "end": 744,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 886,
+          "end": 892,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 970,
+          "end": 976,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1019,
+          "end": 1025,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1044,
+          "end": 1050,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1240,
+          "end": 1246,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1395,
+          "end": 1401,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1467,
+          "end": 1473,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1539,
+          "end": 1545,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 307,
+          "end": 315,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 597,
+          "end": 605,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1339,
+          "end": 1347,
+          "found": "learning",
+          "pref": "learning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R9DC7TZN-9"
+        },
+        {
+          "start": 1100,
+          "end": 1141,
+          "found": "scaffolding theory of cognition and aging",
+          "pref": "scaffolding theory of cognition and aging",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-M93QNCCP-5"
+        },
+        {
+          "start": 354,
+          "end": 363,
+          "found": "SPI model",
+          "pref": "SPI model",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-GWCFKSRW-9"
+        },
+        {
+          "start": 830,
+          "end": 855,
+          "found": "schema assimilation model",
+          "pref": "schema assimilation model",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JDX6KHSX-T"
+        },
+        {
+          "start": 1007,
+          "end": 1025,
+          "found": "recognition memory",
+          "pref": "recognition memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-VC9TWVJ8-D"
+        },
+        {
+          "start": 1305,
+          "end": 1319,
+          "found": "categorization",
+          "pref": "categorization",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-G355R5HB-T"
+        },
+        {
+          "start": 1459,
+          "end": 1473,
+          "found": "working memory",
+          "pref": "working memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KK6LXTL8-P"
+        },
+        {
+          "start": 952,
+          "end": 961,
+          "found": "retrieval",
+          "pref": "retrieval",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-LWGNZJQ8-R"
+        },
+        {
+          "start": 702,
+          "end": 719,
+          "found": "skill acquisition",
+          "pref": "skill acquisition",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-PWG42CLB-T"
+        },
+        {
+          "start": 195,
+          "end": 214,
+          "found": "verbal fluency test",
+          "pref": "verbal fluency test",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KMLFZJR5-3"
+        },
+        {
+          "start": 509,
+          "end": 522,
+          "found": "police lineup",
+          "pref": "police lineup",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-QZMCKTT5-1"
+        },
+        {
+          "start": 516,
+          "end": 522,
+          "found": "lineup",
+          "pref": "police lineup",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-QZMCKTT5-1"
+        },
+        {
+          "start": 235,
+          "end": 258,
+          "found": "autobiographical memory",
+          "pref": "autobiographical memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-D720VZZ8-3"
+        },
+        {
+          "start": 540,
+          "end": 563,
+          "found": "autobiographical memory",
+          "pref": "autobiographical memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-D720VZZ8-3"
+        },
+        {
+          "start": 37,
+          "end": 63,
+          "found": "sentence verification task",
+          "pref": "sentence verification task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-L868RB6Z-R"
+        },
+        {
+          "start": 1195,
+          "end": 1214,
+          "found": "directed forgetting",
+          "pref": "directed forgetting",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-NM6FCV93-6"
+        },
+        {
+          "start": 365,
+          "end": 388,
+          "found": "semantic priming effect",
+          "pref": "semantic priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-S38MFW7P-4"
+        },
+        {
+          "start": 365,
+          "end": 381,
+          "found": "semantic priming",
+          "pref": "semantic priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-S38MFW7P-4"
+        },
+        {
+          "start": 216,
+          "end": 258,
+          "found": "severely deficient autobiographical memory",
+          "pref": "severely deficient autobiographical memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-MCG7SZN3-Z"
+        },
+        {
+          "start": 1485,
+          "end": 1492,
+          "found": "amnesia",
+          "pref": "amnesia",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZC448SL7-T"
+        },
+        {
+          "start": 963,
+          "end": 976,
+          "found": "source memory",
+          "pref": "source memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-CVFJZQV0-T"
+        },
+        {
+          "start": 830,
+          "end": 836,
+          "found": "schema",
+          "pref": "schema",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-SW4M15VJ-1"
+        },
+        {
+          "start": 644,
+          "end": 676,
+          "found": "secondary distinctiveness effect",
+          "pref": "secondary distinctiveness effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-TN6TBLNC-Z"
+        },
+        {
+          "start": 1143,
+          "end": 1179,
+          "found": "Source of Activation Confusion model",
+          "pref": "Source of Activation Confusion model",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-B2CCMJSS-D"
+        },
+        {
+          "start": 1498,
+          "end": 1520,
+          "found": "semantic distance task",
+          "pref": "semantic distance task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-HL3WZMJG-P"
+        },
+        {
+          "start": 1153,
+          "end": 1163,
+          "found": "Activation",
+          "pref": "activation",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-BWPK8GHJ-D"
+        },
+        {
+          "start": 1296,
+          "end": 1324,
+          "found": "semantic categorization task",
+          "pref": "semantic categorization task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KX1CKZ3J-L"
+        },
+        {
+          "start": 1296,
+          "end": 1319,
+          "found": "semantic categorization",
+          "pref": "semantic categorization task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KX1CKZ3J-L"
+        },
+        {
+          "start": 186,
+          "end": 214,
+          "found": "semantic verbal fluency test",
+          "pref": "semantic verbal fluency test",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-BJ3M9Z3J-H"
+        },
+        {
+          "start": 1360,
+          "end": 1376,
+          "found": "semantic feature",
+          "pref": "semantic feature",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZGVGSV5H-Q"
+        },
+        {
+          "start": 807,
+          "end": 828,
+          "found": "relational processing",
+          "pref": "relational processing",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-M06MX9HP-B"
+        },
+        {
+          "start": 861,
+          "end": 867,
+          "found": "script",
+          "pref": "script",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-CZSZD29Q-X"
+        },
+        {
+          "start": 496,
+          "end": 522,
+          "found": "simultaneous police lineup",
+          "pref": "simultaneous police lineup",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-SPM91ZX4-V"
+        },
+        {
+          "start": 1185,
+          "end": 1221,
+          "found": "selective directed forgetting effect",
+          "pref": "selective directed forgetting effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-H857VQMN-Z"
+        },
+        {
+          "start": 1452,
+          "end": 1473,
+          "found": "social working memory",
+          "pref": "social working memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P4P8T47T-D"
+        },
+        {
+          "start": 398,
+          "end": 406,
+          "found": "function",
+          "pref": "disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-WFXSB9H1-0"
+        },
+        {
+          "start": 1007,
+          "end": 1018,
+          "found": "recognition",
+          "pref": "recognition task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KCJ85PL3-0"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "matches": [
+        {
+          "start": 415,
+          "end": 424,
+          "found": "cognition",
+          "pref": "cognition",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-GKHVF60L-Q"
+        },
+        {
+          "start": 429,
+          "end": 434,
+          "found": "aging",
+          "pref": "aging",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-C5T6XKTC-T"
+        },
+        {
+          "start": 528,
+          "end": 538,
+          "found": "forgetting",
+          "pref": "forgetting",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JRBPV6BN-2"
+        },
+        {
+          "start": 858,
+          "end": 885,
+          "found": "sentence superiority effect",
+          "pref": "sentence superiority effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JSLM8LFP-1"
+        },
+        {
+          "start": 660,
+          "end": 674,
+          "found": "priming effect",
+          "pref": "priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W6B74BSG-7"
+        },
+        {
+          "start": 660,
+          "end": 667,
+          "found": "priming",
+          "pref": "priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W6B74BSG-7"
+        },
+        {
+          "start": 1247,
+          "end": 1261,
+          "found": "scientific law",
+          "pref": "scientific law",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-BM3DGWC3-L"
+        },
+        {
+          "start": 405,
+          "end": 411,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JT2DDSSZ-4"
+        },
+        {
+          "start": 1009,
+          "end": 1015,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JT2DDSSZ-4"
+        },
+        {
+          "start": 569,
+          "end": 585,
+          "found": "scientific model",
+          "pref": "scientific model",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XJKPHB5X-M"
+        },
+        {
+          "start": 1233,
+          "end": 1245,
+          "found": "SAT function",
+          "pref": "SAT function",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-L4CZRTG5-8"
+        },
+        {
+          "start": 1413,
+          "end": 1426,
+          "found": "saving method",
+          "pref": "saving method",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-LC14VV20-Z"
+        },
+        {
+          "start": 1267,
+          "end": 1284,
+          "found": "semantic distance",
+          "pref": "semantic distance",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-TFS69V6F-G"
+        },
+        {
+          "start": 115,
+          "end": 121,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 147,
+          "end": 153,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 249,
+          "end": 255,
+          "found": "Memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 453,
+          "end": 459,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 557,
+          "end": 563,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 758,
+          "end": 764,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1034,
+          "end": 1040,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1130,
+          "end": 1136,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1161,
+          "end": 1167,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1445,
+          "end": 1451,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 291,
+          "end": 299,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 604,
+          "end": 612,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 904,
+          "end": 912,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1186,
+          "end": 1194,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1303,
+          "end": 1311,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 217,
+          "end": 225,
+          "found": "learning",
+          "pref": "learning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R9DC7TZN-9"
+        },
+        {
+          "start": 227,
+          "end": 260,
+          "found": "Semantic and Episodic Memory Test",
+          "pref": "Semantic and Episodic Memory Test",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-PRPFZL66-H"
+        },
+        {
+          "start": 393,
+          "end": 434,
+          "found": "scaffolding theory of cognition and aging",
+          "pref": "scaffolding theory of cognition and aging",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-M93QNCCP-5"
+        },
+        {
+          "start": 951,
+          "end": 960,
+          "found": "SPI model",
+          "pref": "SPI model",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-GWCFKSRW-9"
+        },
+        {
+          "start": 814,
+          "end": 833,
+          "found": "sensory recruitment",
+          "pref": "sensory recruitment",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-TGCRZ1ND-T"
+        },
+        {
+          "start": 992,
+          "end": 1015,
+          "found": "signal detection theory",
+          "pref": "signal detection theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-VDVMXXP9-C"
+        },
+        {
+          "start": 1366,
+          "end": 1378,
+          "found": "recollection",
+          "pref": "recollection",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XBK7Q5XL-7"
+        },
+        {
+          "start": 240,
+          "end": 255,
+          "found": "Episodic Memory",
+          "pref": "episodic memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-DP4NMT2L-9"
+        },
+        {
+          "start": 549,
+          "end": 563,
+          "found": "spatial memory",
+          "pref": "spatial memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RG2FNC5H-B"
+        },
+        {
+          "start": 74,
+          "end": 93,
+          "found": "verbal fluency test",
+          "pref": "verbal fluency test",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KMLFZJR5-3"
+        },
+        {
+          "start": 1155,
+          "end": 1167,
+          "found": "false memory",
+          "pref": "false memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JQ343CBV-S"
+        },
+        {
+          "start": 50,
+          "end": 63,
+          "found": "police lineup",
+          "pref": "police lineup",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-QZMCKTT5-1"
+        },
+        {
+          "start": 57,
+          "end": 63,
+          "found": "lineup",
+          "pref": "police lineup",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-QZMCKTT5-1"
+        },
+        {
+          "start": 519,
+          "end": 538,
+          "found": "directed forgetting",
+          "pref": "directed forgetting",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-NM6FCV93-6"
+        },
+        {
+          "start": 651,
+          "end": 674,
+          "found": "semantic priming effect",
+          "pref": "semantic priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-S38MFW7P-4"
+        },
+        {
+          "start": 651,
+          "end": 667,
+          "found": "semantic priming",
+          "pref": "semantic priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-S38MFW7P-4"
+        },
+        {
+          "start": 509,
+          "end": 547,
+          "found": "selective directed forgetting paradigm",
+          "pref": "selective directed forgetting paradigm",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RZ2FRN8X-S"
+        },
+        {
+          "start": 1123,
+          "end": 1136,
+          "found": "source memory",
+          "pref": "source memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-CVFJZQV0-T"
+        },
+        {
+          "start": 266,
+          "end": 272,
+          "found": "schema",
+          "pref": "schema",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-SW4M15VJ-1"
+        },
+        {
+          "start": 1142,
+          "end": 1148,
+          "found": "schema",
+          "pref": "schema",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-SW4M15VJ-1"
+        },
+        {
+          "start": 1090,
+          "end": 1121,
+          "found": "sensory reactivation hypothesis",
+          "pref": "sensory reactivation hypothesis",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-F621JLHV-V"
+        },
+        {
+          "start": 843,
+          "end": 852,
+          "found": "span task",
+          "pref": "span task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W95Z5S37-2"
+        },
+        {
+          "start": 65,
+          "end": 93,
+          "found": "semantic verbal fluency test",
+          "pref": "semantic verbal fluency test",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-BJ3M9Z3J-H"
+        },
+        {
+          "start": 962,
+          "end": 986,
+          "found": "serial reproduction task",
+          "pref": "serial reproduction task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-C37Z6T0W-B"
+        },
+        {
+          "start": 835,
+          "end": 852,
+          "found": "spatial span task",
+          "pref": "spatial span task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-J5TWXW3H-Q"
+        },
+        {
+          "start": 37,
+          "end": 63,
+          "found": "simultaneous police lineup",
+          "pref": "simultaneous police lineup",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-SPM91ZX4-V"
+        },
+        {
+          "start": 1237,
+          "end": 1245,
+          "found": "function",
+          "pref": "disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-WFXSB9H1-0"
+        },
+        {
+          "start": 115,
+          "end": 128,
+          "found": "memory effect",
+          "pref": "memory phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RQWF016Q-4"
+        },
+        {
+          "start": 377,
+          "end": 387,
+          "found": "hypothesis",
+          "pref": "testable hypothesis",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZFR36KVN-B"
+        },
+        {
+          "start": 1111,
+          "end": 1121,
+          "found": "hypothesis",
+          "pref": "testable hypothesis",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZFR36KVN-B"
+        },
+        {
+          "start": 843,
+          "end": 847,
+          "found": "span",
+          "pref": "memory span",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-WPDN8P51-4"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "matches": [
+        {
+          "start": 480,
+          "end": 486,
+          "found": "sleep-",
+          "pref": "sleep",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R1X014PQ-C"
+        },
+        {
+          "start": 1329,
+          "end": 1357,
+          "found": "simultaneous learning effect",
+          "pref": "simultaneous learning effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-GGX8LN2N-2"
+        },
+        {
+          "start": 1198,
+          "end": 1208,
+          "found": "forgetting",
+          "pref": "forgetting",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JRBPV6BN-2"
+        },
+        {
+          "start": 73,
+          "end": 95,
+          "found": "serial position effect",
+          "pref": "serial position effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W1GDT3WH-1"
+        },
+        {
+          "start": 37,
+          "end": 51,
+          "found": "scientific law",
+          "pref": "scientific law",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-BM3DGWC3-L"
+        },
+        {
+          "start": 366,
+          "end": 372,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JT2DDSSZ-4"
+        },
+        {
+          "start": 1051,
+          "end": 1060,
+          "found": "principle",
+          "pref": "principle",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-N7XGNQGG-J"
+        },
+        {
+          "start": 761,
+          "end": 773,
+          "found": "SAT function",
+          "pref": "SAT function",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-L4CZRTG5-8"
+        },
+        {
+          "start": 329,
+          "end": 346,
+          "found": "semantic distance",
+          "pref": "semantic distance",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-TFS69V6F-G"
+        },
+        {
+          "start": 114,
+          "end": 120,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 178,
+          "end": 184,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 235,
+          "end": 241,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 391,
+          "end": 397,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 496,
+          "end": 502,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 605,
+          "end": 611,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 689,
+          "end": 695,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1001,
+          "end": 1007,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1079,
+          "end": 1085,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1234,
+          "end": 1240,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1298,
+          "end": 1304,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1317,
+          "end": 1323,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1376,
+          "end": 1382,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1000,
+          "end": 1007,
+          "found": "-memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1000,
+          "end": 1014,
+          "found": "-memory system",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 260,
+          "end": 268,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 550,
+          "end": 558,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 823,
+          "end": 831,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 662,
+          "end": 670,
+          "found": "learning",
+          "pref": "learning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R9DC7TZN-9"
+        },
+        {
+          "start": 1342,
+          "end": 1350,
+          "found": "learning",
+          "pref": "learning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R9DC7TZN-9"
+        },
+        {
+          "start": 352,
+          "end": 372,
+          "found": "serial search theory",
+          "pref": "serial search theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RZQ6FW2V-N"
+        },
+        {
+          "start": 352,
+          "end": 365,
+          "found": "serial search",
+          "pref": "serial search theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RZQ6FW2V-N"
+        },
+        {
+          "start": 1039,
+          "end": 1060,
+          "found": "specificity principle",
+          "pref": "specificity principle",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RQPL09WZ-K"
+        },
+        {
+          "start": 921,
+          "end": 930,
+          "found": "SPI model",
+          "pref": "SPI model",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-GWCFKSRW-9"
+        },
+        {
+          "start": 1142,
+          "end": 1158,
+          "found": "recognition task",
+          "pref": "recognition task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KCJ85PL3-0"
+        },
+        {
+          "start": 1142,
+          "end": 1153,
+          "found": "recognition",
+          "pref": "recognition task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KCJ85PL3-0"
+        },
+        {
+          "start": 515,
+          "end": 531,
+          "found": "semantic network",
+          "pref": "semantic network",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JK6SBS9M-3"
+        },
+        {
+          "start": 227,
+          "end": 241,
+          "found": "working memory",
+          "pref": "working memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KK6LXTL8-P"
+        },
+        {
+          "start": 597,
+          "end": 611,
+          "found": "spatial memory",
+          "pref": "spatial memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RG2FNC5H-B"
+        },
+        {
+          "start": 1160,
+          "end": 1173,
+          "found": "semantization",
+          "pref": "semantization",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-DVHMMSP5-C"
+        },
+        {
+          "start": 1016,
+          "end": 1033,
+          "found": "source monitoring",
+          "pref": "source monitoring",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RZ9DQJMH-H"
+        },
+        {
+          "start": 791,
+          "end": 804,
+          "found": "reinforcement",
+          "pref": "reinforcement",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-L63H1FX6-6"
+        },
+        {
+          "start": 655,
+          "end": 670,
+          "found": "social learning",
+          "pref": "social learning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R5W2D7JC-4"
+        },
+        {
+          "start": 195,
+          "end": 214,
+          "found": "verbal fluency test",
+          "pref": "verbal fluency test",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KMLFZJR5-3"
+        },
+        {
+          "start": 1189,
+          "end": 1208,
+          "found": "directed forgetting",
+          "pref": "directed forgetting",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-NM6FCV93-6"
+        },
+        {
+          "start": 636,
+          "end": 649,
+          "found": "confabulation",
+          "pref": "confabulation",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-PQDC3FHL-7"
+        },
+        {
+          "start": 1291,
+          "end": 1304,
+          "found": "source memory",
+          "pref": "source memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-CVFJZQV0-T"
+        },
+        {
+          "start": 53,
+          "end": 67,
+          "found": "spacing effect",
+          "pref": "spacing effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RB2NMVR4-3"
+        },
+        {
+          "start": 1135,
+          "end": 1158,
+          "found": "serial recognition task",
+          "pref": "serial recognition task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XNLQCLLB-9"
+        },
+        {
+          "start": 1135,
+          "end": 1153,
+          "found": "serial recognition",
+          "pref": "serial recognition task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XNLQCLLB-9"
+        },
+        {
+          "start": 745,
+          "end": 759,
+          "found": "semantic space",
+          "pref": "semantic space",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-MR1BSSVH-G"
+        },
+        {
+          "start": 170,
+          "end": 184,
+          "found": "sensory memory",
+          "pref": "sensory memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-GLK4Q9X5-7"
+        },
+        {
+          "start": 779,
+          "end": 804,
+          "found": "schedule of reinforcement",
+          "pref": "schedule of reinforcement",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JQ26JGB6-D"
+        },
+        {
+          "start": 870,
+          "end": 879,
+          "found": "SAM model",
+          "pref": "SAM model",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-M2THQ0F7-T"
+        },
+        {
+          "start": 186,
+          "end": 214,
+          "found": "semantic verbal fluency test",
+          "pref": "semantic verbal fluency test",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-BJ3M9Z3J-H"
+        },
+        {
+          "start": 613,
+          "end": 649,
+          "found": "semantically anomalous confabulation",
+          "pref": "semantically anomalous confabulation",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-MFXNRQL6-0"
+        },
+        {
+          "start": 894,
+          "end": 915,
+          "found": "relational processing",
+          "pref": "relational processing",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-M06MX9HP-B"
+        },
+        {
+          "start": 1179,
+          "end": 1215,
+          "found": "selective directed forgetting effect",
+          "pref": "selective directed forgetting effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-H857VQMN-Z"
+        },
+        {
+          "start": 220,
+          "end": 241,
+          "found": "social working memory",
+          "pref": "social working memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P4P8T47T-D"
+        },
+        {
+          "start": 765,
+          "end": 773,
+          "found": "function",
+          "pref": "disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-WFXSB9H1-0"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "matches": [
+        {
+          "start": 922,
+          "end": 931,
+          "found": "cognition",
+          "pref": "cognition",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-GKHVF60L-Q"
+        },
+        {
+          "start": 936,
+          "end": 941,
+          "found": "aging",
+          "pref": "aging",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-C5T6XKTC-T"
+        },
+        {
+          "start": 47,
+          "end": 52,
+          "found": "sleep",
+          "pref": "sleep",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R1X014PQ-C"
+        },
+        {
+          "start": 1164,
+          "end": 1181,
+          "found": "sharp wave ripple",
+          "pref": "sharp wave ripple",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-S1WG2Q31-4"
+        },
+        {
+          "start": 73,
+          "end": 97,
+          "found": "semantic blocking effect",
+          "pref": "semantic blocking effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-Q4X84MP3-1"
+        },
+        {
+          "start": 1064,
+          "end": 1089,
+          "found": "semantic proximity effect",
+          "pref": "semantic proximity effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-Q7457568-Z"
+        },
+        {
+          "start": 752,
+          "end": 766,
+          "found": "priming effect",
+          "pref": "priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W6B74BSG-7"
+        },
+        {
+          "start": 752,
+          "end": 759,
+          "found": "priming",
+          "pref": "priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W6B74BSG-7"
+        },
+        {
+          "start": 881,
+          "end": 894,
+          "found": "sensitization",
+          "pref": "sensitization",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-NDS4MGVJ-P"
+        },
+        {
+          "start": 912,
+          "end": 918,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JT2DDSSZ-4"
+        },
+        {
+          "start": 203,
+          "end": 224,
+          "found": "serial position curve",
+          "pref": "serial position curve",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-SJJK5R2D-T"
+        },
+        {
+          "start": 782,
+          "end": 791,
+          "found": "attention",
+          "pref": "attention",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-N6QV4DTJ-W"
+        },
+        {
+          "start": 183,
+          "end": 190,
+          "found": "-memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 184,
+          "end": 190,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 351,
+          "end": 357,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 376,
+          "end": 382,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 602,
+          "end": 608,
+          "found": "Memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 654,
+          "end": 660,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 960,
+          "end": 966,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1108,
+          "end": 1114,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1340,
+          "end": 1346,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 183,
+          "end": 197,
+          "found": "-memory system",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 116,
+          "end": 124,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 243,
+          "end": 251,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 514,
+          "end": 522,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 810,
+          "end": 818,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 871,
+          "end": 879,
+          "found": "learning",
+          "pref": "learning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R9DC7TZN-9"
+        },
+        {
+          "start": 1211,
+          "end": 1219,
+          "found": "learning",
+          "pref": "learning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R9DC7TZN-9"
+        },
+        {
+          "start": 1016,
+          "end": 1043,
+          "found": "source monitoring framework",
+          "pref": "source monitoring framework",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KKKB7LLJ-Z"
+        },
+        {
+          "start": 900,
+          "end": 941,
+          "found": "scaffolding theory of cognition and aging",
+          "pref": "scaffolding theory of cognition and aging",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-M93QNCCP-5"
+        },
+        {
+          "start": 619,
+          "end": 635,
+          "found": "semantic network",
+          "pref": "semantic network",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JK6SBS9M-3"
+        },
+        {
+          "start": 572,
+          "end": 585,
+          "found": "consolidation",
+          "pref": "consolidation",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-X1M4BRNP-Z"
+        },
+        {
+          "start": 37,
+          "end": 52,
+          "found": "slow wave sleep",
+          "pref": "slow wave sleep",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZVCQF82G-P"
+        },
+        {
+          "start": 61,
+          "end": 67,
+          "found": "engram",
+          "pref": "engram",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-G4CV58RJ-C"
+        },
+        {
+          "start": 1045,
+          "end": 1058,
+          "found": "semantization",
+          "pref": "semantization",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-DVHMMSP5-C"
+        },
+        {
+          "start": 1016,
+          "end": 1033,
+          "found": "source monitoring",
+          "pref": "source monitoring",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RZ9DQJMH-H"
+        },
+        {
+          "start": 1204,
+          "end": 1219,
+          "found": "social learning",
+          "pref": "social learning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R5W2D7JC-4"
+        },
+        {
+          "start": 772,
+          "end": 791,
+          "found": "selective attention",
+          "pref": "selective attention",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-V1086TZP-C"
+        },
+        {
+          "start": 743,
+          "end": 766,
+          "found": "semantic priming effect",
+          "pref": "semantic priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-S38MFW7P-4"
+        },
+        {
+          "start": 743,
+          "end": 759,
+          "found": "semantic priming",
+          "pref": "semantic priming effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-S38MFW7P-4"
+        },
+        {
+          "start": 163,
+          "end": 177,
+          "found": "source amnesia",
+          "pref": "source amnesia",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-NQVM5SSV-F"
+        },
+        {
+          "start": 170,
+          "end": 177,
+          "found": "amnesia",
+          "pref": "amnesia",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZC448SL7-T"
+        },
+        {
+          "start": 710,
+          "end": 741,
+          "found": "sensory reactivation hypothesis",
+          "pref": "sensory reactivation hypothesis",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-F621JLHV-V"
+        },
+        {
+          "start": 1183,
+          "end": 1198,
+          "found": "simple chunking",
+          "pref": "simple chunking",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-G5HBPRDG-8"
+        },
+        {
+          "start": 1190,
+          "end": 1198,
+          "found": "chunking",
+          "pref": "chunking",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JPHPPHKK-7"
+        },
+        {
+          "start": 432,
+          "end": 441,
+          "found": "span task",
+          "pref": "span task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W95Z5S37-2"
+        },
+        {
+          "start": 343,
+          "end": 357,
+          "found": "sensory memory",
+          "pref": "sensory memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-GLK4Q9X5-7"
+        },
+        {
+          "start": 320,
+          "end": 337,
+          "found": "semantic dementia",
+          "pref": "semantic dementia",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ND7CQTXD-1"
+        },
+        {
+          "start": 308,
+          "end": 318,
+          "found": "Interview©",
+          "pref": "interview",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-PW60KCQL-2"
+        },
+        {
+          "start": 1312,
+          "end": 1321,
+          "found": "SAM model",
+          "pref": "SAM model",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-M2THQ0F7-T"
+        },
+        {
+          "start": 54,
+          "end": 67,
+          "found": "silent engram",
+          "pref": "silent engram",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-F1HG1ZMR-D"
+        },
+        {
+          "start": 1286,
+          "end": 1292,
+          "found": "script",
+          "pref": "script",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-CZSZD29Q-X"
+        },
+        {
+          "start": 731,
+          "end": 741,
+          "found": "hypothesis",
+          "pref": "testable hypothesis",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZFR36KVN-B"
+        },
+        {
+          "start": 432,
+          "end": 436,
+          "found": "span",
+          "pref": "memory span",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-WPDN8P51-4"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "matches": [
+        {
+          "start": 575,
+          "end": 584,
+          "found": "cognition",
+          "pref": "cognition",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-GKHVF60L-Q"
+        },
+        {
+          "start": 589,
+          "end": 594,
+          "found": "aging",
+          "pref": "aging",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-C5T6XKTC-T"
+        },
+        {
+          "start": 348,
+          "end": 375,
+          "found": "sentence superiority effect",
+          "pref": "sentence superiority effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JSLM8LFP-1"
+        },
+        {
+          "start": 861,
+          "end": 884,
+          "found": "source overdistribution",
+          "pref": "source overdistribution",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-M3W9XWPJ-Z"
+        },
+        {
+          "start": 37,
+          "end": 61,
+          "found": "semantic blocking effect",
+          "pref": "semantic blocking effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-Q4X84MP3-1"
+        },
+        {
+          "start": 1013,
+          "end": 1038,
+          "found": "semantic proximity effect",
+          "pref": "semantic proximity effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-Q7457568-Z"
+        },
+        {
+          "start": 1271,
+          "end": 1293,
+          "found": "distinctiveness effect",
+          "pref": "distinctiveness effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-QNHV3ZSX-D"
+        },
+        {
+          "start": 1113,
+          "end": 1128,
+          "found": "sandwich effect",
+          "pref": "sandwich effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RK502HKX-5"
+        },
+        {
+          "start": 408,
+          "end": 426,
+          "found": "semantic satiation",
+          "pref": "semantic satiation",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-VPXZ357C-0"
+        },
+        {
+          "start": 686,
+          "end": 700,
+          "found": "scientific law",
+          "pref": "scientific law",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-BM3DGWC3-L"
+        },
+        {
+          "start": 229,
+          "end": 235,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JT2DDSSZ-4"
+        },
+        {
+          "start": 396,
+          "end": 402,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JT2DDSSZ-4"
+        },
+        {
+          "start": 565,
+          "end": 571,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JT2DDSSZ-4"
+        },
+        {
+          "start": 88,
+          "end": 109,
+          "found": "serial position curve",
+          "pref": "serial position curve",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-SJJK5R2D-T"
+        },
+        {
+          "start": 492,
+          "end": 511,
+          "found": "selective retrieval",
+          "pref": "selective retrieval",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RDMQHJMB-6"
+        },
+        {
+          "start": 267,
+          "end": 273,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 292,
+          "end": 298,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 613,
+          "end": 619,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 761,
+          "end": 767,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 903,
+          "end": 909,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1057,
+          "end": 1063,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1135,
+          "end": 1141,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1205,
+          "end": 1211,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1359,
+          "end": 1365,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1134,
+          "end": 1141,
+          "found": "-memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1134,
+          "end": 1148,
+          "found": "-memory system",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 128,
+          "end": 136,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 445,
+          "end": 453,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 676,
+          "end": 684,
+          "found": "learning",
+          "pref": "learning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R9DC7TZN-9"
+        },
+        {
+          "start": 828,
+          "end": 855,
+          "found": "source monitoring framework",
+          "pref": "source monitoring framework",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KKKB7LLJ-Z"
+        },
+        {
+          "start": 553,
+          "end": 594,
+          "found": "scaffolding theory of cognition and aging",
+          "pref": "scaffolding theory of cognition and aging",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-M93QNCCP-5"
+        },
+        {
+          "start": 175,
+          "end": 235,
+          "found": "Selective Construction and Preservation of Experience theory",
+          "pref": "Selective Construction and Preservation of Experience theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-SPVPPV2R-W"
+        },
+        {
+          "start": 502,
+          "end": 511,
+          "found": "retrieval",
+          "pref": "retrieval",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-LWGNZJQ8-R"
+        },
+        {
+          "start": 828,
+          "end": 845,
+          "found": "source monitoring",
+          "pref": "source monitoring",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RZ9DQJMH-H"
+        },
+        {
+          "start": 669,
+          "end": 684,
+          "found": "social learning",
+          "pref": "social learning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R5W2D7JC-4"
+        },
+        {
+          "start": 1436,
+          "end": 1462,
+          "found": "sentence verification task",
+          "pref": "sentence verification task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-L868RB6Z-R"
+        },
+        {
+          "start": 237,
+          "end": 253,
+          "found": "simple span task",
+          "pref": "simple span task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-T150JWQ4-N"
+        },
+        {
+          "start": 237,
+          "end": 248,
+          "found": "simple span",
+          "pref": "simple span task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-T150JWQ4-N"
+        },
+        {
+          "start": 1261,
+          "end": 1293,
+          "found": "secondary distinctiveness effect",
+          "pref": "secondary distinctiveness effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-TN6TBLNC-Z"
+        },
+        {
+          "start": 706,
+          "end": 742,
+          "found": "Source of Activation Confusion model",
+          "pref": "Source of Activation Confusion model",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-B2CCMJSS-D"
+        },
+        {
+          "start": 1326,
+          "end": 1340,
+          "found": "semantic space",
+          "pref": "semantic space",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-MR1BSSVH-G"
+        },
+        {
+          "start": 966,
+          "end": 979,
+          "found": "reaction time",
+          "pref": "reaction time",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-B1XQ3JL0-1"
+        },
+        {
+          "start": 244,
+          "end": 253,
+          "found": "span task",
+          "pref": "span task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W95Z5S37-2"
+        },
+        {
+          "start": 259,
+          "end": 273,
+          "found": "sensory memory",
+          "pref": "sensory memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-GLK4Q9X5-7"
+        },
+        {
+          "start": 716,
+          "end": 726,
+          "found": "Activation",
+          "pref": "activation",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-BWPK8GHJ-D"
+        },
+        {
+          "start": 959,
+          "end": 984,
+          "found": "serial reaction time task",
+          "pref": "serial reaction time task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-NT3HSP6R-C"
+        },
+        {
+          "start": 959,
+          "end": 979,
+          "found": "serial reaction time",
+          "pref": "serial reaction time task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-NT3HSP6R-C"
+        },
+        {
+          "start": 1154,
+          "end": 1186,
+          "found": "serial order reconstruction task",
+          "pref": "serial order reconstruction task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XRSWLJRQ-W"
+        },
+        {
+          "start": 817,
+          "end": 826,
+          "found": "SAM model",
+          "pref": "SAM model",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-M2THQ0F7-T"
+        },
+        {
+          "start": 526,
+          "end": 547,
+          "found": "relational processing",
+          "pref": "relational processing",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-M06MX9HP-B"
+        },
+        {
+          "start": 244,
+          "end": 248,
+          "found": "span",
+          "pref": "memory span",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-WPDN8P51-4"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "matches": [
+        {
+          "start": 1050,
+          "end": 1058,
+          "found": "-process",
+          "pref": "process",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RV949J4G-9"
+        },
+        {
+          "start": 912,
+          "end": 917,
+          "found": "sleep",
+          "pref": "sleep",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R1X014PQ-C"
+        },
+        {
+          "start": 649,
+          "end": 671,
+          "found": "serial order intrusion",
+          "pref": "serial order intrusion",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-HHS0L80X-Z"
+        },
+        {
+          "start": 677,
+          "end": 699,
+          "found": "size congruency effect",
+          "pref": "size congruency effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KLV0GZDD-H"
+        },
+        {
+          "start": 954,
+          "end": 978,
+          "found": "semantic blocking effect",
+          "pref": "semantic blocking effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-Q4X84MP3-1"
+        },
+        {
+          "start": 373,
+          "end": 398,
+          "found": "semantic proximity effect",
+          "pref": "semantic proximity effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-Q7457568-Z"
+        },
+        {
+          "start": 277,
+          "end": 299,
+          "found": "serial position effect",
+          "pref": "serial position effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W1GDT3WH-1"
+        },
+        {
+          "start": 556,
+          "end": 562,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JT2DDSSZ-4"
+        },
+        {
+          "start": 785,
+          "end": 791,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JT2DDSSZ-4"
+        },
+        {
+          "start": 1351,
+          "end": 1367,
+          "found": "scientific model",
+          "pref": "scientific model",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XJKPHB5X-M"
+        },
+        {
+          "start": 628,
+          "end": 647,
+          "found": "selective retrieval",
+          "pref": "selective retrieval",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RDMQHJMB-6"
+        },
+        {
+          "start": 1099,
+          "end": 1108,
+          "found": "attention",
+          "pref": "attention",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-N6QV4DTJ-W"
+        },
+        {
+          "start": 51,
+          "end": 57,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 144,
+          "end": 150,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 415,
+          "end": 421,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 440,
+          "end": 446,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 718,
+          "end": 724,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 856,
+          "end": 862,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 935,
+          "end": 941,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1081,
+          "end": 1087,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1277,
+          "end": 1283,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1392,
+          "end": 1398,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1417,
+          "end": 1423,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 318,
+          "end": 326,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 581,
+          "end": 589,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 997,
+          "end": 1005,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1151,
+          "end": 1159,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1341,
+          "end": 1349,
+          "found": "learning",
+          "pref": "learning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R9DC7TZN-9"
+        },
+        {
+          "start": 774,
+          "end": 791,
+          "found": "simulation theory",
+          "pref": "simulation theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-G7TRSDN4-M"
+        },
+        {
+          "start": 542,
+          "end": 562,
+          "found": "serial search theory",
+          "pref": "serial search theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RZQ6FW2V-N"
+        },
+        {
+          "start": 542,
+          "end": 555,
+          "found": "serial search",
+          "pref": "serial search theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RZQ6FW2V-N"
+        },
+        {
+          "start": 1069,
+          "end": 1087,
+          "found": "recognition memory",
+          "pref": "recognition memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-VC9TWVJ8-D"
+        },
+        {
+          "start": 1198,
+          "end": 1214,
+          "found": "semantic network",
+          "pref": "semantic network",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JK6SBS9M-3"
+        },
+        {
+          "start": 1245,
+          "end": 1258,
+          "found": "consolidation",
+          "pref": "consolidation",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-X1M4BRNP-Z"
+        },
+        {
+          "start": 638,
+          "end": 647,
+          "found": "retrieval",
+          "pref": "retrieval",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-LWGNZJQ8-R"
+        },
+        {
+          "start": 793,
+          "end": 810,
+          "found": "source monitoring",
+          "pref": "source monitoring",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RZ9DQJMH-H"
+        },
+        {
+          "start": 1334,
+          "end": 1349,
+          "found": "social learning",
+          "pref": "social learning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R5W2D7JC-4"
+        },
+        {
+          "start": 1089,
+          "end": 1108,
+          "found": "selective attention",
+          "pref": "selective attention",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-V1086TZP-C"
+        },
+        {
+          "start": 1386,
+          "end": 1398,
+          "found": "false memory",
+          "pref": "false memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JQ343CBV-S"
+        },
+        {
+          "start": 112,
+          "end": 125,
+          "found": "police lineup",
+          "pref": "police lineup",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-QZMCKTT5-1"
+        },
+        {
+          "start": 119,
+          "end": 125,
+          "found": "lineup",
+          "pref": "police lineup",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-QZMCKTT5-1"
+        },
+        {
+          "start": 365,
+          "end": 371,
+          "found": "schema",
+          "pref": "schema",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-SW4M15VJ-1"
+        },
+        {
+          "start": 1373,
+          "end": 1379,
+          "found": "schema",
+          "pref": "schema",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-SW4M15VJ-1"
+        },
+        {
+          "start": 496,
+          "end": 513,
+          "found": "semantic dementia",
+          "pref": "semantic dementia",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ND7CQTXD-1"
+        },
+        {
+          "start": 515,
+          "end": 536,
+          "found": "semantic differential",
+          "pref": "semantic differential",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-T5JD2XJT-P"
+        },
+        {
+          "start": 72,
+          "end": 93,
+          "found": "relational processing",
+          "pref": "relational processing",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-M06MX9HP-B"
+        },
+        {
+          "start": 99,
+          "end": 125,
+          "found": "simultaneous police lineup",
+          "pref": "simultaneous police lineup",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-SPM91ZX4-V"
+        },
+        {
+          "start": 935,
+          "end": 948,
+          "found": "memory effect",
+          "pref": "memory phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RQWF016Q-4"
+        },
+        {
+          "start": 1069,
+          "end": 1080,
+          "found": "recognition",
+          "pref": "recognition task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KCJ85PL3-0"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "matches": [
+        {
+          "start": 1065,
+          "end": 1072,
+          "found": "process",
+          "pref": "process",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RV949J4G-9"
+        },
+        {
+          "start": 455,
+          "end": 461,
+          "found": "sleep-",
+          "pref": "sleep",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R1X014PQ-C"
+        },
+        {
+          "start": 455,
+          "end": 460,
+          "found": "sleep",
+          "pref": "sleep",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R1X014PQ-C"
+        },
+        {
+          "start": 38,
+          "end": 66,
+          "found": "simultaneous learning effect",
+          "pref": "simultaneous learning effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-GGX8LN2N-2"
+        },
+        {
+          "start": 668,
+          "end": 690,
+          "found": "serial order intrusion",
+          "pref": "serial order intrusion",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-HHS0L80X-Z"
+        },
+        {
+          "start": 957,
+          "end": 984,
+          "found": "sentence superiority effect",
+          "pref": "sentence superiority effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JSLM8LFP-1"
+        },
+        {
+          "start": 766,
+          "end": 788,
+          "found": "size congruency effect",
+          "pref": "size congruency effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KLV0GZDD-H"
+        },
+        {
+          "start": 1236,
+          "end": 1259,
+          "found": "source overdistribution",
+          "pref": "source overdistribution",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-M3W9XWPJ-Z"
+        },
+        {
+          "start": 486,
+          "end": 503,
+          "found": "simulated amnesia",
+          "pref": "simulated amnesia",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-N3B4XNCR-R"
+        },
+        {
+          "start": 243,
+          "end": 258,
+          "found": "sandwich effect",
+          "pref": "sandwich effect",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RK502HKX-5"
+        },
+        {
+          "start": 325,
+          "end": 338,
+          "found": "sensitization",
+          "pref": "sensitization",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-NDS4MGVJ-P"
+        },
+        {
+          "start": 340,
+          "end": 354,
+          "found": "scientific law",
+          "pref": "scientific law",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-BM3DGWC3-L"
+        },
+        {
+          "start": 620,
+          "end": 626,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JT2DDSSZ-4"
+        },
+        {
+          "start": 801,
+          "end": 810,
+          "found": "principle",
+          "pref": "principle",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-N7XGNQGG-J"
+        },
+        {
+          "start": 1348,
+          "end": 1357,
+          "found": "principle",
+          "pref": "principle",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-N7XGNQGG-J"
+        },
+        {
+          "start": 68,
+          "end": 81,
+          "found": "saving method",
+          "pref": "saving method",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-LC14VV20-Z"
+        },
+        {
+          "start": 215,
+          "end": 232,
+          "found": "semantic distance",
+          "pref": "semantic distance",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-TFS69V6F-G"
+        },
+        {
+          "start": 931,
+          "end": 940,
+          "found": "attention",
+          "pref": "attention",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-N6QV4DTJ-W"
+        },
+        {
+          "start": 107,
+          "end": 113,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 132,
+          "end": 138,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 471,
+          "end": 477,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 709,
+          "end": 715,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1278,
+          "end": 1284,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1364,
+          "end": 1370,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1427,
+          "end": 1433,
+          "found": "memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1363,
+          "end": 1370,
+          "found": "-memory",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1363,
+          "end": 1377,
+          "found": "-memory system",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 277,
+          "end": 285,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 407,
+          "end": 415,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 553,
+          "end": 561,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 873,
+          "end": 881,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 1003,
+          "end": 1011,
+          "found": "memories",
+          "pref": "memory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D"
+        },
+        {
+          "start": 51,
+          "end": 59,
+          "found": "learning",
+          "pref": "learning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R9DC7TZN-9"
+        },
+        {
+          "start": 1336,
+          "end": 1357,
+          "found": "specificity principle",
+          "pref": "specificity principle",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RQPL09WZ-K"
+        },
+        {
+          "start": 509,
+          "end": 534,
+          "found": "schema assimilation model",
+          "pref": "schema assimilation model",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JDX6KHSX-T"
+        },
+        {
+          "start": 643,
+          "end": 655,
+          "found": "recollection",
+          "pref": "recollection",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XBK7Q5XL-7"
+        },
+        {
+          "start": 1215,
+          "end": 1230,
+          "found": "slow wave sleep",
+          "pref": "slow wave sleep",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZVCQF82G-P"
+        },
+        {
+          "start": 1108,
+          "end": 1128,
+          "found": "semantic prospection",
+          "pref": "semantic prospection",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-D7JMLKQL-B"
+        },
+        {
+          "start": 921,
+          "end": 940,
+          "found": "selective attention",
+          "pref": "selective attention",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-V1086TZP-C"
+        },
+        {
+          "start": 369,
+          "end": 388,
+          "found": "verbal fluency test",
+          "pref": "verbal fluency test",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KMLFZJR5-3"
+        },
+        {
+          "start": 1202,
+          "end": 1213,
+          "found": "recall task",
+          "pref": "recall task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XFK08D50-D"
+        },
+        {
+          "start": 1202,
+          "end": 1208,
+          "found": "recall",
+          "pref": "recall task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-XFK08D50-D"
+        },
+        {
+          "start": 1195,
+          "end": 1213,
+          "found": "serial recall task",
+          "pref": "serial recall task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JB1Z9TF3-H"
+        },
+        {
+          "start": 1195,
+          "end": 1208,
+          "found": "serial recall",
+          "pref": "serial recall task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JB1Z9TF3-H"
+        },
+        {
+          "start": 496,
+          "end": 503,
+          "found": "amnesia",
+          "pref": "amnesia",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZC448SL7-T"
+        },
+        {
+          "start": 509,
+          "end": 515,
+          "found": "schema",
+          "pref": "schema",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-SW4M15VJ-1"
+        },
+        {
+          "start": 215,
+          "end": 237,
+          "found": "semantic distance task",
+          "pref": "semantic distance task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-HL3WZMJG-P"
+        },
+        {
+          "start": 1383,
+          "end": 1408,
+          "found": "simultaneous conditioning",
+          "pref": "simultaneous conditioning",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-PQ15XNDV-B"
+        },
+        {
+          "start": 1092,
+          "end": 1102,
+          "found": "Interview©",
+          "pref": "interview",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-PW60KCQL-2"
+        },
+        {
+          "start": 942,
+          "end": 951,
+          "found": "SAM model",
+          "pref": "SAM model",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-M2THQ0F7-T"
+        },
+        {
+          "start": 360,
+          "end": 388,
+          "found": "semantic verbal fluency test",
+          "pref": "semantic verbal fluency test",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-BJ3M9Z3J-H"
+        },
+        {
+          "start": 601,
+          "end": 626,
+          "found": "sensory/functional theory",
+          "pref": "sensory/functional theory",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-TPN2MF9T-1"
+        },
+        {
+          "start": 189,
+          "end": 213,
+          "found": "serial reproduction task",
+          "pref": "serial reproduction task",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-C37Z6T0W-B"
+        }
+      ]
+    }
+  ]
+}

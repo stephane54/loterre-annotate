@@ -1,0 +1,3477 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "matches": [
+        {
+          "start": 3,
+          "end": 9,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 60,
+          "end": 66,
+          "found": "system",
+          "pref": "system",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-T4J97MQK-J"
+        },
+        {
+          "start": 68,
+          "end": 93,
+          "found": "French-speaking countries",
+          "pref": "French-speaking countries",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-DZJCM8NX-9"
+        },
+        {
+          "start": 99,
+          "end": 124,
+          "found": "cross-national comparison",
+          "pref": "cross-national comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z8PQB8C9-R"
+        },
+        {
+          "start": 143,
+          "end": 153,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 158,
+          "end": 164,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 198,
+          "end": 217,
+          "found": "16th arrondissement",
+          "pref": "16th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-MG0V61X7-M"
+        },
+        {
+          "start": 219,
+          "end": 241,
+          "found": "pre-industrial society",
+          "pref": "pre-industrial society",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-S3M8VSJD-1"
+        },
+        {
+          "start": 247,
+          "end": 267,
+          "found": "post-office employee",
+          "pref": "post-office employee",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-M9T9ZK23-F"
+        },
+        {
+          "start": 286,
+          "end": 296,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 301,
+          "end": 307,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 341,
+          "end": 370,
+          "found": "subordinate-superior relation",
+          "pref": "subordinate-superior relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-S7540RNV-H"
+        },
+        {
+          "start": 372,
+          "end": 397,
+          "found": "parent-child relationship",
+          "pref": "parent-child relationship",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-KBTKHHQH-M"
+        },
+        {
+          "start": 403,
+          "end": 425,
+          "found": "Cooley, Charles Horton",
+          "pref": "Cooley, Charles Horton",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-VLSGHSJF-T"
+        },
+        {
+          "start": 444,
+          "end": 454,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 459,
+          "end": 465,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 499,
+          "end": 523,
+          "found": "self-fulfilling prophecy",
+          "pref": "self-fulfilling prophecy",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-N53SVVXR-P"
+        },
+        {
+          "start": 525,
+          "end": 557,
+          "found": "psycho-sociological intervention",
+          "pref": "psycho-sociological intervention",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-DSKSXGR8-V"
+        },
+        {
+          "start": 563,
+          "end": 583,
+          "found": "world trade-unionism",
+          "pref": "world trade-unionism",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-VNZWW3Q5-8"
+        },
+        {
+          "start": 602,
+          "end": 612,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 617,
+          "end": 623,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 657,
+          "end": 678,
+          "found": "Kirisawa-type uveitis",
+          "pref": "Kirisawa-type uveitis",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-BMV264KT-W"
+        },
+        {
+          "start": 680,
+          "end": 701,
+          "found": "Evans Pritchard (E. E.)",
+          "pref": "Evans Pritchard (E. E.)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-HFF4RJ4C-3"
+        },
+        {
+          "start": 703,
+          "end": 751,
+          "found": "United Nations Educational, Scientific and Cultural Organization",
+          "pref": "United Nations Educational, Scientific and Cultural Organization",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-PTJ23N2T-V"
+        },
+        {
+          "start": 777,
+          "end": 780,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 802,
+          "end": 803,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 855,
+          "end": 856,
+          "found": "game",
+          "pref": "games",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-L7KSPTW9-5"
+        },
+        {
+          "start": 910,
+          "end": 925,
+          "found": "Trentino-South Tyrol",
+          "pref": "Trentino-South Tyrol",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-DH39Z93V-5"
+        },
+        {
+          "start": 940,
+          "end": 943,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 965,
+          "end": 966,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 995,
+          "end": 1017,
+          "found": "Adorno, Theodor Wiesengrund",
+          "pref": "Adorno, Theodor Wiesengrund",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-R6PX3055-0"
+        },
+        {
+          "start": 1026,
+          "end": 1045,
+          "found": "socio-Economic factor",
+          "pref": "socio-Economic factor",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-PJL86JM5-L"
+        },
+        {
+          "start": 1060,
+          "end": 1073,
+          "found": "Becker, Howard Saul",
+          "pref": "Becker, Howard Saul",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-NR0VX295-5"
+        },
+        {
+          "start": 1089,
+          "end": 1092,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1114,
+          "end": 1115,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1144,
+          "end": 1181,
+          "found": "Evans-Pritchard (Sir), Edward Evan",
+          "pref": "Evans-Pritchard (Sir), Edward Evan",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-HFF4RJ4C-3"
+        },
+        {
+          "start": 1189,
+          "end": 1199,
+          "found": "non-commissioned officer",
+          "pref": "non-commissioned officer",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-GW5HMZTC-H"
+        },
+        {
+          "start": 1219,
+          "end": 1237,
+          "found": "Condorcet (M.J.A.N. de)",
+          "pref": "Condorcet (M.J.A.N. de)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LLPMFZHF-C"
+        },
+        {
+          "start": 1240,
+          "end": 1241,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1243,
+          "end": 1244,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1277,
+          "end": 1297,
+          "found": "face-to-face interview",
+          "pref": "face-to-face interview",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-M2LZQC02-T"
+        },
+        {
+          "start": 1307,
+          "end": 1327,
+          "found": "Friuli-Venezia Giulia",
+          "pref": "Friuli-Venezia Giulia",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WGT8B8ZJ-P"
+        },
+        {
+          "start": 1330,
+          "end": 1352,
+          "found": "non-governmental organization",
+          "pref": "non-governmental organization",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-FDX7WS1B-5"
+        },
+        {
+          "start": 1367,
+          "end": 1368,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1376,
+          "end": 1377,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1431,
+          "end": 1447,
+          "found": "father-daughter relation",
+          "pref": "father-daughter relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-B60BBRP9-M"
+        },
+        {
+          "start": 1484,
+          "end": 1509,
+          "found": "Passeron, Jean-Claude",
+          "pref": "Passeron, Jean-Claude",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-PC8D32N4-G"
+        },
+        {
+          "start": 1527,
+          "end": 1530,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "matches": [
+        {
+          "start": 3,
+          "end": 9,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 43,
+          "end": 66,
+          "found": "English-speaking Canada",
+          "pref": "English-speaking Canada",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-R75M7JMR-6"
+        },
+        {
+          "start": 89,
+          "end": 105,
+          "found": "non-standard employment",
+          "pref": "non-standard employment",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-L0903QZR-9"
+        },
+        {
+          "start": 124,
+          "end": 134,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 147,
+          "end": 149,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 181,
+          "end": 210,
+          "found": "Christian-Democratic Party",
+          "pref": "Christian-Democratic Party",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-GXDGWKMK-8"
+        },
+        {
+          "start": 216,
+          "end": 232,
+          "found": "cross-cultural variation",
+          "pref": "cross-cultural variation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LGN1M7T0-2"
+        },
+        {
+          "start": 244,
+          "end": 261,
+          "found": "Condorcet (M.J.A.N. de)",
+          "pref": "Condorcet (M.J.A.N. de)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LLPMFZHF-C"
+        },
+        {
+          "start": 264,
+          "end": 265,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 268,
+          "end": 270,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 302,
+          "end": 316,
+          "found": "Gadamer, Hans Georg",
+          "pref": "Gadamer, Hans Georg",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-L73Z3KV7-2"
+        },
+        {
+          "start": 321,
+          "end": 352,
+          "found": "Social-Democratic Party",
+          "pref": "Social-Democratic Party",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-M9V7BJRH-0"
+        },
+        {
+          "start": 359,
+          "end": 373,
+          "found": "non-profit organization",
+          "pref": "non-profit organization",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-HQZD0N2J-6"
+        },
+        {
+          "start": 391,
+          "end": 394,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 399,
+          "end": 405,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 449,
+          "end": 463,
+          "found": "public-private relation",
+          "pref": "public-private relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WVS3QSW1-G"
+        },
+        {
+          "start": 468,
+          "end": 498,
+          "found": "Cooley, Charles Horton",
+          "pref": "Cooley, Charles Horton",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-VLSGHSJF-T"
+        },
+        {
+          "start": 507,
+          "end": 524,
+          "found": "father-daughter relation",
+          "pref": "father-daughter relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-B60BBRP9-M"
+        },
+        {
+          "start": 541,
+          "end": 544,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 552,
+          "end": 560,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 600,
+          "end": 614,
+          "found": "father-child relation",
+          "pref": "father-child relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LFL5R8FG-4"
+        },
+        {
+          "start": 619,
+          "end": 633,
+          "found": "18th arrondissement",
+          "pref": "18th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z225H3W3-5"
+        },
+        {
+          "start": 649,
+          "end": 665,
+          "found": "farm-produce industry",
+          "pref": "farm-produce industry",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LF6CL34Q-X"
+        },
+        {
+          "start": 687,
+          "end": 690,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 696,
+          "end": 703,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 743,
+          "end": 770,
+          "found": "Evans Pritchard (E. E.)",
+          "pref": "Evans Pritchard (E. E.)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-HFF4RJ4C-3"
+        },
+        {
+          "start": 777,
+          "end": 801,
+          "found": "Bourricaud, François",
+          "pref": "Bourricaud, François",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-H23N46HT-M"
+        },
+        {
+          "start": 808,
+          "end": 809,
+          "found": "migration",
+          "pref": "migration",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-XLDGR3R8-4"
+        },
+        {
+          "start": 823,
+          "end": 831,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 837,
+          "end": 842,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 877,
+          "end": 902,
+          "found": "Clausewitz (K. von)",
+          "pref": "Clausewitz (K. von)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-CQZWKMNR-R"
+        },
+        {
+          "start": 904,
+          "end": 916,
+          "found": "17th arrondissement",
+          "pref": "17th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-BZX7F65L-B"
+        },
+        {
+          "start": 932,
+          "end": 946,
+          "found": "Victoria (Australia)",
+          "pref": "Victoria (Australia)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-ZKW3LWF5-Z"
+        },
+        {
+          "start": 953,
+          "end": 957,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 974,
+          "end": 977,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1006,
+          "end": 1031,
+          "found": "country-town relationship",
+          "pref": "country-town relationship",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Q8Q531H1-L"
+        },
+        {
+          "start": 1039,
+          "end": 1080,
+          "found": "Edward Evan Evans-Pritchard (Sir)",
+          "pref": "Edward Evan Evans-Pritchard (Sir)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-HFF4RJ4C-3"
+        },
+        {
+          "start": 1097,
+          "end": 1116,
+          "found": "Galbraith, John Kenneth",
+          "pref": "Galbraith, John Kenneth",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-PD77GGBF-2"
+        },
+        {
+          "start": 1128,
+          "end": 1131,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1134,
+          "end": 1137,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1169,
+          "end": 1194,
+          "found": "Lenski, Gerhard Emmanuel",
+          "pref": "Lenski, Gerhard Emmanuel",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-VB8NJC69-N"
+        },
+        {
+          "start": 1202,
+          "end": 1225,
+          "found": "medical psycho-pedagogical center",
+          "pref": "medical psycho-pedagogical center",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z9QT2FPZ-N"
+        },
+        {
+          "start": 1241,
+          "end": 1260,
+          "found": "solidarity-based economy",
+          "pref": "solidarity-based economy",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z7PQSPD4-J"
+        },
+        {
+          "start": 1276,
+          "end": 1287,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1296,
+          "end": 1299,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1332,
+          "end": 1357,
+          "found": "Banfield, Edward C.",
+          "pref": "Banfield, Edward C.",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-RVST7KP4-R"
+        },
+        {
+          "start": 1365,
+          "end": 1383,
+          "found": "post-industrial society",
+          "pref": "post-industrial society",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-J3QGZDCS-0"
+        },
+        {
+          "start": 1420,
+          "end": 1424,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "matches": [
+        {
+          "start": 3,
+          "end": 9,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 43,
+          "end": 64,
+          "found": "Coleman, James Samuel",
+          "pref": "Coleman, James Samuel",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-RQHHPW5W-0"
+        },
+        {
+          "start": 66,
+          "end": 99,
+          "found": "Edward Evan Evans-Pritchard (Sir)",
+          "pref": "Edward Evan Evans-Pritchard (Sir)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-HFF4RJ4C-3"
+        },
+        {
+          "start": 105,
+          "end": 123,
+          "found": "Banfield, Edward C.",
+          "pref": "Banfield, Edward C.",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-RVST7KP4-R"
+        },
+        {
+          "start": 132,
+          "end": 142,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 155,
+          "end": 157,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 189,
+          "end": 219,
+          "found": "structural-functional analysis",
+          "pref": "structural-functional analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-JJTPM7C0-1"
+        },
+        {
+          "start": 228,
+          "end": 242,
+          "found": "medico-legal expertise",
+          "pref": "medico-legal expertise",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-CJXXRTQZ-N"
+        },
+        {
+          "start": 281,
+          "end": 284,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 306,
+          "end": 307,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 336,
+          "end": 363,
+          "found": "Condorcet (M.J.A.N. de)",
+          "pref": "Condorcet (M.J.A.N. de)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LLPMFZHF-C"
+        },
+        {
+          "start": 364,
+          "end": 368,
+          "found": "English-speaking Canada",
+          "pref": "English-speaking Canada",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-R75M7JMR-6"
+        },
+        {
+          "start": 371,
+          "end": 383,
+          "found": "material-social relation",
+          "pref": "material-social relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-R4LMV721-T"
+        },
+        {
+          "start": 399,
+          "end": 400,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 413,
+          "end": 414,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 458,
+          "end": 473,
+          "found": "socio-demographic factor",
+          "pref": "socio-demographic factor",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-GXKC70K5-Z"
+        },
+        {
+          "start": 475,
+          "end": 502,
+          "found": "data-processing expert",
+          "pref": "data-processing expert",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-QNB5WH3J-6"
+        },
+        {
+          "start": 509,
+          "end": 533,
+          "found": "post-industrial society",
+          "pref": "post-industrial society",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-J3QGZDCS-0"
+        },
+        {
+          "start": 551,
+          "end": 552,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 561,
+          "end": 562,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 609,
+          "end": 624,
+          "found": "Coser, Lewis Alfred",
+          "pref": "Coser, Lewis Alfred",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-B4P9JR37-Q"
+        },
+        {
+          "start": 626,
+          "end": 653,
+          "found": "non-observed variable",
+          "pref": "non-observed variable",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z28NFXWB-9"
+        },
+        {
+          "start": 661,
+          "end": 678,
+          "found": "non-commissioned officer",
+          "pref": "non-commissioned officer",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-GW5HMZTC-H"
+        },
+        {
+          "start": 696,
+          "end": 697,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 705,
+          "end": 706,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 755,
+          "end": 759,
+          "found": "17th arrondissement",
+          "pref": "17th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-BZX7F65L-B"
+        },
+        {
+          "start": 767,
+          "end": 784,
+          "found": "post-partum distress",
+          "pref": "post-partum distress",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z4NV8LJP-Z"
+        },
+        {
+          "start": 800,
+          "end": 819,
+          "found": "12th arrondissement",
+          "pref": "12th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-VFVDMCSF-C"
+        },
+        {
+          "start": 826,
+          "end": 832,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 843,
+          "end": 846,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 895,
+          "end": 915,
+          "found": "planning-programming-budgeting system",
+          "pref": "planning-programming-budgeting system",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-KBJ9M86S-L"
+        },
+        {
+          "start": 925,
+          "end": 949,
+          "found": "country-town relationship",
+          "pref": "country-town relationship",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Q8Q531H1-L"
+        },
+        {
+          "start": 961,
+          "end": 986,
+          "found": "socio-Economic factor",
+          "pref": "socio-Economic factor",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-PJL86JM5-L"
+        },
+        {
+          "start": 1004,
+          "end": 1005,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1015,
+          "end": 1016,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1060,
+          "end": 1075,
+          "found": "cross-national comparison",
+          "pref": "cross-national comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z8PQB8C9-R"
+        },
+        {
+          "start": 1077,
+          "end": 1104,
+          "found": "after-school activity",
+          "pref": "after-school activity",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-B8FG3KM1-M"
+        },
+        {
+          "start": 1111,
+          "end": 1158,
+          "found": "Evans-Pritchard (Sir), Edward Evan",
+          "pref": "Evans-Pritchard (Sir), Edward Evan",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-HFF4RJ4C-3"
+        },
+        {
+          "start": 1175,
+          "end": 1176,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1180,
+          "end": 1181,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1222,
+          "end": 1237,
+          "found": "non-directive interview",
+          "pref": "non-directive interview",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-MDW524DJ-0"
+        },
+        {
+          "start": 1239,
+          "end": 1266,
+          "found": "Eysenck, Hans Jürgen",
+          "pref": "Eysenck, Hans Jürgen",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-RMDH8GGW-T"
+        },
+        {
+          "start": 1271,
+          "end": 1299,
+          "found": "rural-urban migration",
+          "pref": "rural-urban migration",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-ZBKKRFF5-D"
+        },
+        {
+          "start": 1312,
+          "end": 1313,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1323,
+          "end": 1324,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1368,
+          "end": 1384,
+          "found": "Galbraith, John Kenneth",
+          "pref": "Galbraith, John Kenneth",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-PD77GGBF-2"
+        },
+        {
+          "start": 1386,
+          "end": 1404,
+          "found": "Wittgenstein, Ludwig",
+          "pref": "Wittgenstein, Ludwig",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LH7ZMCD7-6"
+        },
+        {
+          "start": 1423,
+          "end": 1438,
+          "found": "world trade-unionism",
+          "pref": "world trade-unionism",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-VNZWW3Q5-8"
+        },
+        {
+          "start": 1459,
+          "end": 1460,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "matches": [
+        {
+          "start": 3,
+          "end": 9,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 43,
+          "end": 62,
+          "found": "16th arrondissement",
+          "pref": "16th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-MG0V61X7-M"
+        },
+        {
+          "start": 64,
+          "end": 83,
+          "found": "17th arrondissement",
+          "pref": "17th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-BZX7F65L-B"
+        },
+        {
+          "start": 89,
+          "end": 122,
+          "found": "Edward Evan Evans-Pritchard (Sir)",
+          "pref": "Edward Evan Evans-Pritchard (Sir)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-HFF4RJ4C-3"
+        },
+        {
+          "start": 141,
+          "end": 151,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 156,
+          "end": 162,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 196,
+          "end": 215,
+          "found": "13th arrondissement",
+          "pref": "13th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LB9S960C-0"
+        },
+        {
+          "start": 217,
+          "end": 241,
+          "found": "non-commissioned officer",
+          "pref": "non-commissioned officer",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-GW5HMZTC-H"
+        },
+        {
+          "start": 247,
+          "end": 267,
+          "found": "world trade-unionism",
+          "pref": "world trade-unionism",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-VNZWW3Q5-8"
+        },
+        {
+          "start": 286,
+          "end": 296,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 301,
+          "end": 307,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 341,
+          "end": 365,
+          "found": "socio-professional group",
+          "pref": "socio-professional group",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-TS412BD3-W"
+        },
+        {
+          "start": 367,
+          "end": 386,
+          "found": "Coser, Lewis Alfred",
+          "pref": "Coser, Lewis Alfred",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-B4P9JR37-Q"
+        },
+        {
+          "start": 453,
+          "end": 463,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 468,
+          "end": 474,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 508,
+          "end": 527,
+          "found": "low-density housing",
+          "pref": "low-density housing",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-PWMDL6VR-D"
+        },
+        {
+          "start": 529,
+          "end": 556,
+          "found": "EDF (Electricity of France)",
+          "pref": "EDF (Electricity of France)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-SC8K6T72-R"
+        },
+        {
+          "start": 562,
+          "end": 581,
+          "found": "Gadamer, Hans Georg",
+          "pref": "Gadamer, Hans Georg",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-L73Z3KV7-2"
+        },
+        {
+          "start": 600,
+          "end": 610,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 615,
+          "end": 621,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 659,
+          "end": 666,
+          "found": "patient",
+          "pref": "patient",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-RBS8HDSH-D"
+        },
+        {
+          "start": 667,
+          "end": 675,
+          "found": "hospital",
+          "pref": "hospital",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z1WN0SVX-Q"
+        },
+        {
+          "start": 677,
+          "end": 698,
+          "found": "rural-urban migration",
+          "pref": "rural-urban migration",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-ZBKKRFF5-D"
+        },
+        {
+          "start": 704,
+          "end": 724,
+          "found": "Victoria (Australia)",
+          "pref": "Victoria (Australia)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-ZKW3LWF5-Z"
+        },
+        {
+          "start": 743,
+          "end": 753,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 758,
+          "end": 764,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 811,
+          "end": 820,
+          "found": "expertise",
+          "pref": "expertise",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-TD0KK5WV-Z"
+        },
+        {
+          "start": 822,
+          "end": 842,
+          "found": "Wittgenstein, Ludwig",
+          "pref": "Wittgenstein, Ludwig",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LH7ZMCD7-6"
+        },
+        {
+          "start": 848,
+          "end": 870,
+          "found": "state-society relation",
+          "pref": "state-society relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-W3X1HG1W-R"
+        },
+        {
+          "start": 889,
+          "end": 899,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 904,
+          "end": 910,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 944,
+          "end": 965,
+          "found": "Coleman, James Samuel",
+          "pref": "Coleman, James Samuel",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-RQHHPW5W-0"
+        },
+        {
+          "start": 967,
+          "end": 990,
+          "found": "non-standard employment",
+          "pref": "non-standard employment",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-L0903QZR-9"
+        },
+        {
+          "start": 996,
+          "end": 1026,
+          "found": "structural-functional analysis",
+          "pref": "structural-functional analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-JJTPM7C0-1"
+        },
+        {
+          "start": 1045,
+          "end": 1055,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1060,
+          "end": 1066,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1100,
+          "end": 1125,
+          "found": "cross-national comparison",
+          "pref": "cross-national comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z8PQB8C9-R"
+        },
+        {
+          "start": 1127,
+          "end": 1149,
+          "found": "French-speaking Canada",
+          "pref": "French-speaking Canada",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-MJDWNP23-9"
+        },
+        {
+          "start": 1155,
+          "end": 1182,
+          "found": "researcher-subject relation",
+          "pref": "researcher-subject relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WHSXLWX9-C"
+        },
+        {
+          "start": 1201,
+          "end": 1211,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1216,
+          "end": 1222,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1256,
+          "end": 1279,
+          "found": "public-private relation",
+          "pref": "public-private relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WVS3QSW1-G"
+        },
+        {
+          "start": 1281,
+          "end": 1300,
+          "found": "11th arrondissement",
+          "pref": "11th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-RWKF03P5-T"
+        },
+        {
+          "start": 1306,
+          "end": 1324,
+          "found": "Clausewitz (K. von)",
+          "pref": "Clausewitz (K. von)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-CQZWKMNR-R"
+        },
+        {
+          "start": 1333,
+          "end": 1343,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1356,
+          "end": 1358,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1391,
+          "end": 1418,
+          "found": "fall in the birth-rate",
+          "pref": "fall in the birth-rate",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D9H7774X-D"
+        },
+        {
+          "start": 1422,
+          "end": 1439,
+          "found": "data-processing expert",
+          "pref": "data-processing expert",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-QNB5WH3J-6"
+        },
+        {
+          "start": 1448,
+          "end": 1470,
+          "found": "Schumpeter, Joseph Aloïs",
+          "pref": "Schumpeter, Joseph Aloïs",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-R1QPWM6Q-D"
+        },
+        {
+          "start": 1484,
+          "end": 1494,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "matches": [
+        {
+          "start": 3,
+          "end": 9,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 43,
+          "end": 65,
+          "found": "medico-legal expertise",
+          "pref": "medico-legal expertise",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-CJXXRTQZ-N"
+        },
+        {
+          "start": 67,
+          "end": 100,
+          "found": "Edward Evan Evans-Pritchard (Sir)",
+          "pref": "Edward Evan Evans-Pritchard (Sir)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-HFF4RJ4C-3"
+        },
+        {
+          "start": 144,
+          "end": 154,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 159,
+          "end": 165,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 199,
+          "end": 224,
+          "found": "parent-child relationship",
+          "pref": "parent-child relationship",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-KBTKHHQH-M"
+        },
+        {
+          "start": 226,
+          "end": 248,
+          "found": "Klausewitz, Karl (von)",
+          "pref": "Klausewitz, Karl (von)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-CQZWKMNR-R"
+        },
+        {
+          "start": 254,
+          "end": 287,
+          "found": "computer-supported social network",
+          "pref": "computer-supported social network",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-MNWHDL0K-S"
+        },
+        {
+          "start": 306,
+          "end": 316,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 321,
+          "end": 327,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 361,
+          "end": 381,
+          "found": "post-partum distress",
+          "pref": "post-partum distress",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z4NV8LJP-Z"
+        },
+        {
+          "start": 383,
+          "end": 404,
+          "found": "socio-Economic factor",
+          "pref": "socio-Economic factor",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-PJL86JM5-L"
+        },
+        {
+          "start": 410,
+          "end": 430,
+          "found": "grass-roots movement",
+          "pref": "grass-roots movement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-H2N6ZLG4-6"
+        },
+        {
+          "start": 449,
+          "end": 459,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 464,
+          "end": 470,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 504,
+          "end": 527,
+          "found": "Social-Democratic Party",
+          "pref": "Social-Democratic Party",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-M9V7BJRH-0"
+        },
+        {
+          "start": 529,
+          "end": 554,
+          "found": "cross-national comparison",
+          "pref": "cross-national comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z8PQB8C9-R"
+        },
+        {
+          "start": 560,
+          "end": 585,
+          "found": "socio-cultural facilities",
+          "pref": "socio-cultural facilities",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-W3P2WWSZ-P"
+        },
+        {
+          "start": 604,
+          "end": 614,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 619,
+          "end": 625,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 659,
+          "end": 680,
+          "found": "socio-cultural factor",
+          "pref": "socio-cultural factor",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z9CNL4M4-M"
+        },
+        {
+          "start": 682,
+          "end": 705,
+          "found": "post-industrial society",
+          "pref": "post-industrial society",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-J3QGZDCS-0"
+        },
+        {
+          "start": 711,
+          "end": 731,
+          "found": "Lévi-Strauss, Claude",
+          "pref": "Lévi-Strauss, Claude",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-MB6G6C3L-G"
+        },
+        {
+          "start": 750,
+          "end": 760,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 765,
+          "end": 771,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 805,
+          "end": 832,
+          "found": "Gandhi, Mohandas Karamchand",
+          "pref": "Gandhi, Mohandas Karamchand",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-BD4Z98CD-8"
+        },
+        {
+          "start": 834,
+          "end": 857,
+          "found": "Galbraith, John Kenneth",
+          "pref": "Galbraith, John Kenneth",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-PD77GGBF-2"
+        },
+        {
+          "start": 863,
+          "end": 884,
+          "found": "Kirisawa-type uveitis",
+          "pref": "Kirisawa-type uveitis",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-BMV264KT-W"
+        },
+        {
+          "start": 903,
+          "end": 913,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 918,
+          "end": 924,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 958,
+          "end": 977,
+          "found": "18th arrondissement",
+          "pref": "18th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z225H3W3-5"
+        },
+        {
+          "start": 979,
+          "end": 1003,
+          "found": "self-fulfilling prophecy",
+          "pref": "self-fulfilling prophecy",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-N53SVVXR-P"
+        },
+        {
+          "start": 1009,
+          "end": 1028,
+          "found": "low-density housing",
+          "pref": "low-density housing",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-PWMDL6VR-D"
+        },
+        {
+          "start": 1047,
+          "end": 1057,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1062,
+          "end": 1068,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1102,
+          "end": 1123,
+          "found": "farm-produce industry",
+          "pref": "farm-produce industry",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LF6CL34Q-X"
+        },
+        {
+          "start": 1125,
+          "end": 1147,
+          "found": "data-processing expert",
+          "pref": "data-processing expert",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-QNB5WH3J-6"
+        },
+        {
+          "start": 1153,
+          "end": 1173,
+          "found": "Eysenck, Hans Jürgen",
+          "pref": "Eysenck, Hans Jürgen",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-RMDH8GGW-T"
+        },
+        {
+          "start": 1192,
+          "end": 1202,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1207,
+          "end": 1213,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1247,
+          "end": 1261,
+          "found": "Condorcet (M.J.A.N. de)",
+          "pref": "Condorcet (M.J.A.N. de)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LLPMFZHF-C"
+        },
+        {
+          "start": 1262,
+          "end": 1266,
+          "found": "French-speaking countries",
+          "pref": "French-speaking countries",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-DZJCM8NX-9"
+        },
+        {
+          "start": 1333,
+          "end": 1340,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1344,
+          "end": 1345,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1379,
+          "end": 1404,
+          "found": "medical psycho-pedagogical center",
+          "pref": "medical psycho-pedagogical center",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z9QT2FPZ-N"
+        },
+        {
+          "start": 1411,
+          "end": 1435,
+          "found": "socio-demographic factor",
+          "pref": "socio-demographic factor",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-GXKC70K5-Z"
+        },
+        {
+          "start": 1453,
+          "end": 1472,
+          "found": "life-long education",
+          "pref": "life-long education",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-BRG7KPCD-0"
+        },
+        {
+          "start": 1485,
+          "end": 1489,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "matches": [
+        {
+          "start": 3,
+          "end": 9,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 58,
+          "end": 62,
+          "found": "game",
+          "pref": "games",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-L7KSPTW9-5"
+        },
+        {
+          "start": 64,
+          "end": 89,
+          "found": "parent-child relationship",
+          "pref": "parent-child relationship",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-KBTKHHQH-M"
+        },
+        {
+          "start": 95,
+          "end": 116,
+          "found": "Friuli-Venezia Giulia",
+          "pref": "Friuli-Venezia Giulia",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WGT8B8ZJ-P"
+        },
+        {
+          "start": 135,
+          "end": 145,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 150,
+          "end": 156,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 190,
+          "end": 218,
+          "found": "employment-training relation",
+          "pref": "employment-training relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-MHXSZ317-5"
+        },
+        {
+          "start": 220,
+          "end": 240,
+          "found": "Eysenck, Hans Jürgen",
+          "pref": "Eysenck, Hans Jürgen",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-RMDH8GGW-T"
+        },
+        {
+          "start": 250,
+          "end": 257,
+          "found": "patient",
+          "pref": "patient",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-RBS8HDSH-D"
+        },
+        {
+          "start": 258,
+          "end": 266,
+          "found": "hospital",
+          "pref": "hospital",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z1WN0SVX-Q"
+        },
+        {
+          "start": 285,
+          "end": 295,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 300,
+          "end": 306,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 340,
+          "end": 362,
+          "found": "French-speaking Africa",
+          "pref": "French-speaking Africa",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-BGW8BXQN-R"
+        },
+        {
+          "start": 381,
+          "end": 387,
+          "found": "system",
+          "pref": "system",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-T4J97MQK-J"
+        },
+        {
+          "start": 393,
+          "end": 418,
+          "found": "French-speaking countries",
+          "pref": "French-speaking countries",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-DZJCM8NX-9"
+        },
+        {
+          "start": 437,
+          "end": 447,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 452,
+          "end": 458,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 492,
+          "end": 513,
+          "found": "parent-child relation",
+          "pref": "parent-child relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-KBTKHHQH-M"
+        },
+        {
+          "start": 515,
+          "end": 540,
+          "found": "semi-structured interview",
+          "pref": "semi-structured interview",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-ST5DHSJS-0"
+        },
+        {
+          "start": 546,
+          "end": 573,
+          "found": "Gandhi, Mohandas Karamchand",
+          "pref": "Gandhi, Mohandas Karamchand",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-BD4Z98CD-8"
+        },
+        {
+          "start": 592,
+          "end": 602,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 607,
+          "end": 613,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 647,
+          "end": 669,
+          "found": "face-to-face interview",
+          "pref": "face-to-face interview",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-M2LZQC02-T"
+        },
+        {
+          "start": 671,
+          "end": 698,
+          "found": "integration-oriented device",
+          "pref": "integration-oriented device",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WD98HHSS-5"
+        },
+        {
+          "start": 704,
+          "end": 727,
+          "found": "non-standard employment",
+          "pref": "non-standard employment",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-L0903QZR-9"
+        },
+        {
+          "start": 746,
+          "end": 756,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 761,
+          "end": 767,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 801,
+          "end": 824,
+          "found": "public-private relation",
+          "pref": "public-private relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WVS3QSW1-G"
+        },
+        {
+          "start": 826,
+          "end": 847,
+          "found": "socio-Economic factor",
+          "pref": "socio-Economic factor",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-PJL86JM5-L"
+        },
+        {
+          "start": 853,
+          "end": 877,
+          "found": "self-fulfilling prophecy",
+          "pref": "self-fulfilling prophecy",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-N53SVVXR-P"
+        },
+        {
+          "start": 896,
+          "end": 906,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 911,
+          "end": 917,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 951,
+          "end": 973,
+          "found": "pre-industrial society",
+          "pref": "pre-industrial society",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-S3M8VSJD-1"
+        },
+        {
+          "start": 975,
+          "end": 1001,
+          "found": "Christian-Democratic Party",
+          "pref": "Christian-Democratic Party",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-GXDGWKMK-8"
+        },
+        {
+          "start": 1007,
+          "end": 1026,
+          "found": "13th arrondissement",
+          "pref": "13th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LB9S960C-0"
+        },
+        {
+          "start": 1045,
+          "end": 1055,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1060,
+          "end": 1066,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1100,
+          "end": 1123,
+          "found": "non-directive interview",
+          "pref": "non-directive interview",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-MDW524DJ-0"
+        },
+        {
+          "start": 1125,
+          "end": 1147,
+          "found": "Cooley, Charles Horton",
+          "pref": "Cooley, Charles Horton",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-VLSGHSJF-T"
+        },
+        {
+          "start": 1153,
+          "end": 1174,
+          "found": "non-observed variable",
+          "pref": "non-observed variable",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z28NFXWB-9"
+        },
+        {
+          "start": 1193,
+          "end": 1203,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1208,
+          "end": 1214,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1248,
+          "end": 1268,
+          "found": "post-office employee",
+          "pref": "post-office employee",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-M9T9ZK23-F"
+        },
+        {
+          "start": 1270,
+          "end": 1299,
+          "found": "subordinate-superior relation",
+          "pref": "subordinate-superior relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-S7540RNV-H"
+        },
+        {
+          "start": 1305,
+          "end": 1329,
+          "found": "solidarity-based economy",
+          "pref": "solidarity-based economy",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z7PQSPD4-J"
+        },
+        {
+          "start": 1348,
+          "end": 1358,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1363,
+          "end": 1369,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1404,
+          "end": 1427,
+          "found": "English-speaking Canada",
+          "pref": "English-speaking Canada",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-R75M7JMR-6"
+        },
+        {
+          "start": 1429,
+          "end": 1448,
+          "found": "17th arrondissement",
+          "pref": "17th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-BZX7F65L-B"
+        },
+        {
+          "start": 1454,
+          "end": 1477,
+          "found": "post-industrial society",
+          "pref": "post-industrial society",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-J3QGZDCS-0"
+        },
+        {
+          "start": 1496,
+          "end": 1506,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "matches": [
+        {
+          "start": 3,
+          "end": 9,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 43,
+          "end": 80,
+          "found": "planning-programming-budgeting system",
+          "pref": "planning-programming-budgeting system",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-KBJ9M86S-L"
+        },
+        {
+          "start": 82,
+          "end": 101,
+          "found": "14th arrondissement",
+          "pref": "14th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-XKPBKHH5-5"
+        },
+        {
+          "start": 107,
+          "end": 136,
+          "found": "subordinate-superior relation",
+          "pref": "subordinate-superior relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-S7540RNV-H"
+        },
+        {
+          "start": 155,
+          "end": 165,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 170,
+          "end": 176,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 210,
+          "end": 232,
+          "found": "pre-industrial society",
+          "pref": "pre-industrial society",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-S3M8VSJD-1"
+        },
+        {
+          "start": 234,
+          "end": 255,
+          "found": "Friuli-Venezia Giulia",
+          "pref": "Friuli-Venezia Giulia",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WGT8B8ZJ-P"
+        },
+        {
+          "start": 261,
+          "end": 281,
+          "found": "Jean-Claude Passeron",
+          "pref": "Jean-Claude Passeron",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-PC8D32N4-G"
+        },
+        {
+          "start": 300,
+          "end": 310,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 315,
+          "end": 321,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 355,
+          "end": 378,
+          "found": "English-speaking Canada",
+          "pref": "English-speaking Canada",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-R75M7JMR-6"
+        },
+        {
+          "start": 380,
+          "end": 402,
+          "found": "face-to-face interview",
+          "pref": "face-to-face interview",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-M2LZQC02-T"
+        },
+        {
+          "start": 408,
+          "end": 462,
+          "found": "Organisation for Economic Co-operation and Development",
+          "pref": "Organisation for Economic Co-operation and Development",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-S5Q6J124-J"
+        },
+        {
+          "start": 481,
+          "end": 491,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 496,
+          "end": 502,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 536,
+          "end": 568,
+          "found": "Antarctica (British territories)",
+          "pref": "Antarctica (British territories)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z61R5DJP-3"
+        },
+        {
+          "start": 570,
+          "end": 592,
+          "found": "data-processing expert",
+          "pref": "data-processing expert",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-QNB5WH3J-6"
+        },
+        {
+          "start": 598,
+          "end": 618,
+          "found": "Bourricaud, François",
+          "pref": "Bourricaud, François",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-H23N46HT-M"
+        },
+        {
+          "start": 637,
+          "end": 647,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 652,
+          "end": 658,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 692,
+          "end": 715,
+          "found": "Social-Democratic Party",
+          "pref": "Social-Democratic Party",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-M9V7BJRH-0"
+        },
+        {
+          "start": 717,
+          "end": 745,
+          "found": "employment-training relation",
+          "pref": "employment-training relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-MHXSZ317-5"
+        },
+        {
+          "start": 751,
+          "end": 774,
+          "found": "South Africa (Republic)",
+          "pref": "South Africa (Republic)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-QFLRDRVX-L"
+        },
+        {
+          "start": 793,
+          "end": 803,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 808,
+          "end": 814,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 848,
+          "end": 871,
+          "found": "post-industrial society",
+          "pref": "post-industrial society",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-J3QGZDCS-0"
+        },
+        {
+          "start": 873,
+          "end": 891,
+          "found": "Clausewitz (K. von)",
+          "pref": "Clausewitz (K. von)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-CQZWKMNR-R"
+        },
+        {
+          "start": 894,
+          "end": 909,
+          "found": "urban-rural migration",
+          "pref": "urban-rural migration",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-GX6JJG9W-T"
+        },
+        {
+          "start": 927,
+          "end": 937,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 950,
+          "end": 952,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 984,
+          "end": 1012,
+          "found": "Provence-Alpes-Côte d'Azur",
+          "pref": "Provence-Alpes-Côte d'Azur",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-FLW6Q1QH-4"
+        },
+        {
+          "start": 1014,
+          "end": 1027,
+          "found": "Becker, Howard Saul",
+          "pref": "Becker, Howard Saul",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-NR0VX295-5"
+        },
+        {
+          "start": 1036,
+          "end": 1051,
+          "found": "socio-professional group",
+          "pref": "socio-professional group",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-TS412BD3-W"
+        },
+        {
+          "start": 1071,
+          "end": 1073,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1089,
+          "end": 1099,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1120,
+          "end": 1151,
+          "found": "country-town relationship",
+          "pref": "country-town relationship",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Q8Q531H1-L"
+        },
+        {
+          "start": 1152,
+          "end": 1169,
+          "found": "19th arrondissement",
+          "pref": "19th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-MVPBNSDP-B"
+        },
+        {
+          "start": 1216,
+          "end": 1218,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1234,
+          "end": 1244,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1265,
+          "end": 1293,
+          "found": "life-course discontinuity",
+          "pref": "life-course discontinuity",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-H13PR20J-5"
+        },
+        {
+          "start": 1294,
+          "end": 1314,
+          "found": "13th arrondissement",
+          "pref": "13th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LB9S960C-0"
+        },
+        {
+          "start": 1321,
+          "end": 1347,
+          "found": "Cooley, Charles Horton",
+          "pref": "Cooley, Charles Horton",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-VLSGHSJF-T"
+        },
+        {
+          "start": 1364,
+          "end": 1366,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1382,
+          "end": 1392,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1414,
+          "end": 1448,
+          "found": "Dahrendorf, Ralf Gustav",
+          "pref": "Dahrendorf, Ralf Gustav",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-XTTWD8ZX-J"
+        },
+        {
+          "start": 1450,
+          "end": 1490,
+          "found": "Edward Evan Evans-Pritchard (Sir)",
+          "pref": "Edward Evan Evans-Pritchard (Sir)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-HFF4RJ4C-3"
+        },
+        {
+          "start": 1495,
+          "end": 1509,
+          "found": "Eysenck, Hans Jürgen",
+          "pref": "Eysenck, Hans Jürgen",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-RMDH8GGW-T"
+        },
+        {
+          "start": 1523,
+          "end": 1525,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "matches": [
+        {
+          "start": 3,
+          "end": 9,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 43,
+          "end": 70,
+          "found": "researcher-subject relation",
+          "pref": "researcher-subject relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WHSXLWX9-C"
+        },
+        {
+          "start": 72,
+          "end": 97,
+          "found": "cross-national comparison",
+          "pref": "cross-national comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z8PQB8C9-R"
+        },
+        {
+          "start": 103,
+          "end": 126,
+          "found": "auto-referential system",
+          "pref": "auto-referential system",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-RW20189W-T"
+        },
+        {
+          "start": 145,
+          "end": 155,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 160,
+          "end": 166,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 221,
+          "end": 243,
+          "found": "pre-industrial society",
+          "pref": "pre-industrial society",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-S3M8VSJD-1"
+        },
+        {
+          "start": 249,
+          "end": 268,
+          "found": "Becker, Howard Saul",
+          "pref": "Becker, Howard Saul",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-NR0VX295-5"
+        },
+        {
+          "start": 287,
+          "end": 297,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 302,
+          "end": 308,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 342,
+          "end": 406,
+          "found": "United Nations Educational, Scientific and Cultural Organization",
+          "pref": "United Nations Educational, Scientific and Cultural Organization",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-PTJ23N2T-V"
+        },
+        {
+          "start": 408,
+          "end": 435,
+          "found": "Adorno, Theodor Wiesengrund",
+          "pref": "Adorno, Theodor Wiesengrund",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-R6PX3055-0"
+        },
+        {
+          "start": 441,
+          "end": 463,
+          "found": "French-speaking Canada",
+          "pref": "French-speaking Canada",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-MJDWNP23-9"
+        },
+        {
+          "start": 482,
+          "end": 492,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 497,
+          "end": 503,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 537,
+          "end": 558,
+          "found": "Passeron, Jean-Claude",
+          "pref": "Passeron, Jean-Claude",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-PC8D32N4-G"
+        },
+        {
+          "start": 560,
+          "end": 614,
+          "found": "Organisation for Economic Co-operation and Development",
+          "pref": "Organisation for Economic Co-operation and Development",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-S5Q6J124-J"
+        },
+        {
+          "start": 620,
+          "end": 642,
+          "found": "medico-legal expertise",
+          "pref": "medico-legal expertise",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-CJXXRTQZ-N"
+        },
+        {
+          "start": 661,
+          "end": 671,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 676,
+          "end": 682,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 716,
+          "end": 738,
+          "found": "data-processing expert",
+          "pref": "data-processing expert",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-QNB5WH3J-6"
+        },
+        {
+          "start": 740,
+          "end": 760,
+          "found": "Victoria (Australia)",
+          "pref": "Victoria (Australia)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-ZKW3LWF5-Z"
+        },
+        {
+          "start": 781,
+          "end": 785,
+          "found": "game",
+          "pref": "games",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-L7KSPTW9-5"
+        },
+        {
+          "start": 804,
+          "end": 814,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 819,
+          "end": 825,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 859,
+          "end": 891,
+          "found": "psycho-sociological intervention",
+          "pref": "psycho-sociological intervention",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-DSKSXGR8-V"
+        },
+        {
+          "start": 893,
+          "end": 923,
+          "found": "structural-functional analysis",
+          "pref": "structural-functional analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-JJTPM7C0-1"
+        },
+        {
+          "start": 929,
+          "end": 951,
+          "found": "long-term unemployment",
+          "pref": "long-term unemployment",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LB2VR9MJ-8"
+        },
+        {
+          "start": 970,
+          "end": 980,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 985,
+          "end": 991,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1025,
+          "end": 1046,
+          "found": "father-child relation",
+          "pref": "father-child relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LFL5R8FG-4"
+        },
+        {
+          "start": 1048,
+          "end": 1067,
+          "found": "12th arrondissement",
+          "pref": "12th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-VFVDMCSF-C"
+        },
+        {
+          "start": 1073,
+          "end": 1097,
+          "found": "father-daughter relation",
+          "pref": "father-daughter relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-B60BBRP9-M"
+        },
+        {
+          "start": 1116,
+          "end": 1126,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1131,
+          "end": 1137,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1171,
+          "end": 1193,
+          "found": "Klausewitz, Karl (von)",
+          "pref": "Klausewitz, Karl (von)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-CQZWKMNR-R"
+        },
+        {
+          "start": 1195,
+          "end": 1220,
+          "found": "country-town relationship",
+          "pref": "country-town relationship",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Q8Q531H1-L"
+        },
+        {
+          "start": 1226,
+          "end": 1248,
+          "found": "state-society relation",
+          "pref": "state-society relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-W3X1HG1W-R"
+        },
+        {
+          "start": 1267,
+          "end": 1277,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1282,
+          "end": 1288,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1322,
+          "end": 1343,
+          "found": "Malinovski, Bronislaw",
+          "pref": "Malinovski, Bronislaw",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-RST3T1BS-C"
+        },
+        {
+          "start": 1345,
+          "end": 1365,
+          "found": "part-time employment",
+          "pref": "part-time employment",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-TKFS0X81-6"
+        },
+        {
+          "start": 1371,
+          "end": 1390,
+          "found": "life-long education",
+          "pref": "life-long education",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-BRG7KPCD-0"
+        },
+        {
+          "start": 1409,
+          "end": 1419,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1424,
+          "end": 1430,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1489,
+          "end": 1508,
+          "found": "low-density housing",
+          "pref": "low-density housing",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-PWMDL6VR-D"
+        },
+        {
+          "start": 1514,
+          "end": 1547,
+          "found": "medical psycho-pedagogical center",
+          "pref": "medical psycho-pedagogical center",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z9QT2FPZ-N"
+        },
+        {
+          "start": 1566,
+          "end": 1576,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "matches": [
+        {
+          "start": 3,
+          "end": 9,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 43,
+          "end": 62,
+          "found": "low-density housing",
+          "pref": "low-density housing",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-PWMDL6VR-D"
+        },
+        {
+          "start": 64,
+          "end": 96,
+          "found": "psycho-sociological intervention",
+          "pref": "psycho-sociological intervention",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-DSKSXGR8-V"
+        },
+        {
+          "start": 102,
+          "end": 122,
+          "found": "Wittgenstein, Ludwig",
+          "pref": "Wittgenstein, Ludwig",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LH7ZMCD7-6"
+        },
+        {
+          "start": 141,
+          "end": 151,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 156,
+          "end": 162,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 196,
+          "end": 230,
+          "found": "Evans-Pritchard (Sir), Edward Evan",
+          "pref": "Evans-Pritchard (Sir), Edward Evan",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-HFF4RJ4C-3"
+        },
+        {
+          "start": 232,
+          "end": 251,
+          "found": "13th arrondissement",
+          "pref": "13th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LB9S960C-0"
+        },
+        {
+          "start": 257,
+          "end": 277,
+          "found": "trade-union election",
+          "pref": "trade-union election",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-MTWG4VB9-G"
+        },
+        {
+          "start": 296,
+          "end": 306,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 311,
+          "end": 317,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 375,
+          "end": 405,
+          "found": "structural-functional analysis",
+          "pref": "structural-functional analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-JJTPM7C0-1"
+        },
+        {
+          "start": 411,
+          "end": 432,
+          "found": "Provence-Alpes-Côte d'Azur",
+          "pref": "Provence-Alpes-Côte d'Azur",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-FLW6Q1QH-4"
+        },
+        {
+          "start": 441,
+          "end": 444,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 466,
+          "end": 467,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 496,
+          "end": 528,
+          "found": "fall in the birth-rate",
+          "pref": "fall in the birth-rate",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D9H7774X-D"
+        },
+        {
+          "start": 529,
+          "end": 554,
+          "found": "Antarctica (British territories)",
+          "pref": "Antarctica (British territories)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z61R5DJP-3"
+        },
+        {
+          "start": 567,
+          "end": 587,
+          "found": "South Africa (Republic)",
+          "pref": "South Africa (Republic)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-QFLRDRVX-L"
+        },
+        {
+          "start": 600,
+          "end": 603,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 625,
+          "end": 626,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 655,
+          "end": 677,
+          "found": "medico-legal expertise",
+          "pref": "medico-legal expertise",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-CJXXRTQZ-N"
+        },
+        {
+          "start": 683,
+          "end": 704,
+          "found": "Galbraith, John Kenneth",
+          "pref": "Galbraith, John Kenneth",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-PD77GGBF-2"
+        },
+        {
+          "start": 717,
+          "end": 738,
+          "found": "medical psycho-pedagogical center",
+          "pref": "medical psycho-pedagogical center",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z9QT2FPZ-N"
+        },
+        {
+          "start": 760,
+          "end": 763,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 785,
+          "end": 786,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 815,
+          "end": 836,
+          "found": "grass-roots movement",
+          "pref": "grass-roots movement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-H2N6ZLG4-6"
+        },
+        {
+          "start": 842,
+          "end": 867,
+          "found": "administration-public relation",
+          "pref": "administration-public relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-NPPHT3MH-C"
+        },
+        {
+          "start": 882,
+          "end": 894,
+          "found": "input-output analysis",
+          "pref": "input-output analysis",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-R55ZTQM2-0"
+        },
+        {
+          "start": 913,
+          "end": 916,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 938,
+          "end": 939,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 968,
+          "end": 982,
+          "found": "20th arrondissement",
+          "pref": "20th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-JR1PVB2J-1"
+        },
+        {
+          "start": 1012,
+          "end": 1013,
+          "found": "game",
+          "pref": "games",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-L7KSPTW9-5"
+        },
+        {
+          "start": 1023,
+          "end": 1039,
+          "found": "Christian-Democratic Party",
+          "pref": "Christian-Democratic Party",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-GXDGWKMK-8"
+        },
+        {
+          "start": 1059,
+          "end": 1062,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1084,
+          "end": 1085,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1114,
+          "end": 1136,
+          "found": "father-child relation",
+          "pref": "father-child relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LFL5R8FG-4"
+        },
+        {
+          "start": 1142,
+          "end": 1164,
+          "found": "Tocqueville, Alexis de",
+          "pref": "Tocqueville, Alexis de",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z1HPRGWX-Q"
+        },
+        {
+          "start": 1174,
+          "end": 1187,
+          "found": "Social-Democratic Party",
+          "pref": "Social-Democratic Party",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-M9V7BJRH-0"
+        },
+        {
+          "start": 1207,
+          "end": 1210,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1232,
+          "end": 1233,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1262,
+          "end": 1288,
+          "found": "solidarity-based economy",
+          "pref": "solidarity-based economy",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z7PQSPD4-J"
+        },
+        {
+          "start": 1294,
+          "end": 1321,
+          "found": "computer-supported social network",
+          "pref": "computer-supported social network",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-MNWHDL0K-S"
+        },
+        {
+          "start": 1336,
+          "end": 1354,
+          "found": "integration-oriented device",
+          "pref": "integration-oriented device",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WD98HHSS-5"
+        },
+        {
+          "start": 1373,
+          "end": 1376,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1398,
+          "end": 1399,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1429,
+          "end": 1443,
+          "found": "15th arrondissement",
+          "pref": "15th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-F62NKW25-Q"
+        },
+        {
+          "start": 1449,
+          "end": 1477,
+          "found": "Hegel, Georg Wilhelm Friedrich",
+          "pref": "Hegel, Georg Wilhelm Friedrich",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-RN75BDRW-3"
+        },
+        {
+          "start": 1495,
+          "end": 1507,
+          "found": "socio-Economic factor",
+          "pref": "socio-Economic factor",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-PJL86JM5-L"
+        },
+        {
+          "start": 1526,
+          "end": 1529,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "matches": [
+        {
+          "start": 3,
+          "end": 9,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 44,
+          "end": 67,
+          "found": "post-industrial society",
+          "pref": "post-industrial society",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-J3QGZDCS-0"
+        },
+        {
+          "start": 69,
+          "end": 88,
+          "found": "15th arrondissement",
+          "pref": "15th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-F62NKW25-Q"
+        },
+        {
+          "start": 94,
+          "end": 115,
+          "found": "human-animal relation",
+          "pref": "human-animal relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-QQSJQ8BS-Q"
+        },
+        {
+          "start": 134,
+          "end": 144,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 149,
+          "end": 155,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 190,
+          "end": 204,
+          "found": "Condorcet (M.J.A.N. de)",
+          "pref": "Condorcet (M.J.A.N. de)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LLPMFZHF-C"
+        },
+        {
+          "start": 205,
+          "end": 227,
+          "found": "Organisation for Economic Co-operation and Development",
+          "pref": "Organisation for Economic Co-operation and Development",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-S5Q6J124-J"
+        },
+        {
+          "start": 241,
+          "end": 244,
+          "found": "18th arrondissement",
+          "pref": "18th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z225H3W3-5"
+        },
+        {
+          "start": 269,
+          "end": 270,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 280,
+          "end": 294,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 328,
+          "end": 339,
+          "found": "17th arrondissement",
+          "pref": "17th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-BZX7F65L-B"
+        },
+        {
+          "start": 341,
+          "end": 368,
+          "found": "French-speaking countries",
+          "pref": "French-speaking countries",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-DZJCM8NX-9"
+        },
+        {
+          "start": 388,
+          "end": 416,
+          "found": "Evans Pritchard (E. E.)",
+          "pref": "Evans Pritchard (E. E.)",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-HFF4RJ4C-3"
+        },
+        {
+          "start": 437,
+          "end": 438,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 441,
+          "end": 442,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 473,
+          "end": 489,
+          "found": "Adorno, Theodor Wiesengrund",
+          "pref": "Adorno, Theodor Wiesengrund",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-R6PX3055-0"
+        },
+        {
+          "start": 491,
+          "end": 518,
+          "found": "Eysenck, Hans Jürgen",
+          "pref": "Eysenck, Hans Jürgen",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-RMDH8GGW-T"
+        },
+        {
+          "start": 527,
+          "end": 556,
+          "found": "medical psycho-pedagogical center",
+          "pref": "medical psycho-pedagogical center",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z9QT2FPZ-N"
+        },
+        {
+          "start": 570,
+          "end": 573,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 588,
+          "end": 589,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 636,
+          "end": 640,
+          "found": "10th arrondissement",
+          "pref": "10th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-CB17VH7P-M"
+        },
+        {
+          "start": 648,
+          "end": 666,
+          "found": "Tocqueville, Alexis de",
+          "pref": "Tocqueville, Alexis de",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-Z1HPRGWX-Q"
+        },
+        {
+          "start": 682,
+          "end": 714,
+          "found": "father-daughter relation",
+          "pref": "father-daughter relation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-B60BBRP9-M"
+        },
+        {
+          "start": 725,
+          "end": 726,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 737,
+          "end": 738,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 784,
+          "end": 800,
+          "found": "Jean-Claude Passeron",
+          "pref": "Jean-Claude Passeron",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-PC8D32N4-G"
+        },
+        {
+          "start": 802,
+          "end": 829,
+          "found": "cross-cultural variation",
+          "pref": "cross-cultural variation",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LGN1M7T0-2"
+        },
+        {
+          "start": 835,
+          "end": 857,
+          "found": "low-density housing",
+          "pref": "low-density housing",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-PWMDL6VR-D"
+        },
+        {
+          "start": 876,
+          "end": 877,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 885,
+          "end": 886,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 930,
+          "end": 941,
+          "found": "Bourricaud, François",
+          "pref": "Bourricaud, François",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-H23N46HT-M"
+        },
+        {
+          "start": 946,
+          "end": 966,
+          "found": "Kirisawa-type uveitis",
+          "pref": "Kirisawa-type uveitis",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-BMV264KT-W"
+        },
+        {
+          "start": 1012,
+          "end": 1019,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1025,
+          "end": 1029,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1073,
+          "end": 1089,
+          "found": "socio-professional group",
+          "pref": "socio-professional group",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-TS412BD3-W"
+        },
+        {
+          "start": 1091,
+          "end": 1118,
+          "found": "Friuli-Venezia Giulia",
+          "pref": "Friuli-Venezia Giulia",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WGT8B8ZJ-P"
+        },
+        {
+          "start": 1125,
+          "end": 1151,
+          "found": "French-speaking Canada",
+          "pref": "French-speaking Canada",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-MJDWNP23-9"
+        },
+        {
+          "start": 1166,
+          "end": 1167,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1178,
+          "end": 1179,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1223,
+          "end": 1227,
+          "found": "13th arrondissement",
+          "pref": "13th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-LB9S960C-0"
+        },
+        {
+          "start": 1235,
+          "end": 1240,
+          "found": "19th arrondissement",
+          "pref": "19th arrondissement",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-MVPBNSDP-B"
+        },
+        {
+          "start": 1254,
+          "end": 1288,
+          "found": "integration-oriented device",
+          "pref": "integration-oriented device",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WD98HHSS-5"
+        },
+        {
+          "start": 1309,
+          "end": 1310,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        },
+        {
+          "start": 1326,
+          "end": 1327,
+          "found": "record",
+          "pref": "records",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-D3L8XD7V-3"
+        },
+        {
+          "start": 1371,
+          "end": 1388,
+          "found": "socio-demographic factor",
+          "pref": "socio-demographic factor",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-GXKC70K5-Z"
+        },
+        {
+          "start": 1390,
+          "end": 1417,
+          "found": "after-school activity",
+          "pref": "after-school activity",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-B8FG3KM1-M"
+        },
+        {
+          "start": 1424,
+          "end": 1449,
+          "found": "Gandhi, Mohandas Karamchand",
+          "pref": "Gandhi, Mohandas Karamchand",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-BD4Z98CD-8"
+        },
+        {
+          "start": 1465,
+          "end": 1466,
+          "found": "comparison",
+          "pref": "comparison",
+          "uri": "http://data.loterre.fr/ark:/67375/3JP-WJ38JMR9-K"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2133 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "matches": [
+        {
+          "start": 34,
+          "end": 41,
+          "found": "feature",
+          "pref": "feature",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-HXNDPTSR-6"
+        },
+        {
+          "start": 43,
+          "end": 60,
+          "found": "cognitive process",
+          "pref": "cognitive process",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QTK1HPDG-G"
+        },
+        {
+          "start": 66,
+          "end": 73,
+          "found": "science",
+          "pref": "science",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-Q1LKKDQH-7"
+        },
+        {
+          "start": 139,
+          "end": 145,
+          "found": "change",
+          "pref": "change",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RZBX0DVP-H"
+        },
+        {
+          "start": 147,
+          "end": 155,
+          "found": "learning",
+          "pref": "learning",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-MMZBWKWK-V"
+        },
+        {
+          "start": 161,
+          "end": 170,
+          "found": "tool user",
+          "pref": "tool-user",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-BXTJ3P9J-W"
+        },
+        {
+          "start": 236,
+          "end": 255,
+          "found": "ontological quality",
+          "pref": "ontological quality",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-X7DLLWDJ-G"
+        },
+        {
+          "start": 257,
+          "end": 265,
+          "found": "resource",
+          "pref": "resource",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QFSLN2P8-5"
+        },
+        {
+          "start": 271,
+          "end": 280,
+          "found": "signaller",
+          "pref": "signaller",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TGW6LV64-X"
+        },
+        {
+          "start": 346,
+          "end": 363,
+          "found": "biological entity",
+          "pref": "biological entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-THZWSRJ3-G"
+        },
+        {
+          "start": 365,
+          "end": 375,
+          "found": "phenomenon",
+          "pref": "phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-J75J9GD0-Q"
+        },
+        {
+          "start": 381,
+          "end": 385,
+          "found": "site",
+          "pref": "site",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-GJT5SKWG-4"
+        },
+        {
+          "start": 451,
+          "end": 470,
+          "found": "sensory disposition",
+          "pref": "sensory disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-VT7ZVM54-G"
+        },
+        {
+          "start": 472,
+          "end": 480,
+          "found": "variable",
+          "pref": "variable",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-B3PTCS01-V"
+        },
+        {
+          "start": 486,
+          "end": 494,
+          "found": "tendency",
+          "pref": "tendency",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-R1RSF24P-F"
+        },
+        {
+          "start": 560,
+          "end": 566,
+          "found": "method",
+          "pref": "method",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RSVTPR98-M"
+        },
+        {
+          "start": 568,
+          "end": 588,
+          "found": "evolutionary history",
+          "pref": "evolutionary history",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-G12M5DFB-6"
+        },
+        {
+          "start": 594,
+          "end": 602,
+          "found": "behavior",
+          "pref": "behavior",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-LV7PW012-3"
+        },
+        {
+          "start": 668,
+          "end": 687,
+          "found": "geographical entity",
+          "pref": "geographical entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-XNB3Q0WJ-W"
+        },
+        {
+          "start": 689,
+          "end": 700,
+          "found": "disposition",
+          "pref": "disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-LF8D4KP7-P"
+        },
+        {
+          "start": 706,
+          "end": 714,
+          "found": "relation",
+          "pref": "relation",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-DKKTJWBP-K"
+        },
+        {
+          "start": 780,
+          "end": 794,
+          "found": "predisposition",
+          "pref": "predisposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-K1BS9LSX-0"
+        },
+        {
+          "start": 796,
+          "end": 810,
+          "found": "social partner",
+          "pref": "social partner",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-WQ32HK15-D"
+        },
+        {
+          "start": 816,
+          "end": 824,
+          "found": "dwarfism",
+          "pref": "dwarfism",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-ZGHST3SJ-7"
+        },
+        {
+          "start": 890,
+          "end": 898,
+          "found": "capacity",
+          "pref": "capacity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-H7MX96W6-6"
+        },
+        {
+          "start": 900,
+          "end": 918,
+          "found": "information entity",
+          "pref": "information entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-JGK72CBV-W"
+        },
+        {
+          "start": 924,
+          "end": 943,
+          "found": "communication cycle",
+          "pref": "communication cycle",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RZ7Q2VJV-J"
+        },
+        {
+          "start": 1010,
+          "end": 1018,
+          "found": "receiver",
+          "pref": "receiver",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TX4B5TSS-8"
+        },
+        {
+          "start": 1020,
+          "end": 1035,
+          "found": "material entity",
+          "pref": "material entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-SHNHBVNF-S"
+        },
+        {
+          "start": 1041,
+          "end": 1048,
+          "found": "disease",
+          "pref": "disease",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-M18747Z2-S"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "matches": [
+        {
+          "start": 34,
+          "end": 42,
+          "found": "resource",
+          "pref": "resource",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QFSLN2P8-5"
+        },
+        {
+          "start": 44,
+          "end": 50,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RCMC5LH6-D"
+        },
+        {
+          "start": 56,
+          "end": 65,
+          "found": "cognition",
+          "pref": "cognition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QTK1HPDG-G"
+        },
+        {
+          "start": 131,
+          "end": 148,
+          "found": "cognitive process",
+          "pref": "cognitive process",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QTK1HPDG-G"
+        },
+        {
+          "start": 150,
+          "end": 156,
+          "found": "signal",
+          "pref": "signal",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-ZLH5F46D-W"
+        },
+        {
+          "start": 162,
+          "end": 180,
+          "found": "information entity",
+          "pref": "information entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-JGK72CBV-W"
+        },
+        {
+          "start": 246,
+          "end": 269,
+          "found": "enculturated individual",
+          "pref": "enculturated individual",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-WBVXCHM4-7"
+        },
+        {
+          "start": 271,
+          "end": 278,
+          "found": "process",
+          "pref": "process",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-H1LV3KM3-Z"
+        },
+        {
+          "start": 284,
+          "end": 290,
+          "found": "change",
+          "pref": "change",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RZBX0DVP-H"
+        },
+        {
+          "start": 356,
+          "end": 363,
+          "found": "measure",
+          "pref": "measure",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-XV8LMZ68-C"
+        },
+        {
+          "start": 365,
+          "end": 373,
+          "found": "relation",
+          "pref": "relation",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-DKKTJWBP-K"
+        },
+        {
+          "start": 379,
+          "end": 388,
+          "found": "captivity",
+          "pref": "captivity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RGL4PC0V-N"
+        },
+        {
+          "start": 454,
+          "end": 473,
+          "found": "geographical entity",
+          "pref": "geographical entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-XNB3Q0WJ-W"
+        },
+        {
+          "start": 475,
+          "end": 482,
+          "found": "disease",
+          "pref": "disease",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-M18747Z2-S"
+        },
+        {
+          "start": 488,
+          "end": 494,
+          "found": "method",
+          "pref": "method",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RSVTPR98-M"
+        },
+        {
+          "start": 560,
+          "end": 580,
+          "found": "evolutionary history",
+          "pref": "evolutionary history",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-G12M5DFB-6"
+        },
+        {
+          "start": 582,
+          "end": 596,
+          "found": "social partner",
+          "pref": "social partner",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-WQ32HK15-D"
+        },
+        {
+          "start": 602,
+          "end": 611,
+          "found": "tool user",
+          "pref": "tool user",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-BXTJ3P9J-W"
+        },
+        {
+          "start": 677,
+          "end": 685,
+          "found": "dwarfism",
+          "pref": "dwarfism",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-ZGHST3SJ-7"
+        },
+        {
+          "start": 687,
+          "end": 704,
+          "found": "biological entity",
+          "pref": "biological entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-THZWSRJ3-G"
+        },
+        {
+          "start": 710,
+          "end": 718,
+          "found": "capacity",
+          "pref": "capacity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-H7MX96W6-6"
+        },
+        {
+          "start": 784,
+          "end": 803,
+          "found": "sensory disposition",
+          "pref": "sensory disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-VT7ZVM54-G"
+        },
+        {
+          "start": 805,
+          "end": 813,
+          "found": "tendency",
+          "pref": "tendency",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-R1RSF24P-F"
+        },
+        {
+          "start": 819,
+          "end": 838,
+          "found": "communication cycle",
+          "pref": "communication cycle",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RZ7Q2VJV-J"
+        },
+        {
+          "start": 904,
+          "end": 909,
+          "found": "state",
+          "pref": "state",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RNRLBS3Z-P"
+        },
+        {
+          "start": 911,
+          "end": 922,
+          "found": "disposition",
+          "pref": "disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-LF8D4KP7-P"
+        },
+        {
+          "start": 928,
+          "end": 935,
+          "found": "emitter",
+          "pref": "emitter",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TGW6LV64-X"
+        },
+        {
+          "start": 1002,
+          "end": 1009,
+          "found": "feature",
+          "pref": "feature",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-HXNDPTSR-6"
+        },
+        {
+          "start": 1027,
+          "end": 1042,
+          "found": "material entity",
+          "pref": "material entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-SHNHBVNF-S"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "matches": [
+        {
+          "start": 34,
+          "end": 43,
+          "found": "tool-user",
+          "pref": "tool-user",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-BXTJ3P9J-W"
+        },
+        {
+          "start": 45,
+          "end": 53,
+          "found": "receiver",
+          "pref": "receiver",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TX4B5TSS-8"
+        },
+        {
+          "start": 59,
+          "end": 68,
+          "found": "signaller",
+          "pref": "signaller",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TGW6LV64-X"
+        },
+        {
+          "start": 134,
+          "end": 141,
+          "found": "feature",
+          "pref": "feature",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-HXNDPTSR-6"
+        },
+        {
+          "start": 143,
+          "end": 151,
+          "found": "learning",
+          "pref": "learning",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-MMZBWKWK-V"
+        },
+        {
+          "start": 157,
+          "end": 163,
+          "found": "signal",
+          "pref": "signal",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-ZLH5F46D-W"
+        },
+        {
+          "start": 229,
+          "end": 240,
+          "found": "environment",
+          "pref": "environment",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-V4J5NGKR-M"
+        },
+        {
+          "start": 242,
+          "end": 249,
+          "found": "process",
+          "pref": "process",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-H1LV3KM3-Z"
+        },
+        {
+          "start": 255,
+          "end": 263,
+          "found": "resource",
+          "pref": "resource",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QFSLN2P8-5"
+        },
+        {
+          "start": 329,
+          "end": 336,
+          "found": "emitter",
+          "pref": "emitter",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TGW6LV64-X"
+        },
+        {
+          "start": 338,
+          "end": 357,
+          "found": "communication cycle",
+          "pref": "communication cycle",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RZ7Q2VJV-J"
+        },
+        {
+          "start": 363,
+          "end": 382,
+          "found": "ontological quality",
+          "pref": "ontological quality",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-X7DLLWDJ-G"
+        },
+        {
+          "start": 448,
+          "end": 468,
+          "found": "evolutionary history",
+          "pref": "evolutionary history",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-G12M5DFB-6"
+        },
+        {
+          "start": 470,
+          "end": 476,
+          "found": "method",
+          "pref": "method",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RSVTPR98-M"
+        },
+        {
+          "start": 482,
+          "end": 488,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RCMC5LH6-D"
+        },
+        {
+          "start": 554,
+          "end": 560,
+          "found": "change",
+          "pref": "change",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RZBX0DVP-H"
+        },
+        {
+          "start": 562,
+          "end": 569,
+          "found": "disease",
+          "pref": "disease",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-M18747Z2-S"
+        },
+        {
+          "start": 575,
+          "end": 592,
+          "found": "biological entity",
+          "pref": "biological entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-THZWSRJ3-G"
+        },
+        {
+          "start": 658,
+          "end": 672,
+          "found": "social partner",
+          "pref": "social partner",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-WQ32HK15-D"
+        },
+        {
+          "start": 674,
+          "end": 683,
+          "found": "cognition",
+          "pref": "cognition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QTK1HPDG-G"
+        },
+        {
+          "start": 689,
+          "end": 700,
+          "found": "disposition",
+          "pref": "disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-LF8D4KP7-P"
+        },
+        {
+          "start": 766,
+          "end": 773,
+          "found": "measure",
+          "pref": "measure",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-XV8LMZ68-C"
+        },
+        {
+          "start": 775,
+          "end": 779,
+          "found": "site",
+          "pref": "site",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-GJT5SKWG-4"
+        },
+        {
+          "start": 785,
+          "end": 804,
+          "found": "geographical entity",
+          "pref": "geographical entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-XNB3Q0WJ-W"
+        },
+        {
+          "start": 870,
+          "end": 889,
+          "found": "grammatical concept",
+          "pref": "grammatical concept",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-KD6Q2145-P"
+        },
+        {
+          "start": 891,
+          "end": 910,
+          "found": "sensory disposition",
+          "pref": "sensory disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-VT7ZVM54-G"
+        },
+        {
+          "start": 916,
+          "end": 923,
+          "found": "science",
+          "pref": "science",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-Q1LKKDQH-7"
+        },
+        {
+          "start": 1007,
+          "end": 1016,
+          "found": "captivity",
+          "pref": "captivity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RGL4PC0V-N"
+        },
+        {
+          "start": 1022,
+          "end": 1030,
+          "found": "behavior",
+          "pref": "behavior",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-LV7PW012-3"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "matches": [
+        {
+          "start": 34,
+          "end": 41,
+          "found": "process",
+          "pref": "process",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-H1LV3KM3-Z"
+        },
+        {
+          "start": 43,
+          "end": 53,
+          "found": "phenomenon",
+          "pref": "phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-J75J9GD0-Q"
+        },
+        {
+          "start": 59,
+          "end": 68,
+          "found": "tool user",
+          "pref": "tool user",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-BXTJ3P9J-W"
+        },
+        {
+          "start": 134,
+          "end": 140,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RCMC5LH6-D"
+        },
+        {
+          "start": 142,
+          "end": 159,
+          "found": "material resource",
+          "pref": "material resource",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-FPDV5NJ6-N"
+        },
+        {
+          "start": 165,
+          "end": 184,
+          "found": "sensory disposition",
+          "pref": "sensory disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-VT7ZVM54-G"
+        },
+        {
+          "start": 250,
+          "end": 269,
+          "found": "geographical entity",
+          "pref": "geographical entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-XNB3Q0WJ-W"
+        },
+        {
+          "start": 271,
+          "end": 282,
+          "found": "environment",
+          "pref": "environment",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-V4J5NGKR-M"
+        },
+        {
+          "start": 288,
+          "end": 295,
+          "found": "emitter",
+          "pref": "emitter",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TGW6LV64-X"
+        },
+        {
+          "start": 361,
+          "end": 378,
+          "found": "cognitive process",
+          "pref": "cognitive process",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QTK1HPDG-G"
+        },
+        {
+          "start": 380,
+          "end": 395,
+          "found": "material entity",
+          "pref": "material entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-SHNHBVNF-S"
+        },
+        {
+          "start": 401,
+          "end": 410,
+          "found": "signaller",
+          "pref": "signaller",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TGW6LV64-X"
+        },
+        {
+          "start": 476,
+          "end": 482,
+          "found": "change",
+          "pref": "change",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RZBX0DVP-H"
+        },
+        {
+          "start": 484,
+          "end": 492,
+          "found": "relation",
+          "pref": "relation",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-DKKTJWBP-K"
+        },
+        {
+          "start": 498,
+          "end": 506,
+          "found": "learning",
+          "pref": "learning",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-MMZBWKWK-V"
+        },
+        {
+          "start": 572,
+          "end": 581,
+          "found": "cognition",
+          "pref": "cognition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QTK1HPDG-G"
+        },
+        {
+          "start": 583,
+          "end": 592,
+          "found": "captivity",
+          "pref": "captivity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RGL4PC0V-N"
+        },
+        {
+          "start": 598,
+          "end": 618,
+          "found": "evolutionary history",
+          "pref": "evolutionary history",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-G12M5DFB-6"
+        },
+        {
+          "start": 684,
+          "end": 692,
+          "found": "tendency",
+          "pref": "tendency",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-R1RSF24P-F"
+        },
+        {
+          "start": 694,
+          "end": 716,
+          "found": "high-ranked individual",
+          "pref": "high-ranked individual",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-M7HBF1CT-J"
+        },
+        {
+          "start": 722,
+          "end": 730,
+          "found": "resource",
+          "pref": "resource",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QFSLN2P8-5"
+        },
+        {
+          "start": 796,
+          "end": 814,
+          "found": "information entity",
+          "pref": "information entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-JGK72CBV-W"
+        },
+        {
+          "start": 816,
+          "end": 822,
+          "found": "signal",
+          "pref": "signal",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-ZLH5F46D-W"
+        },
+        {
+          "start": 828,
+          "end": 847,
+          "found": "ontological quality",
+          "pref": "ontological quality",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-X7DLLWDJ-G"
+        },
+        {
+          "start": 913,
+          "end": 921,
+          "found": "variable",
+          "pref": "variable",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-B3PTCS01-V"
+        },
+        {
+          "start": 923,
+          "end": 930,
+          "found": "measure",
+          "pref": "measure",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-XV8LMZ68-C"
+        },
+        {
+          "start": 936,
+          "end": 944,
+          "found": "receiver",
+          "pref": "receiver",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TX4B5TSS-8"
+        },
+        {
+          "start": 1011,
+          "end": 1017,
+          "found": "method",
+          "pref": "method",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RSVTPR98-M"
+        },
+        {
+          "start": 1019,
+          "end": 1024,
+          "found": "state",
+          "pref": "state",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RNRLBS3Z-P"
+        },
+        {
+          "start": 1030,
+          "end": 1040,
+          "found": "individual",
+          "pref": "individual",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RW2SZZJ7-6"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "matches": [
+        {
+          "start": 34,
+          "end": 42,
+          "found": "tendency",
+          "pref": "tendency",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-R1RSF24P-F"
+        },
+        {
+          "start": 44,
+          "end": 63,
+          "found": "sensory disposition",
+          "pref": "sensory disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-VT7ZVM54-G"
+        },
+        {
+          "start": 69,
+          "end": 76,
+          "found": "feature",
+          "pref": "feature",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-HXNDPTSR-6"
+        },
+        {
+          "start": 142,
+          "end": 150,
+          "found": "resource",
+          "pref": "resource",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QFSLN2P8-5"
+        },
+        {
+          "start": 152,
+          "end": 171,
+          "found": "grammatical concept",
+          "pref": "grammatical concept",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-KD6Q2145-P"
+        },
+        {
+          "start": 177,
+          "end": 191,
+          "found": "social partner",
+          "pref": "social partner",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-WQ32HK15-D"
+        },
+        {
+          "start": 257,
+          "end": 266,
+          "found": "cognition",
+          "pref": "cognition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QTK1HPDG-G"
+        },
+        {
+          "start": 277,
+          "end": 285,
+          "found": "resource",
+          "pref": "resource",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QFSLN2P8-5"
+        },
+        {
+          "start": 291,
+          "end": 299,
+          "found": "receiver",
+          "pref": "receiver",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TX4B5TSS-8"
+        },
+        {
+          "start": 365,
+          "end": 374,
+          "found": "tool user",
+          "pref": "tool-user",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-BXTJ3P9J-W"
+        },
+        {
+          "start": 376,
+          "end": 382,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RCMC5LH6-D"
+        },
+        {
+          "start": 388,
+          "end": 397,
+          "found": "signaller",
+          "pref": "signaller",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TGW6LV64-X"
+        },
+        {
+          "start": 463,
+          "end": 480,
+          "found": "biological entity",
+          "pref": "biological entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-THZWSRJ3-G"
+        },
+        {
+          "start": 482,
+          "end": 488,
+          "found": "signal",
+          "pref": "signal",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-ZLH5F46D-W"
+        },
+        {
+          "start": 494,
+          "end": 514,
+          "found": "evolutionary history",
+          "pref": "evolutionary history",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-G12M5DFB-6"
+        },
+        {
+          "start": 580,
+          "end": 587,
+          "found": "measure",
+          "pref": "measure",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-XV8LMZ68-C"
+        },
+        {
+          "start": 589,
+          "end": 596,
+          "found": "process",
+          "pref": "process",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-H1LV3KM3-Z"
+        },
+        {
+          "start": 602,
+          "end": 620,
+          "found": "information entity",
+          "pref": "information entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-JGK72CBV-W"
+        },
+        {
+          "start": 686,
+          "end": 695,
+          "found": "captivity",
+          "pref": "captivity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RGL4PC0V-N"
+        },
+        {
+          "start": 697,
+          "end": 714,
+          "found": "cognitive process",
+          "pref": "cognitive process",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QTK1HPDG-G"
+        },
+        {
+          "start": 720,
+          "end": 730,
+          "found": "phenomenon",
+          "pref": "phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-J75J9GD0-Q"
+        },
+        {
+          "start": 796,
+          "end": 804,
+          "found": "variable",
+          "pref": "variable",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-B3PTCS01-V"
+        },
+        {
+          "start": 806,
+          "end": 813,
+          "found": "science",
+          "pref": "science",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-Q1LKKDQH-7"
+        },
+        {
+          "start": 819,
+          "end": 830,
+          "found": "environment",
+          "pref": "environment",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-V4J5NGKR-M"
+        },
+        {
+          "start": 896,
+          "end": 902,
+          "found": "method",
+          "pref": "method",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RSVTPR98-M"
+        },
+        {
+          "start": 904,
+          "end": 926,
+          "found": "high-ranked individual",
+          "pref": "high-ranked individual",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-M7HBF1CT-J"
+        },
+        {
+          "start": 932,
+          "end": 936,
+          "found": "site",
+          "pref": "site",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-GJT5SKWG-4"
+        },
+        {
+          "start": 1003,
+          "end": 1010,
+          "found": "emitter",
+          "pref": "emitter",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TGW6LV64-X"
+        },
+        {
+          "start": 1012,
+          "end": 1023,
+          "found": "disposition",
+          "pref": "disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-LF8D4KP7-P"
+        },
+        {
+          "start": 1029,
+          "end": 1037,
+          "found": "relation",
+          "pref": "relation",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-DKKTJWBP-K"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "matches": [
+        {
+          "start": 34,
+          "end": 42,
+          "found": "receiver",
+          "pref": "receiver",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TX4B5TSS-8"
+        },
+        {
+          "start": 44,
+          "end": 51,
+          "found": "emitter",
+          "pref": "emitter",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TGW6LV64-X"
+        },
+        {
+          "start": 57,
+          "end": 65,
+          "found": "variable",
+          "pref": "variable",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-B3PTCS01-V"
+        },
+        {
+          "start": 131,
+          "end": 140,
+          "found": "tool user",
+          "pref": "tool user",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-BXTJ3P9J-W"
+        },
+        {
+          "start": 142,
+          "end": 161,
+          "found": "ontological quality",
+          "pref": "ontological quality",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-X7DLLWDJ-G"
+        },
+        {
+          "start": 167,
+          "end": 175,
+          "found": "tendency",
+          "pref": "tendency",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-R1RSF24P-F"
+        },
+        {
+          "start": 241,
+          "end": 260,
+          "found": "geographical entity",
+          "pref": "geographical entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-XNB3Q0WJ-W"
+        },
+        {
+          "start": 262,
+          "end": 270,
+          "found": "resource",
+          "pref": "resource",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QFSLN2P8-5"
+        },
+        {
+          "start": 276,
+          "end": 282,
+          "found": "method",
+          "pref": "method",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RSVTPR98-M"
+        },
+        {
+          "start": 348,
+          "end": 352,
+          "found": "site",
+          "pref": "site",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-GJT5SKWG-4"
+        },
+        {
+          "start": 354,
+          "end": 376,
+          "found": "high-ranked individual",
+          "pref": "high-ranked individual",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-M7HBF1CT-J"
+        },
+        {
+          "start": 382,
+          "end": 399,
+          "found": "cognitive process",
+          "pref": "cognitive process",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QTK1HPDG-G"
+        },
+        {
+          "start": 465,
+          "end": 483,
+          "found": "information entity",
+          "pref": "information entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-JGK72CBV-W"
+        },
+        {
+          "start": 485,
+          "end": 492,
+          "found": "feature",
+          "pref": "feature",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-HXNDPTSR-6"
+        },
+        {
+          "start": 498,
+          "end": 504,
+          "found": "change",
+          "pref": "change",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RZBX0DVP-H"
+        },
+        {
+          "start": 570,
+          "end": 585,
+          "found": "material entity",
+          "pref": "material entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-SHNHBVNF-S"
+        },
+        {
+          "start": 587,
+          "end": 594,
+          "found": "disease",
+          "pref": "disease",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-M18747Z2-S"
+        },
+        {
+          "start": 600,
+          "end": 610,
+          "found": "phenomenon",
+          "pref": "phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-J75J9GD0-Q"
+        },
+        {
+          "start": 676,
+          "end": 699,
+          "found": "enculturated individual",
+          "pref": "enculturated individual",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-WBVXCHM4-7"
+        },
+        {
+          "start": 701,
+          "end": 712,
+          "found": "environment",
+          "pref": "environment",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-V4J5NGKR-M"
+        },
+        {
+          "start": 718,
+          "end": 726,
+          "found": "capacity",
+          "pref": "capacity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-H7MX96W6-6"
+        },
+        {
+          "start": 792,
+          "end": 800,
+          "found": "behavior",
+          "pref": "behavior",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-LV7PW012-3"
+        },
+        {
+          "start": 802,
+          "end": 809,
+          "found": "science",
+          "pref": "science",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-Q1LKKDQH-7"
+        },
+        {
+          "start": 815,
+          "end": 823,
+          "found": "relation",
+          "pref": "relation",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-DKKTJWBP-K"
+        },
+        {
+          "start": 889,
+          "end": 908,
+          "found": "sensory disposition",
+          "pref": "sensory disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-VT7ZVM54-G"
+        },
+        {
+          "start": 919,
+          "end": 927,
+          "found": "resource",
+          "pref": "resource",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QFSLN2P8-5"
+        },
+        {
+          "start": 933,
+          "end": 952,
+          "found": "grammatical concept",
+          "pref": "grammatical concept",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-KD6Q2145-P"
+        },
+        {
+          "start": 1019,
+          "end": 1026,
+          "found": "measure",
+          "pref": "measure",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-XV8LMZ68-C"
+        },
+        {
+          "start": 1028,
+          "end": 1039,
+          "found": "disposition",
+          "pref": "disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-LF8D4KP7-P"
+        },
+        {
+          "start": 1045,
+          "end": 1054,
+          "found": "signaller",
+          "pref": "signaller",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TGW6LV64-X"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "matches": [
+        {
+          "start": 34,
+          "end": 40,
+          "found": "method",
+          "pref": "method",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RSVTPR98-M"
+        },
+        {
+          "start": 42,
+          "end": 49,
+          "found": "science",
+          "pref": "science",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-Q1LKKDQH-7"
+        },
+        {
+          "start": 55,
+          "end": 61,
+          "found": "signal",
+          "pref": "signal",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-ZLH5F46D-W"
+        },
+        {
+          "start": 127,
+          "end": 135,
+          "found": "dwarfism",
+          "pref": "dwarfism",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-ZGHST3SJ-7"
+        },
+        {
+          "start": 137,
+          "end": 155,
+          "found": "information entity",
+          "pref": "information entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-JGK72CBV-W"
+        },
+        {
+          "start": 161,
+          "end": 169,
+          "found": "resource",
+          "pref": "resource",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QFSLN2P8-5"
+        },
+        {
+          "start": 235,
+          "end": 254,
+          "found": "geographical entity",
+          "pref": "geographical entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-XNB3Q0WJ-W"
+        },
+        {
+          "start": 269,
+          "end": 279,
+          "found": "individual",
+          "pref": "individual",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RW2SZZJ7-6"
+        },
+        {
+          "start": 285,
+          "end": 292,
+          "found": "disease",
+          "pref": "disease",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-M18747Z2-S"
+        },
+        {
+          "start": 358,
+          "end": 365,
+          "found": "feature",
+          "pref": "feature",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-HXNDPTSR-6"
+        },
+        {
+          "start": 367,
+          "end": 376,
+          "found": "signaller",
+          "pref": "signaller",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TGW6LV64-X"
+        },
+        {
+          "start": 382,
+          "end": 390,
+          "found": "capacity",
+          "pref": "capacity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-H7MX96W6-6"
+        },
+        {
+          "start": 456,
+          "end": 475,
+          "found": "sensory disposition",
+          "pref": "sensory disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-VT7ZVM54-G"
+        },
+        {
+          "start": 477,
+          "end": 483,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RCMC5LH6-D"
+        },
+        {
+          "start": 489,
+          "end": 497,
+          "found": "variable",
+          "pref": "variable",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-B3PTCS01-V"
+        },
+        {
+          "start": 563,
+          "end": 571,
+          "found": "learning",
+          "pref": "learning",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-MMZBWKWK-V"
+        },
+        {
+          "start": 573,
+          "end": 580,
+          "found": "measure",
+          "pref": "measure",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-XV8LMZ68-C"
+        },
+        {
+          "start": 586,
+          "end": 591,
+          "found": "state",
+          "pref": "state",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RNRLBS3Z-P"
+        },
+        {
+          "start": 657,
+          "end": 666,
+          "found": "tool-user",
+          "pref": "tool-user",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-BXTJ3P9J-W"
+        },
+        {
+          "start": 668,
+          "end": 687,
+          "found": "communication cycle",
+          "pref": "communication cycle",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RZ7Q2VJV-J"
+        },
+        {
+          "start": 693,
+          "end": 707,
+          "found": "predisposition",
+          "pref": "predisposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-K1BS9LSX-0"
+        },
+        {
+          "start": 773,
+          "end": 784,
+          "found": "disposition",
+          "pref": "disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-LF8D4KP7-P"
+        },
+        {
+          "start": 786,
+          "end": 808,
+          "found": "high-ranked individual",
+          "pref": "high-ranked individual",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-M7HBF1CT-J"
+        },
+        {
+          "start": 814,
+          "end": 823,
+          "found": "cognition",
+          "pref": "cognition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QTK1HPDG-G"
+        },
+        {
+          "start": 889,
+          "end": 900,
+          "found": "environment",
+          "pref": "environment",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-V4J5NGKR-M"
+        },
+        {
+          "start": 902,
+          "end": 917,
+          "found": "material entity",
+          "pref": "material entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-SHNHBVNF-S"
+        },
+        {
+          "start": 923,
+          "end": 943,
+          "found": "evolutionary history",
+          "pref": "evolutionary history",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-G12M5DFB-6"
+        },
+        {
+          "start": 1010,
+          "end": 1017,
+          "found": "process",
+          "pref": "process",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-H1LV3KM3-Z"
+        },
+        {
+          "start": 1019,
+          "end": 1028,
+          "found": "tool user",
+          "pref": "tool user",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-BXTJ3P9J-W"
+        },
+        {
+          "start": 1034,
+          "end": 1040,
+          "found": "change",
+          "pref": "change",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RZBX0DVP-H"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "matches": [
+        {
+          "start": 34,
+          "end": 54,
+          "found": "evolutionary history",
+          "pref": "evolutionary history",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-G12M5DFB-6"
+        },
+        {
+          "start": 56,
+          "end": 64,
+          "found": "dwarfism",
+          "pref": "dwarfism",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-ZGHST3SJ-7"
+        },
+        {
+          "start": 70,
+          "end": 77,
+          "found": "process",
+          "pref": "process",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-H1LV3KM3-Z"
+        },
+        {
+          "start": 143,
+          "end": 158,
+          "found": "material entity",
+          "pref": "material entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-SHNHBVNF-S"
+        },
+        {
+          "start": 169,
+          "end": 177,
+          "found": "resource",
+          "pref": "resource",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QFSLN2P8-5"
+        },
+        {
+          "start": 183,
+          "end": 197,
+          "found": "predisposition",
+          "pref": "predisposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-K1BS9LSX-0"
+        },
+        {
+          "start": 263,
+          "end": 271,
+          "found": "receiver",
+          "pref": "receiver",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TX4B5TSS-8"
+        },
+        {
+          "start": 273,
+          "end": 279,
+          "found": "signal",
+          "pref": "signal",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-ZLH5F46D-W"
+        },
+        {
+          "start": 285,
+          "end": 303,
+          "found": "information entity",
+          "pref": "information entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-JGK72CBV-W"
+        },
+        {
+          "start": 369,
+          "end": 375,
+          "found": "change",
+          "pref": "change",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RZBX0DVP-H"
+        },
+        {
+          "start": 377,
+          "end": 386,
+          "found": "tool user",
+          "pref": "tool user",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-BXTJ3P9J-W"
+        },
+        {
+          "start": 392,
+          "end": 411,
+          "found": "sensory disposition",
+          "pref": "sensory disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-VT7ZVM54-G"
+        },
+        {
+          "start": 477,
+          "end": 485,
+          "found": "capacity",
+          "pref": "capacity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-H7MX96W6-6"
+        },
+        {
+          "start": 487,
+          "end": 506,
+          "found": "ontological quality",
+          "pref": "ontological quality",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-X7DLLWDJ-G"
+        },
+        {
+          "start": 512,
+          "end": 518,
+          "found": "method",
+          "pref": "method",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RSVTPR98-M"
+        },
+        {
+          "start": 584,
+          "end": 594,
+          "found": "phenomenon",
+          "pref": "phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-J75J9GD0-Q"
+        },
+        {
+          "start": 596,
+          "end": 603,
+          "found": "emitter",
+          "pref": "emitter",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TGW6LV64-X"
+        },
+        {
+          "start": 609,
+          "end": 617,
+          "found": "behavior",
+          "pref": "behavior",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-LV7PW012-3"
+        },
+        {
+          "start": 683,
+          "end": 702,
+          "found": "grammatical concept",
+          "pref": "grammatical concept",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-KD6Q2145-P"
+        },
+        {
+          "start": 704,
+          "end": 712,
+          "found": "relation",
+          "pref": "relation",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-DKKTJWBP-K"
+        },
+        {
+          "start": 718,
+          "end": 727,
+          "found": "cognition",
+          "pref": "cognition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QTK1HPDG-G"
+        },
+        {
+          "start": 793,
+          "end": 804,
+          "found": "environment",
+          "pref": "environment",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-V4J5NGKR-M"
+        },
+        {
+          "start": 806,
+          "end": 823,
+          "found": "biological entity",
+          "pref": "biological entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-THZWSRJ3-G"
+        },
+        {
+          "start": 829,
+          "end": 852,
+          "found": "enculturated individual",
+          "pref": "enculturated individual",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-WBVXCHM4-7"
+        },
+        {
+          "start": 918,
+          "end": 922,
+          "found": "site",
+          "pref": "site",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-GJT5SKWG-4"
+        },
+        {
+          "start": 924,
+          "end": 933,
+          "found": "tool-user",
+          "pref": "tool-user",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-BXTJ3P9J-W"
+        },
+        {
+          "start": 939,
+          "end": 948,
+          "found": "captivity",
+          "pref": "captivity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RGL4PC0V-N"
+        },
+        {
+          "start": 1015,
+          "end": 1023,
+          "found": "tendency",
+          "pref": "tendency",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-R1RSF24P-F"
+        },
+        {
+          "start": 1025,
+          "end": 1032,
+          "found": "feature",
+          "pref": "feature",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-HXNDPTSR-6"
+        },
+        {
+          "start": 1038,
+          "end": 1057,
+          "found": "geographical entity",
+          "pref": "geographical entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-XNB3Q0WJ-W"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "matches": [
+        {
+          "start": 34,
+          "end": 48,
+          "found": "predisposition",
+          "pref": "predisposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-K1BS9LSX-0"
+        },
+        {
+          "start": 50,
+          "end": 69,
+          "found": "communication cycle",
+          "pref": "communication cycle",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RZ7Q2VJV-J"
+        },
+        {
+          "start": 75,
+          "end": 90,
+          "found": "material entity",
+          "pref": "material entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-SHNHBVNF-S"
+        },
+        {
+          "start": 156,
+          "end": 173,
+          "found": "cognitive process",
+          "pref": "cognitive process",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QTK1HPDG-G"
+        },
+        {
+          "start": 184,
+          "end": 192,
+          "found": "resource",
+          "pref": "resource",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QFSLN2P8-5"
+        },
+        {
+          "start": 198,
+          "end": 206,
+          "found": "tendency",
+          "pref": "tendency",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-R1RSF24P-F"
+        },
+        {
+          "start": 272,
+          "end": 283,
+          "found": "disposition",
+          "pref": "disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-LF8D4KP7-P"
+        },
+        {
+          "start": 299,
+          "end": 318,
+          "found": "grammatical concept",
+          "pref": "grammatical concept",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-KD6Q2145-P"
+        },
+        {
+          "start": 384,
+          "end": 402,
+          "found": "information entity",
+          "pref": "information entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-JGK72CBV-W"
+        },
+        {
+          "start": 404,
+          "end": 411,
+          "found": "emitter",
+          "pref": "emitter",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TGW6LV64-X"
+        },
+        {
+          "start": 417,
+          "end": 436,
+          "found": "ontological quality",
+          "pref": "ontological quality",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-X7DLLWDJ-G"
+        },
+        {
+          "start": 502,
+          "end": 521,
+          "found": "sensory disposition",
+          "pref": "sensory disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-VT7ZVM54-G"
+        },
+        {
+          "start": 523,
+          "end": 527,
+          "found": "site",
+          "pref": "site",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-GJT5SKWG-4"
+        },
+        {
+          "start": 533,
+          "end": 544,
+          "found": "environment",
+          "pref": "environment",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-V4J5NGKR-M"
+        },
+        {
+          "start": 610,
+          "end": 616,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RCMC5LH6-D"
+        },
+        {
+          "start": 618,
+          "end": 626,
+          "found": "behavior",
+          "pref": "behavior",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-LV7PW012-3"
+        },
+        {
+          "start": 632,
+          "end": 640,
+          "found": "receiver",
+          "pref": "receiver",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TX4B5TSS-8"
+        },
+        {
+          "start": 706,
+          "end": 723,
+          "found": "biological entity",
+          "pref": "biological entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-THZWSRJ3-G"
+        },
+        {
+          "start": 725,
+          "end": 731,
+          "found": "method",
+          "pref": "method",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RSVTPR98-M"
+        },
+        {
+          "start": 737,
+          "end": 746,
+          "found": "tool-user",
+          "pref": "tool-user",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-BXTJ3P9J-W"
+        },
+        {
+          "start": 812,
+          "end": 835,
+          "found": "enculturated individual",
+          "pref": "enculturated individual",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-WBVXCHM4-7"
+        },
+        {
+          "start": 837,
+          "end": 844,
+          "found": "process",
+          "pref": "process",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-H1LV3KM3-Z"
+        },
+        {
+          "start": 850,
+          "end": 857,
+          "found": "feature",
+          "pref": "feature",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-HXNDPTSR-6"
+        },
+        {
+          "start": 923,
+          "end": 932,
+          "found": "tool user",
+          "pref": "tool-user",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-BXTJ3P9J-W"
+        },
+        {
+          "start": 934,
+          "end": 939,
+          "found": "state",
+          "pref": "state",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RNRLBS3Z-P"
+        },
+        {
+          "start": 945,
+          "end": 951,
+          "found": "signal",
+          "pref": "signal",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-ZLH5F46D-W"
+        },
+        {
+          "start": 1018,
+          "end": 1037,
+          "found": "geographical entity",
+          "pref": "geographical entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-XNB3Q0WJ-W"
+        },
+        {
+          "start": 1039,
+          "end": 1049,
+          "found": "phenomenon",
+          "pref": "phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-J75J9GD0-Q"
+        },
+        {
+          "start": 1055,
+          "end": 1062,
+          "found": "disease",
+          "pref": "disease",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-M18747Z2-S"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "matches": [
+        {
+          "start": 35,
+          "end": 49,
+          "found": "predisposition",
+          "pref": "predisposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-K1BS9LSX-0"
+        },
+        {
+          "start": 51,
+          "end": 59,
+          "found": "capacity",
+          "pref": "capacity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-H7MX96W6-6"
+        },
+        {
+          "start": 65,
+          "end": 76,
+          "found": "disposition",
+          "pref": "disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-LF8D4KP7-P"
+        },
+        {
+          "start": 143,
+          "end": 160,
+          "found": "material resource",
+          "pref": "material resource",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-FPDV5NJ6-N"
+        },
+        {
+          "start": 162,
+          "end": 179,
+          "found": "cognitive process",
+          "pref": "cognitive process",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QTK1HPDG-G"
+        },
+        {
+          "start": 185,
+          "end": 204,
+          "found": "geographical entity",
+          "pref": "geographical entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-XNB3Q0WJ-W"
+        },
+        {
+          "start": 271,
+          "end": 282,
+          "found": "environment",
+          "pref": "environment",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-V4J5NGKR-M"
+        },
+        {
+          "start": 284,
+          "end": 290,
+          "found": "theory",
+          "pref": "theory",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RCMC5LH6-D"
+        },
+        {
+          "start": 296,
+          "end": 304,
+          "found": "relation",
+          "pref": "relation",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-DKKTJWBP-K"
+        },
+        {
+          "start": 371,
+          "end": 378,
+          "found": "emitter",
+          "pref": "emitter",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TGW6LV64-X"
+        },
+        {
+          "start": 380,
+          "end": 403,
+          "found": "enculturated individual",
+          "pref": "enculturated individual",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-WBVXCHM4-7"
+        },
+        {
+          "start": 409,
+          "end": 415,
+          "found": "signal",
+          "pref": "signal",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-ZLH5F46D-W"
+        },
+        {
+          "start": 482,
+          "end": 500,
+          "found": "information entity",
+          "pref": "information entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-JGK72CBV-W"
+        },
+        {
+          "start": 502,
+          "end": 512,
+          "found": "phenomenon",
+          "pref": "phenomenon",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-J75J9GD0-Q"
+        },
+        {
+          "start": 518,
+          "end": 527,
+          "found": "cognition",
+          "pref": "cognition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QTK1HPDG-G"
+        },
+        {
+          "start": 594,
+          "end": 604,
+          "found": "individual",
+          "pref": "individual",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RW2SZZJ7-6"
+        },
+        {
+          "start": 606,
+          "end": 614,
+          "found": "behavior",
+          "pref": "behavior",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-LV7PW012-3"
+        },
+        {
+          "start": 620,
+          "end": 628,
+          "found": "receiver",
+          "pref": "receiver",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-TX4B5TSS-8"
+        },
+        {
+          "start": 695,
+          "end": 701,
+          "found": "change",
+          "pref": "change",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RZBX0DVP-H"
+        },
+        {
+          "start": 703,
+          "end": 712,
+          "found": "captivity",
+          "pref": "captivity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RGL4PC0V-N"
+        },
+        {
+          "start": 718,
+          "end": 726,
+          "found": "resource",
+          "pref": "resource",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-QFSLN2P8-5"
+        },
+        {
+          "start": 793,
+          "end": 799,
+          "found": "method",
+          "pref": "method",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RSVTPR98-M"
+        },
+        {
+          "start": 801,
+          "end": 808,
+          "found": "disease",
+          "pref": "disease",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-M18747Z2-S"
+        },
+        {
+          "start": 814,
+          "end": 821,
+          "found": "science",
+          "pref": "science",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-Q1LKKDQH-7"
+        },
+        {
+          "start": 888,
+          "end": 896,
+          "found": "dwarfism",
+          "pref": "dwarfism",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-ZGHST3SJ-7"
+        },
+        {
+          "start": 898,
+          "end": 912,
+          "found": "social partner",
+          "pref": "social partner",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-WQ32HK15-D"
+        },
+        {
+          "start": 918,
+          "end": 937,
+          "found": "sensory disposition",
+          "pref": "sensory disposition",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-VT7ZVM54-G"
+        },
+        {
+          "start": 1005,
+          "end": 1027,
+          "found": "high-ranked individual",
+          "pref": "high-ranked individual",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-M7HBF1CT-J"
+        },
+        {
+          "start": 1029,
+          "end": 1034,
+          "found": "state",
+          "pref": "state",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-RNRLBS3Z-P"
+        },
+        {
+          "start": 1040,
+          "end": 1057,
+          "found": "biological entity",
+          "pref": "biological entity",
+          "uri": "http://data.loterre.fr/ark:/67375/B9M-THZWSRJ3-G"
+        }
+      ]
+    }
+  ]
+}

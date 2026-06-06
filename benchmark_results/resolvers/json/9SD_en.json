@@ -1,0 +1,2854 @@
+{
+  "results": [
+    {
+      "id": "1",
+      "matches": [
+        {
+          "start": 43,
+          "end": 48,
+          "found": "Bern-",
+          "pref": "Bern",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PS1Z62ST-X"
+        },
+        {
+          "start": 826,
+          "end": 834,
+          "found": "Hamilton",
+          "pref": "Hamilton",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-JPF4N704-K"
+        },
+        {
+          "start": 863,
+          "end": 869,
+          "found": "Nassau",
+          "pref": "Nassau",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-X2H49GTG-Z"
+        },
+        {
+          "start": 669,
+          "end": 677,
+          "found": "(Madeira",
+          "pref": "Madeira",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-S3PP60R9-N"
+        },
+        {
+          "start": 1022,
+          "end": 1029,
+          "found": "(Azores",
+          "pref": "Azores",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-GC8P2F3K-Z"
+        },
+        {
+          "start": 618,
+          "end": 658,
+          "found": "Baixo Alentejo (intermunicipal community",
+          "pref": "Baixo Alentejo (intermunicipal community)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-KZQQ3D9K-5"
+        },
+        {
+          "start": 55,
+          "end": 58,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 134,
+          "end": 137,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 321,
+          "end": 324,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 505,
+          "end": 508,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 709,
+          "end": 712,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 898,
+          "end": 901,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1098,
+          "end": 1101,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1212,
+          "end": 1215,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1289,
+          "end": 1292,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1474,
+          "end": 1477,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 0,
+          "end": 2,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 62,
+          "end": 64,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 112,
+          "end": 114,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 142,
+          "end": 144,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 168,
+          "end": 170,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 173,
+          "end": 175,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 203,
+          "end": 205,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 286,
+          "end": 288,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 360,
+          "end": 362,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 390,
+          "end": 392,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 435,
+          "end": 437,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 524,
+          "end": 526,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 545,
+          "end": 547,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 575,
+          "end": 577,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 634,
+          "end": 636,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 735,
+          "end": 737,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 753,
+          "end": 755,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 783,
+          "end": 785,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 941,
+          "end": 943,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 971,
+          "end": 973,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 1014,
+          "end": 1059,
+          "found": "Calheta (Azores) Calheta Calheta Municipality",
+          "pref": "Calheta Municipality (Azores)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-F7VP1BLG-D"
+        },
+        {
+          "start": 661,
+          "end": 707,
+          "found": "Calheta (Madeira) Calheta Calheta Municipality",
+          "pref": "Calheta Municipality (Madeira)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-VVJG41KL-P"
+        },
+        {
+          "start": 1271,
+          "end": 1280,
+          "found": "Brussels-",
+          "pref": "Brussels-Capital Region",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-Z8BK69S1-F"
+        },
+        {
+          "start": 282,
+          "end": 292,
+          "found": "Washington",
+          "pref": "Washington, D.C.",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-LXLPG87F-3"
+        },
+        {
+          "start": 1855,
+          "end": 1865,
+          "found": "Washington",
+          "pref": "Washington, D.C.",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-LXLPG87F-3"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "matches": [
+        {
+          "start": 1015,
+          "end": 1021,
+          "found": "Brunei",
+          "pref": "Brunei",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-FJP8DQ6S-V"
+        },
+        {
+          "start": 1005,
+          "end": 1041,
+          "found": "Nation of Brunei, the Abode of Peace",
+          "pref": "Brunei",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-FJP8DQ6S-V"
+        },
+        {
+          "start": 784,
+          "end": 792,
+          "found": "Hamilton",
+          "pref": "Hamilton",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-JPF4N704-K"
+        },
+        {
+          "start": 1738,
+          "end": 1745,
+          "found": "Madeira",
+          "pref": "Madeira",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-S3PP60R9-N"
+        },
+        {
+          "start": 1808,
+          "end": 1815,
+          "found": "Madeira",
+          "pref": "Madeira",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-S3PP60R9-N"
+        },
+        {
+          "start": 1717,
+          "end": 1753,
+          "found": "Autonomous Region of Madeira (region",
+          "pref": "Autonomous Region of Madeira (region)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-XSZWGT93-8"
+        },
+        {
+          "start": 113,
+          "end": 116,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 294,
+          "end": 297,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 448,
+          "end": 451,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 479,
+          "end": 482,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 673,
+          "end": 676,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 857,
+          "end": 860,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 976,
+          "end": 979,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1043,
+          "end": 1046,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1230,
+          "end": 1233,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1381,
+          "end": 1384,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 121,
+          "end": 123,
+          "found": "am",
+          "pref": "Armenia",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-RSRBTFLS-C"
+        },
+        {
+          "start": 0,
+          "end": 2,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 107,
+          "end": 109,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 151,
+          "end": 153,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 181,
+          "end": 183,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 288,
+          "end": 290,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 333,
+          "end": 335,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 363,
+          "end": 365,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 473,
+          "end": 475,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 498,
+          "end": 500,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 518,
+          "end": 520,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 548,
+          "end": 550,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 651,
+          "end": 653,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 711,
+          "end": 713,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 741,
+          "end": 743,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 826,
+          "end": 828,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 896,
+          "end": 898,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 926,
+          "end": 928,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 999,
+          "end": 1001,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 1076,
+          "end": 1078,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 1799,
+          "end": 1845,
+          "found": "Calheta (Madeira) Calheta Calheta Municipality",
+          "pref": "Calheta Municipality (Madeira)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-VVJG41KL-P"
+        },
+        {
+          "start": 1756,
+          "end": 1766,
+          "found": "Washington",
+          "pref": "Washington, D.C.",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-LXLPG87F-3"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "matches": [
+        {
+          "start": 841,
+          "end": 847,
+          "found": "Brunei",
+          "pref": "Brunei",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-FJP8DQ6S-V"
+        },
+        {
+          "start": 831,
+          "end": 867,
+          "found": "Nation of Brunei, the Abode of Peace",
+          "pref": "Brunei",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-FJP8DQ6S-V"
+        },
+        {
+          "start": 1573,
+          "end": 1581,
+          "found": "Hamilton",
+          "pref": "Hamilton",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-JPF4N704-K"
+        },
+        {
+          "start": 1760,
+          "end": 1768,
+          "found": "Hamilton",
+          "pref": "Hamilton",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-JPF4N704-K"
+        },
+        {
+          "start": 1855,
+          "end": 1862,
+          "found": "Marche-",
+          "pref": "Marche",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-S9Q8DFD3-V"
+        },
+        {
+          "start": 68,
+          "end": 74,
+          "found": "Azores",
+          "pref": "Azores",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-GC8P2F3K-Z"
+        },
+        {
+          "start": 1094,
+          "end": 1100,
+          "found": "Azores",
+          "pref": "Azores",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-GC8P2F3K-Z"
+        },
+        {
+          "start": 43,
+          "end": 82,
+          "found": "Autonomous Region of the Azores (region",
+          "pref": "Autonomous Region of the Azores (region)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-M2K542CL-K"
+        },
+        {
+          "start": 1069,
+          "end": 1126,
+          "found": "Autonomous Region of the Azores (intermunicipal community",
+          "pref": "Autonomous Region of the Azores (intermunicipal community)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-P0ZWWZZ6-V"
+        },
+        {
+          "start": 120,
+          "end": 123,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 135,
+          "end": 138,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 276,
+          "end": 279,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 305,
+          "end": 308,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 492,
+          "end": 495,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 684,
+          "end": 687,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 869,
+          "end": 872,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1065,
+          "end": 1068,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1274,
+          "end": 1277,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1460,
+          "end": 1463,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 242,
+          "end": 244,
+          "found": "am",
+          "pref": "Armenia",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-RSRBTFLS-C"
+        },
+        {
+          "start": 0,
+          "end": 2,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 161,
+          "end": 163,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 191,
+          "end": 193,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 238,
+          "end": 240,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 299,
+          "end": 301,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 338,
+          "end": 340,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 343,
+          "end": 345,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 373,
+          "end": 375,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 418,
+          "end": 420,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 473,
+          "end": 475,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 522,
+          "end": 524,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 537,
+          "end": 539,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 567,
+          "end": 569,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 639,
+          "end": 641,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 649,
+          "end": 651,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 722,
+          "end": 724,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 752,
+          "end": 754,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 908,
+          "end": 910,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 938,
+          "end": 940,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 1405,
+          "end": 1414,
+          "found": "Brussels-",
+          "pref": "Brussels-Capital Region",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-Z8BK69S1-F"
+        },
+        {
+          "start": 645,
+          "end": 655,
+          "found": "Washington",
+          "pref": "Washington, D.C.",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-LXLPG87F-3"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "matches": [
+        {
+          "start": 118,
+          "end": 126,
+          "found": "Hamilton",
+          "pref": "Hamilton",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-JPF4N704-K"
+        },
+        {
+          "start": 1669,
+          "end": 1676,
+          "found": "Marche-",
+          "pref": "Marche",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-S9Q8DFD3-V"
+        },
+        {
+          "start": 263,
+          "end": 269,
+          "found": "Lisbon",
+          "pref": "Lisbon",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-L840WFWG-N"
+        },
+        {
+          "start": 1769,
+          "end": 1777,
+          "found": "(Madeira",
+          "pref": "Madeira",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-S3PP60R9-N"
+        },
+        {
+          "start": 1770,
+          "end": 1777,
+          "found": "Madeira",
+          "pref": "Madeira",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-S3PP60R9-N"
+        },
+        {
+          "start": 1809,
+          "end": 1845,
+          "found": "Autonomous Region of Madeira (region",
+          "pref": "Autonomous Region of Madeira (region)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-XSZWGT93-8"
+        },
+        {
+          "start": 263,
+          "end": 287,
+          "found": "Lisbon metropolitan area",
+          "pref": "Lisbon metropolitan area",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-RNX8CP3Q-K"
+        },
+        {
+          "start": 263,
+          "end": 313,
+          "found": "Lisbon metropolitan area (intermunicipal community",
+          "pref": "Lisbon metropolitan area (intermunicipal community)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-RBN2SCW5-J"
+        },
+        {
+          "start": 510,
+          "end": 522,
+          "found": "Switzerland-",
+          "pref": "Switzerland",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-DZZBKS5P-Z"
+        },
+        {
+          "start": 114,
+          "end": 117,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 316,
+          "end": 319,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 432,
+          "end": 435,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 500,
+          "end": 503,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 518,
+          "end": 521,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 691,
+          "end": 694,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 895,
+          "end": 898,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1080,
+          "end": 1083,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1278,
+          "end": 1281,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1463,
+          "end": 1466,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 723,
+          "end": 725,
+          "found": "im",
+          "pref": "Isle of Man",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-RZ9Q7PPL-L"
+        },
+        {
+          "start": 0,
+          "end": 2,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 109,
+          "end": 111,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 153,
+          "end": 155,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 183,
+          "end": 185,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 257,
+          "end": 259,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 289,
+          "end": 291,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 355,
+          "end": 357,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 385,
+          "end": 387,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 457,
+          "end": 459,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 478,
+          "end": 480,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 540,
+          "end": 542,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 544,
+          "end": 546,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 574,
+          "end": 576,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 620,
+          "end": 622,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 658,
+          "end": 660,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 717,
+          "end": 719,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 735,
+          "end": 737,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 765,
+          "end": 767,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 826,
+          "end": 828,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 1761,
+          "end": 1807,
+          "found": "Calheta (Madeira) Calheta Calheta Municipality",
+          "pref": "Calheta Municipality (Madeira)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-VVJG41KL-P"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "matches": [
+        {
+          "start": 1851,
+          "end": 1858,
+          "found": "Marche-",
+          "pref": "Marche",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-S9Q8DFD3-V"
+        },
+        {
+          "start": 1233,
+          "end": 1239,
+          "found": "Lisbon",
+          "pref": "Lisbon",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-L840WFWG-N"
+        },
+        {
+          "start": 733,
+          "end": 740,
+          "found": "Madeira",
+          "pref": "Madeira",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-S3PP60R9-N"
+        },
+        {
+          "start": 712,
+          "end": 748,
+          "found": "Autonomous Region of Madeira (region",
+          "pref": "Autonomous Region of Madeira (region)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-XSZWGT93-8"
+        },
+        {
+          "start": 1233,
+          "end": 1257,
+          "found": "Lisbon metropolitan area",
+          "pref": "Lisbon metropolitan area",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-RNX8CP3Q-K"
+        },
+        {
+          "start": 1233,
+          "end": 1283,
+          "found": "Lisbon metropolitan area (intermunicipal community",
+          "pref": "Lisbon metropolitan area (intermunicipal community)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-RBN2SCW5-J"
+        },
+        {
+          "start": 439,
+          "end": 479,
+          "found": "Baixo Alentejo (intermunicipal community",
+          "pref": "Baixo Alentejo (intermunicipal community)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-KZQQ3D9K-5"
+        },
+        {
+          "start": 127,
+          "end": 130,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 137,
+          "end": 140,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 325,
+          "end": 328,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 340,
+          "end": 343,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 519,
+          "end": 522,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 708,
+          "end": 711,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 863,
+          "end": 866,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 894,
+          "end": 897,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1049,
+          "end": 1052,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1078,
+          "end": 1081,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 298,
+          "end": 300,
+          "found": "am",
+          "pref": "Armenia",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-RSRBTFLS-C"
+        },
+        {
+          "start": 0,
+          "end": 2,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 43,
+          "end": 45,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 67,
+          "end": 69,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 121,
+          "end": 123,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 160,
+          "end": 162,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 165,
+          "end": 167,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 195,
+          "end": 197,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 304,
+          "end": 306,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 366,
+          "end": 368,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 396,
+          "end": 398,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 455,
+          "end": 457,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 513,
+          "end": 515,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 560,
+          "end": 562,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 590,
+          "end": 592,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 750,
+          "end": 752,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 780,
+          "end": 782,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 888,
+          "end": 890,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 933,
+          "end": 935,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 963,
+          "end": 965,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 1221,
+          "end": 1224,
+          "found": "-La",
+          "pref": "Laos",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-R23FMD0L-9"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "matches": [
+        {
+          "start": 933,
+          "end": 939,
+          "found": "Brunei",
+          "pref": "Brunei",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-FJP8DQ6S-V"
+        },
+        {
+          "start": 923,
+          "end": 959,
+          "found": "Nation of Brunei, the Abode of Peace",
+          "pref": "Brunei",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-FJP8DQ6S-V"
+        },
+        {
+          "start": 325,
+          "end": 332,
+          "found": "Marche-",
+          "pref": "Marche",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-S9Q8DFD3-V"
+        },
+        {
+          "start": 600,
+          "end": 606,
+          "found": "Lisbon",
+          "pref": "Lisbon",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-L840WFWG-N"
+        },
+        {
+          "start": 728,
+          "end": 734,
+          "found": "Azores",
+          "pref": "Azores",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-GC8P2F3K-Z"
+        },
+        {
+          "start": 600,
+          "end": 624,
+          "found": "Lisbon metropolitan area",
+          "pref": "Lisbon metropolitan area",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-RNX8CP3Q-K"
+        },
+        {
+          "start": 703,
+          "end": 760,
+          "found": "Autonomous Region of the Azores (intermunicipal community",
+          "pref": "Autonomous Region of the Azores (intermunicipal community)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-P0ZWWZZ6-V"
+        },
+        {
+          "start": 600,
+          "end": 650,
+          "found": "Lisbon metropolitan area (intermunicipal community",
+          "pref": "Lisbon metropolitan area (intermunicipal community)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-RBN2SCW5-J"
+        },
+        {
+          "start": 116,
+          "end": 119,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 303,
+          "end": 306,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 487,
+          "end": 490,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 699,
+          "end": 702,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 919,
+          "end": 922,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1104,
+          "end": 1107,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1292,
+          "end": 1295,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1474,
+          "end": 1477,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1659,
+          "end": 1662,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1848,
+          "end": 1851,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 336,
+          "end": 338,
+          "found": "am",
+          "pref": "Armenia",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-RSRBTFLS-C"
+        },
+        {
+          "start": 424,
+          "end": 426,
+          "found": "im",
+          "pref": "Isle of Man",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-RZ9Q7PPL-L"
+        },
+        {
+          "start": 0,
+          "end": 2,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 158,
+          "end": 160,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 188,
+          "end": 190,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 261,
+          "end": 263,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 343,
+          "end": 345,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 373,
+          "end": 375,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 481,
+          "end": 483,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 527,
+          "end": 529,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 557,
+          "end": 559,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 626,
+          "end": 628,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 677,
+          "end": 679,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 736,
+          "end": 738,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 762,
+          "end": 764,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 792,
+          "end": 794,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 857,
+          "end": 859,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 960,
+          "end": 962,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 990,
+          "end": 992,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 1061,
+          "end": 1063,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 1099,
+          "end": 1101,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 1586,
+          "end": 1596,
+          "found": "Washington",
+          "pref": "Washington, D.C.",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-LXLPG87F-3"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "matches": [
+        {
+          "start": 602,
+          "end": 607,
+          "found": "Bern-",
+          "pref": "Bern",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PS1Z62ST-X"
+        },
+        {
+          "start": 664,
+          "end": 671,
+          "found": "Madeira",
+          "pref": "Madeira",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-S3PP60R9-N"
+        },
+        {
+          "start": 1386,
+          "end": 1392,
+          "found": "Azores",
+          "pref": "Azores",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-GC8P2F3K-Z"
+        },
+        {
+          "start": 1804,
+          "end": 1810,
+          "found": "Azores",
+          "pref": "Azores",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-GC8P2F3K-Z"
+        },
+        {
+          "start": 1065,
+          "end": 1072,
+          "found": "Algarve",
+          "pref": "Algarve",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-W7FLN0BH-Q"
+        },
+        {
+          "start": 643,
+          "end": 679,
+          "found": "Autonomous Region of Madeira (region",
+          "pref": "Autonomous Region of Madeira (region)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-XSZWGT93-8"
+        },
+        {
+          "start": 1065,
+          "end": 1098,
+          "found": "Algarve (intermunicipal community",
+          "pref": "Algarve (intermunicipal community)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-NLKV64G0-3"
+        },
+        {
+          "start": 1361,
+          "end": 1418,
+          "found": "Autonomous Region of the Azores (intermunicipal community",
+          "pref": "Autonomous Region of the Azores (intermunicipal community)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-P0ZWWZZ6-V"
+        },
+        {
+          "start": 114,
+          "end": 117,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 275,
+          "end": 278,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 302,
+          "end": 305,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 460,
+          "end": 463,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 489,
+          "end": 492,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 614,
+          "end": 617,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 682,
+          "end": 685,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 876,
+          "end": 879,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 999,
+          "end": 1002,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1061,
+          "end": 1064,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 83,
+          "end": 85,
+          "found": "am",
+          "pref": "Armenia",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-RSRBTFLS-C"
+        },
+        {
+          "start": 0,
+          "end": 2,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 73,
+          "end": 75,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 121,
+          "end": 123,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 155,
+          "end": 157,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 185,
+          "end": 187,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 343,
+          "end": 345,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 373,
+          "end": 375,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 483,
+          "end": 485,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 524,
+          "end": 526,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 529,
+          "end": 531,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 559,
+          "end": 561,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 621,
+          "end": 623,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 721,
+          "end": 723,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 751,
+          "end": 753,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 845,
+          "end": 847,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 871,
+          "end": 873,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 895,
+          "end": 897,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 915,
+          "end": 917,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 945,
+          "end": 947,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 1795,
+          "end": 1840,
+          "found": "Calheta (Azores) Calheta Calheta Municipality",
+          "pref": "Calheta Municipality (Azores)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-F7VP1BLG-D"
+        },
+        {
+          "start": 1025,
+          "end": 1035,
+          "found": "Washington",
+          "pref": "Washington, D.C.",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-LXLPG87F-3"
+        },
+        {
+          "start": 1421,
+          "end": 1431,
+          "found": "Washington",
+          "pref": "Washington, D.C.",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-LXLPG87F-3"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "matches": [
+        {
+          "start": 936,
+          "end": 942,
+          "found": "Brunei",
+          "pref": "Brunei",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-FJP8DQ6S-V"
+        },
+        {
+          "start": 926,
+          "end": 962,
+          "found": "Nation of Brunei, the Abode of Peace",
+          "pref": "Brunei",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-FJP8DQ6S-V"
+        },
+        {
+          "start": 1307,
+          "end": 1315,
+          "found": "Hamilton",
+          "pref": "Hamilton",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-JPF4N704-K"
+        },
+        {
+          "start": 886,
+          "end": 893,
+          "found": "Madeira",
+          "pref": "Madeira",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-S3PP60R9-N"
+        },
+        {
+          "start": 495,
+          "end": 501,
+          "found": "Azores",
+          "pref": "Azores",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-GC8P2F3K-Z"
+        },
+        {
+          "start": 865,
+          "end": 919,
+          "found": "Autonomous Region of Madeira (intermunicipal community",
+          "pref": "Autonomous Region of Madeira (intermunicipal community)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-LJL4BXFR-F"
+        },
+        {
+          "start": 470,
+          "end": 527,
+          "found": "Autonomous Region of the Azores (intermunicipal community",
+          "pref": "Autonomous Region of the Azores (intermunicipal community)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-P0ZWWZZ6-V"
+        },
+        {
+          "start": 1078,
+          "end": 1090,
+          "found": "Switzerland-",
+          "pref": "Switzerland",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-DZZBKS5P-Z"
+        },
+        {
+          "start": 123,
+          "end": 126,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 324,
+          "end": 327,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 530,
+          "end": 533,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 714,
+          "end": 717,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 839,
+          "end": 842,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 922,
+          "end": 925,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1086,
+          "end": 1089,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1113,
+          "end": 1116,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1303,
+          "end": 1306,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1417,
+          "end": 1420,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 52,
+          "end": 54,
+          "found": "im",
+          "pref": "Isle of Man",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-RZ9Q7PPL-L"
+        },
+        {
+          "start": 0,
+          "end": 2,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 104,
+          "end": 106,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 173,
+          "end": 175,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 203,
+          "end": 205,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 275,
+          "end": 277,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 358,
+          "end": 360,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 362,
+          "end": 364,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 392,
+          "end": 394,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 465,
+          "end": 467,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 503,
+          "end": 505,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 538,
+          "end": 540,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 568,
+          "end": 570,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 598,
+          "end": 600,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 682,
+          "end": 684,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 708,
+          "end": 710,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 755,
+          "end": 757,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 785,
+          "end": 787,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 895,
+          "end": 897,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 963,
+          "end": 965,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 1458,
+          "end": 1468,
+          "found": "Washington",
+          "pref": "Washington, D.C.",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-LXLPG87F-3"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "matches": [
+        {
+          "start": 794,
+          "end": 799,
+          "found": "Bern-",
+          "pref": "Bern",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PS1Z62ST-X"
+        },
+        {
+          "start": 1834,
+          "end": 1841,
+          "found": "Marche-",
+          "pref": "Marche",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-S9Q8DFD3-V"
+        },
+        {
+          "start": 605,
+          "end": 613,
+          "found": "(Madeira",
+          "pref": "Madeira",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-S3PP60R9-N"
+        },
+        {
+          "start": 606,
+          "end": 613,
+          "found": "Madeira",
+          "pref": "Madeira",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-S3PP60R9-N"
+        },
+        {
+          "start": 1603,
+          "end": 1657,
+          "found": "Autonomous Region of Madeira (intermunicipal community",
+          "pref": "Autonomous Region of Madeira (intermunicipal community)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-LJL4BXFR-F"
+        },
+        {
+          "start": 1169,
+          "end": 1209,
+          "found": "Baixo Alentejo (intermunicipal community",
+          "pref": "Baixo Alentejo (intermunicipal community)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-KZQQ3D9K-5"
+        },
+        {
+          "start": 116,
+          "end": 119,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 302,
+          "end": 305,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 486,
+          "end": 489,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 497,
+          "end": 500,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 683,
+          "end": 686,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 806,
+          "end": 809,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 874,
+          "end": 877,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1031,
+          "end": 1034,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1058,
+          "end": 1061,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1256,
+          "end": 1259,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 129,
+          "end": 131,
+          "found": "im",
+          "pref": "Isle of Man",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-RZ9Q7PPL-L"
+        },
+        {
+          "start": 0,
+          "end": 2,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 158,
+          "end": 160,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 188,
+          "end": 190,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 296,
+          "end": 298,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 340,
+          "end": 342,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 370,
+          "end": 372,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 417,
+          "end": 419,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 480,
+          "end": 482,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 520,
+          "end": 522,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 524,
+          "end": 526,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 554,
+          "end": 556,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 649,
+          "end": 651,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 716,
+          "end": 718,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 721,
+          "end": 723,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 751,
+          "end": 753,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 813,
+          "end": 815,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 838,
+          "end": 840,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 914,
+          "end": 916,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 944,
+          "end": 946,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 1244,
+          "end": 1247,
+          "found": "-La",
+          "pref": "Laos",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-R23FMD0L-9"
+        },
+        {
+          "start": 597,
+          "end": 643,
+          "found": "Calheta (Madeira) Calheta Calheta Municipality",
+          "pref": "Calheta Municipality (Madeira)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-VVJG41KL-P"
+        },
+        {
+          "start": 645,
+          "end": 655,
+          "found": "Washington",
+          "pref": "Washington, D.C.",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-LXLPG87F-3"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "matches": [
+        {
+          "start": 455,
+          "end": 460,
+          "found": "Bern-",
+          "pref": "Bern",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PS1Z62ST-X"
+        },
+        {
+          "start": 1204,
+          "end": 1210,
+          "found": "Brunei",
+          "pref": "Brunei",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-FJP8DQ6S-V"
+        },
+        {
+          "start": 1194,
+          "end": 1230,
+          "found": "Nation of Brunei, the Abode of Peace",
+          "pref": "Brunei",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-FJP8DQ6S-V"
+        },
+        {
+          "start": 1026,
+          "end": 1033,
+          "found": "Marche-",
+          "pref": "Marche",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-S9Q8DFD3-V"
+        },
+        {
+          "start": 1609,
+          "end": 1615,
+          "found": "Lisbon",
+          "pref": "Lisbon",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-L840WFWG-N"
+        },
+        {
+          "start": 525,
+          "end": 531,
+          "found": "Azores",
+          "pref": "Azores",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-GC8P2F3K-Z"
+        },
+        {
+          "start": 1442,
+          "end": 1448,
+          "found": "Azores",
+          "pref": "Azores",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-GC8P2F3K-Z"
+        },
+        {
+          "start": 1417,
+          "end": 1456,
+          "found": "Autonomous Region of the Azores (region",
+          "pref": "Autonomous Region of the Azores (region)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-M2K542CL-K"
+        },
+        {
+          "start": 1609,
+          "end": 1633,
+          "found": "Lisbon metropolitan area",
+          "pref": "Lisbon metropolitan area",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-RNX8CP3Q-K"
+        },
+        {
+          "start": 500,
+          "end": 557,
+          "found": "Autonomous Region of the Azores (intermunicipal community",
+          "pref": "Autonomous Region of the Azores (intermunicipal community)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-P0ZWWZZ6-V"
+        },
+        {
+          "start": 1609,
+          "end": 1659,
+          "found": "Lisbon metropolitan area (intermunicipal community",
+          "pref": "Lisbon metropolitan area (intermunicipal community)",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-RBN2SCW5-J"
+        },
+        {
+          "start": 118,
+          "end": 121,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 308,
+          "end": 311,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 467,
+          "end": 470,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 496,
+          "end": 499,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 670,
+          "end": 673,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 707,
+          "end": 710,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 896,
+          "end": 899,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1080,
+          "end": 1083,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1267,
+          "end": 1270,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 1391,
+          "end": 1394,
+          "found": "and",
+          "pref": "Andorra",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-PG5NZG4Z-3"
+        },
+        {
+          "start": 0,
+          "end": 2,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 74,
+          "end": 76,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 157,
+          "end": 159,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 187,
+          "end": 189,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 260,
+          "end": 262,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 273,
+          "end": 275,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 341,
+          "end": 343,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 346,
+          "end": 348,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 376,
+          "end": 378,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 474,
+          "end": 476,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 533,
+          "end": 535,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 559,
+          "end": 561,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 589,
+          "end": 591,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 676,
+          "end": 678,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 749,
+          "end": 751,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 779,
+          "end": 781,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 854,
+          "end": 856,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 890,
+          "end": 892,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 934,
+          "end": 936,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 964,
+          "end": 966,
+          "found": "In",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 1075,
+          "end": 1077,
+          "found": "in",
+          "pref": "India",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-HZ1PRMZW-X"
+        },
+        {
+          "start": 1289,
+          "end": 1298,
+          "found": "Brussels-",
+          "pref": "Brussels-Capital Region",
+          "uri": "http://data.loterre.fr/ark:/67375/9SD-Z8BK69S1-F"
+        }
+      ]
+    }
+  ]
+}

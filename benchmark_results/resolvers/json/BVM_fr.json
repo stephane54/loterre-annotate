@@ -1,0 +1,745 @@
+{
+  "results": [
+    {
+      "id": "0",
+      "matches": [
+        {
+          "start": 3,
+          "end": 9,
+          "found": "France",
+          "pref": "France",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-CZ8WD4C2-L"
+        },
+        {
+          "start": 78,
+          "end": 84,
+          "found": "France",
+          "pref": "France",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-CZ8WD4C2-L"
+        },
+        {
+          "start": 626,
+          "end": 632,
+          "found": "France",
+          "pref": "France",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-CZ8WD4C2-L"
+        },
+        {
+          "start": 710,
+          "end": 716,
+          "found": "France",
+          "pref": "France",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-CZ8WD4C2-L"
+        },
+        {
+          "start": 997,
+          "end": 1003,
+          "found": "France",
+          "pref": "France",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-CZ8WD4C2-L"
+        },
+        {
+          "start": 3,
+          "end": 24,
+          "found": "France métropolitaine",
+          "pref": "France métropolitaine",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-SSKT8RBP-9"
+        },
+        {
+          "start": 78,
+          "end": 96,
+          "found": "France d'outre-mer",
+          "pref": "France d'outre-mer",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-RTFV64NN-0"
+        },
+        {
+          "start": 154,
+          "end": 159,
+          "found": "Paris",
+          "pref": "Paris",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-BWZRNLQ4-7"
+        },
+        {
+          "start": 450,
+          "end": 468,
+          "found": "Nouvelle-Aquitaine",
+          "pref": "Nouvelle-Aquitaine",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-K24ZXCW8-8"
+        },
+        {
+          "start": 936,
+          "end": 955,
+          "found": "Centre-Val de Loire",
+          "pref": "Centre-Val de Loire",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-G8BSFRZS-4"
+        },
+        {
+          "start": 617,
+          "end": 632,
+          "found": "Hauts-de-France",
+          "pref": "Hauts-de-France",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-Z3H46TPH-3"
+        },
+        {
+          "start": 852,
+          "end": 875,
+          "found": "Bourgogne-Franche-Comté",
+          "pref": "Bourgogne-Franche-Comté",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-J25VB22Z-W"
+        },
+        {
+          "start": 532,
+          "end": 541,
+          "found": "Grand Est",
+          "pref": "Grand Est",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-V26GXZKG-M"
+        },
+        {
+          "start": 778,
+          "end": 787,
+          "found": "Normandie",
+          "pref": "Normandie",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-M5XWQC99-Q"
+        },
+        {
+          "start": 300,
+          "end": 326,
+          "found": "Provence-Alpes-Côte d'Azur",
+          "pref": "Provence-Alpes-Côte d'Azur",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-L21B4XZJ-G"
+        },
+        {
+          "start": 300,
+          "end": 309,
+          "found": "Provence-",
+          "pref": "Aix-en-Provence",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-JJL3T36V-W"
+        },
+        {
+          "start": 225,
+          "end": 233,
+          "found": "Bretagne",
+          "pref": "Rennes",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-PTVXKXBT-4"
+        },
+        {
+          "start": 458,
+          "end": 468,
+          "found": "-Aquitaine",
+          "pref": "Bordeaux",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-C245RL02-J"
+        },
+        {
+          "start": 852,
+          "end": 862,
+          "found": "Bourgogne-",
+          "pref": "Dijon",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-NPNQNF5X-K"
+        },
+        {
+          "start": 950,
+          "end": 955,
+          "found": "Loire",
+          "pref": "Liré",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-T48N27PL-0"
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "matches": [
+        {
+          "start": 64,
+          "end": 70,
+          "found": "France",
+          "pref": "France",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-CZ8WD4C2-L"
+        },
+        {
+          "start": 188,
+          "end": 194,
+          "found": "France",
+          "pref": "France",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-CZ8WD4C2-L"
+        },
+        {
+          "start": 64,
+          "end": 85,
+          "found": "France métropolitaine",
+          "pref": "France métropolitaine",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-SSKT8RBP-9"
+        },
+        {
+          "start": 188,
+          "end": 206,
+          "found": "France d'outre-mer",
+          "pref": "France d'outre-mer",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-RTFV64NN-0"
+        },
+        {
+          "start": 309,
+          "end": 331,
+          "found": "Vezins (Maine-et-Loire",
+          "pref": "Vezins (Maine-et-Loire)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-GZR1SX5K-4"
+        },
+        {
+          "start": 309,
+          "end": 315,
+          "found": "Vezins",
+          "pref": "Vezins (Maine-et-Loire)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-GZR1SX5K-4"
+        },
+        {
+          "start": 325,
+          "end": 331,
+          "found": "-Loire",
+          "pref": "Liré",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-T48N27PL-0"
+        },
+        {
+          "start": 316,
+          "end": 331,
+          "found": "(Maine-et-Loire",
+          "pref": "Département de Maine-et-Loire",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-X5JZ12ZR-6"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "matches": [
+        {
+          "start": 64,
+          "end": 81,
+          "found": "Achères (Yvelines",
+          "pref": "Achères (Yvelines)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-SWLPZF4L-C"
+        },
+        {
+          "start": 64,
+          "end": 71,
+          "found": "Achères",
+          "pref": "Achères (Yvelines)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-SWLPZF4L-C"
+        },
+        {
+          "start": 185,
+          "end": 195,
+          "found": "Le Coudray",
+          "pref": "Le Coudray",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-WZHBG1LR-J"
+        },
+        {
+          "start": 298,
+          "end": 323,
+          "found": "Arue (Polynésie française",
+          "pref": "Arue (Polynésie française)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-GG7Q8K17-V"
+        },
+        {
+          "start": 298,
+          "end": 302,
+          "found": "Arue",
+          "pref": "Arue (Polynésie française)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-GG7Q8K17-V"
+        },
+        {
+          "start": 303,
+          "end": 323,
+          "found": "(Polynésie française",
+          "pref": "Polynésie française",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-V0PCHFQ6-8"
+        },
+        {
+          "start": 72,
+          "end": 81,
+          "found": "(Yvelines",
+          "pref": "Versailles",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-QLHRG5Q8-3"
+        },
+        {
+          "start": 188,
+          "end": 195,
+          "found": "Coudray",
+          "pref": "Coudray (Mayenne)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-DZN2ML8B-W"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "matches": [
+        {
+          "start": 64,
+          "end": 75,
+          "found": "Dury (Somme",
+          "pref": "Dury (Somme)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-PM8X1ZDQ-4"
+        },
+        {
+          "start": 64,
+          "end": 68,
+          "found": "Dury",
+          "pref": "Dury (Somme)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-PM8X1ZDQ-4"
+        },
+        {
+          "start": 179,
+          "end": 198,
+          "found": "Campus du Mont Houy",
+          "pref": "Campus du Mont Houy",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-H04LWP1D-F"
+        },
+        {
+          "start": 301,
+          "end": 316,
+          "found": "Le Puy-en-Velay",
+          "pref": "Le Puy-en-Velay",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-X9PDR47K-1"
+        },
+        {
+          "start": 310,
+          "end": 316,
+          "found": "-Velay",
+          "pref": "Le Puy-en-Velay",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-X9PDR47K-1"
+        },
+        {
+          "start": 304,
+          "end": 316,
+          "found": "Puy-en-Velay",
+          "pref": "Le Puy-en-Velay",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-X9PDR47K-1"
+        },
+        {
+          "start": 189,
+          "end": 193,
+          "found": "Mont",
+          "pref": "Mont-Saint-Aignan",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-GT5HTZ2T-Q"
+        },
+        {
+          "start": 69,
+          "end": 75,
+          "found": "(Somme",
+          "pref": "Département de la Somme",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-P4K1NRKH-P"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "matches": [
+        {
+          "start": 64,
+          "end": 78,
+          "found": "Massy (Essonne",
+          "pref": "Massy (Essonne)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-XL4JZCLV-T"
+        },
+        {
+          "start": 64,
+          "end": 69,
+          "found": "Massy",
+          "pref": "Massy (Essonne)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-XL4JZCLV-T"
+        },
+        {
+          "start": 182,
+          "end": 195,
+          "found": "Verdun (Meuse",
+          "pref": "Verdun (Meuse)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-ZG7RBL34-P"
+        },
+        {
+          "start": 182,
+          "end": 188,
+          "found": "Verdun",
+          "pref": "Verdun (Meuse)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-ZG7RBL34-P"
+        },
+        {
+          "start": 299,
+          "end": 318,
+          "found": "Les Sables-d'Olonne",
+          "pref": "Les Sables-d'Olonne",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-QVVSZQ7B-S"
+        },
+        {
+          "start": 70,
+          "end": 78,
+          "found": "(Essonne",
+          "pref": "Évry (Essonne)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-PLQKQPSN-5"
+        },
+        {
+          "start": 189,
+          "end": 195,
+          "found": "(Meuse",
+          "pref": "Département de la Meuse",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-BQG0BC9G-W"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "matches": [
+        {
+          "start": 64,
+          "end": 81,
+          "found": "Le Bourget-du-Lac",
+          "pref": "Le Bourget-du-Lac",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-R00RNLDF-1"
+        },
+        {
+          "start": 67,
+          "end": 81,
+          "found": "Bourget-du-Lac",
+          "pref": "Le Bourget-du-Lac",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-R00RNLDF-1"
+        },
+        {
+          "start": 67,
+          "end": 75,
+          "found": "Bourget-",
+          "pref": "Le Bourget-du-Lac",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-R00RNLDF-1"
+        },
+        {
+          "start": 184,
+          "end": 199,
+          "found": "Fontaine (Isère",
+          "pref": "Fontaine (Isère)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-DFHTMCKW-M"
+        },
+        {
+          "start": 184,
+          "end": 192,
+          "found": "Fontaine",
+          "pref": "Fontaine (Isère)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-DFHTMCKW-M"
+        },
+        {
+          "start": 303,
+          "end": 315,
+          "found": "Revel (Isère",
+          "pref": "Revel (Isère)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-N48TH4WB-B"
+        },
+        {
+          "start": 303,
+          "end": 308,
+          "found": "Revel",
+          "pref": "Revel (Isère)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-N48TH4WB-B"
+        },
+        {
+          "start": 193,
+          "end": 199,
+          "found": "(Isère",
+          "pref": "Département de l'Isère",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-L0Q68SZ4-K"
+        },
+        {
+          "start": 309,
+          "end": 315,
+          "found": "(Isère",
+          "pref": "Département de l'Isère",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-L0Q68SZ4-K"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "matches": [
+        {
+          "start": 64,
+          "end": 80,
+          "found": "Le Pont-de-Claix",
+          "pref": "Le Pont-de-Claix",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-D2R2QJC1-S"
+        },
+        {
+          "start": 67,
+          "end": 80,
+          "found": "Pont-de-Claix",
+          "pref": "Le Pont-de-Claix",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-D2R2QJC1-S"
+        },
+        {
+          "start": 74,
+          "end": 80,
+          "found": "-Claix",
+          "pref": "Le Pont-de-Claix",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-D2R2QJC1-S"
+        },
+        {
+          "start": 183,
+          "end": 197,
+          "found": "Versonnex (Ain",
+          "pref": "Versonnex (Ain)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-SM9W2H64-C"
+        },
+        {
+          "start": 183,
+          "end": 192,
+          "found": "Versonnex",
+          "pref": "Versonnex (Ain)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-SM9W2H64-C"
+        },
+        {
+          "start": 301,
+          "end": 313,
+          "found": "Le Mont-Dore",
+          "pref": "Le Mont-Dore",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-RQW7916N-9"
+        },
+        {
+          "start": 304,
+          "end": 313,
+          "found": "Mont-Dore",
+          "pref": "Le Mont-Dore",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-RQW7916N-9"
+        },
+        {
+          "start": 304,
+          "end": 309,
+          "found": "Mont-",
+          "pref": "Mont-Saint-Aignan",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-GT5HTZ2T-Q"
+        },
+        {
+          "start": 193,
+          "end": 197,
+          "found": "(Ain",
+          "pref": "Département de l'Ain",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-MBCDB2WD-K"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "matches": [
+        {
+          "start": 64,
+          "end": 87,
+          "found": "Saint-Denis (La Réunion",
+          "pref": "Saint-Denis (La Réunion)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-QM31QL67-Z"
+        },
+        {
+          "start": 64,
+          "end": 75,
+          "found": "Saint-Denis",
+          "pref": "Saint-Denis (La Réunion)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-QM31QL67-Z"
+        },
+        {
+          "start": 191,
+          "end": 202,
+          "found": "Saint-Denis",
+          "pref": "Saint-Denis (La Réunion)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-QM31QL67-Z"
+        },
+        {
+          "start": 210,
+          "end": 221,
+          "found": "Saint-Denis",
+          "pref": "Saint-Denis (La Réunion)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-QM31QL67-Z"
+        },
+        {
+          "start": 209,
+          "end": 221,
+          "found": "-Saint-Denis",
+          "pref": "Saint-Denis (La Réunion)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-QM31QL67-Z"
+        },
+        {
+          "start": 191,
+          "end": 221,
+          "found": "Saint-Denis (Seine-Saint-Denis",
+          "pref": "Saint-Denis (Seine-Saint-Denis)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-XSC16PHZ-6"
+        },
+        {
+          "start": 325,
+          "end": 350,
+          "found": "Rousset (Bouches-du-Rhône",
+          "pref": "Rousset (Bouches-du-Rhône)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-G7H0931P-C"
+        },
+        {
+          "start": 325,
+          "end": 332,
+          "found": "Rousset",
+          "pref": "Rousset (Bouches-du-Rhône)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-G7H0931P-C"
+        },
+        {
+          "start": 76,
+          "end": 87,
+          "found": "(La Réunion",
+          "pref": "La Réunion",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-XD3NHX1D-7"
+        },
+        {
+          "start": 203,
+          "end": 210,
+          "found": "(Seine-",
+          "pref": "Séné",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-D24VZZGB-Z"
+        },
+        {
+          "start": 344,
+          "end": 350,
+          "found": "-Rhône",
+          "pref": "Département du Rhône",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-X5D2HVS8-5"
+        },
+        {
+          "start": 203,
+          "end": 221,
+          "found": "(Seine-Saint-Denis",
+          "pref": "Département de Seine-Saint-Denis",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-HJVPFWJ7-4"
+        },
+        {
+          "start": 333,
+          "end": 350,
+          "found": "(Bouches-du-Rhône",
+          "pref": "Département des Bouches-du-Rhône",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-KK3XZKTJ-2"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "matches": [
+        {
+          "start": 64,
+          "end": 70,
+          "found": "La Foa",
+          "pref": "La Foa",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-R24NNQBC-Z"
+        },
+        {
+          "start": 173,
+          "end": 182,
+          "found": "La Ciotat",
+          "pref": "La Ciotat",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-B82FBWWB-T"
+        },
+        {
+          "start": 285,
+          "end": 298,
+          "found": "La Garde (Var",
+          "pref": "La Garde (Var)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-VNTN0W4J-Z"
+        },
+        {
+          "start": 285,
+          "end": 293,
+          "found": "La Garde",
+          "pref": "La Garde (Var)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-VNTN0W4J-Z"
+        },
+        {
+          "start": 294,
+          "end": 298,
+          "found": "(Var",
+          "pref": "Département du Var",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-H77MBC94-7"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "matches": [
+        {
+          "start": 64,
+          "end": 81,
+          "found": "La Valette-du-Var",
+          "pref": "La Valette-du-Var",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-H9L6TVCS-1"
+        },
+        {
+          "start": 184,
+          "end": 194,
+          "found": "Le Triadou",
+          "pref": "Le Triadou",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-HTFP05BX-2"
+        },
+        {
+          "start": 297,
+          "end": 314,
+          "found": "Beaufort (Hérault",
+          "pref": "Beaufort (Hérault)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-N9FCT7LM-V"
+        },
+        {
+          "start": 297,
+          "end": 305,
+          "found": "Beaufort",
+          "pref": "Beaufort (Hérault)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-N9FCT7LM-V"
+        },
+        {
+          "start": 306,
+          "end": 314,
+          "found": "(Hérault",
+          "pref": "Département de l'Hérault",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-BGNZBMSK-Q"
+        },
+        {
+          "start": 77,
+          "end": 81,
+          "found": "-Var",
+          "pref": "Département du Var",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-H77MBC94-7"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "matches": [
+        {
+          "start": 65,
+          "end": 77,
+          "found": "Fleury (Aude",
+          "pref": "Fleury (Aude)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-T1BSNDGV-1"
+        },
+        {
+          "start": 65,
+          "end": 71,
+          "found": "Fleury",
+          "pref": "Fleury (Aude)",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-T1BSNDGV-1"
+        },
+        {
+          "start": 182,
+          "end": 191,
+          "found": "Le Robert",
+          "pref": "Le Robert",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-RTGJ1DQ5-0"
+        },
+        {
+          "start": 295,
+          "end": 305,
+          "found": "La Réunion",
+          "pref": "La Réunion",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-XD3NHX1D-7"
+        },
+        {
+          "start": 72,
+          "end": 77,
+          "found": "(Aude",
+          "pref": "Département de l'Aude",
+          "uri": "http://data.loterre.fr/ark:/67375/BVM-S7D7R9LD-F"
+        }
+      ]
+    }
+  ]
+}

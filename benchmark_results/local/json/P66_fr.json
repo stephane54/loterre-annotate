@@ -1,0 +1,927 @@
+{
+  "profile": "term_recall",
+  "docs": 11,
+  "timings": {
+    "load_and_profile_s": 0.08131657200283371,
+    "process_s": 14.611432277000858,
+    "total_s": 14.692748849003692
+  },
+  "results": [
+    {
+      "id": "0",
+      "annotated_text": "La recherche en psychologie cognitive distingue plusieurs **systèmes mnésiques**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕. Les **mémoires à long terme**〔[mémoire à long terme](http://data.loterre.fr/ark:/67375/P66-J8FC45M1-6)〕 permettent de conserver des informations sur de longues périodes, tandis que la **mémoire à court terme**〔[mémoire à court terme](http://data.loterre.fr/ark:/67375/P66-QZRTL2B1-9)〕 assure le maintien temporaire des **données**〔[donnée](http://data.loterre.fr/ark:/67375/P66-BJ11GKSN-9)〕 en cours de **traitement**〔[traitement](http://data.loterre.fr/ark:/67375/P66-GPW1T35T-9)〕. Les **mémoires de travail**〔[mémoire de travail](http://data.loterre.fr/ark:/67375/P66-KK6LXTL8-P)〕 jouent un rôle central dans la planification et le raisonnement. L'étude des **effets de récence**〔[effet de récence](http://data.loterre.fr/ark:/67375/P66-L4B4V85X-Z)〕 montre une **sensibilité**〔[sensibilité mnésique](http://data.loterre.fr/ark:/67375/P66-WQKZ3MHT-D)〕 accrue aux mots récents, alors que l'**effet de primauté**〔[effet de primauté](http://data.loterre.fr/ark:/67375/P66-DZZPGZ5R-G)〕 avantage les éléments présentés en début de liste. Le chercheur analyse les **encodages**〔[encodage](http://data.loterre.fr/ark:/67375/P66-FR1VGSJN-Q)〕 en contexte de **double tâche**〔[paradigme de la double tâche](http://data.loterre.fr/ark:/67375/P66-RHBPF3SS-B)〕. Les participants effectuent des **rappels libres**〔[tâche de rappel libre](http://data.loterre.fr/ark:/67375/P66-Z4TLQPTN-5)〕 immédiatement après l'**apprentissage**〔[apprentissage](http://data.loterre.fr/ark:/67375/P66-R9DC7TZN-9)〕. Les **interférences proactives**〔[interférence proactive](http://data.loterre.fr/ark:/67375/P66-L0QT15F8-G)〕 perturbent les souvenirs récemment encodés, contrairement à l'**interférence rétroactive**〔[interférence rétroactive](http://data.loterre.fr/ark:/67375/P66-L24DSHB5-D)〕 qui altère les traces antérieures. La **consolidation de la mémoire**〔[consolidation](http://data.loterre.fr/ark:/67375/P66-X1M4BRNP-Z)〕 survient principalement pendant le **sommeil**〔[sommeil](http://data.loterre.fr/ark:/67375/P66-R1X014PQ-C)〕. L'**attentions sélectives**〔[attention sélective](http://data.loterre.fr/ark:/67375/P66-V1086TZP-C)〕 permet de focaliser les ressources cognitives sur les **stimuli**〔[stimulus](http://data.loterre.fr/ark:/67375/P66-GQFQTFDX-6)〕 pertinents. Les **mémoires épisodiques**〔[mémoire épisodique](http://data.loterre.fr/ark:/67375/P66-DP4NMT2L-9)〕 contiennent des épisodes autobiographiques datés et localisés, alors que la **mémoire sémantique**〔[mémoire sémantique](http://data.loterre.fr/ark:/67375/P66-L02857LC-7)〕 stocke les **connaissances générales**〔[mémoire sémantique](http://data.loterre.fr/ark:/67375/P66-L02857LC-7)〕. Les **processus de récupération**〔[récupération](http://data.loterre.fr/ark:/67375/P66-LWGNZJQ8-R)〕 varient selon le degré de profondeur d'**élaboration**〔[élaboration](http://data.loterre.fr/ark:/67375/P66-H7095F6K-J)〕. L'**oubli motivé**〔[oubli motivé](http://data.loterre.fr/ark:/67375/P66-QXL9L0F4-P)〕 est plus fréquent pour les souvenirs chargés émotionnellement.",
+      "matches": [
+        {
+          "start": 58,
+          "end": 76,
+          "found": "systèmes mnésiques",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "systèmes mnésiques",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 82,
+          "end": 103,
+          "found": "mémoires à long terme",
+          "pref": "mémoire à long terme",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-J8FC45M1-6",
+          "label": "mémoire à long terme",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 184,
+          "end": 205,
+          "found": "mémoire à court terme",
+          "pref": "mémoire à court terme",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-QZRTL2B1-9",
+          "label": "mémoire à court terme",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 240,
+          "end": 247,
+          "found": "données",
+          "pref": "donnée",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-BJ11GKSN-9",
+          "label": "données",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 260,
+          "end": 270,
+          "found": "traitement",
+          "pref": "traitement",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-GPW1T35T-9",
+          "label": "traitements",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 276,
+          "end": 295,
+          "found": "mémoires de travail",
+          "pref": "mémoire de travail",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-KK6LXTL8-P",
+          "label": "mémoire de travail",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 373,
+          "end": 390,
+          "found": "effets de récence",
+          "pref": "effet de récence",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-L4B4V85X-Z",
+          "label": "effet de récence",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 402,
+          "end": 413,
+          "found": "sensibilité",
+          "pref": "sensibilité mnésique",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-WQKZ3MHT-D",
+          "label": "sensibilité",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 451,
+          "end": 468,
+          "found": "effet de primauté",
+          "pref": "effet de primauté",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-DZZPGZ5R-G",
+          "label": "effet de primauté",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 545,
+          "end": 554,
+          "found": "encodages",
+          "pref": "encodage",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-FR1VGSJN-Q",
+          "label": "encodage",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 570,
+          "end": 582,
+          "found": "double tâche",
+          "pref": "paradigme de la double tâche",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RHBPF3SS-B",
+          "label": "double tâche",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 616,
+          "end": 630,
+          "found": "rappels libres",
+          "pref": "tâche de rappel libre",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-Z4TLQPTN-5",
+          "label": "rappel libre",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 653,
+          "end": 666,
+          "found": "apprentissage",
+          "pref": "apprentissage",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R9DC7TZN-9",
+          "label": "apprentissages",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 672,
+          "end": 696,
+          "found": "interférences proactives",
+          "pref": "interférence proactive",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-L0QT15F8-G",
+          "label": "interférences proactives",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 759,
+          "end": 783,
+          "found": "interférence rétroactive",
+          "pref": "interférence rétroactive",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-L24DSHB5-D",
+          "label": "interférence rétroactive",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 822,
+          "end": 849,
+          "found": "consolidation de la mémoire",
+          "pref": "consolidation",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-X1M4BRNP-Z",
+          "label": "consolidation de la mémoire",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 885,
+          "end": 892,
+          "found": "sommeil",
+          "pref": "sommeil",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-R1X014PQ-C",
+          "label": "sommeil",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 896,
+          "end": 917,
+          "found": "attentions sélectives",
+          "pref": "attention sélective",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-V1086TZP-C",
+          "label": "attention sélective",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 972,
+          "end": 979,
+          "found": "stimuli",
+          "pref": "stimulus",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-GQFQTFDX-6",
+          "label": "stimuli",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 996,
+          "end": 1016,
+          "found": "mémoires épisodiques",
+          "pref": "mémoire épisodique",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-DP4NMT2L-9",
+          "label": "mémoire épisodique",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1093,
+          "end": 1111,
+          "found": "mémoire sémantique",
+          "pref": "mémoire sémantique",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-L02857LC-7",
+          "label": "mémoire sémantique",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1123,
+          "end": 1146,
+          "found": "connaissances générales",
+          "pref": "mémoire sémantique",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-L02857LC-7",
+          "label": "connaissances générales",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1152,
+          "end": 1177,
+          "found": "processus de récupération",
+          "pref": "récupération",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-LWGNZJQ8-R",
+          "label": "processus de récupération",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 1217,
+          "end": 1228,
+          "found": "élaboration",
+          "pref": "élaboration",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-H7095F6K-J",
+          "label": "élaboration",
+          "rule": "pattern",
+          "score": 0.7
+        },
+        {
+          "start": 1232,
+          "end": 1244,
+          "found": "oubli motivé",
+          "pref": "oubli motivé",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-QXL9L0F4-P",
+          "label": "oublis motivés",
+          "rule": "pattern",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "annotated_text": "Dans l'étude 1.1, le protocole évalue les **entité matérielle**〔[entité matérielle](http://data.loterre.fr/ark:/67375/P66-N6GDMC82-T)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée. Dans l'étude 1.2, le protocole évalue les **entité d'information**〔[entité d'information](http://data.loterre.fr/ark:/67375/P66-W5K1HTKD-Q)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée. Dans l'étude 1.3, le protocole évalue les **qualités**〔[qualité](http://data.loterre.fr/ark:/67375/P66-B1TWZGXG-D)〕 cognitives au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée.",
+      "matches": [
+        {
+          "start": 42,
+          "end": 59,
+          "found": "entité matérielle",
+          "pref": "entité matérielle",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-N6GDMC82-T",
+          "label": "entités matérielles",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 86,
+          "end": 93,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 147,
+          "end": 167,
+          "found": "entité d'information",
+          "pref": "entité d'information",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W5K1HTKD-Q",
+          "label": "entités d'information",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 194,
+          "end": 201,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 255,
+          "end": 263,
+          "found": "qualités",
+          "pref": "qualité",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-B1TWZGXG-D",
+          "label": "qualités",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 301,
+          "end": 308,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "annotated_text": "Dans l'étude 2.1, le protocole évalue les **matériel électronique**〔[matériel électronique](http://data.loterre.fr/ark:/67375/P66-QZX0SK13-W)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée. Dans l'étude 2.2, le protocole évalue les **entités matérielle biologiques**〔[entité matérielle biologique](http://data.loterre.fr/ark:/67375/P66-V4BBRG7Z-G)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée. Dans l'étude 2.3, le protocole évalue les **processus développemental**〔[processus développemental](http://data.loterre.fr/ark:/67375/P66-M9G3M45V-3)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée.",
+      "matches": [
+        {
+          "start": 42,
+          "end": 63,
+          "found": "matériel électronique",
+          "pref": "matériel électronique",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-QZX0SK13-W",
+          "label": "matériel électronique",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 90,
+          "end": 97,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 151,
+          "end": 181,
+          "found": "entités matérielle biologiques",
+          "pref": "entité matérielle biologique",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-V4BBRG7Z-G",
+          "label": "entités matérielles biologiques",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 208,
+          "end": 215,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 269,
+          "end": 294,
+          "found": "processus développemental",
+          "pref": "processus développemental",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-M9G3M45V-3",
+          "label": "processus développemental",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 321,
+          "end": 328,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "annotated_text": "Dans l'étude 3.1, le protocole évalue les **processus planifiés**〔[processus planifié](http://data.loterre.fr/ark:/67375/P66-NBZLNBW5-L)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée. Dans l'étude 3.2, le protocole évalue les **processus neurophysiologique**〔[processus neurophysiologique](http://data.loterre.fr/ark:/67375/P66-RZ2X1NZ0-K)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée. Dans l'étude 3.3, le protocole évalue les **processus cognitif**〔[processus cognitif](http://data.loterre.fr/ark:/67375/P66-WJ06B2ZS-0)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée.",
+      "matches": [
+        {
+          "start": 42,
+          "end": 61,
+          "found": "processus planifiés",
+          "pref": "processus planifié",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-NBZLNBW5-L",
+          "label": "processus planifiés",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 88,
+          "end": 95,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 149,
+          "end": 177,
+          "found": "processus neurophysiologique",
+          "pref": "processus neurophysiologique",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RZ2X1NZ0-K",
+          "label": "processus neurophysiologiques",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 204,
+          "end": 211,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 265,
+          "end": 283,
+          "found": "processus cognitif",
+          "pref": "processus cognitif",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-WJ06B2ZS-0",
+          "label": "processus cognitifs",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 310,
+          "end": 317,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "annotated_text": "Dans l'étude 4.1, le protocole évalue les **processus émotionnelle**〔[processus émotionnel](http://data.loterre.fr/ark:/67375/P66-ZSMR5965-W)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée. Dans l'étude 4.2, le protocole évalue les **phénomène de la mémoire**〔[phénomène de la mémoire](http://data.loterre.fr/ark:/67375/P66-RQWF016Q-4)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée. Dans l'étude 4.3, le protocole évalue les **phénomènes de la métamémoire**〔[phénomène de la métamémoire](http://data.loterre.fr/ark:/67375/P66-WN2MNB4D-F)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée.",
+      "matches": [
+        {
+          "start": 42,
+          "end": 64,
+          "found": "processus émotionnelle",
+          "pref": "processus émotionnel",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-ZSMR5965-W",
+          "label": "processus émotionnels",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 91,
+          "end": 98,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 152,
+          "end": 175,
+          "found": "phénomène de la mémoire",
+          "pref": "phénomène de la mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-RQWF016Q-4",
+          "label": "phénomènes de la mémoire",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 202,
+          "end": 209,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 263,
+          "end": 291,
+          "found": "phénomènes de la métamémoire",
+          "pref": "phénomène de la métamémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-WN2MNB4D-F",
+          "label": "phénomène de la métamémoire",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 318,
+          "end": 325,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "annotated_text": "Dans l'étude 5.1, le protocole évalue les **phénomène de l'apprentissage**〔[phénomène de l'apprentissage](http://data.loterre.fr/ark:/67375/P66-WPQBVF2T-W)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée. Dans l'étude 5.2, le protocole évalue les **phénomènes de l'attention**〔[phénomène de l'attention](http://data.loterre.fr/ark:/67375/P66-WX8V5K34-1)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée. Dans l'étude 5.3, le protocole évalue les **entité théorique**〔[entité théorique](http://data.loterre.fr/ark:/67375/P66-J0BWMKT5-V)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée.",
+      "matches": [
+        {
+          "start": 42,
+          "end": 70,
+          "found": "phénomène de l'apprentissage",
+          "pref": "phénomène de l'apprentissage",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-WPQBVF2T-W",
+          "label": "phénomènes de l'apprentissage",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 97,
+          "end": 104,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 158,
+          "end": 183,
+          "found": "phénomènes de l'attention",
+          "pref": "phénomène de l'attention",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-WX8V5K34-1",
+          "label": "phénomènes de l'attention",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 210,
+          "end": 217,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 271,
+          "end": 287,
+          "found": "entité théorique",
+          "pref": "entité théorique",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-J0BWMKT5-V",
+          "label": "entités théoriques",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 314,
+          "end": 321,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "annotated_text": "Dans l'étude 6.1, le protocole évalue les **fonctions mathématiques**〔[fonction mathématique](http://data.loterre.fr/ark:/67375/P66-NCPXF8KN-9)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée. Dans l'étude 6.2, le protocole évalue les **plasticité synaptique**〔[plasticité synaptique](http://data.loterre.fr/ark:/67375/P66-JX4578X6-C)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée. Dans l'étude 6.3, le protocole évalue les **trouble cognitif**〔[trouble cognitif](http://data.loterre.fr/ark:/67375/P66-B2KF0PFR-8)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée.",
+      "matches": [
+        {
+          "start": 42,
+          "end": 65,
+          "found": "fonctions mathématiques",
+          "pref": "fonction mathématique",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-NCPXF8KN-9",
+          "label": "fonctions mathématiques",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 92,
+          "end": 99,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 153,
+          "end": 174,
+          "found": "plasticité synaptique",
+          "pref": "plasticité synaptique",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JX4578X6-C",
+          "label": "plasticité synaptique",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 201,
+          "end": 208,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 262,
+          "end": 278,
+          "found": "trouble cognitif",
+          "pref": "trouble cognitif",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-B2KF0PFR-8",
+          "label": "troubles cognitifs",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 305,
+          "end": 312,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "annotated_text": "Dans l'étude 7.1, le protocole évalue les **force du souvenir**〔[force du souvenir](http://data.loterre.fr/ark:/67375/P66-C25BH10L-T)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée. Dans l'étude 7.2, le protocole évalue les **organisation de la mémoire**〔[organisation de la mémoire](http://data.loterre.fr/ark:/67375/P66-HJ05DKHC-2)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée. Dans l'étude 7.3, le protocole évalue les **éveils émotionnels**〔[éveil émotionnel](http://data.loterre.fr/ark:/67375/P66-JJM51Q6H-4)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée.",
+      "matches": [
+        {
+          "start": 42,
+          "end": 59,
+          "found": "force du souvenir",
+          "pref": "force du souvenir",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-C25BH10L-T",
+          "label": "force du souvenir",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 86,
+          "end": 93,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 147,
+          "end": 173,
+          "found": "organisation de la mémoire",
+          "pref": "organisation de la mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-HJ05DKHC-2",
+          "label": "organisation de la mémoire",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 200,
+          "end": 207,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 261,
+          "end": 279,
+          "found": "éveils émotionnels",
+          "pref": "éveil émotionnel",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-JJM51Q6H-4",
+          "label": "éveil émotionnel",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 306,
+          "end": 313,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "annotated_text": "Dans l'étude 8.1, le protocole évalue les **valence émotionnelle**〔[valence émotionnelle](http://data.loterre.fr/ark:/67375/P66-MF9PFF2L-7)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée. Dans l'étude 8.2, le protocole évalue les **caractéristiques phénoménologique de la mémoire**〔[caractéristique phénoménologique de la mémoire](http://data.loterre.fr/ark:/67375/P66-QZXRZM22-5)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée. Dans l'étude 8.3, le protocole évalue les **force associative**〔[force associative](http://data.loterre.fr/ark:/67375/P66-SQ2MHWHN-Q)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée.",
+      "matches": [
+        {
+          "start": 42,
+          "end": 62,
+          "found": "valence émotionnelle",
+          "pref": "valence émotionnelle",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-MF9PFF2L-7",
+          "label": "valence émotionnelle",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 89,
+          "end": 96,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 150,
+          "end": 197,
+          "found": "caractéristiques phénoménologique de la mémoire",
+          "pref": "caractéristique phénoménologique de la mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-QZXRZM22-5",
+          "label": "caractéristiques phénoménologiques de la mémoire",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 224,
+          "end": 231,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 285,
+          "end": 302,
+          "found": "force associative",
+          "pref": "force associative",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-SQ2MHWHN-Q",
+          "label": "force associative",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 329,
+          "end": 336,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "annotated_text": "Dans l'étude 9.1, le protocole évalue les **économies cognitives**〔[économie cognitive](http://data.loterre.fr/ark:/67375/P66-VNB6NL0W-4)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée. Dans l'étude 9.2, le protocole évalue les **niveau de base**〔[niveau de base](http://data.loterre.fr/ark:/67375/P66-W3JQ1BQL-Q)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée. Dans l'étude 9.3, le protocole évalue les **matériel de réalité virtuelle**〔[matériel de réalité virtuelle](http://data.loterre.fr/ark:/67375/P66-SSJ0PZ18-N)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée.",
+      "matches": [
+        {
+          "start": 42,
+          "end": 62,
+          "found": "économies cognitives",
+          "pref": "économie cognitive",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-VNB6NL0W-4",
+          "label": "économie cognitive",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 89,
+          "end": 96,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 150,
+          "end": 164,
+          "found": "niveau de base",
+          "pref": "niveau de base",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-W3JQ1BQL-Q",
+          "label": "niveau de base",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 191,
+          "end": 198,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 252,
+          "end": 281,
+          "found": "matériel de réalité virtuelle",
+          "pref": "matériel de réalité virtuelle",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-SSJ0PZ18-N",
+          "label": "matériel de réalité virtuelle",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 308,
+          "end": 315,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "annotated_text": "Dans l'étude 10.1, le protocole évalue les **matériel d’hyperdiarisation**〔[matériel d’hyperdiarisation](http://data.loterre.fr/ark:/67375/P66-M3W52ZZJ-C)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée. Dans l'étude 10.2, le protocole évalue les **entité anatomique**〔[entité anatomique](http://data.loterre.fr/ark:/67375/P66-C4BRZDKH-W)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée. Dans l'étude 10.3, le protocole évalue les **facteurs de transcription**〔[facteur de transcription](http://data.loterre.fr/ark:/67375/P66-LV1843BV-1)〕 au cours d'une session de **mémoire**〔[mémoire](http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D)〕 contrôlée.",
+      "matches": [
+        {
+          "start": 43,
+          "end": 70,
+          "found": "matériel d’hyperdiarisation",
+          "pref": "matériel d’hyperdiarisation",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-M3W52ZZJ-C",
+          "label": "matériel d’hyperdiarisation",
+          "rule": "lemma_pattern_seq",
+          "score": 0.93
+        },
+        {
+          "start": 97,
+          "end": 104,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 159,
+          "end": 176,
+          "found": "entité anatomique",
+          "pref": "entité anatomique",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-C4BRZDKH-W",
+          "label": "entités anatomiques",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 203,
+          "end": 210,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        },
+        {
+          "start": 265,
+          "end": 290,
+          "found": "facteurs de transcription",
+          "pref": "facteur de transcription",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-LV1843BV-1",
+          "label": "facteurs de transcription",
+          "rule": "pattern",
+          "score": 1.0
+        },
+        {
+          "start": 317,
+          "end": 324,
+          "found": "mémoire",
+          "pref": "mémoire",
+          "uri": "http://data.loterre.fr/ark:/67375/P66-P3PC7CZ3-D",
+          "label": "mémoires",
+          "rule": "pattern",
+          "score": 0.9
+        }
+      ]
+    }
+  ]
+}
