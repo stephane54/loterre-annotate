@@ -3,8 +3,7 @@ from setuptools import setup
 
 _here = os.path.dirname(os.path.abspath(__file__))
 
-with open(os.path.join(_here, "production", "version.txt")) as f:
-    version = f.read().strip()
+VERSION = "0.9.0"
 
 with open(os.path.join(_here, "requirements.txt")) as f:
     install_requires = [
@@ -14,7 +13,7 @@ with open(os.path.join(_here, "requirements.txt")) as f:
 
 setup(
     name="loterre-annotate",
-    version=version,
+    version=VERSION,
     zip_safe=False,
     author="Stephane Schneider",
     author_email="stephane.schneider@inist.fr",
