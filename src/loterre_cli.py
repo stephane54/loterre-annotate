@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 import sys
 import tempfile
@@ -283,7 +284,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Loterre v9 CLI with full/fast/hybrid execution strategies")
     parser.add_argument("--execution-strategy", choices=["full", "fast", "hybrid"], default="full")
     parser.add_argument("--dict-id")
-    parser.add_argument("--registry", default="configs/registry.yaml")
+    parser.add_argument("--registry",
+                        default=os.environ.get("LOTERRE_REGISTRY", "configs/registry.yaml"))
     parser.add_argument("--config")
     parser.add_argument("--text")
     parser.add_argument("--dict")

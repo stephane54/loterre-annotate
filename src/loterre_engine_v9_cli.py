@@ -26,6 +26,7 @@ import argparse
 import json
 import logging
 import multiprocessing as mp
+import os
 import re
 import sys
 import time
@@ -48,7 +49,8 @@ MULTISPACE_RE = re.compile(r"\s+")
 _PUNCT_KEEP_APOS_RE = re.compile(r"[^\w\s'()]")
 _PUNCT_RE = re.compile(r"[^\w\s()]")
 
-_RESOURCES_DIR = Path(__file__).parent.parent / "resources"
+_RESOURCES_DIR = Path(os.environ["LOTERRE_RESOURCES_DIR"]) if "LOTERRE_RESOURCES_DIR" in os.environ \
+    else Path(__file__).parent.parent / "resources"
 
 
 def _load_word_set(path: Path, fallback: frozenset) -> frozenset:
