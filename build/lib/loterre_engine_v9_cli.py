@@ -1250,7 +1250,9 @@ def main():
             except json.JSONDecodeError:
                 logging.error("Line %s: invalid JSON: %s", compteur, json_line)
                 continue
-            if not isinstance(data, dict):
+            if isinstance(data, str):
+                data = {"id": "doc", "value": data}
+            elif not isinstance(data, dict):
                 continue  # item parasite EZS (ex: index de concurrence, entier, etc.)
             text = data.get("value", "")
             spacy_doc = next(nlp.pipe([text]))
