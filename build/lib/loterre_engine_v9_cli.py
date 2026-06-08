@@ -1239,14 +1239,18 @@ def main():
     if args.ezs:
         nlp = load_model(lang)
         indexes = build_indexes(entries, nlp, profile)
+        compteur = 0
         for json_line in sys.stdin:
             json_line = json_line.strip()
             if not json_line:
                 continue
-            data = json.loads(json_line)
-            if isinstance(data, str):
-                data = {"id": "doc", "value": data}
-            elif not isinstance(data, dict):
+            compteur += 1
+            try:
+                data = json.loads(json_line)
+            except json.JSONDecodeError:
+                logging.error("Line %s: invalid JSON: %s", compteur, json_line)
+                continue
+            if not isinstance(data, dict):
                 continue  # item parasite EZS (ex: index de concurrence, entier, etc.)
             text = data.get("value", "")
             spacy_doc = next(nlp.pipe([text]))
