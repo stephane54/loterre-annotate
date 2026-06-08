@@ -12,6 +12,21 @@ from pathlib import Path
 from typing import Any, Dict, Optional
 
 
+def _find_registry() -> str:
+    env = os.environ.get("LOTERRE_REGISTRY")
+    if env:
+        return env
+    # Walk up from __file__ to find configs/registry.yaml or loterre-v9/configs/registry.yaml
+    here = Path(__file__).resolve().parent
+    for _ in range(10):
+        for sub in ("", "loterre-v9"):
+            candidate = (here / sub / "configs" / "registry.yaml") if sub else (here / "configs" / "registry.yaml")
+            if candidate.exists():
+                return str(candidate)
+        here = here.parent
+    return "configs/registry.yaml"
+
+
 def load_yaml(path: Path) -> Dict[str, Any]:
     try:
         import yaml
@@ -284,14 +299,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Loterre v9 CLI with full/fast/hybrid execution strategies")
     parser.add_argument("--execution-strategy", choices=["full", "fast", "hybrid"], default="full")
     parser.add_argument("--dict-id")
-    _env_reg = os.environ.get("LOTERRE_REGISTRY")
-    _src_reg = Path(__file__).resolve().parent.parent / "configs" / "registry.yaml"
-    _default_registry = (
-        _env_reg if _env_reg
-        else str(_src_reg) if _src_reg.exists()
-        else "configs/registry.yaml"
-    )
-    parser.add_argument("--registry", default=_default_registry)
+    parser.add_argument("--registry", default=_find_registry())
     parser.add_argument("--config")
     parser.add_argument("--text")
     parser.add_argument("--dict")
