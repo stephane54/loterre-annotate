@@ -1246,8 +1246,8 @@ def main():
             data = json.loads(json_line)
             if isinstance(data, str):
                 data = {"id": "doc", "value": data}
-            elif isinstance(data, list):
-                continue  # item parasite EZS (ex: index de concurrence)
+            elif not isinstance(data, dict):
+                continue  # item parasite EZS (ex: index de concurrence, entier, etc.)
             text = data.get("value", "")
             spacy_doc = next(nlp.pipe([text]))
             matches = dedupe(apply_quality_filters(spacy_doc, match_document(spacy_doc, profile, indexes), quality))
