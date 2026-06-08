@@ -284,8 +284,10 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Loterre v9 CLI with full/fast/hybrid execution strategies")
     parser.add_argument("--execution-strategy", choices=["full", "fast", "hybrid"], default="full")
     parser.add_argument("--dict-id")
-    parser.add_argument("--registry",
-                        default=os.environ.get("LOTERRE_REGISTRY", "configs/registry.yaml"))
+    _default_registry = os.environ.get("LOTERRE_REGISTRY") or str(
+        Path(__file__).resolve().parent.parent / "configs" / "registry.yaml"
+    )
+    parser.add_argument("--registry", default=_default_registry)
     parser.add_argument("--config")
     parser.add_argument("--text")
     parser.add_argument("--dict")
