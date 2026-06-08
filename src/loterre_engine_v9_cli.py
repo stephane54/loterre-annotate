@@ -1170,6 +1170,7 @@ def parse_args():
     p.add_argument("--silent", action="store_true", help="No file outputs; print JSON to stdout")
     p.add_argument("--api", action="store_true", help="Compact JSON payload on stdout")
     p.add_argument("--stream", action="store_true", help="Process input in a single process")
+    p.add_argument("--ezs", action="store_true", help="EZS streaming mode: one JSON per input line, value=[matches]")
     p.add_argument("--workers", type=int, default=1, help="Number of worker processes")
     p.add_argument("--chunk-size", type=int, default=200, help="Chunk size for multiprocessing")
     p.add_argument("--log-level", default="INFO")
@@ -1228,11 +1229,40 @@ def main():
         return
 
     if not effective.get("profile"):
-        raise ValueError("Missing profile for annotation run. Provide --profile or 'profile' in config. Use --auto-profile only to generate a YAML proposal.")
+        raise ValueError("Missing profile for annotation run. Provide --profile or 'config' in config. Use --auto-profile only to generate a YAML proposal.")
 
     profile = merge_profile(effective["profile"], profile_overrides)
     quality["profile_name"] = profile.name
     logging.info("Using profile %s", profile.name)
+
+    # ── Mode EZS : traitement en flux, une ligne JSON par document ───────────
+    if args.ezs:
+        nlp = load_model(lang)
+        indexes = build_indexes(entries, nlp, profile)
+        for json_line in sys.stdin:
+            json_line = json_line.strip()
+            if not json_line:
+                continue
+            data = json.loads(json_line)
+            if isinstance(data, str):
+                data = {"id": "doc", "value": data}
+            text = data.get("value", "")
+            spacy_doc = next(nlp.pipe([text]))
+            matches = dedupe(apply_quality_filters(spacy_doc, match_document(spacy_doc, profile, indexes), quality))
+            data["value"] = [
+                {
+                    "idx": {"start": m["start"], "end": m["end"]},
+                    "match": {
+                        "id": m.get("uri", m.get("id", "")),
+                        "ul": m.get("pref", m.get("label", "")),
+                        "term": m.get("found", ""),
+                    },
+                }
+                for m in matches
+            ]
+            sys.stdout.write(json.dumps(data, ensure_ascii=False) + "\n")
+            sys.stdout.flush()
+        return
 
     rows = read_text_rows(text_path, validate=args.validate_input)
     logging.info("Loaded %s documents", len(rows))
