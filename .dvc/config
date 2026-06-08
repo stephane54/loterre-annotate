@@ -1,0 +1,4 @@
+[core]
+    remote = webdav-remote
+['remote "webdav-remote"']
+    url = webdavs://webdav.services.istex.fr/dvc
