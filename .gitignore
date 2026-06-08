@@ -24,3 +24,4 @@ predictions/*.json
 .DS_Store
 .idea/
 .vscode/
+/dictionary
