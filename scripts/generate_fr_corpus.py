@@ -1,14 +1,14 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Generate French text corpora and gold standards for Loterre vocabularies.
 
-Structure mirrors the English corpora in data/texts/:
+Structure mirrors the English corpora in data/jsonl/:
   - Document 0 : texte réaliste riche (~30-40 occurrences)
   - Documents 1-10 : textes structurés "Dans l'étude X.Y, …"
     avec 3 termes par étude, variation flexionnelle sur 1-2 termes par groupe.
 
 Usage:
     python3 scripts/generate_fr_corpus.py
-Produces: data/texts/{P66,27X,9SD,8HQ,B9M,BVM,QX8}_fr.jsonl
+Produces: data/jsonl/{P66,27X,9SD,8HQ,B9M,BVM,QX8}_fr.jsonl
 """
 from __future__ import annotations
 import json, re

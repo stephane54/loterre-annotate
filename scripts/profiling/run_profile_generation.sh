@@ -1,11 +1,11 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 # Génère un profil YAML pour chaque dictionnaire trouvé dans DICTS_DIR.
 #
 # Découverte automatique : tous les fichiers {lang}_annot_{CODE}.jsonl
 # présents dans DICTS_DIR sont traités.
 #
 # Si un fichier texte correspondant existe dans TEXTS_DIR
-# (data/texts/{CODE}_{lang}.jsonl), il est inclus dans le YAML généré.
+# (data/jsonl/{CODE}_{lang}.jsonl), il est inclus dans le YAML généré.
 # Sinon, le champ text est laissé vide (le profil reste utilisable).
 #
 # Usage:
@@ -15,7 +15,7 @@
 #   DICTS_DIR = ./dictionary
 #   OUTDIR    = ./configs
 #   ENGINE    = ./src/loterre_engine_v9_cli.py
-#   TEXTS_DIR = ./data/texts
+#   TEXTS_DIR = ./data/jsonl
 
 set -euo pipefail
 
@@ -26,7 +26,7 @@ cd "$REPO_ROOT"
 DICTS_DIR="${1:-./dictionary}"
 OUTDIR="${2:-./configs}"
 ENGINE="${3:-./src/loterre_engine_v9_cli.py}"
-TEXTS_DIR="${TEXTS_DIR:-./data/texts}"
+TEXTS_DIR="${TEXTS_DIR:-./data/jsonl}"
 
 mkdir -p "$OUTDIR"
 

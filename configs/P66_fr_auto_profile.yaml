@@ -1,4 +1,4 @@
-text: ./data/texts/P66_fr.jsonl
+﻿text: ./data/jsonl/P66_fr.jsonl
 dictionary: ./dictionary/fr_annot_P66.jsonl
 lang: fr
 profile: term_recall

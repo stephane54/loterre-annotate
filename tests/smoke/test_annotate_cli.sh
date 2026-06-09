@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 cd "$REPO_ROOT"
-TEXT="./data/texts"
+TEXT="./data/jsonl"
 
 CLI="${1:-./src/loterre_cli.py}"
 OUTDIR="${2:-./outputs_predictions}"

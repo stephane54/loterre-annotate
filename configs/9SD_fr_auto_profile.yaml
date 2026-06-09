@@ -1,4 +1,4 @@
-text: ./data/texts/9SD_fr.jsonl
+﻿text: ./data/jsonl/9SD_fr.jsonl
 dictionary: ./dictionary/fr_annot_9SD.jsonl
 lang: fr
 profile: term_recall

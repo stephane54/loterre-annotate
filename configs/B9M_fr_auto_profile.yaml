@@ -1,4 +1,4 @@
-text: ./data/texts/B9M_fr.jsonl
+﻿text: ./data/jsonl/B9M_fr.jsonl
 dictionary: ./dictionary/fr_annot_B9M.jsonl
 lang: fr
 profile: term_balanced

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 set -euo pipefail
 
 # Non-regression smoke test focused on P66 flow:
@@ -11,7 +11,7 @@ CLI="${1:-./src/loterre_cli.py}"
 RENDERER="${2:-./src/loterre_html_renderer.py}"
 CONVERTER="${3:-./scripts/prediction/results_to_expected_jsonl.py}"
 BULK="${4:-./scripts/prediction/bulk_results_to_expected.sh}"
-INPUT="${5:-data/texts/P66_en.jsonl}"
+INPUT="${5:-data/jsonl/P66_en.jsonl}"
 
 OUTDIR="${OUTDIR:-/tmp/loterre_p66_nonreg}"
 rm -rf "$OUTDIR"

@@ -1,9 +1,9 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 set -euo pipefail
 
 CLI="${1:-./src/loterre_cli.py}"
 FAST="${2:-./src/loterre_fast_path.py}"
-TEXT="${3:-data/texts/P66_en.jsonl}"
+TEXT="${3:-data/jsonl/P66_en.jsonl}"
 DICT="${4:-dictionary/en_annot_P66.jsonl}"
 DICT_ID="${5:-P66_en}"
 OUTDIR="${6:-./bench_outputs}"

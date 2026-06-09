@@ -1255,6 +1255,7 @@ def main():
             text = data.get("value", "")
             spacy_doc = next(nlp.pipe([text]))
             matches = dedupe(apply_quality_filters(spacy_doc, match_document(spacy_doc, profile, indexes), quality))
+            data["annotated"] = annotate(text, matches)
             data["value"] = [
                 {
                     "idx": {"start": m["start"], "end": m["end"]},

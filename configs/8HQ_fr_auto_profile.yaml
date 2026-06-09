@@ -1,4 +1,4 @@
-text: ./data/texts/8HQ_fr.jsonl
+﻿text: ./data/jsonl/8HQ_fr.jsonl
 dictionary: ./dictionary/fr_annot_8HQ.jsonl
 lang: fr
 profile: entity_strict

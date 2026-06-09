@@ -1,4 +1,4 @@
-# Loterre v9 — Documentation
+﻿# Loterre v9 — Documentation
 
 ## Table des matières
 
@@ -129,13 +129,13 @@ dictionary/          # dictionnaires JSONL — géré par DVC (dictionary.dvc ve
 ```bash
 # Via dict-id (résolu depuis registry.yaml)
 python3 src/loterre_cli.py \
-  --text data/texts/P66_en.jsonl \
+  --text data/jsonl/P66_en.jsonl \
   --dict-id P66_en \
   --silent
 
 # Via chemin explicite
 python3 src/loterre_cli.py \
-  --text data/texts/P66_en.jsonl \
+  --text data/jsonl/P66_en.jsonl \
   --dict dictionary/en_annot_P66.jsonl \
   --lang en \
   --profile term_recall \
@@ -151,7 +151,7 @@ python3 src/loterre_cli.py \
 
 ```bash
 python3 src/loterre_engine_v9_cli.py \
-  --text data/texts/P66_en.jsonl \
+  --text data/jsonl/P66_en.jsonl \
   --dict dictionary/en_annot_P66.jsonl \
   --lang en \
   --profile term_recall \
@@ -181,7 +181,7 @@ Chaque ligne du fichier texte est un objet JSON :
 {"id": "doc_001", "value": "Texte à annoter..."}
 ```
 
-Les fichiers gold (`data/texts/`) incluent en plus un champ `expected_matches` utilisé par le renderer et le benchmark pour la comparaison.
+Les fichiers gold (`data/jsonl/`) incluent en plus un champ `expected_matches` utilisé par le renderer et le benchmark pour la comparaison.
 
 ### Format de sortie (`--silent`)
 
@@ -211,6 +211,37 @@ Les fichiers gold (`data/texts/`) incluent en plus un champ `expected_matches` u
 ```
 
 > Le champ `text` (texte brut du document) n'est **pas** inclus dans la sortie — le rendu HTML recharge le texte depuis le fichier gold passé en argument. Seul `annotated_text` (markdown pré-rendu) et `matches` sont présents.
+
+### Format de sortie (`--ezs`)
+
+Mode streaming utilisé par le pipeline EZS. Entrée : une ligne JSON `{id, value}` par document. Sortie : une ligne JSON par document, `value` remplacé par la liste des matches, `annotated` ajouté.
+
+```json
+{
+  "id": "doc_001",
+  "annotated": "**long-term memory**〔[long-term memory](http://data.loterre.fr/ark:/67375/P66-J8FC45M1-6)〕...",
+  "value": [
+    {
+      "idx": {"start": 10, "end": 26},
+      "match": {
+        "id": "http://data.loterre.fr/ark:/67375/P66-J8FC45M1-6",
+        "ul": "long-term memory",
+        "term": "long-term memory"
+      }
+    }
+  ]
+}
+```
+
+| Champ | Description |
+|---|---|
+| `id` | Identifiant du document (passé en entrée, inchangé) |
+| `annotated` | Texte original avec les termes balisés en markdown |
+| `value[]` | Liste des matches |
+| `value[].idx.start/end` | Offsets caractères dans le texte original |
+| `value[].match.id` | URI du concept |
+| `value[].match.ul` | Forme préférentielle du concept |
+| `value[].match.term` | Texte exact trouvé dans le document |
 
 ---
 
@@ -257,7 +288,7 @@ Trois profils prédéfinis couvrent le spectre précision/rappel :
 ### Personnalisation via YAML
 
 ```yaml
-text: data/texts/P66_en.jsonl
+text: data/jsonl/P66_en.jsonl
 dictionary: dictionary/en_annot_P66.jsonl
 lang: en
 profile: term_recall
@@ -388,7 +419,7 @@ Fast path sur tous les documents, puis moteur complet uniquement sur les documen
 python3 src/loterre_cli.py \
   --execution-strategy hybrid \
   --dict-id P66_en \
-  --text data/texts/P66_en.jsonl \
+  --text data/jsonl/P66_en.jsonl \
   --hybrid-refine-low-score 0.90 \
   --hybrid-max-fast-matches 50
 ```
@@ -407,7 +438,7 @@ python3 src/loterre_cli.py --dict-id P66_en --text ... --workers 4
 
 ```bash
 python3 src/loterre_cli.py \
-  --text data/texts/P66_en.jsonl \
+  --text data/jsonl/P66_en.jsonl \
   --dict-id P66_en \
   --auto-profile \
   --yaml-out configs/P66_en_auto_profile.yaml
@@ -425,7 +456,7 @@ python3 src/loterre_cli.py \
 
 ### 11.1 Structure des fichiers gold
 
-Les fichiers gold se trouvent dans `data/texts/`. Chaque ligne JSONL contient :
+Les fichiers gold se trouvent dans `data/jsonl/`. Chaque ligne JSONL contient :
 
 ```json
 {
@@ -475,7 +506,7 @@ Les fichiers gold se trouvent dans `data/texts/`. Chaque ligne JSONL contient :
 
 ```bash
 python3 scripts/generate_fr_corpus.py
-# Produit data/texts/{P66,27X,9SD,8HQ,B9M,BVM,QX8}_fr.jsonl
+# Produit data/jsonl/{P66,27X,9SD,8HQ,B9M,BVM,QX8}_fr.jsonl
 ```
 
 Le script `scripts/generate_fr_corpus.py` lit les dictionnaires FR dans `dictionary/`, sélectionne des termes avec variation flexionnelle, calcule les offsets caractère exacts et écrit les fichiers JSONL prêts à l'emploi.
@@ -534,12 +565,12 @@ Le renderer et le benchmark utilisent une comparaison **par libellé préféré*
 ```bash
 # Via le script smoke
 bash tests/smoke/render_html_annotation.sh \
-  ./src/loterre_cli.py data/texts ./html_outputs ./src/loterre_html_renderer.py
+  ./src/loterre_cli.py data/jsonl ./html_outputs ./src/loterre_html_renderer.py
 
 # Ou via la sous-commande batch du renderer
 python3 src/loterre_html_renderer.py batch \
   --cli ./src/loterre_cli.py \
-  --text-root data/texts \
+  --text-root data/jsonl \
   --outdir ./html_outputs
 ```
 
@@ -556,7 +587,7 @@ html_outputs/
 ```bash
 python3 src/loterre_html_renderer.py render \
   --input predictions/P66_en.json \
-  --gold data/texts/P66_en.jsonl \
+  --gold data/jsonl/P66_en.jsonl \
   --out html_outputs/P66_en.html \
   --title "Annotation P66_en" \
   --base-url "https://www.loterre.fr/ark:/"
@@ -608,14 +639,14 @@ La langue est inférée automatiquement depuis le nom du fichier gold. Elle peut
 # Évaluation EN (langue inférée depuis P66_en.jsonl)
 python3 src/loterre_api_eval.py \
   --vocab P66 \
-  --gold data/texts/P66_en.jsonl \
+  --gold data/jsonl/P66_en.jsonl \
   --out html_api/html/P66_en.html \
   --json-out html_api/json/P66_en.json
 
 # Évaluation FR (langue inférée depuis P66_fr.jsonl → /v1/fr/...)
 python3 src/loterre_api_eval.py \
   --vocab P66 \
-  --gold data/texts/P66_fr.jsonl \
+  --gold data/jsonl/P66_fr.jsonl \
   --out html_api/html/P66_fr.html \
   --json-out html_api/json/P66_fr.json
 ```
@@ -732,7 +763,7 @@ bash tests/smoke/test_p66_non_regression.sh
 
 # HTML local v9 vs gold (tous vocabulaires EN + FR auto-découverts)
 bash tests/smoke/render_html_annotation.sh \
-  ./src/loterre_cli.py data/texts ./html_outputs ./src/loterre_html_renderer.py
+  ./src/loterre_cli.py data/jsonl ./html_outputs ./src/loterre_html_renderer.py
 
 # Benchmark local v9 vs API production (EN + FR)
 bash tests/smoke/compare_engines.sh
@@ -762,7 +793,7 @@ bash tests/profiling/test_auto_profile_quality.sh
 ```bash
 # Toutes options disponibles
 bash tests/smoke/compare_engines.sh \
-  --text-root  data/texts \        # répertoire des gold (EN + FR auto-découverts)
+  --text-root  data/jsonl \        # répertoire des gold (EN + FR auto-découverts)
   --out-dir    benchmark_results \     # répertoire de sortie
   --cli        src/loterre_cli.py \    # chemin vers le CLI local
   --renderer   src/loterre_html_renderer.py \
@@ -936,7 +967,7 @@ Le `setup.py` installe les modules depuis `src/` via `package_dir={"": "src"}`.
 
 **Exclus de la distribution :**
 - `dictionary/` — trop volumineux, géré par DVC ; à récupérer séparément via `dvc pull`
-- `data/texts/` — corpus de test, non requis à l'exécution
+- `data/jsonl/` — corpus de test, non requis à l'exécution
 
 ### 16.6 Récupérer les dictionnaires (après clone ou install)
 

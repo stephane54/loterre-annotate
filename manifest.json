@@ -1,11 +1,11 @@
-{
+﻿{
   "pairs": [
     {
       "code": "27X",
       "dict_id": "27X_en",
       "lang": "en",
       "profile": "term_recall",
-      "text_file": "data/texts/27X_en.jsonl",
+      "text_file": "data/jsonl/27X_en.jsonl",
       "dict_file": "dictionary/en_annot_27X.jsonl"
     },
     {
@@ -13,7 +13,7 @@
       "dict_id": "27X_fr",
       "lang": "fr",
       "profile": "term_recall",
-      "text_file": "data/texts/27X_fr.jsonl",
+      "text_file": "data/jsonl/27X_fr.jsonl",
       "dict_file": "dictionary/fr_annot_27X.jsonl"
     },
     {
@@ -21,7 +21,7 @@
       "dict_id": "3JP_en",
       "lang": "en",
       "profile": "term_recall",
-      "text_file": "data/texts/3JP_en.jsonl",
+      "text_file": "data/jsonl/3JP_en.jsonl",
       "dict_file": "dictionary/en_annot_3JP.jsonl"
     },
     {
@@ -29,7 +29,7 @@
       "dict_id": "8HQ_en",
       "lang": "en",
       "profile": "term_recall",
-      "text_file": "data/texts/8HQ_en.jsonl",
+      "text_file": "data/jsonl/8HQ_en.jsonl",
       "dict_file": "dictionary/en_annot_8HQ.jsonl"
     },
     {
@@ -37,7 +37,7 @@
       "dict_id": "8HQ_fr",
       "lang": "fr",
       "profile": "term_recall",
-      "text_file": "data/texts/8HQ_fr.jsonl",
+      "text_file": "data/jsonl/8HQ_fr.jsonl",
       "dict_file": "dictionary/fr_annot_8HQ.jsonl"
     },
     {
@@ -45,7 +45,7 @@
       "dict_id": "9SD_en",
       "lang": "en",
       "profile": "entity_strict",
-      "text_file": "data/texts/9SD_en.jsonl",
+      "text_file": "data/jsonl/9SD_en.jsonl",
       "dict_file": "dictionary/en_annot_9SD.jsonl"
     },
     {
@@ -53,7 +53,7 @@
       "dict_id": "9SD_fr",
       "lang": "fr",
       "profile": "entity_strict",
-      "text_file": "data/texts/9SD_fr.jsonl",
+      "text_file": "data/jsonl/9SD_fr.jsonl",
       "dict_file": "dictionary/fr_annot_9SD.jsonl"
     },
     {
@@ -61,7 +61,7 @@
       "dict_id": "B9M_en",
       "lang": "en",
       "profile": "term_recall",
-      "text_file": "data/texts/B9M_en.jsonl",
+      "text_file": "data/jsonl/B9M_en.jsonl",
       "dict_file": "dictionary/en_annot_B9M.jsonl"
     },
     {
@@ -69,7 +69,7 @@
       "dict_id": "B9M_fr",
       "lang": "fr",
       "profile": "term_recall",
-      "text_file": "data/texts/B9M_fr.jsonl",
+      "text_file": "data/jsonl/B9M_fr.jsonl",
       "dict_file": "dictionary/fr_annot_B9M.jsonl"
     },
     {
@@ -77,7 +77,7 @@
       "dict_id": "P66_en",
       "lang": "en",
       "profile": "term_recall",
-      "text_file": "data/texts/P66_en.jsonl",
+      "text_file": "data/jsonl/P66_en.jsonl",
       "dict_file": "dictionary/en_annot_P66.jsonl"
     },
     {
@@ -85,7 +85,7 @@
       "dict_id": "P66_fr",
       "lang": "fr",
       "profile": "term_recall",
-      "text_file": "data/texts/P66_fr.jsonl",
+      "text_file": "data/jsonl/P66_fr.jsonl",
       "dict_file": "dictionary/fr_annot_P66.jsonl"
     },
     {
@@ -93,7 +93,7 @@
       "dict_id": "QX8_en",
       "lang": "en",
       "profile": "entity_strict",
-      "text_file": "data/texts/QX8_en.jsonl",
+      "text_file": "data/jsonl/QX8_en.jsonl",
       "dict_file": "dictionary/en_annot_QX8.jsonl"
     },
     {
@@ -101,7 +101,7 @@
       "dict_id": "QX8_fr",
       "lang": "fr",
       "profile": "entity_strict",
-      "text_file": "data/texts/QX8_fr.jsonl",
+      "text_file": "data/jsonl/QX8_fr.jsonl",
       "dict_file": "dictionary/fr_annot_QX8.jsonl"
     }
   ]

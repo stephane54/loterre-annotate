@@ -3,7 +3,11 @@ PYTHON ?= python3
 .PHONY: install models \
         test test-smoke test-non-regression test-profiling test-quality test-api \
         benchmark benchmark-local benchmark-api benchmark-resolvers html \
+        run ezs-test ws-test ws-test-accel deploy build \
         clean tree
+
+VOCAB ?= P66
+LANG  ?= en
 
 install:
 	$(PYTHON) -m pip install -r requirements.txt
@@ -55,6 +59,26 @@ benchmark-resolvers:
 # Génère les fichiers HTML annotés pour tous les corpus dans data/texts/.
 html:
 	bash tests/smoke/render_html_annotation.sh
+
+# ── Production ────────────────────────────────────────────────────────────────
+
+run:
+	bash production/run_local_ezs.sh $(VOCAB) $(LANG)
+
+ezs-test:
+	bash production/test_local_ezs.sh
+
+ws-test:
+	bash production/test_ws.sh local
+
+ws-test-accel:
+	bash production/test_ws.sh accel
+
+build:
+	bash production/build_push_package.sh
+
+deploy:
+	bash production/ws_deploy.sh
 
 # ── Maintenance ───────────────────────────────────────────────────────────────
 

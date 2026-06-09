@@ -1,4 +1,4 @@
-text: ./data/texts/JVR_en.jsonl
+﻿text: ./data/jsonl/JVR_en.jsonl
 dictionary: ./dictionary/en_annot_JVR.jsonl
 lang: en
 profile: term_recall

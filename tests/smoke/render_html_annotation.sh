@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 set -euo pipefail
 
 # Render HTML annotations for all JSON/JSONL files in a corpus directory.
@@ -21,12 +21,12 @@ set -euo pipefail
 # Example:
 #   bash tests/smoke/render_html_annotation.sh \
 #     ./src/loterre_cli.py \
-#     data/texts \
+#     data/jsonl \
 #     ./html_outputs \
 #     ./src/loterre_html_renderer.py
 
 CLI="${1:-./src/loterre_cli.py}"
-TEXT_ROOT="${2:-data/texts}"
+TEXT_ROOT="${2:-data/jsonl}"
 OUTDIR="${3:-./html_outputs}"
 RENDERER="${4:-./src/loterre_html_renderer.py}"
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+﻿#!/usr/bin/env bash
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -13,7 +13,7 @@ mkdir -p "$OUTDIR"
 for code in P66 9SD 8HQ B9M 27X BVM QX8 3JP JVR; do
   echo "== Auto-profile en ${code} =="
   python3 "$CLI" \
-    --text data/texts/${code}_en.jsonl \
+    --text data/jsonl/${code}_en.jsonl \
     --dict-id  ${code}_en \
     --auto-profile \
     --yaml-out "$OUTDIR/${code}_en_auto_profile.yaml" \
@@ -24,7 +24,7 @@ echo
 for code in P66 9SD 8HQ B9M 27X BVM QX8; do
   echo "== Auto-profile fr ${code} =="
   python3 "$CLI" \
-    --text data/texts/${code}_fr.jsonl \
+    --text data/jsonl/${code}_fr.jsonl \
     --dict-id  ${code}_fr \
     --auto-profile \
     --yaml-out "$OUTDIR/${code}_fr_auto_profile.yaml" \

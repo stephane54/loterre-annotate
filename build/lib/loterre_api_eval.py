@@ -1,13 +1,13 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Evaluate the production ISTEX terms-matcher API against local gold files.
 
 Usage:
     python3 src/loterre_api_eval.py --vocab P66 --lang en \
-        --gold data/texts/P66_en.jsonl \
+        --gold data/jsonl/P66_en.jsonl \
         --out html_api/html/P66_en.html [--json-out html_api/json/P66_en.json]
 
     python3 src/loterre_api_eval.py --vocab P66 --lang fr \
-        --gold data/texts/P66_fr.jsonl \
+        --gold data/jsonl/P66_fr.jsonl \
         --out html_api/html/P66_fr.html
 
 The API endpoint is language-specific:

@@ -1,4 +1,4 @@
-# Tests
+﻿# Tests
 
 Organisation des tests automatiques et scripts de validation.
 
@@ -44,7 +44,7 @@ bash tests/smoke/test_p66_non_regression.sh
 
 # HTML annotations locales (tous vocabulaires EN et FR)
 bash tests/smoke/render_html_annotation.sh \
-  ./src/loterre_cli.py data/texts ./html_outputs ./src/loterre_html_renderer.py
+  ./src/loterre_cli.py data/jsonl ./html_outputs ./src/loterre_html_renderer.py
 
 # Benchmark local v9 vs API production (tous vocabulaires EN + FR auto-découverts)
 bash tests/smoke/compare_engines.sh
@@ -87,7 +87,7 @@ bash tests/smoke/compare_engines.sh \
 
 | Option | Défaut | Description |
 |--------|--------|-------------|
-| `--text-root DIR` | `data/texts` | Répertoire des gold JSONL (EN + FR auto-découverts) |
+| `--text-root DIR` | `data/jsonl` | Répertoire des gold JSONL (EN + FR auto-découverts) |
 | `--out-dir DIR` | `benchmark_results` | Répertoire de sortie |
 | `--cli FILE` | `src/loterre_cli.py` | CLI du moteur local |
 | `--renderer FILE` | `src/loterre_html_renderer.py` | Renderer HTML |

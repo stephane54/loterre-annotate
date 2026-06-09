@@ -1,4 +1,4 @@
-text: ./data/texts/27X_en.jsonl
+﻿text: ./data/jsonl/27X_en.jsonl
 dictionary: ./dictionary/en_annot_27X.jsonl
 lang: en
 profile: entity_strict

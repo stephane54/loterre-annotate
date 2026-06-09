@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Benchmark local v9 engine vs two production APIs against gold corpus.
 
 Three engines are compared:
@@ -9,7 +9,7 @@ Three engines are compared:
 Usage
 -----
     python3 src/loterre_benchmark.py \\
-        --text-root data/texts \\
+        --text-root data/jsonl \\
         --out-dir   benchmark_results \\
         [--cli      src/loterre_cli.py] \\
         [--renderer src/loterre_html_renderer.py] \\
@@ -583,7 +583,7 @@ def main() -> None:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=__doc__,
     )
-    pa.add_argument("--text-root",       default="data/texts")
+    pa.add_argument("--text-root",       default="data/jsonl")
     pa.add_argument("--out-dir",         default="benchmark_results")
     pa.add_argument("--cli",             default="src/loterre_cli.py")
     pa.add_argument("--renderer",        default="src/loterre_html_renderer.py")

@@ -1,4 +1,4 @@
-text: ./data/texts/3JP_en.jsonl
+﻿text: ./data/jsonl/3JP_en.jsonl
 dictionary: ./dictionary/en_annot_3JP.jsonl
 lang: en
 profile: entity_strict
