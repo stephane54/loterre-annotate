@@ -6,8 +6,8 @@ PYTHON ?= python3
         run ezs-test ws-test ws-test-accel deploy build \
         clean tree
 
-VOCAB ?= P66
-LANG  ?= en
+VOCAB    ?= P66
+LOTLANG  ?= en
 
 install:
 	$(PYTHON) -m pip install -r requirements.txt
@@ -63,7 +63,7 @@ html:
 # ── Production ────────────────────────────────────────────────────────────────
 
 run:
-	bash production/run_local_ezs.sh $(VOCAB) $(LANG)
+	bash production/run_local_ezs.sh $(VOCAB) $(LOTLANG)
 
 ezs-test:
 	bash production/test_local_ezs.sh
@@ -78,7 +78,7 @@ build:
 	bash production/build_push_package.sh
 
 deploy:
-	bash production/ws_deploy.sh
+	bash production/ws_deploy_docker_local.sh
 
 # ── Maintenance ───────────────────────────────────────────────────────────────
 
