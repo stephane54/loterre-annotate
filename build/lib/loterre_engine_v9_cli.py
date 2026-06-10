@@ -1263,6 +1263,8 @@ def main():
                         "id": m.get("uri", m.get("id", "")),
                         "ul": m.get("pref", m.get("label", "")),
                         "term": m.get("found", ""),
+                        "rule": m.get("rule", ""),
+                        "score": round(m.get("score", 1.0), 4),
                     },
                 }
                 for m in matches
