@@ -13,7 +13,7 @@ Usage
         --out-dir   benchmark_results \\
         [--cli      src/loterre_cli.py] \\
         [--renderer src/loterre_html_renderer.py] \\
-        [--api-url  https://terms-tools.services.istex.fr/v1/{lang}/terms-matcher/json-standoff/annotate] \\
+        [--api-url  https://loterre-annotate.services.istex.fr/v1/{lang}/loterre-annotate/annotate] \\
         [--resolvers-url https://loterre-resolvers.services.istex.fr/v1/annotate] \\
         [--vocabs   P66,27X,9SD]   # subset; default = all found in TEXT_ROOT \\
         [--skip-local]             # skip local engine \\
@@ -42,8 +42,8 @@ from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
 
 API_DEFAULT = (
-    "https://terms-tools.services.istex.fr"
-    "/v1/{lang}/terms-matcher/json-standoff/annotate"
+    "https://loterre-annotate.services.istex.fr"
+    "/v1/{lang}/loterre-annotate/annotate"
 )
 RESOLVERS_DEFAULT = "https://loterre-resolvers.services.istex.fr/v1/annotate"
 
@@ -136,29 +136,18 @@ def run_local(cli: Path, dict_id: str, text_file: Path, json_out: Path) -> bool:
 
 # ── terms-tools API ───────────────────────────────────────────────────────────
 
-def tokenize(text: str) -> list[dict]:
-    # Decimal numbers like "1.1" kept as one token to match the API's tokenisation.
-    return [{"text": m.group(), "start": m.start(), "end": m.end()}
-            for m in re.finditer(r"\d+\.\d+|\w+|[^\w\s]", text)]
-
-
-def api_doc_to_matches(api_doc: dict, text: str) -> list[dict]:
-    tokens  = tokenize(text)
-    matches = []
-    for item in api_doc.get("value", []):
-        for ann in item.get("matches", []):
-            s = int(ann["idx"]["start"])
-            e = int(ann["idx"]["end"])
-            if s >= len(tokens) or e > len(tokens) or s >= e:
-                continue
-            matches.append({
-                "start": tokens[s]["start"],
-                "end":   tokens[e - 1]["end"],
-                "found": ann["match"].get("text", ""),
-                "pref":  ann["match"].get("term", ""),
-                "uri":   ann["match"].get("id", ""),
-            })
-    return matches
+def api_doc_to_matches(api_doc: dict, text: str = "") -> list[dict]:
+    return [
+        {
+            "start": ann["start"],
+            "end":   ann["end"],
+            "found": ann.get("found", ""),
+            "pref":  ann.get("pref", ""),
+            "uri":   ann.get("uri", ""),
+        }
+        for ann in api_doc.get("value", [])
+        if isinstance(ann, dict) and "start" in ann
+    ]
 
 
 def _http_post(url: str, docs: list[dict], label: str,

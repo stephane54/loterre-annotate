@@ -11,7 +11,7 @@ Usage:
         --out html_api/html/P66_fr.html
 
 The API endpoint is language-specific:
-    https://terms-tools.services.istex.fr/v1/{lang}/terms-matcher/json-standoff/annotate
+    https://loterre-annotate.services.istex.fr/v1/{lang}/loterre-annotate/annotate
 where {lang} is "en" or "fr".
 """
 from __future__ import annotations
@@ -20,30 +20,7 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
 
-API_BASE = "https://terms-tools.services.istex.fr/v1/{lang}/terms-matcher/json-standoff/annotate"
-
-
-# ---------------------------------------------------------------------------
-# Tokeniser (mirrors the API's whitespace+punctuation split)
-# ---------------------------------------------------------------------------
-
-def tokenize(text: str) -> list[dict]:
-    """Split text into word/punctuation tokens, returning char offsets.
-
-    Decimal numbers like "1.1" or "3.14" are kept as a single token to match
-    the API's internal tokenisation (which does not split on embedded dots).
-    """
-    return [
-        {"text": m.group(), "start": m.start(), "end": m.end()}
-        for m in re.finditer(r"\d+\.\d+|\w+|[^\w\s]", text)
-    ]
-
-
-def token_span_to_char(tokens: list[dict], start_tok: int, end_tok: int) -> tuple[int, int] | None:
-    """Convert exclusive token [start_tok, end_tok) to character (start, end)."""
-    if not tokens or start_tok >= len(tokens) or end_tok > len(tokens) or start_tok >= end_tok:
-        return None
-    return tokens[start_tok]["start"], tokens[end_tok - 1]["end"]
+API_BASE = "https://loterre-annotate.services.istex.fr/v1/{lang}/loterre-annotate/annotate"
 
 
 # ---------------------------------------------------------------------------
@@ -77,25 +54,19 @@ def call_api(vocab: str, lang: str, docs: list[dict], timeout: int = 60) -> list
 # Response → local match format
 # ---------------------------------------------------------------------------
 
-def api_doc_to_matches(api_doc: dict, text: str) -> list[dict]:
+def api_doc_to_matches(api_doc: dict, text: str = "") -> list[dict]:
     """Convert one API response document into a list of local match dicts."""
-    tokens = tokenize(text)
-    matches = []
-    for value_item in api_doc.get("value", []):
-        for ann in value_item.get("matches", []):
-            start_tok = int(ann["idx"]["start"])
-            end_tok = int(ann["idx"]["end"])
-            span = token_span_to_char(tokens, start_tok, end_tok)
-            if span is None:
-                continue
-            matches.append({
-                "start": span[0],
-                "end": span[1],
-                "found": ann["match"].get("text", ""),
-                "pref": ann["match"].get("term", ""),
-                "uri": ann["match"].get("id", ""),
-            })
-    return matches
+    return [
+        {
+            "start": ann["start"],
+            "end":   ann["end"],
+            "found": ann.get("found", ""),
+            "pref":  ann.get("pref", ""),
+            "uri":   ann.get("uri", ""),
+        }
+        for ann in api_doc.get("value", [])
+        if isinstance(ann, dict) and "start" in ann
+    ]
 
 
 # ---------------------------------------------------------------------------
