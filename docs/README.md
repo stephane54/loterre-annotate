@@ -222,12 +222,14 @@ Mode streaming utilisé par le pipeline EZS. Entrée : une ligne JSON `{id, valu
   "annotated": "**long-term memory**〔[long-term memory](http://data.loterre.fr/ark:/67375/P66-J8FC45M1-6)〕...",
   "value": [
     {
-      "idx": {"start": 10, "end": 26},
-      "match": {
-        "id": "http://data.loterre.fr/ark:/67375/P66-J8FC45M1-6",
-        "ul": "long-term memory",
-        "term": "long-term memory"
-      }
+      "start": 10,
+      "end": 26,
+      "found": "long-term memory",
+      "pref": "long-term memory",
+      "uri": "http://data.loterre.fr/ark:/67375/P66-J8FC45M1-6",
+      "label": "long-term memory",
+      "rule": "surface_upper_exact",
+      "score": 0.9
     }
   ]
 }
@@ -236,12 +238,15 @@ Mode streaming utilisé par le pipeline EZS. Entrée : une ligne JSON `{id, valu
 | Champ | Description |
 |---|---|
 | `id` | Identifiant du document (passé en entrée, inchangé) |
-| `annotated` | Texte original avec les termes balisés en markdown |
+| `annotated` | Texte original avec les termes balisés en markdown `**terme**〔[préférentiel](uri)〕` |
 | `value[]` | Liste des matches |
-| `value[].idx.start/end` | Offsets caractères dans le texte original |
-| `value[].match.id` | URI du concept |
-| `value[].match.ul` | Forme préférentielle du concept |
-| `value[].match.term` | Texte exact trouvé dans le document |
+| `value[].start` / `.end` | Offsets caractères dans le texte original |
+| `value[].found` | Texte exact trouvé dans le document |
+| `value[].pref` | Forme préférentielle du concept |
+| `value[].uri` | URI du concept Loterre |
+| `value[].label` | Libellé brut du concept |
+| `value[].rule` | Règle de matching : `pattern`, `surface_upper_exact`, `surface_structural`, `lemma_structural`, `lemma_pattern_seq` |
+| `value[].score` | Score de confiance [0.0–1.0] — seuil recommandé : 0.80 pour les mono-tokens |
 
 ---
 
