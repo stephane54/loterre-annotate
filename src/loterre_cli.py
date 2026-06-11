@@ -179,7 +179,7 @@ def write_subset_jsonl(results, subset_ids, subset_path: Path) -> None:
             if row.get("id") in selected:
                 f.write(json.dumps({
                     "id": row.get("id"),
-                    "value": row.get("text", ""),
+                    "value": row.get("value", ""),
                 }, ensure_ascii=False) + "\n")
 
 

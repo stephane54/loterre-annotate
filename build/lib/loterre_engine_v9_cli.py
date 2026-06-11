@@ -297,8 +297,6 @@ def read_text_rows(text_path: Optional[str], validate: bool = False) -> List[Dic
         obj = json.loads(line)
         if validate:
             validate_row(obj, i)
-        elif "value" not in obj:
-            raise ValueError(f"Missing 'value' field at input line {i}")
         rows.append(obj)
     return rows
 
@@ -788,7 +786,8 @@ def _adaptive_single_token_penalty(found: str, base: float) -> float:
     return base
 
 
-def score_match_quality(match: Dict[str, Any], doc, quality: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+def score_match_quality(match: Dict[str, Any], doc, quality: Dict[str, Any],
+                        _sg_set=None, _rp_set=None) -> Optional[Dict[str, Any]]:
     """Apply score adjustments and hard filters to one match."""
     if not quality.get("enabled", True):
         return match
@@ -858,10 +857,10 @@ def score_match_quality(match: Dict[str, Any], doc, quality: Dict[str, Any]) -> 
     #    e.g. "Quality For him, a gallery is never…" → kills "Quality"
     #
     # Both word lists are configurable via quality keys and default to EN+FR combined.
-    _SYNTACTIC_GENERIC = frozenset(
+    _SYNTACTIC_GENERIC = _sg_set if _sg_set is not None else frozenset(
         quality.get("syntactic_generic_words", _SYNTACTIC_GENERIC_DEFAULT)
     )
-    _relative_pronouns = frozenset(
+    _relative_pronouns = _rp_set if _rp_set is not None else frozenset(
         quality.get("syntactic_relative_pronouns", _RELATIVE_PRONOUNS_DEFAULT)
     )
 
@@ -923,9 +922,11 @@ def apply_quality_filters(doc, matches: List[Dict[str, Any]], quality: Dict[str,
         "single_token_min_score",
         _PROFILE_MIN_SCORES.get(quality.get("profile_name"), 0.75),
     ))
+    _sg_set = frozenset(quality.get("syntactic_generic_words", _SYNTACTIC_GENERIC_DEFAULT))
+    _rp_set = frozenset(quality.get("syntactic_relative_pronouns", _RELATIVE_PRONOUNS_DEFAULT))
     out = []
     for match in matches:
-        scored = score_match_quality(match, doc, quality)
+        scored = score_match_quality(match, doc, quality, _sg_set, _rp_set)
         if scored is None:
             continue
         span = doc.char_span(scored["start"], scored["end"], alignment_mode="expand")

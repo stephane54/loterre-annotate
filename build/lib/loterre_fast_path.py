@@ -83,22 +83,26 @@ def load_or_build_index(
     cache_dir.mkdir(parents=True, exist_ok=True)
 
     fp = fingerprint(dict_path)
-    cache_path = cache_dir / f"{dict_path.stem}.{fp}.fastindex.pkl"
+    cs_suffix = "cs" if case_sensitive else "ci"
+    cache_path = cache_dir / f"{dict_path.stem}.{fp}.{cs_suffix}.fastindex.pkl"
 
     if cache_path.exists():
-        return pickle.loads(cache_path.read_bytes())
+        try:
+            return pickle.loads(cache_path.read_bytes())
+        except Exception:
+            cache_path.unlink(missing_ok=True)
 
     index = build_index(load_dictionary_entries(dict_path), case_sensitive=case_sensitive)
     cache_path.write_bytes(pickle.dumps(index))
 
-    for old in cache_dir.glob(f"{dict_path.stem}.*.fastindex.pkl"):
+    for old in cache_dir.glob(f"{dict_path.stem}.*.*.fastindex.pkl"):
         if old != cache_path:
             old.unlink(missing_ok=True)
 
     return index
 
 
-def compile_regex(index, max_terms: Optional[int] = None):
+def compile_regex(index, max_terms: Optional[int] = None, case_sensitive: bool = False):
     terms = sorted(index.keys(), key=len, reverse=True)
     if max_terms:
         terms = terms[:max_terms]
@@ -107,7 +111,8 @@ def compile_regex(index, max_terms: Optional[int] = None):
     if not terms:
         return re.compile(r"$^")
 
-    return re.compile(r"(?<!\w)(" + "|".join(terms) + r")(?!\w)", re.IGNORECASE)
+    flags = 0 if case_sensitive else re.IGNORECASE
+    return re.compile(r"(?<!\w)(" + "|".join(terms) + r")(?!\w)", flags)
 
 
 def read_docs(text_path: str | Path | None):
@@ -170,6 +175,7 @@ def annotate_docs_fast(docs, index, regex, case_sensitive: bool = False):
         matches = dedupe(fast_match(text, index, regex, case_sensitive=case_sensitive))
         results.append({
             "id": doc.get("id"),
+            "value": text,
             "matches": matches,
         })
     return results
@@ -184,7 +190,7 @@ def run_fast_path(
 ):
     t0 = time.perf_counter()
     index = load_or_build_index(dict_path, cache_dir, case_sensitive)
-    regex = compile_regex(index, max_terms=max_regex_terms)
+    regex = compile_regex(index, max_terms=max_regex_terms, case_sensitive=case_sensitive)
     docs = read_docs(text_path)
     results = annotate_docs_fast(docs, index, regex, case_sensitive)
 
