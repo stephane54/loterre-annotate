@@ -20,11 +20,14 @@ def load_jsonl(path: str | Path):
 
 
 def normalize(s: str, case_sensitive: bool = False) -> str:
+    # Collapse internal whitespace so "long  term" == "long term" in the index.
     s = " ".join(str(s or "").split())
     return s if case_sensitive else s.lower()
 
 
 def fingerprint(path: str | Path) -> str:
+    # mtime_ns + size is faster than hashing file content (dicts can be 100 MB+)
+    # and good enough: same path + same modification time + same size → same content.
     p = Path(path)
     st = p.stat()
     raw = f"{p.resolve()}::{st.st_mtime_ns}::{st.st_size}"
@@ -78,6 +81,10 @@ def load_or_build_index(
     cache_dir: str | Path = ".loterre_cache",
     case_sensitive: bool = False,
 ):
+    # Building the index (normalize + expand variants) is O(E×V) and can take
+    # several seconds on large dictionaries (50k+ entries). The pickle cache
+    # avoids this cost on repeated runs. The fingerprint encodes the file state
+    # AND the case mode so that changing case_sensitive invalidates the cache.
     dict_path = Path(dict_path)
     cache_dir = Path(cache_dir)
     cache_dir.mkdir(parents=True, exist_ok=True)
@@ -90,11 +97,13 @@ def load_or_build_index(
         try:
             return pickle.loads(cache_path.read_bytes())
         except Exception:
+            # Corrupt or truncated cache (e.g. interrupted write) — rebuild silently.
             cache_path.unlink(missing_ok=True)
 
     index = build_index(load_dictionary_entries(dict_path), case_sensitive=case_sensitive)
     cache_path.write_bytes(pickle.dumps(index))
 
+    # Remove stale caches for the same dict (different fingerprint or case mode).
     for old in cache_dir.glob(f"{dict_path.stem}.*.*.fastindex.pkl"):
         if old != cache_path:
             old.unlink(missing_ok=True)
@@ -103,14 +112,20 @@ def load_or_build_index(
 
 
 def compile_regex(index, max_terms: Optional[int] = None, case_sensitive: bool = False):
+    # Sort longest-first so the regex engine prefers "long-term memory" over "memory"
+    # when both are in the alternation (re alternation is ordered, not greedy by length).
     terms = sorted(index.keys(), key=len, reverse=True)
     if max_terms:
         terms = terms[:max_terms]
     terms = [re.escape(t) for t in terms if t]
 
     if not terms:
+        # Unsatisfiable pattern — finditer will yield nothing without raising.
         return re.compile(r"$^")
 
+    # Word-boundary lookarounds prevent matching substrings inside words
+    # (e.g. "or" inside "memory"). \w covers [a-zA-Z0-9_] which is sufficient
+    # for the Latin-script terms in Loterre dictionaries.
     flags = 0 if case_sensitive else re.IGNORECASE
     return re.compile(r"(?<!\w)(" + "|".join(terms) + r")(?!\w)", flags)
 
@@ -131,6 +146,8 @@ def read_docs(text_path: str | Path | None):
 
 
 def fast_match(text: str, index, regex, case_sensitive: bool = False):
+    # Run the regex on the normalized form so offsets stay aligned with the
+    # original text; recover the original surface string via text[start:end].
     search = text if case_sensitive else text.lower()
     matches = []
 
@@ -147,6 +164,8 @@ def fast_match(text: str, index, regex, case_sensitive: bool = False):
                 "pref": candidate["pref"],
                 "id": candidate["id"],
                 "rule": "fast_exact",
+                # Score 0.85 (not 1.0) when the surface form maps to multiple
+                # concepts — signals that the hybrid engine should refine this doc.
                 "score": 1.0 if len(candidates) == 1 else 0.85,
                 "ambiguous": len(candidates) > 1,
             })
@@ -155,6 +174,8 @@ def fast_match(text: str, index, regex, case_sensitive: bool = False):
 
 
 def dedupe(matches):
+    # Sort: earliest start first; for ties prefer the longest span, then highest
+    # score. The greedy left-to-right sweep then keeps only non-overlapping matches.
     matches = sorted(
         matches,
         key=lambda m: (m["start"], -(m["end"] - m["start"]), -float(m.get("score", 0))),

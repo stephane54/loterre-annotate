@@ -16,7 +16,9 @@ def _find_registry() -> str:
     env = os.environ.get("LOTERRE_REGISTRY")
     if env:
         return env
-    # Walk up from __file__ to find configs/registry.yaml or loterre-v9/configs/registry.yaml
+    # When the package is installed (pip install), __file__ ends up several
+    # levels deep inside site-packages. Walk up until we find configs/ so
+    # the CLI works both from the source tree and from an installed wheel.
     here = Path(__file__).resolve().parent
     for _ in range(10):
         for sub in ("", "loterre-v9"):
@@ -119,6 +121,10 @@ def run_fast_mode(args, effective: Dict[str, Any]) -> None:
 
 
 def run_engine_full_json(effective: Dict[str, Any], text_path: str, unknown_args) -> Dict[str, Any]:
+    # The engine is invoked as a subprocess rather than imported because it
+    # loads a spaCy model into memory that we don't want to share with the
+    # fast-path process. The subprocess boundary also isolates any engine
+    # crashes from the caller and lets unknown_args pass through verbatim.
     engine = Path(__file__).with_name("loterre_engine_v9_cli.py")
     if not engine.exists():
         raise SystemExit(f"ERROR: engine not found: {engine}")
@@ -147,6 +153,14 @@ def run_engine_full_json(effective: Dict[str, Any], text_path: str, unknown_args
 
 
 def result_has_ambiguity(result: Dict[str, Any], args) -> bool:
+    # Decide whether a fast-path result should be sent to the v9 engine for
+    # refinement. Four independent signals trigger refinement:
+    #   1. A surface form maps to multiple concepts (score=0.85, ambiguous=True).
+    #   2. Unusually many matches — likely a noisy / over-general dictionary hit.
+    #   3. Single-token matches, which have higher false-positive rates than
+    #      multi-token terms (opt-in via --hybrid-refine-single-tokens).
+    #   4. Any match below the low-score threshold (default 0.90 — catches the
+    #      0.85 ambiguous matches without re-examining clean 1.0 matches).
     matches = result.get("matches", [])
     if any(m.get("ambiguous") for m in matches):
         return True
@@ -213,6 +227,9 @@ def merge_hybrid_results(fast_payload: Dict[str, Any], refined_payload: Dict[str
 
 
 def run_hybrid_mode(args, effective: Dict[str, Any], unknown_args) -> None:
+    # Hybrid strategy: run the fast exact-match path on the full corpus first,
+    # then send only the ambiguous/uncertain documents through the v9 spaCy engine.
+    # Typical split: ~80 % of docs come back from fast-path, ~20 % need refinement.
     if not effective.get("dict"):
         raise SystemExit("ERROR: --dict or --dict-id with registry path is required for hybrid mode")
 
@@ -235,6 +252,8 @@ def run_hybrid_mode(args, effective: Dict[str, Any], unknown_args) -> None:
     ]
 
     if refine_ids:
+        # Write the subset to a temp JSONL file because the engine only accepts
+        # a file path as input (no stdin streaming in subprocess mode).
         with tempfile.TemporaryDirectory(prefix="loterre_hybrid_") as tmp:
             subset_path = Path(tmp) / "hybrid_subset.jsonl"
             write_subset_jsonl(fast_results, refine_ids, subset_path)
