@@ -3,7 +3,7 @@ from setuptools import setup
 
 _here = os.path.dirname(os.path.abspath(__file__))
 
-with open(os.path.join(_here, "production", "version.txt")) as f:
+with open(os.path.join(_here, "VERSION")) as f:
     VERSION = f.read().strip()
 
 with open(os.path.join(_here, "requirements.txt")) as f:
