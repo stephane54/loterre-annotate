@@ -13,8 +13,9 @@ install:
 	$(PYTHON) -m pip install -r requirements.txt
 
 models:
-	$(PYTHON) -m spacy download en_core_web_sm
-	$(PYTHON) -m spacy download fr_core_news_sm
+	$(PYTHON) -m pip install https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_core_sci_sm-0.5.4.tar.gz 
+	$(PYTHON) -m spacy download en_core_web_lg
+	$(PYTHON) -m spacy download fr_core_news_lg
 
 # ── Tests ─────────────────────────────────────────────────────────────────────
 

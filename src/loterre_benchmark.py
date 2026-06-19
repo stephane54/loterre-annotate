@@ -124,7 +124,7 @@ def _empty_stats() -> dict:
 
 def run_local(cli: Path, dict_id: str, text_file: Path, json_out: Path) -> bool:
     json_out.parent.mkdir(parents=True, exist_ok=True)
-    cmd  = [sys.executable, str(cli), "--dict-id", dict_id,
+    cmd  = [sys.executable, str(cli), "annotate", "--dict-id", dict_id,
             "--text", str(text_file), "--silent"]
     proc = subprocess.run(cmd, capture_output=True, text=True)
     if proc.returncode != 0:

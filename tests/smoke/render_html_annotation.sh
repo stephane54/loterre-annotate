@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 # Render HTML annotations for all JSON/JSONL files in a corpus directory.
@@ -50,7 +50,7 @@ run_one() {
   local json_file="$OUTDIR/json/${dict_id}.json"
   local html_file="$OUTDIR/html/${dict_id}.html"
 
-  if python3 "$CLI" \
+  if python3 "$CLI" annotate \
       --dict-id "$dict_id" \
       --text "$text_file" \
       --silent > "$json_file"; then

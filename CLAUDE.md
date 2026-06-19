@@ -16,11 +16,13 @@ Moteur d'annotation terminologique sur les vocabulaires Loterre (INIST/CNRS).
 
 ## Trois modes cibles (v2.0)
 
-| Mode CLI | Description |
+CLI en sous-commandes positionnelles (`loterre_cli.py <sous-commande> ...`, pas de flag `--mode`) :
+
+| Sous-commande | Description |
 |----------|-------------|
-| `--mode annotate` | Comportement v1.0 — lookup dans un vocabulaire Loterre (inchangé) |
-| `--mode extract` | Extraction de candidats termes depuis le texte (sans vocabulaire) |
-| `--mode extract+annotate` | Extraction puis croisement avec Loterre (présent/absent + URI) |
+| `annotate` | Comportement v1.0 — lookup dans un vocabulaire Loterre (inchangé) |
+| `extract` | Extraction de candidats termes depuis le texte (sans vocabulaire) |
+| `extract_annotate` | Extraction puis croisement avec Loterre (présent/absent + URI) |
 
 ---
 
@@ -35,31 +37,28 @@ Moteur d'annotation terminologique sur les vocabulaires Loterre (INIST/CNRS).
 
 ## Stack technique décidée
 
-### Pipeline NLP
-- **spaCy 3.8**
-- Runtime annotateur : `en_core_web_sm` / `fr_core_news_sm` — ordre de préférence dans `resources/spacy_models.yaml`
-- **scispaCy / `en_core_sci_sm` abandonné** : testé et non retenu (voir ci-dessous)
+### Pipeline NLP — deux modèles différents selon l'usage
 
-### Génération des dictionnaires — pipeline natif, mêmes modèles que l'ancien script
+| Usage | Modèle EN | Modèle FR | Où | Statut |
+|-------|-----------|-----------|-----|--------|
+| **Reconnaissance (runtime annotateur)** | `en_core_web_sm` (3.7.1) | `fr_core_news_sm` (3.7.0) | `resources/spacy_models.yaml`, lu par `load_model()` dans `loterre_engine_v9_cli.py` | **Actif** — restauré au défaut v1.0.0 après régression scispaCy (voir journal) |
+| **Génération des dictionnaires actuels (`dictionary/*.jsonl` sur disque)** | `en_core_web_trf` | `fr_dep_news_trf` | Ancien pipeline externe `~/app/terms_tools` (déprécié) | **Historique** — ces dictionnaires n'ont pas été régénérés, ils datent du 8 juin 2026 |
+| **Génération via le nouveau script natif** | *celui de `load_model('en')`, donc `en_core_web_sm` actuellement* | *celui de `load_model('fr')`* | `scripts/build_dictionaries/build_dictionaries.py` | Disponible mais **pas encore exécuté** en production |
 
-`scripts/build_dictionaries/build_dictionaries.py` génère les dictionnaires JSONL directement depuis les CSV vocab Loterre (`~/data/voc_loterre/<VOC>/<VOC>.csv`). Il **remplace l'orchestration** de l'ancien `~/app/terms_tools/script/extract_dico_lot.sh` (dépôt externe séparé, `csv_convert.py` + `terms_toolsCLI.py`) mais réutilise **les mêmes modèles spaCy transformers** que lui : `en_core_web_trf` (EN) / `fr_dep_news_trf` (FR), déclarés dans `GENERATION_MODELS` en tête du script — **volontairement différents** du runtime annotateur ci-dessus.
+**Point important** : `scripts/build_dictionaries/build_dictionaries.py` ne déclare pas de modèle de génération séparé — il appelle `load_model()`, donc **le même modèle que le runtime**. Si on l'exécute aujourd'hui, génération et reconnaissance utiliseraient toutes les deux `en_core_web_sm`/`fr_core_news_sm`, ce qui **élimine** l'écart structurel actuel (~18 % de désaccords lemme/POS sur P66_en, mesuré et documenté) entre les dictionnaires `_trf` existants et le runtime `_sm`. Ce n'est pas encore fait — les dictionnaires sur disque restent ceux générés par l'ancien pipeline `_trf`.
 
-- **Pourquoi garder des modèles différents générateur/runtime** : une tentative antérieure faisait coïncider les deux (modèle léger des deux côtés). Testé sur 7 vocabs (P66, 9SD, 8HQ, B9M, 27X, BVM, QX8) × 2 langues contre les gold standards : régression systématique du F1 (ex. 8HQ_fr 100%→76.5%, BVM_en 86.7%→68.8%), causée par la phrase-cadre artificielle (`dive_term`, "the X is correct.") qui ne reproduit pas fiablement le tag obtenu en contexte réel — un défaut indépendant du choix de modèle, qui touche surtout les labels courts/symboles (ex. "La" pour lanthane matchant tous les "la/le/l'" du texte FR) et les participes/adjectifs ambigus.
-- **Environnement requis** : torch + modèles transformers installés (lourd, absent de l'environnement par défaut) — utiliser le venv `~/app/terms_tools/venv` tant que loterre-v9 n'a pas le sien :
-  ```bash
-  ~/app/terms_tools/venv/bin/python3 scripts/build_dictionaries/build_dictionaries.py --voc P66 --lang en
-  ```
-- Détection automatique des deux formats CSV vocab depuis les en-têtes :
-  - format **loterre** : colonnes `prefLabel_fr`/`prefLabel_en` (underscore) → délimiteur d'occurrence `§§`
-  - format **MX** : colonnes `prefLabelFre`/`prefLabelEng` (camelCase) → délimiteur d'occurrence `|`
-- Batché via `nlp.pipe()` — un seul chargement de modèle par langue, pas de rechargement par terme (contrairement à l'ancien `terms_toolsCLI.py`)
-- **Validation** : sortie comparée champ à champ (pattern+pref) aux dictionnaires de production actuels sur les 7 vocabs ci-dessus — 13/14 combinaisons strictement identiques à 100 %, 1/14 (9SD_en) avec une seule entrée différente sur 13784 (ambiguïté CCONJ/PROPN sur l'acronyme "AND"/Andorre, micro-variation du modèle). Tests de non-régression (precision/recall/F1) identiques à l'ancien dictionnaire sur les 14 combinaisons.
+scispaCy (`en_core_sci_sm`) a été testé comme modèle de reconnaissance EN par défaut et **abandonné** : -8 points de F1 sur P66 (vocabulaire multidisciplinaire, pas biomédical) — voir le journal des versions pour les chiffres.
 
-Usage :
+Usage du script de génération :
 ```bash
-~/app/terms_tools/venv/bin/python3 scripts/build_dictionaries/build_dictionaries.py --voc P66 --lang en
-~/app/terms_tools/venv/bin/python3 scripts/build_dictionaries/build_dictionaries.py --all --lang en fr
+python3 scripts/build_dictionaries/build_dictionaries.py --voc P66 --lang en
+python3 scripts/build_dictionaries/build_dictionaries.py --all --lang en fr
 ```
+Détection automatique des deux formats CSV vocab depuis les en-têtes :
+- format **loterre** : colonnes `prefLabel_fr`/`prefLabel_en` (underscore) → délimiteur d'occurrence `§§`
+- format **MX** : colonnes `prefLabelFre`/`prefLabelEng` (camelCase) → délimiteur d'occurrence `|`
+
+Batché via `nlp.pipe()` — un seul chargement de modèle par langue. Validé caractère pour caractère contre un dictionnaire de production existant (`long-term memory` → pattern identique avec `OP:"?"` sur le tiret).
 
 ### Extracteur terminologique
 - **NC-value** (Frantzi et al. 2000) comme moteur principal sur corpus (> 50 000 tokens / ~6–10 articles)
@@ -96,11 +95,11 @@ Voir `planification/analyse_benchmarks_extraction.md` pour les benchmarks de ré
 ### Résumé des phases
 | Phase | Contenu | Priorité |
 |-------|---------|----------|
-| 0 | Conception + upgrade spaCy 3.8 + génération native dictionnaires (transformers) | Obligatoire |
-| 0.5 | Préparation architecturale ciblée (CandidateTerm, chargement spaCy centralisé) | Obligatoire |
-| 1 | Module extraction noun chunks + filtres POS | Obligatoire |
-| 2 | NC-value scoring (termes emboîtés, seuil configurable) | Obligatoire |
-| 3 | Intégration 3 modes CLI + format JSONL unifié | Obligatoire |
+| 0 | Conception + génération native dictionnaires (transformers) — spaCy reste 3.7.x, scispaCy testé/rejeté | Quasi terminée |
+| 0.5 | Préparation architecturale (CandidateTerm, chargement spaCy centralisé) | **Terminée** |
+| 1 | Module extraction noun chunks + filtres POS | **Terminée** |
+| 2 | C-value scoring (termes emboîtés, seuil configurable) | **Cœur terminé** — extension contexte NC-value différée |
+| 3 | Intégration 3 sous-commandes CLI (`annotate\|extract\|extract_annotate`) | **Terminée** |
 | 4 | Détection de variantes (graphiques, morpho, syntaxiques) | Recommandée |
 | 5 | Scoring embeddings Loterre (MiniLM) — filtrage + enrichissement | Recommandée |
 | 6 | Benchmark ACTER + comparaison D-Terminer + TermSuite | Recommandée |
@@ -122,9 +121,13 @@ Voir `planification/analyse_benchmarks_extraction.md` pour les benchmarks de ré
 | Fichier | Rôle |
 |---------|------|
 | `src/loterre_engine_v9_cli.py` | Moteur d'annotation — stratégie 5 passes + Trie |
-| `src/loterre_cli.py` | CLI principale — résolution registre + dispatch |
+| `src/loterre_cli.py` | CLI principale — résolution registre + dispatch, sous-commandes `annotate\|extract\|extract_annotate` |
 | `src/loterre_fast_path.py` | Fast path regex (mode hybride) |
 | `src/loterre_benchmark.py` | Benchmark local vs API ISTEX |
+| `src/loterre_extraction_base.py` | v2.0 — `CandidateTerm`, `get_nlp()` (chargement spaCy cache, parser optionnel) |
+| `src/loterre_extract_cli.py` | v2.0 — extraction noun chunks (Phase 1) + scoring C-value (Phase 2) + `cross_reference_candidates()` (Phase 3) |
+| `src/loterre_cvalue.py` | v2.0 — algorithme C-value (Frantzi 1998), termes emboîtés, cas limite mono-token |
+| `tests/baselines/annotation_baseline_v1.0.0.json` | Baseline non-régression mode annotate (F1 par vocab/langue) |
 | `scripts/build_dictionaries/build_dictionaries.py` | Génération native des dictionnaires JSONL depuis CSV vocab Loterre |
 | `configs/registry.yaml` | Registre des 30+ vocabulaires Loterre |
 | `resources/spacy_models.yaml` | Ordre de préférence des modèles spaCy par langue |

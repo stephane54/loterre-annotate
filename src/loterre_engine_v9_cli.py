@@ -215,14 +215,20 @@ def setup_logging(level: str) -> None:
         stream=sys.stderr,
     )
 
-def load_model(lang: str):
-    """Load a spaCy model for the requested language."""
+def load_model(lang: str, disable=("parser", "ner")):
+    """Load a spaCy model for the requested language.
+
+    disable defaults to ("parser", "ner") — unchanged from before, so the 3
+    existing call sites (annotation runtime) keep their exact behavior. The
+    extraction modules (v2.0) pass disable=("ner",) instead, since doc.noun_chunks
+    requires the dependency parse.
+    """
     candidates = _SPACY_MODELS.get(lang)
     if not candidates:
         raise RuntimeError(f"No spaCy model configured for language '{lang}'. Add it to resources/spacy_models.yaml")
     for name in candidates:
         try:
-            return spacy.load(name, disable=["parser", "ner"])
+            return spacy.load(name, disable=list(disable))
         except Exception:
             pass
     raise RuntimeError(f"No spaCy model installed for {lang}. Install one of: {candidates}")
@@ -704,13 +710,20 @@ def match_document(doc, profile: ResourceProfile, indexes):
                 pattern_spans = [(m["start"], m["end"]) for m in patt]
 
                 def non_overlapping_with_pattern(candidates: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+                    # A fallback candidate that *contains* a pattern span (e.g. the
+                    # compound "post-encoding stress effect" around the standalone
+                    # pattern match "stress") is let through so dedupe() can pick the
+                    # longer one — only candidates with a genuine partial/ambiguous
+                    # overlap (neither containing the other) are excluded here.
                     out = []
                     for cand in candidates:
-                        overlaps_pattern = any(
-                            not (cand["end"] <= ps or cand["start"] >= pe)
-                            for ps, pe in pattern_spans
-                        )
-                        if not overlaps_pattern:
+                        conflicting = False
+                        for ps, pe in pattern_spans:
+                            overlaps = not (cand["end"] <= ps or cand["start"] >= pe)
+                            if overlaps and not (cand["start"] <= ps and cand["end"] >= pe):
+                                conflicting = True
+                                break
+                        if not conflicting:
                             out.append(cand)
                     return out
 
@@ -939,7 +952,15 @@ def apply_quality_filters(doc, matches: List[Dict[str, Any]], quality: Dict[str,
 
 
 def dedupe(matches: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Keep the best-scoring non-overlapping matches."""
+    """Keep the best-scoring non-overlapping matches.
+
+    A match strictly contained within a longer match's span is dropped
+    first, regardless of score — a compound term should not lose to its
+    own sub-fragment (e.g. "stress" alone vs "post-encoding stress
+    effect") just because the fragment happened to score marginally
+    higher. Partial, non-containing overlaps still resolve by score, as
+    before.
+    """
     rule_rank = {
         "pattern": 3,
         "surface_upper_exact": 2,
@@ -947,8 +968,20 @@ def dedupe(matches: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         "lemma_pattern_seq": 1,
         "lemma_structural": 0,
     }
+
+    by_length = sorted(matches, key=lambda m: -(m["end"] - m["start"]))
+    kept = []
+    for m in by_length:
+        contained = any(
+            (m["start"], m["end"]) != (k["start"], k["end"])
+            and m["start"] >= k["start"] and m["end"] <= k["end"]
+            for k in kept
+        )
+        if not contained:
+            kept.append(m)
+
     ordered = sorted(
-        matches,
+        kept,
         key=lambda m: (
             -m["score"],
             -rule_rank.get(m.get("rule", ""), -1),
@@ -1315,6 +1348,11 @@ def main():
         payload["results"] = [
             {
                 "id": doc_id,
+                # Raw text is included in --silent (used by the HTML renderer and
+                # the prediction->expected converter, both of which need the
+                # original text to re-render highlighted spans) but omitted from
+                # --api to keep the production payload compact.
+                **({"text": raw_text} if args.silent else {}),
                 "annotated_text": annotate(raw_text, matches),
                 "matches": matches,
             }

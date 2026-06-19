@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -15,12 +15,12 @@ cd "$REPO_ROOT"
 # ── Anglais — gold nettoyé (gold_cleaned/) ────────────────────────────────────
 
 echo "== P66_en evaluation =="
-python3 "$CLI" --text ./data/jsonl/P66_en.jsonl --dict-id P66_en --silent > "$OUTDIR/P66_en_pred.json"
+python3 "$CLI" annotate --text ./data/jsonl/P66_en.jsonl --dict-id P66_en --silent > "$OUTDIR/P66_en_pred.json"
 python3 "$EVAL_PY" --gold ./gold_cleaned/gold_P66_en.jsonl --pred "$OUTDIR/P66_en_pred.json" --out-json "$OUTDIR/P66_en_eval.json"
 
 echo
 echo "== 9SD_en evaluation =="
-python3 "$CLI" --text ./data/jsonl/9SD_en.jsonl --dict-id 9SD_en --silent > "$OUTDIR/9SD_en_pred.json"
+python3 "$CLI" annotate --text ./data/jsonl/9SD_en.jsonl --dict-id 9SD_en --silent > "$OUTDIR/9SD_en_pred.json"
 python3 "$EVAL_PY" --gold ./gold_cleaned/gold_9SD_en.jsonl --pred "$OUTDIR/9SD_en_pred.json" --out-json "$OUTDIR/9SD_en_eval.json"
 
 # ── Français — gold inline (data/jsonl/*_fr.jsonl) ───────────────────────
@@ -38,7 +38,7 @@ for vocab in P66_fr 27X_fr 9SD_fr 8HQ_fr B9M_fr BVM_fr QX8_fr; do
     continue
   fi
 
-  python3 "$CLI" --text "$GOLD" --dict-id "$vocab" --silent > "$PRED"
+  python3 "$CLI" annotate --text "$GOLD" --dict-id "$vocab" --silent > "$PRED"
   # gold = même fichier JSONL (expected_matches inline)
   python3 "$EVAL_PY" --gold "$GOLD" --pred "$PRED" --out-json "$EVAL_OUT"
 done

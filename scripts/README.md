@@ -6,6 +6,8 @@ Outils de production pour annoter, évaluer et benchmarker.
 
 ```
 scripts/
+├── corpus/
+│   └── txt_to_jsonl.py                # convertit .txt (fichier ou dossier) en JSONL pour extract/annotate
 ├── evaluation/
 │   ├── evaluate_json.py               # calcul Précision / Rappel / F1
 │   ├── run_eval.sh                    # évaluation batch EN + FR
@@ -26,6 +28,25 @@ scripts/
 > **Note** : le benchmark principal (moteur local vs API production, EN + FR) est dans
 > `tests/smoke/compare_engines.sh` → `src/loterre_benchmark.py`.
 > Voir `tests/README.md` pour les détails.
+
+---
+
+## corpus/
+
+### `txt_to_jsonl.py`
+
+Convertit un fichier `.txt`, un répertoire de `.txt`, ou une archive
+`.tar.gz`/`.tgz`/`.tar` contenant des `.txt`, en JSONL `{"id":..., "value":...}`
+— le format attendu par les sous-commandes `annotate`/`extract`/`extract_annotate`
+de `src/loterre_cli.py`. L'archive est lue directement en mémoire (rien n'est
+extrait sur disque).
+
+```bash
+python3 scripts/corpus/txt_to_jsonl.py mon_texte.txt --out mon_texte.jsonl
+python3 scripts/corpus/txt_to_jsonl.py mes_textes/ --out corpus.jsonl       # un doc par .txt du dossier
+python3 scripts/corpus/txt_to_jsonl.py mes_textes.tar.gz --out corpus.jsonl # un doc par .txt de l'archive
+python3 scripts/corpus/txt_to_jsonl.py mon_texte.txt                         # affiche sur stdout
+```
 
 ---
 

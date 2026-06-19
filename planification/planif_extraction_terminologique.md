@@ -12,11 +12,11 @@ loterre-annotate est un **annotateur par dictionnaire** : il cherche dans un tex
 
 L'objectif est d'offrir trois modes d'utilisation :
 
-| Mode | Description |
+| Sous-commande | Description |
 |------|-------------|
-| `--mode annotate` | Comportement actuel — lookup dans un vocabulaire Loterre |
-| `--mode extract` | Extraction de candidats termes depuis le texte (sans vocabulaire) |
-| `--mode extract+annotate` | Extraction puis croisement avec un vocabulaire Loterre |
+| `annotate` | Comportement actuel — lookup dans un vocabulaire Loterre |
+| `extract` | Extraction de candidats termes depuis le texte (sans vocabulaire) |
+| `extract_annotate` | Extraction puis croisement avec un vocabulaire Loterre |
 
 ---
 
@@ -162,7 +162,7 @@ Schéma `candidate` — sortie JSONL stable entre les 3 modes (champs vocabulair
 Paramètres CLI :
 
 ```bash
---mode {annotate,extract,extract_annotate}   # nouveau, défaut "annotate" → comportement v1.0 inchangé
+loterre_cli.py {annotate,extract,extract_annotate} ...   # sous-commande positionnelle obligatoire (voir Phase 3)
 --min-freq INT          # défaut 2 — seuil fréquence NC-value
 --min-tokens INT        # défaut 1
 --max-tokens INT        # défaut 6
@@ -171,7 +171,7 @@ Paramètres CLI :
 --max-terms INT         # défaut None (illimité) — garde les N meilleurs candidats triés par score décroissant
 ```
 
-`--mode extract` et `extract_annotate` ignorent `--execution-strategy` (fast/hybrid n'ont pas de sens pour l'extraction — besoin du pipeline spaCy complet POS+lemme).
+`extract` et `extract_annotate` n'ont pas de `--execution-strategy` (fast/hybrid n'ont pas de sens pour l'extraction — besoin du pipeline spaCy complet POS+lemme), c'est un paramètre propre à la sous-commande `annotate`.
 
 Corpus de référence : **ACTER** dès la Phase 1 (pas seulement Phase 6) — domaines insuffisance cardiaque + énergie éolienne, FR+EN. Comparaison TermSuite secondaire.
 
@@ -185,57 +185,84 @@ Cas limites documentés :
 | Corpus très court | NC-value peu fiable | Bascule automatique vers PositionRank sous le seuil |
 | Casse/accents FR | Incohérence de comptage | Réutiliser `normalize_text` existant, ne pas réinventer |
 
-**Tâches techniques :**
+**Tâches techniques — statut réel après tests (2026-06-18) :**
 
-- **Upgrade spaCy 3.7 → 3.8** dans `requirements.txt`
-- **Ajout scispaCy v0.6.x** + modèle `en_core_sci_sm` pour l'anglais scientifique
-- FR : passer de `fr_core_news_sm` à `fr_core_news_lg`
-- **Génération des dictionnaires EN — pipeline natif** : `scripts/build_dictionaries/build_dictionaries.py` remplace entièrement la dépendance externe à `~/app/terms_tools` (CSV vocab → JSONL pattern POS+lemme), en réutilisant `load_model()` de loterre-v9
-  - Découverte en cours de route : l'ancien pipeline `terms_tools` générait les dictionnaires avec des modèles **transformers** (`en_core_web_trf`, `fr_dep_news_trf`), incohérents avec les modèles légers utilisés au runtime — le pipeline natif élimine cette incohérence en plus de supprimer la dépendance
-  - Détection automatique des deux formats CSV (loterre `_fr`/`§§` vs MX `Fre`/`|`) depuis les en-têtes
-  - Validé caractère pour caractère contre les dictionnaires de production existants (`long-term memory` → pattern identique avec `OP:"?"` sur le tiret)
-  - Commande : `python3 scripts/build_dictionaries/build_dictionaries.py --all --lang en`
-- Vérification des gold standards EN après régénération (benchmarks existants)
+| Tâche prévue | Décision finale | Pourquoi |
+|--------------|-----------------|----------|
+| Upgrade spaCy 3.7 → 3.8 | **Abandonné — reste en 3.7.x** | `en_core_sci_sm` 0.5.4 a une dépendance pip dure `spacy<3.8.0` dans ses propres métadonnées (pas seulement la lib wrapper scispaCy) ; pas de bénéfice à monter en 3.8 sans ce modèle |
+| Ajout scispaCy `en_core_sci_sm` comme modèle EN par défaut | **Testé et rejeté** | Sur P66 (vocabulaire multidisciplinaire, pas biomédical) : 26 % de désaccords lemme/POS vs 18 % avec `en_core_web_sm`, soit −8 pts de F1 mesurés. scispaCy reste disponible mais n'est plus le défaut dans `resources/spacy_models.yaml` |
+| FR : `fr_core_news_sm` → `fr_core_news_lg` | **Non retenu** | Pas testé séparément suite au rejet scispaCy — `fr_core_news_sm` reste le défaut runtime, cohérent avec le retour en arrière EN |
+| Génération des dictionnaires — pipeline natif | **Fait, mais modèles différents du runtime (volontairement)** | `scripts/build_dictionaries/build_dictionaries.py` remplace la dépendance externe `~/app/terms_tools`, mais reproduit les modèles **transformers** historiques (`en_core_web_trf`/`fr_dep_news_trf`, voir `GENERATION_MODELS` dans le script) plutôt que `load_model()` — un essai de faire coïncider génération/runtime avait dégradé le F1 (voir `planification/journal_versions.md`) |
+| Vérification des gold standards EN après régénération | **Validée sur 6/9 vocabs** | Régénéré et comparé : `27X_en` 2198/2198, `3JP_en` 5746/5746, `8HQ_en` 486/486, `B9M_en` 739/739, `BVM_en` 12143/12143 identiques à 100% (pattern+pref) ; `9SD_en` 12514/12515 (1 différence : acronyme `AND`/Andorre, ambiguïté CCONJ/PROPN sans contexte). **Test qualité confirmé** : F1 strictement identique au baseline sur les 6 vocabs (`27X` 74.7%, `3JP` 74.7%, `8HQ` 89.5%, `9SD` 94.4%, `B9M` 96.0%, `BVM` 85.0%). `JVR` (très gros vocab, 30k lignes CSV), `P66`, `QX8` (EN) et le lot FR restent en régénération arrière-plan — même méthode à appliquer à leur tour. `dictionary/` restauré à l'original après test (pas d'adoption partielle pour rester cohérent tant que le lot complet n'est pas validé) |
 
-### Phase 0.5 — Préparation architecturale ciblée (1 jour)
+**Travaux non prévus au plan, réalisés en cours de route (bugs bloquants découverts pendant les tests) :**
+- Fix moteur `dedupe()` : un terme composé ne perd plus face à ses propres fragments courts en cas de chevauchement par containment (ex. *"post-encoding stress effect"* vs *"encoding"* + *"stress"* séparés)
+- Fix sortie `--silent` : champ `text` manquant, cassait le pipeline de rendu HTML et le convertisseur prédiction→gold
+- Suppression de BOM UTF-8 sur 10 scripts shell
+- **Baseline de non-régression établi** : `tests/baselines/annotation_baseline_v1.0.0.json` — F1 global 83,9 % sur 16 combinaisons vocab/langue (mode annotate v1.0, à utiliser comme référence pour détecter toute régression future, y compris pendant le développement v2.0)
 
-Constat issu de l'analyse du code existant (`loterre_engine_v9_cli.py`, `loterre_cli.py`, `loterre_fast_path.py`) : **pas de réarchitecture complète nécessaire**, le moteur d'annotation est stable et ne doit pas être modifié. Mais deux manques bloqueraient un développement propre de l'extraction s'ils ne sont pas traités en amont :
+### Phase 0.5 — Préparation architecturale ciblée — **Terminée (2026-06-18)**
 
-- **Créer `src/loterre_extraction_base.py`** avec une dataclass `CandidateTerm` (`name`, `start`, `end`, `score`, `rule`, `metadata`) — évite que chaque nouveau module d'extraction réinvente sa propre structure de candidat (actuellement les matches sont des dicts ad-hoc créés à 4 endroits différents dans le moteur)
-- **Centraliser le chargement spaCy** dans une fonction unique réutilisable — actuellement `load_model()` est appelé séparément dans 3 chemins d'exécution (EZS, multiprocess, single-process) ; un module d'extraction ne doit pas dupliquer ce pattern une 4ᵉ fois
+Constat issu de l'analyse du code existant (`loterre_engine_v9_cli.py`, `loterre_cli.py`, `loterre_fast_path.py`) : **pas de réarchitecture complète nécessaire**, le moteur d'annotation est stable et ne doit pas être modifié.
+
+- ✅ **`src/loterre_extraction_base.py` créé** avec la dataclass `CandidateTerm` (`term`, `lemma`, `pattern`, `frequency`, `score`, `rule`, `occurrences`, `in_vocabulary`, `uri`, `pref`) — champs alignés exactement sur le schéma JSONL `candidate` décidé en Phase 0, `to_dict()` validé
+- ✅ **Chargement spaCy centralisé** via `get_nlp(lang)` — wrapper `lru_cache` autour de `load_model()` existant (pas de réimplémentation : `_worker_init` du multiprocess garde son propre chargement par process, c'est nécessaire ; EZS et single-process restent inchangés). `get_nlp()` évite qu'un futur mode `extract_annotate` charge le modèle deux fois (extraction + annotation) dans le même process — testé : deuxième appel retourne la même instance
 
 **Règle à respecter pendant tout le développement v2.0** : ne pas toucher à `match_document()` ni à la stratégie 5 passes du moteur existant. Tout le nouveau code (NC-value, PositionRank, embeddings) va dans des **fichiers séparés**, avec la même frontière subprocess que celle déjà utilisée par `loterre_fast_path.py`. Un peu de duplication (normalisation de texte, dedupe) est acceptable en échange de zéro risque de régression sur le moteur d'annotation testé.
 
-### Phase 1 — Module d'extraction de base (3-5 jours)
+### Phase 1 — Module d'extraction de base — **Terminée (2026-06-18)**
 
-- Implémenter la collecte des **noun chunks** via spaCy (`doc.noun_chunks`) avec filtres POS
-- Filtres : longueur minimale/maximale, stopwords, ponctuation, seuil de fréquence minimale
-- Comptage des occurrences et des fréquences de corpus
-- Commande CLI : `--mode extract` → sortie JSONL des candidats bruts
-- Tests unitaires sur corpus de référence français et anglais
+- ✅ `src/loterre_extract_cli.py` — collecte des **noun chunks** via `get_nlp(lang, parser=True)` (`doc.noun_chunks` exige le parser, désactivé par défaut pour l'annotateur — voir Phase 0.5)
+- ✅ Filtres : `clean_chunk_span()` retire les tokens non lexicaux en bord de chunk (déterminants, ponctuation…), `is_valid_candidate()` filtre par longueur min/max, présence de POS de contenu (NOUN/PROPN/ADJ), stopwords, ponctuation
+- ✅ Comptage des occurrences et fréquences sur l'ensemble du corpus (pas par document)
+- ✅ CLI autonome (`--text`, `--lang`, `--min-tokens`, `--max-tokens`, `--min-freq`, `--max-terms`, `--out`, `--silent`) — pas encore branché sur `--mode` de `loterre_cli.py` (prévu Phase 3)
+- ✅ Test smoke `tests/smoke/test_extract_cli.sh` validé sur P66_en (84 candidats) et P66_fr (10 candidats) — schéma `CandidateTerm` correct, seuil `--min-freq` respecté
+- Le champ `score` vaut la fréquence brute pour l'instant (`rule: "noun_chunk"`) — remplacé par le score NC-value en Phase 2
+- Exemples de candidats pertinents extraits sur P66_en : *controlled memory assessment*, *scientific discourse*, *selective attention*, *source memory* (correspondent à de vrais termes du vocabulaire Loterre P66)
 
-### Phase 2 — Scoring C-value (3-4 jours)
+### Phase 2 — Scoring C-value — **Cœur de l'algorithme terminé (2026-06-18)**
 
-- Implémenter l'algorithme C-value (Frantzi et al. 1998)
-- Gérer correctement les **termes emboîtés** (*"neural network"* dans *"deep neural network"*)
-- Paramètre de seuil configurable (`--cvalue-threshold`)
-- Validation sur corpus biomédical et corpus physique (corpus Loterre existants)
-- Comparaison quantitative sortie C-value Python vs sortie TermSuite sur les mêmes corpus
+- ✅ `src/loterre_cvalue.py` — algorithme C-value (Frantzi et al. 1998) implémenté
+- ✅ **Termes emboîtés gérés correctement** : `build_containment_map()` détecte les sous-séquences de lemmes contenues dans des candidats plus longs. Validé mathématiquement sur P66_en : *"controlled memories"* (freq=48, contenu dans *"controlled memory assessment"* freq=52, P(a)=1) → C-value = log2(2)×(48-52/1) = **-4.0**, conforme à la formule
+- ✅ Cas limite mono-token (Phase 0) traité : `single_token_score()` (repli fréquence normalisée) au lieu de C-value (toujours nul, log2(1)=0) — `rule="freq_single_token"` vs `rule="cvalue"`
+- ✅ Seuil configurable `--cvalue-threshold` sur `loterre_extract_cli.py`
+- ✅ Test smoke `tests/smoke/test_cvalue.sh` : vérifie le calcul exact sur un cas emboîté connu, le bon usage de la règle de repli mono-token, le tri par score, et le filtre de seuil
+- ⏸️ **Non fait** : extension contexte nominal (NC-value complet) — nécessiterait le suivi des positions de tokens (`CandidateTerm` n'a que des offsets caractères actuellement) ; C-value seul donne déjà des résultats pertinents (voir exemple P66_en : *"controlled memory assessment"* score=82.4 domine largement les mots génériques fréquents comme *"study"*/*"protocol"*, score=1.0)
+- ⏸️ **Non fait** : comparaison quantitative vs TermSuite — priorité secondaire (cf. décision Phase 0 : ACTER/D-Terminer sont les références principales, TermSuite secondaire)
 
-### Phase 3 — Intégration des 3 modes CLI (2-3 jours)
+### Complément Phase 2 — PositionRank + bascule automatique — **Terminé (2026-06-19)**
+
+C-value a besoin d'un grand volume de texte pour être fiable (~50 000 tokens minimum, voir `planification/analyse_benchmarks_extraction.md` §Dépendance au volume) — sur un corpus court, ses statistiques de fréquence/emboîtement sont trop bruitées. Implémentation de l'alternative prévue dès la conception (`--extractor {ncvalue,graph,embed,auto}`, Phase 0) :
+
+- ✅ `src/loterre_positionrank.py` — PositionRank (Florescu & Caragea 2017) en Python pur, sans dépendance graphe externe (pas de `networkx`) : graphe de co-occurrence pondéré entre mots de contenu (fenêtre configurable, défaut 4), score de position initial (`1/(index+1)`, les mots précoces comptent plus), PageRank biaisé par itération de puissance. Validé sur un exemple synthétique : un mot fréquent et précoce domine un mot rare et tardif
+- ✅ `extract_candidates()` capture le graphe de co-occurrence et le nombre total de tokens en un seul passage spaCy (pas de retraitement du corpus selon l'extracteur choisi ensuite)
+- ✅ `--extractor {ncvalue,graph,auto}` (défaut `auto`) et `--extractor-auto-threshold` (défaut `50000`) sur `loterre_extract_cli.py` — `auto` bascule sur `graph` (PositionRank) si le corpus a moins de tokens que le seuil, sinon `ncvalue` (C-value)
+- ✅ Champs `total_tokens`/`extractor` ajoutés au payload JSON de sortie, pour que l'utilisateur voie quel algorithme a été utilisé
+- ✅ Test smoke `tests/smoke/test_positionrank.sh` : bascule auto vérifiée dans les deux sens (seuil par défaut → graph sur P66_en à 2985 tokens ; seuil abaissé → ncvalue), `--extractor graph` explicite validé (scores positifs, triés)
+- `--extractor embed` (scoring par embeddings, Phase 5 du plan) reste non implémenté — seuls `ncvalue`/`graph`/`auto` existent pour l'instant
+
+### Phase 3 — Intégration des 3 modes CLI — **Terminée (2026-06-18)**
+
+`--mode {annotate,extract,extract_annotate}` ajouté à `loterre_cli.py` dans un premier temps (nom canonique avec underscore, pas `+`, pour rester un identifiant argparse simple), puis **remplacé par des sous-commandes positionnelles** (`annotate`/`extract`/`extract_annotate`, voir §CLI ci-dessous) le 2026-06-19 pour plus de clarté (chaque sous-commande n'affiche que ses propres paramètres dans `--help`, au lieu d'une liste à plat avec des params ignorés selon le mode) :
 
 ```bash
-# Annotation seule (comportement actuel, inchangé)
-loterre-annotate --mode annotate --dict P66 texte.txt
+# Annotation seule (comportement v1.0, inchangé — 0 régression vérifiée par diff)
+python3 src/loterre_cli.py annotate --dict-id P66_en --profile term_recall --text texte.jsonl --silent
 
-# Extraction seule
-loterre-annotate --mode extract --lang fr texte.txt
+# Extraction seule (frontière subprocess vers loterre_extract_cli.py)
+python3 src/loterre_cli.py extract --lang en --text texte.jsonl --silent
 
-# Extraction + annotation (nouveau mode combiné)
-loterre-annotate --mode extract+annotate --dict P66 --lang fr texte.txt
+# Extraction + annotation (croisement par span exact)
+python3 src/loterre_cli.py extract_annotate --dict-id P66_en --profile term_recall --text texte.jsonl --silent
 ```
 
-En mode `extract+annotate` : les candidats C-value sont passés directement au moteur Trie existant. Le JSON de sortie enrichit chaque candidat avec `in_vocabulary: true/false` et l'URI si présent.
+- ✅ `run_extraction_subprocess()` réutilise le pattern subprocess existant (comme `run_engine_full_json()`)
+- ✅ `extract_annotate` : exécute extraction + annotation sur le même texte, puis `cross_reference_candidates()` enrichit chaque candidat avec `in_vocabulary`/`uri`/`pref` — réutilise le moteur Trie existant tel quel via son JSON de sortie, aucune réimplémentation du lookup
+- 🐛 **Bug trouvé et corrigé pendant les tests** : le croisement initial utilisait un simple chevauchement de span, ce qui attribuait à tort un candidat composé (*"controlled memory assessment"*) au `pref` d'un sous-terme qu'il contient (*"memory"*). Puis un second bug, plus subtil : les offsets caractères étant locaux à chaque document du corpus, deux occurrences de documents différents pouvaient partager le même `(start, end)` par coïncidence. Corrigé en ajoutant `doc_id` à `Occurrence` et en croisant par triplet `(doc_id, start, end)` exact
+- ✅ Tests de régression `tests/smoke/test_extract_annotate_cli.sh` : `annotate` identique au comportement v1.0 (diff hors timings), `extract` fonctionnel via la CLI principale, `extract_annotate` sans aucun faux croisement (62 reconnus, 22 absents, 0 erreur)
+
+**Refonte CLI en sous-commandes positionnelles — Terminée (2026-06-19)** : `--mode` (flag optionnel à plat) remplacé par une sous-commande obligatoire en position 1 (`argparse.add_subparsers(dest="mode", required=True)`), chaque sous-commande déclarant uniquement ses propres paramètres. Contrainte respectée : `--dict-id`/`--profile`/`--lang` restent optionnels au niveau argparse (pas `required=True`) car ils peuvent être fournis via `--config` YAML à la place (voir `resolve_effective_params()`). Pour éviter de régresser le coût de démarrage du mode `--execution-strategy fast` (qui ne doit pas charger spaCy), les paramètres d'extraction sont dupliqués localement dans `loterre_cli.py` (`_add_extraction_args()`) plutôt qu'importés depuis `loterre_extract_cli.py` — un import aurait chargé spaCy au niveau module, mesuré à ~1.3s, dans tous les appels CLI y compris ceux qui n'en ont pas besoin. Tous les appelants internes (tests smoke, `scripts/evaluation/run_eval.sh`, `scripts/benchmark/benchmark_fast_path.sh`, `src/loterre_benchmark.py`) mis à jour vers la nouvelle syntaxe.
+- 🐛 **Bug pré-existant découvert et corrigé en cours de route** (sans lien avec la refonte CLI) : `tests/smoke/test_annotate_cli.sh` pipait `cat fichier.jsonl | python3 ... --config ...` alors que le `--config` fournit déjà `text:` — le moteur ne lisait jamais stdin, donc `cat` recevait SIGPIPE (exit 141) dès la 2ᵉ itération de la boucle, et `pipefail` arrêtait silencieusement le test après un seul vocabulaire sur 16. Corrigé en supprimant le pipe `cat` redondant.
 
 ### Phase 4 — Détection de variantes (3-5 jours)
 

@@ -63,7 +63,7 @@
 ### Fonctionnalités prévues
 
 - Extraction de candidats termes par algorithme C-value (Frantzi et al. 1998)
-- Trois modes CLI : `--mode annotate` / `--mode extract` / `--mode extract+annotate`
+- Trois sous-commandes CLI : `annotate` / `extract` / `extract_annotate`
 - Détection de variantes morphologiques, graphiques et syntaxiques
 - Croisement extraction/vocabulaire Loterre natif
 - Option re-ranking par sentence-transformers (`--extractor bert`)

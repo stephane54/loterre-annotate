@@ -1,0 +1,30 @@
+{
+  "_meta": {
+    "description": "Baseline de non-régression pour le moteur d'annotation (mode local v9), à comparer lors de futures exécutions de tests/smoke/compare_engines.sh.",
+    "date": "2026-06-18",
+    "version": "v1.0.0",
+    "context": "Capturé après correction de 3 bugs : (1) modèle EN par défaut revenu à en_core_web_sm/fr_core_news_sm (régression scispaCy corrigée), (2) dedupe() priorise désormais les segments les plus longs sur les chevauchements par containment, (3) champ 'text' ajouté à la sortie --silent.",
+    "command": "bash tests/smoke/compare_engines.sh --skip-api --skip-resolvers --out-dir <out>",
+    "tolerance_recommandee_f1_pts": 1.5,
+    "notes": "BVM_en/B9M_fr légèrement sous le niveau documenté dans docs/README.md §13.4 (juin 2026) — cause identifiée et confirmée indépendante des corrections du jour : mismatch de tagging POS entre le dictionnaire (généré avec en_core_web_trf/fr_dep_news_trf) et le runtime (en_core_web_sm/fr_core_news_sm), pas une régression introduite par les fixes ci-dessus."
+  },
+  "results": {
+    "27X_en": {"recall": 95.8, "precision": 61.2, "f1": 74.7, "both": 316},
+    "27X_fr": {"recall": 100.0, "precision": 20.5, "f1": 34.1, "both": 30},
+    "3JP_en": {"recall": 99.3, "precision": 59.8, "f1": 74.7, "both": 298},
+    "8HQ_en": {"recall": 81.0, "precision": 100.0, "f1": 89.5, "both": 243},
+    "8HQ_fr": {"recall": 34.9, "precision": 60.0, "f1": 44.1, "both": 15},
+    "9SD_en": {"recall": 93.0, "precision": 95.9, "f1": 94.4, "both": 279},
+    "9SD_fr": {"recall": 96.9, "precision": 79.5, "f1": 87.3, "both": 31},
+    "B9M_en": {"recall": 92.3, "precision": 100.0, "f1": 96.0, "both": 277},
+    "B9M_fr": {"recall": 97.2, "precision": 43.2, "f1": 59.8, "both": 35},
+    "BVM_en": {"recall": 92.3, "precision": 78.7, "f1": 85.0, "both": 277},
+    "BVM_fr": {"recall": 97.0, "precision": 69.6, "f1": 81.0, "both": 32},
+    "JVR_en": {"recall": 100.0, "precision": 87.7, "f1": 93.5, "both": 300},
+    "P66_en": {"recall": 95.4, "precision": 74.7, "f1": 83.8, "both": 330},
+    "P66_fr": {"recall": 100.0, "precision": 49.4, "f1": 66.1, "both": 42},
+    "QX8_en": {"recall": 98.3, "precision": 100.0, "f1": 99.2, "both": 295},
+    "QX8_fr": {"recall": 85.4, "precision": 72.9, "f1": 78.7, "both": 35}
+  },
+  "total": {"recall": 93.5, "precision": 76.1, "f1": 83.9}
+}

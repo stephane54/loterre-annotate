@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 # Non-regression smoke test focused on P66 flow:
@@ -24,7 +24,7 @@ BULK_IN="$OUTDIR/bulk_in"
 BULK_OUT="$OUTDIR/bulk_out"
 
 echo "[1/4] CLI prediction"
-if python3 "$CLI" --dict-id P66_en --text "$INPUT" --silent > "$PRED_JSON"; then
+if python3 "$CLI" annotate --dict-id P66_en --text "$INPUT" --silent > "$PRED_JSON"; then
   echo "OK CLI prediction generated"
 else
   echo "WARN: CLI prediction skipped (missing runtime model/dependency), using fixture predictions"

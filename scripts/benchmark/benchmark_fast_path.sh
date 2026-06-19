@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 CLI="${1:-./src/loterre_cli.py}"
@@ -11,7 +11,7 @@ OUTDIR="${6:-./bench_outputs}"
 mkdir -p "$OUTDIR"
 
 echo "== Standard v9 =="
-time python "$CLI" --dict-id "$DICT_ID" --text "$TEXT" --silent > "$OUTDIR/${DICT_ID}.v9.json"
+time python "$CLI" annotate --dict-id "$DICT_ID" --text "$TEXT" --silent > "$OUTDIR/${DICT_ID}.v9.json"
 
 echo
 echo "== Fast path =="

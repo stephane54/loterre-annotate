@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env bash
+#!/usr/bin/env bash
 # Génère un profil YAML pour chaque dictionnaire trouvé dans DICTS_DIR.
 #
 # Découverte automatique : tous les fichiers {lang}_annot_{CODE}.jsonl

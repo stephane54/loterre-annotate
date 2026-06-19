@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -11,7 +11,7 @@ OUTDIR="${2:-./outputs_tests_v9_cli}"
 mkdir -p "$OUTDIR"
 
 echo "== Test 1: génération YAML auto-profile P66 =="
-python3 "$CLI" \
+python3 "$CLI" annotate \
   --text data/jsonl/P66_en.jsonl \
   --dict-id P66_en \
   --auto-profile \
@@ -20,7 +20,7 @@ python3 "$CLI" \
 
 echo
 echo "== Test 2: génération YAML auto-profile 9SD avec profil imposé =="
-python3 "$CLI" \
+python3 "$CLI" annotate \
   --text data/jsonl/9SD_en.jsonl \
   --dict-id 9SD_en \
   --profile entity_strict \
@@ -30,14 +30,14 @@ python3 "$CLI" \
 
 echo
 echo "== Test 3: annotation P66 via stdin + --silent =="
-cat data/jsonl/P66_en.jsonl | python3 "$CLI" \
+cat data/jsonl/P66_en.jsonl | python3 "$CLI" annotate \
   --dict-id P66_en \
   --silent \
   > "$OUTDIR/p66_stdin_silent.json"
 
 echo
 echo "== Test 4: annotation P66 via fichier + --api =="
-python3 "$CLI" \
+python3 "$CLI" annotate \
   --text data/jsonl/P66_en.jsonl \
   --dict-id P66_en \
   --api \
@@ -45,7 +45,7 @@ python3 "$CLI" \
 
 echo
 echo "== Test 5: annotation 9SD via fichier =="
-python3 "$CLI" \
+python3 "$CLI" annotate \
   --text data/jsonl/9SD_en.jsonl \
   --dict-id 9SD_en \
   --out "$OUTDIR/annotation_9SD_en.md" \
@@ -53,21 +53,21 @@ python3 "$CLI" \
 
 echo
 echo "== Test 6: annotation 9SD via stdin + --silent =="
-cat data/jsonl/9SD_en.jsonl | python3 "$CLI" \
+cat data/jsonl/9SD_en.jsonl | python3 "$CLI" annotate \
   --dict-id 9SD_en \
   --silent \
   > "$OUTDIR/9sd_stdin_silent.json"
 
 echo
 echo "== Test 7: annotation P66 avec config YAML rapide (1 seul document) =="
-python3 "$CLI" \
+python3 "$CLI" annotate \
   --config configs/example_p66_en_quick.yaml \
   --out "$OUTDIR/annotation_P66_en_quick.md" \
   --report "$OUTDIR/report_P66_en_quick.md"
 
 echo
 echo "== Test 8: test qualité anti-bruit (and/it) sur 9SD =="
-printf '%s\n' '{"id":"bad1","value":"and is here"}' '{"id":"bad2","value":"it is here"}' | python3 "$CLI" \
+printf '%s\n' '{"id":"bad1","value":"and is here"}' '{"id":"bad2","value":"it is here"}' | python3 "$CLI" annotate \
   --dict-id 9SD_en \
   --silent \
   > "$OUTDIR/quality_false_positive_guard.json"
@@ -76,7 +76,7 @@ printf '%s\n' '{"id":"bad1","value":"and is here"}' '{"id":"bad2","value":"it is
 
 echo
 echo "== Test 9: auto-profile P66_fr (français) =="
-python3 "$CLI" \
+python3 "$CLI" annotate \
   --text data/jsonl/P66_fr.jsonl \
   --dict-id P66_fr \
   --auto-profile \
@@ -85,7 +85,7 @@ python3 "$CLI" \
 
 echo
 echo "== Test 10: annotation P66_fr --silent (variants flexionnels) =="
-python3 "$CLI" \
+python3 "$CLI" annotate \
   --text data/jsonl/P66_fr.jsonl \
   --dict-id P66_fr \
   --silent \
@@ -105,7 +105,7 @@ PY
 
 echo
 echo "== Test 11: annotation B9M_fr --silent (biologie FR) =="
-python3 "$CLI" \
+python3 "$CLI" annotate \
   --text data/jsonl/B9M_fr.jsonl \
   --dict-id B9M_fr \
   --silent \
@@ -113,7 +113,7 @@ python3 "$CLI" \
 
 echo
 echo "== Test 12: test qualité anti-bruit FR (et/ou) sur P66_fr =="
-printf '%s\n' '{"id":"bruit1","value":"et ou ni mais"}' '{"id":"bruit2","value":"il elle on bien"}' | python3 "$CLI" \
+printf '%s\n' '{"id":"bruit1","value":"et ou ni mais"}' '{"id":"bruit2","value":"il elle on bien"}' | python3 "$CLI" annotate \
   --dict-id P66_fr \
   --silent \
   > "$OUTDIR/quality_fr_false_positive_guard.json"
@@ -128,7 +128,7 @@ PY
 
 echo
 echo "== Test 13: annotation QX8_fr --silent (géosciences FR) =="
-python3 "$CLI" \
+python3 "$CLI" annotate \
   --text data/jsonl/QX8_fr.jsonl \
   --dict-id QX8_fr \
   --silent \

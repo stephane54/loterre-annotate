@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env bash
+#!/usr/bin/env bash
 # compare_engines.sh — benchmark local Dev v9 vs deux APIs de production
 #
 # Trois moteurs comparés :
@@ -11,7 +11,7 @@
 #
 # Options (all optional, defaults shown):
 #   --text-root      DIR    Gold JSONL directory      (default: data/jsonl)
-#   --out-dir        DIR    Output directory           (default: benchmark_results)
+#   --out-dir        DIR    Output directory           (default: benchmark_results/<horodatage>_<moteurs>)
 #   --cli            FILE   loterre_cli.py path        (default: src/loterre_cli.py)
 #   --renderer       FILE   loterre_html_renderer.py   (default: src/loterre_html_renderer.py)
 #   --vocabs         LIST   Comma-separated codes      (default: all)
@@ -48,9 +48,29 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
+# Détermine un suffixe selon les moteurs effectivement comparés, pour que le
+# nom du répertoire indique ce qu'il contient (évite de confondre un run
+# local-only avec un run complet local+api+resolvers).
+ENGINES="local"
+case " $* " in
+  *" --skip-api "*)       : ;;
+  *)                      ENGINES="${ENGINES}_api" ;;
+esac
+case " $* " in
+  *" --skip-resolvers "*) : ;;
+  *)                      ENGINES="${ENGINES}_resolvers" ;;
+esac
+
+DEFAULT_OUT_DIR="$PROJECT_DIR/benchmark_results/$(date +%Y%m%d_%H%M%S)_${ENGINES}"
+
+# Chaque exécution écrit dans un répertoire neuf et horodaté par défaut —
+# évite qu'un summary réutilise des fichiers api/resolvers d'un run précédent
+# (loterre_benchmark.py agrège les stats dès que le fichier JSON existe sur
+# disque, --skip-api/--skip-resolvers ne sautent que l'appel réseau).
+# Surcharge possible via $OUT_DIR ou --out-dir explicite.
 python3 "$PROJECT_DIR/src/loterre_benchmark.py" \
     --text-root  "${TEXT_ROOT:-$PROJECT_DIR/data/jsonl}" \
-    --out-dir    "${OUT_DIR:-$PROJECT_DIR/benchmark_results}" \
+    --out-dir    "${OUT_DIR:-$DEFAULT_OUT_DIR}" \
     --cli        "${CLI:-$PROJECT_DIR/src/loterre_cli.py}" \
     --renderer   "${RENDERER:-$PROJECT_DIR/src/loterre_html_renderer.py}" \
     "$@"

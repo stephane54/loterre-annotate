@@ -1,10 +1,9 @@
-﻿#!/usr/bin/env bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 cd "$REPO_ROOT"
-TEXT="./data/jsonl"
 
 CLI="${1:-./src/loterre_cli.py}"
 OUTDIR="${2:-./outputs_predictions}"
@@ -19,7 +18,9 @@ function annotate_fr () {
     echo
     echo "== Annotation FR basée sur ${code} =="
 
-    cat ${TEXT}/${code}_fr.jsonl | python3 "$CLI" \
+    # pas de pipe stdin : le --config fournit déjà "text:", le moteur ne lit
+    # jamais stdin ici (cat | ... causerait un SIGPIPE sous pipefail).
+    python3 "$CLI" annotate \
       --config "configs/${code}_fr_auto_profile.yaml" \
       --out "$O/${code}_fr_annotation.md"
   done
@@ -31,7 +32,9 @@ function annotate_en () {
     echo
     echo "== Annotation EN basée sur ${code} =="
 
-    cat ${TEXT}/${code}_en.jsonl | python3 "$CLI" \
+    # pas de pipe stdin : le --config fournit déjà "text:", le moteur ne lit
+    # jamais stdin ici (cat | ... causerait un SIGPIPE sous pipefail).
+    python3 "$CLI" annotate \
       --config "configs/${code}_en_auto_profile.yaml" \
       --out "$O/${code}_en_annotation.md"
   done

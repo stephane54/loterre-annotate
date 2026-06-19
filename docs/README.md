@@ -705,6 +705,27 @@ benchmark_results/
 
 > **Note JVR** : l'API production retourne quasi aucun résultat pour ce vocabulaire (temps de réponse ~40s/batch vs 4s pour les autres) — le vocabulaire semble non chargé côté serveur.
 
+### 13.5 Baseline de non-régression — moteur local v9 (juin 2026, EN+FR)
+
+Capturée après correction de 3 bugs (régression scispaCy, priorité aux segments longs dans `dedupe()`, champ `text` manquant en sortie `--silent`). Fichier source : `tests/baselines/annotation_baseline_v1.0.0.json`.
+
+| Vocab | EN F1% | FR F1% |
+|---|---|---|
+| 27X | 74.7 | 34.1 |
+| 3JP | 74.7 | — |
+| 8HQ | 89.5 | 44.1 |
+| 9SD | 94.4 | 87.3 |
+| B9M | 96.0 | 59.8 |
+| BVM | 85.0 | 81.0 |
+| JVR | 93.5 | — |
+| P66 | 83.8 | 66.1 |
+| QX8 | 99.2 | 78.7 |
+| **TOTAL (16 combinaisons)** | **83.9** (R=93.5%, P=76.1%) | |
+
+> **BVM_en / B9M_fr légèrement sous la table 13.4** : cause identifiée — mismatch de tagging POS entre le dictionnaire (généré avec `en_core_web_trf`/`fr_dep_news_trf`) et le runtime (`en_core_web_sm`/`fr_core_news_sm`), confirmé indépendant des 3 correctifs ci-dessus (reproduit à l'identique avec l'ancien moteur via `git stash`).
+
+Reproduire : `bash tests/smoke/compare_engines.sh --skip-api --skip-resolvers --out-dir <répertoire>`
+
 ---
 
 ## 14. Performance
