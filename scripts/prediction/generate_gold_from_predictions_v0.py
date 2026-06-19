@@ -39,8 +39,12 @@ def main():
         pred_path = pred_dir / f"{Path(pair['text_file']).stem}__{Path(pair['dict_file']).stem}.pred.json"
         gold_path = gold_dir / f"gold_{Path(pair['text_file']).stem}__{Path(pair['dict_file']).stem}.jsonl"
 
-        cmd = [
-            sys.executable, args.engine,
+        cmd = [sys.executable, args.engine]
+        if Path(args.engine).name == "loterre_cli.py":
+            # loterre_cli.py takes a required positional subcommand; the raw
+            # loterre_engine_v9_cli.py (also accepted via --engine) does not.
+            cmd.append("annotate")
+        cmd += [
             "--text", str(text_path),
             "--dict", str(dict_path),
             "--lang", pair["lang"],

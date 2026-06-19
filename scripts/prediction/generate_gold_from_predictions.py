@@ -132,8 +132,12 @@ def run_job(engine: Path, job: dict, outdir: Path, timeout: int) -> dict:
     pred_path = pred_dir / f"{dict_id}.pred.json"
     gold_path = gold_dir / f"gold_{dict_id}.jsonl"
 
-    cmd = [
-        sys.executable, str(engine),
+    cmd = [sys.executable, str(engine)]
+    if engine.name == "loterre_cli.py":
+        # loterre_cli.py takes a required positional subcommand; the raw
+        # loterre_engine_v9_cli.py (also accepted via --engine) does not.
+        cmd.append("annotate")
+    cmd += [
         "--text", job["text"],
         "--dict", job["dict"],
         "--lang", job["lang"],

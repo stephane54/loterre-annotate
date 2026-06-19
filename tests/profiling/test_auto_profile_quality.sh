@@ -12,7 +12,7 @@ mkdir -p "$OUTDIR"
 
 for code in P66 9SD 8HQ B9M 27X BVM QX8 3JP JVR; do
   echo "== Auto-profile en ${code} =="
-  python3 "$CLI" \
+  python3 "$CLI" annotate \
     --text data/jsonl/${code}_en.jsonl \
     --dict-id  ${code}_en \
     --auto-profile \
@@ -23,7 +23,7 @@ echo
 
 for code in P66 9SD 8HQ B9M 27X BVM QX8; do
   echo "== Auto-profile fr ${code} =="
-  python3 "$CLI" \
+  python3 "$CLI" annotate \
     --text data/jsonl/${code}_fr.jsonl \
     --dict-id  ${code}_fr \
     --auto-profile \

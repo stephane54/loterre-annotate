@@ -267,7 +267,7 @@ def find_gold(root, code, lang, dict_id):
 
 def run_engine(cli, dict_id, text_file, json_out, extra):
     Path(json_out).parent.mkdir(parents=True, exist_ok=True)
-    cmd = [sys.executable, str(cli), "--dict-id", dict_id, "--text", str(text_file), "--silent"] + extra
+    cmd = [sys.executable, str(cli), "annotate", "--dict-id", dict_id, "--text", str(text_file), "--silent"] + extra
     proc = subprocess.run(cmd, capture_output=True, text=True)
     if proc.returncode != 0:
         raise RuntimeError("Engine failed for {}\n{}".format(dict_id, proc.stderr))
