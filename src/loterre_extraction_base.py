@@ -64,6 +64,7 @@ class CandidateTerm:
 
     def to_dict(self) -> dict[str, Any]:
         return {
+            "uri": self.uri,
             "term": self.term,
             "lemma": self.lemma,
             "pattern": self.pattern,
@@ -72,6 +73,5 @@ class CandidateTerm:
             "rule": self.rule,
             "occurrences": [{"start": o.start, "end": o.end, "doc_id": o.doc_id} for o in self.occurrences],
             "in_vocabulary": self.in_vocabulary,
-            "uri": self.uri,
             "pref": self.pref,
         }

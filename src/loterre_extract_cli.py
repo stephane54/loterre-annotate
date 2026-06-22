@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -30,13 +31,35 @@ from loterre_extraction_base import CandidateTerm, Occurrence, get_nlp
 _EDGE_STRIP_POS = frozenset({"DET", "PRON", "ADP", "CCONJ", "SCONJ", "PUNCT", "PART", "AUX"})
 _CONTENT_POS = frozenset({"NOUN", "PROPN", "ADJ"})
 
+# Élisions FR ("l'", "d'", "qu'", "jusqu'", ...) : fr_core_news_sm les
+# mistague souvent en NOUN au lieu de DET (vu avec l'apostrophe typographique
+# "’"), ce qui casse aussi l'analyse de dépendances en aval. On les détecte
+# par motif textuel, indépendamment du POS, pour pouvoir quand même les
+# retirer des bords d'un chunk.
+_ELISION_RE = re.compile(
+    r"^(l|d|n|m|t|s|c|j|qu|jusqu|lorsqu|puisqu|quoiqu|presqu)['’]$", re.IGNORECASE
+)
+
+
+def _is_edge_strippable(token) -> bool:
+    if token.pos_ in _EDGE_STRIP_POS:
+        return True
+    # "fixed" = composant d'une locution figée (ex. "à travers", "à partir
+    # de") — jamais du contenu à lui seul, même si son POS individuel (ex.
+    # NOUN pour "travers") suggère le contraire.
+    if token.dep_ == "fixed":
+        return True
+    if _ELISION_RE.match(token.text):
+        return True
+    return False
+
 
 def clean_chunk_span(chunk):
     """Retire les tokens non lexicaux en tête/fin d'un noun chunk."""
     start, end = 0, len(chunk)
-    while start < end and chunk[start].pos_ in _EDGE_STRIP_POS:
+    while start < end and _is_edge_strippable(chunk[start]):
         start += 1
-    while end > start and chunk[end - 1].pos_ in _EDGE_STRIP_POS:
+    while end > start and _is_edge_strippable(chunk[end - 1]):
         end -= 1
     return chunk[start:end]
 

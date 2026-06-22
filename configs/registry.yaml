@@ -49,6 +49,11 @@ dictionaries:
     lang: fr
     profile: term_recall       # variants flexionnels FR, avg_len=1.53
 
+  X64_fr:
+    path: ../dictionary/fr_annot_X64.jsonl
+    lang: fr
+    profile: term_recall
+
   BVM_en:
     path: ../dictionary/en_annot_BVM.jsonl
     lang: en
@@ -73,6 +78,11 @@ dictionaries:
     path: ../dictionary/en_annot_3JP.jsonl
     lang: en
     profile: entity_strict     # mono=47%, précision mesurée ~55% avec term_recall → trop de faux positifs
+
+  X64_en:
+    path: ../dictionary/en_annot_X64.jsonl
+    lang: en
+    profile: term_recall
 
   JVR_en:
     path: ../dictionary/en_annot_JVR.jsonl
