@@ -58,7 +58,7 @@ loterre-v9/
 │   ├── loterre_fast_path.py       # matching rapide par regex
 │   ├── loterre_html_renderer.py   # rendu HTML interactif + comparaison gold
 │   ├── loterre_api_eval.py        # évaluation de l'API production ISTEX
-│   └── loterre_benchmark.py       # benchmark local v9 vs API production
+│   └── loterre_benchmark.py       # benchmark loterre_cli (local) vs API terms-tools + Resolvers
 │
 ├── configs/
 │   ├── registry.yaml              # index des dictionnaires disponibles
@@ -73,7 +73,7 @@ loterre-v9/
 │   │   ├── test_v9_cli.sh
 │   │   ├── test_p66_non_regression.sh
 │   │   ├── render_html_annotation.sh  # génère les HTML locaux
-│   │   └── compare_engines.sh         # benchmark local v9 vs API
+│   │   └── compare_engines.sh         # benchmark loterre_cli (local) vs API
 │   ├── quality/
 │   │   └── test_v9_contextual.sh
 │   └── profiling/
@@ -102,7 +102,7 @@ loterre-v9/
 
 **Répertoires de sortie** (non versionnés) :
 ```text
-html_outputs/        # HTML du moteur local v9 vs gold (render_html_annotation.sh)
+html_outputs/        # HTML de loterre_cli (local) vs gold (render_html_annotation.sh)
 html_api/            # HTML de l'API production vs gold (loterre_api_eval.py)
 benchmark_results/   # résultats complets du benchmark (compare_engines.sh)
 ```
@@ -678,8 +678,8 @@ bash tests/smoke/compare_engines.sh --skip-local
 **Sortie** :
 ```text
 benchmark_results/
-  local/json/P66_en.json     ← prédictions moteur local v9
-  local/html/P66_en.html     ← HTML local v9 vs gold
+  local/json/P66_en.json     ← prédictions loterre_cli (local)
+  local/html/P66_en.html     ← HTML loterre_cli (local) vs gold
   api/json/P66_en.json       ← prédictions API production
   api/html/P66_en.html       ← HTML API vs gold
   summary.tsv                ← tableau comparatif (tabulation)
@@ -690,7 +690,7 @@ benchmark_results/
 
 Évaluation sur le corpus gold complet (9 vocabulaires anglais) :
 
-| Vocab | API R% | API F1% | v9 R% | v9 F1% | ΔF1 |
+| Vocab | API R% | API F1% | cli R% | cli F1% | ΔF1 |
 |---|---|---|---|---|---|
 | QX8 | 90.0 | 93.4 | 98.3 | 99.2 | +5.7 |
 | B9M | 90.7 | 91.1 | 94.3 | 97.1 | +6.0 |
@@ -705,7 +705,7 @@ benchmark_results/
 
 > **Note JVR** : l'API production retourne quasi aucun résultat pour ce vocabulaire (temps de réponse ~40s/batch vs 4s pour les autres) — le vocabulaire semble non chargé côté serveur.
 
-### 13.5 Baseline de non-régression — moteur local v9 (juin 2026, EN+FR)
+### 13.5 Baseline de non-régression — loterre_cli (local), (juin 2026, EN+FR)
 
 Capturée après correction de 3 bugs (régression scispaCy, priorité aux segments longs dans `dedupe()`, champ `text` manquant en sortie `--silent`). Fichier source : `tests/baselines/annotation_baseline_v1.0.0.json`.
 
@@ -761,14 +761,14 @@ Reproduire : `bash tests/smoke/compare_engines.sh --skip-api --skip-resolvers --
 make install          # pip install -r requirements.txt
 make models           # télécharge en_core_web_sm + fr_core_news_sm
 
-make test             # smoke + profiling + quality (les 3 suites)
+make test             # smoke + profiling + quality + extraction (les 4 suites)
 make test-smoke       # 13 smoke tests CLI (EN + FR)
 make test-non-regression  # non-régression P66_en complète
 make test-profiling   # auto-profiling sur tous les vocabulaires EN + FR
 make test-quality     # filtrage contextuel (discourse guard, stopwords)
-make test-api         # appel API production ISTEX (nécessite réseau)
+make test-extraction  # extraction v2.0 : extract / cvalue / positionrank / extract_annotate
 
-make benchmark                           # benchmark local v9 vs API, tous vocabs
+make benchmark                           # benchmark loterre_cli (local) vs API, tous vocabs
 make benchmark BENCHMARK_ARGS="--skip-api"         # local uniquement
 make benchmark BENCHMARK_ARGS="--vocabs P66_en,9SD_en"  # sous-ensemble
 
@@ -787,11 +787,11 @@ bash tests/smoke/test_v9_cli.sh
 # Non-régression P66_en
 bash tests/smoke/test_p66_non_regression.sh
 
-# HTML local v9 vs gold (tous vocabulaires EN + FR auto-découverts)
+# HTML loterre_cli (local) vs gold (tous vocabulaires EN + FR auto-découverts)
 bash tests/smoke/render_html_annotation.sh \
   ./src/loterre_cli.py data/jsonl ./html_outputs ./src/loterre_html_renderer.py
 
-# Benchmark local v9 vs API production (EN + FR)
+# Benchmark loterre_cli (local) vs API production (EN + FR)
 bash tests/smoke/compare_engines.sh
 
 # Benchmark FR uniquement, sans API
