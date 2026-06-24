@@ -178,8 +178,13 @@ def run_extraction_subprocess(args, effective: Dict[str, Any]) -> Dict[str, Any]
     cmd.extend(["--cvalue-threshold", str(args.cvalue_threshold)])
     cmd.extend(["--extractor", args.extractor])
     cmd.extend(["--extractor-auto-threshold", str(args.extractor_auto_threshold)])
+    cmd.extend(["--embed-threshold", str(args.embed_threshold)])
+    if effective.get("dict"):
+        cmd.extend(["--dict", effective["dict"]])
     if args.max_terms:
         cmd.extend(["--max-terms", str(args.max_terms)])
+    if args.detect_variants:
+        cmd.append("--detect-variants")
 
     proc = subprocess.run(cmd, capture_output=True, text=True)
     if proc.returncode != 0:
@@ -214,6 +219,15 @@ def run_extract_annotate_mode(args, effective: Dict[str, Any]) -> None:
 
     candidates = extraction_payload.get("candidates", [])
     cross_reference_candidates(candidates, annotation_payload.get("results", []))
+
+    # Phase 5 : un candidat absent du vocabulaire mais très proche d'un de
+    # ses termes (score embed élevé, plus proche voisin) est une suggestion
+    # d'enrichissement — n'a de sens que pour l'extracteur embed (score =
+    # similarité cosinus, pas comparable au score ncvalue/positionrank).
+    if extraction_payload.get("extractor") == "embed":
+        for c in candidates:
+            if c.get("in_vocabulary") is False:
+                c["enrichment_suggestion"] = c.get("score", 0.0) >= args.enrichment_threshold
 
     payload = {
         **extraction_payload,
@@ -399,19 +413,27 @@ def _add_extraction_args(parser: argparse.ArgumentParser) -> None:
                          help="Longueur minimale d'un candidat, en tokens (défaut 1)")
     parser.add_argument("--max-tokens", type=int, default=6,
                          help="Longueur maximale d'un candidat (défaut 6)")
-    parser.add_argument("--min-freq", type=int, default=2,
-                         help="Fréquence minimale dans le corpus pour retenir un candidat (défaut 2)")
+    parser.add_argument("--min-freq", type=int, default=3,
+                         help="Fréquence minimale dans le corpus pour retenir un candidat (défaut 3)")
     parser.add_argument("--cvalue-threshold", type=float, default=0.0,
                          help="Score C-value minimal (ou fréquence normalisée pour les mono-tokens) ; "
                               "0 = pas de filtre (défaut 0.0)")
-    parser.add_argument("--extractor", choices=["ncvalue", "graph", "auto"], default="auto",
+    parser.add_argument("--extractor", choices=["ncvalue", "graph", "embed", "auto"], default="auto",
                          help="Algorithme de scoring (défaut auto) : ncvalue=C-value (corpus volumineux), "
-                              "graph=PositionRank (corpus court), auto=bascule selon --extractor-auto-threshold")
+                              "graph=PositionRank (corpus court), embed=similarité au vocabulaire cible "
+                              "(Phase 5, nécessite --dict), auto=bascule entre ncvalue/graph (jamais embed)")
     parser.add_argument("--extractor-auto-threshold", type=int, default=50000,
                          help="Nombre de tokens du corpus en dessous duquel --extractor auto bascule "
                               "vers PositionRank (défaut 50000)")
+    parser.add_argument("--embed-threshold", type=float, default=0.0,
+                         help="[--extractor embed] Similarité cosinus minimale ; 0 = pas de filtre (défaut 0.0)")
     parser.add_argument("--max-terms", type=int, default=None,
                          help="Garde les N meilleurs candidats, triés par score décroissant (défaut illimité)")
+    parser.add_argument("--detect-variants", action="store_true",
+                         help="Phase 4 : regroupe les variantes (graphiques/morphologiques/syntaxiques) "
+                              "et renseigne canonical_form/variant_type. Option explicite (défaut "
+                              "désactivé) — ne change rien à la sortie existante tant qu'elle n'est pas "
+                              "demandée.")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -458,6 +480,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p_extract.add_argument("--lang", choices=["en", "fr"], help="Langue (requis)")
     p_extract.add_argument("--text", help="Fichier JSONL source ({\"id\":..., \"value\":...} par ligne) ; lit stdin si omis")
+    p_extract.add_argument("--dict", help="[--extractor embed] Chemin du dictionnaire JSONL cible (comparé par plus proche voisin)")
     p_extract.add_argument("--registry", default=_find_registry(), help=argparse.SUPPRESS)
     p_extract.add_argument("--out", help="Fichier de sortie (sinon stdout)")
     p_extract.add_argument("--silent", action="store_true", help="Sortie JSON compacte")
@@ -479,6 +502,11 @@ def build_parser() -> argparse.ArgumentParser:
     p_ea.add_argument("--out", help="Fichier de sortie (sinon stdout)")
     p_ea.add_argument("--silent", action="store_true", help="Sortie JSON compacte")
     _add_extraction_args(p_ea)
+    p_ea.add_argument("--enrichment-threshold", type=float, default=0.95,
+                       help="[--extractor embed] Similarité cosinus minimale (plus proche voisin) pour "
+                            "marquer un candidat absent du vocabulaire comme suggestion d'enrichissement "
+                            "(défaut 0.95 — au plus proche voisin, le bruit courant/peu specifique score "
+                            "encore 0.9-0.96, un seuil bas suggérerait massivement du bruit)")
 
     return parser
 

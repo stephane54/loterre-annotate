@@ -13,10 +13,12 @@ data/*
 production/
 ~/app/github-web-services/services/terms-tool
 .claude/
+CLAUDE.md
 html_*
 output*
 .loterre_cache/
 dictionary/
+corpus_acter/
 report.md
 predictions/*.json
 *.log

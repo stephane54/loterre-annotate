@@ -163,7 +163,7 @@ Paramètres CLI :
 
 ```bash
 loterre_cli.py {annotate,extract,extract_annotate} ...   # sous-commande positionnelle obligatoire (voir Phase 3)
---min-freq INT          # défaut 2 — seuil fréquence NC-value
+--min-freq INT          # défaut 3 — seuil fréquence NC-value
 --min-tokens INT        # défaut 1
 --max-tokens INT        # défaut 6
 --extractor {ncvalue,graph,embed,auto}   # défaut "auto"
@@ -264,39 +264,96 @@ python3 src/loterre_cli.py extract_annotate --dict-id P66_en --profile term_reca
 **Refonte CLI en sous-commandes positionnelles — Terminée (2026-06-19)** : `--mode` (flag optionnel à plat) remplacé par une sous-commande obligatoire en position 1 (`argparse.add_subparsers(dest="mode", required=True)`), chaque sous-commande déclarant uniquement ses propres paramètres. Contrainte respectée : `--dict-id`/`--profile`/`--lang` restent optionnels au niveau argparse (pas `required=True`) car ils peuvent être fournis via `--config` YAML à la place (voir `resolve_effective_params()`). Pour éviter de régresser le coût de démarrage du mode `--execution-strategy fast` (qui ne doit pas charger spaCy), les paramètres d'extraction sont dupliqués localement dans `loterre_cli.py` (`_add_extraction_args()`) plutôt qu'importés depuis `loterre_extract_cli.py` — un import aurait chargé spaCy au niveau module, mesuré à ~1.3s, dans tous les appels CLI y compris ceux qui n'en ont pas besoin. Tous les appelants internes (tests smoke, `scripts/evaluation/run_eval.sh`, `scripts/benchmark/benchmark_fast_path.sh`, `src/loterre_benchmark.py`) mis à jour vers la nouvelle syntaxe.
 - 🐛 **Bug pré-existant découvert et corrigé en cours de route** (sans lien avec la refonte CLI) : `tests/smoke/test_annotate_cli.sh` pipait `cat fichier.jsonl | python3 ... --config ...` alors que le `--config` fournit déjà `text:` — le moteur ne lisait jamais stdin, donc `cat` recevait SIGPIPE (exit 141) dès la 2ᵉ itération de la boucle, et `pipefail` arrêtait silencieusement le test après un seul vocabulaire sur 16. Corrigé en supprimant le pipe `cat` redondant.
 
-### Phase 4 — Détection de variantes (3-5 jours)
+### Phase 4 — Détection de variantes — **Terminée (2026-06-23)**
 
-- **Variantes graphiques** : normalisation tirets/espaces, accents, casse
-- **Variantes morphologiques** : regroupement par lemme spaCy (déjà disponible)
-- **Variantes syntaxiques** : permutation N+Adj / Adj+N (critique pour le français)
-- Groupement des variantes dans la sortie JSON (`canonical_form`, `variants: [...]`)
+Demande explicite : un mécanisme à motivation linguistique, en reprenant les règles par langue de **TermSuite** (CNRS/TTC, dépôt `termsuite-resources`, Apache 2.0).
 
-### Phase 5 — Scoring par embeddings Loterre (3-4 jours)
+- ✅ **Recherche TermSuite préalable** : lecture directe de `{fr,en}-variants.yaml` (~450 règles/langue, patterns POS + condition position-à-position : égalité, stem, `deriv()`, `prefix()`, `synonym()`, décomposition de composé). Taxonomie réelle : graphique (édition/casse/accents), morphologique (composés à tiret, préfixe, synonymie), syntaxique (insertion/expansion, permutation, réduction N N↔N P N, alternance dérivationnelle N+Adj↔N+Prep+N).
+- ✅ **Généralisation plutôt que réplication exhaustive** (~450 règles/langue disproportionné, contraire à la contrainte "pas de ressource massive") — 6 mécanismes structurels dans `src/loterre_variants.py`, chaque candidat regroupé par UNE seule passe (ordre du plus fiable au plus permissif) :
 
-Utiliser les termes des vocabulaires Loterre existants comme référence d'embeddings pour deux objectifs sans GPU ni fine-tuning :
+  | variant_type | Mécanisme | Généralise (familles TermSuite) |
+  |---|---|---|
+  | `morph_inflection` | Même séquence de lemmes (déjà disponible, `CandidateTerm.lemma`) | inflexion |
+  | `graphical` | Clé normalisée accents/casse/tirets/espaces sur les lemmes (acronymes tout-capitales exclus) | composés à tiret/espace |
+  | `morph_prefix` | Lemmes identiques sauf un token lié par un préfixe d'une petite liste par langue (longueur de radical minimale) | `AN-prefAN`/`NA-NprefA` |
+  | `syn_expansion` | Squelette de contenu (NOUN/PROPN/ADJ/VERB, mots-outils retirés) sous-séquence contiguë de l'autre, **ou** squelette identique avec mot-outil différent | `S-Ed/S-Eg/S-I/S-PI/S-R2` (couvre aussi N N↔N de/of N) |
+  | `syn_permutation` | Même multiset de lemmes de contenu, ordre différent | `S-P` |
+  | `morph_derivation` | Squelette de contenu identique sauf une position adjectif/nom, liée par les tables de dérivation TermSuite vendorisées | `S-PID-NA-P`/`S-R2D-NN` (alternance N+Adj↔N+Prep+N) |
 
-- **Filtrage du bruit** : calculer la similarité cosinus entre chaque candidat et le centroïde des embeddings des termes Loterre du vocabulaire cible ; éliminer les candidats trop éloignés
-- **Enrichissement** : candidats à score élevé mais absents du vocabulaire → signalés comme suggestions d'ajout à Loterre
+  Synonymie explicitement **hors scope** (TermSuite la traite à part, `SemanticGatherer` — relation différente d'une variante de forme).
+- ✅ **Tables de dérivation vendorisées** : `resources/termsuite_morphology/{fr,en}/{suffix-derivation-bank,suppletives-bank}.txt`, récupérées telles quelles depuis `termsuite-resources` (Apache 2.0, CNRS 2015), en-tête d'attribution ajouté. FR : 303 règles de suffixe + 319 lignes de classes supplétives. EN : 17 règles de suffixe seulement (pas de classes supplétives curées côté anglais), confirmant que cette alternance est nettement plus productive en français.
+- ✅ **Sortie additive** : deux champs optionnels sur `CandidateTerm` (`canonical_form`, `variant_type`), `candidates` reste une liste plate — aucun changement de comportement existant (`cross_reference_candidates()`, tri/troncature `--max-terms`, etc. inchangés). **Option CLI explicite `--detect-variants`** (défaut désactivé, décision utilisateur) sur `loterre_extract_cli.py` et les sous-commandes `extract`/`extract_annotate` de `loterre_cli.py`.
+- 🐛 **Quatre bugs trouvés et corrigés pendant la validation** (sur X64/P66/corpus paléoclimatologie réel) :
+  1. **Faux regroupement par transitivité** : sous-séquence/préfixe/dérivation ne sont PAS des relations d'équivalence — un regroupement par composantes connexes (union-find) faisait dériver un cluster entier à travers des intermédiaires sans relation directe entre les extrêmes (ex. *"semantic memory"* groupé à tort sous *"controlled memory assessment"*, reliés seulement via une chaîne de candidats partageant juste le mot *"memory"*). Corrigé par une affectation directe sans transitivité (`_greedy_assign_from_adjacency` : traite les candidats du plus canonique au moins canonique, chacun ne réclame que ses voisins **directement** vérifiés).
+  2. **Gérondifs anglais mal étiquetés VERB** : spaCy tague parfois en VERB des modificateurs en *-ing* utilisés comme nom composé (*"spacing effect"*, *"sandwich effect"* — "spacing"/"sandwich" tagués VERB), les faisant disparaître à tort du squelette de contenu (qui ne gardait que NOUN/PROPN/ADJ) et coïncider artificiellement. Corrigé en ajoutant VERB aux POS de contenu (le candidat a déjà passé le filtre noun-chunk, un VERB à l'intérieur est presque toujours un mot de contenu mal étiqueté, pas un vrai verbe).
+  3. **Dérivation N↔N et classes supplétives trop permissives** : les règles N↔N de la table TermSuite (nom déverbal, ex. EN *"modeling"*/*"model"*, *"processing"*/*"process"*) et les classes supplétives (FR, ex. *"psychologie"*/*"esprit"*, *"calcul"*/*"mesure"*) reliaient des concepts trop souvent distincts. Corrigé : `morph_derivation` restreint aux paires inter-catégories A↔N ; classes supplétives retirées (ce fichier sert chez TermSuite à décomposer des formes combinantes à l'intérieur d'un composé, pas à déclarer deux mots entiers synonymes).
+  4. **Préfixe court coïncident** (*"age"*/*"images"*, "im"+"age") et **acronyme confondu avec un homographe** (*"GRACE"* nom de mission / *"grâce"* mot courant, la casse "normalisée" les faisant coïncider). Corrigés par une longueur de radical minimale (`morph_prefix`) et une exception pour les séquences tout-capitales (`graphical`).
+  Limite résiduelle acceptée (non résolue, documentée) : `morph_prefix` reste un faux positif occasionnel sur des mots latins où le "préfixe" est historique mais plus séparable synchroniquement (ex. *"information"*/*"formation"*, *"propositions"*/*"position"*) — nécessiterait un vrai lexique de dérivation pour trancher, hors contrainte "pas de ressource lourde".
+- ✅ **Validation sur 3 profils de vocabulaire distincts** (composition mono-mot vs multi-mots) :
 
-Modèle : `paraphrase-multilingual-MiniLM-L12-v2` (118 Mo, CPU, FR+EN)  
-Activable via `--extractor embed` (défaut : `--extractor ncvalue`)  
-Gain estimé : +5–8 % F1 sur le filtrage du bruit
+  | Corpus | Vocabulaire | % multi-mots | Candidats | Groupés | Détail |
+  |---|---|---:|---:|---:|---|
+  | X64 (EN) | X64 | 38% | 1232 | 367 (29.8%) | syn_expansion 164, morph_inflection 198, morph_prefix 5 |
+  | X64 (FR) | X64 | 42% | 2427 | 792 (32.6%) | syn_expansion 324, morph_inflection 447, morph_prefix 14, graphical 5, morph_derivation 2 |
+  | P66 (EN) | P66 | 89% | 203 | 36 (17.7%) | syn_expansion 35, morph_inflection 1 |
+  | P66 (FR) | P66 | — | 84 | 17 (20.2%) | syn_expansion 13, morph_inflection 4 |
+  | Paléoclimatologie (échantillon 794 docs réels) | QX8 | 49% | 2322 | 875 (37.7%) | syn_expansion 635, morph_inflection 237, morph_prefix 3 |
 
-### Phase 6 — Benchmark et évaluation (3-4 jours)
+  Échantillons inspectés manuellement par catégorie sur chaque corpus (comme pour la validation du tri plus proche voisin en Phase 5) — propres après les 4 corrections ci-dessus.
+- ✅ **Performance** : 794 documents réels (corpus paléoclimatologie, extrapolé ~70 Mo/17 499 docs au total) traités en 44s avec `--detect-variants` — pas de ralentissement notable, conforme à la contrainte "extract pas significativement plus lent qu'annotate".
+- ✅ Test smoke `tests/smoke/test_variants.sh` : un cas construit à la main par catégorie + test de bout en bout (additif, zéro régression sans le flag).
+- ⏸️ **Non fait, documenté comme limitation acceptée** : décomposition de composés agglutinés/à tiret au sens des règles `M-S-NN`/`M-I-*` de TermSuite (ex. EN "windmill"↔"wind mill" — la graphique couvre déjà ce cas via la clé normalisée tirets/espaces, qui suffit en pratique) ; synonymie (hors scope, relation différente).
 
-- Intégrer les métriques d'extraction dans `loterre_benchmark.py` existant
-- **Gold standard d'extraction : corpus ACTER** (Rigouts Terryn et al., LREC 2018)
-  - GitHub : [AylaRT/ACTER](https://github.com/AylaRT/ACTER) — CC BY-NC-SA 4.0
-  - Langues : EN + FR (+ NL)
-  - Domaines : insuffisance cardiaque, énergie éolienne, équitation, corruption
-  - ~18 900 termes annotés manuellement, format IOB
-  - Évaluation : Precision / Recall / F1 sur termes extraits vs gold (token-level)
-- Comparaison directe avec **D-Terminer** (Rigouts Terryn, LT3/UGent) comme baseline transformer :
-  - F1 de référence sur ACTER : 0.09–0.46 selon le domaine (mBERT + RNN, GPU)
-  - Plafond général des méthodes transformer sur ATE : ~0.50–0.70 F1
-  - Notre objectif : atteindre un F1 comparable sans GPU, en non supervisé
-- Comparaison secondaire avec TermSuite sur les mêmes corpus
-- Documentation des résultats par domaine et par langue
+### Phase 5 — Scoring par embeddings Loterre — **Terminée (2026-06-23)**
+
+Déclenchée directement par le diagnostic X64 (voir Phase 2/journal) : C-value et PositionRank ne distinguent pas "fréquent" de "spécifique au domaine", et remontent des locutions méta-discursives au-dessus des vrais termes sur un corpus académique générique.
+
+- ✅ `src/loterre_embed.py` — `get_embed_model()` (chargement paresseux et caché de `paraphrase-multilingual-MiniLM-L12-v2` via `sentence-transformers`), `load_vocabulary_terms()` (lit le dictionnaire JSONL cible, déduplique par `id`), `embed_vocabulary_terms()` (matrice normalisée, un vecteur par terme), `score_candidates_embed()` (similarité cosinus candidat ↔ **terme le plus proche du vocabulaire** — `max`, pas moyenne — `rule="embed"`)
+- ✅ `--extractor embed` ajouté aux choix existants (`ncvalue`/`graph`/`auto`) ; nouveau `--dict` (chemin du dictionnaire cible, requis avec `embed`) et `--embed-threshold` (filtre par score minimal) sur `loterre_extract_cli.py` et les sous-commandes `extract`/`extract_annotate` de `loterre_cli.py`. `auto` ne bascule jamais vers `embed` (il faut le demander explicitement — nécessite un dictionnaire, contrairement à ncvalue/graph)
+- ✅ **Enrichissement** : `CandidateTerm.enrichment_suggestion` (nouveau champ) — posé à `True` dans `run_extract_annotate_mode()` (après `cross_reference_candidates()`) pour les candidats absents du vocabulaire (`in_vocabulary=False`) avec score ≥ `--enrichment-threshold` (défaut **0.95**, voir révision ci-dessous)
+- ✅ **Validation empirique sur X64** (le cas qui a motivé cette phase) : top 20 par score, candidats reconnus dans le vocabulaire —
+
+  | | C-value | PositionRank | embed (centroïde, min-freq≥10) | **embed (plus proche voisin, min-freq défaut 2)** |
+  |---|---|---|---|---|
+  | EN | 7/20 | 9/20 | 13/20 | **20/20** |
+  | FR | 0/20 (4/20 après fix élision) | 0/20 | 9-10/20 | **20/20** |
+
+  Avec de vrais termes en tête de classement (EN : *semiotics, linguistics, philology, lexicon* ; FR : *sémantique, créole, langue, anglais, énoncés*) — comparé à *"one hand"*/*"l'auteur"* en tête avec C-value.
+- 🔄 **Révision (2026-06-23, suite) : centroïde → plus proche voisin (max)**. Diagnostic du pourquoi `embed` remontait beaucoup de termes simples sur X64 : le vocabulaire est composé à 58-61% de concepts à un seul mot (noms de langues/ethnies, ex. X64 est un vocabulaire de type Ethnologue) — un centroïde unique (moyenne) brouille cette diversité et favorise mécaniquement les candidats courts. `embed_vocabulary_terms()` encode désormais chaque terme du vocabulaire séparément ; `score_candidates_embed()` calcule la similarité au **max** sur toute la matrice, pas à la moyenne. Résultat : passage de 13/20 (EN) et 9-10/20 (FR) à **20/20 dans les deux langues**, et ceci **sans avoir besoin de relever `--min-freq`** (le réglage 5-10 nécessaire avec le centroïde n'est plus requis). Détail dans `analyse_benchmarks_extraction.md`, entrée du 2026-06-23 (plus proche voisin).
+- 🐛 **Limite résiduelle, distincte de la précédente** : le passage au plus proche voisin résout le problème de classement (top-N) mais PAS le filtrage par seuil — au `--min-freq` par défaut (2), du bruit court/peu fréquent (*"era"*, *"de"*, *"co"*, *"pas"*, un nom propre cité) obtient désormais des scores 0.93-0.96, dans la même plage que de vrais candidats d'enrichissement légitimes. **`--enrichment-threshold` recalibré empiriquement de 0.5 à 0.95** après test de plusieurs seuils (0.5/0.8/0.9/0.95/0.98/0.99) sur X64 : à l'ancien défaut 0.5, 77% des candidats (1856/2406) étaient signalés comme suggestions d'enrichissement, bruit inclus ; à 0.95 la liste reste raisonnable, à 0.98-0.99 elle devient courte et quasi sans bruit (phonetics, poetics, linguistics, semiotics, sociolinguistics, data...). Le `--min-freq` existant reste recommandé en complément sur gros corpus.
+- Modèle : `paraphrase-multilingual-MiniLM-L12-v2` (118 Mo, CPU, FR+EN), `sentence-transformers` ajouté à `requirements.txt`. Cible Makefile `models-embed` pour le pré-télécharger.
+- Test smoke : `tests/smoke/test_embed.sh` (erreur claire sans `--dict`, tri par score, filtre par seuil — seuil de test relevé de 0.5 à 0.8 car le plus proche voisin donne des scores systématiquement plus hauts que l'ancien centroïde).
+
+### Phase 6 — Benchmark ACTER — **Terminée (2026-06-23)**
+
+- ✅ **Gold standard d'extraction : corpus ACTER** (Rigouts Terryn et al., LREC 2018 / LRE 2020)
+  - GitHub : [AylaRT/ACTER](https://github.com/AylaRT/ACTER) — CC BY-NC-SA 4.0, v1.5
+  - Langues : **EN + FR uniquement** (NL ignoré, hors contrainte du projet)
+  - 4 domaines : `corp` (corruption), `equi` (équitation), `htfl` (insuffisance cardiaque), `wind` (énergie éolienne)
+  - Pas committé dans le repo (73 Mo, licence à part) — cloné à la demande dans `corpus_acter/` (`make corpus-acter`, gitignoré)
+- ✅ **Nouveau script `scripts/evaluation/acter_eval.py`** : la tokenisation gold (LeTs Preprocess) diffère de la nôtre (spaCy) — les tokens gold sont réalignés sur des offsets caractères dans le texte brut par marche séquentielle (`align_gold_tokens()`), puis comparés au niveau caractère (aucune dépendance à un tokeniseur commun). Évaluation **token-level** (protocole ACTER), sans entités nommées.
+  - `--extractor embed` exclu de la comparaison "à froid" principale : nécessite un vocabulaire Loterre cible, qu'ACTER n'a pas — extraction "à froid" comme D-Terminer/TermSuite. Variante expérimentale semi-supervisée ajoutée à part (voir plus bas).
+  - 🐛 **Piège trouvé en validant** : comparer l'ensemble brut des candidats donnait des scores *identiques* entre `ncvalue` et `graph` — logique, ils partagent la même extraction noun-chunk en amont, seul leur **classement** diffère. Corrigé en coupant au top-N (N = nombre de termes gold uniques du domaine) avant de scorer, pour comparer le classement et non l'ensemble brut.
+  - 🐛 **`--min-freq` par défaut (2) trop strict pour ACTER** : ces corpus de domaine restreint contiennent énormément de termes spécifiques à occurrence unique, éliminés avant même le scoring. `--min-freq 1` recommandé (et utilisé par `make benchmark-acter`) — sans ce changement, le nombre de candidats bruts était parfois *inférieur* au nombre de termes gold, rendant la coupure top-N sans effet.
+- ✅ **Résultats mesurés** (`--min-freq 1`, top-N par domaine, sans NE) :
+
+  | Domaine | Lang | Docs | ncvalue F1 | graph (PositionRank) F1 |
+  |---|---|---:|---:|---:|
+  | corp | en | 12 | 0.34 | 0.33 |
+  | corp | fr | 12 | 0.35 | 0.34 |
+  | equi | en | 34 | 0.36 | **0.58** |
+  | equi | fr | 78 | 0.28 | **0.54** |
+  | htfl | en | 190 | 0.53 | **0.55** |
+  | htfl | fr | 210 | 0.41 | **0.51** |
+  | wind | en | 5 | 0.44 | **0.52** |
+  | wind | fr | 2 | 0.28 | **0.50** |
+  | **TOTAL** | | | **0.391** | **0.496** |
+
+  PositionRank devance C-value sur les 8 combinaisons domaine/langue, parfois largement (equi : +0.22 à +0.26 F1). **F1 global 0.496 sans GPU, sans fine-tuning, en Python pur** — au sommet de la fourchette D-Terminer (mBERT+RNN, GPU) documentée en CLAUDE.md (0.32–0.50) et dans ce document (0.09–0.46 selon domaine) ; C-value (0.391) reste dans la fourchette basse-moyenne.
+- ✅ **Variante expérimentale : `embed` semi-supervisé** (ajoutée sur demande, après le benchmark principal) — la moitié des termes gold d'un domaine sert de vocabulaire de référence, l'autre moitié ("held-out", jamais montrée au système) est l'objectif à retrouver. **Résultat initial (centroïde, 8 combinaisons) : F1 = 0.306** — *moins bon* que C-value (0.391) et PositionRank (0.496) à froid, même avec la moitié des réponses données.
+  **Revalidé le 2026-06-23 après le passage centroïde → plus proche voisin** (même changement que ci-dessus en Phase 5) : `F1 = 0.364` (P=0.728, R=0.243, tp=9287/fp=3477/fn=28930, micro-moyenne sur les 8 combinaisons) — **amélioration nette sur précision ET rappel** (P : 0.461→0.728, R : 0.229→0.243) par rapport au centroïde. Reste *en dessous* de C-value (0.391) et nettement sous PositionRank (0.496) à froid, mais l'écart se réduit. Confirme que le plus proche voisin généralise mieux que le centroïde même sur un vocabulaire de référence artificiellement restreint (sous-ensemble du même domaine) — pas seulement sur un vocabulaire Loterre établi de grande taille comme X64. Détail par domaine dans `acter_results_embed_seeded.json`/`acter_results.md`. Reste une comparaison non légitime à froid (le système voit une partie de la réponse) — indicatif, pas un score de référence.
+- ⏸️ **Non fait** : comparaison TermSuite (secondaire, pas prioritaire — D-Terminer déjà comparable)
+- `make corpus-acter` (clone), `make benchmark-acter` (lance l'évaluation, écrit `benchmark_results/acter/acter_results.{json,md}` + variante embed dans `acter_results_embed_seeded.json`)
 
 ---
 

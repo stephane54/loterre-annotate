@@ -8,7 +8,7 @@ Three engines are compared:
   - api       : service terms-tools (production)
                 (https://github.com/Inist-CNRS/web-services/tree/main/services/terms-tools),
                 appelé en HTTP — réponse à indices de tokens, convertie en
-                offsets caractères (voir api_doc_to_matches() / docs/README.md §13.1)
+                offsets caractères (voir api_doc_to_matches() / docs/README.md §14.1)
   - resolvers : Loterre Resolvers   (loterre-resolvers.services.istex.fr)
 
 Usage
@@ -56,7 +56,7 @@ RESOLVERS_DEFAULT = "https://loterre-resolvers.services.istex.fr/v1/annotate"
 
 # Tokeniseur utilisé par l'API terms-tools pour ses indices idx.start/end
 # (nombres décimaux comme un seul token, ponctuation isolée) — voir
-# docs/README.md §13.1. Nécessaire pour convertir les indices de tokens
+# docs/README.md §14.1. Nécessaire pour convertir les indices de tokens
 # renvoyés par l'API en offsets caractères comparables au gold/à loterre_cli.
 _API_TOKEN_RE = re.compile(r"\d+\.\d+|\w+|[^\w\s]")
 
@@ -180,7 +180,7 @@ def api_doc_to_matches(api_doc: dict, text: str) -> list[dict]:
     """Convert one terms-tools response document into local match dicts.
 
     La réponse contient idx.start/idx.end en indices de TOKENS, pas en
-    offsets caractères (voir docs/README.md §13.1) — on retokénise le texte
+    offsets caractères (voir docs/README.md §14.1) — on retokénise le texte
     source avec la même règle que l'API pour retrouver les offsets exacts.
     """
     tokens = _tokenize_for_api(text)

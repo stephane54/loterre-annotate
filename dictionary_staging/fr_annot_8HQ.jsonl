@@ -1,0 +1,480 @@
+{"label": "actinide", "pattern": [{"pos": "NOUN", "lemma": "actinide"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JRBJDF37-C", "pref": "actinide"}
+{"label": "actinoïde", "pattern": [{"pos": "NOUN", "lemma": "actinoïde"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JRBJDF37-C", "pref": "actinide"}
+{"label": "actinium", "pattern": [{"pos": "NOUN", "lemma": "actinium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-MQ7K65FT-R", "pref": "actinium"}
+{"label": "Ac", "pattern": [{"pos": "NOUN", "lemma": "ac"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-MQ7K65FT-R", "pref": "actinium"}
+{"label": "Actinium", "pattern": [{"pos": "NOUN", "lemma": "actinium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-MQ7K65FT-R", "pref": "actinium"}
+{"label": "aluminium", "pattern": [{"pos": "NOUN", "lemma": "aluminium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N", "pref": "aluminium"}
+{"label": "Al", "pattern": [{"pos": "NOUN", "lemma": "al"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N", "pref": "aluminium"}
+{"label": "Aluminium", "pattern": [{"pos": "NOUN", "lemma": "aluminium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-X55C5RJ1-N", "pref": "aluminium"}
+{"label": "américium", "pattern": [{"pos": "NOUN", "lemma": "américium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R5MG15L7-3", "pref": "américium"}
+{"label": "Am", "pattern": [{"pos": "NOUN", "lemma": "am"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R5MG15L7-3", "pref": "américium"}
+{"label": "élément 95", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "95"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R5MG15L7-3", "pref": "américium"}
+{"label": "Américium", "pattern": [{"pos": "PROPN", "lemma": "américium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R5MG15L7-3", "pref": "américium"}
+{"label": "antimoine", "pattern": [{"pos": "NOUN", "lemma": "antimoine"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-LGWKM8TW-9", "pref": "antimoine"}
+{"label": "Sb", "pattern": [{"pos": "NOUN", "lemma": "sb"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-LGWKM8TW-9", "pref": "antimoine"}
+{"label": "Antimoine", "pattern": [{"pos": "NOUN", "lemma": "antimoine"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-LGWKM8TW-9", "pref": "antimoine"}
+{"label": "argent", "pattern": [{"pos": "NOUN", "lemma": "argent"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-MBPSKJ5K-B", "pref": "argent"}
+{"label": "Ag", "pattern": [{"pos": "NOUN", "lemma": "ag"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-MBPSKJ5K-B", "pref": "argent"}
+{"label": "Argent", "pattern": [{"pos": "NOUN", "lemma": "argent"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-MBPSKJ5K-B", "pref": "argent"}
+{"label": "argon", "pattern": [{"pos": "NOUN", "lemma": "argon"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-XZG1JMS2-0", "pref": "argon"}
+{"label": "Ar", "pattern": [{"pos": "PROPN", "lemma": "ar"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-XZG1JMS2-0", "pref": "argon"}
+{"label": "Argon", "pattern": [{"pos": "PROPN", "lemma": "argon"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-XZG1JMS2-0", "pref": "argon"}
+{"label": "arsenic", "pattern": [{"pos": "NOUN", "lemma": "arsenic"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-B31MNC3P-0", "pref": "arsenic"}
+{"label": "As", "pattern": [{"pos": "PROPN", "lemma": "as"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-B31MNC3P-0", "pref": "arsenic"}
+{"label": "Arsenic", "pattern": [{"pos": "PROPN", "lemma": "arsenic"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-B31MNC3P-0", "pref": "arsenic"}
+{"label": "astate", "pattern": [{"pos": "NOUN", "lemma": "astate"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-VDGS91T8-X", "pref": "astate"}
+{"label": "At", "pattern": [{"pos": "PROPN", "lemma": "at"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-VDGS91T8-X", "pref": "astate"}
+{"label": "Astate", "pattern": [{"pos": "PROPN", "lemma": "astate"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-VDGS91T8-X", "pref": "astate"}
+{"label": "azote", "pattern": [{"pos": "NOUN", "lemma": "azote"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FMW7R7GT-H", "pref": "azote"}
+{"label": "N", "pattern": [{"pos": "NOUN", "lemma": "n"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FMW7R7GT-H", "pref": "azote"}
+{"label": "Azote", "pattern": [{"pos": "NOUN", "lemma": "azote"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FMW7R7GT-H", "pref": "azote"}
+{"label": "baryum", "pattern": [{"pos": "NOUN", "lemma": "baryum"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-P1S60994-X", "pref": "baryum"}
+{"label": "Ba", "pattern": [{"pos": "NOUN", "lemma": "ba"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-P1S60994-X", "pref": "baryum"}
+{"label": "Baryum", "pattern": [{"pos": "NOUN", "lemma": "baryum"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-P1S60994-X", "pref": "baryum"}
+{"label": "berkélium", "pattern": [{"pos": "NOUN", "lemma": "berkélium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J1C32XNL-H", "pref": "berkélium"}
+{"label": "Bk", "pattern": [{"pos": "NOUN", "lemma": "bk"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J1C32XNL-H", "pref": "berkélium"}
+{"label": "élément 97", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "97"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J1C32XNL-H", "pref": "berkélium"}
+{"label": "Berkélium", "pattern": [{"pos": "PROPN", "lemma": "berkélium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J1C32XNL-H", "pref": "berkélium"}
+{"label": "béryllium", "pattern": [{"pos": "NOUN", "lemma": "béryllium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J7L957H4-S", "pref": "béryllium"}
+{"label": "Be", "pattern": [{"pos": "NOUN", "lemma": "be"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J7L957H4-S", "pref": "béryllium"}
+{"label": "Béryllium", "pattern": [{"pos": "NOUN", "lemma": "béryllium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J7L957H4-S", "pref": "béryllium"}
+{"label": "bismuth", "pattern": [{"pos": "NOUN", "lemma": "bismuth"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-SLTRM919-5", "pref": "bismuth"}
+{"label": "Bi", "pattern": [{"pos": "NOUN", "lemma": "bi"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-SLTRM919-5", "pref": "bismuth"}
+{"label": "Bismuth", "pattern": [{"pos": "NOUN", "lemma": "bismuth"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-SLTRM919-5", "pref": "bismuth"}
+{"label": "bloc", "pattern": [{"pos": "NOUN", "lemma": "bloc"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-KS2SCGGS-V", "pref": "bloc"}
+{"label": "bohrium", "pattern": [{"pos": "NOUN", "lemma": "bohrium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C", "pref": "bohrium"}
+{"label": "Bh", "pattern": [{"pos": "NOUN", "lemma": "bh"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C", "pref": "bohrium"}
+{"label": "élément 107", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "107"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C", "pref": "bohrium"}
+{"label": "Uns", "pattern": [{"pos": "PROPN", "lemma": "un"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C", "pref": "bohrium"}
+{"label": "unnilseptium", "pattern": [{"pos": "NOUN", "lemma": "unnilseptium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZXTR1209-C", "pref": "bohrium"}
+{"label": "bore", "pattern": [{"pos": "NOUN", "lemma": "bore"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-BJJWZT6G-K", "pref": "bore"}
+{"label": "B", "pattern": [{"pos": "NOUN", "lemma": "b"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-BJJWZT6G-K", "pref": "bore"}
+{"label": "Bore", "pattern": [{"pos": "NOUN", "lemma": "bore"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-BJJWZT6G-K", "pref": "bore"}
+{"label": "brome", "pattern": [{"pos": "NOUN", "lemma": "brome"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JKQD0SHX-7", "pref": "brome"}
+{"label": "Br", "pattern": [{"pos": "NOUN", "lemma": "br"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JKQD0SHX-7", "pref": "brome"}
+{"label": "Brome", "pattern": [{"pos": "NOUN", "lemma": "brome"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JKQD0SHX-7", "pref": "brome"}
+{"label": "cadmium", "pattern": [{"pos": "NOUN", "lemma": "cadmium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R5TL4FBV-J", "pref": "cadmium"}
+{"label": "Cd", "pattern": [{"pos": "NOUN", "lemma": "cd"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R5TL4FBV-J", "pref": "cadmium"}
+{"label": "Cadmium", "pattern": [{"pos": "NOUN", "lemma": "cadmium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R5TL4FBV-J", "pref": "cadmium"}
+{"label": "calcium", "pattern": [{"pos": "NOUN", "lemma": "calcium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-SX8VX34H-4", "pref": "calcium"}
+{"label": "Ca", "pattern": [{"pos": "PROPN", "lemma": "ca"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-SX8VX34H-4", "pref": "calcium"}
+{"label": "Calcium", "pattern": [{"pos": "NOUN", "lemma": "calcium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-SX8VX34H-4", "pref": "calcium"}
+{"label": "californium", "pattern": [{"pos": "NOUN", "lemma": "californium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0", "pref": "californium"}
+{"label": "Cf", "pattern": [{"pos": "PROPN", "lemma": "cf"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0", "pref": "californium"}
+{"label": "élément 98", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "98"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0", "pref": "californium"}
+{"label": "Californium", "pattern": [{"pos": "PROPN", "lemma": "californium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CDTG8KJ0-0", "pref": "californium"}
+{"label": "carbone", "pattern": [{"pos": "NOUN", "lemma": "carbone"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GPJ5KG69-K", "pref": "carbone"}
+{"label": "C", "pattern": [{"pos": "NOUN", "lemma": "c"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GPJ5KG69-K", "pref": "carbone"}
+{"label": "Carbone", "pattern": [{"pos": "NOUN", "lemma": "carbone"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GPJ5KG69-K", "pref": "carbone"}
+{"label": "cérium", "pattern": [{"pos": "NOUN", "lemma": "cérium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-Z426CQXF-G", "pref": "cérium"}
+{"label": "Ce", "pattern": [{"pos": "PROPN", "lemma": "ce"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-Z426CQXF-G", "pref": "cérium"}
+{"label": "Cérium", "pattern": [{"pos": "PROPN", "lemma": "cérium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-Z426CQXF-G", "pref": "cérium"}
+{"label": "césium", "pattern": [{"pos": "NOUN", "lemma": "césium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-MQQTJBS0-W", "pref": "césium"}
+{"label": "Cs", "pattern": [{"pos": "PROPN", "lemma": "cs"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-MQQTJBS0-W", "pref": "césium"}
+{"label": "Césium", "pattern": [{"pos": "NOUN", "lemma": "césium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-MQQTJBS0-W", "pref": "césium"}
+{"label": "chalcogène", "pattern": [{"pos": "NOUN", "lemma": "chalcogène"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-WWXW9H54-T", "pref": "chalcogène"}
+{"label": "chlore", "pattern": [{"pos": "NOUN", "lemma": "chlore"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-HKV44ZNF-C", "pref": "chlore"}
+{"label": "Cl", "pattern": [{"pos": "NOUN", "lemma": "cl"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-HKV44ZNF-C", "pref": "chlore"}
+{"label": "Chlore", "pattern": [{"pos": "NOUN", "lemma": "chlore"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-HKV44ZNF-C", "pref": "chlore"}
+{"label": "chrome", "pattern": [{"pos": "NOUN", "lemma": "chrome"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-W2MFT88M-C", "pref": "chrome"}
+{"label": "Cr", "pattern": [{"pos": "PROPN", "lemma": "cr"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-W2MFT88M-C", "pref": "chrome"}
+{"label": "Chrome", "pattern": [{"pos": "NOUN", "lemma": "chrome"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-W2MFT88M-C", "pref": "chrome"}
+{"label": "cobalt", "pattern": [{"pos": "NOUN", "lemma": "cobalt"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-BVR52VXN-F", "pref": "cobalt"}
+{"label": "Co", "pattern": [{"pos": "NOUN", "lemma": "co"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-BVR52VXN-F", "pref": "cobalt"}
+{"label": "Cobalt", "pattern": [{"pos": "NOUN", "lemma": "cobalt"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-BVR52VXN-F", "pref": "cobalt"}
+{"label": "copernicium", "pattern": [{"pos": "NOUN", "lemma": "copernicium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R2FD9FPX-8", "pref": "copernicium"}
+{"label": "Cn", "pattern": [{"pos": "PROPN", "lemma": "cn"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R2FD9FPX-8", "pref": "copernicium"}
+{"label": "élément 112", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "112"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R2FD9FPX-8", "pref": "copernicium"}
+{"label": "Uub", "pattern": [{"pos": "PROPN", "lemma": "uub"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R2FD9FPX-8", "pref": "copernicium"}
+{"label": "ununbium", "pattern": [{"pos": "NOUN", "lemma": "ununbium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R2FD9FPX-8", "pref": "copernicium"}
+{"label": "Copernicium", "pattern": [{"pos": "NOUN", "lemma": "copernicium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R2FD9FPX-8", "pref": "copernicium"}
+{"label": "Elément 112", "pattern": [{"pos": "NOUN", "lemma": "elément"}, {"pos": "NUM", "lemma": "112"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R2FD9FPX-8", "pref": "copernicium"}
+{"label": "cuivre", "pattern": [{"pos": "NOUN", "lemma": "cuivre"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-G3VCNX8B-6", "pref": "cuivre"}
+{"label": "Cu", "pattern": [{"pos": "NOUN", "lemma": "cu"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-G3VCNX8B-6", "pref": "cuivre"}
+{"label": "Cuivre", "pattern": [{"pos": "NOUN", "lemma": "cuivre"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-G3VCNX8B-6", "pref": "cuivre"}
+{"label": "curium", "pattern": [{"pos": "NOUN", "lemma": "curium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-K0MXFJV4-P", "pref": "curium"}
+{"label": "Cm", "pattern": [{"pos": "NOUN", "lemma": "cm"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-K0MXFJV4-P", "pref": "curium"}
+{"label": "élément 96", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "96"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-K0MXFJV4-P", "pref": "curium"}
+{"label": "darmstadtium", "pattern": [{"pos": "NOUN", "lemma": "darmstadtium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J7MRT66Z-G", "pref": "darmstadtium"}
+{"label": "Ds", "pattern": [{"pos": "PROPN", "lemma": "ds"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J7MRT66Z-G", "pref": "darmstadtium"}
+{"label": "élément 110", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "110"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J7MRT66Z-G", "pref": "darmstadtium"}
+{"label": "Uun", "pattern": [{"pos": "PROPN", "lemma": "uun"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J7MRT66Z-G", "pref": "darmstadtium"}
+{"label": "ununnilium", "pattern": [{"pos": "NOUN", "lemma": "ununnilium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J7MRT66Z-G", "pref": "darmstadtium"}
+{"label": "Darmstadtium", "pattern": [{"pos": "PROPN", "lemma": "darmstadtium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J7MRT66Z-G", "pref": "darmstadtium"}
+{"label": "Elément 110", "pattern": [{"pos": "NOUN", "lemma": "elément"}, {"pos": "NUM", "lemma": "110"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J7MRT66Z-G", "pref": "darmstadtium"}
+{"label": "dubnium", "pattern": [{"pos": "NOUN", "lemma": "dubnium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CBJQP8XN-J", "pref": "dubnium"}
+{"label": "Db", "pattern": [{"pos": "NOUN", "lemma": "db"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CBJQP8XN-J", "pref": "dubnium"}
+{"label": "élément 105", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "105"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CBJQP8XN-J", "pref": "dubnium"}
+{"label": "Unp", "pattern": [{"pos": "PROPN", "lemma": "unp"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CBJQP8XN-J", "pref": "dubnium"}
+{"label": "unnilpentium", "pattern": [{"pos": "NOUN", "lemma": "unnilpentium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CBJQP8XN-J", "pref": "dubnium"}
+{"label": "dysprosium", "pattern": [{"pos": "NOUN", "lemma": "dysprosium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GSHRX5GS-Z", "pref": "dysprosium"}
+{"label": "Dy", "pattern": [{"pos": "PROPN", "lemma": "dy"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GSHRX5GS-Z", "pref": "dysprosium"}
+{"label": "Dysprosium", "pattern": [{"pos": "NOUN", "lemma": "dysprosium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GSHRX5GS-Z", "pref": "dysprosium"}
+{"label": "einsteinium", "pattern": [{"pos": "NOUN", "lemma": "einsteinium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-V5VQHGWX-S", "pref": "einsteinium"}
+{"label": "Es", "pattern": [{"pos": "PROPN", "lemma": "être"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-V5VQHGWX-S", "pref": "einsteinium"}
+{"label": "élément 99", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "99"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-V5VQHGWX-S", "pref": "einsteinium"}
+{"label": "Einsteinium", "pattern": [{"pos": "NOUN", "lemma": "einsteinium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-V5VQHGWX-S", "pref": "einsteinium"}
+{"label": "élément de la période 1", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "DET", "lemma": "le"}, {"pos": "NOUN", "lemma": "période"}, {"pos": "NUM", "lemma": "1"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-MQ71QRNK-D", "pref": "élément de la période 1"}
+{"label": "élément de la période 2", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "DET", "lemma": "le"}, {"pos": "NOUN", "lemma": "période"}, {"pos": "NUM", "lemma": "2"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-Z5TMRKV8-R", "pref": "élément de la période 2"}
+{"label": "élément de la période 3", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "DET", "lemma": "le"}, {"pos": "NOUN", "lemma": "période"}, {"pos": "NUM", "lemma": "3"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-H228BH64-1", "pref": "élément de la période 3"}
+{"label": "élément de la période 4", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "DET", "lemma": "le"}, {"pos": "NOUN", "lemma": "période"}, {"pos": "NUM", "lemma": "4"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-WGZD8DMF-Z", "pref": "élément de la période 4"}
+{"label": "élément de la période 5", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "DET", "lemma": "le"}, {"pos": "NOUN", "lemma": "période"}, {"pos": "NUM", "lemma": "5"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FXG38P37-6", "pref": "élément de la période 5"}
+{"label": "élément de la période 6", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "DET", "lemma": "le"}, {"pos": "NOUN", "lemma": "période"}, {"pos": "NUM", "lemma": "6"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JJFCNMVF-1", "pref": "élément de la période 6"}
+{"label": "élément de la période 7", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "DET", "lemma": "le"}, {"pos": "NOUN", "lemma": "période"}, {"pos": "NUM", "lemma": "7"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZJSBP6WV-P", "pref": "élément de la période 7"}
+{"label": "élément du bloc d", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "bloc"}, {"pos": "NOUN", "lemma": "d"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZR503FCG-D", "pref": "élément du bloc d"}
+{"label": "élément du bloc f", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "bloc"}, {"pos": "NOUN", "lemma": "f"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JKPKWDWM-9", "pref": "élément du bloc f"}
+{"label": "élément du bloc p", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "bloc"}, {"pos": "NOUN", "lemma": "p"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-HZN73PXQ-G", "pref": "élément du bloc p"}
+{"label": "élément du bloc s", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "bloc"}, {"pos": "PRON", "lemma": "s"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-Q25G5C3S-C", "pref": "élément du bloc s"}
+{"label": "élément du groupe 1", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "groupe"}, {"pos": "NUM", "lemma": "1"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-BWPQDHBS-W", "pref": "élément du groupe 1"}
+{"label": "élément du groupe 10", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "groupe"}, {"pos": "NUM", "lemma": "10"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GVXCK84X-9", "pref": "élément du groupe 10"}
+{"label": "élément du groupe 11", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "groupe"}, {"pos": "NUM", "lemma": "11"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-WFD39MRV-Z", "pref": "élément du groupe 11"}
+{"label": "élément du groupe 12", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "groupe"}, {"pos": "NUM", "lemma": "12"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R6J71CBZ-4", "pref": "élément du groupe 12"}
+{"label": "élément du groupe 13", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "groupe"}, {"pos": "NUM", "lemma": "13"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-H7GN36KP-9", "pref": "élément du groupe 13"}
+{"label": "élément du groupe 14", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "groupe"}, {"pos": "NUM", "lemma": "14"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-B1P6BG70-D", "pref": "élément du groupe 14"}
+{"label": "élément du groupe 15", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "groupe"}, {"pos": "NUM", "lemma": "15"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-N2VW2SBC-D", "pref": "élément du groupe 15"}
+{"label": "élément du groupe 16", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "groupe"}, {"pos": "NUM", "lemma": "16"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J5C91RKF-C", "pref": "élément du groupe 16"}
+{"label": "élément du groupe 17", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "groupe"}, {"pos": "NUM", "lemma": "17"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-BRFMJMDV-W", "pref": "élément du groupe 17"}
+{"label": "élément du groupe 18", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "groupe"}, {"pos": "NUM", "lemma": "18"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GC9TX74Q-9", "pref": "élément du groupe 18"}
+{"label": "élément du groupe 2", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "groupe"}, {"pos": "NUM", "lemma": "2"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-RQ3PHXQD-R", "pref": "élément du groupe 2"}
+{"label": "élément du groupe 3", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "groupe"}, {"pos": "NUM", "lemma": "3"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-N2V0ZJ5P-6", "pref": "élément du groupe 3"}
+{"label": "élément du groupe 4", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "groupe"}, {"pos": "NUM", "lemma": "4"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-MX3F8K9F-T", "pref": "élément du groupe 4"}
+{"label": "élément du groupe 5", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "groupe"}, {"pos": "NUM", "lemma": "5"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-B9PXN69F-V", "pref": "élément du groupe 5"}
+{"label": "élément du groupe 6", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "groupe"}, {"pos": "NUM", "lemma": "6"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NPLTSZJQ-L", "pref": "élément du groupe 6"}
+{"label": "élément du groupe 7", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "groupe"}, {"pos": "NUM", "lemma": "7"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-P2P6JM9C-7", "pref": "élément du groupe 7"}
+{"label": "élément du groupe 8", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "groupe"}, {"pos": "NUM", "lemma": "8"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-S5F5X7F0-6", "pref": "élément du groupe 8"}
+{"label": "élément du groupe 9", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "groupe"}, {"pos": "NUM", "lemma": "9"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-VVBTC56K-P", "pref": "élément du groupe 9"}
+{"label": "élément du groupe principal", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "groupe"}, {"pos": "ADJ", "lemma": "principal"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-DL7B2WV0-F", "pref": "élément du groupe principal"}
+{"label": "erbium", "pattern": [{"pos": "NOUN", "lemma": "erbium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-F9BT8LGW-R", "pref": "erbium"}
+{"label": "Er", "pattern": [{"pos": "PROPN", "lemma": "er"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-F9BT8LGW-R", "pref": "erbium"}
+{"label": "Erbium", "pattern": [{"pos": "NOUN", "lemma": "erbium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-F9BT8LGW-R", "pref": "erbium"}
+{"label": "étain", "pattern": [{"pos": "NOUN", "lemma": "étain"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZK5FBL3T-Z", "pref": "étain"}
+{"label": "Sn", "pattern": [{"pos": "PROPN", "lemma": "sn"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZK5FBL3T-Z", "pref": "étain"}
+{"label": "Etain", "pattern": [{"pos": "NOUN", "lemma": "etain"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZK5FBL3T-Z", "pref": "étain"}
+{"label": "europium", "pattern": [{"pos": "PROPN", "lemma": "europium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-P1D55JLQ-Q", "pref": "europium"}
+{"label": "Eu", "pattern": [{"pos": "PROPN", "lemma": "avoir"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-P1D55JLQ-Q", "pref": "europium"}
+{"label": "Europium", "pattern": [{"pos": "PROPN", "lemma": "europium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-P1D55JLQ-Q", "pref": "europium"}
+{"label": "famille d'éléments", "pattern": [{"pos": "NOUN", "lemma": "famille"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "élément"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-PVDNHL63-L", "pref": "famille d'éléments"}
+{"label": "fer", "pattern": [{"pos": "NOUN", "lemma": "fer"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NQ0K580N-5", "pref": "fer"}
+{"label": "Fe", "pattern": [{"pos": "NOUN", "lemma": "fe"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NQ0K580N-5", "pref": "fer"}
+{"label": "Fer", "pattern": [{"pos": "NOUN", "lemma": "fer"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NQ0K580N-5", "pref": "fer"}
+{"label": "fermium", "pattern": [{"pos": "NOUN", "lemma": "fermium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FPGD9SBX-X", "pref": "fermium"}
+{"label": "Fm", "pattern": [{"pos": "PROPN", "lemma": "fm"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FPGD9SBX-X", "pref": "fermium"}
+{"label": "élément 100", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "100"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FPGD9SBX-X", "pref": "fermium"}
+{"label": "Fermium", "pattern": [{"pos": "NOUN", "lemma": "fermium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FPGD9SBX-X", "pref": "fermium"}
+{"label": "flérovium", "pattern": [{"pos": "NOUN", "lemma": "flérovium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-QBFMJL2M-1", "pref": "flérovium"}
+{"label": "Fl", "pattern": [{"pos": "NOUN", "lemma": "fl"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-QBFMJL2M-1", "pref": "flérovium"}
+{"label": "élément 114", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "114"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-QBFMJL2M-1", "pref": "flérovium"}
+{"label": "Uuq", "pattern": [{"pos": "PROPN", "lemma": "uuq"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-QBFMJL2M-1", "pref": "flérovium"}
+{"label": "ununquadium", "pattern": [{"pos": "NOUN", "lemma": "ununquadium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-QBFMJL2M-1", "pref": "flérovium"}
+{"label": "Flérovium", "pattern": [{"pos": "NOUN", "lemma": "flérovium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-QBFMJL2M-1", "pref": "flérovium"}
+{"label": "Elément 114", "pattern": [{"pos": "NOUN", "lemma": "elément"}, {"pos": "NUM", "lemma": "114"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-QBFMJL2M-1", "pref": "flérovium"}
+{"label": "fluor", "pattern": [{"pos": "NOUN", "lemma": "fluor"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-XNB95WRM-4", "pref": "fluor"}
+{"label": "F", "pattern": [{"pos": "NOUN", "lemma": "f"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-XNB95WRM-4", "pref": "fluor"}
+{"label": "Fluor", "pattern": [{"pos": "NOUN", "lemma": "fluor"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-XNB95WRM-4", "pref": "fluor"}
+{"label": "francium", "pattern": [{"pos": "NOUN", "lemma": "francium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-BMW5TDQD-V", "pref": "francium"}
+{"label": "Fr", "pattern": [{"pos": "NOUN", "lemma": "fr"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-BMW5TDQD-V", "pref": "francium"}
+{"label": "Francium", "pattern": [{"pos": "PROPN", "lemma": "francium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-BMW5TDQD-V", "pref": "francium"}
+{"label": "gadolinium", "pattern": [{"pos": "NOUN", "lemma": "gadolinium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-Q4V6R5PS-J", "pref": "gadolinium"}
+{"label": "Gd", "pattern": [{"pos": "PROPN", "lemma": "gd"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-Q4V6R5PS-J", "pref": "gadolinium"}
+{"label": "Gadolinium", "pattern": [{"pos": "NOUN", "lemma": "gadolinium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-Q4V6R5PS-J", "pref": "gadolinium"}
+{"label": "gallium", "pattern": [{"pos": "NOUN", "lemma": "gallium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-M1Q18DX1-K", "pref": "gallium"}
+{"label": "Ga", "pattern": [{"pos": "NOUN", "lemma": "ga"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-M1Q18DX1-K", "pref": "gallium"}
+{"label": "Gallium", "pattern": [{"pos": "NOUN", "lemma": "gallium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-M1Q18DX1-K", "pref": "gallium"}
+{"label": "gaz noble", "pattern": [{"pos": "NOUN", "lemma": "gaz"}, {"pos": "ADJ", "lemma": "noble"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-KXZDPXGS-P", "pref": "gaz noble"}
+{"label": "gaz rare", "pattern": [{"pos": "NOUN", "lemma": "gaz"}, {"pos": "ADJ", "lemma": "rare"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-KXZDPXGS-P", "pref": "gaz noble"}
+{"label": "germanium", "pattern": [{"pos": "NOUN", "lemma": "germanium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-BP5PPHC4-5", "pref": "germanium"}
+{"label": "Ge", "pattern": [{"pos": "PROPN", "lemma": "ge"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-BP5PPHC4-5", "pref": "germanium"}
+{"label": "Germanium", "pattern": [{"pos": "PROPN", "lemma": "germanium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-BP5PPHC4-5", "pref": "germanium"}
+{"label": "groupe", "pattern": [{"pos": "NOUN", "lemma": "groupe"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-XLX4LGNJ-6", "pref": "groupe"}
+{"label": "hafnium", "pattern": [{"pos": "NOUN", "lemma": "hafnium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-RFB6RBQG-4", "pref": "hafnium"}
+{"label": "Hf", "pattern": [{"pos": "NOUN", "lemma": "hf"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-RFB6RBQG-4", "pref": "hafnium"}
+{"label": "Hafnium", "pattern": [{"pos": "NOUN", "lemma": "hafnium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-RFB6RBQG-4", "pref": "hafnium"}
+{"label": "halogène", "pattern": [{"pos": "NOUN", "lemma": "halogène"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-KWTQLP62-X", "pref": "halogène"}
+{"label": "hassium", "pattern": [{"pos": "NOUN", "lemma": "hassium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JPS5NPG3-L", "pref": "hassium"}
+{"label": "Hs", "pattern": [{"pos": "NOUN", "lemma": "h"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JPS5NPG3-L", "pref": "hassium"}
+{"label": "élément 108", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "108"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JPS5NPG3-L", "pref": "hassium"}
+{"label": "Uno", "pattern": [{"pos": "PROPN", "lemma": "uno"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JPS5NPG3-L", "pref": "hassium"}
+{"label": "unniloctium", "pattern": [{"pos": "NOUN", "lemma": "unniloctium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JPS5NPG3-L", "pref": "hassium"}
+{"label": "hélium", "pattern": [{"pos": "NOUN", "lemma": "hélium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J65QLDDJ-T", "pref": "hélium"}
+{"label": "He", "pattern": [{"pos": "NOUN", "lemma": "he"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J65QLDDJ-T", "pref": "hélium"}
+{"label": "Hélium", "pattern": [{"pos": "NOUN", "lemma": "hélium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J65QLDDJ-T", "pref": "hélium"}
+{"label": "holmium", "pattern": [{"pos": "NOUN", "lemma": "holmium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-X7XM14L0-W", "pref": "holmium"}
+{"label": "Ho", "pattern": [{"pos": "NOUN", "lemma": "ho"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-X7XM14L0-W", "pref": "holmium"}
+{"label": "Holmium", "pattern": [{"pos": "NOUN", "lemma": "holmium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-X7XM14L0-W", "pref": "holmium"}
+{"label": "hydrogène", "pattern": [{"pos": "NOUN", "lemma": "hydrogène"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-DTLN6DML-5", "pref": "hydrogène"}
+{"label": "H", "pattern": [{"pos": "NOUN", "lemma": "heure"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-DTLN6DML-5", "pref": "hydrogène"}
+{"label": "Hydrogène", "pattern": [{"pos": "NOUN", "lemma": "hydrogène"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-DTLN6DML-5", "pref": "hydrogène"}
+{"label": "indium", "pattern": [{"pos": "NOUN", "lemma": "indium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-BRKZVG3H-8", "pref": "indium"}
+{"label": "In", "pattern": [{"pos": "NOUN", "lemma": "in"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-BRKZVG3H-8", "pref": "indium"}
+{"label": "Indium", "pattern": [{"pos": "NOUN", "lemma": "indium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-BRKZVG3H-8", "pref": "indium"}
+{"label": "iode", "pattern": [{"pos": "NOUN", "lemma": "iode"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-W76CCWHW-C", "pref": "iode"}
+{"label": "I", "pattern": [{"pos": "NOUN", "lemma": "i"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-W76CCWHW-C", "pref": "iode"}
+{"label": "Iode", "pattern": [{"pos": "PROPN", "lemma": "iode"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-W76CCWHW-C", "pref": "iode"}
+{"label": "iridium", "pattern": [{"pos": "NOUN", "lemma": "iridium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-WK9PDRSF-D", "pref": "iridium"}
+{"label": "Ir", "pattern": [{"pos": "PROPN", "lemma": "ir"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-WK9PDRSF-D", "pref": "iridium"}
+{"label": "Iridium", "pattern": [{"pos": "NOUN", "lemma": "iridium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-WK9PDRSF-D", "pref": "iridium"}
+{"label": "krypton", "pattern": [{"pos": "NOUN", "lemma": "krypton"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-H4KTFDCX-D", "pref": "krypton"}
+{"label": "Kr", "pattern": [{"pos": "PROPN", "lemma": "kr"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-H4KTFDCX-D", "pref": "krypton"}
+{"label": "Krypton", "pattern": [{"pos": "NOUN", "lemma": "krypton"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-H4KTFDCX-D", "pref": "krypton"}
+{"label": "lanthane", "pattern": [{"pos": "NOUN", "lemma": "lanthane"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GLQBRH9P-Q", "pref": "lanthane"}
+{"label": "La", "pattern": [{"pos": "PROPN", "lemma": "le"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GLQBRH9P-Q", "pref": "lanthane"}
+{"label": "Lanthane", "pattern": [{"pos": "NOUN", "lemma": "lanthane"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GLQBRH9P-Q", "pref": "lanthane"}
+{"label": "lanthanide", "pattern": [{"pos": "NOUN", "lemma": "lanthanide"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-W80WK273-P", "pref": "lanthanide"}
+{"label": "lanthanoïde", "pattern": [{"pos": "NOUN", "lemma": "lanthanoïde"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-W80WK273-P", "pref": "lanthanide"}
+{"label": "lawrencium", "pattern": [{"pos": "NOUN", "lemma": "lawrencium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R2S5FRSJ-L", "pref": "lawrencium"}
+{"label": "Lr", "pattern": [{"pos": "PROPN", "lemma": "lr"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R2S5FRSJ-L", "pref": "lawrencium"}
+{"label": "élément 103", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "103"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R2S5FRSJ-L", "pref": "lawrencium"}
+{"label": "Unt", "pattern": [{"pos": "PROPN", "lemma": "unt"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R2S5FRSJ-L", "pref": "lawrencium"}
+{"label": "unniltrium", "pattern": [{"pos": "NOUN", "lemma": "unniltrium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R2S5FRSJ-L", "pref": "lawrencium"}
+{"label": "Lawrencium", "pattern": [{"pos": "PROPN", "lemma": "lawrencium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R2S5FRSJ-L", "pref": "lawrencium"}
+{"label": "lithium", "pattern": [{"pos": "NOUN", "lemma": "lithium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NVMP6P5B-4", "pref": "lithium"}
+{"label": "Li", "pattern": [{"pos": "NOUN", "lemma": "li"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NVMP6P5B-4", "pref": "lithium"}
+{"label": "Lithium", "pattern": [{"pos": "NOUN", "lemma": "lithium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NVMP6P5B-4", "pref": "lithium"}
+{"label": "livermorium", "pattern": [{"pos": "NOUN", "lemma": "livermorium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J01HKKLW-8", "pref": "livermorium"}
+{"label": "Lv", "pattern": [{"pos": "NOUN", "lemma": "lv"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J01HKKLW-8", "pref": "livermorium"}
+{"label": "élément 116", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "116"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J01HKKLW-8", "pref": "livermorium"}
+{"label": "Uuh", "pattern": [{"pos": "PROPN", "lemma": "uuh"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J01HKKLW-8", "pref": "livermorium"}
+{"label": "ununhexium", "pattern": [{"pos": "NOUN", "lemma": "ununhexium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J01HKKLW-8", "pref": "livermorium"}
+{"label": "lutécium", "pattern": [{"pos": "NOUN", "lemma": "lutécium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-BZFLDL73-0", "pref": "lutécium"}
+{"label": "Lu", "pattern": [{"pos": "NOUN", "lemma": "lu"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-BZFLDL73-0", "pref": "lutécium"}
+{"label": "lutétium", "pattern": [{"pos": "NOUN", "lemma": "lutétium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-BZFLDL73-0", "pref": "lutécium"}
+{"label": "magnésium", "pattern": [{"pos": "NOUN", "lemma": "magnésium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-S4R6VJD9-W", "pref": "magnésium"}
+{"label": "Mg", "pattern": [{"pos": "NOUN", "lemma": "milligramme"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-S4R6VJD9-W", "pref": "magnésium"}
+{"label": "Magnésium", "pattern": [{"pos": "NOUN", "lemma": "magnésium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-S4R6VJD9-W", "pref": "magnésium"}
+{"label": "manganèse", "pattern": [{"pos": "NOUN", "lemma": "manganèse"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZHXJ4D8T-H", "pref": "manganèse"}
+{"label": "Mn", "pattern": [{"pos": "PROPN", "lemma": "mn"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZHXJ4D8T-H", "pref": "manganèse"}
+{"label": "Manganèse", "pattern": [{"pos": "NOUN", "lemma": "manganèse"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZHXJ4D8T-H", "pref": "manganèse"}
+{"label": "meitnérium", "pattern": [{"pos": "NOUN", "lemma": "meitnérium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CSZNWMQ3-R", "pref": "meitnérium"}
+{"label": "Mt", "pattern": [{"pos": "PROPN", "lemma": "mt"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CSZNWMQ3-R", "pref": "meitnérium"}
+{"label": "meitnerium", "pattern": [{"pos": "NOUN", "lemma": "meitnerium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CSZNWMQ3-R", "pref": "meitnérium"}
+{"label": "élément 109", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "109"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CSZNWMQ3-R", "pref": "meitnérium"}
+{"label": "Une", "pattern": [{"pos": "PROPN", "lemma": "un"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CSZNWMQ3-R", "pref": "meitnérium"}
+{"label": "unnilennium", "pattern": [{"pos": "NOUN", "lemma": "unnilennium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CSZNWMQ3-R", "pref": "meitnérium"}
+{"label": "mendélévium", "pattern": [{"pos": "NOUN", "lemma": "mendélévium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NQR2DXN3-R", "pref": "mendélévium"}
+{"label": "Md", "pattern": [{"pos": "NOUN", "lemma": "md"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NQR2DXN3-R", "pref": "mendélévium"}
+{"label": "élément 101", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "101"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NQR2DXN3-R", "pref": "mendélévium"}
+{"label": "Unu", "pattern": [{"pos": "PROPN", "lemma": "unu"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NQR2DXN3-R", "pref": "mendélévium"}
+{"label": "unnilunium", "pattern": [{"pos": "NOUN", "lemma": "unnilunium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NQR2DXN3-R", "pref": "mendélévium"}
+{"label": "Mendélévium", "pattern": [{"pos": "NOUN", "lemma": "mendélévium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NQR2DXN3-R", "pref": "mendélévium"}
+{"label": "mercure", "pattern": [{"pos": "NOUN", "lemma": "mercure"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-H9J0KWB5-L", "pref": "mercure"}
+{"label": "Hg", "pattern": [{"pos": "NOUN", "lemma": "hg"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-H9J0KWB5-L", "pref": "mercure"}
+{"label": "Mercure", "pattern": [{"pos": "PROPN", "lemma": "mercure"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-H9J0KWB5-L", "pref": "mercure"}
+{"label": "métal", "pattern": [{"pos": "NOUN", "lemma": "métal"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GD3WL13R-6", "pref": "métal"}
+{"label": "métal alcalin", "pattern": [{"pos": "NOUN", "lemma": "métal"}, {"pos": "ADJ", "lemma": "alcalin"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-K9ZP7XL2-C", "pref": "métal alcalin"}
+{"label": "métal alcalinoterreux", "pattern": [{"pos": "NOUN", "lemma": "métal"}, {"pos": "ADJ", "lemma": "alcalinoterreux"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-V0LVX69C-1", "pref": "métal alcalinoterreux"}
+{"label": "métal alcalino-terreux", "pattern": [{"pos": "NOUN", "lemma": "métal"}, {"pos": "ADJ", "lemma": "alcalino"}, {"pos": "ADJ", "lemma": "-", "OP": "?"}, {"pos": "ADJ", "lemma": "terreux"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-V0LVX69C-1", "pref": "métal alcalinoterreux"}
+{"label": "métal de transition", "pattern": [{"pos": "NOUN", "lemma": "métal"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "transition"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NM5G007X-D", "pref": "métal de transition"}
+{"label": "élément de transition", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "transition"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NM5G007X-D", "pref": "métal de transition"}
+{"label": "métal pauvre", "pattern": [{"pos": "NOUN", "lemma": "métal"}, {"pos": "ADJ", "lemma": "pauvre"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-W5376HQT-8", "pref": "métal pauvre"}
+{"label": "métal du bloc p", "pattern": [{"pos": "NOUN", "lemma": "métal"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "bloc"}, {"pos": "NOUN", "lemma": "p"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-W5376HQT-8", "pref": "métal pauvre"}
+{"label": "métal de post-transition", "pattern": [{"pos": "NOUN", "lemma": "métal"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "post-transition"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-W5376HQT-8", "pref": "métal pauvre"}
+{"label": "métal post-transitionnel", "pattern": [{"pos": "NOUN", "lemma": "métal"}, {"pos": "ADJ", "lemma": "post-transitionnel"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-W5376HQT-8", "pref": "métal pauvre"}
+{"label": "métalloïde", "pattern": [{"pos": "NOUN", "lemma": "métalloïde"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-DXBJ8DJ5-6", "pref": "métalloïde"}
+{"label": "molybdène", "pattern": [{"pos": "NOUN", "lemma": "molybdène"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-KZJDHQWD-3", "pref": "molybdène"}
+{"label": "Mo", "pattern": [{"pos": "NOUN", "lemma": "mo"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-KZJDHQWD-3", "pref": "molybdène"}
+{"label": "Molybdène", "pattern": [{"pos": "NOUN", "lemma": "molybdène"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-KZJDHQWD-3", "pref": "molybdène"}
+{"label": "moscovium", "pattern": [{"pos": "NOUN", "lemma": "moscovium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-C7CWB1D9-L", "pref": "moscovium"}
+{"label": "Mc", "pattern": [{"pos": "NOUN", "lemma": "mc"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-C7CWB1D9-L", "pref": "moscovium"}
+{"label": "élément 115", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "115"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-C7CWB1D9-L", "pref": "moscovium"}
+{"label": "Uup", "pattern": [{"pos": "PROPN", "lemma": "uup"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-C7CWB1D9-L", "pref": "moscovium"}
+{"label": "ununpentium", "pattern": [{"pos": "NOUN", "lemma": "ununpentium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-C7CWB1D9-L", "pref": "moscovium"}
+{"label": "néodyme", "pattern": [{"pos": "NOUN", "lemma": "néodyme"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-Z5HSKR9D-Q", "pref": "néodyme"}
+{"label": "Nd", "pattern": [{"pos": "PROPN", "lemma": "nd"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-Z5HSKR9D-Q", "pref": "néodyme"}
+{"label": "Néodyme", "pattern": [{"pos": "NOUN", "lemma": "néodyme"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-Z5HSKR9D-Q", "pref": "néodyme"}
+{"label": "néon", "pattern": [{"pos": "NOUN", "lemma": "néon"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-QT7P52MZ-9", "pref": "néon"}
+{"label": "Ne", "pattern": [{"pos": "NOUN", "lemma": "ne"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-QT7P52MZ-9", "pref": "néon"}
+{"label": "Néon", "pattern": [{"pos": "NOUN", "lemma": "néon"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-QT7P52MZ-9", "pref": "néon"}
+{"label": "neptunium", "pattern": [{"pos": "NOUN", "lemma": "neptunium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-WQGJPGN3-N", "pref": "neptunium"}
+{"label": "Np", "pattern": [{"pos": "PROPN", "lemma": "np"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-WQGJPGN3-N", "pref": "neptunium"}
+{"label": "élément 93", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "93"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-WQGJPGN3-N", "pref": "neptunium"}
+{"label": "Neptunium", "pattern": [{"pos": "NOUN", "lemma": "neptunium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-WQGJPGN3-N", "pref": "neptunium"}
+{"label": "nickel", "pattern": [{"pos": "NOUN", "lemma": "nickel"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FDQVX1R1-D", "pref": "nickel"}
+{"label": "Ni", "pattern": [{"pos": "NOUN", "lemma": "ni"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FDQVX1R1-D", "pref": "nickel"}
+{"label": "Nickel", "pattern": [{"pos": "NOUN", "lemma": "nickel"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FDQVX1R1-D", "pref": "nickel"}
+{"label": "nihonium", "pattern": [{"pos": "NOUN", "lemma": "nihonium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZRNFG3MB-8", "pref": "nihonium"}
+{"label": "Nh", "pattern": [{"pos": "PROPN", "lemma": "nh"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZRNFG3MB-8", "pref": "nihonium"}
+{"label": "élément 113", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "113"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZRNFG3MB-8", "pref": "nihonium"}
+{"label": "Uut", "pattern": [{"pos": "NOUN", "lemma": "uut"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZRNFG3MB-8", "pref": "nihonium"}
+{"label": "ununtrium", "pattern": [{"pos": "NOUN", "lemma": "ununtrium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZRNFG3MB-8", "pref": "nihonium"}
+{"label": "Elément 113", "pattern": [{"pos": "NOUN", "lemma": "elément"}, {"pos": "NUM", "lemma": "113"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZRNFG3MB-8", "pref": "nihonium"}
+{"label": "niobium", "pattern": [{"pos": "NOUN", "lemma": "niobium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-M9473W1P-9", "pref": "niobium"}
+{"label": "Nb", "pattern": [{"pos": "NOUN", "lemma": "nb"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-M9473W1P-9", "pref": "niobium"}
+{"label": "Niobium", "pattern": [{"pos": "PROPN", "lemma": "niobium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-M9473W1P-9", "pref": "niobium"}
+{"label": "nobélium", "pattern": [{"pos": "NOUN", "lemma": "nobélium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JZ85JL0V-4", "pref": "nobélium"}
+{"label": "No", "pattern": [{"pos": "NOUN", "lemma": "no"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JZ85JL0V-4", "pref": "nobélium"}
+{"label": "élément 102", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "102"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JZ85JL0V-4", "pref": "nobélium"}
+{"label": "Unb", "pattern": [{"pos": "PROPN", "lemma": "unb"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JZ85JL0V-4", "pref": "nobélium"}
+{"label": "unnilbium", "pattern": [{"pos": "NOUN", "lemma": "unnilbium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JZ85JL0V-4", "pref": "nobélium"}
+{"label": "Nobélium", "pattern": [{"pos": "NOUN", "lemma": "nobélium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JZ85JL0V-4", "pref": "nobélium"}
+{"label": "Elément 102", "pattern": [{"pos": "NOUN", "lemma": "elément"}, {"pos": "NUM", "lemma": "102"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JZ85JL0V-4", "pref": "nobélium"}
+{"label": "non métal", "pattern": [{"pos": "ADJ", "lemma": "non"}, {"pos": "NOUN", "lemma": "métal"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-WWQ8RZ04-N", "pref": "non métal"}
+{"label": "oganesson", "pattern": [{"pos": "NOUN", "lemma": "oganesson"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-KWXVTS75-K", "pref": "oganesson"}
+{"label": "Og", "pattern": [{"pos": "PROPN", "lemma": "og"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-KWXVTS75-K", "pref": "oganesson"}
+{"label": "élément 118", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "118"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-KWXVTS75-K", "pref": "oganesson"}
+{"label": "Uuo", "pattern": [{"pos": "PROPN", "lemma": "uuo"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-KWXVTS75-K", "pref": "oganesson"}
+{"label": "ununoctium", "pattern": [{"pos": "NOUN", "lemma": "ununoctium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-KWXVTS75-K", "pref": "oganesson"}
+{"label": "or", "pattern": [{"pos": "NOUN", "lemma": "or"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-HD8QM9KB-M", "pref": "or"}
+{"label": "Au", "pattern": [{"pos": "PROPN", "lemma": "au"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-HD8QM9KB-M", "pref": "or"}
+{"label": "Or", "pattern": [{"pos": "NOUN", "lemma": "or"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-HD8QM9KB-M", "pref": "or"}
+{"label": "osmium", "pattern": [{"pos": "NOUN", "lemma": "osmium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-V9RXLN1J-0", "pref": "osmium"}
+{"label": "Os", "pattern": [{"pos": "NOUN", "lemma": "os"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-V9RXLN1J-0", "pref": "osmium"}
+{"label": "Osmium", "pattern": [{"pos": "NOUN", "lemma": "osmium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-V9RXLN1J-0", "pref": "osmium"}
+{"label": "oxygène", "pattern": [{"pos": "NOUN", "lemma": "oxygène"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-RX5D8P7R-1", "pref": "oxygène"}
+{"label": "O", "pattern": [{"pos": "NOUN", "lemma": "o"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-RX5D8P7R-1", "pref": "oxygène"}
+{"label": "Oxygène", "pattern": [{"pos": "NOUN", "lemma": "oxygène"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-RX5D8P7R-1", "pref": "oxygène"}
+{"label": "palladium", "pattern": [{"pos": "NOUN", "lemma": "palladium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GKH9PL2W-2", "pref": "palladium"}
+{"label": "Pd", "pattern": [{"pos": "NOUN", "lemma": "pd"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GKH9PL2W-2", "pref": "palladium"}
+{"label": "Palladium", "pattern": [{"pos": "NOUN", "lemma": "palladium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GKH9PL2W-2", "pref": "palladium"}
+{"label": "période", "pattern": [{"pos": "NOUN", "lemma": "période"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-PPBVXBWH-J", "pref": "période"}
+{"label": "phosphore", "pattern": [{"pos": "NOUN", "lemma": "phosphore"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-VC1M1XR4-F", "pref": "phosphore"}
+{"label": "P", "pattern": [{"pos": "NOUN", "lemma": "p"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-VC1M1XR4-F", "pref": "phosphore"}
+{"label": "Phosphore", "pattern": [{"pos": "NOUN", "lemma": "phosphore"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-VC1M1XR4-F", "pref": "phosphore"}
+{"label": "platine", "pattern": [{"pos": "NOUN", "lemma": "platine"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-HCSZZCGN-4", "pref": "platine"}
+{"label": "Pt", "pattern": [{"pos": "PROPN", "lemma": "pt"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-HCSZZCGN-4", "pref": "platine"}
+{"label": "Platine", "pattern": [{"pos": "NOUN", "lemma": "platine"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-HCSZZCGN-4", "pref": "platine"}
+{"label": "platinoïde", "pattern": [{"pos": "NOUN", "lemma": "platinoïde"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NPXD4B2D-S", "pref": "platinoïde"}
+{"label": "élément du groupe du platine", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "groupe"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "platine"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NPXD4B2D-S", "pref": "platinoïde"}
+{"label": "plomb", "pattern": [{"pos": "NOUN", "lemma": "plomb"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NRPKN8GG-H", "pref": "plomb"}
+{"label": "Pb", "pattern": [{"pos": "NOUN", "lemma": "problème"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NRPKN8GG-H", "pref": "plomb"}
+{"label": "Plomb", "pattern": [{"pos": "NOUN", "lemma": "plomb"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NRPKN8GG-H", "pref": "plomb"}
+{"label": "plutonium", "pattern": [{"pos": "NOUN", "lemma": "plutonium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GJDFZ77K-V", "pref": "plutonium"}
+{"label": "Pu", "pattern": [{"pos": "NOUN", "lemma": "pu"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GJDFZ77K-V", "pref": "plutonium"}
+{"label": "élément 94", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "94"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GJDFZ77K-V", "pref": "plutonium"}
+{"label": "Plutonium", "pattern": [{"pos": "NOUN", "lemma": "plutonium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GJDFZ77K-V", "pref": "plutonium"}
+{"label": "pnictogène", "pattern": [{"pos": "NOUN", "lemma": "pnictogène"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-MLRHX1VZ-S", "pref": "pnictogène"}
+{"label": "polonium", "pattern": [{"pos": "NOUN", "lemma": "polonium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-HJN40QPV-B", "pref": "polonium"}
+{"label": "Po", "pattern": [{"pos": "NOUN", "lemma": "po"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-HJN40QPV-B", "pref": "polonium"}
+{"label": "Polonium", "pattern": [{"pos": "NOUN", "lemma": "polonium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-HJN40QPV-B", "pref": "polonium"}
+{"label": "potassium", "pattern": [{"pos": "NOUN", "lemma": "potassium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-LGJQJQQ9-N", "pref": "potassium"}
+{"label": "K", "pattern": [{"pos": "NOUN", "lemma": "k"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-LGJQJQQ9-N", "pref": "potassium"}
+{"label": "Potassium", "pattern": [{"pos": "NOUN", "lemma": "potassium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-LGJQJQQ9-N", "pref": "potassium"}
+{"label": "praséodyme", "pattern": [{"pos": "NOUN", "lemma": "praséodyme"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FNF2KRP1-X", "pref": "praséodyme"}
+{"label": "Pr", "pattern": [{"pos": "NOUN", "lemma": "pr"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FNF2KRP1-X", "pref": "praséodyme"}
+{"label": "Praséodyme", "pattern": [{"pos": "NOUN", "lemma": "praséodyme"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FNF2KRP1-X", "pref": "praséodyme"}
+{"label": "prométhium", "pattern": [{"pos": "NOUN", "lemma": "prométhium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CV59QX8B-L", "pref": "prométhium"}
+{"label": "Pm", "pattern": [{"pos": "NOUN", "lemma": "pm"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CV59QX8B-L", "pref": "prométhium"}
+{"label": "Prométhium", "pattern": [{"pos": "NOUN", "lemma": "prométhium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CV59QX8B-L", "pref": "prométhium"}
+{"label": "protactinium", "pattern": [{"pos": "NOUN", "lemma": "protactinium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-LKF0484D-F", "pref": "protactinium"}
+{"label": "Pa", "pattern": [{"pos": "PROPN", "lemma": "pa"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-LKF0484D-F", "pref": "protactinium"}
+{"label": "Protactinium", "pattern": [{"pos": "NOUN", "lemma": "protactinium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-LKF0484D-F", "pref": "protactinium"}
+{"label": "radium", "pattern": [{"pos": "NOUN", "lemma": "radium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GXFQ6HV4-P", "pref": "radium"}
+{"label": "Ra", "pattern": [{"pos": "NOUN", "lemma": "ra"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GXFQ6HV4-P", "pref": "radium"}
+{"label": "Radium", "pattern": [{"pos": "NOUN", "lemma": "radium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GXFQ6HV4-P", "pref": "radium"}
+{"label": "radon", "pattern": [{"pos": "NOUN", "lemma": "radon"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-XZ6ZCBNG-K", "pref": "radon"}
+{"label": "Rn", "pattern": [{"pos": "PROPN", "lemma": "rn"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-XZ6ZCBNG-K", "pref": "radon"}
+{"label": "Radon", "pattern": [{"pos": "PROPN", "lemma": "radon"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-XZ6ZCBNG-K", "pref": "radon"}
+{"label": "rhénium", "pattern": [{"pos": "NOUN", "lemma": "rhénium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-X7V8KNMP-X", "pref": "rhénium"}
+{"label": "Re", "pattern": [{"pos": "NOUN", "lemma": "re"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-X7V8KNMP-X", "pref": "rhénium"}
+{"label": "Rhénium", "pattern": [{"pos": "NOUN", "lemma": "rhénium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-X7V8KNMP-X", "pref": "rhénium"}
+{"label": "rhodium", "pattern": [{"pos": "NOUN", "lemma": "rhodium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FKKNQWB0-B", "pref": "rhodium"}
+{"label": "Rh", "pattern": [{"pos": "PROPN", "lemma": "rh"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FKKNQWB0-B", "pref": "rhodium"}
+{"label": "Rhodium", "pattern": [{"pos": "NOUN", "lemma": "rhodium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FKKNQWB0-B", "pref": "rhodium"}
+{"label": "roentgenium", "pattern": [{"pos": "NOUN", "lemma": "roentgenium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NMPSS1D3-1", "pref": "roentgenium"}
+{"label": "Rg", "pattern": [{"pos": "NOUN", "lemma": "rg"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NMPSS1D3-1", "pref": "roentgenium"}
+{"label": "élément 111", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "111"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NMPSS1D3-1", "pref": "roentgenium"}
+{"label": "Uuu", "pattern": [{"pos": "PROPN", "lemma": "uuu"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NMPSS1D3-1", "pref": "roentgenium"}
+{"label": "roentgénium", "pattern": [{"pos": "NOUN", "lemma": "roentgénium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NMPSS1D3-1", "pref": "roentgenium"}
+{"label": "röntgenium", "pattern": [{"pos": "NOUN", "lemma": "röntgenium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NMPSS1D3-1", "pref": "roentgenium"}
+{"label": "rœntgénium", "pattern": [{"pos": "NOUN", "lemma": "rœntgénium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NMPSS1D3-1", "pref": "roentgenium"}
+{"label": "unununium", "pattern": [{"pos": "NOUN", "lemma": "unununium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NMPSS1D3-1", "pref": "roentgenium"}
+{"label": "Elément 111", "pattern": [{"pos": "NOUN", "lemma": "elément"}, {"pos": "NUM", "lemma": "111"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NMPSS1D3-1", "pref": "roentgenium"}
+{"label": "rubidium", "pattern": [{"pos": "NOUN", "lemma": "rubidium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-M32L945D-3", "pref": "rubidium"}
+{"label": "Rb", "pattern": [{"pos": "PROPN", "lemma": "rb"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-M32L945D-3", "pref": "rubidium"}
+{"label": "Rubidium", "pattern": [{"pos": "NOUN", "lemma": "rubidium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-M32L945D-3", "pref": "rubidium"}
+{"label": "ruthénium", "pattern": [{"pos": "NOUN", "lemma": "ruthénium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R6LMKQKX-5", "pref": "ruthénium"}
+{"label": "Ru", "pattern": [{"pos": "NOUN", "lemma": "ru"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R6LMKQKX-5", "pref": "ruthénium"}
+{"label": "Ruthénium", "pattern": [{"pos": "NOUN", "lemma": "ruthénium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-R6LMKQKX-5", "pref": "ruthénium"}
+{"label": "rutherfordium", "pattern": [{"pos": "NOUN", "lemma": "rutherfordium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-K0ZD3V17-V", "pref": "rutherfordium"}
+{"label": "Rf", "pattern": [{"pos": "PROPN", "lemma": "rf"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-K0ZD3V17-V", "pref": "rutherfordium"}
+{"label": "élément 104", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "104"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-K0ZD3V17-V", "pref": "rutherfordium"}
+{"label": "Unq", "pattern": [{"pos": "PROPN", "lemma": "unq"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-K0ZD3V17-V", "pref": "rutherfordium"}
+{"label": "unnilquadium", "pattern": [{"pos": "NOUN", "lemma": "unnilquadium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-K0ZD3V17-V", "pref": "rutherfordium"}
+{"label": "samarium", "pattern": [{"pos": "NOUN", "lemma": "samarium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JTHN5WMQ-W", "pref": "samarium"}
+{"label": "Sm", "pattern": [{"pos": "NOUN", "lemma": "sm"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JTHN5WMQ-W", "pref": "samarium"}
+{"label": "Samarium", "pattern": [{"pos": "NOUN", "lemma": "samarium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-JTHN5WMQ-W", "pref": "samarium"}
+{"label": "scandium", "pattern": [{"pos": "NOUN", "lemma": "scandium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NHX11FWH-N", "pref": "scandium"}
+{"label": "Sc", "pattern": [{"pos": "NOUN", "lemma": "sc"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NHX11FWH-N", "pref": "scandium"}
+{"label": "Scandium", "pattern": [{"pos": "NOUN", "lemma": "scandium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NHX11FWH-N", "pref": "scandium"}
+{"label": "seaborgium", "pattern": [{"pos": "NOUN", "lemma": "seaborgium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FWTB5L0N-T", "pref": "seaborgium"}
+{"label": "Sg", "pattern": [{"pos": "NOUN", "lemma": "sg"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FWTB5L0N-T", "pref": "seaborgium"}
+{"label": "élément 106", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "106"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FWTB5L0N-T", "pref": "seaborgium"}
+{"label": "Unh", "pattern": [{"pos": "PROPN", "lemma": "unh"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FWTB5L0N-T", "pref": "seaborgium"}
+{"label": "unnilhexium", "pattern": [{"pos": "NOUN", "lemma": "unnilhexium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-FWTB5L0N-T", "pref": "seaborgium"}
+{"label": "sélénium", "pattern": [{"pos": "NOUN", "lemma": "sélénium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-SSFNCHSK-B", "pref": "sélénium"}
+{"label": "Se", "pattern": [{"pos": "PROPN", "lemma": "se"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-SSFNCHSK-B", "pref": "sélénium"}
+{"label": "Sélénium", "pattern": [{"pos": "NOUN", "lemma": "sélénium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-SSFNCHSK-B", "pref": "sélénium"}
+{"label": "silicium", "pattern": [{"pos": "NOUN", "lemma": "silicium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-Q69H14CX-1", "pref": "silicium"}
+{"label": "Si", "pattern": [{"pos": "PROPN", "lemma": "si"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-Q69H14CX-1", "pref": "silicium"}
+{"label": "Silicium", "pattern": [{"pos": "NOUN", "lemma": "silicium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-Q69H14CX-1", "pref": "silicium"}
+{"label": "sodium", "pattern": [{"pos": "NOUN", "lemma": "sodium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-D9J9ZG62-C", "pref": "sodium"}
+{"label": "Na", "pattern": [{"pos": "NOUN", "lemma": "na"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-D9J9ZG62-C", "pref": "sodium"}
+{"label": "Sodium", "pattern": [{"pos": "NOUN", "lemma": "sodium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-D9J9ZG62-C", "pref": "sodium"}
+{"label": "soufre", "pattern": [{"pos": "NOUN", "lemma": "soufre"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NK1JKPQC-4", "pref": "soufre"}
+{"label": "S", "pattern": [{"pos": "NOUN", "lemma": "s"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NK1JKPQC-4", "pref": "soufre"}
+{"label": "Soufre", "pattern": [{"pos": "PROPN", "lemma": "soufre"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NK1JKPQC-4", "pref": "soufre"}
+{"label": "strontium", "pattern": [{"pos": "NOUN", "lemma": "strontium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GL3J8X2V-F", "pref": "strontium"}
+{"label": "Sr", "pattern": [{"pos": "PROPN", "lemma": "sr"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GL3J8X2V-F", "pref": "strontium"}
+{"label": "Strontium", "pattern": [{"pos": "NOUN", "lemma": "strontium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-GL3J8X2V-F", "pref": "strontium"}
+{"label": "structure du tableau périodique", "pattern": [{"pos": "NOUN", "lemma": "structure"}, {"pos": "ADP", "lemma": "de"}, {"pos": "NOUN", "lemma": "tableau"}, {"pos": "ADJ", "lemma": "périodique"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-W6VBZLM6-P", "pref": "structure du tableau périodique"}
+{"label": "tantale", "pattern": [{"pos": "NOUN", "lemma": "tantale"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-L44RTF4W-7", "pref": "tantale"}
+{"label": "Ta", "pattern": [{"pos": "PROPN", "lemma": "ton"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-L44RTF4W-7", "pref": "tantale"}
+{"label": "Tantale", "pattern": [{"pos": "PROPN", "lemma": "tantale"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-L44RTF4W-7", "pref": "tantale"}
+{"label": "technétium", "pattern": [{"pos": "NOUN", "lemma": "technétium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-KS62JGFZ-8", "pref": "technétium"}
+{"label": "Tc", "pattern": [{"pos": "PROPN", "lemma": "tc"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-KS62JGFZ-8", "pref": "technétium"}
+{"label": "Technétium", "pattern": [{"pos": "NOUN", "lemma": "technétium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-KS62JGFZ-8", "pref": "technétium"}
+{"label": "tellure", "pattern": [{"pos": "NOUN", "lemma": "tellure"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-SNW71HFC-W", "pref": "tellure"}
+{"label": "Te", "pattern": [{"pos": "PROPN", "lemma": "te"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-SNW71HFC-W", "pref": "tellure"}
+{"label": "Tellure", "pattern": [{"pos": "NOUN", "lemma": "tellure"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-SNW71HFC-W", "pref": "tellure"}
+{"label": "tennesse", "pattern": [{"pos": "NOUN", "lemma": "tennesse"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-T6JMQV2K-7", "pref": "tennesse"}
+{"label": "Ts", "pattern": [{"pos": "PROPN", "lemma": "ts"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-T6JMQV2K-7", "pref": "tennesse"}
+{"label": "élément 117", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "NUM", "lemma": "117"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-T6JMQV2K-7", "pref": "tennesse"}
+{"label": "Uus", "pattern": [{"pos": "PROPN", "lemma": "uus"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-T6JMQV2K-7", "pref": "tennesse"}
+{"label": "ununseptium", "pattern": [{"pos": "NOUN", "lemma": "ununseptium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-T6JMQV2K-7", "pref": "tennesse"}
+{"label": "terbium", "pattern": [{"pos": "NOUN", "lemma": "terbium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-RMXJ8T8X-M", "pref": "terbium"}
+{"label": "Tb", "pattern": [{"pos": "NOUN", "lemma": "tb"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-RMXJ8T8X-M", "pref": "terbium"}
+{"label": "Terbium", "pattern": [{"pos": "NOUN", "lemma": "terbium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-RMXJ8T8X-M", "pref": "terbium"}
+{"label": "terre rare", "pattern": [{"pos": "NOUN", "lemma": "terre"}, {"pos": "ADJ", "lemma": "rare"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-N3F360DB-1", "pref": "terre rare"}
+{"label": "thallium", "pattern": [{"pos": "NOUN", "lemma": "thallium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-D9N33PC7-J", "pref": "thallium"}
+{"label": "Tl", "pattern": [{"pos": "PROPN", "lemma": "tl"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-D9N33PC7-J", "pref": "thallium"}
+{"label": "Thallium", "pattern": [{"pos": "NOUN", "lemma": "thallium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-D9N33PC7-J", "pref": "thallium"}
+{"label": "thorium", "pattern": [{"pos": "NOUN", "lemma": "thorium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZJ4ZVTV9-3", "pref": "thorium"}
+{"label": "Th", "pattern": [{"pos": "NOUN", "lemma": "th"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZJ4ZVTV9-3", "pref": "thorium"}
+{"label": "Thorium", "pattern": [{"pos": "NOUN", "lemma": "thorium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZJ4ZVTV9-3", "pref": "thorium"}
+{"label": "thulium", "pattern": [{"pos": "NOUN", "lemma": "thulium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-QR0ZMLT2-8", "pref": "thulium"}
+{"label": "Tm", "pattern": [{"pos": "NOUN", "lemma": "tm"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-QR0ZMLT2-8", "pref": "thulium"}
+{"label": "Thulium", "pattern": [{"pos": "NOUN", "lemma": "thulium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-QR0ZMLT2-8", "pref": "thulium"}
+{"label": "titane", "pattern": [{"pos": "NOUN", "lemma": "titane"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-B46N74X6-Z", "pref": "titane"}
+{"label": "Ti", "pattern": [{"pos": "NOUN", "lemma": "ti"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-B46N74X6-Z", "pref": "titane"}
+{"label": "Titane", "pattern": [{"pos": "NOUN", "lemma": "titane"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-B46N74X6-Z", "pref": "titane"}
+{"label": "transfermien", "pattern": [{"pos": "NOUN", "lemma": "transfermien"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-MB1VDZRZ-R", "pref": "transfermien"}
+{"label": "trans-fermien", "pattern": [{"pos": "NOUN", "lemma": "trans-fermien"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-MB1VDZRZ-R", "pref": "transfermien"}
+{"label": "translawrencien", "pattern": [{"pos": "NOUN", "lemma": "translawrencien"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZV9QHTQR-9", "pref": "translawrencien"}
+{"label": "transactinide", "pattern": [{"pos": "NOUN", "lemma": "transactinide"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZV9QHTQR-9", "pref": "translawrencien"}
+{"label": "élément superlourd", "pattern": [{"pos": "NOUN", "lemma": "élément"}, {"pos": "ADJ", "lemma": "superlourd"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZV9QHTQR-9", "pref": "translawrencien"}
+{"label": "trans-lawrencien", "pattern": [{"pos": "NOUN", "lemma": "trans-lawrencien"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZV9QHTQR-9", "pref": "translawrencien"}
+{"label": "transuranien", "pattern": [{"pos": "NOUN", "lemma": "transuranien"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J1TFZFLQ-B", "pref": "transuranien"}
+{"label": "trans-uranien", "pattern": [{"pos": "NOUN", "lemma": "trans-uranien"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-J1TFZFLQ-B", "pref": "transuranien"}
+{"label": "tungstène", "pattern": [{"pos": "NOUN", "lemma": "tungstène"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-B030NV4K-M", "pref": "tungstène"}
+{"label": "W", "pattern": [{"pos": "NOUN", "lemma": "w"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-B030NV4K-M", "pref": "tungstène"}
+{"label": "Tungstène", "pattern": [{"pos": "NOUN", "lemma": "tungstène"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-B030NV4K-M", "pref": "tungstène"}
+{"label": "uranium", "pattern": [{"pos": "NOUN", "lemma": "uranium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CXXQX7D7-P", "pref": "uranium"}
+{"label": "U", "pattern": [{"pos": "NOUN", "lemma": "u"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CXXQX7D7-P", "pref": "uranium"}
+{"label": "Uranium", "pattern": [{"pos": "NOUN", "lemma": "uranium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CXXQX7D7-P", "pref": "uranium"}
+{"label": "vanadium", "pattern": [{"pos": "NOUN", "lemma": "vanadium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-XZ20HJNX-W", "pref": "vanadium"}
+{"label": "V", "pattern": [{"pos": "NOUN", "lemma": "v"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-XZ20HJNX-W", "pref": "vanadium"}
+{"label": "Vanadium", "pattern": [{"pos": "NOUN", "lemma": "vanadium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-XZ20HJNX-W", "pref": "vanadium"}
+{"label": "xénon", "pattern": [{"pos": "NOUN", "lemma": "xénon"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-DT73NB0V-F", "pref": "xénon"}
+{"label": "Xe", "pattern": [{"pos": "ADJ", "lemma": "x"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-DT73NB0V-F", "pref": "xénon"}
+{"label": "Xénon", "pattern": [{"pos": "NOUN", "lemma": "xénon"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-DT73NB0V-F", "pref": "xénon"}
+{"label": "ytterbium", "pattern": [{"pos": "NOUN", "lemma": "ytterbium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NFCKRP8Z-J", "pref": "ytterbium"}
+{"label": "Yb", "pattern": [{"pos": "PROPN", "lemma": "yb"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NFCKRP8Z-J", "pref": "ytterbium"}
+{"label": "Ytterbium", "pattern": [{"pos": "PROPN", "lemma": "ytterbium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NFCKRP8Z-J", "pref": "ytterbium"}
+{"label": "yttrium", "pattern": [{"pos": "NOUN", "lemma": "yttrium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CJJ7GLMV-8", "pref": "yttrium"}
+{"label": "Y", "pattern": [{"pos": "NOUN", "lemma": "y"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CJJ7GLMV-8", "pref": "yttrium"}
+{"label": "Yttrium", "pattern": [{"pos": "PROPN", "lemma": "yttrium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-CJJ7GLMV-8", "pref": "yttrium"}
+{"label": "zinc", "pattern": [{"pos": "NOUN", "lemma": "zinc"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZH5RPRR9-D", "pref": "zinc"}
+{"label": "Zn", "pattern": [{"pos": "PROPN", "lemma": "zn"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZH5RPRR9-D", "pref": "zinc"}
+{"label": "Zinc", "pattern": [{"pos": "NOUN", "lemma": "zinc"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-ZH5RPRR9-D", "pref": "zinc"}
+{"label": "zirconium", "pattern": [{"pos": "NOUN", "lemma": "zirconium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NCV4MKFK-N", "pref": "zirconium"}
+{"label": "Zr", "pattern": [{"pos": "PROPN", "lemma": "zr"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NCV4MKFK-N", "pref": "zirconium"}
+{"label": "Zirconium", "pattern": [{"pos": "NOUN", "lemma": "zirconium"}], "id": "http://data.loterre.fr/ark:/67375/8HQ-NCV4MKFK-N", "pref": "zirconium"}

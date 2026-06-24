@@ -245,6 +245,141 @@ Fine-tuning mDeBERTa-v3                         → hors de portée sans GPU (~8
 
 ---
 
+## Journal des benchmarks effectués sur loterre-v9
+
+Contrairement aux sections précédentes (chiffres publiés, littérature), cette section journalise les **benchmarks réellement exécutés** sur ce dépôt — un bloc par tâche, dans l'ordre chronologique. À compléter à chaque nouveau benchmark.
+
+---
+
+### Analyse qualité C-value sur le vocabulaire X64 — 2026-06-22
+
+**Contexte** : l'utilisateur a demandé une analyse des résultats d'extraction existants (`output_extract/X64_{fr,en}_annotate_extract.jsonl`, vocabulaire X64 = linguistique) — les candidats remontés en tête de classement semblaient peu pertinents en FR comme en EN.
+
+**Ce qui a été fait** : calcul du taux de candidats reconnus dans le vocabulaire (`in_vocabulary`) sur l'ensemble des candidats vs dans le top 20/top 50 par score C-value (`rule=cvalue`), sur le corpus `data/X64_{fr,en}.jsonl` (FR 1320 docs/222k tokens, EN 773 docs/113k tokens).
+
+**Résultats** : taux global correct (FR 18.0 %, EN 22.6 % — l'extraction noun-chunk fonctionne) mais très dégradé en tête de classement (FR 4/50, EN 14/50 dans le top 50). Top candidats dominés par des locutions méta-discursives académiques ("d'autre part", "l'auteur", "one hand", "Journal des Sçavans") sans rapport avec le domaine. Diagnostic : C-value récompense la fréquence brute, pas la spécificité au domaine — voir mémoire `project_x64_extraction_quality`.
+
+---
+
+### Comparaison PositionRank vs C-value sur X64 — 2026-06-22
+
+**Contexte** : suite à l'analyse précédente, test du levier `--extractor graph` (PositionRank) comme alternative à C-value, sans aucun développement.
+
+**Ce qui a été fait** : extraction sur X64_en et X64_fr avec `--extractor graph` au lieu du défaut `ncvalue`, comparaison du top 20 par score.
+
+**Résultats** : net progrès en EN (top20 in_vocab 7/20 → 9/20, top20 thématiquement cohérent autour de "language") ; **aucune amélioration en FR** (0/20) — révèle au passage un second problème : des candidats malformés ("travers l'étude", "questions relatives à l'" tronqué avant le nom), signe d'un bug de découpage indépendant du choix d'algorithme.
+
+---
+
+### Diagnostic et correction du bug d'élision FR + re-test X64 — 2026-06-22
+
+**Contexte** : les candidats malformés détectés ci-dessus en FR avec PositionRank.
+
+**Ce qui a été fait** : diagnostic direct via spaCy (`en_core_sci_sm`/`fr_core_news_sm`) montrant que `fr_core_news_sm` mistague l'élision FR (`l'`, `d'`, apostrophe typographique `'`) en `NOUN` au lieu de `DET`, cassant le découpage des noun chunks. Correction de `clean_chunk_span()` (`loterre_extract_cli.py`, détection par motif textuel + `dep_=="fixed"`, indépendante du POS). Re-extraction sur X64_fr complet (C-value) avant/après.
+
+**Résultats** : top20 in_vocab FR 0/20 → 4/20, apparition de vrais termes ("langue maternelle", "linguistique cognitive"), taux global 18.0 % → 19.2 %. Aucune régression EN (P66_en/P66_fr identiques). Le bruit académique générique restant (hors élisions) n'est pas résolu par ce fix — confirmé comme un problème structurel de C-value, pas un bug.
+
+---
+
+### Premier test Phase 5 (`--extractor embed`) sur P66_en — 2026-06-23
+
+**Contexte** : validation initiale du nouvel extracteur par similarité aux embeddings Loterre (`paraphrase-multilingual-MiniLM-L12-v2`), juste après son implémentation, sur un corpus propre (P66, mémoire/cognition) avant test sur le cas difficile X64.
+
+**Ce qui a été fait** : `extract_annotate --extractor embed --dict-id P66_en`, inspection des 15 meilleurs candidats par score (similarité cosinus au centroïde).
+
+**Résultats** : tous les candidats du top 15 sont pertinents au domaine (*cognition*, *sensory memory*, *episodic memory test*, *controlled memory assessment*, *simulated amnesia*...), scores de 0.79 à 0.15 sur l'ensemble des 84 candidats — confirme que le mécanisme fonctionne correctement avant le test sur cas plus difficile.
+
+---
+
+### Validation Phase 5 embed sur X64 + calibration `--min-freq` — 2026-06-23
+
+**Contexte** : test décisif — `embed` règle-t-il le problème de bruit académique qui a motivé la Phase 5 ?
+
+**Ce qui a été fait** : extraction `--extractor embed` sur X64_en/X64_fr à `--min-freq` par défaut (2), puis 5/10/15/20, comparaison du top 20 par score à chaque palier.
+
+**Résultats** : à `--min-freq` par défaut, des candidats courts/peu fréquents (souvent mono-token, parfois noms propres — *"era"*, *"de"*, *"co"*, *"pas"*) obtiennent des scores artificiellement élevés (limite connue des embeddings de phrase sur texte court). En relevant `--min-freq` : EN top20 in_vocab 7/20 (cvalue) → 9/20 (graph) → **13/20** (embed, `--min-freq` 10) ; FR 0/20 → 0/20 → **9-10/20** (embed, `--min-freq` 5-10). Recommandation retenue : `--min-freq 5` à `10` avec `--extractor embed` sur gros corpus (vs 2 par défaut, calibré pour ncvalue/graph).
+
+---
+
+### Benchmark ACTER (Phase 6) — comparaison à froid ncvalue vs PositionRank — 2026-06-23
+
+**Contexte** : mesure rigoureuse, externe et comparable à une baseline publiée (D-Terminer, F1 0.32–0.50 sur ACTER), après les analyses informelles sur X64.
+
+**Ce qui a été fait** : nouveau script `scripts/evaluation/acter_eval.py` — réalignement des tokens gold ACTER (tokenisation LeTs Preprocess) sur des offsets caractères du texte brut, comparaison token-level. Coupure top-N (N = nb de termes gold uniques du domaine) pour comparer le **classement** des deux extracteurs, pas l'ensemble brut de candidats (identique entre `ncvalue`/`graph`, partageant la même extraction noun-chunk amont — sans cette coupure, scores strictement identiques, piège détecté avant le run final). `--min-freq 1` (vs défaut 2, trop strict pour ces corpus de domaine restreint). 4 domaines (corruption, équitation, insuffisance cardiaque, énergie éolienne) × 2 langues (EN, FR) × 2 extracteurs = 8 combinaisons.
+
+**Résultats** :
+
+| Domaine | EN F1 ncvalue | EN F1 graph | FR F1 ncvalue | FR F1 graph |
+|---|---:|---:|---:|---:|
+| corp | 0.34 | 0.33 | 0.35 | 0.34 |
+| equi | 0.36 | 0.58 | 0.28 | 0.54 |
+| htfl | 0.53 | 0.55 | 0.41 | 0.51 |
+| wind | 0.44 | 0.52 | 0.28 | 0.50 |
+| **TOTAL** | **0.391** | **0.496** | | |
+
+PositionRank devance C-value sur les 8 combinaisons. F1 global 0.496 (PositionRank, sans GPU/fine-tuning) au sommet de la fourchette D-Terminer (0.32–0.50, mBERT+RNN, GPU). Détail : `benchmark_results/acter/acter_results.{json,md}` (non commités, gitignorés).
+
+---
+
+### Variante expérimentale embed semi-supervisé sur ACTER — 2026-06-23
+
+**Contexte** : question utilisateur après le benchmark ci-dessus ("tu ne peux pas inclure embed ?") — `embed` ne peut pas être comparé à froid (besoin d'un vocabulaire cible, qu'ACTER n'a pas). Variante semi-supervisée proposée et acceptée pour évaluer informativement la capacité d'enrichissement.
+
+**Ce qui a été fait** : pour chaque domaine, moitié des termes gold = vocabulaire de référence ("seed", centroïde de comparaison), l'autre moitié ("held-out") = objectif à retrouver. Tokens appartenant à un terme seed entièrement exclus du calcul P/R/F1 (ni TP/FN ni FP/TN) pour ne mesurer que la capacité à généraliser au-delà du vocabulaire donné. Clairement étiqueté "EXPÉRIMENTAL", section séparée du tableau principal (pas une comparaison à froid légitime).
+
+**Résultats** : F1 global = **0.306** — *moins bon* que C-value (0.391) et PositionRank (0.496) évalués à froid, même avec la moitié des réponses données comme vocabulaire de référence. Hypothèse retenue : un centroïde unique (moyenne) est trop grossier pour capturer la diversité interne d'un domaine restreint (contrairement à X64 où le vocabulaire Loterre complet, des milliers de termes, donne un signal de filtrage de bruit académique nettement plus riche).
+
+---
+
+### Passage centroïde → plus proche voisin pour `embed`, revalidation X64 + ACTER — 2026-06-23
+
+**Contexte** : question utilisateur après les résultats ci-dessus ("je trouve qu'il y a bcp de termes simples dans la version embed, pourquoi ?"). Investigation : composition du vocabulaire X64 (58.2% EN / 61.5% FR de concepts à un seul mot — noms de langues/ethnies, X64 est un vocabulaire de type Ethnologue) — un centroïde unique (moyenne) brouille cette diversité sémantique et favorise mécaniquement les candidats courts, qui dominent la composition du vocabulaire. Proposition retenue : remplacer la similarité au centroïde par la similarité au terme le **plus proche** (max) du vocabulaire cible.
+
+**Ce qui a été fait** :
+1. Réécriture de `src/loterre_embed.py` : `compute_centroid()` supprimé, remplacé par `embed_vocabulary_terms()` (matrice normalisée, un vecteur par terme du vocabulaire) ; `score_candidates_embed()` calcule désormais `max` de la similarité cosinus sur toute la matrice (au lieu de la similarité à une moyenne unique), avec `.clip(-1.0, 1.0)` pour absorber un dépassement float32 (`1.0000002` observé sur un candidat identique à un terme du vocabulaire).
+2. Revalidation X64 EN+FR : top 20 par score passe de 13/20 (EN) et 9-10/20 (FR) avec le centroïde à **20/20 dans les deux langues** avec le plus proche voisin — et ceci dès `--min-freq` par défaut (2), sans le réglage 5-10 auparavant nécessaire.
+3. Recalibration de `--enrichment-threshold` (suggestions d'ajout au vocabulaire) : à l'ancien défaut (0.5, hérité du centroïde où les scores étaient plus bas en moyenne), 77% des candidats X64 (1856/2406) étaient signalés comme suggestions, bruit inclus (*era*, *de*, *co*, *pas*, un nom propre — scores 0.93-0.96 avec le plus proche voisin). Testé 0.5/0.8/0.9/0.95/0.98/0.99 : **défaut relevé à 0.95** (liste raisonnable), 0.98-0.99 donnant une liste courte quasi sans bruit pour qui veut être plus strict.
+4. Revalidation de la variante expérimentale embed semi-supervisée sur ACTER (`--skip-cold` ajouté à `acter_eval.py` pour ne relancer que cette section sans répéter ncvalue/graph, inchangés).
+5. Ajustement de `tests/smoke/test_embed.sh` : seuil de test relevé de 0.5 à 0.8 (les scores plus proche voisin sont systématiquement plus hauts que l'ancien centroïde, un seuil bas ne filtrait plus rien).
+
+**Résultats ACTER (embed semi-supervisé, 8 combinaisons, micro-moyenne)** :
+
+| | centroïde (ancien) | plus proche voisin (nouveau) |
+|---|---:|---:|
+| Precision | 0.461 | **0.728** |
+| Recall | 0.229 | **0.243** |
+| F1 | 0.306 | **0.364** |
+
+Amélioration nette sur précision ET rappel (pas seulement un compromis). Reste sous C-value (0.391) et PositionRank (0.496) évalués à froid, mais l'écart se réduit sensiblement — confirme que le plus proche voisin généralise mieux que le centroïde même sur un vocabulaire de référence artificiellement restreint, pas seulement sur un grand vocabulaire Loterre établi comme X64. Détail par domaine dans `benchmark_results/acter/acter_results_embed_seeded.json`/`acter_results.md` (non commités, gitignorés).
+
+---
+
+### Phase 4 — Détection de variantes (TermSuite) + validation sur 3 vocabulaires — 2026-06-23
+
+**Contexte** : reprise de la Phase 4 (mise en attente depuis la session du passage centroïde → plus proche voisin). Demande explicite : mécanisme à motivation linguistique, en réutilisant les règles par langue de TermSuite (CNRS/TTC), puis tester sur un corpus autre que X64 pour vérifier que le calibrage généralise.
+
+**Ce qui a été fait** : lecture directe de `termsuite-resources` (Apache 2.0) — `{fr,en}-variants.yaml` (~450 règles/langue) pour la taxonomie réelle, puis vendoring de `{fr,en}/morphology/{suffix-derivation-bank,suppletives-bank}.txt` (FR : 303 + 319 lignes ; EN : 17 + 0, pas de classes supplétives anglaises curées). Nouveau `src/loterre_variants.py` : 6 mécanismes généralisés (`morph_inflection`, `graphical`, `morph_prefix`, `syn_expansion`, `syn_permutation`, `morph_derivation`) au lieu de répliquer les ~450 règles par langue. Sortie additive (`canonical_form`/`variant_type` sur `CandidateTerm`), option CLI explicite `--detect-variants` (défaut désactivé). Test smoke `tests/smoke/test_variants.sh` (1 cas construit par catégorie + non-régression sans le flag).
+
+**Quatre bugs trouvés et corrigés en validant sur données réelles** (X64, P66, puis un corpus réel de paléoclimatologie fourni par l'utilisateur, `/home/schneist/data/paleo/paleo17500/txt`, jumelé au vocabulaire QX8) :
+1. Faux regroupement par transitivité (union-find sur une relation non-équivalente) — ex. *"semantic memory"* groupé à tort sous *"controlled memory assessment"* via une chaîne d'intermédiaires partageant juste *"memory"*. Corrigé par affectation directe sans transitivité.
+2. Gérondifs anglais mal étiquetés VERB par spaCy (*"spacing effect"*, *"sandwich effect"*) disparaissant à tort du squelette de contenu. Corrigé en ajoutant VERB aux POS de contenu.
+3. Dérivation N↔N (déverbal, ex. *"modeling"*/*"model"*) et classes supplétives (ex. *"psychologie"*/*"esprit"*, *"calcul"*/*"mesure"*) trop permissives. Corrigé : `morph_derivation` restreint aux paires A↔N, classes supplétives retirées (rôle différent chez TermSuite : décomposition de composés, pas synonymie de mots entiers).
+4. Préfixe court coïncident (*"age"*/*"images"*) et acronyme confondu avec un homographe (*"GRACE"*/*"grâce"*). Corrigés par une longueur de radical minimale et une exception tout-capitales.
+
+**Résultats** (après corrections, candidats groupés / total, échantillon inspecté manuellement par catégorie à chaque fois) :
+
+| Corpus | Vocabulaire | % multi-mots | Candidats | Groupés |
+|---|---|---:|---:|---:|
+| X64 EN | X64 | 38% | 1232 | 367 (29.8%) |
+| X64 FR | X64 | 42% | 2427 | 792 (32.6%) |
+| P66 EN | P66 | 89% | 203 | 36 (17.7%) |
+| P66 FR | P66 | — | 84 | 17 (20.2%) |
+| Paléoclimatologie (794 docs réels) | QX8 | 49% | 2322 | 875 (37.7%) |
+
+Performance : 794 documents réels traités en 44s avec `--detect-variants` — pas de ralentissement notable. Limite résiduelle acceptée (documentée, pas résolue) : `morph_prefix` garde un faux positif occasionnel sur des mots latins à préfixe historique mais non séparable synchroniquement (ex. *"information"*/*"formation"*) — nécessiterait un vrai lexique de dérivation, hors contrainte "pas de ressource lourde".
+
+---
+
 ## Références
 
 - Mao et al. 2024 — *Attention-Seeker: Dynamic Self-Attention Scoring for Unsupervised Keyphrase Extraction* : https://arxiv.org/html/2409.10907

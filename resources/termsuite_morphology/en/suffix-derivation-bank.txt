@@ -1,0 +1,30 @@
+# Source : https://github.com/termsuite/termsuite-resources/blob/master/en/morphology/english-suffix-derivation-bank.txt
+# Licence : Apache License 2.0 (CNRS, 2015 — TermSuite/TTC) ; ce fichier ne porte pas
+# l'en-tête de licence dans le dépôt d'origine, mais fait partie du même dépôt que les
+# .yaml qui le portent explicitement.
+# Récupéré tel quel le 2026-06-23 pour src/loterre_variants.py (Phase 4, détection de
+# variantes — alternance N+Adj <-> N+Prep+N par dérivation morphologique adjectif/nom).
+#
+# Format : 3 champs séparés par une tabulation : "CAT_FROM CAT_TO"<TAB>suffixe_from<TAB>suffixe_to
+# ("-" = suffixe vide). Voir loterre_variants.load_derivation_rules() pour le parsing.
+# Beaucoup plus court que la table FR (17 règles vs 303) — TermSuite couvre l'anglais
+# moins finement pour cette alternance, l'anglais s'appuyant moins sur la dérivation
+# adjectif/nom que le français pour ce type de variation.
+
+A N	-ic	-
+A N	-ous	-
+A N	-aceous	-
+A N	-eous	-
+A N	-al	-
+A N	-al	-s
+A N	-ial	-
+A N	-ial	-e
+A N	-inal	-e
+A N	-ial	-y
+A N	-ian	-	
+N N	-ee	-
+N N	-age	-e
+N N	-age	-
+N N	-ing	-
+N N	-ion	-ed
+N N	-ation	-ed

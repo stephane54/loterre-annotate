@@ -1,10 +1,10 @@
 PYTHON ?= python3
 
-.PHONY: install models \
+.PHONY: install models models-embed \
         test test-smoke test-non-regression test-profiling test-quality \
-        test-extraction test-extract test-cvalue test-positionrank test-extract-annotate \
+        test-extraction test-extract test-cvalue test-positionrank test-extract-annotate test-embed test-variants \
         benchmark benchmark-local benchmark-api benchmark-resolvers html \
-        extract extract-annotate \
+        extract extract-annotate corpus-acter benchmark-acter \
         run ezs-test ws-test ws-test-accel deploy build \
         clean tree
 
@@ -27,8 +27,19 @@ models:
 	@echo "[models] Input    : aucun"
 	@echo "[models] Resource : acces reseau (telechargement spaCy)"
 	@echo "[models] Output   : modeles en_core_web_sm + fr_core_news_sm installes dans l'environnement Python actif"
+	@echo "[models] Voir aussi : make models-embed (modele sentence-transformers, Phase 5 extraction)"
 	@$(PYTHON) -m spacy download en_core_web_sm
 	@$(PYTHON) -m spacy download fr_core_news_sm
+
+# Modèle d'embeddings pour --extractor embed (Phase 5, scoring de candidats
+# par similarite au vocabulaire cible) : paraphrase-multilingual-MiniLM-L12-v2
+# (~118 Mo, CPU, FR+EN) — telecharge et mis en cache au premier appel sinon ;
+# cette cible permet de le pre-telecharger explicitement.
+models-embed:
+	@echo "[models-embed] Input    : aucun"
+	@echo "[models-embed] Resource : acces reseau (telechargement Hugging Face, ~118 Mo)"
+	@echo "[models-embed] Output   : modele paraphrase-multilingual-MiniLM-L12-v2 mis en cache localement"
+	@$(PYTHON) -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')"
 
 # ── Tests : annotation (v1.0) ──────────────────────────────────────────────────
 
@@ -64,7 +75,7 @@ test-quality:
 # ── Tests : extraction terminologique (v2.0) ───────────────────────────────────
 # Sous-commandes `extract` / `extract_annotate` de src/loterre_cli.py.
 
-test-extraction: test-extract test-cvalue test-positionrank test-extract-annotate
+test-extraction: test-extract test-cvalue test-positionrank test-embed test-variants test-extract-annotate
 	@echo "[test-extraction] Toutes les sous-cibles ci-dessus ont leur propre detail input/resource/output."
 
 # Extraction noun chunks de base (Phase 1) via loterre_extract_cli.py.
@@ -88,15 +99,32 @@ test-positionrank:
 	@echo "[test-positionrank] Output   : fichiers temporaires /tmp (auto-nettoyes par le script)"
 	@bash tests/smoke/test_positionrank.sh
 
-# Les 3 sous-commandes via loterre_cli.py (annotate/extract/extract_annotate),
-# y compris le croisement extract_annotate sans faux positif.
+# [Extraction] Scoring par embeddings (Phase 5) : similarite au terme le plus
+# proche (plus proche voisin) du vocabulaire cible, filtrage par seuil,
+# suggestions d'enrichissement.
+test-embed:
+	@echo "[test-embed] Input    : data/jsonl/P66_en.jsonl"
+	@echo "[test-embed] Resource : dictionnaire P66_en, modele sentence-transformers (paraphrase-multilingual-MiniLM-L12-v2)"
+	@echo "[test-embed] Output   : fichiers temporaires /tmp (auto-nettoyes par le script)"
+	@bash tests/smoke/test_embed.sh
+
+# Détection de variantes (Phase 4) : graphiques/morphologiques/syntaxiques,
+# mécanismes inspirés de TermSuite — --detect-variants (option explicite).
+test-variants:
+	@echo "[test-variants] Input    : data/jsonl/P66_en.jsonl + candidats construits a la main (test unitaire)"
+	@echo "[test-variants] Resource : resources/termsuite_morphology/{fr,en}/*.txt, modele spaCy EN runtime"
+	@echo "[test-variants] Output   : fichiers temporaires /tmp (auto-nettoyes par le script)"
+	@bash tests/smoke/test_variants.sh
+
+# [Les deux] Les 3 sous-commandes via loterre_cli.py (annotate/extract/
+# extract_annotate), y compris le croisement extract_annotate sans faux positif.
 test-extract-annotate:
 	@echo "[test-extract-annotate] Input    : data/jsonl/P66_en.jsonl"
 	@echo "[test-extract-annotate] Resource : dictionnaire P66_en, modele spaCy EN (annotation + extraction)"
 	@echo "[test-extract-annotate] Output   : fichiers temporaires /tmp (auto-nettoyes par le script)"
 	@bash tests/smoke/test_extract_annotate_cli.sh
 
-# ── Benchmark & rendu HTML ────────────────────────────────────────────────────
+# ── Benchmark & rendu HTML (annotation, v1.0) ──────────────────────────────────
 
 # Benchmark complet : loterre_cli (local) + API terms-tools (production) + Resolvers (EN + FR).
 # BENCHMARK_ARGS permet de passer des options supplémentaires :
@@ -129,6 +157,27 @@ benchmark-resolvers:
 	@echo "[benchmark-resolvers] Output   : benchmark_results/<horodatage>_local_resolvers/ (json + summary)"
 	@bash tests/smoke/compare_engines.sh --skip-api $(BENCHMARK_ARGS)
 
+# ── Benchmark ACTER (Phase 6, extraction "a froid" sans vocabulaire) ───────────
+# Corpus externe (https://github.com/AylaRT/ACTER, CC BY-NC-SA 4.0) : 4 domaines
+# x langues, gold standard de termes pour comparer C-value/PositionRank a des
+# baselines publiees (D-Terminer, voir CLAUDE.md). Pas committe dans le repo
+# (volumineux, licence a part) — clone a la demande dans corpus_acter/ (gitignore).
+
+corpus-acter:
+	@echo "[corpus-acter] Input    : aucun"
+	@echo "[corpus-acter] Resource : acces reseau (clone GitHub, ~73 Mo)"
+	@echo "[corpus-acter] Output   : corpus_acter/ (4 domaines x 3 langues, CC BY-NC-SA 4.0)"
+	@if [ -d corpus_acter ]; then echo "deja present : corpus_acter/"; else \
+		git clone --depth 1 https://github.com/AylaRT/ACTER.git corpus_acter; fi
+
+# [Extraction] Compare C-value/PositionRank au gold ACTER (token-level P/R/F1)
+# — extractor embed exclu (necessite un vocabulaire Loterre cible, qu'ACTER n'a pas).
+benchmark-acter:
+	@echo "[benchmark-acter] Input    : corpus_acter/{en,fr}/{corp,equi,htfl,wind}/annotated/ (make corpus-acter d'abord)"
+	@echo "[benchmark-acter] Resource : modeles spaCy runtime EN+FR — aucun acces reseau"
+	@echo "[benchmark-acter] Output   : benchmark_results/acter/ (json + markdown par domaine/langue/extracteur)"
+	@$(PYTHON) scripts/evaluation/acter_eval.py --corpus-root corpus_acter --out-dir benchmark_results/acter --min-freq 1
+
 # Génère les fichiers HTML annotés pour tous les corpus dans data/jsonl/.
 html:
 	@echo "[html] Input    : data/jsonl/*.json(l) (tous les corpus du repertoire)"
@@ -141,14 +190,14 @@ html:
 # Pour les paramètres d'extraction (--min-freq, --extractor, ...), invoquer
 # src/loterre_cli.py directement — voir loterre_cli.py extract --help.
 
-# Extraction de candidats termes, sans vocabulaire.
+# [Extraction] Candidats termes, sans vocabulaire.
 extract:
 	@echo "[extract] Input    : data/jsonl/$(VOCAB)_$(LOTLANG).jsonl"
 	@echo "[extract] Resource : modele spaCy $(LOTLANG) runtime (parser actif, pas de dictionnaire)"
 	@echo "[extract] Output   : stdout (JSON candidats, mode=extract)"
 	@$(PYTHON) src/loterre_cli.py extract --lang $(LOTLANG) --text data/jsonl/$(VOCAB)_$(LOTLANG).jsonl
 
-# Extraction puis croisement avec le vocabulaire Loterre VOCAB_LOTLANG.
+# [Les deux] Extraction puis croisement avec le vocabulaire Loterre VOCAB_LOTLANG.
 extract-annotate:
 	@echo "[extract-annotate] Input    : data/jsonl/$(VOCAB)_$(LOTLANG).jsonl"
 	@echo "[extract-annotate] Resource : dictionnaire $(VOCAB)_$(LOTLANG), modele spaCy $(LOTLANG) runtime"
@@ -184,8 +233,8 @@ ws-test-accel:
 build:
 	@echo "[build] Input    : VERSION, src/, requirements.txt"
 	@echo "[build] Resource : cle SSH configuree pour github.com (push du wheel)"
-	@echo "[build] Output   : wheel/tarball buildes + push sur le remote Git"
-	@bash production/build_push_package.sh
+	@echo "[build] Output   : wheel/tarball buildes + push sur le remote Git (+ tag si BUILD_ARGS=--tag)"
+	@bash production/build_push_package.sh $(BUILD_ARGS)
 
 deploy:
 	@echo "[deploy] Input    : image source recuperee depuis GitHub (pip install git+...)"

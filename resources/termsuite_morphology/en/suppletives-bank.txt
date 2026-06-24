@@ -1,0 +1,8 @@
+# Source : https://github.com/termsuite/termsuite-resources/blob/master/en/morphology/english-suppletive-bank.txt
+# Licence : Apache License 2.0 (CNRS, 2015 — TermSuite/TTC).
+# Récupéré le 2026-06-23 pour src/loterre_variants.py (Phase 4, détection de variantes).
+# Fichier vide côté anglais dans le dépôt d'origine (HTTP 200, 0 ligne de données) —
+# TermSuite n'a pas curé de paires supplétives anglaises, contrairement au français.
+# Conservé tel quel (vide) pour que load_derivation_rules("en") ne suppose pas un
+# fichier manquant et reste cohérent avec la convention par langue.
+

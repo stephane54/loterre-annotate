@@ -100,9 +100,9 @@ Voir `planification/analyse_benchmarks_extraction.md` pour les benchmarks de ré
 | 1 | Module extraction noun chunks + filtres POS | **Terminée** |
 | 2 | C-value scoring (termes emboîtés, seuil configurable) | **Cœur terminé** — extension contexte NC-value différée |
 | 3 | Intégration 3 sous-commandes CLI (`annotate\|extract\|extract_annotate`) | **Terminée** |
-| 4 | Détection de variantes (graphiques, morpho, syntaxiques) | Recommandée |
-| 5 | Scoring embeddings Loterre (MiniLM) — filtrage + enrichissement | Recommandée |
-| 6 | Benchmark ACTER + comparaison D-Terminer + TermSuite | Recommandée |
+| 4 | Détection de variantes (graphiques, morpho, syntaxiques) — mécanismes inspirés de TermSuite (CNRS/TTC), `--detect-variants` | **Terminée** |
+| 5 | Scoring embeddings Loterre (MiniLM) — filtrage + enrichissement | **Terminée** |
+| 6 | Benchmark ACTER + comparaison D-Terminer (TermSuite non fait) | **Terminée** — F1 0.496 (PositionRank) vs 0.32–0.50 D-Terminer |
 
 **Estimation totale : 90–120 h de travail effectif.**
 
@@ -127,6 +127,11 @@ Voir `planification/analyse_benchmarks_extraction.md` pour les benchmarks de ré
 | `src/loterre_extraction_base.py` | v2.0 — `CandidateTerm`, `get_nlp()` (chargement spaCy cache, parser optionnel) |
 | `src/loterre_extract_cli.py` | v2.0 — extraction noun chunks (Phase 1) + scoring C-value (Phase 2) + `cross_reference_candidates()` (Phase 3) |
 | `src/loterre_cvalue.py` | v2.0 — algorithme C-value (Frantzi 1998), termes emboîtés, cas limite mono-token |
+| `src/loterre_positionrank.py` | v2.0 — PositionRank (Florescu & Caragea 2017), bascule auto selon volume de tokens |
+| `src/loterre_embed.py` | v2.0 — Phase 5, scoring par similarité cosinus au terme le plus proche (plus proche voisin) du vocabulaire cible (`paraphrase-multilingual-MiniLM-L12-v2`), `--extractor embed` |
+| `src/loterre_variants.py` | v2.0 — Phase 4, détection de variantes (graphiques/morphologiques/syntaxiques, mécanismes inspirés de TermSuite), `--detect-variants` |
+| `resources/termsuite_morphology/{fr,en}/*.txt` | Tables de dérivation morphologique vendorisées depuis `termsuite-resources` (CNRS/TTC, Apache 2.0) — utilisées par `loterre_variants.derive_match()` |
+| `scripts/evaluation/acter_eval.py` | v2.0 — Phase 6, benchmark token-level contre le gold ACTER (`make benchmark-acter`), ncvalue vs PositionRank |
 | `tests/baselines/annotation_baseline_v1.0.0.json` | Baseline non-régression mode annotate (F1 par vocab/langue) |
 | `scripts/build_dictionaries/build_dictionaries.py` | Génération native des dictionnaires JSONL depuis CSV vocab Loterre |
 | `configs/registry.yaml` | Registre des 30+ vocabulaires Loterre |

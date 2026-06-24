@@ -52,20 +52,24 @@ def resolve_config_value(config: Dict[str, Any], *keys, default=None):
 
 
 def resolve_effective_params(args) -> Dict[str, Any]:
-    config = load_yaml(Path(args.config).resolve()) if args.config else {}
+    # getattr() partout ici : selon la sous-commande (annotate/extract/
+    # extract_annotate), certains attributs (dict_id/dict/profile/config)
+    # n'existent pas sur le namespace args — extract n'a pas de vocabulaire.
+    config_path = getattr(args, "config", None)
+    config = load_yaml(Path(config_path).resolve()) if config_path else {}
     registry_path = Path(args.registry).resolve()
     registry = load_registry(registry_path)
 
-    dict_id = args.dict_id or resolve_config_value(config, "dict_id")
+    dict_id = getattr(args, "dict_id", None) or resolve_config_value(config, "dict_id")
     reg_entry = registry.get(dict_id, {}) if dict_id else {}
 
     dict_path = (
-        args.dict
+        getattr(args, "dict", None)
         or resolve_config_value(config, "dictionary", "dict")
         or reg_entry.get("path")
     )
     lang = args.lang or resolve_config_value(config, "lang", "language") or reg_entry.get("lang")
-    profile = args.profile or resolve_config_value(config, "profile") or reg_entry.get("profile")
+    profile = getattr(args, "profile", None) or resolve_config_value(config, "profile") or reg_entry.get("profile")
     text_path = args.text or resolve_config_value(config, "text", "input")
 
     if dict_path:
@@ -150,6 +154,88 @@ def run_engine_full_json(effective: Dict[str, Any], text_path: str, unknown_args
         return json.loads(proc.stdout)
     except Exception as exc:
         raise RuntimeError(f"v9 engine did not return valid JSON in --silent mode: {exc}") from exc
+
+
+def run_extraction_subprocess(args, effective: Dict[str, Any]) -> Dict[str, Any]:
+    # Subprocess boundary for the same reason as run_engine_full_json: the
+    # extraction module loads its own spaCy model (parser enabled, see
+    # loterre_extraction_base.get_nlp) and must not share state with this process.
+    # Les paramètres d'extraction sont désormais explicitement définis sur les
+    # sous-commandes extract/extract_annotate (add_extraction_args) plutôt que
+    # transmis via unknown_args — on les reconstruit ici en flags explicites.
+    script = Path(__file__).with_name("loterre_extract_cli.py")
+    if not script.exists():
+        raise SystemExit(f"ERROR: extraction module not found: {script}")
+
+    cmd = [sys.executable, str(script), "--silent"]
+    if effective.get("text"):
+        cmd.extend(["--text", effective["text"]])
+    if effective.get("lang"):
+        cmd.extend(["--lang", effective["lang"]])
+    cmd.extend(["--min-tokens", str(args.min_tokens)])
+    cmd.extend(["--max-tokens", str(args.max_tokens)])
+    cmd.extend(["--min-freq", str(args.min_freq)])
+    cmd.extend(["--cvalue-threshold", str(args.cvalue_threshold)])
+    cmd.extend(["--extractor", args.extractor])
+    cmd.extend(["--extractor-auto-threshold", str(args.extractor_auto_threshold)])
+    cmd.extend(["--embed-threshold", str(args.embed_threshold)])
+    if effective.get("dict"):
+        cmd.extend(["--dict", effective["dict"]])
+    if args.max_terms:
+        cmd.extend(["--max-terms", str(args.max_terms)])
+    if args.detect_variants:
+        cmd.append("--detect-variants")
+
+    proc = subprocess.run(cmd, capture_output=True, text=True)
+    if proc.returncode != 0:
+        raise RuntimeError(
+            "extraction module failed\n"
+            f"Command: {' '.join(cmd)}\n"
+            f"STDERR:\n{proc.stderr}"
+        )
+    try:
+        return json.loads(proc.stdout)
+    except Exception as exc:
+        raise RuntimeError(f"extraction module did not return valid JSON: {exc}") from exc
+
+
+def run_extract_mode(args, effective: Dict[str, Any]) -> None:
+    if not effective.get("lang"):
+        raise SystemExit("ERROR: --lang is required for extract")
+    payload = run_extraction_subprocess(args, effective)
+    write_or_print_json(payload, args.out)
+
+
+def run_extract_annotate_mode(args, effective: Dict[str, Any]) -> None:
+    if not effective.get("lang"):
+        raise SystemExit("ERROR: --lang is required for extract_annotate")
+    if not effective.get("dict"):
+        raise SystemExit("ERROR: --dict or --dict-id with registry path is required for extract_annotate")
+
+    from loterre_extract_cli import cross_reference_candidates
+
+    extraction_payload = run_extraction_subprocess(args, effective)
+    annotation_payload = run_engine_full_json(effective, effective["text"], [])
+
+    candidates = extraction_payload.get("candidates", [])
+    cross_reference_candidates(candidates, annotation_payload.get("results", []))
+
+    # Phase 5 : un candidat absent du vocabulaire mais très proche d'un de
+    # ses termes (score embed élevé, plus proche voisin) est une suggestion
+    # d'enrichissement — n'a de sens que pour l'extracteur embed (score =
+    # similarité cosinus, pas comparable au score ncvalue/positionrank).
+    if extraction_payload.get("extractor") == "embed":
+        for c in candidates:
+            if c.get("in_vocabulary") is False:
+                c["enrichment_suggestion"] = c.get("score", 0.0) >= args.enrichment_threshold
+
+    payload = {
+        **extraction_payload,
+        "mode": "extract_annotate",
+        "dict_id": effective.get("dict_id"),
+        "dict": effective.get("dict"),
+    }
+    write_or_print_json(payload, args.out)
 
 
 def result_has_ambiguity(result: Dict[str, Any], args) -> bool:
@@ -314,28 +400,114 @@ def run_full_mode(args, effective: Dict[str, Any], unknown_args) -> None:
     raise SystemExit(proc.returncode)
 
 
+def _add_extraction_args(parser: argparse.ArgumentParser) -> None:
+    """Paramètres d'extraction pour les sous-commandes extract/extract_annotate.
+
+    Dupliqué (volontairement, pas importé) depuis loterre_extract_cli.add_extraction_args :
+    importer ce module depuis loterre_cli.py chargerait spacy au niveau module
+    (mesuré : ~1.3s) à chaque invocation de la CLI, y compris --execution-strategy
+    fast qui doit justement rester libre de tout coût spaCy dans ce process — la
+    frontière subprocess existe précisément pour ça (voir run_engine_full_json).
+    """
+    parser.add_argument("--min-tokens", type=int, default=1,
+                         help="Longueur minimale d'un candidat, en tokens (défaut 1)")
+    parser.add_argument("--max-tokens", type=int, default=6,
+                         help="Longueur maximale d'un candidat (défaut 6)")
+    parser.add_argument("--min-freq", type=int, default=3,
+                         help="Fréquence minimale dans le corpus pour retenir un candidat (défaut 3)")
+    parser.add_argument("--cvalue-threshold", type=float, default=0.0,
+                         help="Score C-value minimal (ou fréquence normalisée pour les mono-tokens) ; "
+                              "0 = pas de filtre (défaut 0.0)")
+    parser.add_argument("--extractor", choices=["ncvalue", "graph", "embed", "auto"], default="auto",
+                         help="Algorithme de scoring (défaut auto) : ncvalue=C-value (corpus volumineux), "
+                              "graph=PositionRank (corpus court), embed=similarité au vocabulaire cible "
+                              "(Phase 5, nécessite --dict), auto=bascule entre ncvalue/graph (jamais embed)")
+    parser.add_argument("--extractor-auto-threshold", type=int, default=50000,
+                         help="Nombre de tokens du corpus en dessous duquel --extractor auto bascule "
+                              "vers PositionRank (défaut 50000)")
+    parser.add_argument("--embed-threshold", type=float, default=0.0,
+                         help="[--extractor embed] Similarité cosinus minimale ; 0 = pas de filtre (défaut 0.0)")
+    parser.add_argument("--max-terms", type=int, default=None,
+                         help="Garde les N meilleurs candidats, triés par score décroissant (défaut illimité)")
+    parser.add_argument("--detect-variants", action="store_true",
+                         help="Phase 4 : regroupe les variantes (graphiques/morphologiques/syntaxiques) "
+                              "et renseigne canonical_form/variant_type. Option explicite (défaut "
+                              "désactivé) — ne change rien à la sortie existante tant qu'elle n'est pas "
+                              "demandée.")
+
+
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Loterre v9 CLI with full/fast/hybrid execution strategies")
-    parser.add_argument("--execution-strategy", choices=["full", "fast", "hybrid"], default="full")
-    parser.add_argument("--dict-id")
-    parser.add_argument("--registry", default=_find_registry())
-    parser.add_argument("--config")
-    parser.add_argument("--text")
-    parser.add_argument("--dict")
-    parser.add_argument("--lang", choices=["en", "fr"])
-    parser.add_argument("--profile", choices=["entity_strict", "term_balanced", "term_recall"])
-    parser.add_argument("--out")
-    parser.add_argument("--report")
-    parser.add_argument("--silent", action="store_true")
-    parser.add_argument("--api", action="store_true")
+    parser = argparse.ArgumentParser(
+        description="Loterre v9 CLI — annotation par dictionnaire (v1.0) et extraction terminologique (v2.0)",
+    )
+    subparsers = parser.add_subparsers(dest="mode", required=True)
 
-    parser.add_argument("--cache-dir", default=".loterre_cache")
-    parser.add_argument("--case-sensitive", action="store_true")
-    parser.add_argument("--max-regex-terms", type=int)
+    # ── annotate ──────────────────────────────────────────────────────────
+    p_annotate = subparsers.add_parser(
+        "annotate",
+        help="Annoter un texte avec un vocabulaire Loterre (comportement v1.0, inchangé)",
+        description="Annote un texte avec un vocabulaire Loterre (comportement v1.0, inchangé).",
+    )
+    p_annotate.add_argument("--dict-id", help="Identifiant du vocabulaire dans le registre (ex: P66_en) — ou --dict, ou via --config")
+    p_annotate.add_argument("--dict", help="Chemin direct vers un dictionnaire JSONL (alternative à --dict-id)")
+    p_annotate.add_argument("--profile", choices=["entity_strict", "term_balanced", "term_recall"],
+                             help="Profil de qualité (requis, sauf si fourni via --config)")
+    p_annotate.add_argument("--registry", default=_find_registry(), help="Chemin du registre des vocabulaires (configs/registry.yaml)")
+    p_annotate.add_argument("--config", help="Fichier de config YAML optionnel (peut fournir dict-id/lang/profile)")
+    p_annotate.add_argument("--text", help="Fichier JSONL source ({\"id\":..., \"value\":...} par ligne) ; lit stdin si omis")
+    p_annotate.add_argument("--lang", choices=["en", "fr"], help="Langue (optionnel, déduite du dict sinon)")
+    p_annotate.add_argument("--execution-strategy", choices=["full", "fast", "hybrid"], default="full",
+                             help="full=spaCy complet (défaut), fast=regex sans spaCy, hybrid=fast puis ré-examen spaCy des cas ambigus")
+    p_annotate.add_argument("--out", help="Fichier de sortie (sinon stdout)")
+    p_annotate.add_argument("--report", help="Fichier de rapport Markdown additionnel")
+    p_annotate.add_argument("--silent", action="store_true", help="Sortie JSON compacte (sans fichiers intermédiaires)")
+    p_annotate.add_argument("--api", action="store_true", help="Payload JSON compact pour API")
+    p_annotate.add_argument("--cache-dir", default=".loterre_cache", help="[fast/hybrid] Répertoire de cache regex")
+    p_annotate.add_argument("--case-sensitive", action="store_true", help="[fast/hybrid] Matching sensible à la casse")
+    p_annotate.add_argument("--max-regex-terms", type=int, help="[fast/hybrid] Limite de termes compilés en regex")
+    p_annotate.add_argument("--hybrid-refine-single-tokens", action="store_true",
+                             help="[hybrid] Ré-examine aussi les matches à un seul token")
+    p_annotate.add_argument("--hybrid-refine-low-score", type=float, default=0.90,
+                             help="[hybrid] Seuil de score sous lequel un match est ré-examiné (défaut 0.90)")
+    p_annotate.add_argument("--hybrid-max-fast-matches", type=int, default=50,
+                             help="[hybrid] Au-delà de ce nombre de matches, ré-examen complet du document (défaut 50)")
 
-    parser.add_argument("--hybrid-refine-single-tokens", action="store_true")
-    parser.add_argument("--hybrid-refine-low-score", type=float, default=0.90)
-    parser.add_argument("--hybrid-max-fast-matches", type=int, default=50)
+    # ── extract ───────────────────────────────────────────────────────────
+    p_extract = subparsers.add_parser(
+        "extract",
+        help="Extraire des candidats termes d'un texte (sans vocabulaire)",
+        description="Extrait des candidats termes d'un texte, sans vocabulaire.",
+    )
+    p_extract.add_argument("--lang", choices=["en", "fr"], help="Langue (requis)")
+    p_extract.add_argument("--text", help="Fichier JSONL source ({\"id\":..., \"value\":...} par ligne) ; lit stdin si omis")
+    p_extract.add_argument("--dict", help="[--extractor embed] Chemin du dictionnaire JSONL cible (comparé par plus proche voisin)")
+    p_extract.add_argument("--registry", default=_find_registry(), help=argparse.SUPPRESS)
+    p_extract.add_argument("--out", help="Fichier de sortie (sinon stdout)")
+    p_extract.add_argument("--silent", action="store_true", help="Sortie JSON compacte")
+    _add_extraction_args(p_extract)
+
+    # ── extract_annotate ─────────────────────────────────────────────────
+    p_ea = subparsers.add_parser(
+        "extract_annotate",
+        help="Extraire des candidats termes puis les croiser avec un vocabulaire Loterre",
+        description="Extrait des candidats termes puis les croise avec un vocabulaire Loterre.",
+    )
+    p_ea.add_argument("--lang", choices=["en", "fr"], help="Langue (requis)")
+    p_ea.add_argument("--dict-id", help="Identifiant du vocabulaire dans le registre — ou --dict (requis)")
+    p_ea.add_argument("--dict", help="Chemin direct vers un dictionnaire JSONL")
+    p_ea.add_argument("--profile", choices=["entity_strict", "term_balanced", "term_recall"], help="Profil de qualité (requis)")
+    p_ea.add_argument("--registry", default=_find_registry(), help="Chemin du registre des vocabulaires (configs/registry.yaml)")
+    p_ea.add_argument("--config", help="Fichier de config YAML optionnel")
+    p_ea.add_argument("--text", help="Fichier JSONL source ({\"id\":..., \"value\":...} par ligne) ; lit stdin si omis")
+    p_ea.add_argument("--out", help="Fichier de sortie (sinon stdout)")
+    p_ea.add_argument("--silent", action="store_true", help="Sortie JSON compacte")
+    _add_extraction_args(p_ea)
+    p_ea.add_argument("--enrichment-threshold", type=float, default=0.95,
+                       help="[--extractor embed] Similarité cosinus minimale (plus proche voisin) pour "
+                            "marquer un candidat absent du vocabulaire comme suggestion d'enrichissement "
+                            "(défaut 0.95 — au plus proche voisin, le bruit courant/peu specifique score "
+                            "encore 0.9-0.96, un seuil bas suggérerait massivement du bruit)")
+
     return parser
 
 
@@ -343,10 +515,19 @@ def main() -> None:
     parser = build_parser()
     args, unknown_args = parser.parse_known_args()
 
+    effective = resolve_effective_params(args)
+
+    if args.mode == "extract":
+        run_extract_mode(args, effective)
+        return
+    if args.mode == "extract_annotate":
+        run_extract_annotate_mode(args, effective)
+        return
+
+    # args.mode == "annotate" à partir d'ici — seul ce sous-parser définit
+    # hybrid_refine_low_score / execution_strategy / etc.
     if args.hybrid_refine_low_score is not None and args.hybrid_refine_low_score < 0:
         args.hybrid_refine_low_score = None
-
-    effective = resolve_effective_params(args)
 
     if args.execution_strategy == "fast":
         run_fast_mode(args, effective)

@@ -50,6 +50,13 @@ class CandidateTerm:
     (planif_extraction_terminologique.md), so to_dict() is a direct serialization.
     Vocabulary fields (in_vocabulary/uri/pref) stay None for the extract
     subcommand and are filled in by the dictionary lookup in extract_annotate.
+    enrichment_suggestion stays None unless --extractor embed is used in
+    extract_annotate (Phase 5) — True means a high-similarity candidate not
+    already in the vocabulary, a candidate suggestion for Loterre.
+    canonical_form/variant_type stay None unless --detect-variants is passed
+    (Phase 4, see loterre_variants.group_variants) — None means this candidate
+    is itself canonical (or wasn't grouped); otherwise canonical_form holds
+    the term of the candidate it was grouped under.
     """
     term: str
     lemma: str
@@ -61,6 +68,9 @@ class CandidateTerm:
     in_vocabulary: Optional[bool] = None
     uri: Optional[str] = None
     pref: Optional[str] = None
+    enrichment_suggestion: Optional[bool] = None
+    canonical_form: Optional[str] = None
+    variant_type: Optional[str] = None
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -71,7 +81,10 @@ class CandidateTerm:
             "frequency": self.frequency,
             "score": self.score,
             "rule": self.rule,
-            "occurrences": [{"start": o.start, "end": o.end, "doc_id": o.doc_id} for o in self.occurrences],
             "in_vocabulary": self.in_vocabulary,
             "pref": self.pref,
+            "enrichment_suggestion": self.enrichment_suggestion,
+            "canonical_form": self.canonical_form,
+            "variant_type": self.variant_type,
+            "occurrences": [{"start": o.start, "end": o.end, "doc_id": o.doc_id} for o in self.occurrences],
         }

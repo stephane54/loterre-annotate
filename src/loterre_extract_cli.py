@@ -129,6 +129,7 @@ def score_extracted_candidates(
     total_tokens: int,
     extractor: str,
     auto_threshold: int,
+    dict_path: str | None = None,
 ) -> tuple[list[CandidateTerm], str]:
     """Choisit l'algorithme de scoring et l'applique.
 
@@ -136,7 +137,9 @@ def score_extracted_candidates(
     planification/analyse_benchmarks_extraction.md, §Dépendance au volume) :
     C-value a besoin d'au moins ~50 000 tokens pour que ses statistiques de
     fréquence soient fiables ; en dessous, PositionRank (qui ne dépend pas des
-    fréquences de termes emboîtés) est plus adapté.
+    fréquences de termes emboîtés) est plus adapté. "auto" ne bascule jamais
+    vers "embed" (Phase 5) — il faut le demander explicitement, car il
+    nécessite un dictionnaire cible (dict_path).
     """
     if extractor == "auto":
         extractor = "graph" if total_tokens < auto_threshold else "ncvalue"
@@ -146,6 +149,15 @@ def score_extracted_candidates(
         graph, position_weight = build_cooccurrence_graph(per_doc_tokens)
         word_scores = position_rank(graph, position_weight)
         return score_candidates_positionrank(candidates, word_scores), extractor
+
+    if extractor == "embed":
+        if not dict_path:
+            raise SystemExit("ERROR: --dict est requis avec --extractor embed (vocabulaire cible de comparaison)")
+        from loterre_embed import embed_vocabulary_terms, get_embed_model, load_vocabulary_terms, score_candidates_embed
+        model = get_embed_model()
+        vocab_terms = load_vocabulary_terms(dict_path)
+        vocab_embeddings = embed_vocabulary_terms(model, vocab_terms)
+        return score_candidates_embed(candidates, model, vocab_embeddings), extractor
 
     return score_candidates(candidates), extractor
 
@@ -206,19 +218,31 @@ def add_extraction_args(parser: argparse.ArgumentParser) -> None:
                          help="Longueur minimale d'un candidat, en tokens (défaut 1)")
     parser.add_argument("--max-tokens", type=int, default=6,
                          help="Longueur maximale d'un candidat (défaut 6)")
-    parser.add_argument("--min-freq", type=int, default=2,
-                         help="Fréquence minimale dans le corpus pour retenir un candidat (défaut 2)")
+    parser.add_argument("--min-freq", type=int, default=3,
+                         help="Fréquence minimale dans le corpus pour retenir un candidat (défaut 3)")
     parser.add_argument("--cvalue-threshold", type=float, default=0.0,
                          help="Score C-value minimal (ou fréquence normalisée pour les mono-tokens) ; "
                               "0 = pas de filtre (défaut 0.0)")
-    parser.add_argument("--extractor", choices=["ncvalue", "graph", "auto"], default="auto",
+    parser.add_argument("--extractor", choices=["ncvalue", "graph", "embed", "auto"], default="auto",
                          help="Algorithme de scoring (défaut auto) : ncvalue=C-value (corpus volumineux), "
-                              "graph=PositionRank (corpus court), auto=bascule selon --extractor-auto-threshold")
+                              "graph=PositionRank (corpus court), embed=similarité au vocabulaire cible "
+                              "(Phase 5, nécessite --dict), auto=bascule entre ncvalue/graph selon "
+                              "--extractor-auto-threshold (jamais embed automatiquement)")
     parser.add_argument("--extractor-auto-threshold", type=int, default=50000,
                          help="Nombre de tokens du corpus en dessous duquel --extractor auto bascule "
                               "vers PositionRank (défaut 50000)")
+    parser.add_argument("--dict", default=None,
+                         help="[--extractor embed] Chemin du dictionnaire JSONL cible, comparé par "
+                              "plus proche voisin (requis si --extractor embed)")
+    parser.add_argument("--embed-threshold", type=float, default=0.0,
+                         help="[--extractor embed] Similarité cosinus minimale ; 0 = pas de filtre (défaut 0.0)")
     parser.add_argument("--max-terms", type=int, default=None,
                          help="Garde les N meilleurs candidats, triés par score décroissant (défaut illimité)")
+    parser.add_argument("--detect-variants", action="store_true",
+                         help="Phase 4 : regroupe les variantes (graphiques/morphologiques/syntaxiques, "
+                              "voir loterre_variants.py) et renseigne canonical_form/variant_type sur "
+                              "chaque candidat groupé. Option explicite (défaut désactivé) — ne change "
+                              "rien à la sortie existante tant qu'elle n'est pas demandée.")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -238,10 +262,16 @@ def main() -> None:
         rows, args.lang, args.min_tokens, args.max_tokens, args.min_freq
     )
     candidates, extractor_used = score_extracted_candidates(
-        candidates, per_doc_tokens, total_tokens, args.extractor, args.extractor_auto_threshold
+        candidates, per_doc_tokens, total_tokens, args.extractor, args.extractor_auto_threshold,
+        dict_path=args.dict,
     )
+    if args.detect_variants:
+        from loterre_variants import group_variants
+        group_variants(candidates, args.lang)
     if args.cvalue_threshold > 0 and extractor_used == "ncvalue":
         candidates = filter_by_threshold(candidates, args.cvalue_threshold)
+    if args.embed_threshold > 0 and extractor_used == "embed":
+        candidates = [c for c in candidates if c.score >= args.embed_threshold]
     if args.max_terms:
         candidates = candidates[: args.max_terms]
 
