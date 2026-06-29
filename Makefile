@@ -233,14 +233,16 @@ ws-test-accel:
 build:
 	@echo "[build] Input    : VERSION, src/, requirements.txt"
 	@echo "[build] Resource : cle SSH configuree pour github.com (push du wheel)"
-	@echo "[build] Output   : wheel/tarball buildes + push sur le remote Git (+ tag si BUILD_ARGS=--tag)"
+	@echo "[build] Output   : wheel/tarball buildes + push sur le remote Git"
+	@echo "[build] Exemple  : make build BUILD_ARGS=\"--patch --tag\"  (ou --minor/--major/--version X.Y.Z)"
 	@bash production/build_push_package.sh $(BUILD_ARGS)
 
 deploy:
 	@echo "[deploy] Input    : image source recuperee depuis GitHub (pip install git+...)"
 	@echo "[deploy] Resource : Docker accessible localement, production/.env (WEBDAV_*)"
 	@echo "[deploy] Output   : conteneur Docker local lance + tests executes dans le conteneur"
-	@bash production/ws_deploy_docker_local.sh
+	@echo "[deploy] Exemple  : make deploy DOCKER_ARGS=--force-tag (si VERSION inchangee mais tag deplace)"
+	@bash production/ws_deploy_docker_local.sh $(DOCKER_ARGS)
 
 # ── Maintenance ───────────────────────────────────────────────────────────────
 
