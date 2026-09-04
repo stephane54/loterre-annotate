@@ -332,6 +332,8 @@ python3 src/loterre_cli.py extract \
 | `--max-terms` | Garde les N meilleurs candidats triés par score décroissant |
 
 > **Choisir un extracteur** : les trois algorithmes sont **exclusifs**, pas combinés ni auto-sélectionnés entre eux (sauf `auto` qui ne bascule qu'entre `ncvalue`/`graph`). `embed` donne le meilleur classement quand un vocabulaire cible pertinent et substantiel existe déjà (voir le diagnostic X64, `planification/planif_extraction_terminologique.md` §Phase 5) ; sinon `ncvalue`/`graph` selon le volume (ci-dessous).
+>
+> Chiffré sur X64 (vocabulaire Loterre de plusieurs milliers de termes) : taux de candidats pertinents (`in_vocabulary`) en top 20 — C-value ~4/20 (20 %), PositionRank 0/20 (FR) à 9/20 (EN), `embed` (plus proche voisin) **20/20 (100 %) dans les deux langues**. Mais ce gain suppose un vocabulaire cible riche : sur un domaine restreint sans cette richesse, `embed` perd au contraire (voir §5.7, variante semi-supervisée ACTER). Détail : `planification/analyse_benchmarks_extraction.md`.
 
 #### Choix selon le volume du corpus
 
@@ -412,6 +414,14 @@ Mêmes options que `extract`, plus celles de l'annotation (`--dict-id`/`--dict`/
 
 `--extractor embed` charge `paraphrase-multilingual-MiniLM-L12-v2` (118 Mo, CPU, FR+EN, `sentence-transformers`) et note chaque candidat par sa similarité cosinus au terme **le plus proche** du vocabulaire cible (max sur tous les termes, pas une moyenne/centroïde) — un vocabulaire Loterre mélange des sous-catégories sémantiquement très différentes (ex. X64, vocabulaire linguistique : 38-42% de concepts à un seul mot, des noms de langues, mais aussi des notions abstraites multi-mots), qu'un centroïde unique brouillerait. Aucun appel réseau : le modèle est chargé avec `HF_HUB_OFFLINE=1` depuis le cache local (`make models-embed` pour le pré-télécharger).
 
+#### Évaluer si un vocabulaire cible est adapté à `embed`
+
+Piste explorée et **abandonnée** : mesurer une densité interne du vocabulaire seul (scission seed/held-out, similarité au plus proche voisin), sans corpus de texte réel. Calibration testée sur 4 cas connus (X64 + 3 domaines ACTER, voir `planification/analyse_benchmarks_extraction.md`) : le vocabulaire ACTER `wind` est le **plus dense** de tous (médiane 0.874, au-dessus de X64 à 0.828) et donne pourtant le **pire** F1 réel (0.286, variante semi-supervisée) — ni la densité ni même la taille du vocabulaire (`corp`, 463 termes, F1=0.407 > `htfl`, 1180 termes, F1=0.345) ne discriminent les cas qui marchent des cas qui échouent. Cause probable : ces métriques ignorent le bruit des candidats non-termes extraits d'un texte réel, qui est le facteur dominant du rappel en production (précision correcte 0.55–0.85 partout, mais rappel bas 0.17–0.34 quel que soit le domaine — voir `benchmark_results/acter/acter_results_embed_seeded.json`). Aucun diagnostic sans corpus de texte réel n'est donc fiable ; seule la méthodologie d'`acter_eval.py` (seed/held-out sur un **corpus de texte réel** annoté) est validée pour évaluer `embed` avant de le choisir en production.
+
+Ce détail précision/rappel donne toutefois un indice exploitable, indépendant du vocabulaire : `embed` **valide bien** un candidat qui ressemble à un terme déjà présent dans le vocabulaire cible (précision correcte), mais **rate la plupart des termes vraiment absents/nouveaux** qu'on lui demande de découvrir à partir de rien (rappel bas) — profil constant sur les 8 combinaisons domaine/langue testées. Ce n'est donc pas une propriété du vocabulaire qui doit guider le choix, mais la nature de la tâche :
+- candidats attendus majoritairement proches de termes déjà connus du vocabulaire cible (variantes, synonymes, cas proches — matching/filtrage de bruit, cas réel X64 en `extract_annotate --extractor embed` pour `in_vocabulary`) → `embed` adapté ;
+- objectif de découvrir des termes largement absents/nouveaux du vocabulaire cible (enrichissement pur, terminologie émergente) → ne pas compter sur `embed`, préférer `ncvalue`/`graph`.
+
 ### 5.5 Détection de variantes (Phase 4)
 
 `--detect-variants` regroupe les candidats variantes d'une même forme, par 6 mécanismes inspirés des règles par langue de TermSuite (CNRS/TTC) :
@@ -439,7 +449,7 @@ python3 scripts/build_dictionaries/build_dictionaries.py --voc P66 --lang en fr
 python3 scripts/corpus/txt_to_jsonl.py mes_textes/ --out corpus.jsonl
 ```
 
-### 5.7 Benchmark ACTER (extraction "à froid")
+### 5.7 Benchmark ACTER (extraction non supervisée)
 
 ```bash
 make corpus-acter      # clone https://github.com/AylaRT/ACTER (CC BY-NC-SA 4.0) dans corpus_acter/
@@ -447,6 +457,8 @@ make benchmark-acter   # ncvalue vs PositionRank, P/R/F1 token-level vs le gold 
 ```
 
 Compare `ncvalue`/`graph` (sans vocabulaire, comme D-Terminer) sur 4 domaines × 2 langues. Résultat de référence : F1 PositionRank=0.496, C-value=0.391 (au sommet de la fourchette D-Terminer 0.32–0.50, mBERT+RNN+GPU). `--extractor embed` exclu de cette comparaison (nécessite un vocabulaire cible, qu'ACTER n'a pas) — voir `scripts/evaluation/acter_eval.py` pour la variante expérimentale semi-supervisée.
+
+Cette variante (moitié du gold ACTER comme vocabulaire de référence, l'autre moitié à retrouver) donne F1=0.364 pour `embed` — **moins bon** que C-value (0.391) et PositionRank (0.496) évalués à froid sur le même gold, malgré la moitié des réponses fournies comme référence. À l'inverse du gain massif observé sur X64 (§5.1), un vocabulaire de référence restreint ne donne pas à `embed` un signal suffisant : préférer `ncvalue`/`graph` quand le vocabulaire cible est petit ou peu représentatif du domaine.
 
 ---
 
@@ -983,7 +995,7 @@ make test-cvalue      # scoring C-value (Phase 2)
 make test-positionrank  # scoring PositionRank + bascule auto
 make test-embed       # scoring par embeddings (Phase 5)
 make test-variants    # détection de variantes (Phase 4)
-make corpus-acter      # clone le corpus ACTER (gold extraction "à froid", CC BY-NC-SA 4.0)
+make corpus-acter      # clone le corpus ACTER (gold extraction non supervisée, CC BY-NC-SA 4.0)
 make benchmark-acter   # ncvalue vs PositionRank, P/R/F1 token-level vs le gold ACTER
 make extract VOCAB=P66 LOTLANG=en             # extraction ad-hoc, sans vocabulaire
 

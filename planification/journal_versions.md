@@ -55,16 +55,27 @@
 
 ---
 
-## v2.0.0 — Extraction terminologique intégrée *(planifié)*
+## v1.1.0 — Maintenance outillage release (patch)
 
-**Date cible :** 2026-Q3  
-**Statut :** en planification — voir [analyse_extraction_terminologique.md](analyse_extraction_terminologique.md)
+**Date :** 2026-06-13  
+**Statut :** stable
 
-### Fonctionnalités prévues
+### Changements
 
-- Extraction de candidats termes par algorithme C-value (Frantzi et al. 1998)
-- Trois sous-commandes CLI : `annotate` / `extract` / `extract_annotate`
-- Détection de variantes morphologiques, graphiques et syntaxiques
-- Croisement extraction/vocabulaire Loterre natif
-- Option re-ranking par sentence-transformers (`--extractor bert`)
-- Métriques d'extraction intégrées au benchmark existant
+- `make build` / `make deploy` : passage des arguments (`BUILD_ARGS`, `DOCKER_ARGS`) et exemples d'usage ajoutés au texte d'aide affiché — aucun changement fonctionnel côté annotation/extraction
+
+---
+
+## v2.0.0 — Extraction terminologique intégrée *(implémentée sur `master`, non encore versionnée officiellement)*
+
+**Statut réel :** toutes les phases prévues (0 à 6, y compris la détection de variantes Phase 4) sont **terminées** dans le code (`src/loterre_extract_cli.py`, `loterre_cvalue.py`, `loterre_positionrank.py`, `loterre_embed.py`, `loterre_variants.py`) et documentées dans [planif_extraction_terminologique.md](planif_extraction_terminologique.md) — mais `VERSION` reste à `1.1.0` : aucune release `2.0.0` n'a encore été taguée/publiée (voir `production/release.sh`).
+
+### Fonctionnalités livrées
+
+- Extraction de candidats termes par noun chunks spaCy + scoring C-value (Frantzi et al. 1998)
+- Bascule automatique C-value/PositionRank selon le volume de corpus (`--extractor auto`, seuil configurable)
+- Trois sous-commandes CLI positionnelles : `annotate` / `extract` / `extract_annotate`
+- Détection de variantes morphologiques, graphiques et syntaxiques, inspirée de TermSuite (CNRS/TTC) — `--detect-variants`
+- Croisement extraction/vocabulaire Loterre natif (`in_vocabulary` / `enrichment_suggestion`)
+- Scoring par embeddings au plus proche voisin d'un vocabulaire cible (`--extractor embed`, `paraphrase-multilingual-MiniLM-L12-v2`) — **pas** `--extractor bert`
+- Benchmark intégré contre le gold ACTER (`make benchmark-acter`) : F1 PositionRank=0.496, C-value=0.391, au sommet de la fourchette D-Terminer (0.32–0.50, GPU) obtenue en CPU pur
