@@ -27,7 +27,7 @@
 Loterre-Annotator est un moteur d'annotation et d'extraction terminologique. Il comprend trois fonctions (`annotate`/`extract`/`extract_annotate`) :
 - **`annotate`** (v1.0) : détecte dans un texte les occurrences de termes définis dans un dictionnaire JSONL, en combinant matching exact, matching par lemme spaCy, et règles POS+lemme.
 - **`extract`** (v2.0) : extrait des candidats termes d'un texte **sans** vocabulaire (noun chunks spaCy + scoring C-value, PositionRank, ou similarité aux embeddings d'un vocabulaire cible).
-- **`extract_annotate`** (v2.0) : extraction puis croisement **avec** un vocabulaire Loterre — marque chaque candidat `in_vocabulary` (avec `uri`/`pref`) ou suggère son ajout (`enrichment_suggestion`).
+- **`extract_annotate`** (v2.0) : extraction puis croisement **avec** un vocabulaire Loterre — marque chaque candidat `in_vocabulary` (avec `uri`/`pref`) ou suggère son ajout, sur deux niveaux de confiance (`enrichment_suggestion` / `enrichment_suggestion_structural`, `--extractor embed` uniquement — voir §5.3/§5.4 et `docs/curation_guide.md`).
 
 **Capacités (annotation)** :
 - Trois profils précision/rappel prédéfinis
@@ -370,7 +370,8 @@ Mêmes options que `extract`, plus celles de l'annotation (`--dict-id`/`--dict`/
 
 | Option | Description |
 |---|---|
-| `--enrichment-threshold` | `[--extractor embed]` Similarité cosinus minimale (plus proche voisin) pour marquer un candidat absent du vocabulaire comme suggestion d'enrichissement (défaut **0.95** — au plus proche voisin, du bruit courant/peu spécifique score encore 0.90-0.96, un seuil bas suggérerait massivement du bruit) |
+| `--enrichment-threshold` | `[--extractor embed]` Similarité cosinus minimale (plus proche voisin) pour marquer un candidat absent du vocabulaire comme suggestion d'enrichissement niveau 1 (défaut **0.95** — au plus proche voisin, du bruit courant/peu spécifique score encore 0.90-0.96, un seuil bas suggérerait massivement du bruit) |
+| `--structural-top-pct` | `[--extractor embed]` Second signal indépendant du vocabulaire (C-value/PositionRank, voir §5.4) : un candidat absent du vocabulaire, sous `--enrichment-threshold`, mais dans le top N% de ce classement structurel est marqué `enrichment_suggestion_structural` (défaut **2%**, favorise la précision) |
 
 ### 5.3 Schéma de sortie (`candidates[]`)
 
@@ -393,8 +394,12 @@ Mêmes options que `extract`, plus celles de l'annotation (`--dict-id`/`--dict`/
       "in_vocabulary": true,
       "pref": "linguistics",
       "enrichment_suggestion": null,
+      "enrichment_suggestion_structural": null,
       "canonical_form": null,
       "variant_type": null,
+      "structural_score": 0.141,
+      "structural_rule": "positionrank",
+      "structural_rank": 3,
       "occurrences": [{"start": 120, "end": 131, "doc_id": "doc_042"}]
     }
   ]
@@ -406,7 +411,9 @@ Mêmes options que `extract`, plus celles de l'annotation (`--dict-id`/`--dict`/
 | `term` / `lemma` / `pattern` | toujours | Surface, lemme(s), détail POS+lemme par token |
 | `frequency` / `score` / `rule` | toujours | `rule` = `cvalue`, `positionrank`, `embed`, ou `freq_single_token` (repli mono-token) |
 | `in_vocabulary` / `uri` / `pref` | `extract_annotate` | Croisement avec le vocabulaire (span exact, pas simple chevauchement) |
-| `enrichment_suggestion` | `extract_annotate` + `--extractor embed` | `True` si absent du vocabulaire et score ≥ `--enrichment-threshold` |
+| `enrichment_suggestion` | `extract_annotate` + `--extractor embed` | Niveau 1 : `True` si absent du vocabulaire et `score` (similarité embed) ≥ `--enrichment-threshold` |
+| `enrichment_suggestion_structural` | `extract_annotate` + `--extractor embed` | Niveau 2 : `True` si absent du vocabulaire, niveau 1 `False`, et `structural_rank` dans le top `--structural-top-pct` — jamais `True` en même temps que le niveau 1. Voir §5.4 et `docs/curation_guide.md` |
+| `structural_score` / `structural_rule` / `structural_rank` | `extract_annotate` + `--extractor embed` | Signal C-value/PositionRank calculé en parallèle du score embed, indépendant du vocabulaire cible (`structural_rule` = `cvalue` ou `positionrank`, `structural_rank` = 1 pour le plus fort). Jamais utilisé comme score comparable entre corpus — échelle non bornée |
 | `canonical_form` / `variant_type` | `--detect-variants` | Voir §5.5 |
 | `occurrences` | toujours | Offsets caractères par document (`doc_id` requis — les offsets sont locaux à un document) |
 
@@ -419,8 +426,21 @@ Mêmes options que `extract`, plus celles de l'annotation (`--dict-id`/`--dict`/
 Piste explorée et **abandonnée** : mesurer une densité interne du vocabulaire seul (scission seed/held-out, similarité au plus proche voisin), sans corpus de texte réel. Calibration testée sur 4 cas connus (X64 + 3 domaines ACTER, voir `planification/analyse_benchmarks_extraction.md`) : le vocabulaire ACTER `wind` est le **plus dense** de tous (médiane 0.874, au-dessus de X64 à 0.828) et donne pourtant le **pire** F1 réel (0.286, variante semi-supervisée) — ni la densité ni même la taille du vocabulaire (`corp`, 463 termes, F1=0.407 > `htfl`, 1180 termes, F1=0.345) ne discriminent les cas qui marchent des cas qui échouent. Cause probable : ces métriques ignorent le bruit des candidats non-termes extraits d'un texte réel, qui est le facteur dominant du rappel en production (précision correcte 0.55–0.85 partout, mais rappel bas 0.17–0.34 quel que soit le domaine — voir `benchmark_results/acter/acter_results_embed_seeded.json`). Aucun diagnostic sans corpus de texte réel n'est donc fiable ; seule la méthodologie d'`acter_eval.py` (seed/held-out sur un **corpus de texte réel** annoté) est validée pour évaluer `embed` avant de le choisir en production.
 
 Ce détail précision/rappel donne toutefois un indice exploitable, indépendant du vocabulaire : `embed` **valide bien** un candidat qui ressemble à un terme déjà présent dans le vocabulaire cible (précision correcte), mais **rate la plupart des termes vraiment absents/nouveaux** qu'on lui demande de découvrir à partir de rien (rappel bas) — profil constant sur les 8 combinaisons domaine/langue testées. Ce n'est donc pas une propriété du vocabulaire qui doit guider le choix, mais la nature de la tâche :
-- candidats attendus majoritairement proches de termes déjà connus du vocabulaire cible (variantes, synonymes, cas proches — matching/filtrage de bruit, cas réel X64 en `extract_annotate --extractor embed` pour `in_vocabulary`) → `embed` adapté ;
-- objectif de découvrir des termes largement absents/nouveaux du vocabulaire cible (enrichissement pur, terminologie émergente) → ne pas compter sur `embed`, préférer `ncvalue`/`graph`.
+- candidats attendus majoritairement proches de termes déjà connus du vocabulaire cible (variantes, synonymes, cas proches — matching/filtrage de bruit, cas réel X64 en `extract_annotate --extractor embed` pour `in_vocabulary`) → `embed` seul (niveau 1, `enrichment_suggestion`) suffit ;
+- objectif de découvrir des termes largement absents/nouveaux du vocabulaire cible (enrichissement pur, terminologie émergente) → voir le signal structurel ci-dessous, qui répond directement à ce cas sans quitter `embed`.
+
+#### Signal structurel secondaire (Option 3, §8) — recall pour les termes loin du vocabulaire
+
+`--extractor embed` calcule aussi, sur les mêmes candidats, un score **C-value/PositionRank** indépendant du vocabulaire cible (`structural_score`/`structural_rule`/`structural_rank` — jamais mélangé au score embed). Un candidat absent du vocabulaire, sous `--enrichment-threshold`, mais dans le top `--structural-top-pct` (défaut **2%**) de ce classement structurel est marqué `enrichment_suggestion_structural` — un second niveau de suggestion, moins sûr mais qui capture justement les termes "largement absents/nouveaux" que le niveau 1 rate par construction (rappel bas d'`embed` seul, décrit juste au-dessus).
+
+Mesuré sur ACTER (`acter_eval.py`, seuils de production) :
+
+| | Precision | Rappel | F1 |
+|---|---:|---:|---:|
+| niveau 1 seul (`enrichment_suggestion`) | 0.858 | 0.127 | 0.222 |
+| niveau 1 + niveau 2 (`enrichment_suggestion_structural`) | 0.568 | 0.232 | 0.329 |
+
+Le niveau 2 relève le rappel de +83% relatif au prix d'une précision qui tombe (~0.57 isolé, plus bruité que le niveau 1) — un compromis délibéré, pas fusionné en un score unique pour que le curateur garde une confiance différenciée entre les deux listes (voir `docs/curation_guide.md` pour la consigne de traitement, et `docs/underthehood.md` pour le mécanisme détaillé). Le seuil `--structural-top-pct` a été balayé de 2% à 30% sans pic net de F1 dans cette plage — le choix de 2% privilégie la précision plutôt que de maximiser le F1 brut ; détail complet dans `planification/analyse_benchmarks_extraction.md`.
 
 ### 5.5 Détection de variantes (Phase 4)
 
@@ -458,7 +478,9 @@ make benchmark-acter   # ncvalue vs PositionRank, P/R/F1 token-level vs le gold 
 
 Compare `ncvalue`/`graph` (sans vocabulaire, comme D-Terminer) sur 4 domaines × 2 langues. Résultat de référence : F1 PositionRank=0.496, C-value=0.391 (au sommet de la fourchette D-Terminer 0.32–0.50, mBERT+RNN+GPU). `--extractor embed` exclu de cette comparaison (nécessite un vocabulaire cible, qu'ACTER n'a pas) — voir `scripts/evaluation/acter_eval.py` pour la variante expérimentale semi-supervisée.
 
-Cette variante (moitié du gold ACTER comme vocabulaire de référence, l'autre moitié à retrouver) donne F1=0.364 pour `embed` — **moins bon** que C-value (0.391) et PositionRank (0.496) évalués à froid sur le même gold, malgré la moitié des réponses fournies comme référence. À l'inverse du gain massif observé sur X64 (§5.1), un vocabulaire de référence restreint ne donne pas à `embed` un signal suffisant : préférer `ncvalue`/`graph` quand le vocabulaire cible est petit ou peu représentatif du domaine.
+Cette variante (moitié du gold ACTER comme vocabulaire de référence, l'autre moitié à retrouver, coupure oracle top-N) donne F1=0.364 pour `embed` — **moins bon** que C-value (0.391) et PositionRank (0.496) évalués à froid sur le même gold, malgré la moitié des réponses fournies comme référence. À l'inverse du gain massif observé sur X64 (§5.1), un vocabulaire de référence restreint ne donne pas à `embed` un signal suffisant : préférer `ncvalue`/`graph` quand le vocabulaire cible est petit ou peu représentatif du domaine.
+
+`make benchmark-acter` lance aussi (par défaut, `--skip-structural-signal` pour désactiver) une troisième variante avec les **vrais seuils de production** (`--enrichment-threshold`/`--structural-top-pct`, pas la coupure oracle top-N ci-dessus) : `enrichment_suggestion` seul vs `enrichment_suggestion` + `enrichment_suggestion_structural` (§5.4). Voir `planification/analyse_benchmarks_extraction.md` pour le détail et le balayage de `--structural-top-pct`.
 
 ---
 
