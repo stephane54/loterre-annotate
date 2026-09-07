@@ -441,6 +441,8 @@ Performance : 794 documents réels traités en 44s avec `--detect-variants` — 
 
 Détail par domaine/langue : `benchmark_results/acter_structural_signal/acter_results_structural_signal.json` (non commité, gitignoré).
 
+**Confirmation — run complet officiel `make benchmark-acter` après le changement de défaut (2026-09-07)** : ncvalue/graph à froid, embed semi-supervisé et signal structurel relancés ensemble (pas de scripts ad hoc séparés) avec les seuils désormais committés (`--structural-top-pct 2`, `--enrichment-threshold 0.95`). Chiffres identiques au sweep ci-dessus (P=0.568/R=0.232/F1=0.329 pour embed+structurel) — cohérence vérifiée entre le script de sweep et `acter_eval.py`. Artefacts canoniques dans `benchmark_results/acter/` (non commité, gitignoré).
+
 ---
 
 ## Références
