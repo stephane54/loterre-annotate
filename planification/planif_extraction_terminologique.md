@@ -431,6 +431,22 @@ Claude relira `CLAUDE.md` et ce document de planification au démarrage de chaqu
 
 ---
 
+## 8. Réflexion en cours — améliorer le rappel `embed` sur ressources restreintes *(suspendue le 2026-09-04, reprendre ici)*
+
+**Point de départ** : suite au recadrage produit "l'objectif principal est la mise à jour de ressource" (donc un vocabulaire cible existe toujours — voir `CLAUDE.md` §Objectif produit principal), le choix par défaut de `--extractor embed` pour `extract_annotate` a été confirmé pertinent. Mais son profil mesuré sur ACTER (précision correcte 0.55–0.85, **rappel bas 0.17–0.34** sur les termes jamais vus) pose la question : comment améliorer ce rappel sans violer les contraintes projet (CPU, pas de fine-tuning, pas de modèle massif) ?
+
+**Pistes explorées dans cette session, dans l'ordre** :
+
+1. **Diagnostic générique de "qualité" du vocabulaire cible** (densité interne, scission seed/held-out sur le vocabulaire seul) — **testé et invalidé** : le vocabulaire ACTER `wind` est le plus dense de tous les cas testés (médiane 0.874, au-dessus de X64 à 0.828) et donne pourtant le pire F1 réel (0.286). Ni la densité ni la taille ne discriminent les cas qui marchent des cas qui échouent (voir `docs/README.md` §5.4 et `planification/analyse_benchmarks_extraction.md`). **Scripts créés puis supprimés** (`vocab_quality_check.py`/`_all.py`) — ne pas les recréer sans une nouvelle hypothèse testable, celle-ci a échoué empiriquement.
+2. **Régénération native des dictionnaires** (`build_dictionaries.py`) pour réduire l'écart lemme/POS runtime/génération — **écartée** : le script utilise déjà volontairement des modèles différents du runtime (`en_core_web_trf`/`fr_dep_news_trf`), un essai antérieur de les faire coïncider a dégradé le F1 (décision déjà tranchée, voir §4 ci-dessus ligne ~195 et `CLAUDE.md`). Sans rapport direct avec le rappel `embed` de toute façon.
+3. **Enrichir le seed avec une ressource connexe du domaine** (autres vocabulaires Loterre du registre / thésaurus externes type MeSH-AGROVOC-Eurovoc / extraction `ncvalue`/`graph` sur corpus domaine pour élargir le seed) — **pas encore tranché entre les 3 variantes**, question posée à l'utilisateur sans réponse ferme (a répondu "Other" puis a réorienté vers la piste 4). Risque identifié : dilution de la précision (bruit hors-domaine) contre gain de rappel espéré — à valider empiriquement avant tout choix.
+4. **Rendre le modèle d'embedding moins sensible à l'OOV** (modèle plus robuste ou fine-tuning domaine) — **écartée d'emblée** : viole directement les contraintes non négociables du projet (pas de fine-tuning, pas de modèle massif, CPU uniquement).
+5. **Scoring hybride `embed` + `ncvalue`/`graph`** — **recommandation actuelle, non encore implémentée ni testée**. Combiner le score de proximité au seed avec un signal fréquentiel/structurel indépendant, pour repêcher un candidat pertinent mais loin de tout terme du seed. Avantages : aucune nouvelle ressource à acquérir/valider (contrairement à la piste 3), compatible à 100 % avec les contraintes, testable directement via `acter_eval.py` (qui calcule déjà les scores `ncvalue`/`graph`/`embed` sur les mêmes candidats) sans nouveau chantier de données.
+
+**État à la reprise** : aucune implémentation commencée. La piste 5 (scoring hybride) est recommandée comme premier levier à tester, avant la piste 3 (enrichissement de ressource) qui reste plus coûteuse et plus incertaine (cf. échec de la piste 1 à trouver un proxy fiable de "qualité de ressource"). Reprendre par : définir une formule de combinaison simple (ex. moyenne pondérée ou max(embed, ncvalue/graph normalisé)) dans `loterre_embed.py`/`loterre_extract_cli.py`, l'ajouter comme variante dans `acter_eval.py`, comparer le F1 à la variante `embed` seule sur les 8 combinaisons domaine/langue ACTER déjà utilisées comme référence.
+
+---
+
 ## Références
 
 - Frantzi, K., Ananiadou, S., Mima, H. (2000). *Automatic recognition of multi-word terms: the C-value/NC-value method*. International Journal on Digital Libraries, 3(2), 115–130.
