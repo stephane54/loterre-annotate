@@ -423,7 +423,23 @@ Performance : 794 documents réels traités en 44s avec `--detect-variants` — 
 
 **F1 net +0.138 (+62% relatif)**, porté par un rappel qui plus que double (0.127 → 0.313) — mais **la précision chute de moitié** (0.858 → 0.422). Décomposition isolée de la catégorie structurelle seule (par soustraction, tp=7103/fp=15583) : precision ≈ **0.313**, largement en dessous des 0.858 d'embed seul — c'est un signal beaucoup plus bruité pris isolément, cohérent avec le risque anticipé ("réintroduction du bruit que le passage centroïde → plus proche voisin avait filtré"). Le gain de F1 combiné vient du fait que le rappel de départ (0.127) était si bas qu'même un ajout bruité reste rentable en agrégé — pas d'une catégorie structurelle intrinsèquement fiable.
 
-**Interprétation, pas de décision automatique prise** : le choix de garder les deux catégories **séparées** (Option 3, pas de fusion en un score unique) prend ici tout son sens — un curateur peut traiter `enrichment_suggestion` comme une liste haute confiance (P=0.858) et `enrichment_suggestion_structural` comme une liste "à vérifier" à part (P≈0.313, environ 1 candidat sur 3 pertinent). Fusionner les deux en un score aurait dilué cette distinction. Reste ouvert : `--structural-top-pct` (10% par défaut) n'a pas été balayé — un seuil plus bas (ex. 5%) réduirait probablement le bruit de cette seconde liste au prix d'un peu de rappel, non mesuré ici. Détail par domaine/langue : `benchmark_results/acter_structural_signal/acter_results_structural_signal.json` (non commité, gitignoré).
+**Interprétation, pas de décision automatique prise** : le choix de garder les deux catégories **séparées** (Option 3, pas de fusion en un score unique) prend ici tout son sens — un curateur peut traiter `enrichment_suggestion` comme une liste haute confiance (P=0.858) et `enrichment_suggestion_structural` comme une liste "à vérifier" à part (P≈0.313, environ 1 candidat sur 3 pertinent). Fusionner les deux en un score aurait dilué cette distinction.
+
+**Balayage de `--structural-top-pct` (2/5/10/15/20/30%), même méthodologie, une seule extraction par domaine/langue réutilisée pour tous les seuils testés** :
+
+| Variante | Precision | Rappel | F1 |
+|---|---:|---:|---:|
+| embed seul | 0.858 | 0.127 | 0.222 |
+| top 2% | 0.568 | 0.232 | 0.329 |
+| top 5% | 0.482 | 0.271 | 0.347 |
+| top 10% (défaut actuel) | 0.422 | 0.313 | 0.360 |
+| top 15% | 0.383 | 0.343 | 0.362 |
+| top 20% | 0.352 | 0.367 | 0.359 |
+| top 30% | 0.346 | 0.436 | 0.386 |
+
+**Le F1 n'a pas de pic net dans la plage testée** — il monte de 0.222 (embed seul) à 0.329 dès 2%, puis reste globalement plat entre 10% et 30% (0.360→0.362→0.359→0.386, non monotone, probablement du bruit inter-domaine plutôt qu'un vrai optimum local à 20%). Le vrai levier n'est pas où mettre le curseur pour maximiser le F1 (n'importe quelle valeur ≥10% donne un F1 comparable) mais **le compromis precision/volume que le curateur est prêt à absorber** : à 2%, la liste structurelle reste relativement propre (P=0.568, déjà +0.107 de F1 par rapport à embed seul) ; à 30%, le rappel est maximal mais la précision tombe à 0.346 (moins de 1 candidat sur 3 pertinent), sur une liste beaucoup plus longue. Le principe déjà acté du projet ("la précision des candidats proposés compte plus que l'exhaustivité", `CLAUDE.md` §Objectif produit principal) penche pour un défaut plus proche de 2-5% que de 10% — **non tranché, décision utilisateur à prendre**, le défaut code (10%) n'a pas été changé dans cette session.
+
+Détail par domaine/langue : `benchmark_results/acter_structural_signal/acter_results_structural_signal.json` (non commité, gitignoré).
 
 ---
 
