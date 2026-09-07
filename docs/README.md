@@ -465,8 +465,9 @@ Détail des mécanismes et des bugs corrigés en validation : `planification/pla
 # Génère un dictionnaire JSONL natif depuis un CSV vocab Loterre
 python3 scripts/build_dictionaries/build_dictionaries.py --voc P66 --lang en fr
 
-# Convertit un répertoire (ou une archive .tar.gz) de .txt en JSONL pour extract/extract_annotate
+# Convertit un répertoire (ou une archive .tar.gz/.tgz/.tar/.zip) de .txt en JSONL pour extract/extract_annotate
 python3 scripts/corpus/txt_to_jsonl.py mes_textes/ --out corpus.jsonl
+python3 scripts/corpus/txt_to_jsonl.py mes_textes.zip --out corpus.jsonl
 ```
 
 ### 5.7 Benchmark ACTER (extraction non supervisée)
