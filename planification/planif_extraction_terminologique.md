@@ -447,7 +447,7 @@ Claude relira `CLAUDE.md` et ce document de planification au démarrage de chaqu
 
 **Validation** : vérifié sur P66_en (`extract_annotate --extractor embed`) — 3 candidats sur 25 absents du vocabulaire basculent en `enrichment_suggestion_structural` (ex. *"sleep-dependent memory triage"*, embed_score=0.73, structural_rank=10/105 en PositionRank) sans jamais chevaucher `enrichment_suggestion`. Smoke tests `test_embed.sh`/`test_extract_cli.sh`/`test_extract_annotate_cli.sh`/`test_variants.sh` toujours verts.
 
-**Reste à faire** : mesurer l'impact sur `acter_eval.py` (le double signal n'est pas comparable au F1 top-N existant tel quel — `enrichment_suggestion_structural` est une catégorie de curation, pas un classement ; il faudrait une métrique dédiée, ex. rappel des candidats "manqués par embed mais avec `enrichment_suggestion_structural=True`" contre le gold ACTER held-out).
+**Mesuré le 2026-09-07** (`evaluate_domain_lang_structural_signal()`, nouveau dans `acter_eval.py`, seuils de production réels `--enrichment-threshold 0.95`/`--structural-top-pct 10`, pas la coupure oracle top-N de la variante semi-supervisée existante) : F1 combiné (embed + structurel) **0.360** contre **0.222** pour embed seul (+62% relatif), porté par un rappel qui plus que double (0.127→0.313) au prix d'une précision qui chute de moitié (0.858→0.422 ; la catégorie structurelle isolée a une précision ≈0.313, nettement plus bruitée qu'embed seul). Détail complet dans `planification/analyse_benchmarks_extraction.md`, entrée "Mesure du signal structurel". Gain net réel, mais pas gratuit — reste ouvert : balayer `--structural-top-pct` (5% vs 10%) pour voir si un compromis rappel/précision plus favorable existe avant d'ajuster le défaut.
 
 ---
 

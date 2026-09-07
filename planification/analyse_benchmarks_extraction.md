@@ -410,6 +410,23 @@ Performance : 794 documents réels traités en 44s avec `--detect-variants` — 
 
 ---
 
+### Mesure du signal structurel (Option 3 §8) sur ACTER — 2026-09-07
+
+**Contexte** : Option 3 (§8 de `planif_extraction_terminologique.md`) implémentée — double signal exposé (`enrichment_suggestion` = embed seul, `enrichment_suggestion_structural` = catégorie séparée pour les candidats absents du vocabulaire, sous le seuil embed, mais dans le top 10% du classement C-value/PositionRank). Mesure dédiée nécessaire (le F1 top-N existant ne s'applique pas à une décision de seuil binaire) : nouvelle fonction `evaluate_domain_lang_structural_signal()` dans `acter_eval.py`, même split seed/holdout que la variante embed semi-supervisée existante, mais applique les **vrais seuils de production** (`--enrichment-threshold 0.95`, `--structural-top-pct 10`) plutôt que la coupure oracle top-N=nb-de-termes-holdout (qui suppose connaître à l'avance combien de candidats chercher — un luxe qui n'existe pas en usage réel).
+
+**Résultat (8 combinaisons domaine/langue, micro-moyenne)** :
+
+| | Precision | Recall | F1 |
+|---|---:|---:|---:|
+| embed seul (`enrichment_suggestion`) | 0.858 | 0.127 | 0.222 |
+| embed + structurel (`enrichment_suggestion` ∪ `enrichment_suggestion_structural`) | 0.422 | 0.313 | 0.360 |
+
+**F1 net +0.138 (+62% relatif)**, porté par un rappel qui plus que double (0.127 → 0.313) — mais **la précision chute de moitié** (0.858 → 0.422). Décomposition isolée de la catégorie structurelle seule (par soustraction, tp=7103/fp=15583) : precision ≈ **0.313**, largement en dessous des 0.858 d'embed seul — c'est un signal beaucoup plus bruité pris isolément, cohérent avec le risque anticipé ("réintroduction du bruit que le passage centroïde → plus proche voisin avait filtré"). Le gain de F1 combiné vient du fait que le rappel de départ (0.127) était si bas qu'même un ajout bruité reste rentable en agrégé — pas d'une catégorie structurelle intrinsèquement fiable.
+
+**Interprétation, pas de décision automatique prise** : le choix de garder les deux catégories **séparées** (Option 3, pas de fusion en un score unique) prend ici tout son sens — un curateur peut traiter `enrichment_suggestion` comme une liste haute confiance (P=0.858) et `enrichment_suggestion_structural` comme une liste "à vérifier" à part (P≈0.313, environ 1 candidat sur 3 pertinent). Fusionner les deux en un score aurait dilué cette distinction. Reste ouvert : `--structural-top-pct` (10% par défaut) n'a pas été balayé — un seuil plus bas (ex. 5%) réduirait probablement le bruit de cette seconde liste au prix d'un peu de rappel, non mesuré ici. Détail par domaine/langue : `benchmark_results/acter_structural_signal/acter_results_structural_signal.json` (non commité, gitignoré).
+
+---
+
 ## Références
 
 - Mao et al. 2024 — *Attention-Seeker: Dynamic Self-Attention Scoring for Unsupervised Keyphrase Extraction* : https://arxiv.org/html/2409.10907

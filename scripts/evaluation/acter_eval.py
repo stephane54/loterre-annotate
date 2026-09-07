@@ -302,6 +302,104 @@ def evaluate_domain_lang_embed_seeded(corpus_root: Path, domain: str, lang: str,
             "n_holdout_terms": len(holdout_terms), "embed_seeded": prf}
 
 
+def evaluate_domain_lang_structural_signal(
+    corpus_root: Path, domain: str, lang: str, extract_cli: Path,
+    min_freq: int, tmp_dir: Path, seed_fraction: float,
+    enrichment_threshold: float, structural_top_pct: float,
+) -> dict:
+    """Variante EXPERIMENTALE : mesure l'apport réel d'enrichment_suggestion_structural
+    (Option 3, planif_extraction_terminologique.md §8) au-delà du signal embed
+    seul — reproduit les seuils de PRODUCTION (--enrichment-threshold,
+    --structural-top-pct) plutôt que la coupure oracle top-N (=nb de termes
+    holdout, qui suppose connaître à l'avance combien de candidats chercher)
+    utilisée par evaluate_domain_lang_embed_seeded(). Même split seed/holdout
+    (seed=42, fraction=0.5) pour rester comparable à cette dernière — les
+    chiffres "embed seul" ci-dessous ne sont donc PAS strictement identiques à
+    ceux d'evaluate_domain_lang_embed_seeded() (méthodologie de coupure
+    différente), seule la comparaison embed_only vs combined ci-dessous compte."""
+    domain_dir = corpus_root / lang / domain
+    texts, gold_tokens_by_doc, _ = load_domain_gold(domain_dir)
+
+    terms_path = (domain_dir / "annotated" / "annotations" / "unique_annotation_lists"
+                  / f"{domain}_{lang}_terms.tsv")
+    if not terms_path.exists():
+        return {"domain": domain, "lang": lang, "skipped": True, "reason": "unique_annotation_lists absent"}
+
+    all_terms = read_unique_terms(terms_path)
+    seed_terms, holdout_terms = split_seed_holdout(all_terms, fraction=seed_fraction)
+
+    seed_dict_path = tmp_dir / f"{domain}_{lang}_seed_dict_struct.jsonl"
+    with seed_dict_path.open("w", encoding="utf-8") as f:
+        for term in seed_terms:
+            f.write(json.dumps({"id": term, "pref": term}, ensure_ascii=False) + "\n")
+
+    jsonl_path = tmp_dir / f"{domain}_{lang}_struct.jsonl"
+    with jsonl_path.open("w", encoding="utf-8") as f:
+        for doc_id, text in texts.items():
+            f.write(json.dumps({"id": doc_id, "value": text}, ensure_ascii=False) + "\n")
+
+    # --extractor embed calcule desormais aussi structural_score/structural_rank
+    # sans flag dedie (voir loterre_extract_cli._attach_structural_signal).
+    payload = run_extraction(extract_cli, jsonl_path, lang, "embed", min_freq, dict_path=seed_dict_path)
+    candidates = payload.get("candidates", [])
+    n_total = len(candidates)
+    structural_top_n = max(1, round(n_total * structural_top_pct / 100)) if n_total else 0
+
+    # is_vocabulary n'existe pas ici (pas de vrai croisement annotateur sur un
+    # faux dictionnaire seed) : un candidat dont le texte (minuscule) est un
+    # terme seed est traite comme "connu", exactement le role que joue
+    # in_vocabulary=False en production pour declencher une suggestion.
+    embed_only, combined = [], []
+    for c in candidates:
+        if c["term"].lower() in seed_terms:
+            continue
+        if c.get("score", 0.0) >= enrichment_threshold:
+            embed_only.append(c)
+            combined.append(c)
+        elif c.get("structural_rank") is not None and c["structural_rank"] <= structural_top_n:
+            combined.append(c)
+
+    prf_embed = token_level_prf(gold_tokens_by_doc, predicted_spans_by_doc({"candidates": embed_only}),
+                                 texts=texts, exclude_terms=seed_terms)
+    prf_combined = token_level_prf(gold_tokens_by_doc, predicted_spans_by_doc({"candidates": combined}),
+                                    texts=texts, exclude_terms=seed_terms)
+    prf_embed["n_flagged"] = len(embed_only)
+    prf_combined["n_flagged"] = len(combined)
+
+    jsonl_path.unlink(missing_ok=True)
+    seed_dict_path.unlink(missing_ok=True)
+
+    return {"domain": domain, "lang": lang, "n_seed_terms": len(seed_terms),
+            "n_holdout_terms": len(holdout_terms), "n_candidates_total": n_total,
+            "structural_top_n": structural_top_n,
+            "embed_only": prf_embed, "combined": prf_combined}
+
+
+def print_table_structural_signal(results: list[dict]) -> None:
+    print()
+    print("== EXPERIMENTAL — signal structurel (Option 3 §8) : embed seul vs embed+structurel ==")
+    hdr = f"{'Domaine':<8} {'Lang':<5} {'embed seul P/R/F1':<20} {'+structurel P/R/F1':<20} {'DeltaRappel':>12}"
+    print(hdr)
+    print("-" * len(hdr))
+    valid = [r for r in results if not r.get("skipped")]
+    for r in valid:
+        e, c = r["embed_only"], r["combined"]
+        e_s = f"{e['precision']:.2f}/{e['recall']:.2f}/{e['f1']:.2f}"
+        c_s = f"{c['precision']:.2f}/{c['recall']:.2f}/{c['f1']:.2f}"
+        delta = c["recall"] - e["recall"]
+        print(f"{r['domain']:<8} {r['lang']:<5} {e_s:<20} {c_s:<20} {delta:>+12.3f}")
+    print("-" * len(hdr))
+    if valid:
+        for key, label in [("embed_only", "embed seul"), ("combined", "embed+structurel")]:
+            tp = sum(r[key]["tp"] for r in valid)
+            fp = sum(r[key]["fp"] for r in valid)
+            fn = sum(r[key]["fn"] for r in valid)
+            p = tp / (tp + fp) if (tp + fp) else 0.0
+            rc = tp / (tp + fn) if (tp + fn) else 0.0
+            f1 = 2 * p * rc / (p + rc) if (p + rc) else 0.0
+            print(f"TOTAL {label:<20} P={p:.3f} R={rc:.3f} F1={f1:.3f}  (tp={tp} fp={fp} fn={fn})")
+
+
 def print_table(results: list[dict]) -> None:
     hdr = f"{'Domaine':<8} {'Lang':<5} {'Docs':>5} {'TopN':>6}  {'ncvalue P/R/F1':<22} {'graph P/R/F1':<22}"
     print(hdr)
@@ -397,6 +495,15 @@ def main() -> None:
     pa.add_argument("--seed-fraction", type=float, default=0.5,
                      help="[embed semi-supervisé] Fraction des termes gold utilisée comme vocabulaire "
                           "de référence, le reste étant l'objectif à retrouver (défaut 0.5)")
+    pa.add_argument("--skip-structural-signal", action="store_true",
+                     help="Ne pas lancer la variante expérimentale du signal structurel "
+                          "(enrichment_suggestion_structural, Option 3 §8) — active par défaut")
+    pa.add_argument("--enrichment-threshold", type=float, default=0.95,
+                     help="[signal structurel] Même seuil et même défaut que loterre_cli.py "
+                          "extract_annotate --enrichment-threshold (défaut 0.95)")
+    pa.add_argument("--structural-top-pct", type=float, default=10.0,
+                     help="[signal structurel] Même seuil et même défaut que loterre_cli.py "
+                          "extract_annotate --structural-top-pct (défaut 10.0)")
     args = pa.parse_args()
 
     corpus_root = Path(args.corpus_root)
@@ -433,6 +540,20 @@ def main() -> None:
                 ))
         print_table_embed_seeded(embed_results)
 
+    structural_results: list[dict] = []
+    if not args.skip_structural_signal:
+        for domain in args.domains.split(","):
+            for lang in args.langs.split(","):
+                domain_dir = corpus_root / lang / domain
+                if not domain_dir.exists():
+                    continue
+                print(f"== signal structurel {domain} ({lang}) ==", file=sys.stderr)
+                structural_results.append(evaluate_domain_lang_structural_signal(
+                    corpus_root, domain, lang, extract_cli, args.min_freq, out_dir,
+                    args.seed_fraction, args.enrichment_threshold, args.structural_top_pct
+                ))
+        print_table_structural_signal(structural_results)
+
     if results:
         # Ne pas écraser un acter_results.json existant avec une liste vide
         # quand --skip-cold est utilisé pour ne relancer que la variante embed.
@@ -442,6 +563,10 @@ def main() -> None:
         (out_dir / "acter_results_embed_seeded.json").write_text(
             json.dumps(embed_results, ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"JSON (embed seeded) -> {out_dir / 'acter_results_embed_seeded.json'}")
+    if structural_results:
+        (out_dir / "acter_results_structural_signal.json").write_text(
+            json.dumps(structural_results, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"JSON (structural signal) -> {out_dir / 'acter_results_structural_signal.json'}")
     if results or embed_results:
         write_markdown(results or json.loads((out_dir / "acter_results.json").read_text(encoding="utf-8")),
                        out_dir / "acter_results.md", embed_results=embed_results)
