@@ -519,12 +519,14 @@ def build_parser() -> argparse.ArgumentParser:
                             "marquer un candidat absent du vocabulaire comme suggestion d'enrichissement "
                             "(défaut 0.95 — au plus proche voisin, le bruit courant/peu specifique score "
                             "encore 0.9-0.96, un seuil bas suggérerait massivement du bruit)")
-    p_ea.add_argument("--structural-top-pct", type=float, default=10.0,
+    p_ea.add_argument("--structural-top-pct", type=float, default=2.0,
                        help="[--extractor embed] Second signal indépendant du vocabulaire cible (C-value/"
                             "PositionRank, voir structural_score/structural_rank) : un candidat absent du "
                             "vocabulaire, sous --enrichment-threshold (donc loin de tout terme connu), mais "
                             "dans le top N%% de ce classement structurel est marqué "
-                            "enrichment_suggestion_structural (défaut top 10%%) — repère les candidats "
+                            "enrichment_suggestion_structural (défaut top 2%% — favorise la précision : "
+                            "balayage sur ACTER du 2026-09-07, P=0.568/F1=0.329 à 2%% contre P=0.422/F1=0.360 "
+                            "à 10%%, voir analyse_benchmarks_extraction.md) — repère les candidats "
                             "statistiquement/structurellement forts qu'embed seul écarte à tort faute de "
                             "proximité au vocabulaire (planif_extraction_terminologique.md §8)")
 

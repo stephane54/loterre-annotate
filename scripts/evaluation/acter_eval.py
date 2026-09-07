@@ -501,9 +501,9 @@ def main() -> None:
     pa.add_argument("--enrichment-threshold", type=float, default=0.95,
                      help="[signal structurel] Même seuil et même défaut que loterre_cli.py "
                           "extract_annotate --enrichment-threshold (défaut 0.95)")
-    pa.add_argument("--structural-top-pct", type=float, default=10.0,
+    pa.add_argument("--structural-top-pct", type=float, default=2.0,
                      help="[signal structurel] Même seuil et même défaut que loterre_cli.py "
-                          "extract_annotate --structural-top-pct (défaut 10.0)")
+                          "extract_annotate --structural-top-pct (défaut 2.0, favorise la précision)")
     args = pa.parse_args()
 
     corpus_root = Path(args.corpus_root)
