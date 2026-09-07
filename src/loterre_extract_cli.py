@@ -31,6 +31,24 @@ from loterre_extraction_base import CandidateTerm, Occurrence, get_nlp
 _EDGE_STRIP_POS = frozenset({"DET", "PRON", "ADP", "CCONJ", "SCONJ", "PUNCT", "PART", "AUX"})
 _CONTENT_POS = frozenset({"NOUN", "PROPN", "ADJ"})
 
+# Ponctuation tolérée à l'intérieur d'un span (jamais en bordure, déjà retirée
+# par clean_chunk_span) : spaCy tokenise souvent le tiret/slash d'un composé
+# scientifique comme un token PUNCT/SYM séparé du reste ("renin-angiotensin-
+# aldosterone" -> 5 tokens, "ISO/IEC 27001" -> tiret/slash isolés) au lieu de
+# le garder collé au mot comme un tokenizer type TreeTagger (voir TermSuite,
+# resources/en(fr)/*-allowed-chars.txt : le tiret fait partie de l'alphabet
+# d'un mot, jamais un motif de rejet). Sans cette liste blanche, is_valid_
+# candidate rejetait la totalité du span dès qu'un seul de ces séparateurs
+# apparaissait au milieu — mesuré sur le gold ACTER EN : rappel candidat sur
+# le sous-ensemble à tiret/slash 0.021 -> 0.412 avec cette liste blanche,
+# contre 0.385 pour une variante "graduée" façon CharacterFootprintTermFilter
+# de TermSuite (tolère un seul token "sale" avant rejet) — moins bonne ici
+# car un composé à 2 tirets ("renin-angiotensin-aldosterone") reste rejeté
+# (2 tokens PUNCT > 1), alors que chez TermSuite ce cas ne se pose jamais
+# (le tiret n'y crée pas de token séparé). Voir planification/
+# analyse_benchmarks_extraction.md pour le détail des chiffres.
+_CONNECTOR_PUNCT = frozenset({"-", "‐", "‑", "‒", "–", "—", "/"})
+
 # Élisions FR ("l'", "d'", "qu'", "jusqu'", ...) : fr_core_news_sm les
 # mistague souvent en NOUN au lieu de DET (vu avec l'apostrophe typographique
 # "’"), ce qui casse aussi l'analyse de dépendances en aval. On les détecte
@@ -71,7 +89,9 @@ def is_valid_candidate(span, min_tokens: int, max_tokens: int) -> bool:
         return False
     if all(t.is_stop for t in span):
         return False
-    if any(t.is_punct or t.is_space for t in span):
+    if any(t.is_space for t in span):
+        return False
+    if any(t.is_punct and t.text not in _CONNECTOR_PUNCT for t in span):
         return False
     return True
 

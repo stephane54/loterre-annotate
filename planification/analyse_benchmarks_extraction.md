@@ -380,6 +380,26 @@ Performance : 794 documents réels traités en 44s avec `--detect-variants` — 
 
 ---
 
+### Filtre de candidats et termes à tiret/slash internes (TermSuite vs whitelist ciblée) — 2026-09-07
+
+**Contexte** : suite à la réflexion en cours sur le rappel bas d'`embed` (§8 de `planif_extraction_terminologique.md`), question utilisateur : les termes scientifiques non purement composés de mots (codes, formules, composés à tiret — ex. *"renin-angiotensin-aldosterone"*, *"ISO/IEC 27001"*) sont-ils seulement captés à l'étape 1 (extraction de candidats, avant tout scoring) ? Diagnostic : `is_valid_candidate()` rejetait **tout le span** dès qu'un token interne était `is_punct` — or spaCy tokenise très souvent le tiret/slash d'un composé scientifique comme un token PUNCT/SYM séparé (`renin-angiotensin-aldosterone` → 5 tokens, 2 tirets isolés), contrairement à un tokenizer type TreeTagger (utilisé par TermSuite) qui garde le composé en un seul token. Mesuré sur le gold ACTER EN (4 domaines) : 6.5–13.2% des termes gold contiennent un tiret/slash, et 93% d'un échantillon aléatoire (htfl) voient effectivement leur séparateur tokenisé à part par `en_core_web_sm` → candidat jamais généré, quel que soit l'extracteur choisi ensuite (ncvalue/graph/embed).
+
+**Investigation TermSuite** (clone local Apache 2.0, `/home/schneist/app/termsuite-core`) avant de choisir un correctif : `TermSuiteConstants.COMPOUND_CHAR`/`HYPHEN = '-'` et `{en,fr}/*-allowed-chars.txt` (`abc...xyz0-9-`) montrent que le tiret fait partie de l'alphabet d'un mot chez eux, jamais un motif de rejet — cohérent avec leur tokenizer externe (TreeTagger, via `TildeTokenizer.java`) qui ne coupe jamais un composé à tiret en tokens séparés. Leur filtre de qualité réel, `CharacterFootprintTermFilter.java`, n'est pas binaire : il tolère un seul "mot sale" (caractère hors alphabet) par occurrence, et rejette seulement si plus d'un mot est sale OU si le taux global de caractères "mauvais" dépasse 41%.
+
+**Deux approches testées et comparées** (rappel "oracle" = candidat exact présent dans l'ensemble extrait, avant scoring — isole précisément l'effet du filtre, sans le coût d'un run complet ncvalue/graph/embed) sur les 4 domaines ACTER EN, `--min-freq 1` :
+1. **Whitelist de connecteurs** (`-`/variantes unicode/`/`, occurrences illimitées dans le span) — traduction directe du principe TermSuite ("le tiret fait partie du mot") à notre modèle où le tiret est un token séparé.
+2. **Graduée façon `CharacterFootprintTermFilter`** (≤1 token "sale" par span, sinon rejet si le taux de caractères "sales" ≥ 41%) — traduction plus littérale du mécanisme TermSuite, sans liste blanche de caractères.
+
+| | n_candidats | rappel global | rappel sous-ensemble tiret/slash |
+|---|---:|---:|---:|
+| baseline (avant fix) | 19 631 | 0.553 | 0.021 |
+| **1 — whitelist connecteurs** | 21 317 | **0.606** | **0.412** |
+| 2 — graduée (TermSuite) | 21 827 | 0.603 | 0.385 |
+
+**Résultat** : l'approche 1 domine sur les trois axes (rappel global, rappel ciblé, et moins de candidats ajoutés donc moins de bruit). L'approche 2, pourtant plus fidèle au mécanisme TermSuite, est moins bonne ici : sa règle "≤1 token sale" a du sens chez TermSuite parce que leur tokenizer ne fragmente jamais un composé à tiret (0 token sale par construction) — transposée à notre modèle, elle rejette encore les composés à 2 tirets ou plus (*"renin-angiotensin-aldosterone"*, *"raf-mek1/2-erk1/2"* — 2 tokens "sales" > 1), qui sont justement fréquents dans le domaine htfl (cardiologie). **Approche 1 retenue et implémentée** dans `is_valid_candidate()` (`src/loterre_extract_cli.py`, constante `_CONNECTOR_PUNCT`). Gain mesuré en rappel candidat brut, pas encore en F1 réel — un `acter_eval.py` complet (ncvalue/graph/embed) reste à lancer pour confirmer l'impact sur la métrique de référence du projet.
+
+---
+
 ## Références
 
 - Mao et al. 2024 — *Attention-Seeker: Dynamic Self-Attention Scoring for Unsupervised Keyphrase Extraction* : https://arxiv.org/html/2409.10907
