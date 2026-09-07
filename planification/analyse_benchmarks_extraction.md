@@ -396,7 +396,17 @@ Performance : 794 documents réels traités en 44s avec `--detect-variants` — 
 | **1 — whitelist connecteurs** | 21 317 | **0.606** | **0.412** |
 | 2 — graduée (TermSuite) | 21 827 | 0.603 | 0.385 |
 
-**Résultat** : l'approche 1 domine sur les trois axes (rappel global, rappel ciblé, et moins de candidats ajoutés donc moins de bruit). L'approche 2, pourtant plus fidèle au mécanisme TermSuite, est moins bonne ici : sa règle "≤1 token sale" a du sens chez TermSuite parce que leur tokenizer ne fragmente jamais un composé à tiret (0 token sale par construction) — transposée à notre modèle, elle rejette encore les composés à 2 tirets ou plus (*"renin-angiotensin-aldosterone"*, *"raf-mek1/2-erk1/2"* — 2 tokens "sales" > 1), qui sont justement fréquents dans le domaine htfl (cardiologie). **Approche 1 retenue et implémentée** dans `is_valid_candidate()` (`src/loterre_extract_cli.py`, constante `_CONNECTOR_PUNCT`). Gain mesuré en rappel candidat brut, pas encore en F1 réel — un `acter_eval.py` complet (ncvalue/graph/embed) reste à lancer pour confirmer l'impact sur la métrique de référence du projet.
+**Résultat** : l'approche 1 domine sur les trois axes (rappel global, rappel ciblé, et moins de candidats ajoutés donc moins de bruit). L'approche 2, pourtant plus fidèle au mécanisme TermSuite, est moins bonne ici : sa règle "≤1 token sale" a du sens chez TermSuite parce que leur tokenizer ne fragmente jamais un composé à tiret (0 token sale par construction) — transposée à notre modèle, elle rejette encore les composés à 2 tirets ou plus (*"renin-angiotensin-aldosterone"*, *"raf-mek1/2-erk1/2"* — 2 tokens "sales" > 1), qui sont justement fréquents dans le domaine htfl (cardiologie). **Approche 1 retenue et implémentée** dans `is_valid_candidate()` (`src/loterre_extract_cli.py`, constante `_CONNECTOR_PUNCT`).
+
+**Vérification sur le F1 réel (`acter_eval.py` complet, EN+FR, 8 combinaisons, `--min-freq 1`, `benchmark_results/acter_after_fix/`)** — comparé aux chiffres avant fix déjà journalisés ci-dessus :
+
+| | avant fix | après fix | Δ |
+|---|---:|---:|---:|
+| ncvalue F1 | 0.391 | 0.398 | +0.007 |
+| PositionRank (graph) F1 | 0.496 | 0.498 | +0.002 |
+| embed (semi-supervisé) F1 | 0.364 | 0.359 | −0.005 |
+
+**Résultat honnête, pas celui attendu** : le F1 officiel (mesuré après coupure top-N = nombre de termes gold uniques) ne bouge quasiment pas, malgré le gain net de rappel candidat brut (+5.3 pts global, +39 pts sur le sous-ensemble tiret/slash) mesuré plus haut. Explication cohérente : les candidats à tiret/slash nouvellement récupérés existent maintenant dans le pool, mais ce sont pour beaucoup des composés rares (fréquence basse dans un corpus de domaine restreint) — `ncvalue`/`graph`/`embed` les classent bas, et ils ne passent pas la coupure top-N qui détermine ce qui est réellement évalué. **Le fix lève un plafond dur (un candidat absent du pool ne peut jamais être retrouvé, quel que soit le scoring) mais ne suffit pas seul à en tirer parti** — il faut un mécanisme de scoring qui remonte ces candidats structurellement valides malgré leur rareté. Ça renforce directement l'intérêt de la piste 5 (scoring hybride embed + ncvalue/graph, §8 de `planif_extraction_terminologique.md`) : sans elle, une bonne partie du gain de ce fix reste latente, invisible dans la métrique top-N actuelle.
 
 ---
 
