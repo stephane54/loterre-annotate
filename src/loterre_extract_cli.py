@@ -143,6 +143,50 @@ def extract_candidates(
     return candidates, total_tokens, per_doc_tokens
 
 
+def _attach_structural_signal(
+    candidates: list[CandidateTerm],
+    per_doc_tokens: list[list[tuple[int, str, str]]],
+    total_tokens: int,
+    auto_threshold: int,
+) -> None:
+    """Option 3 (planification/planif_extraction_terminologique.md §8) : calcule
+    un second signal pour les candidats scorés par `embed`, indépendant du
+    vocabulaire cible — C-value ou PositionRank (même bascule "auto" que le
+    choix normal d'extracteur), qui juge un candidat sur sa propre forme/
+    fréquence dans le corpus plutôt que sur sa proximité à un terme connu.
+
+    Un candidat loin de tout terme du vocabulaire (score embed bas, jamais
+    proposé en enrichissement) mais fort sur ce second signal est un angle
+    mort connu d'embed seul (voir analyse_benchmarks_extraction.md, entrée
+    2026-09-07 : corriger le rappel candidat brut sur les composés à tiret/
+    slash n'a presque pas bougé le F1 embed, ces candidats étant trop rares
+    pour être bien classés par la similarité cosinus).
+
+    Écrit dans des champs séparés (structural_score/structural_rule/
+    structural_rank) — ne touche jamais score/rule, qui restent le signal
+    embed utilisé pour le tri principal et --embed-threshold."""
+    if not candidates:
+        return
+    saved_embed = [(c.score, c.rule) for c in candidates]
+
+    if total_tokens < auto_threshold:
+        from loterre_positionrank import build_cooccurrence_graph, position_rank, score_candidates_positionrank
+        graph, position_weight = build_cooccurrence_graph(per_doc_tokens)
+        word_scores = position_rank(graph, position_weight)
+        score_candidates_positionrank(candidates, word_scores)
+    else:
+        score_candidates(candidates)  # C-value, déjà importé en tête de module
+
+    for c, (embed_score, embed_rule) in zip(candidates, saved_embed):
+        c.structural_score = c.score
+        c.structural_rule = c.rule
+        c.score, c.rule = embed_score, embed_rule
+
+    ranked = sorted(candidates, key=lambda c: -(c.structural_score or 0.0))
+    for rank, c in enumerate(ranked, start=1):
+        c.structural_rank = rank
+
+
 def score_extracted_candidates(
     candidates: list[CandidateTerm],
     per_doc_tokens: list[list[tuple[int, str, str]]],
@@ -177,7 +221,9 @@ def score_extracted_candidates(
         model = get_embed_model()
         vocab_terms = load_vocabulary_terms(dict_path)
         vocab_embeddings = embed_vocabulary_terms(model, vocab_terms)
-        return score_candidates_embed(candidates, model, vocab_embeddings), extractor
+        scored = score_candidates_embed(candidates, model, vocab_embeddings)
+        _attach_structural_signal(scored, per_doc_tokens, total_tokens, auto_threshold)
+        return scored, extractor
 
     return score_candidates(candidates), extractor
 

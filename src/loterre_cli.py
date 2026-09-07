@@ -225,9 +225,21 @@ def run_extract_annotate_mode(args, effective: Dict[str, Any]) -> None:
     # d'enrichissement — n'a de sens que pour l'extracteur embed (score =
     # similarité cosinus, pas comparable au score ncvalue/positionrank).
     if extraction_payload.get("extractor") == "embed":
+        n_total = len(candidates)
+        structural_top_n = max(1, round(n_total * args.structural_top_pct / 100)) if n_total else 0
         for c in candidates:
             if c.get("in_vocabulary") is False:
                 c["enrichment_suggestion"] = c.get("score", 0.0) >= args.enrichment_threshold
+                # Option 3 (§8) : second signal, indépendant du vocabulaire —
+                # candidat loin du seed (raté par enrichment_suggestion) mais
+                # dans le haut du classement structurel (C-value/PositionRank).
+                # N'écrase jamais enrichment_suggestion, catégorie à part.
+                rank = c.get("structural_rank")
+                c["enrichment_suggestion_structural"] = (
+                    not c["enrichment_suggestion"]
+                    and rank is not None
+                    and rank <= structural_top_n
+                )
 
     payload = {
         **extraction_payload,
@@ -507,6 +519,14 @@ def build_parser() -> argparse.ArgumentParser:
                             "marquer un candidat absent du vocabulaire comme suggestion d'enrichissement "
                             "(défaut 0.95 — au plus proche voisin, le bruit courant/peu specifique score "
                             "encore 0.9-0.96, un seuil bas suggérerait massivement du bruit)")
+    p_ea.add_argument("--structural-top-pct", type=float, default=10.0,
+                       help="[--extractor embed] Second signal indépendant du vocabulaire cible (C-value/"
+                            "PositionRank, voir structural_score/structural_rank) : un candidat absent du "
+                            "vocabulaire, sous --enrichment-threshold (donc loin de tout terme connu), mais "
+                            "dans le top N%% de ce classement structurel est marqué "
+                            "enrichment_suggestion_structural (défaut top 10%%) — repère les candidats "
+                            "statistiquement/structurellement forts qu'embed seul écarte à tort faute de "
+                            "proximité au vocabulaire (planif_extraction_terminologique.md §8)")
 
     return parser
 

@@ -57,6 +57,14 @@ class CandidateTerm:
     (Phase 4, see loterre_variants.group_variants) — None means this candidate
     is itself canonical (or wasn't grouped); otherwise canonical_form holds
     the term of the candidate it was grouped under.
+    structural_score/structural_rule/structural_rank stay None unless
+    --extractor embed is used — second signal, independent of the target
+    vocabulary (C-value or PositionRank, same auto choice as a normal
+    extractor run), attached alongside the embed similarity score so a
+    candidate far from any vocabulary term but statistically/structurally
+    term-like isn't invisible (see loterre_extract_cli._attach_structural_signal
+    and CLAUDE.md/planification/analyse_benchmarks_extraction.md, entrée
+    2026-09-07). Never overwrites score/rule, which stay the embed similarity.
     """
     term: str
     lemma: str
@@ -69,8 +77,12 @@ class CandidateTerm:
     uri: Optional[str] = None
     pref: Optional[str] = None
     enrichment_suggestion: Optional[bool] = None
+    enrichment_suggestion_structural: Optional[bool] = None
     canonical_form: Optional[str] = None
     variant_type: Optional[str] = None
+    structural_score: Optional[float] = None
+    structural_rule: Optional[str] = None
+    structural_rank: Optional[int] = None
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -84,7 +96,11 @@ class CandidateTerm:
             "in_vocabulary": self.in_vocabulary,
             "pref": self.pref,
             "enrichment_suggestion": self.enrichment_suggestion,
+            "enrichment_suggestion_structural": self.enrichment_suggestion_structural,
             "canonical_form": self.canonical_form,
             "variant_type": self.variant_type,
+            "structural_score": self.structural_score,
+            "structural_rule": self.structural_rule,
+            "structural_rank": self.structural_rank,
             "occurrences": [{"start": o.start, "end": o.end, "doc_id": o.doc_id} for o in self.occurrences],
         }
