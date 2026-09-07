@@ -66,9 +66,9 @@
 
 ---
 
-## v2.0.0-beta — Extraction terminologique intégrée *(VERSION mis à jour localement, non taguée/publiée)*
+## v1.2.0 — Extraction terminologique intégrée *(VERSION mis à jour localement, non taguée/publiée)*
 
-**Statut réel :** toutes les phases prévues (0 à 6, y compris la détection de variantes Phase 4) sont **terminées** dans le code (`src/loterre_extract_cli.py`, `loterre_cvalue.py`, `loterre_positionrank.py`, `loterre_embed.py`, `loterre_variants.py`) et documentées dans [planif_extraction_terminologique.md](planif_extraction_terminologique.md). Le fichier `VERSION` a été passé à `2.0.0-beta` (2026-09-04) pour refléter cet état sur `master` — mais **aucun `git tag`/release officielle n'a encore été exécutée** (`production/release.sh --tag`, qui inclut build + ~30 min de tests EZS + Docker + publication) : le suffixe `-beta` marque cette release comme non publiée.
+**Statut réel :** toutes les phases prévues (0 à 6, y compris la détection de variantes Phase 4) sont **terminées** dans le code (`src/loterre_extract_cli.py`, `loterre_cvalue.py`, `loterre_positionrank.py`, `loterre_embed.py`, `loterre_variants.py`) et documentées dans [planif_extraction_terminologique.md](planif_extraction_terminologique.md). Le fichier `VERSION` a été passé à `2.0.0-beta` (2026-09-04) puis revu à `1.2.0` (2026-09-07, choix de convention de versionnement — minor bump plutôt que major) pour refléter cet état sur `master` — mais **aucun `git tag`/release officielle n'a encore été exécutée** (`production/release.sh --tag`, qui inclut build + ~30 min de tests EZS + Docker + publication) : pas encore publiée sur le remote.
 
 ### Fonctionnalités livrées
 
