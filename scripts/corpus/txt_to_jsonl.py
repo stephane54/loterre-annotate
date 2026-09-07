@@ -4,13 +4,14 @@ extract_annotate / annotate de loterre-v9 (une ligne JSON par document, champs
 "id" et "value").
 
 Accepte en entrée : un fichier .txt, un répertoire de .txt, ou une archive
-tar (.tar.gz/.tgz/.tar) contenant des .txt — extraits directement en mémoire,
-sans rien écrire sur disque.
+tar (.tar.gz/.tgz/.tar) ou zip (.zip) contenant des .txt — extraits
+directement en mémoire, sans rien écrire sur disque.
 
 Usage:
     python3 scripts/corpus/txt_to_jsonl.py mon_texte.txt --out mon_texte.jsonl
     python3 scripts/corpus/txt_to_jsonl.py mes_textes/ --out corpus.jsonl
     python3 scripts/corpus/txt_to_jsonl.py mes_textes.tar.gz --out corpus.jsonl
+    python3 scripts/corpus/txt_to_jsonl.py mes_textes.zip --out corpus.jsonl
     python3 scripts/corpus/txt_to_jsonl.py mon_texte.txt   # affiche sur stdout
 """
 from __future__ import annotations
@@ -19,6 +20,7 @@ import argparse
 import json
 import sys
 import tarfile
+import zipfile
 from pathlib import Path
 
 _TAR_SUFFIXES = (".tar.gz", ".tgz", ".tar")
@@ -28,9 +30,13 @@ def _is_tar(path: Path) -> bool:
     return path.name.endswith(_TAR_SUFFIXES)
 
 
+def _is_zip(path: Path) -> bool:
+    return path.name.endswith(".zip")
+
+
 def iter_documents(path: Path) -> list[tuple[str, str]]:
     """Retourne une liste de (id, texte) depuis un fichier .txt, un répertoire
-    de .txt, ou une archive tar(.gz) contenant des .txt."""
+    de .txt, ou une archive tar(.gz)/zip contenant des .txt."""
     if _is_tar(path):
         docs = []
         with tarfile.open(path, "r:*") as tar:
@@ -44,6 +50,16 @@ def iter_documents(path: Path) -> list[tuple[str, str]]:
                 docs.append((Path(member.name).stem, text))
         return docs
 
+    if _is_zip(path):
+        docs = []
+        with zipfile.ZipFile(path) as zf:
+            for info in zf.infolist():
+                if info.is_dir() or not info.filename.endswith(".txt"):
+                    continue
+                text = zf.read(info).decode("utf-8", errors="ignore")
+                docs.append((Path(info.filename).stem, text))
+        return docs
+
     if path.is_dir():
         return [(f.stem, f.read_text(encoding="utf-8")) for f in sorted(path.glob("*.txt"))]
 
@@ -52,7 +68,7 @@ def iter_documents(path: Path) -> list[tuple[str, str]]:
 
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("input", help="Fichier .txt, répertoire de .txt, ou archive .tar.gz/.tgz/.tar de .txt")
+    p.add_argument("input", help="Fichier .txt, répertoire de .txt, ou archive .tar.gz/.tgz/.tar/.zip de .txt")
     p.add_argument("--out", help="Fichier JSONL de sortie (sinon stdout)")
     args = p.parse_args()
 
