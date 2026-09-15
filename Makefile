@@ -2,7 +2,7 @@ PYTHON ?= python3
 
 .PHONY: install models models-embed \
         test test-smoke test-non-regression test-profiling test-quality \
-        test-extraction test-extract test-cvalue test-positionrank test-extract-annotate test-embed test-variants \
+        test-extraction test-extract test-cvalue test-positionrank test-extract-annotate test-embed test-variants test-specificity \
         benchmark benchmark-local benchmark-api benchmark-resolvers html \
         extract extract-annotate corpus-acter benchmark-acter \
         run ezs-test ws-test ws-test-accel deploy build \
@@ -75,7 +75,7 @@ test-quality:
 # ── Tests : extraction terminologique (v2.0) ───────────────────────────────────
 # Sous-commandes `extract` / `extract_annotate` de src/loterre_cli.py.
 
-test-extraction: test-extract test-cvalue test-positionrank test-embed test-variants test-extract-annotate
+test-extraction: test-extract test-cvalue test-positionrank test-embed test-variants test-extract-annotate test-specificity
 	@echo "[test-extraction] Toutes les sous-cibles ci-dessus ont leur propre detail input/resource/output."
 
 # Extraction noun chunks de base (Phase 1) via loterre_extract_cli.py.
@@ -123,6 +123,15 @@ test-extract-annotate:
 	@echo "[test-extract-annotate] Resource : dictionnaire P66_en, modele spaCy EN (annotation + extraction)"
 	@echo "[test-extract-annotate] Output   : fichiers temporaires /tmp (auto-nettoyes par le script)"
 	@bash tests/smoke/test_extract_annotate_cli.sh
+
+# Grammaire de motifs TermSuite (--prep-patterns/--all-candidate-patterns,
+# 2026-09-10) et signal de spécificité (--specificity-filter-pctl pour
+# ncvalue, --specificity-top-pct niveau 3 pour embed, 2026-09-11).
+test-specificity:
+	@echo "[test-specificity] Input    : data/jsonl/P66_en.jsonl + texte inline (composés N-prep-N)"
+	@echo "[test-specificity] Resource : dictionnaire P66_en, modele spaCy EN, modele sentence-transformers"
+	@echo "[test-specificity] Output   : fichiers temporaires /tmp (auto-nettoyes par le script)"
+	@bash tests/smoke/test_specificity.sh
 
 # ── Benchmark & rendu HTML (annotation, v1.0) ──────────────────────────────────
 

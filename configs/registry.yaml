@@ -88,3 +88,13 @@ dictionaries:
     path: ../dictionary/en_annot_JVR.jsonl
     lang: en
     profile: term_recall       # avg_len=2.20, termes musicologiques composés
+
+  SEN_en:
+    path: ../dictionary/en_annot_SEN.jsonl
+    lang: en
+    profile: term_balanced     # avg_len=2.13, mono=1.6% — confirmé par --auto-profile (2026-09-09)
+
+  SEN_fr:
+    path: ../dictionary/fr_annot_SEN.jsonl
+    lang: fr
+    profile: term_balanced     # avg_len=2.13, mono=0.9% — confirmé par --auto-profile (2026-09-09)

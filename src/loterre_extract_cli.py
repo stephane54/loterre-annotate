@@ -49,6 +49,239 @@ _CONTENT_POS = frozenset({"NOUN", "PROPN", "ADJ"})
 # analyse_benchmarks_extraction.md pour le détail des chiffres.
 _CONNECTOR_PUNCT = frozenset({"-", "‐", "‑", "‒", "–", "—", "/"})
 
+# Motifs N-préposition-N, adaptés de TermSuite (CNRS/TTC, Apache 2.0,
+# termsuite-resources/en/english-multi-word-rule-system.regex) : vérifié
+# empiriquement (EN et FR) que spaCy `doc.noun_chunks` ne produit JAMAIS
+# "N of/with N" comme span unique ("quality of service" -> chunks séparés
+# "quality"/"service", "la qualité de service" -> "La qualité"/"service" en
+# FR aussi — la préposition attache une 2e NP au lieu d'être incluse dans le
+# chunk) — un candidat composé de cette forme (ex. "rate of change", "taux de
+# change") n'est donc jamais généré par noun_chunks seul, quel que soit
+# l'extracteur en aval. Sous-ensemble volontairement restreint aux motifs à
+# préposition (le vrai trou de couverture, confirmé empiriquement) — la
+# grammaire TermSuite complète (~40 règles) inclut aussi des chaînes ADJ/NOUN
+# longues que TermSuite annote elle-même "# noisy" ; pas reprises ici.
+# Opt-in (--prep-patterns) tant que non validé par benchmark sur le gold
+# ACTER — même prudence que --detect-variants (Phase 4).
+_PREP_LEMMAS_BY_LANG = {"en": ("of", "with"), "fr": ("de", "avec")}
+# Liste d'adjectifs génériques calibrée par TermSuite pour l'anglais (exclut
+# "the same product", "many countries"...) — pas d'équivalent validé pour le
+# français, donc les motifs avec ADJ (npan/anpn) ne sont ajoutés qu'en EN ;
+# le français ne reçoit que npn/npnn (pas besoin de liste d'exclusion ADJ).
+_GENERIC_ADJ_EN = frozenset({"same", "many", "other", "much", "several", "new"})
+_GENERIC_ADV_EN = frozenset({"very", "so", "much", "where", "otherwise", "most", "how", "mostly",
+                              "best", "therefore", "more", "less", "yet", "only", "when", "well"})
+
+
+def _build_prep_matcher(vocab, lang: str):
+    prep_lemmas = _PREP_LEMMAS_BY_LANG.get(lang)
+    if not prep_lemmas:
+        return None
+    from spacy.matcher import Matcher
+
+    n = {"POS": {"IN": ["NOUN", "PROPN"]}}
+    prep = {"POS": "ADP", "LEMMA": {"IN": list(prep_lemmas)}}
+    det_opt = {"POS": "DET", "OP": "?"}
+    matcher = Matcher(vocab)
+    matcher.add("npn", [[n, prep, det_opt, n]])
+    matcher.add("npnn", [[n, prep, det_opt, n, n]])
+    if lang == "en":
+        a = {"POS": "ADJ", "LEMMA": {"NOT_IN": list(_GENERIC_ADJ_EN)}}
+        matcher.add("npan", [[n, prep, det_opt, a, n]])
+        matcher.add("anpn", [[a, n, prep, det_opt, n]])
+    return matcher
+
+
+def _matcher_spans(doc, matcher):
+    matches = matcher(doc)
+    return [doc[start:end] for _, start, end in matches]
+
+
+# ── Grammaire complète TermSuite (règles non "noisy"), --all-candidate-patterns ──
+# Transcription directe des fichiers TermSuite (CNRS/TTC, Apache 2.0) :
+#   EN : termsuite-resources/en/english-multi-word-rule-system.regex
+#   FR : termsuite-resources/fr/french-multi-word-rule-system.regex
+# Règles explicitement annotées "# noisy" par TermSuite (EN uniquement, le
+# fichier FR n'en annote aucune) ou déjà désactivées dans leur propre fichier
+# (commentées) exclues : aannn, annnn, nann, nan, nnnnn, anann, la règle
+# "apn" (commentée dans les deux fichiers), "vpp n" (commentée en EN).
+#
+# Simplifications assumées faute de moteur Ruta pour vérifier la sémantique
+# exacte de certains opérateurs :
+#   - "~D"/"~D?" (Ruta — un token qui n'est PAS un déterminant, optionnel ou
+#     non) traité uniformément comme un déterminant optionnel à sauter
+#     (OP "?") — lecture NLP la plus proche du sens réel de la règle, déjà
+#     validée empiriquement sur --prep-patterns (motifs "npn").
+#   - "~Og"/"~Fg" (guillemets ouvrant/fermant, règle FR "npnqnq" seulement,
+#     très marginale) traités comme des tokens de ponctuation requis
+#     (littéral), pas la négation Ruta exacte.
+#   - A2 (FR) simplifié à ADJ seul, sans branche "participe passé verbal"
+#     séparée : vérifié empiriquement que fr_core_news_sm étiquette déjà la
+#     plupart des participes passés adjectivaux directement en ADJ (ex.
+#     "produit fini" -> "fini"/ADJ, pas VERB) — la branche Vpp de TermSuite
+#     serait largement redondante avec ce tagger, et l'exprimer littéralement
+#     (ADJ OU (VERB ET participe passé)) demanderait un OR inter-attributs
+#     que le Matcher spaCy n'exprime pas nativement sur un seul token.
+#
+# Opt-in (--all-candidate-patterns), bien plus large que --prep-patterns (qui
+# reste un sous-ensemble ciblé N-prep-N, inchangé, distinct) — voir
+# planification/analyse_benchmarks_extraction.md, entrée 2026-09-10, pour le
+# bench qui a motivé la prudence (jamais actif par défaut).
+
+def _en_grammar_atoms() -> dict[str, dict]:
+    generic_adj = list(_GENERIC_ADJ_EN)
+    generic_adv = list(_GENERIC_ADV_EN)
+    return {
+        "N": {"POS": {"IN": ["NOUN", "PROPN"]}},
+        "N1": {"POS": {"IN": ["NOUN", "PROPN"]}, "LEMMA": {"NOT_IN": ["number"]}},
+        "A": {"POS": "ADJ", "LEMMA": {"NOT_IN": generic_adj}},
+        "A2": {"TAG": {"IN": ["JJ", "JJR", "JJS", "VBN", "VBG"]}, "LEMMA": {"NOT_IN": generic_adj}},
+        "R": {"POS": "ADV", "LEMMA": {"NOT_IN": generic_adv}},
+        "P": {"POS": "ADP", "LEMMA": {"IN": ["of", "with"]}},
+        "C": {"POS": "CCONJ"},
+        "Vbe": {"POS": {"IN": ["AUX", "VERB"]}, "LEMMA": "be"},
+        "D": {"POS": "DET"},
+    }
+
+
+# Noms de règles fidèles à ceux du fichier TermSuite EN (identifiants entre
+# guillemets dans le .regex), pour pouvoir comparer ligne à ligne.
+_EN_GRAMMAR_RULES: dict[str, list] = {
+    "n": ["N"],
+    "a": ["A2"],
+    "r": ["R"],
+    "an": ["A2", "N"],
+    "nnn": ["N", "N", "N"],
+    "nn": ["N", "N"],
+    "npn": ["N1", "P", ("D", "?"), "N"],
+    "aan": ["A", "A", "N"],
+    "ann": ["A", "N", "N"],
+    "npan": ["N1", "P", ("D", "?"), "A", "N"],
+    "npnn": ["N1", "P", ("D", "?"), "N", "N"],
+    "anpn": ["A", "N", "P", ("D", "?"), "N"],
+    "npncn": ["N1", "P", ("D", "?"), "N", "C", "N"],
+    "acan": ["A", "C", "A", "N"],
+    "aaann": ["A", "A", "A", "N", "N"],
+    "aaan": ["A", "A", "A", "N"],
+    "aann": ["A", "A", "N", "N"],
+    "anan": ["A", "N", "A", "N"],
+    "annn": ["A", "N", "N", "N"],
+    "naan": ["N", "A", "A", "N"],
+    "nnan": ["N", "N", "A", "N"],
+    "nnnn": ["N", "N", "N", "N"],
+    "raan": ["R", "A", "A", "N"],
+    "rannn": ["R", "A", "N", "N", "N"],
+    "rann": ["R", "A", "N", "N"],
+    "ran": ["R", "A", "N"],
+    "npnnn": ["N1", "P", ("D", "?"), "N", "N", "N"],
+    "acann": ["A", "C", "A", "N", "N"],
+    "npncnn": ["N1", "P", ("D", "?"), "N", "C", "N", "N"],
+    "anpnn": ["A", "N", "P", ("D", "?"), "N", "N"],
+    "ncnn": ["N", "C", "N", "N"],
+    "ncan": ["N", "C", "A", "N"],
+    "nnpn": ["N", "N", "P", ("D", "?"), "N"],
+    "ncnpn": ["N", "C", "N", "P", ("D", "?"), "N"],
+    "npnpn": ["N", "P", ("D", "?"), "N", "P", ("D", "?"), "N"],
+    "npncpn": ["N1", "P", ("D", "?"), "N", "C", "P", ("D", "?"), "N"],
+    "nva": [("D", "?"), "N", "Vbe", "A"],
+}
+
+
+def _fr_grammar_atoms() -> dict[str, dict]:
+    l1 = ["axe", "calage", "chair", "couleur", "développement", "état", "face",
+          "genre", "origine", "pas", "pâte", "phase", "type", "vitesse", "voie"]
+    return {
+        "N": {"POS": {"IN": ["NOUN", "PROPN"]}},
+        "Nn": {"POS": {"IN": ["NOUN", "PROPN"]}},
+        "Nnn": {"POS": {"IN": ["NOUN", "PROPN", "NUM"]}},
+        "N1": {"POS": {"IN": ["NOUN", "PROPN"]}, "LEMMA": {"IN": l1}},
+        "A": {"POS": "ADJ"},
+        "A2": {"POS": "ADJ"},  # voir note A2(FR) ci-dessus
+        "A3": {"POS": {"IN": ["ADJ", "NUM"]}},
+        "R": {"POS": "ADV"},
+        "P": {"POS": "ADP"},
+        "Pde": {"POS": "ADP", "LEMMA": "de"},
+        "Pa": {"POS": "ADP", "LEMMA": "à"},
+        "C": {"LOWER": {"IN": ["et", "ou"]}},
+        "Vbe": {"POS": {"IN": ["AUX", "VERB"]}, "LEMMA": "être"},
+        "Vinf": {"POS": "VERB", "MORPH": {"IS_SUPERSET": ["VerbForm=Inf"]}},
+        "D": {"POS": "DET"},
+        "comma": {"ORTH": ","},
+        "Og": {"ORTH": {"IN": ['"', "«"]}},
+        "Fg": {"ORTH": {"IN": ['"', "»"]}},
+    }
+
+
+# Noms de règles fidèles au fichier TermSuite FR, sauf deux renommages pour
+# rester des identifiants Python-friendly ("naca+" -> "naca_virgule",
+# "npn,pncpn" -> "npn_virgule_pncpn" — la virgule dans le nom d'origine
+# n'a aucun sens sémantique, c'est juste l'identifiant de règle).
+_FR_GRAMMAR_RULES: dict[str, list] = {
+    "n": ["N"],
+    "a": ["A"],
+    "r": ["R"],
+    "nn": ["N", "Nn"],
+    "na": ["N", "A2"],
+    "nra": ["N", ("R", "+"), "A2"],
+    "naa": ["N", "A2", "A"],
+    "naaa": ["N", "A2", "A2", "A"],
+    "npn": ["N", "P", ("D", "?"), "N"],
+    "nnpn": ["N", "N", "P", ("D", "?"), "N"],
+    "npnn": ["N", "P", "N1", "Nnn"],
+    "npnqnq": ["N", "P", "N1", "Og", "Nnn", "Fg"],
+    "naca": ["N", "A2", "C", "A"],
+    "naca_virgule": ["N", "A", "comma", "A", "C", "A"],
+    "npna": ["N", "P", "N", "A"],
+    "npnaa": ["N", "P", "N", "A", "A"],
+    "npan": ["N", "P", "A3", "N"],
+    "napn1": ["N", "A2", "P", "N"],
+    "napan": ["N", "A", "P", "A3", "N"],
+    "napacan": ["N", "A", "P", "A3", "C", "A3", "N"],
+    "napna": ["N", "A", "P", "N", "A3"],
+    "dncdna": [("D", "?"), "N", "C", ("D", "?"), "N", "A"],
+    "dncdnpn": [("D", "?"), "N", "C", ("D", "?"), "N", "P", "N"],
+    "npncpn": ["N", "P", "N", "C", "P", "N"],
+    "npdncpdn": ["N", "P", ("D", "?"), "N", "C", "P", ("D", "?"), "N"],
+    "npn_virgule_pncpn": ["N", "P", "N", "comma", "P", "N", "C", "P", "N"],
+    "npnpn": ["N", "P", "N", "Pde", "Nn"],
+    "npnpna": ["N", "P", "N", "P", "N", "A3"],
+    "npnpan": ["N", "P", "N", "P", "A3", "N"],
+    "npnpacan": ["N", "P", "N", "P", "A3", "C", "A3", "N"],
+    "nnca": ["N", "N", "C", "A"],
+    "nva": [("D", "?"), "N", "Vbe", "A"],
+    "nvra": [("D", "?"), "N", "Vbe", "R", "A"],
+    "npvinf": ["N", "Pa", "Vinf"],
+}
+
+
+def _compile_grammar_pattern(atoms: list, atom_dict: dict) -> list:
+    pattern = []
+    for atom in atoms:
+        if isinstance(atom, tuple):
+            name, op = atom
+            token = dict(atom_dict[name])
+            token["OP"] = op
+            pattern.append(token)
+        else:
+            pattern.append(dict(atom_dict[atom]))
+    return pattern
+
+
+def _build_all_candidate_patterns_matcher(vocab, lang: str):
+    if lang == "en":
+        atom_dict, rules = _en_grammar_atoms(), _EN_GRAMMAR_RULES
+    elif lang == "fr":
+        atom_dict, rules = _fr_grammar_atoms(), _FR_GRAMMAR_RULES
+    else:
+        return None
+    from spacy.matcher import Matcher
+
+    matcher = Matcher(vocab)
+    for name, atoms in rules.items():
+        matcher.add(name, [_compile_grammar_pattern(atoms, atom_dict)])
+    return matcher
+
+
 # Élisions FR ("l'", "d'", "qu'", "jusqu'", ...) : fr_core_news_sm les
 # mistague souvent en NOUN au lieu de DET (vu avec l'apostrophe typographique
 # "’"), ce qui casse aussi l'analyse de dépendances en aval. On les détecte
@@ -96,15 +329,50 @@ def is_valid_candidate(span, min_tokens: int, max_tokens: int) -> bool:
     return True
 
 
+def _register_span(span, doc_id, occurrences, patterns, lemmas) -> None:
+    term = span.text
+    occurrences[term].append(Occurrence(span.start_char, span.end_char, doc_id))
+    if term not in patterns:
+        patterns[term] = [{"pos": t.pos_, "lemma": t.lemma_.lower()} for t in span]
+        lemmas[term] = " ".join(t.lemma_.lower() for t in span)
+
+
 def extract_candidates(
-    rows: list[dict[str, Any]], lang: str, min_tokens: int, max_tokens: int, min_freq: int
+    rows: list[dict[str, Any]], lang: str, min_tokens: int, max_tokens: int, min_freq: int,
+    prep_patterns: bool = False, all_candidate_patterns: bool = False,
 ) -> tuple[list[CandidateTerm], int, list[list[tuple[int, str, str]]]]:
     """Collecte les candidats noun-chunks sur un corpus, filtrés et comptés en
     fréquence — et capture en même passage spaCy les données nécessaires à
     PositionRank (per_doc_tokens) et à la décision auto ncvalue/graph
     (total_tokens), pour éviter de retraiter le corpus deux fois selon
-    l'extracteur choisi ensuite (voir score_extracted_candidates())."""
+    l'extracteur choisi ensuite (voir score_extracted_candidates()).
+
+    prep_patterns : ajoute les motifs N-prep-N (voir _build_prep_matcher).
+    all_candidate_patterns : grammaire complète TermSuite non-"noisy" (voir
+    _build_all_candidate_patterns_matcher) — prioritaire sur prep_patterns
+    (sous-ensemble strict de cette grammaire, inutile de construire les deux
+    matchers). Les deux tournent sur le même doc déjà parsé, pas de second
+    passage spaCy.
+
+    Un span matcher chevauche souvent un noun_chunk sans lui être identique
+    (ex. "quality" (noun_chunk) et "quality of service" (motif "npn") au même
+    point de départ, bornes différentes) : c'est voulu, pas un doublon — c'est
+    exactement ce que `loterre_cvalue.build_containment_map()` attend pour
+    calculer l'absorption du terme court par le terme composé (C-value
+    classique, Frantzi et al. 1998 : la fréquence brute du candidat court
+    inclut ses occurrences imbriquées, la formule soustrait l'absorption,
+    l'étape d'extraction ne doit pas le faire elle-même). Seul un span aux
+    bornes EXACTEMENT identiques à un span déjà retenu (même texte, ex.
+    "machine learning" produit à la fois par noun_chunks et par le motif
+    "nn") est un vrai doublon de comptage — dédupliqué ci-dessous par
+    (start_char, end_char)."""
     nlp = get_nlp(lang, parser=True)
+    if all_candidate_patterns:
+        matcher = _build_all_candidate_patterns_matcher(nlp.vocab, lang)
+    elif prep_patterns:
+        matcher = _build_prep_matcher(nlp.vocab, lang)
+    else:
+        matcher = None
     occurrences: dict[str, list[Occurrence]] = defaultdict(list)
     patterns: dict[str, list[dict[str, str]]] = {}
     lemmas: dict[str, str] = {}
@@ -115,15 +383,22 @@ def extract_candidates(
         doc_id = row.get("id")
         total_tokens += len(doc)
         per_doc_tokens.append([(i, t.lemma_.lower(), t.pos_) for i, t in enumerate(doc)])
-        for chunk in doc.noun_chunks:
-            span = clean_chunk_span(chunk)
+
+        cleaned_chunks = [c for c in (clean_chunk_span(ch) for ch in doc.noun_chunks) if len(c) > 0]
+        combined = cleaned_chunks + _matcher_spans(doc, matcher) if matcher is not None else cleaned_chunks
+        seen_bounds: set[tuple[int, int]] = set()
+        spans = []
+        for span in combined:
+            bounds = (span.start_char, span.end_char)
+            if bounds in seen_bounds:
+                continue
+            seen_bounds.add(bounds)
+            spans.append(span)
+
+        for span in spans:
             if not is_valid_candidate(span, min_tokens, max_tokens):
                 continue
-            term = span.text
-            occurrences[term].append(Occurrence(span.start_char, span.end_char, doc_id))
-            if term not in patterns:
-                patterns[term] = [{"pos": t.pos_, "lemma": t.lemma_.lower()} for t in span]
-                lemmas[term] = " ".join(t.lemma_.lower() for t in span)
+            _register_span(span, doc_id, occurrences, patterns, lemmas)
 
     candidates = []
     for term, occs in occurrences.items():
@@ -193,6 +468,7 @@ def score_extracted_candidates(
     total_tokens: int,
     extractor: str,
     auto_threshold: int,
+    lang: str | None = None,
     dict_path: str | None = None,
 ) -> tuple[list[CandidateTerm], str]:
     """Choisit l'algorithme de scoring et l'applique.
@@ -223,6 +499,15 @@ def score_extracted_candidates(
         vocab_embeddings = embed_vocabulary_terms(model, vocab_terms)
         scored = score_candidates_embed(candidates, model, vocab_embeddings)
         _attach_structural_signal(scored, per_doc_tokens, total_tokens, auto_threshold)
+        # Troisième signal (2026-09-11) : spécificité (Weirdness Ratio vs langue
+        # générale) — toujours calculé pour embed (comme le signal structurel),
+        # coût négligeable (pas de modèle, juste des ratios de fréquence). Le
+        # booléen enrichment_suggestion_specificity (désactivé par défaut,
+        # --specificity-top-pct 0) est calculé plus tard dans
+        # run_extract_annotate_mode() (loterre_cli.py), sur ce score déjà présent.
+        if lang:
+            from loterre_specificity import score_candidates_specificity
+            score_candidates_specificity(scored, per_doc_tokens, lang)
         return scored, extractor
 
     return score_candidates(candidates), extractor
@@ -304,11 +589,39 @@ def add_extraction_args(parser: argparse.ArgumentParser) -> None:
                          help="[--extractor embed] Similarité cosinus minimale ; 0 = pas de filtre (défaut 0.0)")
     parser.add_argument("--max-terms", type=int, default=None,
                          help="Garde les N meilleurs candidats, triés par score décroissant (défaut illimité)")
+    parser.add_argument("--specificity-filter-pctl", type=float, default=0.0,
+                         help="Retire les N%% de candidats les moins spécifiques du corpus (Weirdness "
+                              "Ratio vs langue générale, voir loterre_specificity.py), avant scoring — "
+                              "0 = désactivé (défaut). Calibré sur ACTER le 2026-09-11 avec --extractor "
+                              "ncvalue : 40 est le point optimal mesuré (F1 top-N=1.5x gold : 0.455->0.518), "
+                              "au-delà (50+) le F1 régresse. À combiner UNIQUEMENT avec --extractor "
+                              "ncvalue — dégrade le F1 à toute profondeur avec graph/auto sur corpus "
+                              "court (planification/analyse_benchmarks_extraction.md).")
     parser.add_argument("--detect-variants", action="store_true",
                          help="Phase 4 : regroupe les variantes (graphiques/morphologiques/syntaxiques, "
                               "voir loterre_variants.py) et renseigne canonical_form/variant_type sur "
                               "chaque candidat groupé. Option explicite (défaut désactivé) — ne change "
                               "rien à la sortie existante tant qu'elle n'est pas demandée.")
+    parser.add_argument("--prep-patterns", action="store_true",
+                         help="Ajoute les motifs N-prep-N (\"rate of change\", \"abuse of power\" — "
+                              "adaptés de TermSuite) que noun_chunks ne produit jamais comme span unique. "
+                              "Option explicite (défaut désactivé) tant que non validée par benchmark sur "
+                              "le gold ACTER — ne change rien à la sortie existante tant qu'elle n'est pas "
+                              "demandée. Sous-ensemble de --all-candidate-patterns (ignoré si les deux sont "
+                              "passés).")
+    parser.add_argument("--all-candidate-patterns", action="store_true",
+                         help="Grammaire complète TermSuite (règles non \"noisy\", voir "
+                              "_build_all_candidate_patterns_matcher) en complément des noun_chunks — "
+                              "bien plus large que --prep-patterns. Mesuré sur ACTER (2026-09-10, "
+                              "planification/analyse_benchmarks_extraction.md) : gain net et large avec "
+                              "--extractor ncvalue sur petit lot (+0.08 à +0.13 F1 selon coupure), "
+                              "régression nette et systématique avec --extractor graph/auto sur corpus "
+                              "court (jusqu'à -0.12 F1). ATTENTION performance : +154% de candidats mesuré "
+                              "sur ACTER, et build_containment_map() (C-value) est O(n²) — sur un gros "
+                              "corpus (>50k tokens, régime où ncvalue est auto-sélectionné), extract passe "
+                              "de ~12s à ~66s (×5.4), soit ~6× plus lent qu'annotate sur le même corpus. "
+                              "Sûr uniquement sur document unique/petit lot. Pas de garde-fou code. Option "
+                              "explicite (défaut désactivé).")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -317,6 +630,9 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--lang", choices=["en", "fr"], required=True)
     add_extraction_args(p)
     p.add_argument("--out", default=None)
+    p.add_argument("--out-csv", default=None,
+                    help="Export CSV additionnel des candidats (term, lemma, postag, "
+                         "frequency, score, rule, uri, in_vocabulary, ...)")
     p.add_argument("--silent", action="store_true")
     return p
 
@@ -325,11 +641,17 @@ def main() -> None:
     args = build_parser().parse_args()
     rows = read_rows(args.text)
     candidates, total_tokens, per_doc_tokens = extract_candidates(
-        rows, args.lang, args.min_tokens, args.max_tokens, args.min_freq
+        rows, args.lang, args.min_tokens, args.max_tokens, args.min_freq,
+        prep_patterns=args.prep_patterns, all_candidate_patterns=args.all_candidate_patterns,
     )
+    if args.specificity_filter_pctl > 0:
+        from loterre_specificity import filter_by_specificity
+        candidates = filter_by_specificity(
+            candidates, per_doc_tokens, args.lang, args.specificity_filter_pctl
+        )
     candidates, extractor_used = score_extracted_candidates(
         candidates, per_doc_tokens, total_tokens, args.extractor, args.extractor_auto_threshold,
-        dict_path=args.dict,
+        lang=args.lang, dict_path=args.dict,
     )
     if args.detect_variants:
         from loterre_variants import group_variants
@@ -355,6 +677,13 @@ def main() -> None:
         Path(args.out).write_text(data, encoding="utf-8")
     else:
         print(data)
+
+    if args.out_csv:
+        from loterre_csv_export import candidates_to_csv
+        Path(args.out_csv).parent.mkdir(parents=True, exist_ok=True)
+        Path(args.out_csv).write_text(
+            candidates_to_csv(payload["candidates"]), encoding="utf-8", newline=""
+        )
 
 
 if __name__ == "__main__":

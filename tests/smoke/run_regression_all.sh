@@ -6,7 +6,7 @@ set -uo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 FAILS=()
-for t in test_extract_cli test_cvalue test_positionrank test_extract_annotate_cli test_embed test_variants; do
+for t in test_extract_cli test_cvalue test_positionrank test_extract_annotate_cli test_embed test_variants test_specificity; do
   echo "=== $t ==="
   if bash "$SCRIPT_DIR/$t.sh"; then
     echo "--- PASS $t ---"

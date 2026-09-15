@@ -91,7 +91,7 @@ Le choix C-value est stratégique :
 
 | Objectif | Contrainte |
 |----------|------------|
-| **Rapidité** | Le mode `extract` ne doit pas être significativement plus lent que le mode `annotate` actuel. NC-value et PositionRank sont O(n) ou O(n log n) — pas d'opération quadratique sur grands corpus. MiniLM embedding : ~100–300 ms/doc en CPU, acceptable en CLI. |
+| **Rapidité** | Le mode `extract` ne doit pas être significativement plus lent que le mode `annotate` actuel. PositionRank est O(n) ou O(n log n). MiniLM embedding : ~100–300 ms/doc en CPU, acceptable en CLI. **Hypothèse initiale corrigée le 2026-09-10** : cette ligne affirmait à tort que NC-value l'était aussi ("pas d'opération quadratique sur grands corpus") — en réalité `build_containment_map()` (`loterre_cvalue.py`) est **O(n²)** sur le nombre de candidats (double boucle explicite), découvert en mesurant le coût de `--all-candidate-patterns` sur un gros corpus (12s→66s, ×5,4, ACTER htfl ~16k candidats — voir `planification/analyse_benchmarks_extraction.md`, entrée 2026-09-10). Resté praticable jusque-là uniquement parce que le volume de candidats était resté modeste ; devient le facteur limitant dès qu'on augmente ce volume (grammaire de motifs étendue, ou simplement un très gros corpus). Pas corrigé dans le code à ce jour — connu et documenté, pas résolu. |
 | **Mesure de qualité — annotation** | Gold standards existants dans `data/jsonl/` (P66_en, P66_fr, etc.) — pipeline benchmark déjà en place |
 | **Mesure de qualité — extraction** | Corpus **ACTER** (Rigouts Terryn et al., LREC 2018) : FR + EN, 4 domaines techniques, ~18 900 termes annotés manuellement, format IOB. GitHub : https://github.com/AylaRT/ACTER. Métriques : Precision/Recall/F1 sur termes extraits vs gold. |
 
@@ -431,7 +431,7 @@ Claude relira `CLAUDE.md` et ce document de planification au démarrage de chaqu
 
 ---
 
-## 8. Réflexion en cours — améliorer le rappel `embed` sur ressources restreintes *(suspendue le 2026-09-04, reprendre ici)*
+## 8. Réflexion — améliorer le rappel `embed` sur ressources restreintes *(ouverte le 2026-09-04, reprise et avancée le 2026-09-07 — signal structurel implémenté et mesuré, voir ci-dessous ; suite du fil sur la génération de candidats en §9)*
 
 **Point de départ** : suite au recadrage produit "l'objectif principal est la mise à jour de ressource" (donc un vocabulaire cible existe toujours — voir `CLAUDE.md` §Objectif produit principal), le choix par défaut de `--extractor embed` pour `extract_annotate` a été confirmé pertinent. Mais son profil mesuré sur ACTER (précision correcte 0.55–0.85, **rappel bas 0.17–0.34** sur les termes jamais vus) pose la question : comment améliorer ce rappel sans violer les contraintes projet (CPU, pas de fine-tuning, pas de modèle massif) ?
 
@@ -450,6 +450,142 @@ Claude relira `CLAUDE.md` et ce document de planification au démarrage de chaqu
 **Mesuré le 2026-09-07** (`evaluate_domain_lang_structural_signal()`, nouveau dans `acter_eval.py`, seuils de production réels `--enrichment-threshold 0.95`/`--structural-top-pct 10` au départ, pas la coupure oracle top-N de la variante semi-supervisée existante) : F1 combiné (embed + structurel) **0.360** contre **0.222** pour embed seul à 10% (+62% relatif), porté par un rappel qui plus que double (0.127→0.313) au prix d'une précision qui chute de moitié (0.858→0.422 ; la catégorie structurelle isolée a une précision ≈0.313, nettement plus bruitée qu'embed seul). Détail complet dans `planification/analyse_benchmarks_extraction.md`, entrée "Mesure du signal structurel".
 
 **Balayage `--structural-top-pct` (2/5/10/15/20/30%) et décision** : pas de pic net de F1 dans la plage testée (0.329 à 2% → plateau ~0.36 entre 10-20% → 0.386 à 30%, non monotone) — le vrai levier est le compromis precision/volume de bruit pour le curateur, pas un optimum de F1. Consigne explicite de l'utilisateur ("favorise la précision") + cohérent avec le principe déjà acté `CLAUDE.md` ("la précision compte plus que l'exhaustivité") : **défaut changé de 10% à 2%** (`src/loterre_cli.py` et `scripts/evaluation/acter_eval.py`, 2026-09-07) — P=0.568/F1=0.329 à 2%, contre P=0.422/F1=0.360 à l'ancien défaut 10% (F1 legèrement plus bas, mais liste structurelle nettement plus propre, cohérent avec le principe "curateur humain valide avant intégration").
+
+---
+
+## 9. Réflexion en cours — grammaire de candidats étendue (TermSuite) + spécificité *(suspendue le 2026-09-10, reprendre ici)*
+
+**Point de départ** : lecture par l'utilisateur des fichiers de patrons TermSuite (`termsuite-resources/{en,fr}/*-multi-word-rule-system.regex`) — spaCy `doc.noun_chunks` (seule source de candidats jusque-là) a un angle mort structurel confirmé empiriquement : il ne produit jamais "N of/with N" (EN) ni "N de/avec N" (FR) comme span unique (`"quality of service"` → deux chunks séparés, jamais fusionnés).
+
+**Ce qui a été implémenté (2026-09-10)**, dans `src/loterre_extract_cli.py` + fil CLI dans `src/loterre_cli.py` (duplication du parsing d'arguments, même convention que le reste des flags d'extraction) :
+
+1. **`--prep-patterns`** (opt-in) : sous-ensemble ciblé N-prep-N (`npn`/`npnn`/`npan`/`anpn` en EN — préposition `of`/`with` ; `npn`/`npnn` en FR — préposition `de`/`avec`).
+2. **`--all-candidate-patterns`** (opt-in, prioritaire sur `--prep-patterns` si les deux sont passés) : grammaire TermSuite **complète** non-"noisy" — 37 règles EN (`_EN_GRAMMAR_RULES`) + 34 règles FR (`_FR_GRAMMAR_RULES`), transcrites depuis les deux fichiers `.regex` réels (le fichier FR fourni par l'utilisateur en cours de session — mes motifs FR initiaux `de`/`avec` seulement pour `--prep-patterns` étaient une approximation ad hoc, pas la vraie grammaire : le `P` de base FR n'est en réalité restreint à aucune préposition particulière). Simplifications documentées en commentaire dans le code faute de moteur Ruta pour vérifier certains opérateurs exacts (`~D`/`~D?` → déterminant optionnel, `~Og`/`~Fg` → guillemets littéraux non négés, A2(FR) simplifié à ADJ seul).
+3. **Bug de dédoublonnage identifié et corrigé avant tout bench** : avec autant de règles, beaucoup de spans chevauchent un noun_chunk sans lui être identiques (ex. "quality" et "quality of service" au même point de départ). `spacy.util.filter_spans` (le plus long gagne) aurait supprimé à tort les candidats courts imbriqués, cassant l'hypothèse de C-value classique (Frantzi et al. 1998 : la fréquence brute d'un candidat court doit inclure ses occurrences imbriquées, c'est la formule qui soustrait l'absorption). Remplacé par une déduplication stricte sur bornes `(start_char, end_char)` **identiques** uniquement.
+
+**Mesuré sur ACTER** (détail complet et chiffré dans `planification/analyse_benchmarks_extraction.md`, entrées 2026-09-10) :
+- Rappel candidat oracle : 0.5435 → **0.8294** avec `--all-candidate-patterns` (+154% de candidats).
+- F1 (sweep top-N) : **gain net et large avec `ncvalue`** sur petit lot (+0.08 à +0.13 selon coupure, jusqu'à +50% relatif) ; **régression nette et systématique avec `graph`/PositionRank** à toute profondeur (jusqu'à −0.12) — PositionRank sur-score structurellement les composés dont les deux extrémités sont déjà des nœuds centraux du graphe de co-occurrence, indépendamment de leur validité terminologique réelle.
+- **Coût de performance mesuré et décisif** : sur un gros corpus (>50k tokens, régime où `ncvalue` est auto-sélectionné), `extract` passe de 12.2s à **66.0s** (×5.4) avec `--all-candidate-patterns` — `build_containment_map()` (`loterre_cvalue.py`) est O(n²), et le volume de candidats ×2,46 en ACTER htfl donne (2,46)²≈6,05, cohérent avec le ×5,4 observé. Sur document unique/petit lot en revanche, le flag est gratuit (chargement spaCy dominant).
+- **Décision** : les deux flags restent opt-in, non activés par défaut — confirmé par deux arguments indépendants (régression `graph`, coût O(n²) sur gros corpus `ncvalue`). Pas de garde-fou code empêchant une combinaison risquée (`--all-candidate-patterns --extractor graph`, ou sur gros corpus) — pas demandé par l'utilisateur pour l'instant.
+- Question "et pour `embed` ?" — **pas mesurée** : `sentence-transformers`/`torch` absents de l'environnement de dev (pas de venv projet actif), installation explicitement refusée par l'utilisateur pour ce test. Hypothèse qualitative seulement (voir `analyse_benchmarks_extraction.md`) : `embed` scorant chaque candidat indépendamment par similarité sémantique (pas par centralité de graphe), *a priori* moins vulnérable au biais de `graph` — mais `_attach_structural_signal()` réutilise en interne `ncvalue`/`graph` selon la taille du corpus, donc le signal structurel secondaire d'`embed` hériterait indirectement du même risque sur corpus court. **À mesurer si l'environnement de dev gagne ces dépendances.**
+
+**Piste suivante, discutée mais pas implémentée — mesure de "Specificity" (TermSuite)** : en explorant `termsuite-resources`/`termsuite.github.io/documentation/termsuite-pipelines`, découverte que **"Specificity" est le critère de tri final PAR DÉFAUT de TermSuite** (pas C-value) — `default-extractor-config.json` : `"ranking": {"property": "SPECIFICITY", "is-descending": true}`. Mécanisme : contraste de fréquence entre le corpus analysé et une référence de "langue générale" (`{en,fr}-general-language.txt`, tables `lemme::POS::fréquence`, 48 571 entrées EN sur 28,7M mots de référence / 17 287 entrées FR sur 82,6M mots — type Weirdness Ratio, technique classique, aucun modèle, CPU pur).
+
+Sanity-check fait pendant la session (fréquences dans la table EN) — sépare nettement le bruit générique des vrais termes de domaine sur les cas déjà documentés comme problématiques (X64, `docs/README.md` §5.4/`analyse_benchmarks_extraction.md`) :
+
+| Mot | Fréq. langue générale (/28,7M) |
+|---|---:|
+| hand | 5 531 |
+| author | 923 |
+| thing | 11 610 |
+| linguistics | 11 |
+| lexicon | 20 |
+| philology / semiotics | 0 (absent) |
+
+**Intérêt spécifique** : contrairement au signal structurel (réservé à `embed`, compense sa faiblesse propre), la spécificité ne nécessite **aucun vocabulaire cible** — calculable pour `ncvalue`/`graph`/`embed` indifféremment, y compris en mode `extract` "à froid" (où le bruit académique générique n'a actuellement aucun filtre — le problème X64 documenté avant que Phase 5/embed ne le résolve, mais seulement pour `extract_annotate` avec vocabulaire).
+
+**Décision de conception discutée (pas tranchée)** : signal additionnel (`specificity_score`/`specificity_rank`, même schéma que `structural_score`) plutôt qu'un 4ᵉ `--extractor` autonome — raisonnement : la spécificité seule ne capture pas la structure/forme d'un terme (un mot rare mais mal formé scorerait aussi haut qu'un vrai terme rare), et chez TermSuite elle-même le tri par spécificité n'intervient qu'après tout un pipeline de filtrage/morphologie/regroupement en amont qu'on n'a pas ici. Cohérent avec le principe déjà acté (Option 3, §8) de garder les signaux séparés plutôt que fusionnés. **Réserve à vérifier avant de trancher définitivement** : tester quand même la spécificité seule (classement brut, script de bench jetable, pas exposée en CLI) pour confirmer empiriquement qu'elle apporte moins en solo qu'en signal additionnel, avant de graver ce choix de conception.
+
+**Licence** : fichiers `general-language.txt` sans en-tête explicite dans le dépôt `termsuite-resources` (contrairement aux `.regex`), mais même situation que les tables de morphologie déjà vendorisées (`resources/termsuite_morphology/`, documentées Apache 2.0 dans `CLAUDE.md`) — même base déjà acceptée par le projet, pas un nouveau problème identifié.
+
+**Suite (2026-09-11)** :
+
+1. ✅ **Vendorisé** : `resources/termsuite_general_language/{en,fr}/general-language.txt` (copie brute, sans en-tête inline — les données contiennent de vrais tokens `#...`, un en-tête `#` serait ambigu ; provenance documentée dans `resources/termsuite_general_language/SOURCE.md` à la place, même base de licence que `termsuite_morphology/`).
+2. ✅ **Implémenté** : `src/loterre_specificity.py` — `score_candidates_specificity()`, Weirdness Ratio (moyenne géométrique sur les mots de contenu du candidat, `(lemme, lettre_pos)` avec repli sur une constante de lissage si absent de la table). Champs `specificity_score`/`specificity_rank` posés dynamiquement sur `CandidateTerm` (pas de `__slots__`) — **pas encore ajoutés au schéma officiel** (`to_dict()` inchangé), prototype de mesure uniquement, rien de câblé en CLI.
+   - **Bug trouvé et corrigé pendant le prototypage** : les mots-outils adjectivaux/adverbiaux (`other`, `same`, `very`...) sont absents de `general-language.txt` (table limitée aux mots de contenu), donc lus à tort comme "jamais vus en langue générale" = très spécifiques — mesuré sur "other hand" (score 74× plus haut que "one hand" sur un même texte avant correction). Corrigé en excluant `_GENERIC_ADJ_EN`/`_GENERIC_ADV_EN` (promue en constante module dans `loterre_extract_cli.py`, réutilisée ici) de l'agrégation — même liste que la grammaire de motifs, pour la même raison (pas de contenu lexical propre). Pas d'équivalent FR (même asymétrie déjà acceptée pour `--all-candidate-patterns`).
+3. ✅ **Benchmarké sur ACTER** (8 combinaisons domaine/langue, `--min-freq 1`, sweep top-N identique aux bench précédents) — deux framings testés :
+
+   **Classement autonome** (spécificité seule vs `ncvalue`/`graph`) :
+
+   | Fraction | ncvalue | graph | specificity |
+   |---:|---:|---:|---:|
+   | 0.10 | 0.257 | 0.145 | 0.108 |
+   | 0.50 | 0.344 | 0.389 | 0.270 |
+   | 1.00 | 0.397 | 0.500 | 0.377 |
+   | 2.00 | 0.505 | 0.551 | 0.525 |
+
+   Plus faible que `ncvalue`/`graph` aux coupures serrées (précision-first) — confirme empiriquement le raisonnement du 2026-09-10 : la spécificité seule ne capture pas la forme/structure d'un terme (un mot rare mal formé scorerait aussi haut qu'un vrai terme rare). **Rejeté comme 4ᵉ `--extractor` autonome.**
+
+   **Filtre de bruit** (retire les candidats sous la spécificité médiane du corpus, avant `ncvalue`/`graph`) :
+
+   | Fraction | ncvalue Δ | graph Δ |
+   |---:|---:|---:|
+   | 0.10 | −0.030 | −0.002 |
+   | 0.50 | −0.024 | −0.007 |
+   | 1.00 | **+0.029** | −0.015 |
+   | 1.50 | **+0.045** | −0.030 |
+   | 2.00 | +0.001 | −0.040 |
+
+   **Résultat mitigé, pas un gain net** : aide `ncvalue` aux coupures moyennes/larges (+0.02 à +0.045 à N=1.0-1.5×) mais nuit systématiquement à `graph` (jusqu'à −0.04, à toute profondeur). Une coupure fixe à la médiane (50%) est un instrument grossier, probablement mal calibré — même limite déjà rencontrée avant le sweep `--structural-top-pct` (2026-09-07) qui avait dû être balayé (2/5/10/15/20/30%) avant de trouver un défaut correct.
+
+4. **Balayage du seuil (même session, 2026-09-11)** : 0/10/20/30/40/50/60/70% retirés, `ncvalue` uniquement. **40% est un pic net** — F1 top-N=1.00× : 0.397→0.447 (+12.6%), top-N=1.50× : 0.455→0.518 (+13.8%), quasi neutre aux coupures serrées (top-N=0.10×). Le 50% testé en premier était déjà au-delà du pic, d'où le résultat mitigé initial — pas une propriété du signal, un mauvais calibrage. Détail complet dans `planification/analyse_benchmarks_extraction.md`.
+5. **Implémenté et câblé en CLI** : `filter_by_specificity()` (`src/loterre_specificity.py`), exposé via `--specificity-filter-pctl` (0 = désactivé par défaut) dans `loterre_extract_cli.py` + dupliqué dans `loterre_cli.py` (même convention que les autres flags d'extraction). Appliqué **avant** `score_extracted_candidates()`. Toujours restreint à `--extractor ncvalue` dans la documentation — aucun garde-fou code empêchant `--extractor graph`, juste déconseillé (mesuré dégradant au seuil 50%, pas re-testé aux autres seuils avec `graph`).
+
+**État final (filtre `ncvalue`)** : signal validé et exploitable pour `ncvalue` avec `--specificity-filter-pctl 40` (ou proche). Pas activé par défaut (même prudence que les autres flags d'extraction de cette session) — décision utilisateur si un défaut différent de 0 est souhaité un jour. `specificity_score`/`specificity_rank` **ajoutés au schéma officiel** `CandidateTerm`/`to_dict()`/export CSV (2026-09-11, suite à une question utilisateur constatant qu'ils n'étaient pas visibles en sortie) — exposés (non `null`) pour les candidats survivants quand `--specificity-filter-pctl` > 0, `null` sinon (même comportement que `structural_score` avec `embed`). Documenté dans `docs/README.md` §5.3 (schéma) et `docs/underthehood.md`/`docs/curation_guide.md`.
+
+**Suite (même session, 2026-09-11) — spécificité comme troisième signal de suggestion pour `embed`** : question utilisateur ("pas de spécificité pour embed ?") ouvrant une piste distincte du filtre `ncvalue` — utiliser la spécificité comme signal additionnel pour `--extractor embed`, sur le même modèle que le signal structurel (Option 3, §8), plutôt que comme filtre pré-scoring.
+
+Mesuré sur ACTER (méthodologie semi-supervisée seed/holdout, comme `evaluate_domain_lang_structural_signal`, script ad hoc pas `acter_eval.py`) :
+
+| | Precision | Rappel | F1 |
+|---|---:|---:|---:|
+| `embed` seul | 0.899 | 0.114 | 0.203 |
+| + structurel (2%) seul | 0.641 | 0.171 | 0.270 |
+| + spécificité (10%) seul | 0.500 | 0.182 | 0.267 |
+| **+ structurel(2%) OU spécificité(10%)** | 0.492 | 0.231 | **0.314** |
+| spécificité isolée (candidats niveau 3 seulement, ni embed ni structurel) | **0.27–0.30** | 0.02–0.06 | 0.04–0.10 |
+
+La combinaison bat les deux signaux pris séparément (+16% relatif vs structurel seul, +18% vs spécificité seule) — les deux signaux ratent des choses différentes (structurel = force statistique/positionnelle, spécificité = rareté vs langue générale), leur union récupère plus de vrais termes. Mais la précision **isolée** du niveau 3 (dernière ligne, mesurée séparément après la première mesure combinée trop optimiste en apparence) est nettement plus faible que celle du niveau 2 (~0.29 contre ~0.64) — le gain de F1 combiné cache un signal individuellement bien plus bruité.
+
+**Décision (utilisateur : "on en tire les conséquences, que proposes-tu ?")** : implémenté comme **troisième niveau de suggestion séparé** (`enrichment_suggestion_specificity`), pas fusionné avec le niveau 2 — cohérent avec le principe déjà acté (Option 3) de listes séparées à confiance différenciée, d'autant plus justifié ici vu l'écart de précision isolée mesuré. **Opt-in, désactivé par défaut** (`--specificity-top-pct 0.0`) — contrairement au niveau 2 qui est actif par défaut, car le profil de bruit du niveau 3 est un choix explicite du curateur (plus de rappel contre plus de tri manuel), pas un défaut sûr pour tout le monde. Si activé, **10%** est la valeur mesurée utile.
+
+**Implémenté** :
+- `score_extracted_candidates()` (`loterre_extract_cli.py`) prend désormais `lang` et appelle `score_candidates_specificity()` **toujours** pour `--extractor embed` (comme `_attach_structural_signal()`, coût négligeable, pas de modèle) — `specificity_score`/`specificity_rank` donc toujours renseignés pour `embed`, indépendamment de `--specificity-top-pct`.
+- `run_extract_annotate_mode()` (`loterre_cli.py`) calcule `enrichment_suggestion_specificity` à partir de `--specificity-top-pct` (nouveau flag, défaut 0.0, sur le sous-parseur `extract_annotate` uniquement — même emplacement que `--enrichment-threshold`/`--structural-top-pct`) — mutuellement exclusif des niveaux 1 et 2.
+- `enrichment_suggestion_specificity` ajouté au schéma `CandidateTerm`/`to_dict()`/export CSV.
+- Testé de bout en bout (texte jouet + faux dictionnaire) : mutuelle exclusivité vérifiée, comportement par défaut (flag à 0) confirmé neutre (aucun candidat jamais marqué, mais `specificity_score` déjà visible).
+- Documenté dans `CLAUDE.md`, `docs/README.md` (§5.1 options, §5.3 schéma, §5.4 mécanisme+chiffres), `docs/underthehood.md` (étape 7, trois niveaux), `docs/curation_guide.md` (consigne de travail, précision isolée explicitement signalée comme plus faible que le niveau 2).
+
+**État global de cette réflexion (§8+§9) : close.** Trois avancées livrées cette session : grammaire de candidats étendue (opt-in, ncvalue uniquement, gros corpus à éviter), filtre de spécificité pour `ncvalue` (opt-in, 40% calibré), troisième niveau de suggestion spécificité pour `embed` (opt-in, 10% calibré). Reprise possible plus tard : mesurer si le seuil 10% du niveau 3 est optimal (pas balayé au-delà, contrairement au niveau 2) ; envisager d'inclure ce test dans `acter_eval.py` officiellement plutôt que via script ad hoc si cette piste devient récurrente.
+
+**Comblement de deux dettes identifiées lors d'une relecture de cohérence de la documentation (même session, 2026-09-11)** :
+1. **Tests automatisés manquants** : `tests/smoke/test_specificity.sh` créé et vert (4 vérifications : `--prep-patterns` produit un composé N-prep-N que `noun_chunks` seul ne produit jamais, `--all-candidate-patterns` produit strictement plus de candidats sans span dupliqué, `--specificity-filter-pctl` retire des candidats et peuple `specificity_score`, `--specificity-top-pct` peuple `enrichment_suggestion_specificity` en exclusivité mutuelle des niveaux 1/2). Câblé dans `Makefile` (`make test-specificity`, inclus dans `test-extraction`) et `tests/smoke/run_regression_all.sh`.
+2. **Scripts de benchmark ad hoc non committés** : consolidés et committés dans `scripts/evaluation/` — `bench_candidate_patterns.py` (`--prep-patterns`/`--all-candidate-patterns`, remplace les 4 scripts ad hoc du 2026-09-10) et `bench_specificity.py` (3 modes : `standalone`/`filter-sweep`/`embed`, remplace les 4 scripts ad hoc du 2026-09-11). Re-smoke-testés sur un domaine ACTER unique après consolidation (résultats cohérents en direction avec les mesures 8-domaines déjà journalisées) — pas re-exécutés en entier (8 domaines × plusieurs configurations, coûteux), donc les chiffres de référence dans ce document et dans `analyse_benchmarks_extraction.md` restent ceux des scripts ad hoc originaux, pas une ré-mesure via ces nouveaux scripts consolidés.
+
+---
+
+## 10. Corpus réel RevueESR — validation à pleine échelle + 3ᵉ découverte O(n²) *(suspendu le 2026-09-14, reprendre ici)*
+
+**Contexte** : après tout le travail des §8/§9 (grammaire de motifs, spécificité), demande de re-lancer `extract_annotate --extractor embed` sur un vrai corpus de production, `data/RevueESR-textFR.json` (1539 documents, **5 954 459 tokens** — bien au-delà de tout ce qui a été testé sur ACTER), vocabulaire `SEN` (`dictionary/fr_annot_SEN.jsonl`), pour rafraîchir un ancien fichier de sortie (`output_extract/SEN_fr_RevueESR_extract_annotate.json`, généré ailleurs avant cette session, encore avec l'ancien nom `enrichment_suggestion` et sans `specificity_score`).
+
+**Déroulé** :
+1. Premier essai échoué : `sentence-transformers` absent de l'environnement WSL de dev — installé en cours de session (`pip install --user --break-system-packages sentence-transformers`, l'install standard bloquée par la protection PEP 668 `externally-managed-environment` de Debian/Ubuntu).
+2. Deuxième essai échoué après **23m32s** : `--profile` manquant (`extract_annotate` appelle en interne le moteur d'annotation v1.0 pour `in_vocabulary`, qui l'exige). Corrigé avec `--profile term_balanced`.
+3. Run réussi (28m39s) avec `--specificity-top-pct 10` (niveau 3 activé). **Résultat à pleine échelle, cohérent avec les chiffres ACTER** : 38 838 candidats, 225 `in_vocabulary=True`/38 613 absents, niveau 1=177, niveau 2=705, niveau 3=3686, **exclusivité mutuelle vérifiée sur les 38 838 candidats (0 violation)**. Échantillon niveau 3 qualitativement plausible (*"intoxication ciguatérique"*, *"toxicité chimique"*, *"micro-organismes infectieux"*...) — cohérent avec le domaine du corpus (santé environnementale/toxicologie, en-tête "Env Risque Santé" du texte).
+
+**Question utilisateur ensuite : "tu n'as pas pris les variantes ?"** — `--detect-variants` (Phase 4) n'avait été activé ni sur ce run ni sur l'original (vérifié : `canonical_form`/`variant_type` jamais renseignés dans l'ancien fichier). Avant de relancer un 3ᵉ run de ~30 min avec `--detect-variants`, vérification du risque de performance (réflexe acquis cette session après la découverte `build_containment_map()` O(n²)) :
+
+**3ᵉ découverte O(n²) de la session** : `group_variants()` (`src/loterre_variants.py`) bucket les candidats par longueur puis compare **toutes les paires à l'intérieur d'un bucket** dans deux passes — `_group_single_token_diff()` (motif `morph_prefix`) et `_group_derivation()` (motif `morph_derivation`). La docstring de `_group_single_token_diff()` suppose "cher uniquement à l'intérieur d'un bucket, qui reste petit en pratique car --min-tokens/--max-tokens bornent la longueur des candidats" — hypothèse validée seulement sur de petits corpus de test (P66, 11 documents), jamais stress-testée à l'échelle production. Mesuré sur la distribution réelle des candidats RevueESR (depuis le JSON déjà généré, sans rien ré-extraire) :
+
+| Longueur (tokens) | Candidats |
+|---:|---:|
+| 1 | **21 459** |
+| 2 | **15 631** |
+| 3 | 1 113 |
+| 4 | 522 |
+| 5 | 89 |
+| 6 | 24 |
+
+Un bucket de 21 459 candidats en O(n²) ≈ 230 millions de comparaisons par paire (idem ~122M pour le bucket de longueur 2) — même famille de risque que `build_containment_map()`, jamais rencontré avant parce que jamais testé sur un corpus de cette taille.
+
+**Test isolé lancé puis arrêté sur demande utilisateur** ("d'accord abandonne", 2026-09-14) : chargeait les 38 838 `CandidateTerm` depuis le JSON déjà généré (sans repasser par spaCy/embed) et chronométrait `group_variants()` seul. **Toujours en cours d'exécution au moment de l'arrêt** (plusieurs minutes écoulées sans résultat, tâche stoppée manuellement, pas de crash) — sans être une mesure chiffrée, c'est un indice cohérent avec le risque O(n²) suspecté : le calcul n'était clairement pas instantané. **Investigation explicitement abandonnée pour l'instant, pas résolue** — `--detect-variants` reste non testé sur RevueESR, aucune décision prise sur sa praticabilité à cette échelle.
+
+**À faire pour reprendre** :
+1. Relancer le test de timing (arrêté sans résultat, voir ci-dessus) : charger les `CandidateTerm` depuis `output_extract/SEN_fr_RevueESR_extract_annotate.json` (déjà là, pas besoin de ré-extraire), appeler `group_variants(cands, 'fr')`, chronométrer — cette fois le laisser aller jusqu'au bout (ou fixer une limite de temps explicite, ex. 10-15 min, plutôt que de l'arrêter sans donnée).
+2. Si le temps est prohibitif (minutes à heures) : documenter `--detect-variants` comme limité aux corpus modestes (même conclusion que `--all-candidate-patterns`), envisager une optimisation (index par lemme/préfixe au lieu de la comparaison par paire brute, sur le modèle de `_group_expansion()` qui utilise déjà un index inversé — voir son commentaire "évite une comparaison O(n²) sur l'ensemble du corpus", donc le correctif a déjà un précédent dans le même fichier).
+3. Si le temps est raisonnable : relancer RevueESR avec `--detect-variants` en plus de `--specificity-top-pct 10`, comparer.
+4. Journaliser la mesure dans `planification/analyse_benchmarks_extraction.md` (gabarit habituel) et mettre à jour ce document + la mémoire persistante avec la conclusion.
 
 ---
 

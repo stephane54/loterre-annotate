@@ -102,6 +102,20 @@ def write_or_print_json(payload: Dict[str, Any], out: Optional[str]) -> None:
         print(data)
 
 
+def write_csv_if_requested(payload: Dict[str, Any], out_csv: Optional[str]) -> None:
+    # Import différé : loterre_csv_export est stdlib-only (pas de spaCy), donc
+    # sans coût au chargement, mais on ne l'importe qu'ici pour rester
+    # cohérent avec la règle "pas d'import d'extraction au niveau module"
+    # (voir _add_extraction_args) et ne payer ce coût que si --out-csv est demandé.
+    if not out_csv:
+        return
+    from loterre_csv_export import candidates_to_csv
+    Path(out_csv).parent.mkdir(parents=True, exist_ok=True)
+    Path(out_csv).write_text(
+        candidates_to_csv(payload.get("candidates", [])), encoding="utf-8", newline=""
+    )
+
+
 def run_fast_mode(args, effective: Dict[str, Any]) -> None:
     if not effective.get("dict"):
         raise SystemExit("ERROR: --dict or --dict-id with registry path is required for fast mode")
@@ -185,6 +199,12 @@ def run_extraction_subprocess(args, effective: Dict[str, Any]) -> Dict[str, Any]
         cmd.extend(["--max-terms", str(args.max_terms)])
     if args.detect_variants:
         cmd.append("--detect-variants")
+    if args.prep_patterns:
+        cmd.append("--prep-patterns")
+    if args.all_candidate_patterns:
+        cmd.append("--all-candidate-patterns")
+    if args.specificity_filter_pctl > 0:
+        cmd.extend(["--specificity-filter-pctl", str(args.specificity_filter_pctl)])
 
     proc = subprocess.run(cmd, capture_output=True, text=True)
     if proc.returncode != 0:
@@ -204,6 +224,7 @@ def run_extract_mode(args, effective: Dict[str, Any]) -> None:
         raise SystemExit("ERROR: --lang is required for extract")
     payload = run_extraction_subprocess(args, effective)
     write_or_print_json(payload, args.out)
+    write_csv_if_requested(payload, args.out_csv)
 
 
 def run_extract_annotate_mode(args, effective: Dict[str, Any]) -> None:
@@ -227,18 +248,38 @@ def run_extract_annotate_mode(args, effective: Dict[str, Any]) -> None:
     if extraction_payload.get("extractor") == "embed":
         n_total = len(candidates)
         structural_top_n = max(1, round(n_total * args.structural_top_pct / 100)) if n_total else 0
+        specificity_top_n = (
+            max(1, round(n_total * args.specificity_top_pct / 100))
+            if n_total and args.specificity_top_pct > 0 else 0
+        )
         for c in candidates:
             if c.get("in_vocabulary") is False:
-                c["enrichment_suggestion"] = c.get("score", 0.0) >= args.enrichment_threshold
+                c["enrichment_suggestion_embed"] = c.get("score", 0.0) >= args.enrichment_threshold
                 # Option 3 (§8) : second signal, indépendant du vocabulaire —
-                # candidat loin du seed (raté par enrichment_suggestion) mais
+                # candidat loin du seed (raté par enrichment_suggestion_embed) mais
                 # dans le haut du classement structurel (C-value/PositionRank).
-                # N'écrase jamais enrichment_suggestion, catégorie à part.
+                # N'écrase jamais enrichment_suggestion_embed, catégorie à part.
                 rank = c.get("structural_rank")
                 c["enrichment_suggestion_structural"] = (
-                    not c["enrichment_suggestion"]
+                    not c["enrichment_suggestion_embed"]
                     and rank is not None
                     and rank <= structural_top_n
+                )
+                # Troisième signal (2026-09-11) : spécificité (Weirdness Ratio vs
+                # langue générale), indépendant à la fois du vocabulaire et du
+                # signal structurel. Mutuellement exclusif des deux précédents —
+                # désactivé par défaut (--specificity-top-pct 0), contrairement au
+                # structurel : précision isolée mesurée ~0.27-0.30 sur ACTER, plus
+                # bruité que le structurel (~0.64) — un choix explicite du
+                # curateur, pas un défaut raisonnable pour tout le monde. Voir
+                # planification/analyse_benchmarks_extraction.md.
+                spec_rank = c.get("specificity_rank")
+                c["enrichment_suggestion_specificity"] = (
+                    specificity_top_n > 0
+                    and not c["enrichment_suggestion_embed"]
+                    and not c["enrichment_suggestion_structural"]
+                    and spec_rank is not None
+                    and spec_rank <= specificity_top_n
                 )
 
     payload = {
@@ -248,6 +289,7 @@ def run_extract_annotate_mode(args, effective: Dict[str, Any]) -> None:
         "dict": effective.get("dict"),
     }
     write_or_print_json(payload, args.out)
+    write_csv_if_requested(payload, args.out_csv)
 
 
 def result_has_ambiguity(result: Dict[str, Any], args) -> bool:
@@ -446,6 +488,26 @@ def _add_extraction_args(parser: argparse.ArgumentParser) -> None:
                               "et renseigne canonical_form/variant_type. Option explicite (défaut "
                               "désactivé) — ne change rien à la sortie existante tant qu'elle n'est pas "
                               "demandée.")
+    parser.add_argument("--prep-patterns", action="store_true",
+                         help="Ajoute les motifs N-prep-N (\"rate of change\", \"abuse of power\" — "
+                              "adaptés de TermSuite) que noun_chunks ne produit jamais comme span unique. "
+                              "Option explicite (défaut désactivé) tant que non validée par benchmark sur "
+                              "le gold ACTER. Sous-ensemble de --all-candidate-patterns.")
+    parser.add_argument("--all-candidate-patterns", action="store_true",
+                         help="Grammaire complète TermSuite (règles non \"noisy\") en complément des "
+                              "noun_chunks — bien plus large que --prep-patterns. Mesuré sur ACTER "
+                              "(2026-09-10) : gain net avec --extractor ncvalue sur petit lot (+0.08 à "
+                              "+0.13 F1), régression nette avec --extractor graph/auto sur corpus court "
+                              "(jusqu'à -0.12 F1). ATTENTION performance : sur gros corpus (>50k tokens), "
+                              "extract passe de ~12s à ~66s (build_containment_map C-value est O(n²), "
+                              "+154% de candidats) — ~6× plus lent qu'annotate. Sûr uniquement sur "
+                              "document unique/petit lot. Option explicite (défaut désactivé).")
+    parser.add_argument("--specificity-filter-pctl", type=float, default=0.0,
+                         help="Retire les N%% de candidats les moins spécifiques du corpus (Weirdness "
+                              "Ratio vs langue générale) avant scoring — 0 = désactivé (défaut). Calibré "
+                              "sur ACTER le 2026-09-11 avec --extractor ncvalue : 40 est le point optimal "
+                              "mesuré. À combiner UNIQUEMENT avec --extractor ncvalue — dégrade le F1 "
+                              "avec graph/auto sur corpus court.")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -495,6 +557,8 @@ def build_parser() -> argparse.ArgumentParser:
     p_extract.add_argument("--dict", help="[--extractor embed] Chemin du dictionnaire JSONL cible (comparé par plus proche voisin)")
     p_extract.add_argument("--registry", default=_find_registry(), help=argparse.SUPPRESS)
     p_extract.add_argument("--out", help="Fichier de sortie (sinon stdout)")
+    p_extract.add_argument("--out-csv", help="Export CSV additionnel des candidats "
+                                              "(term, lemma, postag, frequency, score, rule, uri, ...)")
     p_extract.add_argument("--silent", action="store_true", help="Sortie JSON compacte")
     _add_extraction_args(p_extract)
 
@@ -512,6 +576,8 @@ def build_parser() -> argparse.ArgumentParser:
     p_ea.add_argument("--config", help="Fichier de config YAML optionnel")
     p_ea.add_argument("--text", help="Fichier JSONL source ({\"id\":..., \"value\":...} par ligne) ; lit stdin si omis")
     p_ea.add_argument("--out", help="Fichier de sortie (sinon stdout)")
+    p_ea.add_argument("--out-csv", help="Export CSV additionnel des candidats "
+                                         "(term, lemma, postag, frequency, score, rule, uri, ...)")
     p_ea.add_argument("--silent", action="store_true", help="Sortie JSON compacte")
     _add_extraction_args(p_ea)
     p_ea.add_argument("--enrichment-threshold", type=float, default=0.95,
@@ -529,6 +595,19 @@ def build_parser() -> argparse.ArgumentParser:
                             "à 10%%, voir analyse_benchmarks_extraction.md) — repère les candidats "
                             "statistiquement/structurellement forts qu'embed seul écarte à tort faute de "
                             "proximité au vocabulaire (planif_extraction_terminologique.md §8)")
+    p_ea.add_argument("--specificity-top-pct", type=float, default=0.0,
+                       help="[--extractor embed] Troisième signal indépendant du vocabulaire cible "
+                            "(Weirdness Ratio vs langue générale, voir structural_score/structural_rank "
+                            "pour le deuxième signal) : un candidat absent du vocabulaire, ni "
+                            "enrichment_suggestion_embed ni enrichment_suggestion_structural, mais dans le "
+                            "top N%% de ce classement de spécificité est marqué "
+                            "enrichment_suggestion_specificity — défaut **0.0 = désactivé** (contrairement "
+                            "à --structural-top-pct, PAS actif par défaut : mesuré sur ACTER le 2026-09-11, "
+                            "précision isolée de ce niveau ~0.27-0.30, nettement plus bruité que le niveau "
+                            "structurel ~0.64 — l'union structurel(2%%)+spécificité(10%%) porte le F1 combiné "
+                            "de 0.270 à 0.314, mais au prix de ce bruit propre au niveau 3, à activer "
+                            "consciemment, pas par défaut). Si activé, 10.0 est la valeur mesurée comme "
+                            "utile (voir analyse_benchmarks_extraction.md, planif_extraction_terminologique.md §9).")
 
     return parser
 

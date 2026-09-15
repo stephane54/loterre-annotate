@@ -27,7 +27,7 @@
 Loterre-Annotator est un moteur d'annotation et d'extraction terminologique. Il comprend trois fonctions (`annotate`/`extract`/`extract_annotate`) :
 - **`annotate`** (v1.0) : détecte dans un texte les occurrences de termes définis dans un dictionnaire JSONL, en combinant matching exact, matching par lemme spaCy, et règles POS+lemme.
 - **`extract`** (v2.0) : extrait des candidats termes d'un texte **sans** vocabulaire (noun chunks spaCy + scoring C-value, PositionRank, ou similarité aux embeddings d'un vocabulaire cible).
-- **`extract_annotate`** (v2.0) : extraction puis croisement **avec** un vocabulaire Loterre — marque chaque candidat `in_vocabulary` (avec `uri`/`pref`) ou suggère son ajout, sur deux niveaux de confiance (`enrichment_suggestion` / `enrichment_suggestion_structural`, `--extractor embed` uniquement — voir §5.3/§5.4 et `docs/curation_guide.md`).
+- **`extract_annotate`** (v2.0) : extraction puis croisement **avec** un vocabulaire Loterre — marque chaque candidat `in_vocabulary` (avec `uri`/`pref`) ou suggère son ajout, sur trois niveaux de confiance (`enrichment_suggestion_embed` / `enrichment_suggestion_structural` / `enrichment_suggestion_specificity`, ce dernier désactivé par défaut, `--extractor embed` uniquement — voir §5.3/§5.4 et `docs/curation_guide.md`).
 
 **Capacités (annotation)** :
 - Trois profils précision/rappel prédéfinis
@@ -80,7 +80,9 @@ loterre-v9/
 │   ├── loterre_cvalue.py          # [Extraction] scoring C-value (Frantzi 1998) — corpus volumineux
 │   ├── loterre_positionrank.py    # [Extraction] scoring PositionRank (Florescu & Caragea 2017) — corpus court
 │   ├── loterre_embed.py           # [Extraction] scoring par embeddings (plus proche voisin du vocabulaire cible)
-│   └── loterre_variants.py        # [Extraction] détection de variantes (graphiques/morpho/syntaxiques, TermSuite)
+│   ├── loterre_variants.py        # [Extraction] détection de variantes (graphiques/morpho/syntaxiques, TermSuite)
+│   ├── loterre_specificity.py     # [Extraction] Weirdness Ratio vs langue générale — filtre ncvalue + niveau 3 embed
+│   └── loterre_csv_export.py      # [Les deux] export CSV additionnel des candidats (--out-csv)
 │
 ├── configs/
 │   ├── registry.yaml              # index des dictionnaires disponibles
@@ -88,9 +90,13 @@ loterre-v9/
 │
 ├── resources/
 │   ├── spacy_models.yaml          # ordre de préférence des modèles spaCy par langue (runtime)
-│   └── termsuite_morphology/      # tables de dérivation vendorisées (termsuite-resources, Apache 2.0)
-│       ├── fr/{suffix-derivation-bank,suppletives-bank}.txt
-│       └── en/{suffix-derivation-bank,suppletives-bank}.txt
+│   ├── termsuite_morphology/      # tables de dérivation vendorisées (termsuite-resources, Apache 2.0)
+│   │   ├── fr/{suffix-derivation-bank,suppletives-bank}.txt
+│   │   └── en/{suffix-derivation-bank,suppletives-bank}.txt
+│   └── termsuite_general_language/  # tables de fréquence "langue générale" (termsuite-resources, Apache 2.0)
+│       ├── en/general-language.txt
+│       ├── fr/general-language.txt
+│       └── SOURCE.md              # provenance (pas d'en-tête inline, données contiennent des tokens "#...")
 │
 ├── data/
 │   ├── dicts/                     # dictionnaires JSONL (ARKs courants)
@@ -111,7 +117,8 @@ loterre-v9/
 │   │   ├── test_embed.sh                       # [Extraction] scoring par embeddings (Phase 5)
 │   │   ├── test_variants.sh                    # [Extraction] détection de variantes (Phase 4)
 │   │   ├── test_extract_annotate_cli.sh        # [Les deux] annotate + extract + extract_annotate
-│   │   └── run_regression_all.sh               # lance les 6 tests d'extraction ci-dessus en une fois
+│   │   ├── test_specificity.sh                 # [Les deux] motifs TermSuite + spécificité (2026-09-10/11)
+│   │   └── run_regression_all.sh               # lance les 7 tests d'extraction ci-dessus en une fois
 │   ├── quality/
 │   │   └── test_v9_contextual.sh               # [Annotation]
 │   └── profiling/
@@ -123,7 +130,9 @@ loterre-v9/
 │   │   ├── run_eval.sh                    # évaluation batch EN + FR
 │   │   ├── run_generated_eval.sh          # évaluation sur gold auto-générés
 │   │   ├── clean_gold.py                 # nettoyage et correction des ARKs
-│   │   └── acter_eval.py                  # benchmark token-level vs gold ACTER (Phase 6, extraction)
+│   │   ├── acter_eval.py                  # benchmark token-level vs gold ACTER (Phase 6, extraction)
+│   │   ├── bench_candidate_patterns.py    # --prep-patterns/--all-candidate-patterns vs gold ACTER (2026-09-10)
+│   │   └── bench_specificity.py           # --specificity-filter-pctl/--specificity-top-pct vs gold ACTER (2026-09-11)
 │   ├── corpus/
 │   │   └── txt_to_jsonl.py                # convertit un répertoire/archive .txt en JSONL (extraction)
 │   ├── build_dictionaries/
@@ -329,6 +338,9 @@ python3 src/loterre_cli.py extract \
 | `--dict` | `[--extractor embed]` Dictionnaire JSONL cible, comparé par **plus proche voisin** (pas un centroïde — voir §5.4) |
 | `--embed-threshold` | `[--extractor embed]` Similarité cosinus minimale (0 = pas de filtre) |
 | `--detect-variants` | Regroupe les variantes (§5.5) — option explicite, défaut désactivé |
+| `--prep-patterns` | Ajoute les motifs N-prep-N ("rate of change") que `noun_chunks` ne produit jamais comme span unique — adapté de TermSuite. Option explicite, défaut désactivé, non activée par défaut (voir `planification/analyse_benchmarks_extraction.md`, 2026-09-10) |
+| `--all-candidate-patterns` | Grammaire TermSuite complète (règles non "noisy") en complément de `noun_chunks` — bien plus large que `--prep-patterns`. Gain net avec `--extractor ncvalue` sur petit lot, régression avec `graph`/`auto`, coût O(n²) prohibitif sur gros corpus (`build_containment_map`) — option explicite, défaut désactivé, à combiner uniquement avec `ncvalue` sur petit lot |
+| `--specificity-filter-pctl` | Retire les N% de candidats les moins spécifiques du corpus (contraste de fréquence vs langue générale, voir `docs/underthehood.md`) avant scoring — défaut **0** (désactivé), **40** calibré sur ACTER pour `--extractor ncvalue` uniquement (2026-09-11) |
 | `--max-terms` | Garde les N meilleurs candidats triés par score décroissant |
 
 > **Choisir un extracteur** : les trois algorithmes sont **exclusifs**, pas combinés ni auto-sélectionnés entre eux (sauf `auto` qui ne bascule qu'entre `ncvalue`/`graph`). `embed` donne le meilleur classement quand un vocabulaire cible pertinent et substantiel existe déjà (voir le diagnostic X64, `planification/planif_extraction_terminologique.md` §Phase 5) ; sinon `ncvalue`/`graph` selon le volume (ci-dessous).
@@ -372,6 +384,7 @@ Mêmes options que `extract`, plus celles de l'annotation (`--dict-id`/`--dict`/
 |---|---|
 | `--enrichment-threshold` | `[--extractor embed]` Similarité cosinus minimale (plus proche voisin) pour marquer un candidat absent du vocabulaire comme suggestion d'enrichissement niveau 1 (défaut **0.95** — au plus proche voisin, du bruit courant/peu spécifique score encore 0.90-0.96, un seuil bas suggérerait massivement du bruit) |
 | `--structural-top-pct` | `[--extractor embed]` Second signal indépendant du vocabulaire (C-value/PositionRank, voir §5.4) : un candidat absent du vocabulaire, sous `--enrichment-threshold`, mais dans le top N% de ce classement structurel est marqué `enrichment_suggestion_structural` (défaut **2%**, favorise la précision) |
+| `--specificity-top-pct` | `[--extractor embed]` Troisième signal indépendant du vocabulaire (Weirdness Ratio vs langue générale, voir §5.4) : un candidat absent du vocabulaire, ni niveau 1 ni niveau 2, mais dans le top N% de ce classement de spécificité est marqué `enrichment_suggestion_specificity` (défaut **0.0 = désactivé**, contrairement à `--structural-top-pct` — précision isolée mesurée ~0.27-0.30 sur ACTER, nettement plus bruitée que le niveau 2, décision explicite du curateur ; **10** est la valeur mesurée utile si activé) |
 
 ### 5.3 Schéma de sortie (`candidates[]`)
 
@@ -393,13 +406,16 @@ Mêmes options que `extract`, plus celles de l'annotation (`--dict-id`/`--dict`/
       "rule": "embed",
       "in_vocabulary": true,
       "pref": "linguistics",
-      "enrichment_suggestion": null,
+      "enrichment_suggestion_embed": null,
       "enrichment_suggestion_structural": null,
+      "enrichment_suggestion_specificity": null,
       "canonical_form": null,
       "variant_type": null,
       "structural_score": 0.141,
       "structural_rule": "positionrank",
       "structural_rank": 3,
+      "specificity_score": 84335.6,
+      "specificity_rank": 12,
       "occurrences": [{"start": 120, "end": 131, "doc_id": "doc_042"}]
     }
   ]
@@ -411,9 +427,11 @@ Mêmes options que `extract`, plus celles de l'annotation (`--dict-id`/`--dict`/
 | `term` / `lemma` / `pattern` | toujours | Surface, lemme(s), détail POS+lemme par token |
 | `frequency` / `score` / `rule` | toujours | `rule` = `cvalue`, `positionrank`, `embed`, ou `freq_single_token` (repli mono-token) |
 | `in_vocabulary` / `uri` / `pref` | `extract_annotate` | Croisement avec le vocabulaire (span exact, pas simple chevauchement) |
-| `enrichment_suggestion` | `extract_annotate` + `--extractor embed` | Niveau 1 : `True` si absent du vocabulaire et `score` (similarité embed) ≥ `--enrichment-threshold` |
-| `enrichment_suggestion_structural` | `extract_annotate` + `--extractor embed` | Niveau 2 : `True` si absent du vocabulaire, niveau 1 `False`, et `structural_rank` dans le top `--structural-top-pct` — jamais `True` en même temps que le niveau 1. Voir §5.4 et `docs/curation_guide.md` |
+| `enrichment_suggestion_embed` | `extract_annotate` + `--extractor embed` | Niveau 1 : `True` si absent du vocabulaire et `score` (similarité embed) ≥ `--enrichment-threshold` |
+| `enrichment_suggestion_structural` | `extract_annotate` + `--extractor embed` | Niveau 2 : `True` si absent du vocabulaire, niveau 1 `False`, et `structural_rank` dans le top `--structural-top-pct` — jamais `True` en même temps que les niveaux 1 et 3. Voir §5.4 et `docs/curation_guide.md` |
+| `enrichment_suggestion_specificity` | `extract_annotate` + `--extractor embed` + `--specificity-top-pct` > 0 | Niveau 3 : `True` si absent du vocabulaire, niveaux 1 et 2 `False`, et `specificity_rank` dans le top `--specificity-top-pct` — **désactivé par défaut** (0.0), contrairement aux niveaux 1/2, précision isolée nettement plus faible (~0.27-0.30 sur ACTER). Voir §5.4 et `docs/curation_guide.md` |
 | `structural_score` / `structural_rule` / `structural_rank` | `extract_annotate` + `--extractor embed` | Signal C-value/PositionRank calculé en parallèle du score embed, indépendant du vocabulaire cible (`structural_rule` = `cvalue` ou `positionrank`, `structural_rank` = 1 pour le plus fort). Jamais utilisé comme score comparable entre corpus — échelle non bornée |
+| `specificity_score` / `specificity_rank` | `--specificity-filter-pctl` > 0 (`ncvalue`) OU `--extractor embed` (toujours) | Weirdness Ratio (contraste de fréquence vs langue générale, voir `docs/underthehood.md`) — pour `ncvalue`, calculé sur les candidats survivants après filtrage ; pour `embed`, toujours calculé (comme `structural_score`), utilisé pour le niveau 3 ci-dessus. `specificity_rank` = 1 pour le plus spécifique. `null` si ni l'un ni l'autre n'est actif. Échelle non bornée, pas comparable entre corpus |
 | `canonical_form` / `variant_type` | `--detect-variants` | Voir §5.5 |
 | `occurrences` | toujours | Offsets caractères par document (`doc_id` requis — les offsets sont locaux à un document) |
 
@@ -426,7 +444,7 @@ Mêmes options que `extract`, plus celles de l'annotation (`--dict-id`/`--dict`/
 Piste explorée et **abandonnée** : mesurer une densité interne du vocabulaire seul (scission seed/held-out, similarité au plus proche voisin), sans corpus de texte réel. Calibration testée sur 4 cas connus (X64 + 3 domaines ACTER, voir `planification/analyse_benchmarks_extraction.md`) : le vocabulaire ACTER `wind` est le **plus dense** de tous (médiane 0.874, au-dessus de X64 à 0.828) et donne pourtant le **pire** F1 réel (0.286, variante semi-supervisée) — ni la densité ni même la taille du vocabulaire (`corp`, 463 termes, F1=0.407 > `htfl`, 1180 termes, F1=0.345) ne discriminent les cas qui marchent des cas qui échouent. Cause probable : ces métriques ignorent le bruit des candidats non-termes extraits d'un texte réel, qui est le facteur dominant du rappel en production (précision correcte 0.55–0.85 partout, mais rappel bas 0.17–0.34 quel que soit le domaine — voir `benchmark_results/acter/acter_results_embed_seeded.json`). Aucun diagnostic sans corpus de texte réel n'est donc fiable ; seule la méthodologie d'`acter_eval.py` (seed/held-out sur un **corpus de texte réel** annoté) est validée pour évaluer `embed` avant de le choisir en production.
 
 Ce détail précision/rappel donne toutefois un indice exploitable, indépendant du vocabulaire : `embed` **valide bien** un candidat qui ressemble à un terme déjà présent dans le vocabulaire cible (précision correcte), mais **rate la plupart des termes vraiment absents/nouveaux** qu'on lui demande de découvrir à partir de rien (rappel bas) — profil constant sur les 8 combinaisons domaine/langue testées. Ce n'est donc pas une propriété du vocabulaire qui doit guider le choix, mais la nature de la tâche :
-- candidats attendus majoritairement proches de termes déjà connus du vocabulaire cible (variantes, synonymes, cas proches — matching/filtrage de bruit, cas réel X64 en `extract_annotate --extractor embed` pour `in_vocabulary`) → `embed` seul (niveau 1, `enrichment_suggestion`) suffit ;
+- candidats attendus majoritairement proches de termes déjà connus du vocabulaire cible (variantes, synonymes, cas proches — matching/filtrage de bruit, cas réel X64 en `extract_annotate --extractor embed` pour `in_vocabulary`) → `embed` seul (niveau 1, `enrichment_suggestion_embed`) suffit ;
 - objectif de découvrir des termes largement absents/nouveaux du vocabulaire cible (enrichissement pur, terminologie émergente) → voir le signal structurel ci-dessous, qui répond directement à ce cas sans quitter `embed`.
 
 #### Signal structurel secondaire (Option 3, §8) — recall pour les termes loin du vocabulaire
@@ -437,10 +455,12 @@ Mesuré sur ACTER (`acter_eval.py`, seuils de production) :
 
 | | Precision | Rappel | F1 |
 |---|---:|---:|---:|
-| niveau 1 seul (`enrichment_suggestion`) | 0.858 | 0.127 | 0.222 |
+| niveau 1 seul (`enrichment_suggestion_embed`) | 0.858 | 0.127 | 0.222 |
 | niveau 1 + niveau 2 (`enrichment_suggestion_structural`) | 0.568 | 0.232 | 0.329 |
 
 Le niveau 2 relève le rappel de +83% relatif au prix d'une précision qui tombe (~0.57 isolé, plus bruité que le niveau 1) — un compromis délibéré, pas fusionné en un score unique pour que le curateur garde une confiance différenciée entre les deux listes (voir `docs/curation_guide.md` pour la consigne de traitement, et `docs/underthehood.md` pour le mécanisme détaillé). Le seuil `--structural-top-pct` a été balayé de 2% à 30% sans pic net de F1 dans cette plage — le choix de 2% privilégie la précision plutôt que de maximiser le F1 brut ; détail complet dans `planification/analyse_benchmarks_extraction.md`.
+
+**Niveau 3 (2026-09-11)** : `--extractor embed` calcule aussi un score de spécificité (Weirdness Ratio vs langue générale, `specificity_score`/`specificity_rank`, voir `docs/underthehood.md`) — `enrichment_suggestion_specificity` marque un candidat absent du vocabulaire, hors niveaux 1 et 2, mais dans le top `--specificity-top-pct` (**défaut 0.0 = désactivé**, contrairement au niveau 2). Mesuré sur ACTER : niveau 2+3 combinés (structurel 2% + spécificité 10%) porte le F1 à **0.314** (contre 0.270 pour le niveau 2 seul), mais la précision isolée du niveau 3 seul n'est que **~0.27-0.30** (contre ~0.57-0.64 pour le niveau 2) — nettement plus bruité, d'où la désactivation par défaut. Voir `docs/curation_guide.md` et `planification/analyse_benchmarks_extraction.md` pour le détail.
 
 ### 5.5 Détection de variantes (Phase 4)
 
@@ -481,7 +501,7 @@ Compare `ncvalue`/`graph` (sans vocabulaire, comme D-Terminer) sur 4 domaines ×
 
 Cette variante (moitié du gold ACTER comme vocabulaire de référence, l'autre moitié à retrouver, coupure oracle top-N) donne F1=0.364 pour `embed` — **moins bon** que C-value (0.391) et PositionRank (0.496) évalués à froid sur le même gold, malgré la moitié des réponses fournies comme référence. À l'inverse du gain massif observé sur X64 (§5.1), un vocabulaire de référence restreint ne donne pas à `embed` un signal suffisant : préférer `ncvalue`/`graph` quand le vocabulaire cible est petit ou peu représentatif du domaine.
 
-`make benchmark-acter` lance aussi (par défaut, `--skip-structural-signal` pour désactiver) une troisième variante avec les **vrais seuils de production** (`--enrichment-threshold`/`--structural-top-pct`, pas la coupure oracle top-N ci-dessus) : `enrichment_suggestion` seul vs `enrichment_suggestion` + `enrichment_suggestion_structural` (§5.4). Voir `planification/analyse_benchmarks_extraction.md` pour le détail et le balayage de `--structural-top-pct`.
+`make benchmark-acter` lance aussi (par défaut, `--skip-structural-signal` pour désactiver) une troisième variante avec les **vrais seuils de production** (`--enrichment-threshold`/`--structural-top-pct`, pas la coupure oracle top-N ci-dessus) : `enrichment_suggestion_embed` seul vs `enrichment_suggestion_embed` + `enrichment_suggestion_structural` (§5.4). Voir `planification/analyse_benchmarks_extraction.md` pour le détail et le balayage de `--structural-top-pct`.
 
 ---
 
@@ -521,7 +541,7 @@ Trois profils prédéfinis couvrent le spectre précision/rappel :
 
 | Profil | Usage | Comportement |
 |---|---|---|
-| `entity_strict` | Entités nommées, acronymes | Priorité aux patterns, pas de fallback lemme, uppercase exact |
+| `entity_strict` | Entités nommées, acronymes | Priorité aux patterns, pas de passe lemme séquence complète (`use_lemma: false`), uppercase exact |
 | `term_balanced` | Terminologie mixte | Équilibre surface+lemme, single-token modéré |
 | `term_recall` | Multi-termes, rappel maximal | Tous les chemins activés, seuils plus bas |
 
@@ -575,6 +595,10 @@ Appliquée symétriquement au dictionnaire et au texte :
 | `lemma_pattern_seq` | Séquence de lemmes depuis patterns | 0.9 | 0.9 |
 | `surface_structural` | Forme normalisée exacte | 0.85 | 0.75 |
 | `lemma_structural` | Lemme spaCy normalisé | 0.82 | 0.72 |
+
+**Le pattern compare toujours sur le lemme, indépendamment du flag `use_lemma`.** Chaque spec du pattern (généré par `build_dictionaries.py`, un par token du terme source) porte un `lemma` ; `token_matches_spec()` compare le lemme normalisé du token du texte à celui de la spec — c'est le comportement intrinsèque du chemin `pattern`, pas une passe optionnelle. Concrètement : un terme au singulier dans le dictionnaire matche déjà les formes fléchies du texte (pluriel, accord) via `pattern` seul, même en profil `entity_strict` (`use_lemma: false`).
+
+Le flag `use_lemma` ne contrôle qu'une passe *distincte* : `lemma_pattern_seq`/`lemma_structural`, qui compare la séquence de lemmes du **label entier** (pas le pattern POS+lemme token par token) à la séquence de lemmes du texte — un filet de secours pour les entrées sans pattern exploitable, désactivable indépendamment. Le chemin `surface_structural`/`surface_upper_exact` (`use_surface`), lui, ne lemmatise jamais : comparaison sur la forme littérale normalisée.
 
 ### 8.3 Variantes structurelles automatiques
 
@@ -1024,11 +1048,12 @@ make extract VOCAB=P66 LOTLANG=en             # extraction ad-hoc, sans vocabula
 
 # ── Les deux (extraction + croisement vocabulaire) ──────────────────────
 make test-extract-annotate  # 3 sous-commandes via loterre_cli.py (annotate/extract/extract_annotate)
+make test-specificity  # motifs TermSuite + spécificité (--prep-patterns/--all-candidate-patterns/--specificity-*)
 make extract-annotate VOCAB=P66 LOTLANG=en    # extraction + croisement vocabulaire
 
 # ── Orchestrateurs (regroupent les commandes ci-dessus) ──────────────────
 make test             # = test-smoke + test-profiling + test-quality + test-extraction
-make test-extraction  # = test-extract + test-cvalue + test-positionrank + test-embed + test-variants + test-extract-annotate
+make test-extraction  # = test-extract + test-cvalue + test-positionrank + test-embed + test-variants + test-extract-annotate + test-specificity
 ```
 
 ### 16.2 Lancer les tests directement

@@ -76,6 +76,7 @@
 - Bascule automatique C-value/PositionRank selon le volume de corpus (`--extractor auto`, seuil configurable)
 - Trois sous-commandes CLI positionnelles : `annotate` / `extract` / `extract_annotate`
 - Détection de variantes morphologiques, graphiques et syntaxiques, inspirée de TermSuite (CNRS/TTC) — `--detect-variants`
-- Croisement extraction/vocabulaire Loterre natif (`in_vocabulary` / `enrichment_suggestion`)
+- Croisement extraction/vocabulaire Loterre natif (`in_vocabulary` / `enrichment_suggestion_embed`)
 - Scoring par embeddings au plus proche voisin d'un vocabulaire cible (`--extractor embed`, `paraphrase-multilingual-MiniLM-L12-v2`) — **pas** `--extractor bert`
 - Benchmark intégré contre le gold ACTER (`make benchmark-acter`) : F1 PositionRank=0.496, C-value=0.391, au sommet de la fourchette D-Terminer (0.32–0.50, GPU) obtenue en CPU pur
+- **Ajouts post-complétion des phases, opt-in, jamais activés par défaut (2026-09-10/11)** : génération de candidats étendue par grammaire de motifs TermSuite (`--prep-patterns`/`--all-candidate-patterns`) et filtre de spécificité par contraste de langue générale (`--specificity-filter-pctl`, `src/loterre_specificity.py`) — voir `planification/planif_extraction_terminologique.md` §9 et `planification/analyse_benchmarks_extraction.md` pour le détail et les mesures

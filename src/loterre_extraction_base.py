@@ -50,7 +50,7 @@ class CandidateTerm:
     (planif_extraction_terminologique.md), so to_dict() is a direct serialization.
     Vocabulary fields (in_vocabulary/uri/pref) stay None for the extract
     subcommand and are filled in by the dictionary lookup in extract_annotate.
-    enrichment_suggestion stays None unless --extractor embed is used in
+    enrichment_suggestion_embed stays None unless --extractor embed is used in
     extract_annotate (Phase 5) — True means a high-similarity candidate not
     already in the vocabulary, a candidate suggestion for Loterre.
     canonical_form/variant_type stay None unless --detect-variants is passed
@@ -65,6 +65,21 @@ class CandidateTerm:
     term-like isn't invisible (see loterre_extract_cli._attach_structural_signal
     and CLAUDE.md/planification/analyse_benchmarks_extraction.md, entrée
     2026-09-07). Never overwrites score/rule, which stay the embed similarity.
+    specificity_score/specificity_rank (Weirdness Ratio against a
+    general-language reference corpus, resources/termsuite_general_language/,
+    loterre_specificity.score_candidates_specificity) are populated in two
+    distinct situations: (1) --specificity-filter-pctl > 0 with --extractor
+    ncvalue — pre-filter, calibrated 2026-09-11, for whichever candidates
+    survive; (2) always for --extractor embed (like structural_score) — used
+    to compute enrichment_suggestion_specificity below. Never validated with
+    graph as a filter.
+    enrichment_suggestion_specificity stays None/False unless --extractor
+    embed AND --specificity-top-pct > 0 (disabled by default, unlike
+    structural — measured isolated precision ~0.27-0.30 on ACTER, markedly
+    noisier than structural's ~0.64, an explicit curator opt-in rather than a
+    safe default). Mutually exclusive with enrichment_suggestion_embed and
+    enrichment_suggestion_structural (set in loterre_cli.run_extract_annotate_mode,
+    see planification/analyse_benchmarks_extraction.md, entrée 2026-09-11).
     """
     term: str
     lemma: str
@@ -76,13 +91,16 @@ class CandidateTerm:
     in_vocabulary: Optional[bool] = None
     uri: Optional[str] = None
     pref: Optional[str] = None
-    enrichment_suggestion: Optional[bool] = None
+    enrichment_suggestion_embed: Optional[bool] = None
     enrichment_suggestion_structural: Optional[bool] = None
+    enrichment_suggestion_specificity: Optional[bool] = None
     canonical_form: Optional[str] = None
     variant_type: Optional[str] = None
     structural_score: Optional[float] = None
     structural_rule: Optional[str] = None
     structural_rank: Optional[int] = None
+    specificity_score: Optional[float] = None
+    specificity_rank: Optional[int] = None
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -95,12 +113,15 @@ class CandidateTerm:
             "rule": self.rule,
             "in_vocabulary": self.in_vocabulary,
             "pref": self.pref,
-            "enrichment_suggestion": self.enrichment_suggestion,
+            "enrichment_suggestion_embed": self.enrichment_suggestion_embed,
             "enrichment_suggestion_structural": self.enrichment_suggestion_structural,
+            "enrichment_suggestion_specificity": self.enrichment_suggestion_specificity,
             "canonical_form": self.canonical_form,
             "variant_type": self.variant_type,
             "structural_score": self.structural_score,
             "structural_rule": self.structural_rule,
             "structural_rank": self.structural_rank,
+            "specificity_score": self.specificity_score,
+            "specificity_rank": self.specificity_rank,
             "occurrences": [{"start": o.start, "end": o.end, "doc_id": o.doc_id} for o in self.occurrences],
         }
