@@ -33,6 +33,7 @@ import re
 import sys
 import time
 import unicodedata
+import uuid
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from functools import lru_cache
@@ -729,7 +730,11 @@ def build_indexes_cached(entries: List[Dict[str, Any]], nlp, profile: "ResourceP
 
     try:
         cache_dir.mkdir(parents=True, exist_ok=True)
-        tmp_file = cache_file.with_suffix(".pkl.tmp")
+        # Unique per writer (pid + random suffix): concurrent processes building the
+        # same missing cache entry (e.g. ezs/spawn workers) must not share one .tmp
+        # path, or the first to finish its replace() makes the others' rename fail
+        # with FileNotFoundError — silently defeating the cache for that entry.
+        tmp_file = cache_file.with_suffix(f".pkl.{os.getpid()}.{uuid.uuid4().hex[:8]}.tmp")
         with tmp_file.open("wb") as f:
             pickle.dump(indexes, f, protocol=pickle.HIGHEST_PROTOCOL)
         tmp_file.replace(cache_file)  # atomic rename: concurrent readers never see a partial file
