@@ -625,6 +625,27 @@ Script ad hoc non committé (`bench_specificity_embed.py`), sortie non sauvegard
 
 ---
 
+### Fenêtre de co-occurrence PositionRank (`window`) — 2026-09-16
+
+**Contexte** : question utilisateur sur la formule de score PositionRank (somme des scores de mots constitutifs, déjà appliquée à tous les candidats mono/multi-token — cf. `score_candidates_positionrank()`) et sur l'intérêt d'élargir la fenêtre de co-occurrence `window` (`build_cooccurrence_graph()`, défaut 4). Le papier original (Florescu & Caragea 2017) teste 2 à 10 avec un léger mieux rapporté autour de 6-10 ; coût O(n×window), pas de souci de performance contrairement à C-value (O(n²)).
+
+**Ce qui a été fait** : `scripts/evaluation/acter_eval.py --skip-embed-seeded --skip-structural-signal --min-freq 1` (comparaison à froid `ncvalue`/`graph`, 8 combinaisons domaine/langue ACTER), une fois avec `window=4` (défaut) et une fois avec `window=10` (modification temporaire du défaut dans `loterre_positionrank.py`, revert immédiat après mesure — aucun flag CLI n'expose `window` aujourd'hui).
+
+**Résultats** (extracteur `graph`/PositionRank uniquement — `window` n'affecte pas `ncvalue`) :
+
+| | Precision | Rappel | F1 |
+|---|---:|---:|---:|
+| window=4 (défaut) | 0.556 | 0.454 | 0.500 |
+| window=10 | 0.556 | 0.455 | 0.501 |
+
+Écart nul à l'échelle du corpus (+0.001 F1, dans le bruit) ; par domaine/langue, seuls `corp/fr` (+0.01 F1) et `equi/fr` (−0.01 F1) bougent d'un centième, tous les autres couples identiques au centième près.
+
+**Décision** : pas de changement — élargir la fenêtre n'apporte rien de mesurable sur ACTER, le défaut `window=4` est conservé. Pas d'implémentation (flag CLI, etc.) à ce stade ; à ne pas re-tester sauf nouveau signal suggérant un intérêt.
+
+Aucun script ad hoc créé (invocation directe de `acter_eval.py` avec deux valeurs de `window`), sorties JSON dans `benchmark_results/acter_window4_baseline/` et `benchmark_results/acter_window10_test/` (non committées).
+
+---
+
 ## Références
 
 - Mao et al. 2024 — *Attention-Seeker: Dynamic Self-Attention Scoring for Unsupervised Keyphrase Extraction* : https://arxiv.org/html/2409.10907

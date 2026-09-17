@@ -23,10 +23,12 @@ Features
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import logging
 import multiprocessing as mp
 import os
+import pickle
 import re
 import sys
 import time
@@ -51,6 +53,14 @@ _PUNCT_RE = re.compile(r"[^\w\s()]")
 
 _RESOURCES_DIR = Path(os.environ["LOTERRE_RESOURCES_DIR"]) if "LOTERRE_RESOURCES_DIR" in os.environ \
     else Path(__file__).parent.parent / "resources"
+
+# Bump this when a code change makes previously pickled indexes incompatible
+# (e.g. a new field in the trie payloads) so stale caches are ignored instead
+# of causing a crash or silently wrong matches.
+INDEX_CACHE_FORMAT_VERSION = 1
+
+_INDEX_CACHE_DIR = Path(os.environ["LOTERRE_INDEX_CACHE_DIR"]) if "LOTERRE_INDEX_CACHE_DIR" in os.environ \
+    else Path(__file__).parent.parent / ".loterre_index_cache"
 
 
 def _load_word_set(path: Path, fallback: frozenset) -> frozenset:
@@ -650,6 +660,86 @@ def build_indexes(entries: List[Dict[str, Any]], nlp, profile: ResourceProfile):
 
     return pattern_entries, surface_trie, lemma_trie, upper_single_entries, pattern_lemma_trie, pattern_first_idx, pattern_wildcards
 
+
+def _hash_file(path: str, chunk_size: int = 1 << 20) -> str:
+    """Stream a content hash instead of loading the whole file into memory."""
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(chunk_size), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def _index_cache_key(dict_path: str, lang: str, profile: "ResourceProfile", nlp) -> str:
+    """Fingerprint everything that changes the content of build_indexes()'s output,
+    so a stale cache is never reused after the dictionary, profile or model change.
+
+    Deliberately keyed on the dictionary's *content* hash rather than its path,
+    size or mtime: a path/mtime-based key would never match across machines (dev
+    checkout vs. the /app/public/... layout baked into the Docker image), and a
+    `dvc pull` does not generally preserve the original mtime either — both of
+    which would make a cache pre-built once and shipped via DVC (see Dockerfile)
+    always miss. Content hashing costs well under a second even for the largest
+    dictionaries (MeSH, ~150k entries), negligible next to the minutes it saves."""
+    payload = {
+        "format": INDEX_CACHE_FORMAT_VERSION,
+        "dict_content_sha256": _hash_file(dict_path),
+        "lang": lang,
+        "profile_name": profile.name,
+        "profile_params": sorted(profile.params.items()),
+        "spacy_model": nlp.meta.get("name"),
+        "spacy_model_version": nlp.meta.get("version"),
+        "spacy_version": spacy.__version__,
+    }
+    blob = json.dumps(payload, sort_keys=True, ensure_ascii=False, default=str).encode("utf-8")
+    return hashlib.sha256(blob).hexdigest()
+
+
+def build_indexes_cached(entries: List[Dict[str, Any]], nlp, profile: "ResourceProfile",
+                          dict_path: str, lang: str,
+                          cache_dir: Optional[str] = None, use_cache: bool = True):
+    """build_indexes(), but persisted to disk keyed by dictionary content + profile +
+    spaCy model. Building the tries runs nlp.pipe over every dictionary entry, which
+    is a few seconds for small vocabularies but minutes for large ones (e.g. MeSH,
+    145k+ entries) — a cost that a stateless per-request CLI invocation would
+    otherwise pay on every single call. Any cache I/O problem falls back to a plain
+    rebuild rather than failing the annotation run."""
+    if not use_cache:
+        return build_indexes(entries, nlp, profile)
+
+    cache_dir = Path(cache_dir) if cache_dir else _INDEX_CACHE_DIR
+
+    try:
+        key = _index_cache_key(dict_path, lang, profile, nlp)
+        cache_file = cache_dir / f"{key}.pkl"
+    except Exception:
+        logging.warning("Could not compute index cache key, building without cache", exc_info=True)
+        return build_indexes(entries, nlp, profile)
+
+    if cache_file.exists():
+        try:
+            with cache_file.open("rb") as f:
+                indexes = pickle.load(f)
+            logging.info("Loaded cached indexes from %s", cache_file)
+            return indexes
+        except Exception:
+            logging.warning("Corrupt index cache at %s, rebuilding", cache_file, exc_info=True)
+
+    indexes = build_indexes(entries, nlp, profile)
+
+    try:
+        cache_dir.mkdir(parents=True, exist_ok=True)
+        tmp_file = cache_file.with_suffix(".pkl.tmp")
+        with tmp_file.open("wb") as f:
+            pickle.dump(indexes, f, protocol=pickle.HIGHEST_PROTOCOL)
+        tmp_file.replace(cache_file)  # atomic rename: concurrent readers never see a partial file
+        logging.info("Wrote index cache to %s", cache_file)
+    except Exception:
+        logging.warning("Could not write index cache to %s (continuing without cache)", cache_dir, exc_info=True)
+
+    return indexes
+
+
 def match_trie(flat_view: FlatView, trie: SeqTrie, doc, rule_name: str, score_multi: float, score_single: float, allow_single: bool):
     """Match longest indexed sequences against a flattened document view."""
     out = []
@@ -1159,11 +1249,14 @@ def generate_yaml_proposal(text_path: str, dict_path: str, lang: str, stats: Dic
 
 _WORKER_STATE = {}
 
-def _worker_init(lang: str, profile_name: str, profile_overrides: Dict[str, Any], entries: List[Dict[str, Any]], quality: Dict[str, Any]) -> None:
+def _worker_init(lang: str, profile_name: str, profile_overrides: Dict[str, Any], entries: List[Dict[str, Any]],
+                  quality: Dict[str, Any], dict_path: str, index_cache_dir: Optional[str] = None,
+                  use_index_cache: bool = True) -> None:
     """Initialize one worker process with its own spaCy model and indexes."""
     profile = merge_profile(profile_name, profile_overrides)
     nlp = load_model(lang)
-    indexes = build_indexes(entries, nlp, profile)
+    indexes = build_indexes_cached(entries, nlp, profile, dict_path, lang,
+                                    cache_dir=index_cache_dir, use_cache=use_index_cache)
     _WORKER_STATE["profile"] = profile
     _WORKER_STATE["nlp"] = nlp
     _WORKER_STATE["indexes"] = indexes
@@ -1207,6 +1300,9 @@ def parse_args():
     p.add_argument("--ezs", action="store_true", help="EZS streaming mode: one JSON per input line, value=[matches]")
     p.add_argument("--workers", type=int, default=1, help="Number of worker processes")
     p.add_argument("--chunk-size", type=int, default=200, help="Chunk size for multiprocessing")
+    p.add_argument("--index-cache-dir", default=None,
+                    help="Directory for the on-disk index cache (default: LOTERRE_INDEX_CACHE_DIR env var, or <repo>/.index_cache)")
+    p.add_argument("--no-index-cache", action="store_true", help="Disable the on-disk index cache and always rebuild indexes")
     p.add_argument("--log-level", default="INFO")
     p.add_argument("--validate-input", action="store_true")
     p.add_argument("--dump-effective-config", action="store_true", help="Print merged config to stderr")
@@ -1272,7 +1368,8 @@ def main():
     # ── Mode EZS : traitement en flux, une ligne JSON par document ───────────
     if args.ezs:
         nlp = load_model(lang)
-        indexes = build_indexes(entries, nlp, profile)
+        indexes = build_indexes_cached(entries, nlp, profile, dict_path, lang,
+                                        cache_dir=args.index_cache_dir, use_cache=not args.no_index_cache)
         compteur = 0
         for json_line in sys.stdin:
             json_line = json_line.strip()
@@ -1316,14 +1413,16 @@ def main():
         with mp.Pool(
             processes=args.workers,
             initializer=_worker_init,
-            initargs=(lang, profile.name, profile_overrides, entries, quality),
+            initargs=(lang, profile.name, profile_overrides, entries, quality, dict_path,
+                      args.index_cache_dir, not args.no_index_cache),
         ) as pool:
             for chunk_docs in pool.imap(_worker_process, chunked(rows, args.chunk_size)):
                 docs.extend(chunk_docs)
     else:
         logging.info("Single-process mode")
         nlp = load_model(lang)
-        indexes = build_indexes(entries, nlp, profile)
+        indexes = build_indexes_cached(entries, nlp, profile, dict_path, lang,
+                                        cache_dir=args.index_cache_dir, use_cache=not args.no_index_cache)
         batch_size = int(profile.params.get("batch_size", 64))
         for row, doc in zip(rows, nlp.pipe((r["value"] for r in rows), batch_size=batch_size)):
             doc_id = row.get("id", "doc")

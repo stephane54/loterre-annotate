@@ -17,6 +17,7 @@ CLAUDE.md
 html_*
 output*
 .loterre_cache/
+.loterre_index_cache/
 dictionary/
 corpus_acter/
 report.md

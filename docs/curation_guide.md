@@ -85,7 +85,7 @@ doivent guider la décision, cf. consigne ci-dessous.
 ## Choix de la méthode
 
 Un seul chemin recommandé selon que le vocabulaire Loterre cible existe déjà
-ou non (voir `CLAUDE.md` §Objectif produit principal) :
+ou non :
 
 | Situation | Commande | Pourquoi |
 |---|---|---|

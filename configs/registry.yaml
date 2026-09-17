@@ -89,6 +89,11 @@ dictionaries:
     lang: en
     profile: term_recall       # avg_len=2.20, termes musicologiques composés
 
+  JVR_fr:
+    path: ../dictionary/fr_annot_JVR.jsonl
+    lang: fr
+    profile: term_recall       # avg_len=2.80, confirmé par --auto-profile (2026-09-16)
+
   SEN_en:
     path: ../dictionary/en_annot_SEN.jsonl
     lang: en
@@ -98,3 +103,524 @@ dictionaries:
     path: ../dictionary/fr_annot_SEN.jsonl
     lang: fr
     profile: term_balanced     # avg_len=2.13, mono=0.9% — confirmé par --auto-profile (2026-09-09)
+
+  # ── 103 entrées ci-dessous : dictionnaires présents dans dictionary/ mais
+  # jamais câblés au registre (mêmes symptômes que JVR_fr avant correction —
+  # voir historique 2026-09-16/17). Profils déterminés via --auto-profile.
+  # 4 variantes ignorées car le fichier dictionnaire est vide (langue non
+  # traduite pour ce vocabulaire) : 2CX_en, PAN_en, TSP_en, Theremy_fr.
+
+  1WB_en:
+    path: ../dictionary/en_annot_1WB.jsonl
+    lang: en
+    profile: term_balanced # avg_len=1.97, mono=20%, n=1567, confirmé par --auto-profile (2026-09-17)
+
+  1WB_fr:
+    path: ../dictionary/fr_annot_1WB.jsonl
+    lang: fr
+    profile: term_recall # avg_len=2.31, mono=17%, n=1752, confirmé par --auto-profile (2026-09-17)
+
+  216_en:
+    path: ../dictionary/en_annot_216.jsonl
+    lang: en
+    profile: term_balanced # avg_len=1.77, mono=38%, n=5305, confirmé par --auto-profile (2026-09-17)
+
+  216_fr:
+    path: ../dictionary/fr_annot_216.jsonl
+    lang: fr
+    profile: term_balanced # avg_len=1.96, mono=38%, n=5313, confirmé par --auto-profile (2026-09-17)
+
+  26L_en:
+    path: ../dictionary/en_annot_26L.jsonl
+    lang: en
+    profile: entity_strict # avg_len=1.50, mono=57%, n=21996, confirmé par --auto-profile (2026-09-17)
+
+  26L_fr:
+    path: ../dictionary/fr_annot_26L.jsonl
+    lang: fr
+    profile: entity_strict # avg_len=1.67, mono=54%, n=22695, confirmé par --auto-profile (2026-09-17)
+
+  2CX_fr:
+    path: ../dictionary/fr_annot_2CX.jsonl
+    lang: fr
+    profile: entity_strict # avg_len=1.96, mono=42%, n=10926, confirmé par --auto-profile (2026-09-17)
+
+  2QZ_en:
+    path: ../dictionary/en_annot_2QZ.jsonl
+    lang: en
+    profile: term_balanced # avg_len=2.04, mono=12%, n=5078, confirmé par --auto-profile (2026-09-17)
+
+  2QZ_fr:
+    path: ../dictionary/fr_annot_2QZ.jsonl
+    lang: fr
+    profile: term_recall # avg_len=2.27, mono=11%, n=5285, confirmé par --auto-profile (2026-09-17)
+
+  37T_en:
+    path: ../dictionary/en_annot_37T.jsonl
+    lang: en
+    profile: term_balanced # avg_len=1.80, mono=33%, n=19606, confirmé par --auto-profile (2026-09-17)
+
+  37T_fr:
+    path: ../dictionary/fr_annot_37T.jsonl
+    lang: fr
+    profile: term_balanced # avg_len=2.02, mono=33%, n=20835, confirmé par --auto-profile (2026-09-17)
+
+  3JP_fr:
+    path: ../dictionary/fr_annot_3JP.jsonl
+    lang: fr
+    profile: entity_strict # avg_len=1.70, mono=48%, n=5742, confirmé par --auto-profile (2026-09-17)
+
+  3WV_en:
+    path: ../dictionary/en_annot_3WV.jsonl
+    lang: en
+    profile: term_balanced # avg_len=1.64, mono=43%, n=4946, confirmé par --auto-profile (2026-09-17)
+
+  3WV_fr:
+    path: ../dictionary/fr_annot_3WV.jsonl
+    lang: fr
+    profile: term_balanced # avg_len=1.78, mono=43%, n=6333, confirmé par --auto-profile (2026-09-17)
+
+  4V5_en:
+    path: ../dictionary/en_annot_4V5.jsonl
+    lang: en
+    profile: term_balanced # avg_len=1.60, mono=56%, n=4775, confirmé par --auto-profile (2026-09-17)
+
+  4V5_fr:
+    path: ../dictionary/fr_annot_4V5.jsonl
+    lang: fr
+    profile: term_balanced # avg_len=1.59, mono=56%, n=4734, confirmé par --auto-profile (2026-09-17)
+
+  73G_en:
+    path: ../dictionary/en_annot_73G.jsonl
+    lang: en
+    profile: term_recall # avg_len=1.64, mono=54%, n=5437, confirmé par --auto-profile (2026-09-17)
+
+  73G_fr:
+    path: ../dictionary/fr_annot_73G.jsonl
+    lang: fr
+    profile: term_recall # avg_len=1.67, mono=54%, n=5456, confirmé par --auto-profile (2026-09-17)
+
+  8LP_en:
+    path: ../dictionary/en_annot_8LP.jsonl
+    lang: en
+    profile: entity_strict # avg_len=1.75, mono=42%, n=3998, confirmé par --auto-profile (2026-09-17)
+
+  8LP_fr:
+    path: ../dictionary/fr_annot_8LP.jsonl
+    lang: fr
+    profile: entity_strict # avg_len=2.03, mono=40%, n=3943, confirmé par --auto-profile (2026-09-17)
+
+  905_en:
+    path: ../dictionary/en_annot_905.jsonl
+    lang: en
+    profile: entity_strict # avg_len=1.36, mono=68%, n=3419, confirmé par --auto-profile (2026-09-17)
+
+  905_fr:
+    path: ../dictionary/fr_annot_905.jsonl
+    lang: fr
+    profile: entity_strict # avg_len=1.43, mono=71%, n=3407, confirmé par --auto-profile (2026-09-17)
+
+  ADM_en:
+    path: ../dictionary/en_annot_ADM.jsonl
+    lang: en
+    profile: entity_strict # avg_len=2.16, mono=44%, n=2958, confirmé par --auto-profile (2026-09-17)
+
+  ADM_fr:
+    path: ../dictionary/fr_annot_ADM.jsonl
+    lang: fr
+    profile: entity_strict # avg_len=2.15, mono=47%, n=2995, confirmé par --auto-profile (2026-09-17)
+
+  ASYSEL_en:
+    path: ../dictionary/en_annot_ASYSEL.jsonl
+    lang: en
+    profile: term_balanced # avg_len=1.96, mono=26%, n=188, confirmé par --auto-profile (2026-09-17)
+
+  ASYSEL_fr:
+    path: ../dictionary/fr_annot_ASYSEL.jsonl
+    lang: fr
+    profile: term_recall # avg_len=2.28, mono=29%, n=117, confirmé par --auto-profile (2026-09-17)
+
+  BJW_en:
+    path: ../dictionary/en_annot_BJW.jsonl
+    lang: en
+    profile: term_balanced # avg_len=2.08, mono=12%, n=13878, confirmé par --auto-profile (2026-09-17)
+
+  BJW_fr:
+    path: ../dictionary/fr_annot_BJW.jsonl
+    lang: fr
+    profile: term_recall # avg_len=2.35, mono=11%, n=14003, confirmé par --auto-profile (2026-09-17)
+
+  BL8_en:
+    path: ../dictionary/en_annot_BL8.jsonl
+    lang: en
+    profile: term_recall # avg_len=2.83, mono=22%, n=8525, confirmé par --auto-profile (2026-09-17)
+
+  BL8_fr:
+    path: ../dictionary/fr_annot_BL8.jsonl
+    lang: fr
+    profile: term_recall # avg_len=3.17, mono=21%, n=9408, confirmé par --auto-profile (2026-09-17)
+
+  BLH_en:
+    path: ../dictionary/en_annot_BLH.jsonl
+    lang: en
+    profile: term_balanced # avg_len=1.97, mono=24%, n=5794, confirmé par --auto-profile (2026-09-17)
+
+  BLH_fr:
+    path: ../dictionary/fr_annot_BLH.jsonl
+    lang: fr
+    profile: term_balanced # avg_len=2.15, mono=26%, n=4758, confirmé par --auto-profile (2026-09-17)
+
+  BRMH_en:
+    path: ../dictionary/en_annot_BRMH.jsonl
+    lang: en
+    profile: term_recall # avg_len=2.27, mono=24%, n=468, confirmé par --auto-profile (2026-09-17)
+
+  BRMH_fr:
+    path: ../dictionary/fr_annot_BRMH.jsonl
+    lang: fr
+    profile: term_recall # avg_len=2.41, mono=28%, n=418, confirmé par --auto-profile (2026-09-17)
+
+  C0X_en:
+    path: ../dictionary/en_annot_C0X.jsonl
+    lang: en
+    profile: term_recall # avg_len=2.82, mono=27%, n=1749, confirmé par --auto-profile (2026-09-17)
+
+  C0X_fr:
+    path: ../dictionary/fr_annot_C0X.jsonl
+    lang: fr
+    profile: term_recall # avg_len=3.04, mono=28%, n=1712, confirmé par --auto-profile (2026-09-17)
+
+  CHC_en:
+    path: ../dictionary/en_annot_CHC.jsonl
+    lang: en
+    profile: term_balanced # avg_len=2.19, mono=21%, n=1203, confirmé par --auto-profile (2026-09-17)
+
+  CHC_fr:
+    path: ../dictionary/fr_annot_CHC.jsonl
+    lang: fr
+    profile: term_recall # avg_len=2.82, mono=17%, n=1089, confirmé par --auto-profile (2026-09-17)
+
+  CUEX_en:
+    path: ../dictionary/en_annot_CUEX.jsonl
+    lang: en
+    profile: term_balanced # avg_len=2.02, mono=24%, n=278, confirmé par --auto-profile (2026-09-17)
+
+  CUEX_fr:
+    path: ../dictionary/fr_annot_CUEX.jsonl
+    lang: fr
+    profile: term_recall # avg_len=2.53, mono=23%, n=277, confirmé par --auto-profile (2026-09-17)
+
+  D63_en:
+    path: ../dictionary/en_annot_D63.jsonl
+    lang: en
+    profile: entity_strict # avg_len=1.19, mono=83%, n=45663, confirmé par --auto-profile (2026-09-17)
+
+  D63_fr:
+    path: ../dictionary/fr_annot_D63.jsonl
+    lang: fr
+    profile: entity_strict # avg_len=1.26, mono=76%, n=51435, confirmé par --auto-profile (2026-09-17)
+
+  DOM_en:
+    path: ../dictionary/en_annot_DOM.jsonl
+    lang: en
+    profile: term_recall # avg_len=4.32, mono=9%, n=2698, confirmé par --auto-profile (2026-09-17)
+
+  DOM_fr:
+    path: ../dictionary/fr_annot_DOM.jsonl
+    lang: fr
+    profile: term_recall # avg_len=5.06, mono=10%, n=2697, confirmé par --auto-profile (2026-09-17)
+
+  EMTD_en:
+    path: ../dictionary/en_annot_EMTD.jsonl
+    lang: en
+    profile: term_recall # avg_len=2.27, mono=22%, n=183, confirmé par --auto-profile (2026-09-17)
+
+  EMTD_fr:
+    path: ../dictionary/fr_annot_EMTD.jsonl
+    lang: fr
+    profile: term_recall # avg_len=2.35, mono=27%, n=177, confirmé par --auto-profile (2026-09-17)
+
+  ERC_en:
+    path: ../dictionary/en_annot_ERC.jsonl
+    lang: en
+    profile: term_recall # avg_len=4.90, mono=8%, n=429, confirmé par --auto-profile (2026-09-17)
+
+  ERC_fr:
+    path: ../dictionary/fr_annot_ERC.jsonl
+    lang: fr
+    profile: term_recall # avg_len=5.72, mono=8%, n=429, confirmé par --auto-profile (2026-09-17)
+
+  FMC_en:
+    path: ../dictionary/en_annot_FMC.jsonl
+    lang: en
+    profile: term_balanced # avg_len=2.10, mono=18%, n=5314, confirmé par --auto-profile (2026-09-17)
+
+  FMC_fr:
+    path: ../dictionary/fr_annot_FMC.jsonl
+    lang: fr
+    profile: term_recall # avg_len=2.38, mono=17%, n=4249, confirmé par --auto-profile (2026-09-17)
+
+  G9G_en:
+    path: ../dictionary/en_annot_G9G.jsonl
+    lang: en
+    profile: term_balanced # avg_len=1.81, mono=28%, n=6242, confirmé par --auto-profile (2026-09-17)
+
+  G9G_fr:
+    path: ../dictionary/fr_annot_G9G.jsonl
+    lang: fr
+    profile: term_balanced # avg_len=1.77, mono=40%, n=5561, confirmé par --auto-profile (2026-09-17)
+
+  GGMGG_en:
+    path: ../dictionary/en_annot_GGMGG.jsonl
+    lang: en
+    profile: term_balanced # avg_len=1.68, mono=40%, n=495, confirmé par --auto-profile (2026-09-17)
+
+  GGMGG_fr:
+    path: ../dictionary/fr_annot_GGMGG.jsonl
+    lang: fr
+    profile: term_balanced # avg_len=1.93, mono=37%, n=532, confirmé par --auto-profile (2026-09-17)
+
+  GT_en:
+    path: ../dictionary/en_annot_GT.jsonl
+    lang: en
+    profile: term_balanced # avg_len=1.66, mono=39%, n=3368, confirmé par --auto-profile (2026-09-17)
+
+  GT_fr:
+    path: ../dictionary/fr_annot_GT.jsonl
+    lang: fr
+    profile: entity_strict # avg_len=1.74, mono=42%, n=3368, confirmé par --auto-profile (2026-09-17)
+
+  IDIA_en:
+    path: ../dictionary/en_annot_IDIA.jsonl
+    lang: en
+    profile: term_balanced # avg_len=2.13, mono=21%, n=256, confirmé par --auto-profile (2026-09-17)
+
+  IDIA_fr:
+    path: ../dictionary/fr_annot_IDIA.jsonl
+    lang: fr
+    profile: term_recall # avg_len=2.24, mono=29%, n=240, confirmé par --auto-profile (2026-09-17)
+
+  KG7_en:
+    path: ../dictionary/en_annot_KG7.jsonl
+    lang: en
+    profile: term_recall # avg_len=2.86, mono=2%, n=4775, confirmé par --auto-profile (2026-09-17)
+
+  KG7_fr:
+    path: ../dictionary/fr_annot_KG7.jsonl
+    lang: fr
+    profile: term_recall # avg_len=3.65, mono=2%, n=4871, confirmé par --auto-profile (2026-09-17)
+
+  KW5_en:
+    path: ../dictionary/en_annot_KW5.jsonl
+    lang: en
+    profile: entity_strict # avg_len=1.52, mono=53%, n=16043, confirmé par --auto-profile (2026-09-17)
+
+  KW5_fr:
+    path: ../dictionary/fr_annot_KW5.jsonl
+    lang: fr
+    profile: entity_strict # avg_len=1.61, mono=54%, n=16678, confirmé par --auto-profile (2026-09-17)
+
+  LTK_en:
+    path: ../dictionary/en_annot_LTK.jsonl
+    lang: en
+    profile: entity_strict # avg_len=1.69, mono=64%, n=2183, confirmé par --auto-profile (2026-09-17)
+
+  LTK_fr:
+    path: ../dictionary/fr_annot_LTK.jsonl
+    lang: fr
+    profile: entity_strict # avg_len=1.72, mono=67%, n=1967, confirmé par --auto-profile (2026-09-17)
+
+  MDL_en:
+    path: ../dictionary/en_annot_MDL.jsonl
+    lang: en
+    profile: term_balanced # avg_len=2.12, mono=14%, n=8889, confirmé par --auto-profile (2026-09-17)
+
+  MDL_fr:
+    path: ../dictionary/fr_annot_MDL.jsonl
+    lang: fr
+    profile: term_recall # avg_len=2.42, mono=11%, n=10690, confirmé par --auto-profile (2026-09-17)
+
+  NHT_en:
+    path: ../dictionary/en_annot_NHT.jsonl
+    lang: en
+    profile: term_balanced # avg_len=2.07, mono=14%, n=15240, confirmé par --auto-profile (2026-09-17)
+
+  NHT_fr:
+    path: ../dictionary/fr_annot_NHT.jsonl
+    lang: fr
+    profile: term_recall # avg_len=2.35, mono=12%, n=15878, confirmé par --auto-profile (2026-09-17)
+
+  P21_en:
+    path: ../dictionary/en_annot_P21.jsonl
+    lang: en
+    profile: term_recall # avg_len=1.89, mono=33%, n=21290, confirmé par --auto-profile (2026-09-17)
+
+  P21_fr:
+    path: ../dictionary/fr_annot_P21.jsonl
+    lang: fr
+    profile: entity_strict # avg_len=1.74, mono=44%, n=16003, confirmé par --auto-profile (2026-09-17)
+
+  PAN_fr:
+    path: ../dictionary/fr_annot_PAN.jsonl
+    lang: fr
+    profile: term_balanced # avg_len=1.91, mono=54%, n=232, confirmé par --auto-profile (2026-09-17)
+
+  PLP_en:
+    path: ../dictionary/en_annot_PLP.jsonl
+    lang: en
+    profile: term_balanced # avg_len=1.62, mono=51%, n=1182, confirmé par --auto-profile (2026-09-17)
+
+  PLP_fr:
+    path: ../dictionary/fr_annot_PLP.jsonl
+    lang: fr
+    profile: term_balanced # avg_len=1.69, mono=57%, n=1198, confirmé par --auto-profile (2026-09-17)
+
+  PSR_en:
+    path: ../dictionary/en_annot_PSR.jsonl
+    lang: en
+    profile: term_recall # avg_len=2.11, mono=13%, n=3367, confirmé par --auto-profile (2026-09-17)
+
+  PSR_fr:
+    path: ../dictionary/fr_annot_PSR.jsonl
+    lang: fr
+    profile: term_recall # avg_len=2.56, mono=14%, n=3167, confirmé par --auto-profile (2026-09-17)
+
+  Q1W_en:
+    path: ../dictionary/en_annot_Q1W.jsonl
+    lang: en
+    profile: term_balanced # avg_len=1.76, mono=37%, n=6170, confirmé par --auto-profile (2026-09-17)
+
+  Q1W_fr:
+    path: ../dictionary/fr_annot_Q1W.jsonl
+    lang: fr
+    profile: term_balanced # avg_len=1.93, mono=41%, n=5595, confirmé par --auto-profile (2026-09-17)
+
+  QJP_en:
+    path: ../dictionary/en_annot_QJP.jsonl
+    lang: en
+    profile: term_balanced # avg_len=1.99, mono=26%, n=17989, confirmé par --auto-profile (2026-09-17)
+
+  QJP_fr:
+    path: ../dictionary/fr_annot_QJP.jsonl
+    lang: fr
+    profile: term_recall # avg_len=2.25, mono=24%, n=22035, confirmé par --auto-profile (2026-09-17)
+
+  RDR_en:
+    path: ../dictionary/en_annot_RDR.jsonl
+    lang: en
+    profile: term_balanced # avg_len=2.17, mono=10%, n=5219, confirmé par --auto-profile (2026-09-17)
+
+  RDR_fr:
+    path: ../dictionary/fr_annot_RDR.jsonl
+    lang: fr
+    profile: term_recall # avg_len=2.67, mono=8%, n=5528, confirmé par --auto-profile (2026-09-17)
+
+  RVQ_en:
+    path: ../dictionary/en_annot_RVQ.jsonl
+    lang: en
+    profile: term_recall # avg_len=2.24, mono=4%, n=2794, confirmé par --auto-profile (2026-09-17)
+
+  RVQ_fr:
+    path: ../dictionary/fr_annot_RVQ.jsonl
+    lang: fr
+    profile: term_recall # avg_len=3.41, mono=2%, n=6241, confirmé par --auto-profile (2026-09-17)
+
+  SN8_en:
+    path: ../dictionary/en_annot_SN8.jsonl
+    lang: en
+    profile: term_balanced # avg_len=2.04, mono=10%, n=3213, confirmé par --auto-profile (2026-09-17)
+
+  SN8_fr:
+    path: ../dictionary/fr_annot_SN8.jsonl
+    lang: fr
+    profile: term_recall # avg_len=2.57, mono=7%, n=3045, confirmé par --auto-profile (2026-09-17)
+
+  TECSEM_en:
+    path: ../dictionary/en_annot_TECSEM.jsonl
+    lang: en
+    profile: term_recall # avg_len=1.93, mono=30%, n=306, confirmé par --auto-profile (2026-09-17)
+
+  TECSEM_fr:
+    path: ../dictionary/fr_annot_TECSEM.jsonl
+    lang: fr
+    profile: entity_strict # avg_len=2.17, mono=42%, n=258, confirmé par --auto-profile (2026-09-17)
+
+  TSM_en:
+    path: ../dictionary/en_annot_TSM.jsonl
+    lang: en
+    profile: term_balanced # avg_len=2.02, mono=26%, n=174, confirmé par --auto-profile (2026-09-17)
+
+  TSM_fr:
+    path: ../dictionary/fr_annot_TSM.jsonl
+    lang: fr
+    profile: term_recall # avg_len=2.21, mono=25%, n=179, confirmé par --auto-profile (2026-09-17)
+
+  TSO_en:
+    path: ../dictionary/en_annot_TSO.jsonl
+    lang: en
+    profile: term_recall # avg_len=2.67, mono=28%, n=888, confirmé par --auto-profile (2026-09-17)
+
+  TSO_fr:
+    path: ../dictionary/fr_annot_TSO.jsonl
+    lang: fr
+    profile: term_recall # avg_len=3.15, mono=27%, n=828, confirmé par --auto-profile (2026-09-17)
+
+  TSP_fr:
+    path: ../dictionary/fr_annot_TSP.jsonl
+    lang: fr
+    profile: term_balanced # avg_len=2.13, mono=35%, n=22743, confirmé par --auto-profile (2026-09-17)
+
+  Theremy_en:
+    path: ../dictionary/en_annot_Theremy.jsonl
+    lang: en
+    profile: term_recall # avg_len=2.27, mono=20%, n=1071, confirmé par --auto-profile (2026-09-17)
+
+  VH8_en:
+    path: ../dictionary/en_annot_VH8.jsonl
+    lang: en
+    profile: term_balanced # avg_len=2.12, mono=26%, n=6830, confirmé par --auto-profile (2026-09-17)
+
+  VH8_fr:
+    path: ../dictionary/fr_annot_VH8.jsonl
+    lang: fr
+    profile: term_recall # avg_len=2.51, mono=25%, n=7605, confirmé par --auto-profile (2026-09-17)
+
+  VPAC_en:
+    path: ../dictionary/en_annot_VPAC.jsonl
+    lang: en
+    profile: term_recall # avg_len=2.67, mono=18%, n=219, confirmé par --auto-profile (2026-09-17)
+
+  VPAC_fr:
+    path: ../dictionary/fr_annot_VPAC.jsonl
+    lang: fr
+    profile: term_recall # avg_len=2.96, mono=19%, n=290, confirmé par --auto-profile (2026-09-17)
+
+  W7B_en:
+    path: ../dictionary/en_annot_W7B.jsonl
+    lang: en
+    profile: term_recall # avg_len=2.74, mono=20%, n=2955, confirmé par --auto-profile (2026-09-17)
+
+  W7B_fr:
+    path: ../dictionary/fr_annot_W7B.jsonl
+    lang: fr
+    profile: term_recall # avg_len=3.02, mono=23%, n=3238, confirmé par --auto-profile (2026-09-17)
+
+  XD4_en:
+    path: ../dictionary/en_annot_XD4.jsonl
+    lang: en
+    profile: entity_strict # avg_len=1.74, mono=46%, n=7274, confirmé par --auto-profile (2026-09-17)
+
+  XD4_fr:
+    path: ../dictionary/fr_annot_XD4.jsonl
+    lang: fr
+    profile: entity_strict # avg_len=1.83, mono=43%, n=7893, confirmé par --auto-profile (2026-09-17)
+
+  th63_en:
+    path: ../dictionary/en_annot_th63.jsonl
+    lang: en
+    profile: entity_strict # avg_len=1.43, mono=72%, n=2109, confirmé par --auto-profile (2026-09-17)
+
+  th63_fr:
+    path: ../dictionary/fr_annot_th63.jsonl
+    lang: fr
+    profile: entity_strict # avg_len=1.50, mono=70%, n=2016, confirmé par --auto-profile (2026-09-17)
