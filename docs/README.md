@@ -20,6 +20,14 @@
 16. [Tests et workflow de développement](#16-tests-et-workflow-de-développement)
 17. [Build et déploiement du package](#17-build-et-déploiement-du-package)
 
+### Autres documents
+
+- [Guide de curation](curation_guide.md) : quelle méthode choisir, et comment relire les listes de suggestion
+- [Les 3 méthodes d'extraction](methodes.md) : explication de C-value, PositionRank et embed, avec un exemple travaillé pour chacune
+- [Under the hood](underthehood.md) : fonctionnement interne de l'extraction, du rapport et de l'annotation (index, caches, matching)
+- [Évaluation](evaluation.md) : résultats mesurés, protocoles d'évaluation, comparaison avec TermSuite
+- Présentations : [Extraction terminologique v2](Extraction_terminologique_v2.pptx), [version ReLM](Extraction_terminologique_v2_ReLM.pptx), [ReLM Revue #07](ReLM_Revue%2307.pptx), [TermSuite sur ACTER](slide_termsuite_acter.pptx)
+
 ---
 
 ## 1. Vue d'ensemble
