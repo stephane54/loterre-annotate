@@ -101,13 +101,18 @@ def gold_term_spans(aligned_tokens: list[tuple[int, int, str]]) -> list[tuple[in
 
 # ── extraction + comparaison token-level ───────────────────────────────────────
 
+# Options d'extraction ajoutées à chaque appel (ex. --respot-occurrences), pour
+# mesurer une option sur tout le protocole sans dupliquer les fonctions.
+EXTRA_EXTRACT_ARGS: list[str] = []
+
+
 def run_extraction(extract_cli: Path, jsonl_path: Path, lang: str, extractor: str, min_freq: int,
                     dict_path: Path | None = None) -> dict:
     cmd = [
         sys.executable, str(extract_cli),
         "--text", str(jsonl_path), "--lang", lang,
         "--extractor", extractor, "--min-freq", str(min_freq),
-        "--silent",
+        "--silent", *EXTRA_EXTRACT_ARGS,
     ]
     if dict_path is not None:
         cmd.extend(["--dict", str(dict_path)])
@@ -365,6 +370,11 @@ def evaluate_domain_lang_structural_signal(
                                     texts=texts, exclude_terms=seed_terms)
     prf_embed["n_flagged"] = len(embed_only)
     prf_combined["n_flagged"] = len(combined)
+    # Précision par candidat (même définition que bench_topical.py) : chaque
+    # suggestion compte une fois — son terme est-il un terme gold held-out ?
+    holdout_lower = {t.lower() for t in holdout_terms}
+    for prf, lst in ((prf_embed, embed_only), (prf_combined, combined)):
+        prf["n_flagged_gold"] = sum(1 for c in lst if c["term"].lower() in holdout_lower)
 
     jsonl_path.unlink(missing_ok=True)
     seed_dict_path.unlink(missing_ok=True)
@@ -397,7 +407,11 @@ def print_table_structural_signal(results: list[dict]) -> None:
             p = tp / (tp + fp) if (tp + fp) else 0.0
             rc = tp / (tp + fn) if (tp + fn) else 0.0
             f1 = 2 * p * rc / (p + rc) if (p + rc) else 0.0
-            print(f"TOTAL {label:<20} P={p:.3f} R={rc:.3f} F1={f1:.3f}  (tp={tp} fp={fp} fn={fn})")
+            n_flag = sum(r[key]["n_flagged"] for r in valid)
+            n_gold = sum(r[key].get("n_flagged_gold", 0) for r in valid)
+            p_cand = n_gold / n_flag if n_flag else 0.0
+            print(f"TOTAL {label:<20} P={p:.3f} R={rc:.3f} F1={f1:.3f}  (tp={tp} fp={fp} fn={fn})  "
+                  f"P/candidat={p_cand:.3f} ({n_gold}/{n_flag})")
 
 
 def print_table(results: list[dict]) -> None:
@@ -504,7 +518,12 @@ def main() -> None:
     pa.add_argument("--structural-top-pct", type=float, default=2.0,
                      help="[signal structurel] Même seuil et même défaut que loterre_cli.py "
                           "extract_annotate --structural-top-pct (défaut 2.0, favorise la précision)")
+    pa.add_argument("--respot-occurrences", action="store_true",
+                     help="Passe --respot-occurrences à chaque extraction (toutes les occurrences du texte "
+                          "de chaque candidat, variantes de casse fusionnées)")
     args = pa.parse_args()
+    if args.respot_occurrences:
+        EXTRA_EXTRACT_ARGS.append("--respot-occurrences")
 
     corpus_root = Path(args.corpus_root)
     if not corpus_root.exists():
@@ -567,10 +586,15 @@ def main() -> None:
         (out_dir / "acter_results_structural_signal.json").write_text(
             json.dumps(structural_results, ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"JSON (structural signal) -> {out_dir / 'acter_results_structural_signal.json'}")
-    if results or embed_results:
-        write_markdown(results or json.loads((out_dir / "acter_results.json").read_text(encoding="utf-8")),
-                       out_dir / "acter_results.md", embed_results=embed_results)
+    # Avec --skip-cold, le Markdown réutilise un acter_results.json déjà présent
+    # dans out_dir ; sans lui (nouveau dossier), on n'écrit que les JSON.
+    cold_path = out_dir / "acter_results.json"
+    cold = results or (json.loads(cold_path.read_text(encoding="utf-8")) if cold_path.exists() else None)
+    if cold and (results or embed_results):
+        write_markdown(cold, out_dir / "acter_results.md", embed_results=embed_results)
         print(f"Markdown -> {out_dir / 'acter_results.md'}")
+    elif embed_results:
+        print(f"Markdown omis : pas de {cold_path} (résultats à froid) dans ce dossier")
 
 
 if __name__ == "__main__":

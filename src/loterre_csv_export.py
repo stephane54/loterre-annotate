@@ -11,13 +11,17 @@ from __future__ import annotations
 
 import csv
 import io
-from typing import Any, Dict, Iterable
+import json
+from typing import Any, Dict, Iterable, Optional
+
+CONTEXT_CHARS = 70  # caractères gardés de part et d'autre du terme dans `context`
 
 CSV_FIELDS = [
     "term",
     "lemma",
     "postag",
     "frequency",
+    "n_docs",
     "score",
     "rule",
     "in_vocabulary",
@@ -32,7 +36,45 @@ CSV_FIELDS = [
     "structural_rank",
     "specificity_score",
     "specificity_rank",
+    "nearest_vocab_term",
+    "context",
+    "topic_id",
+    "topic_label",
+    "topic_coverage",
+    "topic_generic",
 ]
+
+
+def attach_contexts(candidates: Iterable[Dict[str, Any]], text_path: Optional[str]) -> None:
+    """Ajoute à chaque candidat (dict sérialisé) un champ `context` : extrait
+    du texte autour de sa première occurrence, terme entre crochets
+    ("… la prise en charge des [maladies professionnelles] chez les …") —
+    pour juger un candidat sans rouvrir le corpus. Relit le fichier source
+    JSONL ({"id":..., "value":...} par ligne) ; sans fichier (lecture depuis
+    stdin), ne fait rien."""
+    if not text_path:
+        return
+    texts: Dict[Any, str] = {}
+    with open(text_path, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line:
+                row = json.loads(line)
+                texts[row.get("id")] = row.get("value") or ""
+    for c in candidates:
+        occs = c.get("occurrences") or []
+        if not occs:
+            continue
+        occ = occs[0]
+        text = texts.get(occ.get("doc_id"))
+        if not text:
+            continue
+        start, end = occ["start"], occ["end"]
+        before = text[max(0, start - CONTEXT_CHARS):start]
+        after = text[end:end + CONTEXT_CHARS]
+        snippet = f"{'…' if start > CONTEXT_CHARS else ''}{before}[{text[start:end]}]{after}" \
+                  f"{'…' if end + CONTEXT_CHARS < len(text) else ''}"
+        c["context"] = " ".join(snippet.split())
 
 
 def _postag(candidate: Dict[str, Any]) -> str:

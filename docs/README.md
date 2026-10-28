@@ -7,7 +7,7 @@
 3. [Structure du projet](#3-structure-du-projet)
 4. [Usage CLI](#4-usage-cli)
 5. [Extraction terminologique (v2.0)](#5-extraction-terminologique-v20)
-6. [Format du dictionnaire](#6-format-du-dictionnaire)
+6. [Ressources terminologiques](#6-ressources-terminologiques)
 7. [Profils de matching](#7-profils-de-matching)
 8. [Stratégie de matching](#8-stratégie-de-matching)
 9. [Filtrage qualité](#9-filtrage-qualité)
@@ -40,7 +40,7 @@ Loterre-Annotator est un moteur d'annotation et d'extraction terminologique. Il 
 **Capacités (extraction, v2.0)** :
 - Scoring : C-value (corpus volumineux), PositionRank (corpus court), similarité aux embeddings d'un vocabulaire cible (plus proche voisin)
 - Détection de variantes (graphiques/morphologiques/syntaxiques), inspirée de TermSuite (CNRS/TTC)
-- Benchmark avec le gold ACTER (extraction uniquement, comparable à D-Terminer)
+- Benchmark avec le gold ACTER (extraction uniquement), comparé à D-Terminer et à TermSuite (§5.7)
 
 **Langues** : anglais et français.
 
@@ -58,7 +58,7 @@ make models-embed   # télécharge paraphrase-multilingual-MiniLM-L12-v2 (~118 M
 
 `requirements.txt` : `spacy`, `pyyaml`, `click`, `sentence-transformers` (ce dernier uniquement utilisé par `--extractor embed`, chargement paresseux — aucun coût pour `annotate`/`extract --extractor ncvalue|graph`).
 
-> **`--extractor embed` ne nécessite pas d'accès réseau après le premier téléchargement** : `loterre_embed.py` force `HF_HUB_OFFLINE=1`, donc le modèle est chargé exclusivement depuis le cache local (`~/.cache/huggingface/hub/`) — cohérent avec la contrainte projet "pas d'accès cloud" (CPU uniquement, voir `CLAUDE.md`).
+> **`--extractor embed` ne nécessite pas d'accès réseau après `make models-embed`** : le modèle est ensuite lu depuis le cache local (`~/.cache/huggingface/hub/`).
 
 ---
 
@@ -82,6 +82,7 @@ loterre-v9/
 │   ├── loterre_embed.py           # [Extraction] scoring par embeddings (plus proche voisin du vocabulaire cible)
 │   ├── loterre_variants.py        # [Extraction] détection de variantes (graphiques/morpho/syntaxiques, TermSuite)
 │   ├── loterre_specificity.py     # [Extraction] Weirdness Ratio vs langue générale — filtre ncvalue + niveau 3 embed
+│   ├── loterre_report.py          # [Extraction] rapport d'analyse HTML (--report) : chiffres, graphiques, thèmes
 │   └── loterre_csv_export.py      # [Les deux] export CSV additionnel des candidats (--out-csv)
 │
 ├── configs/
@@ -132,9 +133,15 @@ loterre-v9/
 │   │   ├── clean_gold.py                 # nettoyage et correction des ARKs
 │   │   ├── acter_eval.py                  # benchmark token-level vs gold ACTER (Phase 6, extraction)
 │   │   ├── bench_candidate_patterns.py    # --prep-patterns/--all-candidate-patterns vs gold ACTER (2026-09-10)
-│   │   └── bench_specificity.py           # --specificity-filter-pctl/--specificity-top-pct vs gold ACTER (2026-09-11)
+│   │   ├── bench_specificity.py           # --specificity-filter-pctl/--specificity-top-pct vs gold ACTER (2026-09-11)
+│   │   ├── bench_topical.py               # signaux de répartition (NMF, BERTopic…) vs témoin fréquence, rejetés (2026-09-30)
+│   │   ├── build_report.py                # rapport --report depuis des sorties existantes, ou depuis son JSON
+│   │   ├── sweep_topics.py                # nombre de thèmes du rapport : cohérence, stabilité, couverture (2026-10-08)
+│   │   ├── termsuite_acter_eval.py        # sorties TermSuite notées avec le protocole d'acter_eval (2026-10-09)
+│   │   └── bench_respot.py                # hypothèse « occurrences » : mêmes candidats, occurrences re-repérées (2026-10-09)
 │   ├── corpus/
-│   │   └── txt_to_jsonl.py                # convertit un répertoire/archive .txt en JSONL (extraction)
+│   │   ├── txt_to_jsonl.py                # convertit un répertoire/archive .txt en JSONL (extraction)
+│   │   └── clean_revueesr.py              # nettoyage du corpus RevueESR (texte PDF)
 │   ├── build_dictionaries/
 │   │   └── build_dictionaries.py          # génération native des dictionnaires JSONL depuis CSV vocab
 │   ├── prediction/
@@ -149,7 +156,10 @@ loterre-v9/
 │   └── generate_fr_corpus.py              # génération des corpus FR avec variants flexionnels
 │
 └── docs/
-    └── README.md                  # ce fichier
+    ├── README.md                  # ce fichier — manuel d'utilisation
+    ├── curation_guide.md          # consigne de travail du curateur
+    ├── underthehood.md            # fonctionnement interne (extraction, annotation, caches)
+    └── evaluation.md              # résultats mesurés et protocoles d'évaluation
 ```
 
 **Répertoires de sortie** (non versionnés) :
@@ -338,14 +348,15 @@ python3 src/loterre_cli.py extract \
 | `--dict` | `[--extractor embed]` Dictionnaire JSONL cible, comparé par **plus proche voisin** (pas un centroïde — voir §5.4) |
 | `--embed-threshold` | `[--extractor embed]` Similarité cosinus minimale (0 = pas de filtre) |
 | `--detect-variants` | Regroupe les variantes (§5.5) — option explicite, défaut désactivé |
-| `--prep-patterns` | Ajoute les motifs N-prep-N ("rate of change") que `noun_chunks` ne produit jamais comme span unique — adapté de TermSuite. Option explicite, défaut désactivé, non activée par défaut (voir `planification/analyse_benchmarks_extraction.md`, 2026-09-10) |
-| `--all-candidate-patterns` | Grammaire TermSuite complète (règles non "noisy") en complément de `noun_chunks` — bien plus large que `--prep-patterns`. Gain net avec `--extractor ncvalue` sur petit lot, régression avec `graph`/`auto`, coût O(n²) prohibitif sur gros corpus (`build_containment_map`) — option explicite, défaut désactivé, à combiner uniquement avec `ncvalue` sur petit lot |
-| `--specificity-filter-pctl` | Retire les N% de candidats les moins spécifiques du corpus (contraste de fréquence vs langue générale, voir `docs/underthehood.md`) avant scoring — défaut **0** (désactivé), **40** calibré sur ACTER pour `--extractor ncvalue` uniquement (2026-09-11) |
+| `--prep-patterns` | Ajoute les candidats de forme nom + préposition + nom ("rate of change"), que l'extraction de base ne produit pas. Défaut désactivé |
+| `--all-candidate-patterns` | Ajoute toutes les formes de candidats de la grammaire TermSuite (bien plus large que `--prep-patterns`). Utile seulement avec `--extractor ncvalue` sur un document ou un petit lot : dégrade `graph`/`auto` et devient très lent sur un gros corpus. Défaut désactivé |
+| `--respot-occurrences` | Compte toutes les occurrences de chaque candidat, y compris à l'intérieur de groupes nominaux plus longs, et fusionne ses variantes de casse. Fréquences plus justes, mais pas plus de suggestions justes pour le curateur (part de suggestions justes de la liste 1 : 0.51 contre 0.53 sans l'option) ; plus lent (RevueESR : 39 min au lieu de 28). Défaut désactivé. Mesures : `docs/evaluation.md` §1.1 |
+| `--specificity-filter-pctl` | Retire les N% de candidats les moins spécifiques du domaine (comparés à la langue générale) avant le classement — défaut **0** (désactivé) ; valeur conseillée **40**, avec `--extractor ncvalue` uniquement |
 | `--max-terms` | Garde les N meilleurs candidats triés par score décroissant |
 
 > **Choisir un extracteur** : les trois algorithmes sont **exclusifs**, pas combinés ni auto-sélectionnés entre eux (sauf `auto` qui ne bascule qu'entre `ncvalue`/`graph`). `embed` donne le meilleur classement quand un vocabulaire cible pertinent et substantiel existe déjà (voir le diagnostic X64, `planification/planif_extraction_terminologique.md` §Phase 5) ; sinon `ncvalue`/`graph` selon le volume (ci-dessous).
 >
-> Chiffré sur X64 (vocabulaire Loterre de plusieurs milliers de termes) : taux de candidats pertinents (`in_vocabulary`) en top 20 — C-value ~4/20 (20 %), PositionRank 0/20 (FR) à 9/20 (EN), `embed` (plus proche voisin) **20/20 (100 %) dans les deux langues**. Mais ce gain suppose un vocabulaire cible riche : sur un domaine restreint sans cette richesse, `embed` perd au contraire (voir §5.7, variante semi-supervisée ACTER). Détail : `planification/analyse_benchmarks_extraction.md`.
+> Chiffré sur X64 (vocabulaire Loterre de plusieurs milliers de termes) : taux de candidats pertinents (`in_vocabulary`) en top 20 — C-value ~4/20 (20 %), PositionRank 0/20 (FR) à 9/20 (EN), `embed` (plus proche voisin) **20/20 (100 %) dans les deux langues**. Mais ce gain suppose un vocabulaire cible riche : sur un domaine restreint sans cette richesse, `embed` perd au contraire (variante semi-supervisée ACTER, `docs/evaluation.md` §1).
 
 #### Choix selon le volume du corpus
 
@@ -364,7 +375,7 @@ python3 src/loterre_cli.py extract --lang en --text mon_corpus.jsonl \
   --extractor auto --extractor-auto-threshold 20000
 ```
 
-Mesuré sur le gold ACTER (4 domaines, corpus de 50 000–65 000 tokens chacun, voir §5.7) : `graph` (F1=0.496) devance `ncvalue` (F1=0.391) sur les 8 combinaisons domaine/langue testées — au-dessus du seuil par défaut, `ncvalue` n'est donc pas automatiquement le meilleur choix en absolu, seulement le plus *fiable statistiquement* à grand volume ; comparer les deux extracteurs sur son propre corpus reste recommandé avant de figer un choix en production. Détail complet : `planification/analyse_benchmarks_extraction.md` §Dépendance au volume.
+Sur le corpus de référence ACTER (4 domaines de 50 000–65 000 tokens), `graph` devance pourtant `ncvalue` partout (`docs/evaluation.md` §1) : au-dessus du seuil, `ncvalue` n'est pas automatiquement le meilleur choix. Comparer les deux extracteurs sur son propre corpus avant de figer un choix en production.
 
 `embed` est **indépendant du volume** : son choix dépend uniquement de l'existence d'un vocabulaire cible pertinent (`--dict`), jamais sélectionné par `auto`.
 
@@ -382,9 +393,11 @@ Mêmes options que `extract`, plus celles de l'annotation (`--dict-id`/`--dict`/
 
 | Option | Description |
 |---|---|
-| `--enrichment-threshold` | `[--extractor embed]` Similarité cosinus minimale (plus proche voisin) pour marquer un candidat absent du vocabulaire comme suggestion d'enrichissement niveau 1 (défaut **0.95** — au plus proche voisin, du bruit courant/peu spécifique score encore 0.90-0.96, un seuil bas suggérerait massivement du bruit) |
-| `--structural-top-pct` | `[--extractor embed]` Second signal indépendant du vocabulaire (C-value/PositionRank, voir §5.4) : un candidat absent du vocabulaire, sous `--enrichment-threshold`, mais dans le top N% de ce classement structurel est marqué `enrichment_suggestion_structural` (défaut **2%**, favorise la précision) |
-| `--specificity-top-pct` | `[--extractor embed]` Troisième signal indépendant du vocabulaire (Weirdness Ratio vs langue générale, voir §5.4) : un candidat absent du vocabulaire, ni niveau 1 ni niveau 2, mais dans le top N% de ce classement de spécificité est marqué `enrichment_suggestion_specificity` (défaut **0.0 = désactivé**, contrairement à `--structural-top-pct` — précision isolée mesurée ~0.27-0.30 sur ACTER, nettement plus bruitée que le niveau 2, décision explicite du curateur ; **10** est la valeur mesurée utile si activé) |
+| `--enrichment-threshold` | `[--extractor embed]` Similarité minimale au terme le plus proche du vocabulaire pour qu'un candidat absent soit proposé en liste 1 (`enrichment_suggestion_embed`) — défaut **0.95** ; un seuil plus bas fait entrer beaucoup de bruit |
+| `--structural-top-pct` | `[--extractor embed]` Part des candidats les mieux classés par C-value/PositionRank proposés en liste 2 (`enrichment_suggestion_structural`, voir §5.4) — défaut **2%** |
+| `--specificity-top-pct` | `[--extractor embed]` Part des candidats les plus spécifiques du domaine proposés en liste 3 (`enrichment_suggestion_specificity`, voir §5.4) — défaut **0.0 = désactivé** ; valeur conseillée **10** si on l'active, en sachant que cette liste est nettement plus bruitée |
+| `--report RAPPORT.html` | Rapport d'analyse HTML autonome (alias `--topic-report`) : chiffres clés (part du vocabulaire retrouvée dans le corpus, documents annotés, suggestions par liste), graphiques de l'annotation et de l'extraction, suggestions les plus fréquentes de chaque liste, et **couverture du vocabulaire par thème (expérimental)**, qui repère les zones du corpus où la ressource manque de termes et les thèmes de bruit. Écrit aussi `RAPPORT.json` et ajoute `topic_id`/`topic_label`/`topic_coverage` aux candidats. Coût faible (~15 s sur 1 500 articles). La partie thèmes est omise sur un corpus trop court. Lecture du rapport : `docs/curation_guide.md` ; mécanisme : `docs/underthehood.md` |
+| `--report-topics N` | Nombre de thèmes du rapport (alias `--topic-report-topics`) — défaut 0 = automatique, entre 5 et 30 selon la taille du corpus |
 
 ### 5.3 Schéma de sortie (`candidates[]`)
 
@@ -402,6 +415,7 @@ Mêmes options que `extract`, plus celles de l'annotation (`--dict-id`/`--dict`/
       "lemma": "linguistics",
       "pattern": [{"pos": "NOUN", "lemma": "linguistics"}],
       "frequency": 80,
+      "n_docs": 41,
       "score": 1.0,
       "rule": "embed",
       "in_vocabulary": true,
@@ -416,6 +430,11 @@ Mêmes options que `extract`, plus celles de l'annotation (`--dict-id`/`--dict`/
       "structural_rank": 3,
       "specificity_score": 84335.6,
       "specificity_rank": 12,
+      "nearest_vocab_term": "linguistics",
+      "context": "… approaches in applied [linguistics] have shown that …",
+      "topic_id": 4,
+      "topic_label": "language, linguistics, grammar, syntax, corpus",
+      "topic_coverage": 0.62,
       "occurrences": [{"start": 120, "end": 131, "doc_id": "doc_042"}]
     }
   ]
@@ -429,38 +448,31 @@ Mêmes options que `extract`, plus celles de l'annotation (`--dict-id`/`--dict`/
 | `in_vocabulary` / `uri` / `pref` | `extract_annotate` | Croisement avec le vocabulaire (span exact, pas simple chevauchement) |
 | `enrichment_suggestion_embed` | `extract_annotate` + `--extractor embed` | Niveau 1 : `True` si absent du vocabulaire et `score` (similarité embed) ≥ `--enrichment-threshold` |
 | `enrichment_suggestion_structural` | `extract_annotate` + `--extractor embed` | Niveau 2 : `True` si absent du vocabulaire, niveau 1 `False`, et `structural_rank` dans le top `--structural-top-pct` — jamais `True` en même temps que les niveaux 1 et 3. Voir §5.4 et `docs/curation_guide.md` |
-| `enrichment_suggestion_specificity` | `extract_annotate` + `--extractor embed` + `--specificity-top-pct` > 0 | Niveau 3 : `True` si absent du vocabulaire, niveaux 1 et 2 `False`, et `specificity_rank` dans le top `--specificity-top-pct` — **désactivé par défaut** (0.0), contrairement aux niveaux 1/2, précision isolée nettement plus faible (~0.27-0.30 sur ACTER). Voir §5.4 et `docs/curation_guide.md` |
+| `enrichment_suggestion_specificity` | `extract_annotate` + `--extractor embed` + `--specificity-top-pct` > 0 | Niveau 3 : `True` si absent du vocabulaire, niveaux 1 et 2 `False`, et `specificity_rank` dans le top `--specificity-top-pct` — **désactivé par défaut** (0.0), contrairement aux niveaux 1/2 : liste nettement plus bruitée. Voir §5.4 et `docs/curation_guide.md` |
 | `structural_score` / `structural_rule` / `structural_rank` | `extract_annotate` + `--extractor embed` | Signal C-value/PositionRank calculé en parallèle du score embed, indépendant du vocabulaire cible (`structural_rule` = `cvalue` ou `positionrank`, `structural_rank` = 1 pour le plus fort). Jamais utilisé comme score comparable entre corpus — échelle non bornée |
-| `specificity_score` / `specificity_rank` | `--specificity-filter-pctl` > 0 (`ncvalue`) OU `--extractor embed` (toujours) | Weirdness Ratio (contraste de fréquence vs langue générale, voir `docs/underthehood.md`) — pour `ncvalue`, calculé sur les candidats survivants après filtrage ; pour `embed`, toujours calculé (comme `structural_score`), utilisé pour le niveau 3 ci-dessus. `specificity_rank` = 1 pour le plus spécifique. `null` si ni l'un ni l'autre n'est actif. Échelle non bornée, pas comparable entre corpus |
+| `specificity_score` / `specificity_rank` | `--specificity-filter-pctl` > 0 (`ncvalue`) OU `--extractor embed` (toujours) | Spécificité du candidat : sa fréquence dans le corpus comparée à sa fréquence en langue générale (mécanisme : `docs/underthehood.md`). Sert au niveau 3 ci-dessus. `specificity_rank` = 1 pour le plus spécifique. `null` si ni l'un ni l'autre n'est actif. Échelle non bornée, pas comparable entre corpus |
 | `canonical_form` / `variant_type` | `--detect-variants` | Voir §5.5 |
+| `n_docs` | toujours | Nombre de documents distincts contenant le candidat |
+| `nearest_vocab_term` | `--extractor embed` | Libellé du terme du vocabulaire le plus proche (celui qui a donné `score`) — aide à juger la suggestion et à la placer dans la ressource |
+| `context` | `--text` fourni (pas stdin) | Extrait de texte (±70 caractères) autour de la première occurrence, terme entre crochets |
+| `topic_id` / `topic_label` / `topic_coverage` / `topic_generic` | `extract_annotate` + `--report` | Thème principal du candidat (NMF), 5 mots de son étiquette, et couverture de ce thème par le vocabulaire (part des passages du thème contenant un terme propre du vocabulaire). `topic_generic` = `True` si le thème est un fourre-tout de discours général (poids ≥ 2,5 × la moyenne), affiché hors classement dans le rapport. Information de rangement, pas un score — `null` pour les hapax (hors modèle de thèmes) |
 | `occurrences` | toujours | Offsets caractères par document (`doc_id` requis — les offsets sont locaux à un document) |
 
 ### 5.4 Scoring par embeddings — plus proche voisin
 
-`--extractor embed` charge `paraphrase-multilingual-MiniLM-L12-v2` (118 Mo, CPU, FR+EN, `sentence-transformers`) et note chaque candidat par sa similarité cosinus au terme **le plus proche** du vocabulaire cible (max sur tous les termes, pas une moyenne/centroïde) — un vocabulaire Loterre mélange des sous-catégories sémantiquement très différentes (ex. X64, vocabulaire linguistique : 38-42% de concepts à un seul mot, des noms de langues, mais aussi des notions abstraites multi-mots), qu'un centroïde unique brouillerait. Aucun appel réseau : le modèle est chargé avec `HF_HUB_OFFLINE=1` depuis le cache local (`make models-embed` pour le pré-télécharger).
+`--extractor embed` utilise le modèle `paraphrase-multilingual-MiniLM-L12-v2` (118 Mo, CPU, FR+EN, à installer par `make models-embed`) et note chaque candidat par sa ressemblance avec le terme **le plus proche** du vocabulaire cible (`nearest_vocab_term` dans la sortie).
 
-#### Évaluer si un vocabulaire cible est adapté à `embed`
+**Quand l'utiliser** : `embed` reconnaît bien les candidats qui ressemblent à des termes déjà présents dans le vocabulaire (variantes, voisins proches), mais trouve peu de termes vraiment nouveaux. Il suppose un vocabulaire cible riche et représentatif du domaine. Il n'existe pas de moyen fiable de juger un vocabulaire à l'avance, sans corpus : en cas de doute, comparer `embed` à `ncvalue`/`graph` sur un échantillon de son propre corpus (`docs/evaluation.md` §3).
 
-Piste explorée et **abandonnée** : mesurer une densité interne du vocabulaire seul (scission seed/held-out, similarité au plus proche voisin), sans corpus de texte réel. Calibration testée sur 4 cas connus (X64 + 3 domaines ACTER, voir `planification/analyse_benchmarks_extraction.md`) : le vocabulaire ACTER `wind` est le **plus dense** de tous (médiane 0.874, au-dessus de X64 à 0.828) et donne pourtant le **pire** F1 réel (0.286, variante semi-supervisée) — ni la densité ni même la taille du vocabulaire (`corp`, 463 termes, F1=0.407 > `htfl`, 1180 termes, F1=0.345) ne discriminent les cas qui marchent des cas qui échouent. Cause probable : ces métriques ignorent le bruit des candidats non-termes extraits d'un texte réel, qui est le facteur dominant du rappel en production (précision correcte 0.55–0.85 partout, mais rappel bas 0.17–0.34 quel que soit le domaine — voir `benchmark_results/acter/acter_results_embed_seeded.json`). Aucun diagnostic sans corpus de texte réel n'est donc fiable ; seule la méthodologie d'`acter_eval.py` (seed/held-out sur un **corpus de texte réel** annoté) est validée pour évaluer `embed` avant de le choisir en production.
+**Trois listes de suggestion, jamais fusionnées** — chaque candidat absent du vocabulaire peut entrer dans une seule d'entre elles :
 
-Ce détail précision/rappel donne toutefois un indice exploitable, indépendant du vocabulaire : `embed` **valide bien** un candidat qui ressemble à un terme déjà présent dans le vocabulaire cible (précision correcte), mais **rate la plupart des termes vraiment absents/nouveaux** qu'on lui demande de découvrir à partir de rien (rappel bas) — profil constant sur les 8 combinaisons domaine/langue testées. Ce n'est donc pas une propriété du vocabulaire qui doit guider le choix, mais la nature de la tâche :
-- candidats attendus majoritairement proches de termes déjà connus du vocabulaire cible (variantes, synonymes, cas proches — matching/filtrage de bruit, cas réel X64 en `extract_annotate --extractor embed` pour `in_vocabulary`) → `embed` seul (niveau 1, `enrichment_suggestion_embed`) suffit ;
-- objectif de découvrir des termes largement absents/nouveaux du vocabulaire cible (enrichissement pur, terminologie émergente) → voir le signal structurel ci-dessous, qui répond directement à ce cas sans quitter `embed`.
+| Liste | Champ | Origine | Réglage | Part de suggestions justes (ACTER) |
+|---|---|---|---|---:|
+| 1 | `enrichment_suggestion_embed` | Très proche d'un terme du vocabulaire | `--enrichment-threshold` (défaut 0.95) | 0.53 |
+| 2 | `enrichment_suggestion_structural` | Bien classé par C-value/PositionRank, sans regarder le vocabulaire : capte des termes éloignés de la ressource | `--structural-top-pct` (défaut 2%) | 0.23 |
+| 3 | `enrichment_suggestion_specificity` | Très spécifique du domaine par rapport à la langue générale | `--specificity-top-pct` (défaut 0 = désactivée ; 10 conseillé si activée) | 0.14 |
 
-#### Signal structurel secondaire (Option 3, §8) — recall pour les termes loin du vocabulaire
-
-`--extractor embed` calcule aussi, sur les mêmes candidats, un score **C-value/PositionRank** indépendant du vocabulaire cible (`structural_score`/`structural_rule`/`structural_rank` — jamais mélangé au score embed). Un candidat absent du vocabulaire, sous `--enrichment-threshold`, mais dans le top `--structural-top-pct` (défaut **2%**) de ce classement structurel est marqué `enrichment_suggestion_structural` — un second niveau de suggestion, moins sûr mais qui capture justement les termes "largement absents/nouveaux" que le niveau 1 rate par construction (rappel bas d'`embed` seul, décrit juste au-dessus).
-
-Mesuré sur ACTER (`acter_eval.py`, seuils de production) :
-
-| | Precision | Rappel | F1 |
-|---|---:|---:|---:|
-| niveau 1 seul (`enrichment_suggestion_embed`) | 0.858 | 0.127 | 0.222 |
-| niveau 1 + niveau 2 (`enrichment_suggestion_structural`) | 0.568 | 0.232 | 0.329 |
-
-Le niveau 2 relève le rappel de +83% relatif au prix d'une précision qui tombe (~0.57 isolé, plus bruité que le niveau 1) — un compromis délibéré, pas fusionné en un score unique pour que le curateur garde une confiance différenciée entre les deux listes (voir `docs/curation_guide.md` pour la consigne de traitement, et `docs/underthehood.md` pour le mécanisme détaillé). Le seuil `--structural-top-pct` a été balayé de 2% à 30% sans pic net de F1 dans cette plage — le choix de 2% privilégie la précision plutôt que de maximiser le F1 brut ; détail complet dans `planification/analyse_benchmarks_extraction.md`.
-
-**Niveau 3 (2026-09-11)** : `--extractor embed` calcule aussi un score de spécificité (Weirdness Ratio vs langue générale, `specificity_score`/`specificity_rank`, voir `docs/underthehood.md`) — `enrichment_suggestion_specificity` marque un candidat absent du vocabulaire, hors niveaux 1 et 2, mais dans le top `--specificity-top-pct` (**défaut 0.0 = désactivé**, contrairement au niveau 2). Mesuré sur ACTER : niveau 2+3 combinés (structurel 2% + spécificité 10%) porte le F1 à **0.314** (contre 0.270 pour le niveau 2 seul), mais la précision isolée du niveau 3 seul n'est que **~0.27-0.30** (contre ~0.57-0.64 pour le niveau 2) — nettement plus bruité, d'où la désactivation par défaut. Voir `docs/curation_guide.md` et `planification/analyse_benchmarks_extraction.md` pour le détail.
+Les listes sont gardées séparées pour que le curateur leur accorde une confiance différente. Dans chaque liste, trier par `frequency` décroissante : les candidats les plus fréquents sont les plus souvent justes. Consigne de relecture : `docs/curation_guide.md` ; mécanisme : `docs/underthehood.md` ; mesures détaillées : `docs/evaluation.md` §2.
 
 ### 5.5 Détection de variantes (Phase 4)
 
@@ -497,15 +509,17 @@ make corpus-acter      # clone https://github.com/AylaRT/ACTER (CC BY-NC-SA 4.0)
 make benchmark-acter   # ncvalue vs PositionRank, P/R/F1 token-level vs le gold ACTER
 ```
 
-Compare `ncvalue`/`graph` (sans vocabulaire, comme D-Terminer) sur 4 domaines × 2 langues. Résultat de référence : F1 PositionRank=0.496, C-value=0.391 (au sommet de la fourchette D-Terminer 0.32–0.50, mBERT+RNN+GPU). `--extractor embed` exclu de cette comparaison (nécessite un vocabulaire cible, qu'ACTER n'a pas) — voir `scripts/evaluation/acter_eval.py` pour la variante expérimentale semi-supervisée.
-
-Cette variante (moitié du gold ACTER comme vocabulaire de référence, l'autre moitié à retrouver, coupure oracle top-N) donne F1=0.364 pour `embed` — **moins bon** que C-value (0.391) et PositionRank (0.496) évalués à froid sur le même gold, malgré la moitié des réponses fournies comme référence. À l'inverse du gain massif observé sur X64 (§5.1), un vocabulaire de référence restreint ne donne pas à `embed` un signal suffisant : préférer `ncvalue`/`graph` quand le vocabulaire cible est petit ou peu représentatif du domaine.
-
-`make benchmark-acter` lance aussi (par défaut, `--skip-structural-signal` pour désactiver) une troisième variante avec les **vrais seuils de production** (`--enrichment-threshold`/`--structural-top-pct`, pas la coupure oracle top-N ci-dessus) : `enrichment_suggestion_embed` seul vs `enrichment_suggestion_embed` + `enrichment_suggestion_structural` (§5.4). Voir `planification/analyse_benchmarks_extraction.md` pour le détail et le balayage de `--structural-top-pct`.
+Mesure la qualité de l'extraction sur un corpus annoté de référence (4 domaines × 2 langues). Résultats de référence : F1 PositionRank 0.499, C-value 0.398 (token-level). Avec vocabulaire, la liste 1 d'`embed` donne 53 % de suggestions justes, contre 39 % pour TermSuite avec le même nombre de suggestions. Résultats complets, variantes du protocole, comparaison avec D-Terminer et TermSuite : `docs/evaluation.md` §1.
 
 ---
 
-## 6. Format du dictionnaire
+## 6. Ressources terminologiques
+
+### 6.1 Ressources exploitées
+
+Le moteur s'appuie sur une ressource principale, les **vocabulaires Loterre** (INIST-CNRS), et sur quelques ressources linguistiques secondaires. Chaque vocabulaire Loterre est exporté en CSV (`prefLabel`/`altLabel` FR et EN, URI ARK du concept) puis converti par `scripts/build_dictionaries/build_dictionaries.py` en un **dictionnaire d'annotation JSONL par vocabulaire et par langue** (`dictionary/{en,fr}_annot_{CODE}.jsonl`, 64 vocabulaires × 2 langues, ~230 Mo, versionnés par DVC). Cette conversion analyse chaque libellé avec un modèle spaCy transformer (`en_core_web_trf`/`fr_dep_news_trf`) pour produire son motif POS+lemme (§6.2) ; elle est faite hors ligne, une fois par mise à jour du vocabulaire, et n'est jamais relancée à l'exécution. Les dictionnaires sont référencés par un code court dans `configs/registry.yaml` (`--dict-id P66_en` → chemin, langue, profil de matching). Le même fichier sert aux trois sous-commandes : `annotate` y cherche les occurrences des termes, `extract_annotate` l'utilise pour marquer les candidats déjà présents (`in_vocabulary`, `uri`, `pref`) et, avec `--extractor embed`, en extrait les libellés préférés (un par concept, dédupliqués par URI) pour calculer la similarité au plus proche voisin (§5.4). Les ressources secondaires sont des fichiers texte du dossier `resources/` : listes de mots faibles par langue (`{en,fr}/weak_words.txt`, filtrage qualité §9), tables de dérivation morphologique (`termsuite_morphology/`, détection de variantes §5.5) et tables de fréquence en langue générale (`termsuite_general_language/`, signal de spécificité), ces deux dernières reprises de `termsuite-resources` (CNRS/TTC, Apache 2.0) ; s'y ajoutent les modèles spaCy de reconnaissance (`resources/spacy_models.yaml`) et le modèle d'embeddings `paraphrase-multilingual-MiniLM-L12-v2`, utilisé hors ligne depuis le cache Hugging Face local.
+
+### 6.2 Format du dictionnaire
 
 Fichier JSONL, une entrée par ligne :
 
@@ -532,6 +546,19 @@ Fichier JSONL, une entrée par ligne :
 | `variants` | optionnel | Variantes supplémentaires |
 
 **Format ARK** : les identifiants de concept suivent la forme `http://data.loterre.fr/ark:/67375/{CODE}-{XXXXXXXX}-{Y}` où `Y` est une lettre majuscule (ex: `P66-ZLDWBWS5-Z`). Les anciens identifiants numériques (ex: `P66-24670690`) sont obsolètes.
+
+### 6.3 Cache des index
+
+Avant d'annoter, le moteur prépare le dictionnaire en index de recherche. Cette préparation prend quelques secondes pour un petit vocabulaire, plusieurs minutes pour les plus gros (MeSH). Elle est donc mise en cache sur disque, et l'appel suivant avec le même dictionnaire, le même profil et le même modèle spaCy démarre immédiatement. Le cache se met à jour tout seul quand l'un des trois change ; il n'y a rien à vider à la main.
+
+| Besoin | Comment |
+|---|---|
+| Récupérer le cache déjà calculé pour tous les vocabulaires | `dvc pull` (livré avec les dictionnaires dans `dictionary/.loterre_index_cache/`, ~1,2 Go) |
+| Le calculer soi-même | `python3 src/warm_index_cache.py` |
+| Choisir son emplacement | variable d'environnement `LOTERRE_INDEX_CACHE_DIR` (défaut : `.loterre_index_cache/` à la racine du dépôt) ; avec le moteur appelé directement, aussi `--index-cache-dir` |
+| Forcer la reconstruction | `--no-index-cache` (moteur appelé directement, `src/loterre_engine_v9_cli.py`) |
+
+Les modes `fast`/`hybrid` (§10) ont leur propre cache, dans `.loterre_cache/` (`--cache-dir`). Fonctionnement détaillé des index et des caches : `docs/underthehood.md`, partie « Annotation ».
 
 ---
 
@@ -596,9 +623,15 @@ Appliquée symétriquement au dictionnaire et au texte :
 | `surface_structural` | Forme normalisée exacte | 0.85 | 0.75 |
 | `lemma_structural` | Lemme spaCy normalisé | 0.82 | 0.72 |
 
-**Le pattern compare toujours sur le lemme, indépendamment du flag `use_lemma`.** Chaque spec du pattern (généré par `build_dictionaries.py`, un par token du terme source) porte un `lemma` ; `token_matches_spec()` compare le lemme normalisé du token du texte à celui de la spec — c'est le comportement intrinsèque du chemin `pattern`, pas une passe optionnelle. Concrètement : un terme au singulier dans le dictionnaire matche déjà les formes fléchies du texte (pluriel, accord) via `pattern` seul, même en profil `entity_strict` (`use_lemma: false`).
+Options correspondantes (`profile_overrides`, §7) :
 
-Le flag `use_lemma` ne contrôle qu'une passe *distincte* : `lemma_pattern_seq`/`lemma_structural`, qui compare la séquence de lemmes du **label entier** (pas le pattern POS+lemme token par token) à la séquence de lemmes du texte — un filet de secours pour les entrées sans pattern exploitable, désactivable indépendamment. Le chemin `surface_structural`/`surface_upper_exact` (`use_surface`), lui, ne lemmatise jamais : comparaison sur la forme littérale normalisée.
+| Option | Chemins activés | À savoir |
+|---|---|---|
+| `use_pattern` | `pattern` | Compare toujours les lemmes : un terme au singulier dans le dictionnaire retrouve déjà ses formes fléchies (pluriel, accord), même avec `use_lemma: false` |
+| `use_lemma` | `lemma_pattern_seq`, `lemma_structural` | Filet de secours pour les entrées sans motif exploitable |
+| `use_surface` | `surface_structural`, `surface_upper_exact` | Forme écrite normalisée, sans lemmatisation |
+
+Quand plusieurs termes se chevauchent, le moteur garde le meilleur score, puis la règle la plus sûre, puis le terme le plus long. Fonctionnement détaillé : `docs/underthehood.md`, partie « Annotation ».
 
 ### 8.3 Variantes structurelles automatiques
 
@@ -607,51 +640,27 @@ Pour chaque entrée du dictionnaire, le moteur génère automatiquement :
 - La forme sans parenthèses (`"hypermnesia (Pathology)"` → `"hypermnesia"`)
 - La forme sans apostrophes (`"Alzheimer's disease"` → `"Alzheimers disease"`)
 
-### 8.4 Index de premier token (optimisation)
-
-Le matching par patterns utilise un index par premier token normalisé : pour chaque position du texte, seules les entrées dont le premier spec correspond sont testées.
-
-### 8.5 Déduplication
-
-Sélection gloutonne des meilleurs spans non-chevauchants, triés par : score décroissant → priorité de règle → longueur → position.
-
 ---
 
 ## 9. Filtrage qualité
 
-### 9.1 Filtres durs (élimination)
+Le moteur écarte ou pénalise les correspondances douteuses, surtout les termes d'un seul mot. Ces filtres se règlent dans la partie `quality` du YAML (§7) :
 
-- `strict_stopwords` : élimine les stopwords en position non-nominale
-- `require_pos_match` : exige NOUN, PROPN ou ADJ
-- `context_guard` : élimine un token entouré de deux mots fonctionnels
-- `discourse_pattern_guard` : filtre les mots fonctionnels courants même pour les matches `rule="pattern"`, via des sets langue-spécifiques :
-  - **EN** : `{"and", "or", "it", "well", "can", "may", "like"}`
-  - **FR** : `{"et", "ou", "ni", "mais", "il", "elle", "on", "bien", "ainsi", "comme"}`
-  - Le set est sélectionné automatiquement depuis `lang` et peut être surchargé par `quality.syntactic_generic_words`
+| Clé `quality.*` | Défaut | Effet |
+|---|---|---|
+| `enabled` | `true` | Active l'ensemble du filtrage qualité |
+| `strict_stopwords` | `true` | Écarte les mots vides hors position nominale |
+| `require_pos_match` | `true` | Exige un nom, un nom propre ou un adjectif |
+| `context_guard` | `true` | Écarte un mot isolé entre deux mots outils |
+| `discourse_pattern_guard` | `true` | Écarte les mots de discours courants (« and », « bien », « comme »…), même trouvés par `pattern` ; liste remplaçable par `syntactic_generic_words` |
+| `syntactic_context_guard` | `false` | Garde syntaxique supplémentaire contre les mots génériques (« is the process that… ») |
+| `penalize_single_token` / `single_token_penalty` | `true` / selon le profil | Pénalité de score des termes d'un seul mot, allégée pour les sigles et les noms propres |
+| `single_token_min_score` | selon le profil | Score minimal d'un terme d'un seul mot |
+| `contextual_scoring` | `true` | Ajuste le score selon les mots voisins |
 
-### 9.2 Garde syntaxique (optionnel)
+Valeurs internes des pénalités et bonus : `docs/underthehood.md`, partie « Annotation ».
 
-Activé par `syntactic_context_guard: true` :
-1. **Attribut copulatif** : `"is the <mot_générique> that…"` → élimine `"process"`, etc.
-2. **Mot-titre en position 0** : mot générique en majuscule au début du document
-
-### 9.3 Pénalité adaptative des single-tokens
-
-| Cas | Pénalité |
-|---|---|
-| Tout en majuscules ≥ 2 chars (`ERP`, `SAM`) | min(base, 0.05) — acronyme |
-| CamelCase avec majuscule interne (`SenseCam`) | min(base, 0.05) — entité spécifique |
-| Tout en minuscules ≤ 3 chars (`cue`, `or`) | max(base, 0.20) — risque élevé |
-| Autres | base (valeur du profil) |
-
-### 9.4 Scoring contextuel
-
-Dans une fenêtre de ±2 tokens :
-- Voisins lexicaux majoritaires → +0.05 (bonus)
-- Voisins fonctionnels majoritaires → -0.20 (pénalité)
-- Token en NOUN/PROPN/ADJ → +0.05 (bonus POS)
-
-### 9.5 Seuil final
+### Seuil final
 
 | Profil | Seuil |
 |---|---|
@@ -708,11 +717,7 @@ python3 src/loterre_cli.py \
   --yaml-out configs/P66_en_auto_profile.yaml
 ```
 
-| Condition | Profil suggéré |
-|---|---|
-| `ratio_pattern ≥ 0.45` ET `ratio_mono ≥ 0.4` ET beaucoup d'uppercase | `entity_strict` |
-| `ratio_puncty ≥ 0.15` OU `avg_label_len ≥ 2.2` | `term_recall` |
-| Sinon | `term_balanced` |
+Choisit le profil (§7) d'après la composition du dictionnaire : beaucoup de sigles et de termes d'un mot → `entity_strict` ; termes longs ou riches en ponctuation → `term_recall` ; sinon `term_balanced`. Le YAML produit peut être relu et ajusté avant usage. Règle exacte : `docs/underthehood.md`, partie « Annotation ».
 
 ---
 
@@ -775,40 +780,9 @@ python3 scripts/generate_fr_corpus.py
 
 Le script `scripts/generate_fr_corpus.py` lit les dictionnaires FR dans `dictionary/`, sélectionne des termes avec variation flexionnelle, calcule les offsets caractère exacts et écrit les fichiers JSONL prêts à l'emploi.
 
-### 12.4 Qualité des ARKs — corrections appliquées (corpus anglais)
+### 12.4 Corrections du gold et logique de comparaison
 
-Les gold ont été générés avec des versions antérieures des vocabulaires et contenaient des ARKs obsolètes (format numérique `P66-84482143`). Les corrections suivantes ont été appliquées :
-
-**Corrections automatiques (correspondance par libellé préféré)** :
-- **P66** : 289 ARKs numériques → alphanumériques courants
-- **27X** : 294 ARKs numériques → alphanumériques courants
-- 7 autres corpus (9SD, 8HQ, B9M, BVM, QX8, 3JP, JVR) : déjà corrects
-
-**Corrections manuelles (termes absents du dictionnaire courant)** :
-
-| Terme | Ancien ARK | ARK courant |
-|---|---|---|
-| `scientific discourse` (P66) | P66-24670690 | `P66-ZLDWBWS5-Z` |
-| `speed cell` (P66) | P66-84416865 | `P66-FSHB2M05-B` |
-| `scene construction theory` (P66) | P66-43657611 | `P66-GXCZ963J-Z` |
-| `sleep-dependent memory triage` (P66) | P66-89130182 | `P66-SW8FNBND-B` |
-| `scientific principle` (P66) | P66-24184462 | `P66-N7XGNQGG-J` |
-
-**Termes supprimés** (absents des vocabulaires actuels) :
-- `beetle` (27X) — 3 occurrences retirées
-- `ceramic assemblage` (27X) — 3 occurrences retirées
-
-### 12.5 Logique de comparaison gold/prédictions
-
-Le renderer et le benchmark utilisent une comparaison **par libellé préféré** (`pref`), indépendante de la position exacte. Cette approche est nécessaire car les offsets de position du gold pour les documents 1+ sont systématiquement décalés par rapport au texte réel (conséquence de la génération avec une version différente du texte).
-
-**Algorithme** (`loterre_html_renderer.py`) :
-1. `ann_key(m)` retourne `pref.lower()` — clé de comparaison indépendante de la position et du format d'ARK
-2. `ann_span(m, text)` valide `text[start:end] == found` avant d'utiliser la position ; si la position est incorrecte, recherche la surface form dans le texte
-3. `classify()` groupe les matches par `pref` et apparie la i-ème occurrence attendue avec la i-ème occurrence prédite (trié par position) — gère correctement les occurrences multiples du même concept
-4. `counts()` utilise `Counter` pour un comptage par occurrence (pas par concept unique)
-
-**Conséquence** : un terme prédit au bon endroit mais avec un ARK plus récent (alphananumérique) est correctement reconnu comme correspondant au terme attendu avec l'ancien ARK.
+Les ARK obsolètes des gold anglais ont été corrigés, et la comparaison gold/prédictions se fait par libellé préféré (`pref`), pas par position. Détail : `docs/evaluation.md` §4.
 
 ---
 
@@ -893,7 +867,7 @@ où `{VOCAB}` est le code du vocabulaire (ex : `P66`, `27X`).
 }]
 ```
 
-Les `idx.start/end` sont des indices de **tokens** (non des offsets caractères). Le tokeniseur de l'API isole la ponctuation et traite les nombres décimaux comme un seul token (`1.1` → 1 token, non 3). Le convertisseur local (`api_doc_to_matches`) utilise la même règle `r"\d+\.\d+|\w+|[^\w\s]"` pour garantir l'alignement des indices.
+Les positions renvoyées par l'API sont des numéros de tokens, convertis automatiquement en positions de caractères par les scripts d'évaluation (`docs/evaluation.md` §5).
 
 ### 14.2 Évaluation de l'API seule
 
@@ -981,7 +955,7 @@ Capturée après correction de 3 bugs (régression scispaCy, priorité aux segme
 | QX8 | 99.2 | 78.7 |
 | **TOTAL (16 combinaisons)** | **83.9** (R=93.5%, P=76.1%) | |
 
-> **BVM_en / B9M_fr légèrement sous la table 13.4** : cause identifiée — mismatch de tagging POS entre le dictionnaire (généré avec `en_core_web_trf`/`fr_dep_news_trf`) et le runtime (`en_core_web_sm`/`fr_core_news_sm`), confirmé indépendant des 3 correctifs ci-dessus (reproduit à l'identique avec l'ancien moteur via `git stash`).
+> **BVM_en / B9M_fr légèrement sous le §14.4** : écart connu et accepté, dû à la différence entre le modèle spaCy qui a produit le dictionnaire et celui utilisé à l'exécution — détail : `docs/evaluation.md` §5.
 
 Reproduire : `bash tests/smoke/compare_engines.sh --skip-api --skip-resolvers --out-dir <répertoire>`
 
@@ -999,16 +973,7 @@ Reproduire : `bash tests/smoke/compare_engines.sh --skip-api --skip-resolvers --
 | 9SD_en | entity_strict | 1.6s | 10 | 0.3 |
 | BVM_en | term_recall | 22.9s | 10 | 0.2 |
 
-### 15.2 Optimisations implémentées
-
-| Optimisation | Gain mesuré |
-|---|---|
-| Pré-compilation de `_PUNCT_RE` | −8s sur P66_en |
-| Pré-calcul de `spec._norm_lemma` | −5s |
-| LRU cache sur `normalize_text` (99.9% hit rate) | −60% des appels |
-| Index patterns par premier token normalisé | ×2 à ×73 selon le vocabulaire |
-
-**Cumul** : P66_en 33s → 7s (×4.7), 9SD_en 117s → 1.6s (×73), 27X_en 16s → 1.2s (×13)
+Optimisations du moteur et gains mesurés : `docs/underthehood.md`, partie « Annotation ».
 
 ---
 

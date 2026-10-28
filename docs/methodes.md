@@ -99,7 +99,7 @@ climate -- ocean : 2.0
 
 **Fichier** : `src/loterre_embed.py`
 **Modèle** : `paraphrase-multilingual-MiniLM-L12-v2` (118 Mo, CPU, FR+EN, `sentence-transformers`), chargé en local (`HF_HUB_OFFLINE=1`, pas d'appel réseau).
-**Quand** : pipeline prioritaire pour la mise à jour d'une ressource Loterre existante (voir CLAUDE.md, §Objectif produit principal) — nécessite un vocabulaire cible.
+**Quand** : pipeline prioritaire pour la mise à jour d'une ressource Loterre existante (objectif produit principal du projet) — nécessite un vocabulaire cible.
 **Principe** : chaque candidat est comparé par similarité cosinus à **chaque** terme du vocabulaire cible, et ne retient que le score du terme le **plus proche** (max, pas une moyenne/centroïde). Un centroïde unique brouillerait un vocabulaire hétérogène (ex. X64 : mélange de noms de langues à un seul mot et de notions linguistiques abstraites multi-mots).
 
 ### Exemple (exécution réelle, vrai modèle)
@@ -128,4 +128,4 @@ conférence internationale      score=0.3136
 - `acidification des océans` n'est pas si proche de `biodiversité marine` (0,46) malgré un lien thématique intuitif — l'embedding capte une proximité lexicale/sémantique plus fine que la simple co-appartenance à un domaine.
 - `conférence internationale` est hors sujet par rapport à tout terme du vocabulaire (0,31) — correctement écarté comme bruit.
 
-C'est ce mécanisme, avec un seuil de 0,95, qui alimente `enrichment_suggestion_embed` (niveau 1 des trois niveaux de suggestion — voir CLAUDE.md et `docs/curation_guide.md` pour les niveaux 2/structurel et 3/spécificité, qui utilisent C-value/PositionRank et le Weirdness Ratio comme signaux complémentaires indépendants du vocabulaire).
+C'est ce mécanisme, avec un seuil de 0,95, qui alimente `enrichment_suggestion_embed` (niveau 1 des trois niveaux de suggestion — voir `docs/curation_guide.md` pour les niveaux 2/structurel et 3/spécificité, qui utilisent C-value/PositionRank et le Weirdness Ratio comme signaux complémentaires indépendants du vocabulaire).

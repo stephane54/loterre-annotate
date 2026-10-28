@@ -203,6 +203,8 @@ def run_extraction_subprocess(args, effective: Dict[str, Any]) -> Dict[str, Any]
         cmd.append("--prep-patterns")
     if args.all_candidate_patterns:
         cmd.append("--all-candidate-patterns")
+    if args.respot_occurrences:
+        cmd.append("--respot-occurrences")
     if args.specificity_filter_pctl > 0:
         cmd.extend(["--specificity-filter-pctl", str(args.specificity_filter_pctl)])
 
@@ -223,6 +225,8 @@ def run_extract_mode(args, effective: Dict[str, Any]) -> None:
     if not effective.get("lang"):
         raise SystemExit("ERROR: --lang is required for extract")
     payload = run_extraction_subprocess(args, effective)
+    from loterre_csv_export import attach_contexts
+    attach_contexts(payload.get("candidates", []), effective.get("text"))
     write_or_print_json(payload, args.out)
     write_csv_if_requested(payload, args.out_csv)
 
@@ -269,8 +273,9 @@ def run_extract_annotate_mode(args, effective: Dict[str, Any]) -> None:
                 # langue générale), indépendant à la fois du vocabulaire et du
                 # signal structurel. Mutuellement exclusif des deux précédents —
                 # désactivé par défaut (--specificity-top-pct 0), contrairement au
-                # structurel : précision isolée mesurée ~0.27-0.30 sur ACTER, plus
-                # bruité que le structurel (~0.64) — un choix explicite du
+                # structurel : précision de ce niveau seul mesurée 0.27 par token /
+                # 0.14 par candidat sur ACTER, plus bruité que le structurel
+                # (0.39 / 0.23, reproduit le 2026-09-30) — un choix explicite du
                 # curateur, pas un défaut raisonnable pour tout le monde. Voir
                 # planification/analyse_benchmarks_extraction.md.
                 spec_rank = c.get("specificity_rank")
@@ -282,12 +287,41 @@ def run_extract_annotate_mode(args, effective: Dict[str, Any]) -> None:
                     and spec_rank <= specificity_top_n
                 )
 
+    # Extrait de contexte par candidat (champ `context`, JSON et CSV) — pour
+    # juger un candidat sans rouvrir le corpus.
+    from loterre_csv_export import attach_contexts
+    attach_contexts(candidates, effective.get("text"))
+
     payload = {
         **extraction_payload,
         "mode": "extract_annotate",
         "dict_id": effective.get("dict_id"),
         "dict": effective.get("dict"),
     }
+
+    # Rapport d'analyse (2026-10-02) : synthèse chiffrée, annotation/extraction,
+    # couverture par thème (expérimental). Réutilise les annotations déjà
+    # calculées ci-dessus — aucun second passage de l'annotateur. Calculé AVANT
+    # l'écriture des sorties : ajoute topic_id/topic_label/topic_coverage aux
+    # candidats (rangement par thème dans le CSV, jamais un score — voir
+    # loterre_report.py et docs/curation_guide.md).
+    if args.report:
+        from loterre_report import MIN_SEGMENTS, write_report
+        meta = {
+            "corpus": Path(effective["text"]).name if effective.get("text") else "stdin",
+            "dict_name": effective.get("dict_id") or Path(effective.get("dict") or "").stem,
+            "extractor": extraction_payload.get("extractor"),
+        }
+        report = write_report(args.report, candidates, annotation_payload.get("results", []), payload, meta,
+                              dict_path=effective.get("dict"), n_topics=args.report_topics)
+        topics = report["topics"]
+        if topics is None:
+            print(f"[report] {args.report} — sans partie thèmes (corpus < {MIN_SEGMENTS} segments)",
+                  file=sys.stderr)
+        else:
+            print(f"[report] {args.report} — {topics['n_topics']} thèmes sur {topics['n_segments']} segments",
+                  file=sys.stderr)
+
     write_or_print_json(payload, args.out)
     write_csv_if_requested(payload, args.out_csv)
 
@@ -500,8 +534,13 @@ def _add_extraction_args(parser: argparse.ArgumentParser) -> None:
                               "+0.13 F1), régression nette avec --extractor graph/auto sur corpus court "
                               "(jusqu'à -0.12 F1). ATTENTION performance : sur gros corpus (>50k tokens), "
                               "extract passe de ~12s à ~66s (build_containment_map C-value est O(n²), "
-                              "+154% de candidats) — ~6× plus lent qu'annotate. Sûr uniquement sur "
+                              "+154%% de candidats) — ~6× plus lent qu'annotate. Sûr uniquement sur "
                               "document unique/petit lot. Option explicite (défaut désactivé).")
+    parser.add_argument("--respot-occurrences", action="store_true",
+                         help="Compte toutes les occurrences du texte de chaque candidat à l'intérieur des "
+                              "groupes nominaux (insensible à la casse, y compris dans des groupes plus "
+                              "longs) et fusionne ses variantes de casse. Expérimental, défaut désactivé "
+                              "— voir planification/analyse_benchmarks_extraction.md, entrées 15 à 17.")
     parser.add_argument("--specificity-filter-pctl", type=float, default=0.0,
                          help="Retire les N%% de candidats les moins spécifiques du corpus (Weirdness "
                               "Ratio vs langue générale) avant scoring — 0 = désactivé (défaut). Calibré "
@@ -579,6 +618,18 @@ def build_parser() -> argparse.ArgumentParser:
     p_ea.add_argument("--out-csv", help="Export CSV additionnel des candidats "
                                          "(term, lemma, postag, frequency, score, rule, uri, ...)")
     p_ea.add_argument("--silent", action="store_true", help="Sortie JSON compacte")
+    p_ea.add_argument("--report", "--topic-report", dest="report", metavar="RAPPORT.html",
+                       help="Rapport d'analyse HTML autonome : synthèse chiffrée (documents, candidats, part du "
+                            "vocabulaire retrouvée, suggestions), graphiques sur l'annotation et l'extraction, et "
+                            "couverture du vocabulaire par thème (expérimental : NMF sur les candidats, repère les "
+                            "zones du corpus où la ressource manque de termes). Écrit aussi RAPPORT.json et ajoute "
+                            "topic_id/topic_label/topic_coverage aux candidats (JSON et CSV). Réutilise les "
+                            "annotations déjà calculées (~15 s sur 1 500 articles). Partie thèmes omise sous 50 "
+                            "segments de 600 caractères. Voir docs/curation_guide.md")
+    p_ea.add_argument("--report-topics", "--topic-report-topics", dest="report_topics", type=int, default=0,
+                       metavar="N",
+                       help="[--report] Nombre de thèmes (défaut 0 = automatique : nombre de segments / 30, "
+                            "borné entre 5 et 30)")
     _add_extraction_args(p_ea)
     p_ea.add_argument("--enrichment-threshold", type=float, default=0.95,
                        help="[--extractor embed] Similarité cosinus minimale (plus proche voisin) pour "
@@ -591,8 +642,8 @@ def build_parser() -> argparse.ArgumentParser:
                             "vocabulaire, sous --enrichment-threshold (donc loin de tout terme connu), mais "
                             "dans le top N%% de ce classement structurel est marqué "
                             "enrichment_suggestion_structural (défaut top 2%% — favorise la précision : "
-                            "balayage sur ACTER du 2026-09-07, P=0.568/F1=0.329 à 2%% contre P=0.422/F1=0.360 "
-                            "à 10%%, voir analyse_benchmarks_extraction.md) — repère les candidats "
+                            "balayage sur ACTER du 2026-09-07, union niveaux 1+2 P=0.568/F1=0.329 à 2%% contre "
+                            "P=0.422/F1=0.360 à 10%%, voir analyse_benchmarks_extraction.md) — repère les candidats "
                             "statistiquement/structurellement forts qu'embed seul écarte à tort faute de "
                             "proximité au vocabulaire (planif_extraction_terminologique.md §8)")
     p_ea.add_argument("--specificity-top-pct", type=float, default=0.0,
@@ -602,10 +653,11 @@ def build_parser() -> argparse.ArgumentParser:
                             "enrichment_suggestion_embed ni enrichment_suggestion_structural, mais dans le "
                             "top N%% de ce classement de spécificité est marqué "
                             "enrichment_suggestion_specificity — défaut **0.0 = désactivé** (contrairement "
-                            "à --structural-top-pct, PAS actif par défaut : mesuré sur ACTER le 2026-09-11, "
-                            "précision isolée de ce niveau ~0.27-0.30, nettement plus bruité que le niveau "
-                            "structurel ~0.64 — l'union structurel(2%%)+spécificité(10%%) porte le F1 combiné "
-                            "de 0.270 à 0.314, mais au prix de ce bruit propre au niveau 3, à activer "
+                            "à --structural-top-pct, PAS actif par défaut : mesuré sur ACTER (reproduit le "
+                            "2026-09-30), précision de ce niveau seul 0.27 par token / 0.14 par candidat, "
+                            "nettement plus bruité que le niveau structurel seul (0.39 / 0.23) — l'union des "
+                            "trois niveaux porte le F1 combiné de 0.327 à 0.368, mais au prix de ce bruit "
+                            "propre au niveau 3, à activer "
                             "consciemment, pas par défaut). Si activé, 10.0 est la valeur mesurée comme "
                             "utile (voir analyse_benchmarks_extraction.md, planif_extraction_terminologique.md §9).")
 

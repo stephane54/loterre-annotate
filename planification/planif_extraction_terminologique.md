@@ -228,7 +228,7 @@ Constat issu de l'analyse du code existant (`loterre_engine_v9_cli.py`, `loterre
 - ✅ Seuil configurable `--cvalue-threshold` sur `loterre_extract_cli.py`
 - ✅ Test smoke `tests/smoke/test_cvalue.sh` : vérifie le calcul exact sur un cas emboîté connu, le bon usage de la règle de repli mono-token, le tri par score, et le filtre de seuil
 - ⏸️ **Non fait** : extension contexte nominal (NC-value complet) — nécessiterait le suivi des positions de tokens (`CandidateTerm` n'a que des offsets caractères actuellement) ; C-value seul donne déjà des résultats pertinents (voir exemple P66_en : *"controlled memory assessment"* score=82.4 domine largement les mots génériques fréquents comme *"study"*/*"protocol"*, score=1.0)
-- ⏸️ **Non fait** : comparaison quantitative vs TermSuite — priorité secondaire (cf. décision Phase 0 : ACTER/D-Terminer sont les références principales, TermSuite secondaire)
+- ✅ **Fait le 2026-10-09** : comparaison quantitative vs TermSuite sur ACTER, même protocole — TermSuite 3.0.10 F1 0.569 contre 0.499 (graph) et 0.398 (ncvalue), gain par le rappel ; voir `analyse_benchmarks_extraction.md`, entrée 14
 
 ### Complément Phase 2 — PositionRank + bascule automatique — **Terminé (2026-06-19)**
 
@@ -349,10 +349,10 @@ Déclenchée directement par le diagnostic X64 (voir Phase 2/journal) : C-value 
   | wind | fr | 2 | 0.28 | **0.50** |
   | **TOTAL** | | | **0.391** | **0.496** |
 
-  PositionRank devance C-value sur les 8 combinaisons domaine/langue, parfois largement (equi : +0.22 à +0.26 F1). **F1 global 0.496 sans GPU, sans fine-tuning, en Python pur** — au sommet de la fourchette D-Terminer (mBERT+RNN, GPU) documentée en CLAUDE.md (0.32–0.50) et dans ce document (0.09–0.46 selon domaine) ; C-value (0.391) reste dans la fourchette basse-moyenne.
+  PositionRank devance C-value sur les 8 combinaisons domaine/langue, parfois largement (equi : +0.22 à +0.26 F1). **F1 global 0.496 sans GPU, sans fine-tuning, en Python pur** — au sommet de la fourchette D-Terminer (mBERT+RNN, GPU) documentée dans le cadrage du projet (0.32–0.50) et dans ce document (0.09–0.46 selon domaine) ; C-value (0.391) reste dans la fourchette basse-moyenne.
 - ✅ **Variante expérimentale : `embed` semi-supervisé** (ajoutée sur demande, après le benchmark principal) — la moitié des termes gold d'un domaine sert de vocabulaire de référence, l'autre moitié ("held-out", jamais montrée au système) est l'objectif à retrouver. **Résultat initial (centroïde, 8 combinaisons) : F1 = 0.306** — *moins bon* que C-value (0.391) et PositionRank (0.496) à froid, même avec la moitié des réponses données.
   **Revalidé le 2026-06-23 après le passage centroïde → plus proche voisin** (même changement que ci-dessus en Phase 5) : `F1 = 0.364` (P=0.728, R=0.243, tp=9287/fp=3477/fn=28930, micro-moyenne sur les 8 combinaisons) — **amélioration nette sur précision ET rappel** (P : 0.461→0.728, R : 0.229→0.243) par rapport au centroïde. Reste *en dessous* de C-value (0.391) et nettement sous PositionRank (0.496) à froid, mais l'écart se réduit. Confirme que le plus proche voisin généralise mieux que le centroïde même sur un vocabulaire de référence artificiellement restreint (sous-ensemble du même domaine) — pas seulement sur un vocabulaire Loterre établi de grande taille comme X64. Détail par domaine dans `acter_results_embed_seeded.json`/`acter_results.md`. Reste une comparaison non légitime à froid (le système voit une partie de la réponse) — indicatif, pas un score de référence.
-- ⏸️ **Non fait** : comparaison TermSuite (secondaire, pas prioritaire — D-Terminer déjà comparable)
+- ✅ **Fait le 2026-10-09** : comparaison TermSuite — à froid F1 0.569 (TermSuite) contre 0.499 (PositionRank) ; avec vocabulaire, la liste 1 (embed) garde la meilleure précision (0.85 contre 0.53) à nombre de suggestions égal. Chiffres revérifiés le même jour : C-value 0.398, PositionRank 0.499, embed semi-supervisé F1 0.364 (P 0.734). Détail : `analyse_benchmarks_extraction.md`, entrées 14 et 14 bis. Suite le même jour (entrées 15-16) : l'avance de TermSuite venait surtout de son repérage de toutes les occurrences ; corrigé par l'option `--respot-occurrences` (graph 0.543, embed top-N 0.552 contre 0.447 pour TermSuite) — pas d'intégration de TermSuite.
 - `make corpus-acter` (clone), `make benchmark-acter` (lance l'évaluation, écrit `benchmark_results/acter/acter_results.{json,md}` + variante embed dans `acter_results_embed_seeded.json`)
 
 ---
@@ -387,37 +387,6 @@ En rythme partiel (2–3 h/jour) : **2 à 3 mois de calendrier.**
 En rythme soutenu (5–6 h/jour) : **3 à 5 semaines.**  
 Les phases 2 (NC-value) et 4 (variantes françaises) sont les plus incertaines.
 
-### Comment démarrer une session par phase
-
-Le fichier `CLAUDE.md` à la racine du projet est chargé automatiquement par Claude Code à chaque nouvelle conversation. Il contient les contraintes, la stack technique, et les objectifs de qualité — pas besoin de les réexpliquer.
-
-**Un prompt court par phase suffit :**
-
-```
-Phase 0 : "On commence la Phase 0 du plan planif_extraction_terminologique.md.
-           Upgrade spaCy 3.8 + scispaCy, puis régénération des dicos EN."
-
-Phase 1 : "On commence la Phase 1 du plan planif_extraction_terminologique.md.
-           Implémente le module d'extraction de base (noun chunks + filtres POS)."
-
-Phase 2 : "On commence la Phase 2 du plan planif_extraction_terminologique.md.
-           Implémente NC-value."
-
-Phase 3 : "On commence la Phase 3 du plan planif_extraction_terminologique.md.
-           Intègre les 3 modes CLI et unifie le format de sortie JSONL."
-
-Phase 4 : "On commence la Phase 4 du plan planif_extraction_terminologique.md.
-           Détection de variantes."
-
-Phase 5 : "On commence la Phase 5 du plan planif_extraction_terminologique.md.
-           Scoring embeddings MiniLM sur les termes Loterre."
-
-Phase 6 : "On commence la Phase 6 du plan planif_extraction_terminologique.md.
-           Benchmark sur ACTER, comparaison avec D-Terminer."
-```
-
-Claude relira `CLAUDE.md` et ce document de planification au démarrage de chaque session pour se repositionner sans que tu aies besoin de tout réexpliquer.
-
 ---
 
 ## 7. Risques et points d'attention
@@ -433,12 +402,12 @@ Claude relira `CLAUDE.md` et ce document de planification au démarrage de chaqu
 
 ## 8. Réflexion — améliorer le rappel `embed` sur ressources restreintes *(ouverte le 2026-09-04, reprise et avancée le 2026-09-07 — signal structurel implémenté et mesuré, voir ci-dessous ; suite du fil sur la génération de candidats en §9)*
 
-**Point de départ** : suite au recadrage produit "l'objectif principal est la mise à jour de ressource" (donc un vocabulaire cible existe toujours — voir `CLAUDE.md` §Objectif produit principal), le choix par défaut de `--extractor embed` pour `extract_annotate` a été confirmé pertinent. Mais son profil mesuré sur ACTER (précision correcte 0.55–0.85, **rappel bas 0.17–0.34** sur les termes jamais vus) pose la question : comment améliorer ce rappel sans violer les contraintes projet (CPU, pas de fine-tuning, pas de modèle massif) ?
+**Point de départ** : suite au recadrage produit "l'objectif principal est la mise à jour de ressource" (donc un vocabulaire cible existe toujours — voir l'objectif produit principal du projet et `docs/curation_guide.md`), le choix par défaut de `--extractor embed` pour `extract_annotate` a été confirmé pertinent. Mais son profil mesuré sur ACTER (précision correcte 0.55–0.85, **rappel bas 0.17–0.34** sur les termes jamais vus) pose la question : comment améliorer ce rappel sans violer les contraintes projet (CPU, pas de fine-tuning, pas de modèle massif) ?
 
 **Pistes explorées dans cette session, dans l'ordre** :
 
 1. **Diagnostic générique de "qualité" du vocabulaire cible** (densité interne, scission seed/held-out sur le vocabulaire seul) — **testé et invalidé** : le vocabulaire ACTER `wind` est le plus dense de tous les cas testés (médiane 0.874, au-dessus de X64 à 0.828) et donne pourtant le pire F1 réel (0.286). Ni la densité ni la taille ne discriminent les cas qui marchent des cas qui échouent (voir `docs/README.md` §5.4 et `planification/analyse_benchmarks_extraction.md`). **Scripts créés puis supprimés** (`vocab_quality_check.py`/`_all.py`) — ne pas les recréer sans une nouvelle hypothèse testable, celle-ci a échoué empiriquement.
-2. **Régénération native des dictionnaires** (`build_dictionaries.py`) pour réduire l'écart lemme/POS runtime/génération — **écartée** : le script utilise déjà volontairement des modèles différents du runtime (`en_core_web_trf`/`fr_dep_news_trf`), un essai antérieur de les faire coïncider a dégradé le F1 (décision déjà tranchée, voir §4 ci-dessus ligne ~195 et `CLAUDE.md`). Sans rapport direct avec le rappel `embed` de toute façon.
+2. **Régénération native des dictionnaires** (`build_dictionaries.py`) pour réduire l'écart lemme/POS runtime/génération — **écartée** : le script utilise déjà volontairement des modèles différents du runtime (`en_core_web_trf`/`fr_dep_news_trf`), un essai antérieur de les faire coïncider a dégradé le F1 (décision déjà tranchée, voir §4 ci-dessus ligne ~195). Sans rapport direct avec le rappel `embed` de toute façon.
 3. **Enrichir le seed avec une ressource connexe du domaine** (autres vocabulaires Loterre du registre / thésaurus externes type MeSH-AGROVOC-Eurovoc / extraction `ncvalue`/`graph` sur corpus domaine pour élargir le seed) — **pas encore tranché entre les 3 variantes**, question posée à l'utilisateur sans réponse ferme (a répondu "Other" puis a réorienté vers la piste 4). Risque identifié : dilution de la précision (bruit hors-domaine) contre gain de rappel espéré — à valider empiriquement avant tout choix.
 4. **Rendre le modèle d'embedding moins sensible à l'OOV** (modèle plus robuste ou fine-tuning domaine) — **écartée d'emblée** : viole directement les contraintes non négociables du projet (pas de fine-tuning, pas de modèle massif, CPU uniquement).
 5. **Scoring hybride `embed` + `ncvalue`/`graph`** — **implémenté le 2026-09-07, sous forme de double signal exposé (option 3), pas de fusion en un score unique.** Trois options de composition évaluées : (a) somme pondérée après normalisation min-max — écartée d'emblée, poids `α` à calibrer par essai et normalisation dépendante du corpus ; (b) Reciprocal Rank Fusion — pas de calibration d'échelle nécessaire, mais fusionner en un seul score reste risqué (voir ci-dessous) ; (c) **retenue** : garder les deux signaux séparés (`score`=embed, `structural_score`/`structural_rank`=C-value/PositionRank) plutôt que de les fusionner — un score composite aurait risqué de réintroduire le bruit de discours académique générique qu'`embed` (plus proche voisin) a justement été conçu pour filtrer (voir l'historique centroïde → plus proche voisin plus haut), et aurait cassé la lisibilité simple d'`enrichment_suggestion` (seuil de similarité) pour un curateur non technique.
@@ -449,7 +418,7 @@ Claude relira `CLAUDE.md` et ce document de planification au démarrage de chaqu
 
 **Mesuré le 2026-09-07** (`evaluate_domain_lang_structural_signal()`, nouveau dans `acter_eval.py`, seuils de production réels `--enrichment-threshold 0.95`/`--structural-top-pct 10` au départ, pas la coupure oracle top-N de la variante semi-supervisée existante) : F1 combiné (embed + structurel) **0.360** contre **0.222** pour embed seul à 10% (+62% relatif), porté par un rappel qui plus que double (0.127→0.313) au prix d'une précision qui chute de moitié (0.858→0.422 ; la catégorie structurelle isolée a une précision ≈0.313, nettement plus bruitée qu'embed seul). Détail complet dans `planification/analyse_benchmarks_extraction.md`, entrée "Mesure du signal structurel".
 
-**Balayage `--structural-top-pct` (2/5/10/15/20/30%) et décision** : pas de pic net de F1 dans la plage testée (0.329 à 2% → plateau ~0.36 entre 10-20% → 0.386 à 30%, non monotone) — le vrai levier est le compromis precision/volume de bruit pour le curateur, pas un optimum de F1. Consigne explicite de l'utilisateur ("favorise la précision") + cohérent avec le principe déjà acté `CLAUDE.md` ("la précision compte plus que l'exhaustivité") : **défaut changé de 10% à 2%** (`src/loterre_cli.py` et `scripts/evaluation/acter_eval.py`, 2026-09-07) — P=0.568/F1=0.329 à 2%, contre P=0.422/F1=0.360 à l'ancien défaut 10% (F1 legèrement plus bas, mais liste structurelle nettement plus propre, cohérent avec le principe "curateur humain valide avant intégration").
+**Balayage `--structural-top-pct` (2/5/10/15/20/30%) et décision** : pas de pic net de F1 dans la plage testée (0.329 à 2% → plateau ~0.36 entre 10-20% → 0.386 à 30%, non monotone) — le vrai levier est le compromis precision/volume de bruit pour le curateur, pas un optimum de F1. Consigne explicite de l'utilisateur ("favorise la précision") + cohérent avec le principe déjà acté du projet ("la précision compte plus que l'exhaustivité") : **défaut changé de 10% à 2%** (`src/loterre_cli.py` et `scripts/evaluation/acter_eval.py`, 2026-09-07) — P=0.568/F1=0.329 à 2%, contre P=0.422/F1=0.360 à l'ancien défaut 10% (F1 legèrement plus bas, mais liste structurelle nettement plus propre, cohérent avec le principe "curateur humain valide avant intégration").
 
 ---
 
@@ -487,7 +456,7 @@ Sanity-check fait pendant la session (fréquences dans la table EN) — sépare 
 
 **Décision de conception discutée (pas tranchée)** : signal additionnel (`specificity_score`/`specificity_rank`, même schéma que `structural_score`) plutôt qu'un 4ᵉ `--extractor` autonome — raisonnement : la spécificité seule ne capture pas la structure/forme d'un terme (un mot rare mais mal formé scorerait aussi haut qu'un vrai terme rare), et chez TermSuite elle-même le tri par spécificité n'intervient qu'après tout un pipeline de filtrage/morphologie/regroupement en amont qu'on n'a pas ici. Cohérent avec le principe déjà acté (Option 3, §8) de garder les signaux séparés plutôt que fusionnés. **Réserve à vérifier avant de trancher définitivement** : tester quand même la spécificité seule (classement brut, script de bench jetable, pas exposée en CLI) pour confirmer empiriquement qu'elle apporte moins en solo qu'en signal additionnel, avant de graver ce choix de conception.
 
-**Licence** : fichiers `general-language.txt` sans en-tête explicite dans le dépôt `termsuite-resources` (contrairement aux `.regex`), mais même situation que les tables de morphologie déjà vendorisées (`resources/termsuite_morphology/`, documentées Apache 2.0 dans `CLAUDE.md`) — même base déjà acceptée par le projet, pas un nouveau problème identifié.
+**Licence** : fichiers `general-language.txt` sans en-tête explicite dans le dépôt `termsuite-resources` (contrairement aux `.regex`), mais même situation que les tables de morphologie déjà vendorisées (`resources/termsuite_morphology/`, documentées Apache 2.0) — même base déjà acceptée par le projet, pas un nouveau problème identifié.
 
 **Suite (2026-09-11)** :
 
@@ -545,7 +514,7 @@ La combinaison bat les deux signaux pris séparément (+16% relatif vs structure
 - `run_extract_annotate_mode()` (`loterre_cli.py`) calcule `enrichment_suggestion_specificity` à partir de `--specificity-top-pct` (nouveau flag, défaut 0.0, sur le sous-parseur `extract_annotate` uniquement — même emplacement que `--enrichment-threshold`/`--structural-top-pct`) — mutuellement exclusif des niveaux 1 et 2.
 - `enrichment_suggestion_specificity` ajouté au schéma `CandidateTerm`/`to_dict()`/export CSV.
 - Testé de bout en bout (texte jouet + faux dictionnaire) : mutuelle exclusivité vérifiée, comportement par défaut (flag à 0) confirmé neutre (aucun candidat jamais marqué, mais `specificity_score` déjà visible).
-- Documenté dans `CLAUDE.md`, `docs/README.md` (§5.1 options, §5.3 schéma, §5.4 mécanisme+chiffres), `docs/underthehood.md` (étape 7, trois niveaux), `docs/curation_guide.md` (consigne de travail, précision isolée explicitement signalée comme plus faible que le niveau 2).
+- Documenté dans `docs/README.md` (§5.1 options, §5.3 schéma, §5.4 mécanisme+chiffres), `docs/underthehood.md` (étape 7, trois niveaux), `docs/curation_guide.md` (consigne de travail, précision isolée explicitement signalée comme plus faible que le niveau 2).
 
 **État global de cette réflexion (§8+§9) : close.** Trois avancées livrées cette session : grammaire de candidats étendue (opt-in, ncvalue uniquement, gros corpus à éviter), filtre de spécificité pour `ncvalue` (opt-in, 40% calibré), troisième niveau de suggestion spécificité pour `embed` (opt-in, 10% calibré). Reprise possible plus tard : mesurer si le seuil 10% du niveau 3 est optimal (pas balayé au-delà, contrairement au niveau 2) ; envisager d'inclure ce test dans `acter_eval.py` officiellement plutôt que via script ad hoc si cette piste devient récurrente.
 

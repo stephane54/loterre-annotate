@@ -63,7 +63,7 @@ class CandidateTerm:
     extractor run), attached alongside the embed similarity score so a
     candidate far from any vocabulary term but statistically/structurally
     term-like isn't invisible (see loterre_extract_cli._attach_structural_signal
-    and CLAUDE.md/planification/analyse_benchmarks_extraction.md, entrée
+    and planification/analyse_benchmarks_extraction.md, entrée
     2026-09-07). Never overwrites score/rule, which stay the embed similarity.
     specificity_score/specificity_rank (Weirdness Ratio against a
     general-language reference corpus, resources/termsuite_general_language/,
@@ -75,11 +75,17 @@ class CandidateTerm:
     graph as a filter.
     enrichment_suggestion_specificity stays None/False unless --extractor
     embed AND --specificity-top-pct > 0 (disabled by default, unlike
-    structural — measured isolated precision ~0.27-0.30 on ACTER, markedly
-    noisier than structural's ~0.64, an explicit curator opt-in rather than a
+    structural — measured precision of this tier alone 0.27 per token / 0.14
+    per candidate on ACTER, markedly noisier than the structural tier alone
+    (0.39 / 0.23, reproduced 2026-09-30), an explicit curator opt-in rather than a
     safe default). Mutually exclusive with enrichment_suggestion_embed and
     enrichment_suggestion_structural (set in loterre_cli.run_extract_annotate_mode,
     see planification/analyse_benchmarks_extraction.md, entrée 2026-09-11).
+    nearest_vocab_term (--extractor embed only) is the target-vocabulary label
+    that produced `score` (nearest neighbour) — what the candidate resembles,
+    to help the curator judge it and place it in the resource. n_docs (in
+    to_dict(), always) is the number of distinct documents containing the
+    candidate.
     """
     term: str
     lemma: str
@@ -101,6 +107,7 @@ class CandidateTerm:
     structural_rank: Optional[int] = None
     specificity_score: Optional[float] = None
     specificity_rank: Optional[int] = None
+    nearest_vocab_term: Optional[str] = None
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -109,6 +116,7 @@ class CandidateTerm:
             "lemma": self.lemma,
             "pattern": self.pattern,
             "frequency": self.frequency,
+            "n_docs": len({o.doc_id for o in self.occurrences}),
             "score": self.score,
             "rule": self.rule,
             "in_vocabulary": self.in_vocabulary,
@@ -123,5 +131,6 @@ class CandidateTerm:
             "structural_rank": self.structural_rank,
             "specificity_score": self.specificity_score,
             "specificity_rank": self.specificity_rank,
+            "nearest_vocab_term": self.nearest_vocab_term,
             "occurrences": [{"start": o.start, "end": o.end, "doc_id": o.doc_id} for o in self.occurrences],
         }

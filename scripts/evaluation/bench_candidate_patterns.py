@@ -70,7 +70,7 @@ def main() -> None:
     pa.add_argument("--domains", default=",".join(DOMAINS))
     pa.add_argument("--langs", default=",".join(LANGS))
     pa.add_argument("--min-freq", type=int, default=1,
-                     help="Recommandé 1 sur ACTER (corpus de domaine restreint, voir CLAUDE.md)")
+                     help="Recommandé 1 sur ACTER (corpus de domaine restreint)")
     pa.add_argument("--fractions", default=",".join(str(f) for f in DEFAULT_FRACTIONS),
                      help="Fractions de n_gold_terms pour le sweep top-N, séparées par des virgules")
     args = pa.parse_args()

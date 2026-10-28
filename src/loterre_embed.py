@@ -41,7 +41,7 @@ def get_embed_model():
     HF_HUB_OFFLINE forcé à "1" (sauf si déjà défini par l'appelant) : le
     modèle est toujours dans le cache local une fois téléchargé (Makefile
     `models-embed`), donc aucun appel réseau n'est nécessaire — cohérent
-    avec la contrainte projet "pas d'accès cloud" (CLAUDE.md). Sans ça,
+    avec la contrainte projet "pas d'accès cloud". Sans ça,
     sentence-transformers tente quand même de contacter le Hub avant de
     retomber sur le cache, et reste bloqué de longues minutes en cas de
     coupure réseau (constaté en usage réel le 2026-06-24)."""
@@ -88,7 +88,8 @@ def embed_vocabulary_terms(model, terms: Sequence[str]):
     return _normalize_rows(embeddings)
 
 
-def score_candidates_embed(candidates: list[CandidateTerm], model, vocab_embeddings) -> list[CandidateTerm]:
+def score_candidates_embed(candidates: list[CandidateTerm], model, vocab_embeddings,
+                           vocab_terms: Sequence[str] | None = None) -> list[CandidateTerm]:
     """Affecte à chaque CandidateTerm sa similarité cosinus au terme le plus
     proche (max) du vocabulaire cible — pas à la moyenne (centroïde) de
     l'ensemble, qui généralise mal sur un vocabulaire sémantiquement divers
@@ -97,7 +98,12 @@ def score_candidates_embed(candidates: list[CandidateTerm], model, vocab_embeddi
     fréquent en pratique, beaucoup de candidats atteignent 1.0 (correspondance
     exacte) —, départage par nombre de tokens décroissant pour ne pas laisser
     les unitermes (mécaniquement plus fréquents, donc placés avant par un tri
-    stable) masquer systématiquement les multitermes à score identique."""
+    stable) masquer systématiquement les multitermes à score identique.
+
+    Si *vocab_terms* (les libellés, dans le même ordre que vocab_embeddings)
+    est fourni, renseigne aussi nearest_vocab_term — le terme du vocabulaire
+    qui a donné ce score : aide le curateur à juger la suggestion et à la
+    placer dans la hiérarchie de la ressource."""
     if not candidates:
         return []
     terms = [c.term for c in candidates]
@@ -108,10 +114,13 @@ def score_candidates_embed(candidates: list[CandidateTerm], model, vocab_embeddi
     # clip : la précision float32 peut produire 1.0000002 au lieu de 1.0
     # pour un candidat identique à un terme du vocabulaire.
     max_similarities = similarities.max(axis=1).clip(-1.0, 1.0)
+    nearest = similarities.argmax(axis=1)
 
-    for c, score in zip(candidates, max_similarities):
+    for c, score, j in zip(candidates, max_similarities, nearest):
         c.score = float(score)
         c.rule = "embed"
+        if vocab_terms is not None:
+            c.nearest_vocab_term = vocab_terms[int(j)]
 
     return sorted(candidates, key=lambda c: (-c.score, -len(c.term.split())))
 

@@ -437,7 +437,7 @@ Performance : 794 documents réels traités en 44s avec `--detect-variants` — 
 | top 20% | 0.352 | 0.367 | 0.359 |
 | top 30% | 0.346 | 0.436 | 0.386 |
 
-**Le F1 n'a pas de pic net dans la plage testée** — il monte de 0.222 (embed seul) à 0.329 dès 2%, puis reste globalement plat entre 10% et 30% (0.360→0.362→0.359→0.386, non monotone, probablement du bruit inter-domaine plutôt qu'un vrai optimum local à 20%). Le vrai levier n'est pas où mettre le curseur pour maximiser le F1 (n'importe quelle valeur ≥10% donne un F1 comparable) mais **le compromis precision/volume que le curateur est prêt à absorber** : à 2%, la liste structurelle reste relativement propre (P=0.568, déjà +0.107 de F1 par rapport à embed seul) ; à 30%, le rappel est maximal mais la précision tombe à 0.346 (moins de 1 candidat sur 3 pertinent), sur une liste beaucoup plus longue. Le principe déjà acté du projet ("la précision des candidats proposés compte plus que l'exhaustivité", `CLAUDE.md` §Objectif produit principal) penche pour un défaut plus proche de 2-5% que de 10% — **non tranché, décision utilisateur à prendre**, le défaut code (10%) n'a pas été changé dans cette session.
+**Le F1 n'a pas de pic net dans la plage testée** — il monte de 0.222 (embed seul) à 0.329 dès 2%, puis reste globalement plat entre 10% et 30% (0.360→0.362→0.359→0.386, non monotone, probablement du bruit inter-domaine plutôt qu'un vrai optimum local à 20%). Le vrai levier n'est pas où mettre le curseur pour maximiser le F1 (n'importe quelle valeur ≥10% donne un F1 comparable) mais **le compromis precision/volume que le curateur est prêt à absorber** : à 2%, la liste structurelle reste relativement propre (P=0.568, déjà +0.107 de F1 par rapport à embed seul) ; à 30%, le rappel est maximal mais la précision tombe à 0.346 (moins de 1 candidat sur 3 pertinent), sur une liste beaucoup plus longue. Le principe déjà acté du projet ("la précision des candidats proposés compte plus que l'exhaustivité", objectif produit principal) penche pour un défaut plus proche de 2-5% que de 10% — **non tranché, décision utilisateur à prendre**, le défaut code (10%) n'a pas été changé dans cette session.
 
 Détail par domaine/langue : `benchmark_results/acter_structural_signal/acter_results_structural_signal.json` (non commité, gitignoré).
 
@@ -522,7 +522,7 @@ Même schéma qu'avec `--prep-patterns` mais amplifié (grammaire ~9× plus larg
 
 **Question "et pour embed ??" — pas mesuré** : `sentence-transformers`/`torch` absents de cet environnement (pas de venv projet actif), utilisateur a explicitement refusé l'installation pour ce test (`--embed` du script de bench prévu mais non exécuté). Réponse qualitative faute de mesure : le mécanisme de pollution identifié pour `graph` est spécifique à PositionRank (un span hérite du score de ses mots parce qu'ils sont des nœuds centraux du graphe de co-occurrence, indépendamment de la validité du span composé) — `embed` ne partage pas ce mécanisme, il score chaque candidat indépendamment par similarité cosinus à son propre contenu sémantique, donc *a priori* moins vulnérable à ce biais précis. Mais attention : `_attach_structural_signal()` (le signal structurel secondaire d'`embed`, `enrichment_suggestion_structural`) réutilise en interne **exactement** `score_candidates`/`score_candidates_positionrank` (bascule auto selon le volume de corpus) — donc combiner `--all-candidate-patterns` avec `--extractor embed` sur un corpus court hériterait indirectement de la même pollution PositionRank **pour le signal structurel seulement**, pas pour `enrichment_suggestion_embed` (gouverné par le seuil de similarité, indépendant de ce mécanisme). Affirmation non vérifiée empiriquement — à mesurer avant toute décision de production sur ce point précis.
 
-**Suite — question utilisateur "intéressant d'activer par défaut ?" → mesure de temps réel** : le gain F1 ci-dessus vient d'une coupure top-N artificielle de l'évaluation ; en usage réel le volume de candidats explosé (+154%) n'a pas de coupure équivalente par défaut. Mesuré le temps réel (`time`, CLI complète subprocess, modèle spaCy inclus) sur trois tailles de corpus réalistes, comparé à `annotate` (contrainte non négociable du projet, `CLAUDE.md` : "extract ne doit pas être significativement plus lent qu'annotate") :
+**Suite — question utilisateur "intéressant d'activer par défaut ?" → mesure de temps réel** : le gain F1 ci-dessus vient d'une coupure top-N artificielle de l'évaluation ; en usage réel le volume de candidats explosé (+154%) n'a pas de coupure équivalente par défaut. Mesuré le temps réel (`time`, CLI complète subprocess, modèle spaCy inclus) sur trois tailles de corpus réalistes, comparé à `annotate` (contrainte non négociable du projet : "extract ne doit pas être significativement plus lent qu'annotate") :
 
 | Corpus | annotate | extract ncvalue (baseline) | extract ncvalue (`--all-candidate-patterns`) |
 |---|---:|---:|---:|
@@ -592,6 +592,8 @@ Scripts ad hoc non committés (`bench_specificity.py`/`bench_specificity_filter.
 
 ### Spécificité comme troisième signal de suggestion pour `embed` — 2026-09-11
 
+> **Correction 2026-09-30** : les chiffres absolus du tableau ci-dessous ne sont pas reproductibles — voir la correction à la fin de l'entrée "Signaux de répartition intra-corpus" (2026-09-29) pour les valeurs de référence. Les décisions de cette entrée restent valables.
+
 **Contexte** : suite directe de l'entrée précédente — question utilisateur "pas de spécificité dans le cadre d'embed ?". Le filtre `ncvalue` (ci-dessus) est un mécanisme différent (retire des candidats avant scoring) ; ici on teste la spécificité comme **signal additionnel** pour `--extractor embed`, sur le modèle du signal structurel (Option 3, §8) plutôt qu'en filtre.
 
 **Ce qui a été fait** : script ad hoc (`bench_specificity_embed.py`, pas `acter_eval.py`), méthodologie semi-supervisée seed/holdout identique à `evaluate_domain_lang_structural_signal()` (seed=42, fraction=0.5), 8 combinaisons domaine/langue ACTER. Nécessite `sentence-transformers`/`torch`, absents de l'environnement de dev WSL — installés en cours de session (`pip install --user --break-system-packages`, l'installation standard a échoué avec `externally-managed-environment`, protection PEP 668 de Debian/Ubuntu).
@@ -619,7 +621,7 @@ La combinaison (union) bat les deux signaux séparés à tous les seuils testés
 - `run_extract_annotate_mode()` (`loterre_cli.py`) : nouveau flag `--specificity-top-pct` (défaut 0.0, sous-parseur `extract_annotate`, même emplacement que `--enrichment-threshold`/`--structural-top-pct`), calcule `enrichment_suggestion_specificity` — mutuellement exclusif des niveaux 1/2.
 - `enrichment_suggestion_specificity` ajouté au schéma `CandidateTerm`/`to_dict()`/export CSV.
 - Testé de bout en bout (texte jouet + faux dictionnaire) : exclusivité mutuelle vérifiée, comportement neutre par défaut confirmé.
-- Documentation mise à jour : `CLAUDE.md`, `docs/README.md` (§5.1/§5.3/§5.4), `docs/underthehood.md` (étape 7), `docs/curation_guide.md` (précision isolée du niveau 3 signalée explicitement comme plus faible que le niveau 2).
+- Documentation mise à jour : `docs/README.md` (§5.1/§5.3/§5.4), `docs/underthehood.md` (étape 7), `docs/curation_guide.md` (précision isolée du niveau 3 signalée explicitement comme plus faible que le niveau 2).
 
 Script ad hoc non committé (`bench_specificity_embed.py`), sortie non sauvegardée en JSON.
 
@@ -643,6 +645,301 @@ Script ad hoc non committé (`bench_specificity_embed.py`), sortie non sauvegard
 **Décision** : pas de changement — élargir la fenêtre n'apporte rien de mesurable sur ACTER, le défaut `window=4` est conservé. Pas d'implémentation (flag CLI, etc.) à ce stade ; à ne pas re-tester sauf nouveau signal suggérant un intérêt.
 
 Aucun script ad hoc créé (invocation directe de `acter_eval.py` avec deux valeurs de `window`), sorties JSON dans `benchmark_results/acter_window4_baseline/` et `benchmark_results/acter_window10_test/` (non committées).
+
+---
+
+### Signaux de répartition intra-corpus (dispersion, NMF, recette BERTopic) — 2026-09-29
+
+**Contexte** : question utilisateur "un topic modelling (BERTopic) aiderait-il à évaluer la pertinence d'un terme ?". Hypothèse : un vrai terme de domaine est concentré dans une partie du corpus (un thème), le bruit académique générique ("approach", "results", "case study") est réparti uniformément. Aucun des trois signaux existants ne mesure la répartition intra-corpus (embed = proximité au vocabulaire, structurel = forme/fréquence, spécificité = contraste vs langue générale). TopicBERT (Chaudhary et al. 2020, classifieur à fine-tuning BERT) écarté d'emblée : fine-tuning + BERT complet en inférence, hors contraintes projet, et aucun signal par terme.
+
+**Ce qui a été fait** : nouveau script `scripts/evaluation/bench_topical.py` (calqué sur `bench_specificity.py`, mêmes protocoles). Unité de répartition = segments de 600 caractères de chaque document (~500-600 segments par couple domaine/langue — ACTER n'a que 2 à 12 documents pour `wind`/`corp`, trop peu pour une dispersion par document ; 600 caractères ≈ 100 tokens, sous la fenêtre de 128 tokens de MiniLM). Quatre signaux (plus haut = plus "terme") :
+- `ridf` : IDF résiduel (Church & Gale 1995), IDF observé − IDF attendu sous Poisson.
+- `dp` : DP de Gries (2008), déviation des proportions.
+- `nmf` : NMF scikit-learn sur la matrice segments × candidats (tf-idf), 5 à 20 thèmes selon le nombre de segments ; score = poids relatif max du candidat dans un thème.
+- `bertopic` : **recette** BERTopic, pas la bibliothèque — segments encodés avec MiniLM (même modèle qu'embed), regroupés par KMeans (option `cluster_model` supportée par BERTopic, choisie pour la reproductibilité — graine fixe, pas de segments "hors thème" −1 — et pour n'ajouter aucune dépendance, bertopic/umap-learn/numba n'étant pas installés), candidats notés par c-TF-IDF (formule BERTopic), score = c-TF-IDF max.
+
+8 couples domaine/langue ACTER, `--min-freq 1`. Conteneur Docker de test du webservice (12,7 Go de RAM) arrêté avant le run pour éviter l'instabilité WSL2 sous charge.
+
+**Résultats — 1. Classement autonome** (F1 token-level, coupure top-N = fraction × n_gold_terms) :
+
+| Méthode | F1@0.10 | F1@0.50 | F1@1.00 | F1@1.50 |
+|---|---:|---:|---:|---:|
+| ncvalue | 0.257 | 0.344 | 0.397 | 0.455 |
+| graph | 0.144 | 0.389 | **0.500** | **0.540** |
+| ridf | 0.087 | 0.448 | 0.477 | 0.493 |
+| dp | 0.017 | 0.081 | 0.148 | 0.201 |
+| **nmf** | **0.370** | **0.456** | 0.488 | 0.507 |
+| bertopic | 0.295 | 0.439 | 0.484 | 0.502 |
+
+`ncvalue`/`graph` identiques au millième aux chiffres du 2026-09-11 (extraction de candidats inchangée). NMF bat tout aux coupures serrées/moyennes (tête de liste la plus précise mesurée à ce jour), reste sous `graph` aux coupures larges. `dp` inutilisable (biais vers les hapax, concentrés par construction).
+
+**2. Filtre avant `ncvalue`** (F1@1.00 / F1@1.50 selon le % de candidats les plus faibles retirés) :
+
+| % retiré | ridf | dp | nmf | bertopic |
+|---:|---:|---:|---:|---:|
+| 0 | 0.397 / 0.455 | 0.397 / 0.455 | 0.397 / 0.455 | 0.397 / 0.455 |
+| 20 | 0.370 / 0.415 | 0.215 / 0.253 | 0.415 / 0.485 | 0.404 / 0.452 |
+| 40 | 0.368 / 0.411 | 0.193 / 0.226 | 0.428 / 0.501 | 0.447 / 0.497 |
+| 50 | 0.368 / 0.411 | 0.187 / 0.213 | **0.467 / 0.509** | 0.461 / 0.506 |
+
+NMF à 50% : +0.070 F1@1.00 (+18% relatif), un peu mieux que le filtre de spécificité à 40% (0.447 / 0.518), neutre aux coupures serrées (F1@0.10 0.256 vs 0.257). Pic non atteint dans la plage testée (monotone jusqu'à 50%). `ridf`/`dp` dégradent.
+
+**3. Niveau de suggestion pour `embed`** (seed/holdout 50%, niveau isolé = retenu par le signal seul, ni embed ni structurel ; référence embed + structurel(2%) : P=0.560 R=0.231 F1=0.327) :
+
+| Signal (part retenue) | F1 union | P niveau isolé | R niveau isolé | n isolé |
+|---|---:|---:|---:|---:|
+| nmf 2% | **0.381** | **0.296** | 0.108 | 438 |
+| nmf 5% | 0.379 | 0.255 | 0.144 | 1260 |
+| bertopic 5% | 0.368 | 0.243 | 0.121 | 1371 |
+| ridf 10% | 0.393 | 0.262 | 0.186 | 2727 |
+| dp 10% | 0.326 | 0.159 | 0.029 | 3528 |
+| spécificité 5% (référence) | 0.355 | 0.271 | 0.057 | 1491 |
+| spécificité 10% (référence) | 0.367 | 0.270 | 0.090 | 3024 |
+
+Niveau isolé NMF 2% légèrement plus précis que la spécificité (0.296 vs 0.27) avec 3× moins de candidats pour un rappel supérieur — mais toujours loin du niveau structurel (~0.56). La recette BERTopic ne bat NMF nulle part, pour un coût ~100× supérieur (185 s vs 2 s cumulés sur les 8 couples).
+
+**Décision (utilisateur)** — *invalidée par le contrôle par la fréquence, voir point 5* : pas de 4ᵉ liste de suggestion ; piste retenue = exposer NMF comme **signal par candidat** (`topical_score`/`topical_rank`/`topic_id`, sur le modèle de `specificity_score` toujours calculé pour `embed`), sous réserve qu'il discrimine à l'intérieur des niveaux existants — mesure dédiée ci-dessous. Points à régler avant intégration : matrice creuse (la matrice dense du script ferait plusieurs Go sur RevueESR, ~60k segments), signal `null` sous un nombre minimal de segments (document isolé).
+
+Sorties : `benchmark_results/topical/bench_topical_{standalone,filter-sweep,embed}.json` + `bench_topical_all.log` (non committés).
+
+**4. Signal comme indicateur par candidat — mode `indicator` (2026-09-30)** : les trois niveaux de production reconstitués (embed ≥ 0.95, structurel top 2%, spécificité top 10% — mutuellement exclusifs comme `run_extract_annotate_mode`, seed/holdout 50%), puis, à l'intérieur de chaque niveau, précision du quart/de la moitié le mieux noté par le signal vs le moins bien noté. Écart = P(moitié haute) − P(moitié basse).
+
+| Niveau (n, P) | Signal | P top 25% | P haut 50% | P bas 50% | P bas 25% | Écart 50% |
+|---|---|---:|---:|---:|---:|---:|
+| embed (986, 0.852) | **nmf** | 0.909 | 0.884 | 0.673 | **0.613** | **+0.211** |
+| | bertopic | 0.906 | 0.886 | 0.677 | 0.659 | +0.209 |
+| | ridf | 0.899 | 0.875 | 0.799 | 0.848 | +0.076 |
+| | spécificité | 0.852 | 0.887 | 0.816 | 0.779 | +0.071 |
+| structurel (545, 0.391) | nmf | 0.378 | 0.390 | 0.391 | 0.360 | −0.001 |
+| | **ridf** | 0.438 | 0.440 | 0.329 | 0.336 | **+0.111** |
+| | spécificité | 0.370 | 0.438 | 0.341 | 0.272 | +0.097 |
+| spécificité (3024, 0.270) | nmf | 0.305 | 0.287 | 0.225 | 0.188 | +0.063 |
+| | **ridf** | 0.329 | 0.302 | 0.215 | 0.222 | **+0.087** |
+
+(`dp` négatif partout, −0.09 à −0.27 : plus dispersé = meilleur à l'intérieur des niveaux — probablement un simple effet de fréquence, les hapax étant concentrés par construction et plus souvent faux ; non exploité.)
+
+**Lecture** : NMF est un **très bon indicateur à l'intérieur de la liste embed** — la liste la plus importante pour le curateur (haute confiance, P 0.852) se scinde en un quart haut à P 0.909 et un quart bas à P 0.613 : NMF repère précisément les suggestions embed douteuses. Inutile en revanche dans la liste structurelle (écart nul), modeste dans la liste spécificité. `ridf` (coût nul) est le meilleur indicateur dans ces deux listes-là. La recette BERTopic égale NMF dans la liste embed sans le dépasser, pour 100× le coût. Réserve : liste structurelle de 545 candidats seulement sur 8 couples, écarts de ±0.03 dans le bruit.
+
+Sortie : `benchmark_results/topical/bench_topical_indicator.{json,log}` (non committés).
+
+**5. Contrôle par la fréquence — conclusion révisée (2026-09-30)** : l'implémentation du signal (module `src/loterre_topical.py`, champs `topical_score`/`topical_rank`/`topic_id`/`burstiness_score`) a été faite puis testée de bout en bout sur X64_en (`extract_annotate --extractor embed`) : qualitativement, le haut de la liste embed triée par `topical_score` contenait des mots génériques fréquents ("data", "Education", "means") et le bas de vrais termes ("lexical terms", "language change"). Soupçon : la précision **token-level** pondère chaque candidat par ses occurrences et favorise mécaniquement les candidats fréquents — or NMF met aussi en avant les mots fréquents qui dominent un thème. Vérifié en ajoutant (a) la **fréquence brute comme témoin** (`freq`) et (b) une **précision par candidat** (chaque candidat compte une fois : son terme est-il un terme gold held-out — ce que voit réellement le curateur).
+
+Mode `indicator`, précision par candidat (écart = moitié haute − moitié basse) :
+
+| Niveau (P candidat) | fréquence | nmf | ridf | spécificité |
+|---|---:|---:|---:|---:|
+| embed (0.528) | **+0.290** (quart haut 0.811 / quart bas 0.414) | +0.185 | −0.014 | −0.002 |
+| structurel (0.231) | **+0.193** | +0.032 | +0.032 | +0.083 |
+| spécificité (0.143) | **+0.121** | +0.052 | +0.037 | −0.026 |
+
+La fréquence bat NMF dans les trois listes (en token-level aussi : +0.286 contre +0.211 dans la liste embed). ridf ne sépare plus rien une fois chaque candidat compté une fois.
+
+Classement autonome, témoin fréquence : `freq` F1 0.387 / 0.482 / 0.507 / 0.517 (@0.10/0.50/1.00/1.50) — **au-dessus de NMF à toutes les coupures** (et de ncvalue/graph aux coupures serrées/moyennes).
+
+Filtre avant `ncvalue` : le témoin `freq` en percentile ne retire rien (64 à 78% des candidats sont des hapax avec `--min-freq 1`, le seuil tombe à 1). Comparaison directe avec le retrait des hapax (`ncvalue` sur les seuls candidats de fréquence ≥ 2) : F1 0.256 / **0.473 / 0.503** / 0.503, contre 0.256 / 0.351 / 0.467 / 0.509 pour le filtre NMF 50% — le simple retrait des hapax fait mieux ou autant.
+
+**Conclusion révisée : les signaux de répartition intra-corpus (NMF, recette BERTopic, ridf, DP) n'apportent rien au-delà de la fréquence** — les gains mesurés aux étapes 1 à 4 étaient des effets de fréquence, amplifiés par la précision token-level. **Implémentation retirée** (module, champs `CandidateTerm`/`to_dict()`/CSV, dépendance `scikit-learn` explicite — jamais committés). Seul `scripts/evaluation/bench_topical.py` (avec le témoin `freq` et la précision par candidat) est conservé comme trace.
+
+**Enseignements réutilisables** :
+- **Tout nouveau signal doit être comparé au témoin fréquence**, et mesuré aussi en précision par candidat, pas seulement en token-level (protocole ACTER) — sinon un simple effet de fréquence passe pour un signal.
+- **La fréquence est un bon indicateur de relecture, gratuit et déjà exposé** (champ `frequency`) : dans la liste `enrichment_suggestion_embed`, le quart le plus fréquent est à P 0.811 par candidat, le quart le moins fréquent à P 0.414. À ajouter à `docs/curation_guide.md` (trier chaque liste par fréquence décroissante, relire le bas de liste avec plus de méfiance).
+- **Question ouverte** : le filtre `--specificity-filter-pctl 40` (entrée 2026-09-11) a été calibré avec `--min-freq 1` contre une référence `ncvalue` sans filtre ; il n'a jamais été comparé au simple retrait des hapax (`--min-freq 2`, F1@1.00 0.503 ici contre 0.447 pour le filtre de spécificité). À re-mesurer avant de le recommander.
+
+Sorties : `benchmark_results/topical/bench_topical_indicator_v2.log`, `bench_topical_freq_control.log` (non committés).
+
+**6. Essai qualitatif : NMF comme outil de curation sur RevueESR (2026-09-30)** : question utilisateur "y a-t-il un autre intérêt à garder NMF ?" — usages non mesurables sur ACTER : repérer les sous-domaines mal couverts par le vocabulaire, grouper la relecture par sujet, repérer les thèmes de bruit. Script ad hoc `scripts/evaluation/topic_coverage_report.py` (hors pipeline), appliqué à la sortie existante `output_extract/RevueESR_extract_annotate.jsonl` (run du 2026-09-15 : 1549 documents, 5,79 M tokens, vocabulaire SEN, 36 546 candidats dont 232 `in_vocabulary`, listes L1/L2/L3 = 183 / 654 / 3471) — aucun passage spaCy ni embed. NMF 30 thèmes sur 53 245 segments de 600 caractères (matrice creuse) : **14 s, 1 Go de RAM**. Couverture d'un thème = part des occurrences de ses candidats déjà dans le vocabulaire. Rapport complet : `benchmark_results/topical/RevueESR_topic_coverage.md` (non commité).
+
+Constats (lecture manuelle, pas de mesure chiffrée de qualité) :
+- **Zones non couvertes identifiables** : des sous-domaines cohérents à couverture quasi nulle — bruit et transports (bruit, avions, sommeil, cortisol, dB, niveau sonore ; 0.3%), santé au travail (solvants, VLEP, INRS, travail posté, maladies professionnelles ; 0.1%), maladies vectorielles (paludisme, dengue, West Nile, moustique ; 0.2%) — contre les thèmes les mieux couverts : évaluation des risques (6.8%), dose-effet (3.6%), pollution de l'air (3.6%), pesticides (2.2%). Plausible pour un vocabulaire santé-environnement ; savoir si ces zones sont dans le périmètre de SEN reste une décision de curateur.
+- **Regroupement lisible** : à l'intérieur d'un thème, les suggestions L2/L3 forment des paquets cohérents (ex. santé au travail : "milieu professionnel", "risques professionnels", "agents biologiques", "solvants", "toluène", "VLEP").
+- **Thèmes de bruit nets** : en-têtes de revue (Vol., n°, "juilletaoût"), remerciements/financement/liens d'intérêts, adresses et tirés à part, affiliations. Avec le thème de texte corrompu ci-dessous, ils portent 19 des 183 suggestions L1, 53 des 654 L2 et **821 des 3471 L3 (24%)**.
+- **Problème de qualité du corpus découvert** : un thème entier (1.7% des segments) regroupe du **texte mal extrait des PDF** — accents détachés ("donn ees", "r esultats", "pr evalence") et ligatures fi/fl perdues ("signi catif", "identi cation", "uence" pour "influence", "èvre" pour "fièvre"). Il pollue toutes les listes, y compris L1 ("pollution atmosph", 134 occurrences) ; en L3, "ees" (1943 occurrences) arrive en tête. Problème en amont du pipeline (conversion PDF → texte de RevueESR), invisible dans les listes à plat.
+
+**Révision avec couverture mesurée directement par l'annotateur (même jour)** : la couverture ci-dessus reposait sur `in_vocabulary` des candidats, sous-estimée par construction (seul un candidat dont l'empan exact coïncide avec une annotation est marqué). Annotation complète de RevueESR par SEN (`loterre_engine_v9_cli.py --profile term_balanced`, profil du registre) : **342 s, 5,5 Go de RAM**, 14 156 annotations (0,26 par segment en moyenne, ~20% des segments en contiennent au moins une), **244 termes SEN distincts seulement**. Couverture d'un thème = densité d'annotations par segment dans les segments où il domine, relative à la moyenne du corpus (option `--annotations` du script). Écart entre thèmes : 0.43 à 1.58.
+
+| Thème | Densité relative (annotations directes) | Ancienne couverture (candidats) |
+|---|---:|---:|
+| texte PDF corrompu | 0.43 | 0.2% |
+| gestion, déchets, "mise en place" | 0.47 | 0.5% |
+| santé au travail | 0.64 | 0.1% |
+| enfants, naissance, concentrations | 0.73 | 0.1% |
+| bruit et transports | **0.98** | 0.3% |
+| maladies vectorielles | **0.95** | 0.2% |
+| pollution de l'air | 1.39 | 3.6% |
+| pesticides | 1.53 | 2.2% |
+| évaluation des risques | 1.58 | 6.8% |
+
+- **Confirmés comme zones peu couvertes** : santé au travail, enfants/périnatal, gestion/déchets (ce dernier porte aussi le plus de suggestions : 31 L1, 197 L2, 580 L3).
+- **Faux signaux de l'ancienne mesure** : bruit et transports, maladies vectorielles sont couverts dans la moyenne — SEN contient "virus West Nile" (47 annotations dans ce thème), "agent pathogène", "trafic routier", "cardiopathie ischémique", que l'extraction n'avait pas produits avec le même empan.
+- **Limite de la nouvelle mesure** : les annotations SEN sont dominées par quelques termes transversaux présents dans tous les thèmes ("risque sanitaire" 1454, "changement climatique" 1035, "pollution atmosphérique" 764, "étude épidémiologique" 745, "substance chimique" 693). Ils gonflent la densité de thèmes qui n'ont aucun terme SEN propre — ex. santé au travail : uniquement des termes transversaux, aucun terme spécifique au domaine. Raffinement possible : ne compter que les termes du vocabulaire concentrés dans le thème, ou le nombre de termes distincts.
+
+Rapport mis à jour : `benchmark_results/topical/RevueESR_topic_coverage.md` ; annotations : `output_extract/RevueESR_annotate_SEN.json` (non committés).
+
+**Lecture** : contrairement à l'usage "signal de pertinence par candidat" (rejeté, point 5), NMF apporte ici une information qu'aucun autre mécanisme ne donne — une vue par zone du corpus. La couverture doit être mesurée par l'annotateur, pas par `in_vocabulary` des candidats.
+
+**7. Neutralisation des termes transversaux et intégration (2026-09-30)** : couverture d'un thème redéfinie comme la part de ses segments contenant au moins un **terme propre** du vocabulaire (terme dont la part d'annotations dans le thème est ≥ 2× la part des segments du thème, avec ≥ 3 annotations). Sur RevueESR/SEN, l'écart entre thèmes s'élargit et devient lisible : 1% à 21% (contre 10% à 31% en comptant tous les termes) — santé au travail 14% → **2%**, gestion/déchets 10% → 3%, thèmes de bruit 1-2%, contre pesticides 21%, évaluation des risques 20%, pollution de l'air 17%. Les termes transversaux ("risque sanitaire" 1437, "changement climatique" 1026, présents dans au moins la moitié des thèmes) ne comptent plus que là où ils sont surreprésentés.
+
+**Intégré** comme option expérimentale `extract_annotate --topic-report RAPPORT.html` (+ `--topic-report-topics N`) : module `src/loterre_topic_report.py`, réutilise les annotations déjà calculées par `extract_annotate` (aucun second passage de l'annotateur), rapport HTML autonome (barres par thème : couverture + suggestions L1/L2/L3 empilées, détail dépliable, palette validée clair/sombre) + JSON. `scripts/evaluation/topic_coverage_report.py` réduit à une commande qui produit le même rapport depuis des sorties existantes. Test de bout en bout sur X64_en (1 min 05 pour tout le pipeline, rapport généré) ; RevueESR depuis sorties existantes : 13 s, ~1 Go. `scikit-learn>=1.3` rajouté à `requirements.txt` (importé directement). Documentation : `docs/underthehood.md` (mécanisme), `docs/curation_guide.md` (usage), `docs/README.md`.
+
+**8. Exécution complète de production avec le rapport (2026-09-30)** : `extract_annotate --dict-id SEN_fr --profile term_balanced --extractor embed --min-freq 3 --specificity-top-pct 10 --topic-report ...` sur `data/RevueESR-textFR.json` : **34 min (2046 s), 6,1 Go de RAM au pic**, rapport compris. 1539 documents, 5 954 459 tokens, 38 838 candidats (identique au run du 2026-09-14), 225 `in_vocabulary`, listes L1/L2/L3 = 177 / 705 / 3686, exclusivité des trois listes vérifiée (0 violation). Rapport : 30 thèmes, 53 690 segments, couverture par termes propres de 1% à 24%.
+
+Écart de périmètre à connaître : la sortie `output_extract/RevueESR_extract_annotate.jsonl` (2026-09-15) utilisée aux points 6-7 venait d'une autre version du corpus (1549 documents, 36 546 candidats) que `data/RevueESR-textFR.json` (1539 documents), sur lequel l'annotation directe avait été calculée — le rapport des points 6-7 croisait donc deux versions (128 annotations hors segments seulement, effet faible). Le rapport de ce run est cohérent de bout en bout.
+
+Thèmes (NMF recalculé sur un autre jeu de candidats, découpage différent de celui des points 6-7) : bruit toujours isolé mais plus éclaté — noms d'auteurs (thème de 5,4% du corpus, "Nicolle, Laurence, Mir", 218 suggestions L3), en-têtes de revue répartis sur 4 thèmes (mois, "Vol.", "n°"), adresses, remerciements ; le texte PDF corrompu ("ees") est cette fois fondu dans le thème enfants/naissance (341 suggestions L3), moins bien isolé. Zones peu couvertes : santé au travail 3%, données/surveillance 2%, mesures d'exposition (thème de 0,5% du corpus mais 707 suggestions, 17 en L1). Mieux couverts : évaluation des risques 24%, pesticides 20%, pollution de l'air 19%, dose-effet 19%. Nouveau thème distinct : résidus de médicaments dans les eaux (8%). Conclusion : les grandes lignes tiennent d'un découpage à l'autre, mais le détail des thèmes (et le rangement du bruit) varie avec le jeu de candidats — à rappeler au curateur (déjà dans `docs/curation_guide.md`, "pas un découpage de référence").
+
+Sorties : `output_extract/RevueESR_extract_annotate_2026-09-30.{json,csv}`, `output_extract/RevueESR_topic_report_2026-09-30.{html,json}` (non committés).
+
+**9. Rapport d'analyse élargi et champs d'aide au curateur (2026-10-02)** : `--topic-report` devient `--report` (alias conservé), module `src/loterre_report.py` (remplace `loterre_topic_report.py`) — chiffres clés, graphiques annotation/extraction, thèmes simplifiés (une barre par thème, détails repliés). Nouveaux champs par candidat, JSON et CSV : `n_docs`, `nearest_vocab_term` (embed), `context`, et avec `--report` `topic_id`/`topic_label`/`topic_coverage` (rangement, pas un score). `scripts/evaluation/topic_coverage_report.py` remplacé par `build_report.py`. Rapport RevueESR reconstruit depuis le run du 2026-09-30 (22 s) : **244 des 429 concepts SEN (57%) présents dans le corpus**, 86% des documents contiennent au moins un terme SEN.
+
+Deux constats révélés par ces nouveaux éléments :
+- **Sur un corpus bruité, le haut des listes triées par fréquence est du bruit** (RevueESR) : liste 2 dominée par l'en-tête de revue ("Environ Risque Sante" 2 848 occurrences, "Mots clés", "autres mentions"), liste 3 par de la ponctuation et des fragments PDF ("-" 21 287, "n", "–", "tion", "ees", "mai"), liste 1 par des unitermes génériques ("exposition", "pollution", "cancer"). La consigne "trier par fréquence" (mesurée sur ACTER, texte propre) est nuancée dans `docs/curation_guide.md`. Des candidats sans aucune lettre ("-", "–") ne devraient pas passer `is_valid_candidate` — **non corrigé**.
+- **Une partie de la liste 1 est déjà dans le vocabulaire** (X64_en) : 7 des 32 suggestions embed (22%) ont `nearest_vocab_term` identique au terme lui-même ("phonetics", "poetics", "sociolinguistics", "data") — libellés présents tels quels dans le dictionnaire mais non reconnus par l'annotateur à ces endroits (`in_vocabulary=False`, probablement les filtres single-token du profil `term_recall`). Ce ne sont pas des termes à ajouter. **Non corrigé** — piste : les exclure de la liste 1 ou les signaler à part.
+
+**10. Nettoyage du corpus RevueESR (2026-10-02)** : `scripts/corpus/clean_revueesr.py` -> `data/RevueESR-textFR.clean.json` (mêmes identifiants, original intact, `data/` gitignoré), 28 s. Réparation du texte uniquement si la forme corrigée existe ailleurs dans le corpus (lexique du corpus lui-même) ; fragment vs vrais mots distingués par la part de la paire dans les occurrences du mot (seuil 0.25 : fragments 0.42-0.86, vrais mots 0.05-0.08 — "pour suivre", "qu il" intacts). Résultats : 76 334 césures recollées ("pré- sents" -> "présents" : source des fragments "tion" en liste 3), 23 259 accents ("donn ees" 589 -> 2, "r esultats" 594 -> 2, "m emes" 344 -> 0), 9 437 ligatures ("signi catif" 232 -> 50, "in uence" 394 -> 127), 380 accents initiaux ; paratexte retiré : 5 459 en-têtes "Environ Risque Sante Vol. …" + 3 424 en-têtes anciens ("Environnement, Risques & Santé – Vol. …"), 453 blocs "Pour citer", 2 251 courriels, 611 "Tirés à part", 737 signatures de brèves et 238 références d'articles analysés, remerciements/financement/liens d'intérêts, libellés "Mots clés". 3,3% du texte retiré. Exemples de corrections : `output_extract/RevueESR_clean_samples.txt`.
+
+**Run complet sur le corpus nettoyé (2026-10-02)** — mêmes paramètres que le point 8 (`--dict-id SEN_fr --profile term_balanced --extractor embed --min-freq 3 --specificity-top-pct 10 --report`) : 28 min (contre 34), 5,8 Go au pic.
+
+| | Corpus brut | Corpus nettoyé |
+|---|---:|---:|
+| Tokens | 5 954 459 | 5 529 204 |
+| Candidats | 38 838 | 37 987 |
+| Candidats `in_vocabulary` | 225 | 243 |
+| Annotations SEN | 14 156 | 16 168 (+14%) |
+| Concepts SEN retrouvés | 244 / 429 | 250 / 429 |
+| Documents annotés | 1 317 | 1 369 |
+| Listes 1 / 2 / 3 | 177 / 705 / 3 686 | 191 / 685 / 3 635 |
+
+- **Liste 2 assainie** : l'en-tête de revue ("Environ Risque Sante" 2 848, "Risque Sante", "Mots clés", "autres mentions") a disparu du haut de liste, remplacé par de vrais termes ("santé publique", "santé environnementale", "exposition professionnelle", "effets sanitaires", "eau potable", "faibles doses").
+- **Liste 3 en partie** : fragments PDF ("tion", "ees") et mois disparus, mais restent ponctuation et lettres isolées ("-" 14 074 occurrences, "n", "C", "L") — 177 suggestions des listes 2/3 font 1 à 2 caractères ("-", "–", "´", "©", "/", "n", "t", "e"…). Problème du filtre de candidats (`is_valid_candidate`), pas du texte.
+- **Annotation** : 14% d'annotations SEN en plus sur un texte 7% plus court — l'annotateur reconnaît des termes que les césures et accents perdus cachaient.
+- **Liste 1** : sur RevueESR/SEN (profil `term_balanced`), aucune suggestion identique à un libellé du vocabulaire (contrairement à X64/`term_recall`, point 9). `nearest_vocab_term` renseigné pour les 37 987 candidats.
+- **Thèmes** : les thèmes de bruit (en-têtes, noms d'auteurs, adresses, remerciements, texte corrompu) ont disparu, sauf un ("-", France, Royaume-Uni, Pays… — ponctuation et pays). Couverture 1% à 32%. Santé au travail toujours parmi les moins couverts (1%), confirmé d'un corpus à l'autre ; nouveaux thèmes lisibles (mortalité/chaleur 22%, enfants/grossesse 6%, résidus de médicaments dans les eaux 8%). Bruit/transports à 19%.
+
+Sorties : `output_extract/RevueESR_clean_extract_annotate.{json,csv}`, `output_extract/RevueESR_clean_report.{html,json}` (non committés).
+
+**11. Filtre de candidats "au moins deux lettres" (2026-10-05)** : `is_valid_candidate()` (`src/loterre_extract_cli.py`) rejette désormais tout span de moins de deux caractères alphabétiques — élimine "-", "–", "©", "´", "/", chiffres et lettres isolées étiquetés NOUN/PROPN par spaCy (RevueESR : 177 suggestions listes 2/3 de 1-2 caractères, "-" 14 074 occurrences), garde les sigles courts ("PM", "IC", "NO") et "vitamine D". Non-régression ACTER, `acter_eval.py --min-freq 1 --skip-embed-seeded --skip-structural-signal`, contre la référence du 2026-09-16 (`benchmark_results/acter_window4_baseline/`) :
+
+| | Avant | Après |
+|---|---:|---:|
+| ncvalue | P 0.4702 / R 0.3442 / F1 0.3974 | P 0.4715 / R 0.3447 / F1 0.3982 |
+| graph | P 0.5563 / R 0.4542 / F1 0.5001 | P 0.5563 / R 0.4520 / F1 0.4988 |
+
+Effet neutre (écarts < 0.002) ; légère baisse de rappel `graph` (tp 35 494 -> 35 328), probablement quelques termes gold d'un caractère dans ACTER. Sortie : `/tmp/acter_filter2/` (non conservée).
+
+Run complet RevueESR nettoyé avec le filtre (mêmes paramètres que le point 10, 28 min) : 933 candidats de moins de deux lettres retirés (37 987 -> 37 054), listes 1/2/3 = 191 / 666 / 3 540 (contre 191 / 685 / 3 635), `in_vocabulary` inchangé (243), exclusivité vérifiée. "-", "n", "C", "L" ont disparu de la liste 3. Le haut de la liste 3 reste fait de mots généraux ("effets", "personnes", "sujets", "valeurs", "fois", "plupart") — nature même du signal de spécificité (rareté vs langue générale), déjà connu, d'où son statut opt-in — et d'un fragment PDF résiduel ("ees", 860, non réparé par le nettoyage). Thèmes : santé au travail toujours à 1% ; un seul thème de bruit restant (adresses : "France, Paris, rue, Université"). Sorties : `output_extract/RevueESR_clean2_*` (non committées).
+
+**12. Thème générique hors classement (2026-10-07)** : dans `RevueESR_clean2_report.json`, le thème classé "le moins couvert" (1%) était un fourre-tout de discours général ("compte, exemple, mise, place, prise, gestion") pesant **13,2% du corpus** (moyenne 3,3%, thème suivant 5,1%). Testé : la spécificité des mots de l'étiquette (rang médian de Weirdness Ratio) ne le distingue pas (0,79 contre 0,80 pour la santé au travail) ; son poids, si. Règle : thème `generic` si `segment_share` ≥ 2,5 × 1/n_topics (`GENERIC_SHARE_FACTOR`, `src/loterre_report.py`) — sur RevueESR, seul ce thème est concerné. Affiché à part sous le graphique, avec explication ; candidats marqués `topic_generic=True` (JSON/CSV). Validé sur un seul corpus. Pas de décision d'intégration à ce stade ; pistes : rapport optionnel de `extract_annotate` (fichier séparé, jamais des champs par candidat), et correction de l'extraction de texte RevueESR en amont.
+
+**13. Nombre de thèmes du rapport : balayage k = 10–50 (2026-10-08)** : question utilisateur "comment a été choisi 30 thèmes ?" — réponse : non choisi, c'est le plafond de la règle automatique `auto_n_topics` (segments / 30, borné 5–30 ; RevueESR = 51 941 segments -> plafond). Vérifié a posteriori par `scripts/evaluation/sweep_topics.py` sur `RevueESR_clean2_extract_annotate.json` + annotations SEN recalculées (`output_extract/RevueESR_clean2_annotate_SEN.json`, renommé `RevueESR_clean3_annotate_SEN.json` le 2026-10-09, 9 min, 16 168 annotations, 89% des documents — identique au run du 2026-10-05) ; balayage 17 min. Mesures : cohérence NPMI des étiquettes (top 10 candidats, co-occurrence par segment), stabilité (3 sous-échantillons de 80% des segments, appariement hongrois au modèle complet, cosinus moyen), thèmes génériques, classement de couverture. k = 30 reproduit exactement le rapport existant.
+
+| k | NPMI moyen | stabilité | plus gros thème | génériques | rang santé au travail (couverture) |
+|---:|---:|---:|---:|---:|---|
+| 10 | 0.130 | 0.92 (0.88–1.00) | 24% | 0 | 1/10 (1.0%) |
+| 15 | 0.117 | 0.91 | 16% | 0 | 1/15 (1.6%) |
+| 20 | 0.127 | 0.90 | 17% | 1 | 1/19 (1.7%) |
+| 25 | **0.131** | 0.90 | 13% | 1 | 2/24 (1.4%) |
+| 30 | 0.130 | **0.94** | 13% | 1 | 1/29 (1.2%) |
+| 40 | 0.114 | 0.89 | 11% | 1 | 4/39 (1.5%) |
+| 50 | 0.114 | 0.92 | 3% | 0 | 5/50 (1.7%) |
+
+Lecture : (1) le constat principal ne dépend pas de k — santé au travail entre 1,0 et 1,7% de couverture partout, dernière ou presque ; les mieux couverts restent évaluation des risques / pesticides / pollution de l'air. (2) Au-delà de 30, cohérence en baisse, et le fourre-tout de discours général se fragmente en petits thèmes ("compte, prise, facteurs", "nombre, personnes, temps", "France, Paris, rue") qui passent sous le seuil `generic` (règle de poids) et occupent le bas du classement devant la santé au travail ; à 50, plus aucun thème générique détecté. k = 50 coûte aussi 9 min contre 2. (3) 20–30 forment un plateau (NPMI 0,127–0,131) ; 30 a la meilleure stabilité, mais écarts faibles et bruités (3 tirages seulement, k = 10 de 0,88 à 1,00). Décision : plafond de 30 conservé, désormais appuyé par une mesure ; la formule segments/30, qui fixe k sur les corpus de moins de ~900 segments, reste non validée. Un seul corpus. Résultats : `benchmark_results/topical/RevueESR_sweep_n_topics.json`.
+
+**14. TermSuite sur ACTER, même protocole (2026-10-09)** : comparaison prévue depuis la Phase 6, jamais faite ; aucun chiffre TermSuite sur ACTER trouvé dans la littérature (TermEval 2020 et revue arXiv 2301.06767 n'en donnent pas). TermSuite 3.0.10 (jar complet de Maven Central, mêmes sources que `~/app/termsuite-core`) + TreeTagger 3.2.5 (paramètres `english.par`/`french.par` actuels), installés dans `~/app/termsuite-run/` ; configuration par défaut (classement par spécificité, filtrage et regroupement de variantes par défaut), `TerminologyExtractorCLI -l en|fr --json --tsv`, sur les textes `annotated/texts` d'ACTER (mêmes fichiers qu'`acter_eval.py`) — 6 à 11 s par corpus. Évaluation : `scripts/evaluation/termsuite_acter_eval.py`, qui réutilise les fonctions d'`acter_eval.py` (token-level, sans entités nommées, coupure top-N = termes gold uniques) ; occurrences TermSuite prises à leurs offsets caractères exportés dans le JSON (vérifié sur wind_fr : 15 417 / 15 515 occurrences identiques au texte au caractère près, les 98 autres ne diffèrent que par un saut de ligne). ncvalue/graph relancés le même jour (`acter_eval.py --min-freq 1 --skip-embed-seeded --skip-structural-signal`) : chiffres identiques au point 11.
+
+| | TermSuite P / R / F1 | ncvalue P / R / F1 | graph P / R / F1 |
+|---|---:|---:|---:|
+| corp en | 0.367 / 0.555 / **0.442** | 0.345 / 0.377 / 0.360 | 0.328 / 0.327 / 0.328 |
+| corp fr | 0.314 / 0.437 / **0.365** | 0.369 / 0.319 / 0.342 | 0.311 / 0.354 / 0.331 |
+| equi en | 0.707 / 0.651 / **0.678** | 0.497 / 0.291 / 0.367 | 0.726 / 0.479 / 0.577 |
+| equi fr | 0.576 / 0.425 / 0.489 | 0.433 / 0.217 / 0.289 | 0.665 / 0.455 / **0.540** |
+| htfl en | 0.561 / 0.685 / **0.617** | 0.601 / 0.482 / 0.535 | 0.639 / 0.485 / 0.551 |
+| htfl fr | 0.547 / 0.754 / **0.634** | 0.476 / 0.353 / 0.405 | 0.517 / 0.488 / 0.502 |
+| wind en | 0.545 / 0.697 / **0.612** | 0.489 / 0.450 / 0.469 | 0.648 / 0.472 / 0.546 |
+| wind fr | 0.516 / 0.690 / **0.590** | 0.447 / 0.230 / 0.304 | 0.615 / 0.464 / 0.529 |
+| EN | 0.548 / 0.658 / **0.598** | 0.499 / 0.407 / 0.449 | 0.596 / 0.455 / 0.516 |
+| FR | 0.493 / 0.595 / **0.539** | 0.435 / 0.279 / 0.340 | 0.520 / 0.449 / 0.482 |
+| **TOTAL** | 0.521 / 0.627 / **0.569** | 0.471 / 0.345 / 0.398 | 0.556 / 0.452 / 0.499 |
+
+Lecture : TermSuite devance graph sur 7 combinaisons sur 8 (sauf equi fr), +0,07 de F1 global ; l'écart vient du **rappel** (0,627 contre 0,452), la précision est un peu inférieure (0,521 contre 0,556). À même nombre de candidats (top-N), les candidats TermSuite couvrent 40 à 75% de tokens de plus que ceux de graph (ex. htfl en : 17 629 tokens marqués contre 10 949) ; part de mono-mots dans le top-N : 5% (corp fr) à 50% (htfl). **Hypothèse non vérifiée** : TermSuite repère toutes les occurrences de chaque terme dans le texte, alors que nos candidats ne portent peut-être que les occurrences où spaCy a produit exactement ce span (noun chunk) — un terme emboîté dans un chunk plus long n'y serait pas compté. Test à faire : re-repérer dans le texte toutes les occurrences des candidats top-N de graph et re-noter. Rappel : ces F1 token-level ne sont pas comparables aux F1 de TermEval 2020 (liste de termes uniques). Sorties : `benchmark_results/termsuite/outputs_v2/` (JSON/TSV/logs TermSuite), `benchmark_results/termsuite/termsuite_acter_results.{json,md}`, `benchmark_results/termsuite/acter_cold/`. Les 8 sorties TermSuite fournies auparavant (`benchmark_results/termsuite/outputs/`, coupées à 500 termes, lemmes sans positions, htfl_en = copie de corp_en) ne sont pas utilisées.
+
+**14 bis. TermSuite contre embed, protocole semi-supervisé (2026-10-09)** : `acter_eval.py --min-freq 1 --skip-cold` (seed/holdout 50%, seed=42, tokens des termes seed exclus) relancé — embed seul 0.854 / 0.129 / 0.224, embed + structurel 0.571 / 0.231 / 0.329, identiques aux chiffres de référence (2026-09-07 / 09-30). TermSuite, qui n'utilise pas le vocabulaire seed, noté avec `termsuite_acter_eval.py --seeded-compare` (A) à la même coupure oracle qu'embed (top-N = nb de termes holdout), (B) à budget égal aux listes de production (mêmes nombres de suggestions que la liste 1 et que les listes 1+2, candidats déjà dans le seed retirés comme en production). Totaux (P / R / F1, token-level) :
+
+| | Notre pipeline | TermSuite, même budget |
+|---|---:|---:|
+| (A) top-N = holdout | embed 0.734 / 0.242 / 0.364 | 0.416 / 0.483 / **0.447** |
+| (B) budget liste 1 (981 suggestions au total) | liste 1 **0.854** / 0.129 / 0.224 | 0.525 / 0.303 / **0.384** |
+| (B) budget listes 1+2 (1 502) | listes 1+2 **0.571** / 0.231 / 0.329 | 0.476 / 0.340 / **0.397** |
+
+Lecture : même schéma qu'à froid — TermSuite gagne en F1 par le rappel ; embed garde nettement la meilleure **précision** (liste 1 : 0,85 contre 0,53 à budget égal), qui est le critère prioritaire du cas d'usage curateur (objectif produit du projet). Par domaine, embed liste 1 l'emporte en F1 seulement sur corp (en/fr) ; TermSuite sur les 6 autres. Le gain de rappel de TermSuite pourrait venir du repérage de toutes les occurrences (hypothèse du point 14, non vérifiée) — dans ce cas il profiterait aussi à embed. Piste : candidats/occurrences façon TermSuite + score embed. Note : `acter_eval.py --skip-cold` plantait à l'écriture du Markdown (cherchait `acter_results.json` absent) après avoir écrit ses deux JSON — résultats non affectés ; corrigé le même jour (Markdown omis sans résultats à froid dans le dossier). Sorties : `benchmark_results/termsuite/acter_embed/`, `benchmark_results/termsuite/termsuite_vs_embed.{json,md}`.
+
+**15. Hypothèse « occurrences » confirmée (2026-10-09)** : question — le rappel de TermSuite vient-il de son repérage de toutes les occurrences ? Constat dans le code : `_register_span()` (`src/loterre_extract_cli.py`) n'enregistre une occurrence que là où spaCy produit exactement ce groupe nominal (`term = span.text`) ; un terme inclus dans un groupe plus long (« heart failure » dans « chronic heart failure patients ») ou écrit avec une autre casse n'est pas compté. Test : `scripts/evaluation/bench_respot.py` (11 min) — **mêmes candidats, même classement, même coupure** qu'`acter_eval.py`, mais occurrences re-repérées dans le texte (texte du candidat, insensible à la casse, bornes de mot). Les chiffres « actuel » reproduisent exactement les références (points 11 et 14 bis).
+
+| P / R / F1 (token-level) | Actuel | Repéré | TermSuite (point 14 / 14 bis) |
+|---|---:|---:|---:|
+| ncvalue, à froid | 0.471 / 0.345 / 0.398 | 0.488 / 0.411 / **0.446** | — |
+| graph, à froid | 0.556 / 0.452 / 0.499 | 0.561 / 0.513 / **0.536** | 0.521 / 0.627 / 0.569 |
+| liste 1 (embed) | 0.854 / 0.129 / 0.224 | **0.876** / 0.219 / **0.351** | même budget : 0.525 / 0.303 / 0.384 |
+| listes 1+2 | 0.571 / 0.231 / 0.329 | **0.592** / 0.336 / **0.428** | même budget : 0.476 / 0.340 / 0.397 |
+
+Lecture : gain sur les 8 combinaisons domaine × langue et les 4 configurations, **précision comprise** (elle monte aussi). Le rappel de la liste 1 passe de 0.13 à 0.22 (+70 %) ; les listes 1+2 repérées dépassent TermSuite à budget égal en F1 (0.428 contre 0.397) avec une précision bien supérieure (0.59 contre 0.48) ; à froid, l'écart graph/TermSuite passe de 0.07 à 0.03 de F1. Une grande part de l'avance de TermSuite venait donc du comptage des occurrences, pas de son classement. **Limites** : correction appliquée à l'évaluation seulement ; l'intégrer à l'extraction change aussi les fréquences, donc le classement C-value/PositionRank, `--min-freq` et le tri par fréquence de la relecture — à remesurer après intégration. Le repérage naïf (une regex par candidat sur tout le texte) est trop lent pour RevueESR (37 000 candidats, 32 Mo) : prévoir un repérage en une passe (automate type Aho-Corasick ou trie, comme l'annotateur). Sortie : `benchmark_results/respot/respot_results.json`.
+
+**16. Repérage intégré à l'extraction : `--respot-occurrences` (2026-10-09)** : `_respot_occurrences()` dans `src/loterre_extract_cli.py`, appelé en fin d'`extract_candidates()` avant `--min-freq`. (1) Fusion des variantes de casse d'un candidat (forme retenue : la plus fréquente comme groupe nominal, la minuscule à égalité) ; (2) repérage de toutes les occurrences du texte du candidat, insensible à la casse, aux bornes de tokens (`\w+|[^\w\s]`), en une passe par document via un trie sur les tokens en minuscules — termes emboîtés et chevauchants tous comptés ; (3) la fréquence devient le nombre d'occurrences repérées (union avec les occurrences groupe nominal), ce que C-value attend en théorie. Option explicite (défaut désactivé), propagée à `loterre_cli.py extract|extract_annotate` et à `acter_eval.py --respot-occurrences`. Exemple jouet : « heart failure » passe de 1 à 4 occurrences (dont celles dans « chronic heart failure » et « heart failure clinic »), « Heart failure » fusionné.
+
+Remesure complète `acter_eval.py --min-freq 1 --respot-occurrences` (16 min, `benchmark_results/respot/acter_respot/`), contre les références du jour :
+
+| P / R / F1 (token-level) | Avant | `--respot-occurrences` | TermSuite |
+|---|---:|---:|---:|
+| ncvalue, à froid | 0.471 / 0.345 / 0.398 | 0.497 / 0.445 / **0.470** | — |
+| graph, à froid | 0.556 / 0.452 / 0.499 | 0.554 / 0.532 / **0.543** | 0.521 / 0.627 / 0.569 |
+| embed semi-supervisé, top-N | 0.734 / 0.242 / 0.364 | 0.754 / 0.436 / **0.552** | 0.416 / 0.483 / 0.447 |
+| liste 1 (seuil 0.95) | 0.854 / 0.129 / 0.224 | **0.879** / 0.218 / **0.349** | 0.525 / 0.303 / 0.384 (budget d'avant) |
+| listes 1+2 | 0.571 / 0.231 / 0.329 | **0.582** / 0.343 / **0.432** | 0.476 / 0.340 / 0.397 (budget d'avant) |
+
+Lecture : ncvalue et graph progressent sur les **8** combinaisons domaine × langue (graph : de +0,02 à +0,07 de F1 ; ncvalue gagne plus qu'au point 15, son classement profitant des fréquences corrigées). Embed dépasse désormais TermSuite partout où la comparaison existe ; à froid, TermSuite ne garde que 0,026 de F1 d'avance sur graph. La fusion des variantes de casse réduit un peu les candidats (ex. htfl en 6 367 → 6 053) et les listes (liste 1 : 981 → 920 suggestions ; listes 1+2 : 1 502 → 1 382) : la comparaison TermSuite « à budget égal » utilise l'ancien budget, approximative mais l'écart est large. **Non mesuré** : précision par candidat des listes (le benchmark ne conserve pas les listes) — à faire avant de passer l'option par défaut. Conséquence sur la décision TermSuite (point 14) : son avance venait surtout du comptage des occurrences ; pas d'intégration de TermSuite nécessaire, C-value/PositionRank conservés.
+
+**Passage à l'échelle RevueESR — échec en l'état** (même commande que `clean3` + `--respot-occurrences`, sorties `output_extract/RevueESR_clean4_respot_*`, supprimées le 2026-10-12) : **1 h 36 au lieu de 28 min** (×3,4), 5,8 Go au pic (inchangé). 59 080 candidats au lieu de 37 054 (24 921 nouveaux, dont la fréquence comme groupe nominal était < 3) ; 247 dans SEN (243) ; listes 1/2/3 = 261 / 1 097 / 5 532 (191 / 666 / 3 540) ; exclusivité vérifiée. Liste 1 : 173 suggestions communes avec `clean3`, 88 nouvelles (« colorectal cancer », « cognitive function », « contaminations alimentaires »… mais aussi « climate change and »), 6 perdues ; « exposition » passe de 3 à 17 332 occurrences (le gain attendu : le mot est presque toujours inclus dans un groupe plus long). **Liste 2 envahie de bruit** : « Of the » (2 760), « In the » (1 663), « -ci » (1 071), « D autres » (1 053), « IC = », « dose- », « pas d », « Exposure to » en tête. Mécanisme : un candidat rare ou mal découpé dont le texte est une suite de mots outils (« of the », absent de `clean3`) reçoit toutes les occurrences de cette suite dans le texte libre (résumés anglais du corpus), sa fréquence explose et C-value/PositionRank le classent en tête. ACTER, plus propre et monolingue, ne le montrait pas. Pistes : (1) ne repérer qu'à l'intérieur des groupes nominaux (garde le cas « heart failure » dans « chronic heart failure patients », exclut le texte libre) ; (2) n'appliquer le repérage qu'aux candidats déjà au-dessus de `--min-freq` comme groupes nominaux (bloque « of the », « pas d », réduit le nombre de candidats donc le temps). Les deux sont à remesurer sur ACTER puis RevueESR ; l'option reste désactivée par défaut.
+
+**17. `--respot-occurrences` v2 : repérage limité aux groupes nominaux (2026-10-09)** : les deux pistes du point 16 appliquées ensemble dans `_respot_occurrences()` — (1) repérage seulement à l'intérieur des zones de groupes nominaux de chaque document (bornes des spans noun_chunks/motifs, collectées pendant le passage spaCy) ; (2) seuls les candidats qui atteignent déjà `--min-freq` comme groupes nominaux (variantes de casse réunies) participent. Exemple jouet : « heart failure » toujours repéré 4 fois (dans « chronic heart failure », « heart failure clinic »).
+
+ACTER (`acter_eval.py --min-freq 1 --respot-occurrences`, 17 min, `benchmark_results/respot/acter_respot_v2/`) :
+
+| P / R / F1 | Sans l'option | v1 (tout le texte) | **v2 (groupes nominaux)** |
+|---|---:|---:|---:|
+| ncvalue, à froid | 0.471 / 0.345 / 0.398 | 0.497 / 0.445 / 0.470 | 0.494 / 0.401 / **0.443** |
+| graph, à froid | 0.556 / 0.452 / 0.499 | 0.554 / 0.532 / 0.543 | 0.552 / 0.494 / **0.521** |
+| embed semi-supervisé, top-N | 0.734 / 0.242 / 0.364 | 0.754 / 0.436 / 0.552 | 0.759 / 0.394 / **0.519** |
+| liste 1 | 0.854 / 0.129 / 0.224 | 0.879 / 0.218 / 0.349 | **0.883** / 0.195 / **0.319** |
+| listes 1+2 | 0.571 / 0.231 / 0.329 | 0.582 / 0.343 / 0.432 | **0.600** / 0.307 / **0.406** |
+
+La v2 garde l'essentiel du gain (de 55 à 80 % selon la ligne), avec la meilleure précision des trois versions ; le reste venait du texte libre. Embed top-N reste au-dessus de TermSuite (0.519 contre 0.447) ; à froid, graph est à 0.048 de TermSuite (0.569).
+
+RevueESR (mêmes paramètres que `clean3`, sorties `output_extract/RevueESR_clean5_respotv2_*`, supprimées le 2026-10-12 — même code que `clean6_respot` au filtre de mots outils près) : **38 min 43** (28 min sans l'option, 1 h 36 en v1), 5,9 Go au pic. 35 332 candidats (37 054 sans l'option : fusion des variantes de casse) ; 211 dans SEN — **aucune perte** : les 243 d'avant comptaient les variantes de casse en double (208 formes distinctes), +3 gagnés ; listes 1/2/3 = 178 / 638 / 3 335 ; exclusivité vérifiée. Liste 1 quasi inchangée (173 communes, 5 nouvelles dont « contaminations alimentaires », « risques écologiques et sanitaires » ; 6 perdues dont « virus », « épidémiologique »). Liste 2 : plus aucune suite de mots outils en tête (« santé publique », « long terme », « santé environnementale », « air intérieur »…) ; 524 communes, 114 nouvelles, 134 perdues — les nouvelles comptent du bruit amplifié (nombre + unité : « 12 ans », « 5 mg » ; fragments « -ci », « -analyses »), les perdues du bruit (« am j », « 1 site ») mais aussi des termes (« analyse spatiale », « cadre réglementaire »). **Bruit résiduel** : les résumés anglais du corpus, découpés par le modèle spaCy français en longs « groupes nominaux », contiennent des mots outils anglais déjà candidats (« OF », « and », « this », « with ») que le repérage gonfle (« OF » : 4 → 4 388) — ils forment un thème entier du rapport (« OF, in, this, and », 5 % des segments, couverture 0). Avant tout passage par défaut : filtre de mots outils FR + EN sur les candidats (au moins un mot plein), et précision par candidat sur ACTER.
+
+**18. Filtre de mots outils FR + EN, et précision par candidat (2026-10-09)** : `is_valid_candidate()` rejette désormais (par défaut, comme le filtre « deux lettres ») un candidat dont tous les mots sont des mots outils de la liste spaCy française OU anglaise, plus les élisions (« d », « l », « qu »…) et « -ci »/« -là » ; un mot en majuscules d'au moins deux lettres compte comme sigle (« NO », « OR », « CA » gardés) sauf mots outils anglais de titres en capitales (« OF », « THE », « AND »…). Sur les 31 763 termes gold ACTER, 70 seraient rejetés par la liste seule, surtout des sigles mis en minuscules dans le gold (protégés dans le texte par la règle des majuscules) et « pas », « en avant » (équitation). `acter_eval.py` donne aussi la **précision par candidat** des listes de production (définition de `bench_topical.py` : une suggestion compte une fois, juste si son terme est un terme gold held-out). Sorties : `benchmark_results/stopfilter/`, `output_extract/RevueESR_clean6_{base,respot}_*`.
+
+| ACTER, P / R / F1 token-level (P par candidat) | Avant le filtre | Filtre | Filtre + `--respot-occurrences` | TermSuite, même budget |
+|---|---:|---:|---:|---:|
+| ncvalue, à froid | 0.471 / 0.345 / 0.398 | 0.472 / 0.345 / 0.399 | 0.494 / 0.402 / 0.443 | — |
+| graph, à froid | 0.556 / 0.452 / 0.499 | 0.557 / 0.452 / 0.499 | 0.552 / 0.494 / 0.522 | 0.521 / 0.627 / 0.569 |
+| liste 1 | 0.854 / 0.129 / 0.224 | 0.854 / 0.129 / 0.224 (**0.532**, 521/980) | 0.884 / 0.195 / 0.319 (**0.509**, 468/919) | P/candidat **0.393** (385/980) |
+| listes 1+2 | 0.571 / 0.231 / 0.329 | 0.571 / 0.230 / 0.328 (**0.432**, 648/1499) | 0.601 / 0.307 / 0.407 (**0.430**, 595/1385) | P/candidat **0.320** (479/1499) |
+
+Lecture : (1) **filtre neutre sur ACTER** (écarts ≤ 0,001) ; (2) **embed bat TermSuite aussi en précision par candidat**, à budget égal (0,53 contre 0,39 pour la liste 1 ; 0,43 contre 0,32 pour les listes 1+2) — à budget égal, c'est aussi **plus de termes justes distincts** (521 contre 385 ; 648 contre 479) : l'avantage de TermSuite en rappel (point 14 bis) n'existe qu'en token-level, il vient du nombre d'occurrences couvertes, pas de termes supplémentaires ; (3) **`--respot-occurrences` n'aide pas le curateur** : le gain est token-level (plus d'occurrences comptées pour les mêmes termes, fréquences plus justes), mais le nombre de suggestions justes distinctes baisse (liste 1 : 468 contre 521 ; listes 1+2 : 595 contre 648) et la précision par candidat aussi (0,509 contre 0,532). Une partie de la baisse vient de la fusion des variantes de casse (sans l'option, « Heart failure » et « heart failure » comptent pour deux suggestions justes) — part non mesurée.
+
+RevueESR (mêmes paramètres que `clean3`) : sans l'option **24 min 42**, avec **23 min 47** (pas de surcoût : les 39 min du point 17 et les 28 min de `clean3` reflètent la charge de la machine, pas le code), 5,8-5,9 Go. Sans l'option : 36 755 candidats, 243 dans SEN, listes 191 / 660 / 3 509 ; plus de mots outils anglais ni « pas d » / « D autres » / « -ci » ; « NO » (761 occurrences) conservé comme sigle. Avec l'option : 35 083 candidats, 211 dans SEN (fusion des variantes de casse), listes 178 / 633 / 3 313 ; le thème « OF, in, this, and » a disparu, il reste un thème anglais de mots pleins (« Health, Environmental, public, exposure », couverture 0,5 %). **Décision** : filtre de mots outils gardé par défaut ; `--respot-occurrences` reste une option, utile pour des fréquences plus justes et le token-level, pas un gain pour la curation — pas de passage par défaut.
+
+Effet de bord du filtre sur le rapport (relevé le 2026-10-12, `clean6_base`) : le thème de discours général (« compte, exemple, mise, place », 13 % du corpus dans `clean3`) se scinde en deux petits thèmes (« compte, prise, facteurs », 0,8 % de couverture ; « mise, France, place », 1 %) qui passent sous le seuil `generic` (règle de poids) et occupent le bas du classement ; la santé au travail recule de la 1re à la 4e place des moins couverts (1,9 %). Même mécanisme qu'au-delà de 30 thèmes (point 13) : la règle « poids ≥ 2,5 × la moyenne » ne détecte pas un fourre-tout fragmenté. Piste : règle complémentaire sur la couverture « tous termes » ou sur la spécificité des étiquettes — non traité.
+
+**Correction de l'entrée du 2026-09-11 ("Spécificité comme troisième signal de suggestion pour `embed`")** : les chiffres absolus de son tableau ne sont **pas reproductibles**. Le script consolidé `bench_specificity.py --mode embed`, relancé le 2026-09-30 dans le même environnement (spaCy 3.8.14 installé depuis le 2026-05-11, sentence-transformers/torch depuis le 2026-09-11 — environnement inchangé ; code d'extraction inchangé depuis v1.9.0), donne :
+
+| | Journalisé 2026-09-11 | Reproduit 2026-09-30 |
+|---|---:|---:|
+| embed seul | P 0.899 / R 0.114 / F1 0.203 | P 0.852 / R 0.129 / F1 0.224 |
+| + structurel (2%) | P 0.641 / R 0.171 / F1 0.270 | P 0.560 / R 0.231 / F1 0.327 |
+| + structurel(2%) OU spécificité(10%) | F1 0.314 | F1 0.368 |
+| spécificité isolée (2/5/10%) | P 0.271–0.305 | P 0.241 / 0.271 / 0.270 |
+
+Les chiffres reproduits concordent avec le run officiel `make benchmark-acter` du 2026-09-07 (embed + structurel 2% : P 0.568 / R 0.232 / F1 0.329) — c'est donc le tableau du 11 qui détonne, probablement produit par le script ad hoc d'origine (`bench_specificity_embed.py`, non conservé) sur un périmètre différent (hypothèse non vérifiable). **Les décisions du 11 restent valables** : elles reposaient sur des écarts relatifs, retrouvés à l'identique (union > structurel seul, spécificité isolée nettement moins précise que le structurel → niveau 3 opt-in). Utiliser les chiffres reproduits comme référence pour toute comparaison future.
 
 ---
 

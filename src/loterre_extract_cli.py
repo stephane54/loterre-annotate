@@ -315,6 +315,31 @@ def clean_chunk_span(chunk):
     return chunk[start:end]
 
 
+# Mots outils FR + EN (2026-10-09) : `t.is_stop` ne connaît que la langue du
+# modèle — sur un corpus français, les résumés anglais donnent des candidats
+# "of", "and", "this" que le modèle français étiquette NOUN/PROPN (RevueESR :
+# "OF" 4 occurrences comme groupe nominal, 4 388 avec --respot-occurrences).
+# Un mot en majuscules d'au moins deux lettres est un sigle ("NO", "OR", "CA",
+# "AS"), sauf s'il est un mot outil anglais courant dans les titres en capitales.
+from spacy.lang.en.stop_words import STOP_WORDS as _EN_STOP  # noqa: E402
+from spacy.lang.fr.stop_words import STOP_WORDS as _FR_STOP  # noqa: E402
+
+# + élisions françaises ("d autres", "pas d") et suffixes démonstratifs ("-ci")
+_FUNCTION_WORDS = frozenset(_EN_STOP | _FR_STOP | {"d", "l", "j", "m", "n", "s", "t", "c", "qu", "ci", "là"})
+_TITLE_FUNCTION_WORDS = frozenset({"OF", "THE", "AND", "IN", "TO", "FOR", "ON", "WITH", "BY", "AN", "FROM",
+                                   "IS", "ARE", "THIS", "THAT", "ITS", "BE"})
+
+
+def _only_function_words(span) -> bool:
+    words = [t.text for t in span if any(ch.isalpha() for ch in t.text)]
+    for w in words:
+        if w.isupper() and len(w) >= 2 and w not in _TITLE_FUNCTION_WORDS:
+            return False  # sigle
+        if w.lower().strip("-'’") not in _FUNCTION_WORDS:
+            return False
+    return bool(words)
+
+
 def is_valid_candidate(span, min_tokens: int, max_tokens: int) -> bool:
     if len(span) == 0 or not (min_tokens <= len(span) <= max_tokens):
         return False
@@ -322,9 +347,19 @@ def is_valid_candidate(span, min_tokens: int, max_tokens: int) -> bool:
         return False
     if all(t.is_stop for t in span):
         return False
+    if _only_function_words(span):
+        return False
     if any(t.is_space for t in span):
         return False
     if any(t.is_punct and t.text not in _CONNECTOR_PUNCT for t in span):
+        return False
+    # Au moins deux lettres (2026-10-05) : sur RevueESR (texte PDF), des
+    # symboles et lettres isolées étiquetés NOUN/PROPN par spaCy passaient tous
+    # les filtres ci-dessus ("-" 14 074 occurrences, "–", "©", "´", "/", "n",
+    # "C", "L") et envahissaient les listes de suggestion 2/3 (177 suggestions
+    # de 1-2 caractères). Garde les sigles courts ("PM", "IC", "NO") et les
+    # termes à lettre isolée ("vitamine D").
+    if sum(ch.isalpha() for ch in span.text) < 2:
         return False
     return True
 
@@ -337,9 +372,77 @@ def _register_span(span, doc_id, occurrences, patterns, lemmas) -> None:
         lemmas[term] = " ".join(t.lemma_.lower() for t in span)
 
 
+# ── Repérage de toutes les occurrences (--respot-occurrences, 2026-10-09) ──────
+# Sans cette option, un candidat ne porte que les occurrences où spaCy a produit
+# exactement ce groupe nominal : un terme inclus dans un groupe plus long
+# ("heart failure" dans "chronic heart failure patients") ou écrit avec une autre
+# casse n'est pas compté. C'était l'essentiel de l'avance de TermSuite sur ACTER
+# (planification/analyse_benchmarks_extraction.md, entrées 14 et 15).
+_SPOT_TOKEN = re.compile(r"\w+|[^\w\s]")
+_TRIE_END = ""  # jamais un token (_SPOT_TOKEN ne produit pas de chaîne vide)
+
+
+def _respot_occurrences(rows, occurrences, patterns, lemmas, doc_ids, regions, min_freq):
+    """Fusionne les variantes de casse d'un même candidat (forme retenue : la plus
+    fréquente comme groupe nominal) et lui attribue toutes les occurrences de son
+    texte À L'INTÉRIEUR DES GROUPES NOMINAUX du corpus (`regions` : bornes des
+    spans noun_chunks/motifs de chaque document) — insensible à la casse, aux
+    bornes de tokens, trie sur les tokens en minuscules, termes emboîtés et
+    chevauchants tous comptés. La fréquence devient le nombre d'occurrences
+    repérées, ce que C-value attend (le terme court compte aussi ses apparitions
+    dans les termes plus longs).
+
+    Deux garde-fous, ajoutés après le run RevueESR du 2026-10-09 (liste 2 envahie
+    de "Of the", "pas d" et ×3,4 en temps quand le repérage couvrait tout le
+    texte) : rien n'est repéré dans le texte libre hors groupes nominaux, et
+    seuls les candidats qui atteignent déjà `min_freq` comme groupes nominaux
+    (variantes de casse réunies) participent au repérage."""
+    variants: dict[str, list[str]] = defaultdict(list)
+    for term in occurrences:
+        variants[term.lower()].append(term)
+    trie: dict = {}
+    for key, terms in variants.items():
+        if sum(len(occurrences[t]) for t in terms) < min_freq:
+            continue
+        tokens = _SPOT_TOKEN.findall(key)
+        if not tokens:
+            continue
+        node = trie
+        for tok in tokens:
+            node = node.setdefault(tok, {})
+        node[_TRIE_END] = key
+
+    spotted: dict[str, set] = defaultdict(set)
+    for row, doc_id, doc_regions in zip(rows, doc_ids, regions):
+        text = row["value"]
+        for r_start, r_end in doc_regions:
+            # finditer(texte, pos, endpos) : m.start()/m.end() sont déjà absolus
+            toks = [(m.group().lower(), m.start(), m.end()) for m in _SPOT_TOKEN.finditer(text, r_start, r_end)]
+            for i in range(len(toks)):
+                node, j = trie, i
+                while j < len(toks) and toks[j][0] in node:
+                    node = node[toks[j][0]]
+                    key = node.get(_TRIE_END)
+                    if key is not None:
+                        spotted[key].add((doc_id, toks[i][1], toks[j][2]))
+                    j += 1
+
+    new_occ: dict[str, list[Occurrence]] = {}
+    new_pat, new_lem = {}, {}
+    for key, terms in variants.items():
+        # forme la plus fréquente comme groupe nominal ; à égalité, la minuscule
+        form = max(terms, key=lambda t: (len(occurrences[t]), t == t.lower()))
+        bounds = set(spotted.get(key, ()))
+        for t in terms:
+            bounds.update((o.doc_id, o.start, o.end) for o in occurrences[t])
+        new_occ[form] = [Occurrence(s, e, d) for d, s, e in sorted(bounds, key=lambda b: (str(b[0]), b[1], b[2]))]
+        new_pat[form], new_lem[form] = patterns[form], lemmas[form]
+    return new_occ, new_pat, new_lem
+
+
 def extract_candidates(
     rows: list[dict[str, Any]], lang: str, min_tokens: int, max_tokens: int, min_freq: int,
-    prep_patterns: bool = False, all_candidate_patterns: bool = False,
+    prep_patterns: bool = False, all_candidate_patterns: bool = False, respot: bool = False,
 ) -> tuple[list[CandidateTerm], int, list[list[tuple[int, str, str]]]]:
     """Collecte les candidats noun-chunks sur un corpus, filtrés et comptés en
     fréquence — et capture en même passage spaCy les données nécessaires à
@@ -353,6 +456,10 @@ def extract_candidates(
     (sous-ensemble strict de cette grammaire, inutile de construire les deux
     matchers). Les deux tournent sur le même doc déjà parsé, pas de second
     passage spaCy.
+
+    respot : fusionne les variantes de casse et compte toutes les occurrences
+    du texte de chaque candidat, pas seulement celles où il est un groupe
+    nominal entier (voir _respot_occurrences) — appliqué avant --min-freq.
 
     Un span matcher chevauche souvent un noun_chunk sans lui être identique
     (ex. "quality" (noun_chunk) et "quality of service" (motif "npn") au même
@@ -377,6 +484,7 @@ def extract_candidates(
     patterns: dict[str, list[dict[str, str]]] = {}
     lemmas: dict[str, str] = {}
     per_doc_tokens: list[list[tuple[int, str, str]]] = []
+    regions: list[list[tuple[int, int]]] = []  # bornes des groupes nominaux par document (respot)
     total_tokens = 0
 
     for row, doc in zip(rows, nlp.pipe((r["value"] for r in rows), batch_size=64)):
@@ -394,11 +502,17 @@ def extract_candidates(
                 continue
             seen_bounds.add(bounds)
             spans.append(span)
+        if respot:
+            regions.append(sorted(seen_bounds))
 
         for span in spans:
             if not is_valid_candidate(span, min_tokens, max_tokens):
                 continue
             _register_span(span, doc_id, occurrences, patterns, lemmas)
+
+    if respot:
+        occurrences, patterns, lemmas = _respot_occurrences(
+            rows, occurrences, patterns, lemmas, [r.get("id") for r in rows], regions, min_freq)
 
     candidates = []
     for term, occs in occurrences.items():
@@ -497,7 +611,7 @@ def score_extracted_candidates(
         model = get_embed_model()
         vocab_terms = load_vocabulary_terms(dict_path)
         vocab_embeddings = embed_vocabulary_terms(model, vocab_terms)
-        scored = score_candidates_embed(candidates, model, vocab_embeddings)
+        scored = score_candidates_embed(candidates, model, vocab_embeddings, vocab_terms)
         _attach_structural_signal(scored, per_doc_tokens, total_tokens, auto_threshold)
         # Troisième signal (2026-09-11) : spécificité (Weirdness Ratio vs langue
         # générale) — toujours calculé pour embed (comme le signal structurel),
@@ -616,12 +730,21 @@ def add_extraction_args(parser: argparse.ArgumentParser) -> None:
                               "planification/analyse_benchmarks_extraction.md) : gain net et large avec "
                               "--extractor ncvalue sur petit lot (+0.08 à +0.13 F1 selon coupure), "
                               "régression nette et systématique avec --extractor graph/auto sur corpus "
-                              "court (jusqu'à -0.12 F1). ATTENTION performance : +154% de candidats mesuré "
+                              "court (jusqu'à -0.12 F1). ATTENTION performance : +154%% de candidats mesuré"
                               "sur ACTER, et build_containment_map() (C-value) est O(n²) — sur un gros "
                               "corpus (>50k tokens, régime où ncvalue est auto-sélectionné), extract passe "
                               "de ~12s à ~66s (×5.4), soit ~6× plus lent qu'annotate sur le même corpus. "
                               "Sûr uniquement sur document unique/petit lot. Pas de garde-fou code. Option "
                               "explicite (défaut désactivé).")
+    parser.add_argument("--respot-occurrences", action="store_true",
+                         help="Compte toutes les occurrences du texte de chaque candidat à l'intérieur des "
+                              "groupes nominaux (insensible à la casse, y compris dans des groupes plus "
+                              "longs) et fusionne ses variantes de casse, au lieu des seules occurrences où "
+                              "il forme un groupe nominal entier. Seuls les candidats qui atteignent déjà "
+                              "--min-freq comme groupes nominaux sont repérés. ACTER (2026-10-09) : gain "
+                              "token-level sur toutes les configurations, sans surcoût sur RevueESR ; mais "
+                              "pas plus de suggestions justes distinctes (précision par candidat de la liste "
+                              "1 : 0.51 contre 0.53). Défaut désactivé.")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -643,6 +766,7 @@ def main() -> None:
     candidates, total_tokens, per_doc_tokens = extract_candidates(
         rows, args.lang, args.min_tokens, args.max_tokens, args.min_freq,
         prep_patterns=args.prep_patterns, all_candidate_patterns=args.all_candidate_patterns,
+        respot=args.respot_occurrences,
     )
     if args.specificity_filter_pctl > 0:
         from loterre_specificity import filter_by_specificity

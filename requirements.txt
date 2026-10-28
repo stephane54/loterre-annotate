@@ -2,3 +2,10 @@ spacy>=3.7.0,<3.8
 pyyaml>=6.0
 click>=8.0
 sentence-transformers>=3.0,<6.0
+# NMF du rapport de couverture thématique (src/loterre_topic_report.py,
+# extract_annotate --topic-report) — déjà tiré par sentence-transformers,
+# déclaré explicitement car importé directement
+scikit-learn>=1.3
+# thinc<8.3 (imposé par spaCy 3.7) est compilé contre numpy 1.x : numpy 2.x
+# le fait planter à l'import ("numpy.dtype size changed")
+numpy<2

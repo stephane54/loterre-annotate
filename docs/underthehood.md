@@ -1,4 +1,4 @@
-# Under the hood — extraction terminologique et scoring des candidats
+# Under the hood — extraction terminologique, scoring des candidats et annotation
 
 Déroulé pas à pas du texte brut aux candidats scorés, pour les sous-commandes
 `extract`/`extract_annotate` (v2.0) :
@@ -10,6 +10,12 @@ Déroulé pas à pas du texte brut aux candidats scorés, pour les sous-commande
 4. **Méthode embed** (`--extractor embed`) — similarité à un vocabulaire
    cible, avec son signal structurel secondaire et ses trois niveaux de
    suggestion d'enrichissement
+5. **Rapport d'analyse** (`extract_annotate --report`) — chiffres clés,
+   annotation et extraction, et couverture du vocabulaire par thème
+   (expérimental)
+6. **Annotation** (`annotate`) — représentation du dictionnaire en mémoire,
+   mise en cache des index, chemins de matching, filtrage qualité,
+   auto-profiling
 
 Ce document couvre uniquement le **mécanisme technique** (le code, la
 formule, le pourquoi d'un choix). Pour la consigne d'usage — quand choisir
@@ -18,8 +24,9 @@ voir `docs/curation_guide.md`.
 
 Le mode `annotate` (recherche dans un vocabulaire via pattern/lemme/surface +
 Trie) est un mécanisme **complètement différent**, indépendant de
-l'extraction de candidats décrite ici — voir `docs/README.md` §7 à 9 pour son
-fonctionnement détaillé.
+l'extraction de candidats — il est décrit dans la dernière partie de ce
+document. Les résultats mesurés et les protocoles d'évaluation sont dans
+`docs/evaluation.md`.
 
 ## Étapes communes à toutes les méthodes
 
@@ -37,12 +44,56 @@ fonctionnement détaillé.
   cette tolérance, tout le span était rejeté avant même le scoring (mesuré
   sur le gold ACTER EN : 93% des termes gold à tiret/slash jamais candidats
   — voir `planification/analyse_benchmarks_extraction.md`, entrée
-  2026-09-07).
+  2026-09-07). Enfin, le candidat doit contenir **au moins deux lettres**
+  (2026-10-05) : sur du texte extrait de PDF, spaCy étiquette NOUN/PROPN des
+  symboles et lettres isolées ("-", "–", "©", "n", "C") qui passaient tous
+  les autres filtres et envahissaient les listes de suggestion ; les sigles
+  courts ("PM", "IC") et "vitamine D" restent acceptés. Effet neutre sur
+  ACTER (F1 ±0,002).
+- Pas uniquement des mots outils, en français **ou** en anglais (2026-10-09,
+  `_only_function_words`) : le filtre `is_stop` de spaCy ne connaît que la
+  langue du modèle, et les résumés anglais d'un corpus français donnaient
+  des candidats « of the », « and », « this ». Liste spaCy FR + EN, plus
+  les élisions (« d », « l », « qu ») et « -ci »/« -là » ; un mot en
+  majuscules d'au moins deux lettres compte comme sigle (« NO », « OR »),
+  sauf « OF », « THE », « AND »… des titres en capitales. ACTER neutre.
 - Dédupliqué et compté en fréquence, `min_freq` appliqué → liste de
   `CandidateTerm` avec un score placeholder = fréquence brute. Chaque
   candidat garde aussi ses `occurrences` (offsets caractères par `doc_id`),
   réutilisées par le croisement vocabulaire (étape 3) et par le scoring
   PositionRank (position dans le document).
+- **Quelles occurrences ?** Par défaut, seulement les endroits où spaCy a
+  produit exactement ce groupe nominal (`_register_span`, `term =
+  span.text`) : « heart failure » n'est pas compté dans « chronic heart
+  failure patients », et « Heart failure » est un autre candidat que
+  « heart failure ». Avec **`--respot-occurrences`** (`_respot_occurrences`,
+  appliqué avant `min_freq`) :
+  1. les variantes de casse d'un candidat sont fusionnées (forme retenue :
+     la plus fréquente comme groupe nominal, la minuscule à égalité) ;
+  2. toutes les occurrences de son texte sont repérées dans le corpus,
+     insensible à la casse, aux bornes de tokens (`\w+|[^\w\s]`), en une
+     passe par document grâce à un trie sur les tokens en minuscules —
+     termes emboîtés et chevauchants tous comptés ;
+  3. la fréquence devient le nombre d'occurrences repérées.
+
+  C'est aussi ce que la formule C-value suppose (un terme court compte ses
+  apparitions dans les termes plus longs, que la formule soustrait
+  ensuite). Mesuré sur ACTER le 2026-10-09 : gain sur toutes les méthodes,
+  précision comprise — c'était l'essentiel de l'avance de TermSuite (voir
+  `docs/evaluation.md` §1.1). Option explicite, défaut désactivé.
+
+  Deux garde-fous, ajoutés après un premier essai sur RevueESR où le
+  repérage couvrait tout le texte (1 h 36 au lieu de 28 min, liste 2
+  envahie de « of the », « pas d ») :
+  - le repérage ne se fait qu'**à l'intérieur des groupes nominaux** de
+    chaque document (bornes collectées pendant le passage spaCy) ;
+  - seuls les candidats qui atteignent déjà `min_freq` comme groupes
+    nominaux y participent.
+
+  Avec eux : pas de surcoût sur RevueESR, liste 2 propre en tête. Le gain
+  est token-level (plus d'occurrences comptées pour les mêmes termes) : en
+  précision par candidat, la liste 1 passe de 0.532 à 0.509 sur ACTER —
+  d'où le maintien en option.
 
 **2. Choix de l'extracteur** — `score_extracted_candidates()`,
 `loterre_extract_cli.py:190-228`
@@ -281,12 +332,12 @@ retire les candidats sous le seuil, appliqué après le scoring, dans
   Ratio vs langue générale, `loterre_specificity.score_candidates_specificity`
   — toujours calculé pour `embed`, coût négligeable, aucun modèle) est dans
   le top `--specificity-top-pct`. Contrairement au niveau 2, **pas actif par
-  défaut** : précision isolée mesurée ~0.27-0.30 sur ACTER (2026-09-11),
-  nettement plus bruitée que le niveau 2 (~0.64) — un choix explicite du
-  curateur (accepter plus de bruit pour plus de rappel), pas un défaut
-  raisonnable. Si activé, **10%** est la valeur mesurée utile (l'union
-  niveau 2 + niveau 3 à 10% porte le F1 combiné de 0.270 à 0.314 sur ACTER,
-  voir `planification/analyse_benchmarks_extraction.md`).
+  défaut** : précision isolée mesurée 0.27 par token / 0.14 par candidat
+  sur ACTER, nettement plus bruitée que le niveau 2 (0.39 / 0.23) — un
+  choix explicite du curateur (accepter plus de bruit pour plus de rappel),
+  pas un défaut raisonnable. Si activé, **10%** est la valeur mesurée utile
+  (l'union niveaux 1 + 2 + 3 à 10% porte le F1 combiné de 0.327 à 0.368 sur
+  ACTER, voir `planification/analyse_benchmarks_extraction.md`).
 - Les trois catégories sont **strictement séparées** (jamais deux `True` en
   même temps) : pas de score composite, pour ne pas réintroduire le bruit
   que le passage centroïde → plus proche voisin avait justement filtré, et
@@ -335,37 +386,46 @@ vérifier), et — si `--specificity-top-pct` est explicitement activé — ceux
 plus loin encore mais rares par rapport à la langue générale remontent en
 `enrichment_suggestion_specificity` (exploratoire, plus bruité) — les trois
 à valider par un curateur humain, cohérent avec l'objectif produit "mise à
-jour de ressource" documenté dans `CLAUDE.md`. Voir `docs/curation_guide.md`
+jour de ressource" du projet. Voir `docs/curation_guide.md`
 pour la consigne de travail détaillée du curateur et le choix de méthode
 selon le contexte.
 
-**Chiffres mesurés sur ACTER (2026-09-07, seuils de production actuels)** :
+**Chiffres mesurés sur ACTER (reproduits le 2026-09-30, seuils de production actuels, seed/holdout 50%)** — listes cumulées (précision token-level, protocole ACTER) :
 
 | | Precision | Rappel | F1 |
 |---|---:|---:|---:|
-| `enrichment_suggestion_embed` seul | 0.858 | 0.127 | 0.222 |
-| `enrichment_suggestion_embed` + `enrichment_suggestion_structural` | 0.568 | 0.232 | 0.329 |
+| `enrichment_suggestion_embed` seul | 0.852 | 0.129 | 0.224 |
+| + `enrichment_suggestion_structural` (2%) | 0.560 | 0.231 | 0.327 |
+| + `enrichment_suggestion_specificity` (10%) | 0.430 | 0.321 | 0.368 |
 
-**Niveau 3 — chiffres mesurés séparément sur ACTER (2026-09-11, script ad hoc, pas `acter_eval.py`, méthodologie comparable mais pas identique — voir `planification/analyse_benchmarks_extraction.md` pour le détail)** :
+Chaque liste **prise seule** (candidats de cette liste uniquement — ce que le
+curateur relit réellement) :
 
-| | Precision | Rappel | F1 |
-|---|---:|---:|---:|
-| `enrichment_suggestion_embed` seul | 0.899 | 0.114 | 0.203 |
-| + `enrichment_suggestion_structural` (2%) | 0.641 | 0.171 | 0.270 |
-| + `enrichment_suggestion_structural` (2%) + `enrichment_suggestion_specificity` (10%) | 0.492 | 0.231 | **0.314** |
-| `enrichment_suggestion_specificity` isolé (candidats **uniquement** niveau 3, ni 1 ni 2) | **0.27–0.30** | 0.02–0.06 | 0.04–0.10 |
+| Liste | Précision par token | Précision par candidat |
+|---|---:|---:|
+| `enrichment_suggestion_embed` | 0.852 | 0.528 |
+| `enrichment_suggestion_structural` (2%) | 0.391 | 0.231 |
+| `enrichment_suggestion_specificity` (10%) | 0.270 | 0.143 |
 
-Le niveau 3 capte un angle mort différent du niveau 2 (rareté par rapport à
-la langue générale, pas force statistique/positionnelle dans le corpus) —
-leur union récupère plus de vrais termes que chacun seul (rappel
-0.171→0.231), mais la précision propre du niveau 3 (dernière ligne) est
-nettement plus faible que celle du niveau 2 — **c'est pour ça qu'il reste
-désactivé par défaut**, contrairement au niveau 2.
+La précision par token pondère chaque candidat par ses occurrences (et
+accepte un recouvrement partiel avec un terme de référence) ; la précision
+par candidat compte chaque candidat une fois et exige une correspondance
+exacte — voir `docs/curation_guide.md`. Les versions antérieures de ce
+document donnaient ~0.57-0.64 pour la précision du niveau 2 : c'était celle
+de l'**union** niveaux 1 + 2, pas du niveau 2 seul ; et le tableau du
+2026-09-11 (0.899 / 0.641 / 0.314) n'est pas reproductible — voir
+`planification/analyse_benchmarks_extraction.md`, entrée 2026-09-29.
 
-Le niveau 2 relève le rappel de +83% relatif au prix d'une précision qui
-tombe à ~0.57 — un compromis délibéré (voir `docs/curation_guide.md`), pas un
-défaut à corriger. Détail complet, y compris le balayage de
-`--structural-top-pct` (2 à 30%), dans
+Le niveau 2 relève le rappel de +79% relatif (0.129 → 0.231) au prix d'une
+liste propre nettement moins précise — un compromis délibéré, pas un défaut
+à corriger. Le niveau 3 capte un angle mort différent (rareté par rapport à
+la langue générale, pas force statistique/positionnelle dans le corpus) et
+relève encore le rappel (0.231 → 0.321), mais sa précision propre est la
+plus faible des trois — **c'est pour ça qu'il reste désactivé par défaut**,
+contrairement au niveau 2. Dans chaque liste, le tri par `frequency`
+décroissante sépare nettement les candidats fiables des douteux (consigne de
+relecture dans `docs/curation_guide.md`). Détail complet, y compris le
+balayage de `--structural-top-pct` (2 à 30%), dans
 `planification/analyse_benchmarks_extraction.md`.
 
 **Limite résiduelle non résolue, commune à toutes les méthodes** : le rappel
@@ -373,3 +433,311 @@ reste plafonné par l'étape commune 1 (extraction de candidats, noun chunks +
 filtres POS) — un terme dont la forme de surface n'est jamais capturée comme
 candidat (acronyme isolé, forme très rare) n'atteint aucun score, quelle que
 soit la méthode choisie en aval.
+
+## Rapport d'analyse (`extract_annotate --report`)
+
+Module `src/loterre_report.py` (2026-09-30, élargi le 2026-10-02 ;
+`--topic-report` reste accepté comme ancien nom de l'option). Calculé à la
+fin d'`extract_annotate`, sur les candidats et les annotations déjà produits,
+sans second passage spaCy ni second passage de l'annotateur, **avant**
+l'écriture des sorties JSON/CSV (il y ajoute les champs de thème, voir plus
+bas). Trois parties :
+
+1. **Synthèse chiffrée** et 2. **annotation / extraction** — comptages
+   directs, `compute_summary()` : nombre de documents et de tokens,
+   candidats, candidats `in_vocabulary`, annotations, concepts du
+   vocabulaire retrouvés (URI distinctes dans les annotations) rapportés au
+   nombre de concepts du dictionnaire (identifiants `id` distincts du JSONL),
+   documents avec au moins une annotation, histogramme des annotations par
+   document, 15 concepts les plus annotés, candidats par longueur (tokens du
+   `pattern`), effectifs et 10 suggestions les plus fréquentes de chaque liste.
+3. **Couverture par thème — expérimental**, ci-dessous. Ce n'est **pas** une
+   méthode de scoring : elle répond à une autre question que les listes de
+   suggestion — non pas "ce candidat est-il un bon terme ?" mais "**dans
+   quelles zones du corpus le vocabulaire cible manque-t-il de termes ?**".
+
+Champs par candidat liés au rapport et à l'export (JSON et CSV) :
+`n_docs` (documents distincts parmi les occurrences, toujours présent),
+`nearest_vocab_term` (`--extractor embed` : libellé du vocabulaire qui a
+donné `score`, l'argmax de la ligne de similarités dans
+`score_candidates_embed()`), `context` (extrait de ±70 caractères autour de
+la première occurrence, relu dans le fichier source, `attach_contexts()` de
+`loterre_csv_export.py`), et avec `--report` `topic_id` / `topic_label` /
+`topic_coverage` (thème principal du candidat, voir étape 2, et couverture
+de ce thème). Les champs de thème sont des informations de **rangement**,
+pas un score : NMF comme signal de pertinence par candidat a été mesuré et
+ne fait pas mieux que la fréquence (`planification/analyse_benchmarks_extraction.md`,
+entrée 2026-09-29).
+
+### Étape 1 — Segments
+
+Chaque document est découpé en tranches de 600 caractères (`SEGMENT_CHARS`),
+déduites des positions des occurrences de candidats (le texte brut n'est pas
+relu). Un segment est l'unité de base : c'est lui qui reçoit un thème et
+qu'on déclare "couvert" ou non. 600 caractères ≈ 100 tokens, environ un
+paragraphe. Sous 50 segments (`MIN_SEGMENTS`, ~30 000 caractères), la partie
+thèmes est omise (le reste du rapport est produit) : trop peu de matière pour
+que des thèmes émergent.
+
+### Étape 2 — Thèmes (NMF)
+
+Matrice creuse segments × candidats (nombre d'occurrences de chaque candidat
+dans chaque segment, candidats de fréquence ≥ 2, pondération tf-idf),
+factorisée par NMF (*Non-negative Matrix Factorization*, scikit-learn) en
+W (segments × thèmes) et H (thèmes × candidats), toutes deux positives :
+
+- **thème dominant d'un segment** = la plus forte valeur de sa ligne W ;
+- **thème principal d'un candidat** = la plus forte valeur de sa colonne H —
+  c'est ce qui range chaque suggestion sous un thème dans le rapport, et
+  qui donne `topic_id` / `topic_label` (5 premiers mots de l'étiquette) au
+  candidat ;
+- **étiquette d'un thème** = ses 10 candidats de plus fort poids dans H.
+
+Nombre de thèmes : `--report-topics`, ou automatique (segments / 30,
+borné entre 5 et 30). Graine fixe (résultat reproductible). Les thèmes ne
+sont construits qu'à partir des candidats extraits : le vocabulaire cible
+n'intervient pas dans leur formation.
+
+Le plafond de 30 a été vérifié a posteriori sur RevueESR (2026-10-08,
+`scripts/evaluation/sweep_topics.py`, k = 10 à 50) :
+
+- 30 a la meilleure stabilité (thèmes retrouvés à 0,94 sur des
+  sous-échantillons de 80 % des segments) et une cohérence d'étiquettes au
+  niveau du plateau 20–30 ;
+- au-delà de 30, la cohérence baisse et le thème générique se fragmente en
+  petits thèmes qui passent sous le seuil de détection (étape 4) et
+  occupent le bas du classement ;
+- le constat de couverture ne dépend pas de k : la santé au travail reste
+  entre 1 et 1,7 % pour tous les k testés.
+
+La formule segments / 30, qui fixe k sur les corpus de moins de ~900
+segments, n'a pas été vérifiée.
+
+### Étape 3 — Couverture par les termes propres du vocabulaire
+
+La couverture est mesurée à partir des **annotations du vocabulaire** (sortie
+du moteur d'annotation, déjà calculée par `extract_annotate` pour
+`in_vocabulary`), rattachées à leur segment — et non à partir du champ
+`in_vocabulary` des candidats. Ce dernier sous-estime la couverture : un
+terme reconnu par l'annotateur mais extrait avec un autre empan (inclus dans
+un groupe nominal plus long, par exemple) n'est pas marqué. Sur RevueESR/SEN,
+cette ancienne mesure désignait à tort le bruit et les maladies vectorielles
+comme non couverts, alors que SEN y a "trafic routier" et "virus West Nile".
+
+Seuls comptent les **termes propres** au thème : un terme du vocabulaire est
+propre au thème *t* si
+
+```
+(annotations du terme dans les segments de t / annotations du terme) /
+(segments de t / segments du corpus)  >=  2        (SPECIFIC_LIFT)
+```
+
+avec au moins 3 annotations dans le thème (`SPECIFIC_MIN_COUNT`). Sans ce
+filtre, quelques termes transversaux présents partout ("risque sanitaire",
+"changement climatique" sur RevueESR/SEN) donnaient une couverture moyenne à
+des thèmes qui n'avaient aucun terme propre — la santé au travail passait de
+14% des segments (tous termes) à 2% (termes propres). Un terme transversal
+compte toujours là où il est surreprésenté ("risque sanitaire" pour le thème
+évaluation des risques).
+
+**Couverture d'un thème** = part de ses segments (ceux où il domine) qui
+contiennent au moins une annotation d'un de ses termes propres. C'est une
+mesure **relative** : elle compare les thèmes entre eux, mais n'est pas un
+taux de couverture absolu (on ne connaît pas la terminologie complète que
+chaque thème devrait contenir).
+
+**Thème générique** (2026-10-07) : NMF range le discours général des
+articles ("compte, exemple, mise, place, prise, gestion") dans un grand thème
+fourre-tout, dont la couverture est basse par construction et qui
+apparaîtrait à tort en tête des zones "mal couvertes". Un thème est marqué
+`generic` (et ses candidats `topic_generic=True`) si son poids
+(`segment_share`) atteint au moins `GENERIC_SHARE_FACTOR` = 2,5 fois le
+poids moyen d'un thème (1 / nombre de thèmes) ; il est alors affiché à part,
+hors classement. Calibré sur RevueESR/SEN (30 thèmes) : 13,2% contre 3,3% de
+moyenne, thème suivant à 5,1%. Le critère de poids seul suffit : la
+spécificité des mots de l'étiquette (rang de Weirdness Ratio) ne distingue
+pas ce thème (0,79 contre 0,80 pour la santé au travail, vraie zone peu
+couverte).
+
+Limite : la règle ne voit qu'un fourre-tout **d'un seul tenant**. S'il se
+scinde en plusieurs petits thèmes, chacun reste sous le seuil et se classe
+parmi les « moins couverts ». C'est le cas au-delà de 30 thèmes, et sur
+RevueESR depuis le filtre de mots outils (2026-10-09) : deux thèmes de
+discours général (« compte, prise, facteurs » ; « mise, France, place »)
+passent devant la santé au travail en bas du classement. À lire en
+conséquence : un thème du bas dont l'étiquette n'a pas de mot du domaine
+est probablement du discours général, pas un sous-domaine mal couvert.
+
+### Sorties
+
+- `RAPPORT.html` : page autonome (aucune ressource externe, utilisable hors
+  ligne) — chiffres clés, graphiques de l'annotation et de l'extraction,
+  tableaux des suggestions les plus fréquentes, barres de couverture par
+  thème (triées du moins au plus couvert, nombre de suggestions par thème),
+  explications et détail par thème repliés.
+- `RAPPORT.json` : les mêmes données (`summary`, `topics`), pour réutilisation.
+
+`scripts/evaluation/build_report.py` produit le même rapport (et, avec
+`--out-csv`, le CSV enrichi) à partir de sorties déjà calculées (JSON
+d'`extract_annotate` + JSON du moteur d'annotation), sans relancer le
+pipeline.
+
+### Coût et validation
+
+RevueESR (1 549 documents, 53 245 segments, 36 546 candidats) : ~13 s et
+~1 Go de RAM. Validation **qualitative uniquement**, sur un seul corpus
+(RevueESR/SEN) : zones peu couvertes plausibles (santé au travail, périnatal,
+gestion des déchets), thèmes de bruit clairement isolés (en-têtes de revue,
+remerciements, adresses, texte mal extrait des PDF). Aucune mesure chiffrée
+possible sur ACTER (pas de vocabulaire cible). Pourquoi NMF sert ici mais
+pas comme signal par candidat (il ne fait pas mieux que la fréquence) :
+`planification/analyse_benchmarks_extraction.md`, entrée 2026-09-29.
+
+## Annotation (`annotate`) — représentation du dictionnaire et matching
+
+Mécanisme du moteur d'annotation (`src/loterre_engine_v9_cli.py`), utilisé
+par `annotate` et par la partie croisement d'`extract_annotate`. Les options
+réglables (profils, clés `quality.*`) sont décrites dans `docs/README.md`
+§7 à §11.
+
+### Représentation interne du dictionnaire
+
+À l'exécution, le dictionnaire JSONL n'est pas interrogé tel quel :
+`build_indexes()` le transforme en structures de recherche en mémoire.
+
+- **Tries de séquences** (`SeqTrie`) : chaque forme (libellé, `altLabels`,
+  variantes structurelles) est découpée en tokens normalisés et insérée dans
+  un trie dont chaque nœud final porte le concept (`label`, `pref`, `uri`).
+  Trois tries coexistent — formes de surface, séquences de lemmes des
+  libellés, séquences de lemmes issues des motifs. La recherche du plus long
+  terme commençant à une position du texte (`iter_longest`) coûte au plus la
+  longueur de ce terme, quelle que soit la taille du vocabulaire.
+- **Index des motifs POS+lemme par premier lemme** (`pattern_first_idx`) :
+  pour chaque position du texte, seules les entrées dont le premier spec
+  correspond sont testées ; les entrées sans lemme sur leur premier token
+  (`pattern_wildcards`) restent testées partout. Les lemmes des motifs sont
+  normalisés une fois pour toutes à la construction (`_norm_lemma`).
+- **Sigles mono-token en majuscules**, gardés à part pour la règle
+  `surface_upper_exact`.
+
+### Mise en cache des index
+
+Construire ces index demande de lemmatiser tous les libellés avec spaCy :
+quelques secondes pour un petit vocabulaire, plusieurs minutes pour les plus
+gros (MeSH, ~150 000 entrées). Pour ne pas payer ce coût à chaque appel,
+`build_indexes_cached()` les **sérialise sur disque (pickle)** dans
+`.loterre_index_cache/` (ou le répertoire désigné par
+`LOTERRE_INDEX_CACHE_DIR` / `--index-cache-dir`). La clé de chaque fichier
+est un SHA-256 calculé sur :
+
+- le **contenu** du dictionnaire (pas son chemin ni sa date, pour qu'un cache
+  produit sur une machine reste valide sur une autre après `dvc pull`) ;
+- la langue, le profil de matching et ses paramètres ;
+- le nom et la version du modèle spaCy, la version de spaCy ;
+- un numéro de format (`INDEX_CACHE_FORMAT_VERSION`, incrémenté quand la
+  structure des index change).
+
+Toute modification de l'un de ces éléments produit une nouvelle clé : un
+cache périmé n'est jamais réutilisé. L'écriture passe par un fichier
+temporaire propre à chaque processus puis un renommage atomique, ce qui
+permet à plusieurs workers de remplir le cache en parallèle sans jamais lire
+un fichier partiel ; un fichier corrompu ou un répertoire non inscriptible
+déclenche simplement une reconstruction, jamais un échec. Le cache est
+pré-rempli pour tous les vocabulaires du registre par
+`src/warm_index_cache.py` et livré avec les dictionnaires
+(`dictionary/.loterre_index_cache/`, ~1,2 Go, suivi par DVC) ; l'image
+Docker du webservice le désigne via `LOTERRE_INDEX_CACHE_DIR`.
+
+Caches complémentaires, plus légers :
+
+- **Modes `fast`/`hybrid`** : l'index regex du chemin rapide
+  (`src/loterre_fast_path.py`) est mis en cache dans `.loterre_cache/`
+  (`--cache-dir`), avec une clé fondée sur le chemin, la date de modification
+  et la taille du dictionnaire, plus le mode de casse ; les versions périmées
+  d'un même dictionnaire sont supprimées à chaque reconstruction.
+- **En mémoire, par processus** (`functools.lru_cache`) : normalisation de
+  texte (`normalize_text`, 16 384 entrées), chargement des modèles spaCy
+  (`get_nlp`), du modèle d'embeddings (`get_embed_model`) et des tables
+  morphologiques (`load_derivation_rules`) — chacun n'est chargé qu'une fois
+  par processus.
+- **Embeddings du vocabulaire** (`--extractor embed`) : non persistés. Les
+  libellés préférés sont encodés à chaque exécution, par lots de 64, en une
+  matrice de vecteurs normalisés (un vecteur par concept), ce qui ramène la
+  similarité cosinus à un produit matriciel.
+
+### Chemins de matching
+
+**Le pattern compare toujours sur le lemme, indépendamment du flag
+`use_lemma`.** Chaque spec du pattern (généré par `build_dictionaries.py`,
+un par token du terme source) porte un `lemma` ; `token_matches_spec()`
+compare le lemme normalisé du token du texte à celui de la spec — c'est le
+comportement intrinsèque du chemin `pattern`, pas une passe optionnelle.
+Concrètement : un terme au singulier dans le dictionnaire matche déjà les
+formes fléchies du texte (pluriel, accord) via `pattern` seul, même en
+profil `entity_strict` (`use_lemma: false`).
+
+Le flag `use_lemma` ne contrôle qu'une passe *distincte* :
+`lemma_pattern_seq`/`lemma_structural`, qui compare la séquence de lemmes du
+**label entier** (pas le pattern POS+lemme token par token) à la séquence de
+lemmes du texte — un filet de secours pour les entrées sans pattern
+exploitable, désactivable indépendamment. Le chemin
+`surface_structural`/`surface_upper_exact` (`use_surface`), lui, ne
+lemmatise jamais : comparaison sur la forme littérale normalisée.
+
+**Déduplication** : sélection gloutonne des meilleurs spans
+non-chevauchants, triés par score décroissant → priorité de règle →
+longueur → position.
+
+### Filtrage qualité — valeurs internes
+
+`discourse_pattern_guard` filtre les mots fonctionnels courants même pour
+les matches `rule="pattern"`, via des sets propres à chaque langue,
+sélectionnés depuis `lang` et surchargeables par
+`quality.syntactic_generic_words` :
+
+- **EN** : `{"and", "or", "it", "well", "can", "may", "like"}`
+- **FR** : `{"et", "ou", "ni", "mais", "il", "elle", "on", "bien", "ainsi", "comme"}`
+
+Garde syntaxique (`syntactic_context_guard: true`) :
+
+1. **Attribut copulatif** : `"is the <mot_générique> that…"` → élimine
+   `"process"`, etc.
+2. **Mot-titre en position 0** : mot générique en majuscule au début du
+   document.
+
+Pénalité adaptative des single-tokens :
+
+| Cas | Pénalité |
+|---|---|
+| Tout en majuscules ≥ 2 chars (`ERP`, `SAM`) | min(base, 0.05) — acronyme |
+| CamelCase avec majuscule interne (`SenseCam`) | min(base, 0.05) — entité spécifique |
+| Tout en minuscules ≤ 3 chars (`cue`, `or`) | max(base, 0.20) — risque élevé |
+| Autres | base (valeur du profil) |
+
+Scoring contextuel, dans une fenêtre de ±2 tokens :
+
+- voisins lexicaux majoritaires → +0.05 (bonus) ;
+- voisins fonctionnels majoritaires → -0.20 (pénalité) ;
+- token en NOUN/PROPN/ADJ → +0.05 (bonus POS).
+
+### Auto-profiling — heuristique
+
+`--auto-profile` choisit le profil d'après les statistiques du
+dictionnaire :
+
+| Condition | Profil suggéré |
+|---|---|
+| `ratio_pattern ≥ 0.45` ET `ratio_mono ≥ 0.4` ET beaucoup d'uppercase | `entity_strict` |
+| `ratio_puncty ≥ 0.15` OU `avg_label_len ≥ 2.2` | `term_recall` |
+| Sinon | `term_balanced` |
+
+### Optimisations de performance
+
+| Optimisation | Gain mesuré |
+|---|---|
+| Pré-compilation de `_PUNCT_RE` | −8s sur P66_en |
+| Pré-calcul de `spec._norm_lemma` | −5s |
+| LRU cache sur `normalize_text` (99.9% hit rate) | −60% des appels |
+| Index patterns par premier token normalisé | ×2 à ×73 selon le vocabulaire |
+
+**Cumul** : P66_en 33s → 7s (×4.7), 9SD_en 117s → 1.6s (×73), 27X_en 16s → 1.2s (×13).

@@ -15,7 +15,7 @@ planification/analyse_benchmarks_extraction.md :
   embed (niveau 3), seul et combiné au signal structurel — nécessite
   sentence-transformers/torch. F1 embed+structurel+spécificité(10%) = 0.314
   contre 0.270 pour structurel seul, mais précision isolée du niveau 3 basse
-  (~0.27-0.30) — d'où le choix de le garder opt-in (voir CLAUDE.md).
+  (~0.27-0.30) — d'où le choix de le garder opt-in.
 
 Usage:
     make corpus-acter   # si pas déjà fait

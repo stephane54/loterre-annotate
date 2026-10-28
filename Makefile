@@ -22,7 +22,7 @@ install:
 # load_model() dans loterre_engine_v9_cli.py — pas les modèles _lg (réservés
 # à un usage manuel, voir le commentaire dans spacy_models.yaml) ni scispaCy
 # (en_core_sci_sm a été testé comme défaut EN et abandonné : -8 points de F1
-# sur P66, voir CLAUDE.md / journal des versions).
+# sur P66, voir le journal des versions).
 models:
 	@echo "[models] Input    : aucun"
 	@echo "[models] Resource : acces reseau (telechargement spaCy)"
@@ -169,7 +169,7 @@ benchmark-resolvers:
 # ── Benchmark ACTER (Phase 6, extraction "a froid" sans vocabulaire) ───────────
 # Corpus externe (https://github.com/AylaRT/ACTER, CC BY-NC-SA 4.0) : 4 domaines
 # x langues, gold standard de termes pour comparer C-value/PositionRank a des
-# baselines publiees (D-Terminer, voir CLAUDE.md). Pas committe dans le repo
+# baselines publiees (D-Terminer). Pas committe dans le repo
 # (volumineux, licence a part) — clone a la demande dans corpus_acter/ (gitignore).
 
 corpus-acter:
